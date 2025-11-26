@@ -164,8 +164,9 @@ body.no-scroll { overflow: hidden; }
   transform: translateY(6px);
 }
 
-/* inner wrapper */
+/* inner wrapper: POSITION CONTEXT ADDED */
 .mega-inner-compact {
+  position: relative; /* <-- needed so right panel can be absolutely positioned relative to this box */
   display: flex;
   gap: 18px; /* increased gap for more breathing room between columns */
   align-items: flex-start; /* keep columns top-aligned so no big vertical whitespace */
@@ -185,6 +186,8 @@ body.no-scroll { overflow: hidden; }
   min-width: 260px; /* narrower so it doesn't take too much space */
   box-shadow: 0 10px 24px rgba(15,23,42,0.06);
   border: 1px solid rgba(0,0,0,0.04);
+  position: relative;
+  z-index: 2;
 }
 
 /* each left row button */
@@ -201,15 +204,18 @@ body.no-scroll { overflow: hidden; }
   font-weight:700;
   cursor:pointer;
   border-radius:8px;
-  transition: all .14s ease;
+  /* transition: all .14s ease; */
 }
 .mega-tab-compact .mini-right { opacity: .6; }
 .mega-tab-compact:hover { background: rgba(34,197,94,0.04); transform: translateX(4px); color:#166534; box-shadow: 0 6px 18px rgba(34,197,94,0.04); }
 .mega-tab-compact.active { background: linear-gradient(90deg, rgba(34,197,94,0.06), rgba(34,197,94,0.02)); color:#16a34a; }
 
 /* show right panel only when a left tab is active */
+/* RIGHT PANEL NOW ABSOLUTELY POSITIONED */
 .mega-right-panel {
-  margin-left: 10px;
+  position: absolute;              /* absolute so we can position it next to the left column */
+  top: 0;                           /* will be overridden inline by React when needed */
+  left: calc(100% + 10px);         /* fallback default — will also be overridden inline */
   width: 360px;
   min-height: 0; /* remove forced min-height to avoid blank white area */
   border-radius: 8px;
@@ -219,12 +225,13 @@ body.no-scroll { overflow: hidden; }
   transform: translateY(8px) scale(.99);
   pointer-events: none;
   display: none; /* hide by default */
+  z-index: 3;
 }
 .mega-right-panel.visible {
   opacity: 1;
   transform: translateY(0) scale(1);
   pointer-events: auto;
-  display: block; /* show only when needed */
+  display: block;
 }
 
 /* selected mega column */
@@ -288,7 +295,7 @@ body.no-scroll { overflow: hidden; }
 .nested-links a { display:block; padding:8px 12px; border-radius:8px; text-decoration:none; color:#0f172a; background: #fff; border:1px solid rgba(0,0,0,0.03); }
 .nested-links a:hover { background: rgba(34,197,94,0.03); color:#166534; transform: translateX(2px); }
 
- /* nested icon helpers: default on the right; when menu is left-aligned use .mini-left */
+/* nested icon helpers: default on the right; when menu is left-aligned use .mini-left */
 .mini-right { margin-left: 12px; }
 .mini-left { margin-right: 12px; order: -1; /* ensure it visually sits before the text */ }
 
@@ -472,7 +479,6 @@ body.no-scroll { overflow: hidden; }
 }
 
 /* Accessibility focus */
-
 
 /* GIF rendering tweaks */
 .brand-logo, .premium-drawer-logo { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }

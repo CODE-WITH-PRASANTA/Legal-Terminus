@@ -14,8 +14,8 @@ import './Footer.css';
 const BG_IMG =
   'https://templatekit.jegtheme.com/justic/wp-content/uploads/sites/251/2022/03/athens-greece-the-academy-buildings-e1648383645835.jpg';
 
-const LOGO =
-  'https://legalterminus.com/wp-content/uploads/2023/09/Legal-Terminus-LOGO-GIF_300-x-150.gif';
+import LOGO from
+  '../../assets/legal.png';
 
 const Footer = () => {
   return (
@@ -109,11 +109,11 @@ const Footer = () => {
             </p>
 
             <div className="footer-socials">
-              <a href="#fb" aria-label="facebook" className="social-btn">
+              <a href="https://www.facebook.com/LegalTerminusofficial" aria-label="facebook" className="social-btn">
                 <FaFacebookF className="social-icon" />
                 <span className="social-tooltip">Facebook</span>
               </a>
-              <a href="#ig" aria-label="instagram" className="social-btn">
+              <a href="https://www.instagram.com/legalterminus/" aria-label="instagram" className="social-btn">
                 <FaInstagram className="social-icon" />
                 <span className="social-tooltip">Instagram</span>
               </a>
@@ -121,7 +121,7 @@ const Footer = () => {
                 <FaWhatsapp className="social-icon" />
                 <span className="social-tooltip">WhatsApp</span>
               </a>
-              <a href="#yt" aria-label="youtube" className="social-btn">
+              <a href="https://www.youtube.com/@LegalTerminus" aria-label="youtube" className="social-btn">
                 <FaYoutube className="social-icon" />
                 <span className="social-tooltip">YouTube</span>
               </a>
@@ -132,14 +132,7 @@ const Footer = () => {
           <div className="footer-col footer-contact">
             <h3 className="footer-title">Free Consultation</h3>
 
-            <div className="contact-callout">
-              {/* swap emoji for an SVG icon wrapped so it can be styled like others */}
-              <span className="call-icon"><FaPhone style={{ transform: "rotate(90deg)" }}/></span>
-              <div className="call-text">
-                <div className="call-number">8280093456</div>
-                <div className="call-sub">24/7 Available Support</div>
-              </div>
-            </div>
+            
 
             <ul className="contact-list">
               <li>
@@ -177,7 +170,7 @@ const Footer = () => {
           
           <div className="footer-bottom-content">
             <div className="copyright">
-              Copyright © Justic 2024. All Rights Reserved.
+              © 2023 Legal Terminus. All Rights Reserved. | Powered by Legal Terminus Developed by <a href='https://prwebstock.com/' className='pr'>PR WEBSTOCK</a>
             </div>
             
           </div>

@@ -1,4 +1,3 @@
-//import React, { useState, useEffect, useRef } from 'react';
 import React, { useState, useEffect, useRef } from 'react';
 import {
   FaEnvelope,
@@ -144,11 +143,11 @@ const navData = [
     ]
   },
 
-  // Trademark - left aligned for demo
+  // Trademark - LEFT ALIGNED for demo
   {
     id: 'trademark',
     label: 'Trademark',
-    align: 'left',
+    align: 'left', // <--- important: left-align this mega
     children: [
       {
         id: 'tm-services',
@@ -195,6 +194,12 @@ export default function NavbarAdvanced() {
   const [activeMegaTab, setActiveMegaTab] = useState(null);
   const [mobileExpanded, setMobileExpanded] = useState({});
   const [nestedOpenItem, setNestedOpenItem] = useState(null);
+
+  // NEW refs & state for positioning the right panel to run parallel to the left item
+  const leftColRef = useRef(null);                     // container for left column
+  const megaLeftRefs = useRef({});                     // map: catId -> DOM node of the left tab button
+  const [rightPanelStyle, setRightPanelStyle] = useState({ top: 0, left: null });
+
   const drawerRef = useRef(null);
   const megaTimeoutRef = useRef(null);
 
@@ -249,13 +254,63 @@ export default function NavbarAdvanced() {
       setMegaOpenFor(null);
       setActiveMegaTab(null);
       setNestedOpenItem(null);
+      setRightPanelStyle({ top: 0, left: null });
     }, 160);
   };
 
+  // compute and set the right panel position so it lines up with the hovered left tab
   const showRightPanel = (tabId) => {
     setActiveMegaTab(tabId);
     setNestedOpenItem(null);
+
+    // compute positions
+    const buttonEl = megaLeftRefs.current[tabId];
+    const leftContainer = leftColRef.current;
+    const outer = leftContainer?.closest('.mega-inner-compact') || leftContainer;
+
+    // width used for the panel; must match CSS .mega-right-panel width
+    const panelWidth = 360;
+    const gap = 10;
+
+    // check if the parent top-level item (the mega) is left-aligned
+    const topItem = navData.find(n => n.id === megaOpenFor);
+    const isLeftAligned = !!(topItem && topItem.align === 'left');
+
+    if (buttonEl && leftContainer && outer) {
+      const btnRect = buttonEl.getBoundingClientRect();
+      const leftRect = leftContainer.getBoundingClientRect();
+      const outerRect = outer.getBoundingClientRect();
+
+      // top relative to outer container (so absolute positioning inside .mega-inner-compact works)
+      const top = Math.round(btnRect.top - outerRect.top);
+
+      let left;
+      if (isLeftAligned) {
+        // place the panel to the LEFT side of the left column
+        left = Math.round(leftRect.left - outerRect.left - panelWidth - gap);
+      } else {
+        // default: place the panel to the RIGHT side of the left column
+        left = Math.round(leftRect.right - outerRect.left + gap);
+      }
+
+      setRightPanelStyle({ top, left });
+    } else {
+      setRightPanelStyle({ top: 0, left: null });
+    }
   };
+
+  // Recompute panel position on resize when a tab is active
+  useEffect(() => {
+    function onResize() {
+      if (activeMegaTab) {
+        // small timeout to allow layout to settle
+        setTimeout(() => showRightPanel(activeMegaTab), 40);
+      }
+    }
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeMegaTab, megaOpenFor]);
 
   // nested key helper
   const nestedKey = (topId, catId, idx) => `${topId}__${catId || 'child'}__${idx}`;
@@ -289,12 +344,12 @@ export default function NavbarAdvanced() {
           <div className="topbar-right">
             <div className="topbar-tag">Turning big ideas into great products!</div>
             <div className="topbar-socials">
-              <a className="social" href="#facebook" aria-label="Facebook"><FaFacebookF /></a>
-              <a className="social" href="#instagram" aria-label="Instagram"><FaInstagram /></a>
-              <a className="social" href="#twitter" aria-label="Twitter"><FaTwitter /></a>
+              <a className="social" href="https://www.facebook.com/LegalTerminusofficial" aria-label="Facebook"><FaFacebookF /></a>
+              <a className="social" href="https://www.instagram.com/legalterminus/" aria-label="Instagram"><FaInstagram /></a>
+              <a className="social" href="https://twitter.com/legalterminus" aria-label="Twitter"><FaTwitter /></a>
               <a className="social" href="#twitter" aria-label="Whatsapp"><FaWhatsapp /></a>
-              <a className="social" href="#twitter" aria-label="youtube"><FaYoutube /></a>
-              <a className="social" href="#linkedin" aria-label="LinkedIn"><FaLinkedinIn /></a>
+              <a className="social" href="https://www.youtube.com/@LegalTerminus" aria-label="youtube"><FaYoutube /></a>
+              <a className="social" href="https://www.linkedin.com/company/legalterminus/" aria-label="LinkedIn"><FaLinkedinIn /></a>
             </div>
           </div>
         </div>
@@ -350,26 +405,26 @@ export default function NavbarAdvanced() {
                         aria-hidden={megaOpenFor !== it.id}
                       >
                         <div className="mega-inner-compact">
-                          {/* Determine if children are category style or direct-children style */}
                           { (Array.isArray(it.children) && it.children[0] && it.children[0].items) ? (
                             /* CATEGORY MODE: left column shows categories, right panel displays items */
                             <>
-                              <div className="mega-left-compact" role="tablist" aria-label={`${it.label} categories`}>
+                              {/* LEFT COLUMN: attach ref so we can compute positions */}
+                              <div className="mega-left-compact" role="tablist" aria-label={`${it.label} categories`} ref={leftColRef}>
                                 {it.children.map((cat) => (
                                   <button
                                     key={cat.id}
+                                    ref={el => { if (el) megaLeftRefs.current[cat.id] = el; }}
                                     className={`mega-tab-compact ${activeMegaTab === cat.id ? 'active' : ''}`}
                                     onMouseEnter={() => showRightPanel(cat.id)}
                                     onFocus={() => showRightPanel(cat.id)}
                                     onClick={() => showRightPanel(cat.id)}
                                     aria-selected={activeMegaTab === cat.id}
                                   >
-                                    {/* category tabs always represent categories (they have items) so show icon */}
-                                    {/* Render icon left if menu align is left */}
                                     {it.align === 'left' ? (
                                       <>
-                                        <FaChevronRight className={`mini-left`} />
                                         <span>{cat.label}</span>
+                                        <FaChevronRight className={`mini-left`} />
+                                        
                                       </>
                                     ) : (
                                       <>
@@ -381,7 +436,16 @@ export default function NavbarAdvanced() {
                                 ))}
                               </div>
 
-                              <div className={`mega-right-panel ${activeMegaTab ? 'visible' : ''}`} role="region" aria-live="polite">
+                              {/* RIGHT PANEL: we now apply inline style to position it parallel to the left tab */}
+                              <div
+                                className={`mega-right-panel ${activeMegaTab ? 'visible' : ''}`}
+                                role="region"
+                                aria-live="polite"
+                                style={{
+                                  top: rightPanelStyle.top != null ? `${rightPanelStyle.top}px` : undefined,
+                                  left: rightPanelStyle.left != null ? `${rightPanelStyle.left}px` : undefined
+                                }}
+                              >
                                 {it.children.map((cat) => (
                                   <div key={cat.id} className={`mega-col ${activeMegaTab === cat.id ? 'visible' : ''}`}>
                                     <ul className="mega-links">
@@ -437,18 +501,16 @@ export default function NavbarAdvanced() {
                               </div>
                             </>
                           ) : (
-                            /* DIRECT-CHILD MODE (know-us): left column shows direct children.
-                               If a left item has children we show a nested-panel adjacent to the left column.
-                               Only show chevron icon for items that actually have nested children.
-                               When the whole menu is left-aligned, render the icon to the left of the label. */
+                            /* DIRECT-CHILD MODE */
                             <>
-                              <div className="mega-left-compact" role="tablist" aria-label={`${it.label} links`}>
+                              <div className="mega-left-compact" role="tablist" aria-label={`${it.label} links`} ref={leftColRef}>
                                 {it.children.map((child, idx) => {
                                   const key = nestedKey(it.id, null, idx);
                                   const hasNested = !!child.children && Array.isArray(child.children) && child.children.length > 0;
                                   return (
                                     <div key={key} style={{ position: 'relative' }}>
                                       <button
+                                        ref={el => { if (el) megaLeftRefs.current[key] = el; }}
                                         className={`mega-tab-compact ${nestedOpenItem === key ? 'active' : ''}`}
                                         onMouseEnter={() => {
                                           if (hasNested) openNested(key); else setNestedOpenItem(null);
@@ -456,7 +518,6 @@ export default function NavbarAdvanced() {
                                         onFocus={() => { if (hasNested) openNested(key); else setNestedOpenItem(null); }}
                                         onClick={() => {
                                           if (!hasNested) {
-                                            // direct link - close mega and navigate (we just close here)
                                             setMegaOpenFor(null);
                                             setActiveMegaTab(null);
                                           } else {
@@ -464,7 +525,6 @@ export default function NavbarAdvanced() {
                                           }
                                         }}
                                       >
-                                        {/* Only render chevron icon for items that have nested children */}
                                         {hasNested ? (
                                           it.align === 'left' ? (
                                             <>
@@ -482,7 +542,6 @@ export default function NavbarAdvanced() {
                                         )}
                                       </button>
 
-                                      {/* nested panel next to left column (for direct-child mode) */}
                                       {hasNested && (
                                         <div
                                           className={`nested-panel ${nestedOpenItem === key ? 'open' : ''}`}
@@ -505,7 +564,6 @@ export default function NavbarAdvanced() {
                                 })}
                               </div>
 
-                              {/* In direct-child mode there is no "right panel" with category items; skip */}
                               <div className="mega-right-panel" />
                             </>
                           )}
@@ -674,8 +732,8 @@ export default function NavbarAdvanced() {
 
           <div className="premium-social-section">
             <div className="premium-social-grid">
-              <a className="premium-social-link" href="#facebook" aria-label="Facebook"><FaFacebookF /></a>
-              <a className="premium-social-link" href="#instagram" aria-label="Instagram"><FaInstagram /></a>
+              <a className="premium-social-link" href="https://www.facebook.com/LegalTerminusofficial" aria-label="Facebook"><FaFacebookF /></a>
+              <a className="premium-social-link" href="https://www.instagram.com/legalterminus/" aria-label="Instagram"><FaInstagram /></a>
               <a className="premium-social-link" href="#twitter" aria-label="Twitter"><FaTwitter /></a>
               <a className="premium-social-link" href="#linkedin" aria-label="LinkedIn"><FaLinkedinIn /></a>
             </div>

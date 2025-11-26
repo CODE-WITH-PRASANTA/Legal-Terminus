@@ -10,8 +10,8 @@
   --green-dark: #1e3d33;
   --green-light: #4a7d68;
 
-  --text-color: #0b0b0b;
-  --icon-color: #0b0b0b;
+  --text-color: white;
+  --icon-color: #45a049;
   --bg-img: none;
 }
 
@@ -26,6 +26,7 @@
   background-repeat: no-repeat;
   isolation: isolate;
   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  letter-spacing: 1.2px;
 }
 
 /* white + gray overlay */
@@ -36,15 +37,16 @@
   pointer-events: none;
   background: linear-gradient(
     160deg,
-    rgba(255,255,255,0.96) 0%,
-    rgba(250,250,250,0.92) 18%,
-    rgba(240,240,240,0.82) 35%,
-    rgba(220,220,220,0.62) 60%,
-    rgba(200,200,200,0.36) 85%,
-    rgba(180,180,180,0.28) 100%
+    rgba(0,0,0,0.95) 0%,
+    rgba(0,0,0,0.92) 20%,
+    rgba(0,0,0,0.88) 40%,
+    rgba(0,0,0,0.82) 60%,
+    rgba(0,0,0,0.78) 80%,
+    rgba(0,0,0,0.72) 100%
   );
-  mix-blend-mode: normal;
-  opacity: 0.98;
+
+  mix-blend-mode: multiply;
+  opacity: 1;
 }
 
 .premium-footer::before {
@@ -350,4 +352,14 @@
 @keyframes logoGlow {
   0%,100% { filter: drop-shadow(0 0 8px rgba(200,154,75,0.2)); }
   50% { filter: drop-shadow(0 0 18px rgba(200,154,75,0.36)); }
+}
+
+.pr{
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  transition: color .25s ease;
+}
+.pr:hover{
+  color: #000000 !important; 
 }
