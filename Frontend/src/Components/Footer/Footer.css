@@ -1,0 +1,353 @@
+:root {
+  --accent: #c89a4b;
+  --accent-light: #dbb678;
+  --muted: rgba(11,11,11,0.92);
+  --muted-2: rgba(11,11,11,0.8);
+  --muted-3: rgba(11,11,11,0.6);
+
+  --green-primary: #45a049;  /* requested green */
+  --green-secondary: #3a6b5a;
+  --green-dark: #1e3d33;
+  --green-light: #4a7d68;
+
+  --text-color: #0b0b0b;
+  --icon-color: #0b0b0b;
+  --bg-img: none;
+}
+
+.premium-footer {
+  position: relative;
+  color: var(--text-color);
+  overflow: hidden;
+  padding: 80px 20px 0px;
+  background-image: var(--bg-img);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  isolation: isolate;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* white + gray overlay */
+.premium-footer-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    160deg,
+    rgba(255,255,255,0.96) 0%,
+    rgba(250,250,250,0.92) 18%,
+    rgba(240,240,240,0.82) 35%,
+    rgba(220,220,220,0.62) 60%,
+    rgba(200,200,200,0.36) 85%,
+    rgba(180,180,180,0.28) 100%
+  );
+  mix-blend-mode: normal;
+  opacity: 0.98;
+}
+
+.premium-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255,255,255,0.06) 0%,
+    rgba(0,0,0,0.04) 60%,
+    rgba(0,0,0,0.12) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.premium-footer-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: var(--text-color);
+}
+
+/* layout */
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr 1.3fr;
+  gap: 40px 50px;
+  margin-bottom: 50px;
+}
+
+.footer-col { min-width: 0; }
+
+/* titles */
+.footer-title {
+  color: var(--text-color);
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  margin-bottom: 24px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 2px;
+}
+
+/* links */
+.footer-links { list-style: none; padding:0; margin:0; }
+.footer-links li { margin: 14px 0; }
+.footer-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: clamp(0.875rem, 1.5vw, 0.9375rem);
+  font-weight: 500;
+  transition: all 0.28s ease;
+  padding: 6px 0;
+  position: relative;
+  overflow: hidden;
+}
+.link-icon { color: var(--icon-color); font-weight:700; font-size:12px; transition: transform .28s ease; }
+.link-text { position: relative; }
+.link-text::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--green-primary);
+  transition: width 0.28s ease;
+}
+.footer-links a:hover { transform: translateX(8px); }
+.footer-links a:hover .link-icon { transform: translateX(3px); }
+.footer-links a:hover .link-text::after { width:100%; }
+
+/* brand */
+.footer-center { text-align:center; display:flex; flex-direction:column; align-items:center; }
+.footer-logo { width: min(220px, 100%); height:auto; margin-bottom:20px; border-radius:12px; box-shadow: 0 8px 32px rgba(0,0,0,0.08); animation: logoGlow 3s ease-in-out infinite; }
+.footer-desc { color: var(--text-color); font-size: clamp(0.875rem,1.5vw,0.9375rem); max-width:320px; margin:0 auto 28px; line-height:1.7; }
+
+/* socials */
+.footer-socials { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.social-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--icon-color);
+  transition: all 0.24s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+.social-icon { font-size: 18px; z-index:2; color: #45a049; }
+.social-tooltip { position:absolute; bottom:-40px; left:50%; transform:translateX(-50%); background:var(--green-dark); color:white; padding:6px 12px; border-radius:6px; font-size:12px; opacity:0; visibility:hidden; transition: all .25s ease; white-space:nowrap; }
+.social-btn:hover { transform: translateY(-6px); background: var(--green-primary); color: white; border-color: rgba(0,0,0,0.04); box-shadow: 0 10px 28px rgba(0,0,0,0.08); }
+.social-btn:hover .social-icon { color: white; }
+.social-btn:hover .social-tooltip { opacity:1; visibility:visible; bottom:-34px; }
+
+/* contact callout: updated to use svg icon styled like .ci but larger */
+.contact-callout {
+  display:flex;
+  gap:16px;
+  align-items:center;
+  background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(250,250,250,0.94));
+  padding:20px;
+  border-radius:16px;
+  border:1px solid rgba(0,0,0,0.04);
+  margin-bottom:24px;
+  backdrop-filter: blur(4px);
+  transition: transform .28s ease;
+}
+.contact-callout:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+
+/* call-icon: white pill, green icon, larger size */
+.call-icon {
+  background: #ffffff;                 /* white pill */
+  color: var(--green-primary);         /* green icon color */
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  font-size: 22px; /* fallback if icon scales with font */
+}
+
+/* ensure svg inside call-icon inherits color */
+.call-icon svg,
+.call-icon > svg,
+.call-icon * {
+  color: inherit !important;
+  fill: currentColor !important;
+  stroke: none !important;
+}
+
+.call-text { flex:1; }
+.call-number { font-size: clamp(1.125rem,1.5vw,1.25rem); font-weight:700; color:var(--text-color); margin-bottom:4px; }
+.call-sub { font-size: clamp(0.75rem,1.5vw,0.8125rem); color: var(--muted-3); }
+
+/* contact list */
+.contact-list { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:16px; }
+.contact-item { display:flex; align-items:center; gap:16px; padding:12px 0; }
+
+/* wrapper pill for small icons */
+.ci {
+  background: #ffffff;
+  color: var(--green-primary);
+  font-size: 16px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+}
+
+/* ensure svg uses currentColor */
+.ci svg,
+.ci > svg,
+.ci * {
+  color: inherit !important;
+  fill: currentColor !important;
+  stroke: none !important;
+}
+
+.contact-info { display:flex; flex-direction:column; }
+.contact-label { font-size: clamp(0.75rem,1.5vw,0.8125rem); color: var(--muted-3); margin-bottom:2px; }
+.contact-info a, .contact-info span {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: clamp(0.875rem,1.5vw,0.9375rem);
+  font-weight:500;
+  transition: color .24s ease;
+}
+.contact-info a:hover { color: var(--green-primary); }
+
+/* bottom */
+/* ---------- replaced footer-bottom styles (full-bleed green with white inner card) ---------- */
+
+/* full-bleed green background */
+.footer-bottom {
+  /* make the green bar span the viewport full width while staying inside the footer element */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+
+  background: #45a049;     /* green background (full width) */
+  padding: 28px 0;         /* larger vertical spacing to show the green band */
+  border-radius: 0;        /* no outer rounding for full bleed */
+  box-shadow: none;
+}
+
+/* divider inside should be subtle over green */
+.footer-divider {
+  height: 1px;
+  width: 100%;
+  background: rgba(255,255,255,0.12);  /* softer white divider over green */
+  margin: 0 auto 18px;
+}
+
+/* inner white "card" that holds the content — centered and constrained */
+.footer-bottom-content {
+  /* make inner area a white rounded card to read like an "advanced label" */
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  color: white;          /* use green-dark for inner text to keep brand tone */
+  padding: 12px 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 8px 28px rgba(14,28,18,0.06);
+  flex-wrap: wrap;
+}
+
+/* ensure all inner text inherits the white-card colors (dark green text) */
+.footer-bottom-content * {
+  color: inherit !important;
+}
+
+/* small tweak to copyright and payment layout to work inside white card */
+.footer-bottom-content .copyright {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--green-dark);
+}
+
+/* Payment badges: darker green outlines, white text on tinted background */
+.payment-method {
+  padding: 6px 12px;
+  background: rgba(69,160,73,0.08);   /* faint green tint */
+  border-radius: 8px;
+  border: 1px solid rgba(69,160,73,0.16);
+  font-size: 12px;
+  color: var(--green-dark) !important;
+}
+
+/* responsive: ensure white card stacks on small screens */
+@media (max-width: 480px) {
+  .footer-bottom {
+    padding: 18px 0;
+  }
+  .footer-bottom-content {
+    padding: 14px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .payment-methods {
+    justify-content: center;
+  }
+}
+
+
+/* responsive */
+@media (max-width: 1024px) {
+  .footer-columns { grid-template-columns: 1fr 1fr; gap:40px 30px; }
+  .footer-center { grid-column: 1 / -1; order: -1; }
+}
+@media (max-width: 768px) {
+  .premium-footer { padding:60px 16px 30px; }
+  .footer-columns { grid-template-columns:1fr; gap:35px; }
+  .footer-bottom-content { flex-direction:column; text-align:center; gap:15px; }
+  .footer-logo { width: min(180px,100%); }
+  .social-btn { width:44px; height:44px; }
+}
+@media (max-width:480px) {
+  .premium-footer { padding:50px 12px 24px; }
+  .contact-callout { flex-direction:column; text-align:center; gap:12px; }
+  .footer-socials { gap:8px; }
+  .payment-methods { flex-wrap:wrap; justify-content:center; }
+}
+
+/* logo animation */
+@keyframes logoGlow {
+  0%,100% { filter: drop-shadow(0 0 8px rgba(200,154,75,0.2)); }
+  50% { filter: drop-shadow(0 0 18px rgba(200,154,75,0.36)); }
+}

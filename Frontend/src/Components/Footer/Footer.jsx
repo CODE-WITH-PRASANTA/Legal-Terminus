@@ -1,12 +1,190 @@
-import React from 'react'
-import './Footer.css'
+import React from 'react';
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaWhatsapp,
+  FaYoutube,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaArrowRight
+} from 'react-icons/fa';
+import './Footer.css';
+
+const BG_IMG =
+  'https://templatekit.jegtheme.com/justic/wp-content/uploads/sites/251/2022/03/athens-greece-the-academy-buildings-e1648383645835.jpg';
+
+const LOGO =
+  'https://legalterminus.com/wp-content/uploads/2023/09/Legal-Terminus-LOGO-GIF_300-x-150.gif';
 
 const Footer = () => {
   return (
-    <div>
-        
-    </div>
-  )
-}
+    <footer className="premium-footer" style={{ ['--bg-img']: `url(${BG_IMG})` }}>
+      <div className="premium-footer-overlay" />
+      <div className="premium-footer-inner">
+        <div className="footer-columns">
 
-export default Footer
+          {/* Quick Links */}
+          <div className="footer-col">
+            <h3 className="footer-title">Quick Links</h3>
+            <ul className="footer-links">
+              <li>
+                <a href="#about">
+                  <span className="link-icon">→</span>
+                  <span className="link-text">About Us</span>
+                </a>
+              </li>
+              <li>
+                <a href="#services">
+                  <span className="link-icon">→</span>
+                  <span className="link-text">Our Services</span>
+                </a>
+              </li>
+              <li>
+                <a href="#blog">
+                  <span className="link-icon">→</span>
+                  <span className="link-text">Latest Blog</span>
+                </a>
+              </li>
+              <li>
+                <a href="#contact">
+                  <span className="link-icon">→</span>
+                  <span className="link-text">Contact Us</span>
+                </a>
+              </li>
+              <li>
+                <a href="#product">
+                  <span className="link-icon">→</span>
+                  <span className="link-text">Products</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Service Links */}
+          <div className="footer-col">
+            <h3 className="footer-title">Service Links</h3>
+            <ul className="footer-links">
+              <li>
+                <a href="#privacy">
+                  <span className="link-icon">→</span>
+                  <span className="link-text">Privacy Policy</span>
+                </a>
+              </li>
+              <li>
+                <a href="#support">
+                  <span className="link-icon">→</span>
+                  <span className="link-text">Customer Support</span>
+                </a>
+              </li>
+              <li>
+                <a href="#disclaimer">
+                  <span className="link-icon">→</span>
+                  <span className="link-text">Disclaimer</span>
+                </a>
+              </li>
+              <li>
+                <a href="#faq">
+                  <span className="link-icon">→</span>
+                  <span className="link-text">FAQ</span>
+                </a>
+              </li>
+              <li>
+                <a href="#terms">
+                  <span className="link-icon">→</span>
+                  <span className="link-text">Terms & Conditions</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Center Brand */}
+          <div className="footer-col footer-center">
+            <div className="footer-brand">
+              <img src={LOGO} alt="Brand Logo" className="footer-logo" />
+            </div>
+
+            <p className="footer-desc">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+            </p>
+
+            <div className="footer-socials">
+              <a href="#fb" aria-label="facebook" className="social-btn">
+                <FaFacebookF className="social-icon" />
+                <span className="social-tooltip">Facebook</span>
+              </a>
+              <a href="#ig" aria-label="instagram" className="social-btn">
+                <FaInstagram className="social-icon" />
+                <span className="social-tooltip">Instagram</span>
+              </a>
+              <a href="#wa" aria-label="whatsapp" className="social-btn">
+                <FaWhatsapp className="social-icon" />
+                <span className="social-tooltip">WhatsApp</span>
+              </a>
+              <a href="#yt" aria-label="youtube" className="social-btn">
+                <FaYoutube className="social-icon" />
+                <span className="social-tooltip">YouTube</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Contact Section */}
+          <div className="footer-col footer-contact">
+            <h3 className="footer-title">Free Consultation</h3>
+
+            <div className="contact-callout">
+              {/* swap emoji for an SVG icon wrapped so it can be styled like others */}
+              <span className="call-icon"><FaPhone style={{ transform: "rotate(90deg)" }}/></span>
+              <div className="call-text">
+                <div className="call-number">+62 478-2240-190</div>
+                <div className="call-sub">24/7 Available Support</div>
+              </div>
+            </div>
+
+            <ul className="contact-list">
+              <li>
+                <div className="contact-item">
+                  <span className="ci"><FaEnvelope /></span>
+                  <div className="contact-info">
+                    <span className="contact-label">Email Us</span>
+                    <a href="mailto:justic@support.com">justic@support.com</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className="contact-item">
+                  <span className="ci"><FaPhone style={{ transform: "rotate(90deg)" }}/></span>
+                  <div className="contact-info">
+                    <span className="contact-label">Call Us</span>
+                    <a href="tel:+624782240190">+62 478-2240-190</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className="contact-item">
+                  <span className="ci"><FaMapMarkerAlt /></span>
+                  <div className="contact-info">
+                    <span className="contact-label">Visit Us</span>
+                    <span>Office 12, Athens, Greece</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          
+          <div className="footer-bottom-content">
+            <div className="copyright">
+              Copyright © Justic 2024. All Rights Reserved.
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
