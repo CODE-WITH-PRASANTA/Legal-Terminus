@@ -136,7 +136,7 @@ const Footer = () => {
               {/* swap emoji for an SVG icon wrapped so it can be styled like others */}
               <span className="call-icon"><FaPhone style={{ transform: "rotate(90deg)" }}/></span>
               <div className="call-text">
-                <div className="call-number">+62 478-2240-190</div>
+                <div className="call-number">8280093456</div>
                 <div className="call-sub">24/7 Available Support</div>
               </div>
             </div>
@@ -147,7 +147,7 @@ const Footer = () => {
                   <span className="ci"><FaEnvelope /></span>
                   <div className="contact-info">
                     <span className="contact-label">Email Us</span>
-                    <a href="mailto:justic@support.com">justic@support.com</a>
+                    <a href="mailto:sales21@legalterminus.com">sales21@legalterminus.com</a>
                   </div>
                 </div>
               </li>
@@ -156,7 +156,7 @@ const Footer = () => {
                   <span className="ci"><FaPhone style={{ transform: "rotate(90deg)" }}/></span>
                   <div className="contact-info">
                     <span className="contact-label">Call Us</span>
-                    <a href="tel:+624782240190">+62 478-2240-190</a>
+                    <a href="tel:8280093456">8280093456</a>
                   </div>
                 </div>
               </li>
