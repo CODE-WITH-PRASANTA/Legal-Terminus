@@ -1,3 +1,4 @@
+// NavbarAdvanced.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import {
   FaEnvelope,
@@ -20,7 +21,7 @@ import './Navbar.css';
 const LOGO_GIF = 'https://legalterminus.com/wp-content/uploads/2023/09/Legal-Terminus-LOGO-GIF_300-x-150.gif';
 
 const navData = [
-  { id: 'home', label: 'Home', href: '/home' },
+  { id: 'home', label: 'Home', href: '/' },
 
   {
     id: 'setup-business',
@@ -203,6 +204,10 @@ export default function NavbarAdvanced() {
   const drawerRef = useRef(null);
   const megaTimeoutRef = useRef(null);
 
+  // NEW: mobile two-step state:
+  // mobileActiveSub holds a key like "topId__catId" to indicate which submenu inside a top-level section is open (shows mega items)
+  const [mobileActiveSub, setMobileActiveSub] = useState(null);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', onScroll);
@@ -215,6 +220,9 @@ export default function NavbarAdvanced() {
       setTimeout(() => drawerRef.current?.focus(), 0);
     } else {
       document.body.classList.remove('no-scroll');
+      // when drawer closes reset mobile-specific state
+      setMobileExpanded({});
+      setMobileActiveSub(null);
     }
     return () => document.body.classList.remove('no-scroll');
   }, [isMenuOpen]);
@@ -318,8 +326,25 @@ export default function NavbarAdvanced() {
   const openNested = (key) => setNestedOpenItem(key);
   const closeNested = () => setNestedOpenItem(null);
 
+  // MOBILE: toggles the top-level section in the drawer
   const toggleMobileSection = (id) => {
-    setMobileExpanded(prev => ({ ...prev, [id]: !prev[id] }));
+    setMobileExpanded(prev => {
+      const newState = { ...prev, [id]: !prev[id] };
+      // if we are collapsing the top-level, also clear any active sub within it
+      if (!newState[id]) {
+        // if the active sub belongs to this top section, clear it
+        if (mobileActiveSub && mobileActiveSub.startsWith(`${id}__`)) {
+          setMobileActiveSub(null);
+        }
+      }
+      return newState;
+    });
+  };
+
+  // MOBILE: toggles a submenu (i.e., category -> show its items). key is "{topId}__{catId}"
+  const toggleMobileSub = (topId, catId) => {
+    const key = `${topId}__${catId}`;
+    setMobileActiveSub(prev => (prev === key ? null : key));
   };
 
   return (
@@ -424,7 +449,7 @@ export default function NavbarAdvanced() {
                                       <>
                                         <span>{cat.label}</span>
                                         <FaChevronRight className={`mini-left`} />
-                                        
+
                                       </>
                                     ) : (
                                       <>
@@ -649,6 +674,7 @@ export default function NavbarAdvanced() {
                       </a>
                     ) : (
                       <>
+                        {/* Top-level toggle: opens the section (step 1) */}
                         <button
                           className="premium-nav-link"
                           onClick={() => toggleMobileSection(item.id)}
@@ -658,44 +684,59 @@ export default function NavbarAdvanced() {
                           <FaChevronRight className="premium-link-arrow" />
                         </button>
 
+                        {/* Expanded area for the top-level item */}
                         <div className={`premium-sublist ${mobileExpanded[item.id] ? 'expanded' : ''}`}>
                           {item.children.map((cat) => {
+                            // If cat has items -> this becomes the second-step: clicking it shows the actual items (mega)
                             if (cat.items) {
+                              const subKey = `${item.id}__${cat.id}`;
+                              const isActiveSub = mobileActiveSub === subKey;
                               return (
                                 <div key={cat.id} className="premium-subsection">
-                                  <div className="premium-subsection-head"><strong>{cat.label}</strong></div>
-                                  <ul className="premium-sublinks">
-                                    {cat.items.map((sub, i) => (
-                                      <li key={i}>
-                                        <a href={sub.href} onClick={() => setIsMenuOpen(false)} className="premium-nav-link simple">
-                                          <span className="premium-link-text">{sub.label}</span>
-                                          <FaChevronRight className="premium-link-arrow" />
-                                        </a>
-                                      </li>
-                                    ))}
-                                  </ul>
+                                  <button
+                                    className="premium-nav-link simple"
+                                    onClick={() => toggleMobileSub(item.id, cat.id)}
+                                    aria-expanded={isActiveSub}
+                                  >
+                                    <span className="premium-link-text"><strong>{cat.label}</strong></span>
+                                    <FaChevronRight className="premium-link-arrow" />
+                                  </button>
+
+                                  {/* This is the mega items panel (step 2) - only visible when this cat is active */}
+                                  <div className={`premium-sublist ${isActiveSub ? 'expanded' : ''}`} style={{ paddingLeft: 12 }}>
+                                    <ul className="premium-sublinks">
+                                      {cat.items.map((sub, i) => (
+                                        <li key={i}>
+                                          <a href={sub.href} onClick={() => { setIsMenuOpen(false); setMobileActiveSub(null); }} className="premium-nav-link simple">
+                                            <span className="premium-link-text">{sub.label}</span>
+                                            <FaChevronRight className="premium-link-arrow" />
+                                          </a>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
                                 </div>
                               );
                             } else {
+                              // Direct child (no 'items') - could be link or nested children
+                              const hasInnerChildren = !!cat.children && Array.isArray(cat.children) && cat.children.length > 0;
                               return (
                                 <div key={cat.label} className="premium-subsection">
-                                  <div className="premium-subsection-head"><strong>{cat.label}</strong></div>
-                                  <ul className="premium-sublinks">
-                                    <li>
-                                      <a href={cat.href} onClick={() => setIsMenuOpen(false)} className="premium-nav-link simple">
-                                        <span className="premium-link-text">{cat.label}</span>
-                                        <FaChevronRight className="premium-link-arrow" />
-                                      </a>
-                                      {cat.children && cat.children.map((c2, idx2) => (
-                                        <div key={idx2} style={{ marginLeft: 12 }}>
-                                          <a href={c2.href} onClick={() => setIsMenuOpen(false)} className="premium-nav-link simple">
-                                            <span className="premium-link-text">{c2.label}</span>
-                                            <FaChevronRight className="premium-link-arrow" />
-                                          </a>
-                                        </div>
+                                  <a href={cat.href} onClick={() => setIsMenuOpen(false)} className="premium-nav-link simple">
+                                    <span className="premium-link-text">{cat.label}</span>
+                                    <FaChevronRight className="premium-link-arrow" />
+                                  </a>
+
+                                  {hasInnerChildren && (
+                                    <div style={{ marginLeft: 12 }}>
+                                      {cat.children.map((c2, idx2) => (
+                                        <a key={idx2} href={c2.href} onClick={() => setIsMenuOpen(false)} className="premium-nav-link simple" style={{ marginTop: 6 }}>
+                                          <span className="premium-link-text">{c2.label}</span>
+                                          <FaChevronRight className="premium-link-arrow" />
+                                        </a>
                                       ))}
-                                    </li>
-                                  </ul>
+                                    </div>
+                                  )}
                                 </div>
                               );
                             }
