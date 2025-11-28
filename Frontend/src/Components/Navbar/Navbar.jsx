@@ -31,7 +31,7 @@ const navData = [
         id: 'profit',
         label: 'Profit Making Structure',
         items: [
-          { label: 'Private Limited Company Registration In India', href: '/private-limited' },
+          { label: 'Private Limited Company Registration In India', href: '/private-limited-company-registration-in-india' },
           { label: 'Incorporation Of Wholly Owned Subsidiary In India', href: '/wholly-owned' },
           { label: 'Public Limited Company Registration In India', href: '/public-limited' },
           { label: 'One Person Company Registration In India', href: '/one-person-company' },

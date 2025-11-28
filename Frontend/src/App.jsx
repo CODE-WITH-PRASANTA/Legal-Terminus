@@ -16,7 +16,7 @@ function App() {
 
 
         {/*   ALL SubPages */}
-        <Route path="/private-limited" element={<PrivateLimited />} />
+        <Route path="/private-limited-company-registration-in-india" element={<PrivateLimited />} />
       </Routes>
       <Footer />
     </Router>
