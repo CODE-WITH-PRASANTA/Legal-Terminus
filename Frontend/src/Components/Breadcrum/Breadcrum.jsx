@@ -11,10 +11,10 @@ const Breadcrum = () => {
       <div className="breadcrum-inner">
         {/* LEFT PANEL */}
         <div className="breadcrum-left-panel">
-          <h1 className="breadcrum-title">
-            <span className="breadcrum-orange">Company Registration</span>{' '}
-            <span className="breadcrum-black">in India</span>
-          </h1>
+         <h1 className="breadcrum-title">
+              <span className="breadcrum-orange">Private Limited Company Registration</span>{' '}
+              <span className="breadcrum-black">in India</span>
+            </h1>
 
           <h3 className="breadcrum-subtitle">
             <strong>Save 50% Today</strong>{' '}
@@ -24,9 +24,7 @@ const Breadcrum = () => {
           </h3>
 
           <p className="breadcrum-desc">
-            Avail consultation from our seasoned consultants for expert support in company
-            registration in India. Register a private limited company with us, just like
-            50,000+ entrepreneurs Pan India
+            Legal Terminus can help you with Private Limited Company registration, as and when required, in a hassle-free manner within a reasonable time span. We provide competitive professional fees starting at Rs. 3,999/- for your needs in private limited company registration in India. 
           </p>
 
           <h4 className="breadcrum-included">What's Included?</h4>
@@ -45,11 +43,11 @@ const Breadcrum = () => {
 
           <p className="breadcrum-note">
             <span className="breadcrum-star">★</span>
-            Register 1000+ Companies Every Month + Save 18% with GST Registration
+            Register 100+ Companies Every Month + Save 18% with GST Registration
           </p>
 
           <div className="breadcrum-cta-row">
-            <button className="breadcrum-schedule-btn">Schedule a call ➜</button>
+            <button className="breadcrum-schedule-btn">Book a Schedule ➜</button>
 
             <div className="breadcrum-reviews">
               <div className="breadcrum-google">
@@ -73,46 +71,64 @@ const Breadcrum = () => {
             <h3 className="breadcrum-form-title">Get Free Expert Consultation</h3>
 
             <form
-              className="breadcrum-lead-form"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <input
-                className="breadcrum-input"
-                placeholder="Your Name"
-                type="text"
-              />
-              <input
-                className="breadcrum-input"
-                placeholder="Email Address"
-                type="email"
-              />
-              <div className="breadcrum-phone-row">
-                {/* <div className="breadcrum-country">🇮🇳 +91</div> */}
+                className="breadcrum-lead-form"
+                onSubmit={(e) => e.preventDefault()}
+              >
                 <input
-                  className="breadcrum-input breadcrum-phone"
-                  placeholder="Mobile Number"
-                  type="tel"
+                  className="breadcrum-input"
+                  placeholder="Your Name"
+                  type="text"
                 />
-              </div>
 
-              <select className="breadcrum-input breadcrum-select">
-                <option>Select State</option>
-                <option>Maharashtra</option>
-                <option>Delhi</option>
-                <option>Karnataka</option>
-              </select>
+                <input
+                  className="breadcrum-input"
+                  placeholder="Email Address"
+                  type="email"
+                />
 
-              <label className="breadcrum-whatsapp">
-                Get Update on{' '}
-                <span className="breadcrum-wh-icon">Whatsapp</span>
-                <input type="checkbox" defaultChecked />
-                <span className="breadcrum-toggle" />
-              </label>
+                <div className="breadcrum-phone-row">
+                  <input
+                    className="breadcrum-input breadcrum-phone"
+                    placeholder="Mobile Number"
+                    type="tel"
+                  />
+                </div>
 
-              <button className="breadcrum-get-started" type="submit">
-                GET STARTED NOW
-              </button>
-            </form>
+                <select className="breadcrum-input breadcrum-select">
+                  <option>Select State</option>
+                  <option>Maharashtra</option>
+                  <option>Delhi</option>
+                  <option>Karnataka</option>
+                </select>
+
+              {/* ⭐ Preferable Call Timing Dropdown */}
+                  <select className="breadcrum-input breadcrum-select">
+                    <option>Select Preferable Time to Call</option>
+                    <option>9:00 AM – 10:00 AM</option>
+                    <option>10:00 AM – 11:00 AM</option>
+                    <option>11:00 AM – 12:00 PM</option>
+                    <option>12:00 PM – 1:00 PM</option>
+                    <option>1:00 PM – 2:00 PM</option>
+                    <option>2:00 PM – 3:00 PM</option>
+                    <option>3:00 PM – 4:00 PM</option>
+                    <option>4:00 PM – 5:00 PM</option>
+                    <option>5:00 PM – 6:00 PM</option>
+                    <option>6:00 PM – 7:00 PM</option>
+                  </select>
+
+
+                <label className="breadcrum-whatsapp">
+                  Get Update on{' '}
+                  <span className="breadcrum-wh-icon">Whatsapp</span>
+                  <input type="checkbox" defaultChecked />
+                  <span className="breadcrum-toggle" />
+                </label>
+
+                <button className="breadcrum-get-started" type="submit">
+                  GET STARTED NOW
+                </button>
+              </form>
+
           </div>
         </aside>
       </div>

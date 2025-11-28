@@ -154,7 +154,7 @@ const navData = [
         id: 'tm-services',
         label: 'Registration And Compliance Services',
         items: [
-          { label: 'Trademark Application', href: '/about' },
+          { label: 'Trademark Application', href: '/' },
           { label: 'Trademark Renewal', href: '/trademark/renewal' },
           { label: 'Reply Of Examination Report', href: '/trademark/exam-reply' },
           { label: 'Trademark Opposition', href: '/trademark/opposition' },
@@ -349,6 +349,7 @@ export default function NavbarAdvanced() {
 
   return (
     <header className={`header-wrapper ${scrolled ? 'scrolled' : ''}`}>
+
       {/* TOP BAR */}
       <div className="topbar">
         <div className="topbar-inner">
@@ -529,65 +530,61 @@ export default function NavbarAdvanced() {
                             /* DIRECT-CHILD MODE */
                             <>
                               <div className="mega-left-compact" role="tablist" aria-label={`${it.label} links`} ref={leftColRef}>
-                                {it.children.map((child, idx) => {
-                                  const key = nestedKey(it.id, null, idx);
-                                  const hasNested = !!child.children && Array.isArray(child.children) && child.children.length > 0;
-                                  return (
-                                    <div key={key} style={{ position: 'relative' }}>
-                                      <button
-                                        ref={el => { if (el) megaLeftRefs.current[key] = el; }}
-                                        className={`mega-tab-compact ${nestedOpenItem === key ? 'active' : ''}`}
-                                        onMouseEnter={() => {
-                                          if (hasNested) openNested(key); else setNestedOpenItem(null);
-                                        }}
-                                        onFocus={() => { if (hasNested) openNested(key); else setNestedOpenItem(null); }}
-                                        onClick={() => {
-                                          if (!hasNested) {
-                                            setMegaOpenFor(null);
-                                            setActiveMegaTab(null);
-                                          } else {
-                                            openNested(key);
-                                          }
-                                        }}
-                                      >
-                                        {hasNested ? (
-                                          it.align === 'left' ? (
-                                            <>
-                                              <FaChevronRight className="mini-left" />
-                                              <span>{child.label}</span>
-                                            </>
-                                          ) : (
-                                            <>
-                                              <span>{child.label}</span>
-                                              <FaChevronRight className="mini-right" />
-                                            </>
-                                          )
-                                        ) : (
-                                          <span style={{ width: '100%', textAlign: 'left' }}>{child.label}</span>
-                                        )}
-                                      </button>
+                                  {it.children.map((child, idx) => {
+                                    const key = nestedKey(it.id, null, idx);
+                                    const hasNested = !!child.children && Array.isArray(child.children) && child.children.length > 0;
 
-                                      {hasNested && (
-                                        <div
-                                          className={`nested-panel ${nestedOpenItem === key ? 'open' : ''}`}
-                                          onMouseEnter={() => openNested(key)}
-                                          onMouseLeave={() => setTimeout(() => {
-                                            if (nestedOpenItem === key) setNestedOpenItem(null);
-                                          }, 120)}
-                                        >
-                                          <ul className="nested-links">
-                                            {child.children.map((sub, si) => (
-                                              <li key={`${key}__c__${si}`}>
-                                                <a href={sub.href} onClick={() => { setMegaOpenFor(null); setNestedOpenItem(null); }}>{sub.label}</a>
-                                              </li>
-                                            ))}
-                                          </ul>
-                                        </div>
-                                      )}
-                                    </div>
-                                  );
-                                })}
-                              </div>
+                                    return (
+                                      <div key={key} style={{ position: 'relative' }}>
+
+                                        {!hasNested ? (
+                                          // ✔ FIXED: DIRECT LINK WORKS
+                                          <a
+                                            href={child.href}
+                                            className="mega-tab-compact"
+                                            onClick={() => { setMegaOpenFor(null); setNestedOpenItem(null); }}
+                                            style={{ textAlign: 'left' }}
+                                          >
+                                            {child.label}
+                                          </a>
+                                        ) : (
+                                          <button
+                                            ref={el => { if (el) megaLeftRefs.current[key] = el; }}
+                                            className={`mega-tab-compact ${nestedOpenItem === key ? 'active' : ''}`}
+                                            onMouseEnter={() => openNested(key)}
+                                            onClick={() => openNested(key)}
+                                          >
+                                            {child.label}
+                                            <FaChevronRight className="mini-right" />
+                                          </button>
+                                        )}
+
+                                        {hasNested && (
+                                          <div
+                                            className={`nested-panel ${nestedOpenItem === key ? 'open' : ''}`}
+                                            onMouseEnter={() => openNested(key)}
+                                            onMouseLeave={() => setNestedOpenItem(null)}
+                                          >
+                                            <ul className="nested-links">
+                                              {child.children.map((sub, si) => (
+                                                <li key={si}>
+                                                  <a
+                                                    href={sub.href}
+                                                    onClick={() => { setMegaOpenFor(null); setNestedOpenItem(null); }}
+                                                  >
+                                                    {sub.label}
+                                                  </a>
+                                                </li>
+                                              ))}
+                                            </ul>
+                                          </div>
+                                        )}
+
+                                      </div>
+                                    );
+                                  })}
+                                </div>
+
 
                               <div className="mega-right-panel" />
                             </>
@@ -781,6 +778,7 @@ export default function NavbarAdvanced() {
           </div>
         </div>
       </aside>
+      
     </header>
   );
 }
