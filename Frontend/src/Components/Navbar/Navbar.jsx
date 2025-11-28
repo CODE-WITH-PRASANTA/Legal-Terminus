@@ -154,7 +154,7 @@ const navData = [
         id: 'tm-services',
         label: 'Registration And Compliance Services',
         items: [
-          { label: 'Trademark Application', href: '/trademark/application' },
+          { label: 'Trademark Application', href: '/about' },
           { label: 'Trademark Renewal', href: '/trademark/renewal' },
           { label: 'Reply Of Examination Report', href: '/trademark/exam-reply' },
           { label: 'Trademark Opposition', href: '/trademark/opposition' },
