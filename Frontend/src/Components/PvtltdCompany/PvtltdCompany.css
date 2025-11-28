@@ -1,0 +1,31 @@
+.overview-wrapper {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+  font-family: "Poppins", sans-serif;
+}
+
+.overview-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.overview-text {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #374151;
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .overview-title {
+    font-size: 26px;
+  }
+
+  .overview-text {
+    font-size: 15px;
+  }
+}
