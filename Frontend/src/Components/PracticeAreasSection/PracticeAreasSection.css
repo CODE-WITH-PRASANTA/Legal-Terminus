@@ -1,0 +1,269 @@
+/* PracticeAreasSection.css
+   Full stylesheet - self-contained and responsive.
+   - Keeps class names practiceareassection-*
+   - Adds top label "Practice Areas" in #e3a72f
+   - Fixes hover blocking by ensuring decorative back doesn't capture pointer events
+   - Responsive: 3 / 2 / 1 columns, accessible, reduced-motion friendly
+*/
+
+
+/* ---------- Section wrapper ---------- */
+.practiceareassection {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+  padding: 88px 16px;
+  display: flex;
+  justify-content: center;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #071228;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* container caps width for ultra-wide displays */
+.practiceareassection-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+/* ---------- NEW TOP LABEL ---------- */
+.practiceareassection-toplabel {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #e3a72f; /* requested color */
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* header */
+.practiceareassection-head { text-align: center; margin-bottom: 12px; }
+.practiceareassection-title {
+  font-size: clamp(24px, 3.2vw, 36px);
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+.practiceareassection-subtitle {
+  color: #6b7685;
+  margin-top: 10px;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ---------- Grid: EXACTLY 3 columns on wide screens ---------- */
+.practiceareassection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3-per-row on wide screens */
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* card wrapper perspective */
+.practiceareassection-card { perspective: 1000px; outline: none; }
+
+/* inner card */
+.practiceareassection-card-inner {
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.98));
+  border-radius: 16px;
+  padding: 26px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(11,18,30,0.06);
+  transition: transform 360ms cubic-bezier(.2,.9,.2,1), box-shadow 360ms ease, border-color 260ms ease;
+  border: 1px solid rgba(11,18,30,0.04);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  z-index: 2; /* ensure interactive layer sits above decorative back */
+}
+
+/* hover / focus tilt */
+.practiceareassection-card:hover .practiceareassection-card-inner,
+.practiceareassection-card:focus .practiceareassection-card-inner {
+  transform: translateY(-10px) rotateX(3deg) translateZ(8px);
+  box-shadow: 0 26px 60px rgba(11,18,30,0.12);
+  border-color: rgba(227,167,47,0.16);
+}
+
+/* decorative glow (visual only) */
+.practiceareassection-card::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(227,167,47,0.06), transparent 40%);
+  transform: rotate(12deg);
+  pointer-events: none;
+  transition: transform 360ms ease, opacity 360ms ease;
+  opacity: 1;
+}
+
+/* top area: icon + title */
+.practiceareassection-card-top { display: flex; gap: 16px; align-items: center; }
+
+/* icon */
+.practiceareassection-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(227,167,47,0.12), rgba(198,140,30,0.06));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #e3a72f;
+  flex: 0 0 auto;
+  transition: transform 260ms ease, color 260ms ease;
+}
+
+/* icon micro-interaction */
+.practiceareassection-card:hover .practiceareassection-icon,
+.practiceareassection-card:focus .practiceareassection-icon {
+  transform: translateY(-6px) rotate(-6deg);
+  color: #c68c1e;
+}
+
+/* title & text */
+.practiceareassection-card-title { font-size: 20px; margin: 0; font-weight: 700; }
+.practiceareassection-card-text {
+  margin: 12px 0 0 0;
+  color: #6b7685;
+  line-height: 1.6;
+  font-size: 15px;
+  flex: 1 1 auto;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+/* actions */
+.practiceareassection-actions { display: flex; gap: 12px; align-items: center; margin-top: 18px; }
+
+/* primary CTA */
+.practiceareassection-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(90deg, #e3a72f, #c68c1e);
+  color: #081226;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 26px rgba(227,167,47,0.12);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  font-size: 14px;
+}
+.practiceareassection-btn .btn-arrow { display: inline-block; transform: translateX(0); transition: transform 220ms ease; }
+.practiceareassection-btn:hover .btn-arrow { transform: translateX(6px); }
+.practiceareassection-btn:hover { transform: translateY(-4px); box-shadow: 0 18px 44px rgba(227,167,47,0.12); }
+
+/* ghost / secondary */
+.practiceareassection-ghost {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid rgba(11,18,30,0.06);
+  color: #6b7685;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease;
+}
+.practiceareassection-ghost:hover { transform: translateY(-3px); background: rgba(11,18,30,0.03); }
+
+/* highlight (2nd, 4th, 6th) */
+.practiceareassection-card.highlight .practiceareassection-card-inner {
+  background: linear-gradient(135deg, #e3a72f, #c68c1e);
+  color: white;
+  border: none;
+  box-shadow: 0 22px 48px rgba(227,167,47,0.14);
+}
+.practiceareassection-card.highlight .practiceareassection-icon {
+  background: rgba(255,255,255,0.12);
+  color: white;
+}
+.practiceareassection-card.highlight .practiceareassection-card-title,
+.practiceareassection-card.highlight .practiceareassection-card-text {
+  color: #fff;
+}
+.practiceareassection-card.highlight .practiceareassection-ghost {
+  border-color: rgba(255,255,255,0.14);
+  color: rgba(255,255,255,0.92);
+}
+.practiceareassection-card.highlight .practiceareassection-btn {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  box-shadow: none;
+}
+
+/* ---------- DECORATIVE BACK (visual only) ---------- */
+/* previously this layer blocked hover for some cards — ensure it doesn't */
+.practiceareassection-card-back {
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* FIX: don't intercept hover/click */
+  z-index: 1;
+  background: transparent; /* keep decorative usage possible */
+}
+
+/* entrance animation + stagger using inline --i */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px) scale(.995); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.practiceareassection-grid .practiceareassection-card {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 560ms cubic-bezier(.2,.9,.2,1) forwards;
+  animation-delay: calc(var(--i,1) * 60ms);
+}
+
+/* ---------- Responsive breakpoints ---------- */
+
+/* Ultra-wide: larger spacing */
+@media (min-width: 1600px) {
+  .practiceareassection-grid { gap: 36px; }
+  .practiceareassection-card-inner { padding: 32px; min-height: 360px; }
+}
+
+/* Desktop → Tablet: switch to 2 columns */
+@media (max-width: 1000px) {
+  .practiceareassection-grid { grid-template-columns: repeat(2, 1fr); }
+  .practiceareassection-card-inner { min-height: 300px; padding: 22px; }
+}
+
+/* Tablet → Mobile: single column, stack CTAs */
+@media (max-width: 640px) {
+  .practiceareassection-grid { grid-template-columns: 1fr; gap: 18px; }
+  .practiceareassection-card-inner { padding: 18px; min-height: auto; }
+  .practiceareassection-btn { width: 100%; justify-content: center; }
+  .practiceareassection-actions { flex-direction: column; align-items: stretch; }
+  .practiceareassection-icon { width: 56px; height: 56px; font-size: 22px; }
+  .practiceareassection-title { font-size: 22px; }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .practiceareassection-card-inner { padding: 14px; }
+  .practiceareassection-card-text { font-size: 14px; }
+  .practiceareassection-btn { padding: 12px; font-size: 14px; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .practiceareassection-card-inner,
+  .practiceareassection-grid .practiceareassection-card {
+    transition: none !important;
+    animation: none !important;
+  }
+}

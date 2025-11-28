@@ -1,0 +1,498 @@
+/* ContactUsBanner.css */
+
+/* CSS variables */
+:root {
+  --accent: #e6a81d;
+  --text: #fff;
+  --muted: rgba(255, 255, 255, 0.9);
+}
+
+/* ========== BASE (mobile-first base: smallest screens) ========== */
+
+.contactusbanner-root {
+  position: relative;
+  width: 100%;
+  min-height: 520px; /* mobile base */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #0f0f0f;
+  color: var(--text);
+  perspective: 1400px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- HERO IMAGE MOTION UPGRADE ---------- */
+
+.hero-img-wrap {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center right;
+  filter: brightness(0.72) contrast(1.05);
+  transform: scale(1.12); /* slightly reduced base scale for mobile */
+  transition: transform 1.2s cubic-bezier(.22,.9,.36,1), filter 1.3s;
+  will-change: transform;
+}
+
+/* soft-glass sheen layer */
+.hero-img-glass {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(2px) brightness(1.04);
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+/* animated reflection sweep */
+.hero-img-sweep {
+  position: absolute;
+  top: -30%;
+  left: -40%;
+  width: 60%;
+  height: 160%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.22) 45%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(-18deg);
+  opacity: 0;
+  pointer-events: none;
+  filter: blur(12px);
+  mix-blend-mode: overlay;
+}
+
+/* overlay */
+.contactusbanner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 10, 10, 0.7),
+    rgba(10, 10, 10, 0.4),
+    rgba(10, 10, 10, 0.15)
+  );
+  z-index: 1;
+}
+
+/* content container (mobile first) */
+.contactusbanner-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+/* left column (mobile) — full width */
+.contactusbanner-left {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Title — mobile scale */
+.contactusbanner-title {
+  font-size: 28px;
+  line-height: 1.06;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  word-break: keep-all;
+}
+
+/* highlight */
+.highlight-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.highlight-wrap::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.22em;
+  height: 0.35em;
+  background: var(--accent);
+  z-index: -1;
+  border-radius: 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.55s cubic-bezier(.12,.91,.3,1.15);
+}
+
+.highlight-wrap:hover::before {
+  transform: scaleX(1.05);
+}
+
+/* description — mobile */
+.contactusbanner-desc {
+  max-width: 100%;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0 0 18px 0;
+}
+
+/* CTA */
+.contactusbanner-cta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.btn-get {
+  background: var(--accent);
+  padding: 12px 20px;
+  font-weight: 700;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+.btn-get:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure focus styles for accessibility */
+.btn-get:focus {
+  outline: 3px solid rgba(230, 168, 29, 0.25);
+  outline-offset: 2px;
+}
+
+/* Ensure children don't overflow on small screens */
+.contactusbanner-root * {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* ========== RESPONSIVE ADJUSTMENTS (only max-width queries, largest to smallest) ========== */
+
+/* 4K / very large screens (apply broad scaling improvements) */
+@media (max-width: 3840px) {
+  .contactusbanner-root {
+    min-height: 680px;
+  }
+
+  .hero-img {
+    transform: scale(1.2);
+  }
+
+  .contactusbanner-container {
+    padding-left: 56px;
+    padding-right: 56px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .contactusbanner-title {
+    font-size: 64px;
+    line-height: 1.02;
+  }
+
+  .contactusbanner-desc {
+    font-size: 15px;
+    max-width: 520px;
+  }
+
+  .btn-get {
+    padding: 14px 26px;
+    font-size: 15px;
+  }
+}
+
+/* Desktop wide (<=2560px) */
+@media (max-width: 2560px) {
+  .contactusbanner-root {
+    min-height: 640px;
+  }
+
+  .hero-img {
+    transform: scale(1.22);
+  }
+
+  .contactusbanner-container {
+    max-width: 1400px;
+    padding-left: 72px;
+    padding-right: 72px;
+    padding-top: 72px;
+    padding-bottom: 72px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .contactusbanner-left {
+    width: 56%;
+    max-width: 720px;
+  }
+
+  .contactusbanner-title {
+    font-size: 56px;
+    margin-bottom: 18px;
+  }
+
+  .contactusbanner-desc {
+    font-size: 15px;
+    max-width: 520px;
+  }
+}
+
+/* Large desktop / laptop (<=1440px) */
+@media (max-width: 1440px) {
+  .contactusbanner-root {
+    min-height: 600px;
+  }
+
+  .hero-img {
+    background-position: center right;
+    transform: scale(1.18);
+  }
+
+  .contactusbanner-container {
+    max-width: 1200px;
+    padding-left: 56px;
+    padding-right: 56px;
+    padding-top: 56px;
+    padding-bottom: 56px;
+    gap: 28px;
+  }
+
+  .contactusbanner-left {
+    width: 58%;
+  }
+
+  .contactusbanner-title {
+    font-size: 44px;
+  }
+
+  .contactusbanner-desc {
+    max-width: 520px;
+    font-size: 15px;
+  }
+
+  .btn-get {
+    padding: 14px 24px;
+  }
+}
+
+/* Tablet (<=1024px) — ensure table behavior becomes scrollable if any table exists */
+@media (max-width: 1024px) {
+  .contactusbanner-root {
+    min-height: 560px;
+    perspective: 1000px;
+  }
+
+  .hero-img {
+    transform: scale(1.14);
+    background-position: center;
+  }
+
+  .contactusbanner-container {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .contactusbanner-left {
+    width: 100%;
+  }
+
+  .contactusbanner-title {
+    font-size: 34px;
+    margin-bottom: 12px;
+  }
+
+  .contactusbanner-desc {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  /* table responsiveness: horizontal scroll on narrower viewports */
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+}
+
+/* Small tablet / large phone (<=768px) */
+@media (max-width: 768px) {
+  .contactusbanner-root {
+    min-height: 520px;
+  }
+
+  .hero-img {
+    transform: scale(1.12);
+    filter: brightness(0.76) contrast(1.02);
+  }
+
+  .contactusbanner-container {
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    gap: 18px;
+  }
+
+  .contactusbanner-title {
+    font-size: 30px;
+  }
+
+  .contactusbanner-desc {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .btn-get {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile narrow (<=480px) — smallest break */
+@media (max-width: 480px) {
+  .contactusbanner-root {
+    min-height: 480px;
+  }
+
+  .hero-img {
+    transform: scale(1.06);
+    background-position: center;
+  }
+
+  .contactusbanner-container {
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    gap: 14px;
+  }
+
+  .contactusbanner-left {
+    width: 100%;
+  }
+
+  .contactusbanner-title {
+    font-size: 26px;
+    line-height: 1.05;
+  }
+
+  .contactusbanner-desc {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .btn-get {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .hero-img-sweep {
+    width: 80%;
+    left: -60%;
+    top: -20%;
+    height: 120%;
+    filter: blur(8px);
+    opacity: 0;
+  }
+}
+
+/* Extra protection for extreme small devices */
+@media (max-width: 360px) {
+  .contactusbanner-title {
+    font-size: 24px;
+  }
+
+  .contactusbanner-desc {
+    font-size: 13px;
+  }
+
+  .btn-get {
+    padding: 10px 14px;
+  }
+}
+
+/* ========== SMALL LAYOUT & SAFETY FIXES ========== */
+
+/* Prevent text selection anomalies in hero overlay */
+.contactusbanner-root,
+.contactusbanner-root * {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Ensure long words don't overflow */
+.contactusbanner-title,
+.contactusbanner-desc {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Layer ordering sanity */
+.hero-img-wrap {
+  z-index: 0;
+}
+
+.contactusbanner-overlay {
+  z-index: 1;
+}
+
+.contactusbanner-container {
+  z-index: 3;
+}
+
+/* Make sure motion wrapper doesn't create scrollbars */
+.hero-img,
+.hero-img-wrap {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Reduce paint cost on mobile for the animated sweep */
+@media (max-width: 1024px) {
+  .hero-img-sweep {
+    filter: blur(10px);
+    mix-blend-mode: soft-light;
+    opacity: 0;
+  }
+}
+
+/* End of ContactUsBanner.css */

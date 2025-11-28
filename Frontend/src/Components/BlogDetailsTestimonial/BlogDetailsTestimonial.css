@@ -1,0 +1,261 @@
+/* ---------- BlogDetailsTestimonial.css (FULL — FIXED) ---------- */
+
+/* Reset */
+.testimonial * { box-sizing: border-box; }
+
+/* Wrapper */
+.testimonial.regardingly {
+  width: 100%;
+  min-height: 620px;
+  display: flex;
+  align-items: stretch;
+  background: #0b0b0b;
+  color: #fff;
+  font-family: "Arial", system-ui, sans-serif;
+}
+
+/* Layout */
+.testimonial-inner {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+/* LEFT COLUMN */
+.test-left {
+  width: 55%;
+  min-height: 620px;
+  padding: 38px 72px;
+  background: #0b0b0b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 18px;
+}
+
+.center-left .headline,
+.center-left .quote-mark,
+.center-left .slider {
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* small label */
+.kicker {
+  position: absolute;
+  top: 16px;
+  left: 72px;
+  color: #f6b42a ;
+  font-size: 23px;
+  letter-spacing: 1px;
+}
+
+/* Heading */
+.headline {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 78px;
+  line-height: 0.92;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+/* Quote icon */
+.quote-mark {
+  font-size: 48px;
+  color: rgba(255,255,255,0.9);
+  margin-top: 6px;
+}
+
+/* ========== SLIDER FIXED (NO GHOSTING) ========== */
+
+.slider {
+  width: 100%;
+  max-width: 760px;
+  margin-top: 16px;
+  padding-top: 20px;
+  position: relative;
+  perspective: 1400px;
+  min-height: 240px; /* prevent container jump */
+  display: flex;
+  justify-content: center;
+}
+
+/* Base slide */
+.slide {
+  position: absolute;
+  width: 100%;
+  max-width: 720px;
+  left: 50%;
+  top: 0;
+
+  padding: 0 24px;
+  transform-style: preserve-3d;
+
+  /* Hidden unless active */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateX(-50%) translateY(20px) translateZ(-180px) rotateY(20deg) scale(0.9);
+
+  transition:
+    opacity 600ms cubic-bezier(.22,.61,.36,1),
+    transform 600ms cubic-bezier(.22,.61,.36,1);
+  will-change: transform, opacity;
+
+  backface-visibility: hidden;
+  z-index: 1;
+}
+
+/* ACTIVE slide */
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateX(-50%) translateY(0px) translateZ(0px) rotateY(0deg) scale(1);
+
+  z-index: 40;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+}
+
+/* Remove ghosting: neighbors should be invisible */
+.slide.pos--2,
+.slide.pos--1,
+.slide.pos1,
+.slide.pos2 {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* ---------- ACTIVE SLIDE KEN BURNS ---------- */
+.slide-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: center center;
+}
+
+.slide.active .slide-inner {
+  animation: slideKenBurns 16s ease-in-out infinite alternate;
+}
+
+@keyframes slideKenBurns {
+  0%   { transform: scale(1) translate(0,0); }
+  50%  { transform: scale(1.04) translate(-4px,-6px); }
+  100% { transform: scale(1.08) translate(-8px,-10px); }
+}
+
+/* pause on hover */
+.slide.active:hover .slide-inner {
+  animation-play-state: paused;
+}
+
+/* Slide text */
+.slide-text {
+  font-size: 18px;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.8;
+  text-align: center;
+  margin: 0 auto 28px;
+  max-width: 680px;
+}
+
+/* Avatar */
+.avatar-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.avatar {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid rgba(255,255,255,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* Name + Role */
+.person-name {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.person-role {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 6px;
+}
+
+/* ========== RIGHT HERO Ken Burns ========== */
+
+.test-right {
+  width: 45%;
+  min-height: 620px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  transform-origin: center center;
+  animation: heroKenBurns 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.20);
+  pointer-events: none;
+}
+
+@keyframes heroKenBurns {
+  0%   { transform: scale(1) translate(0,0); }
+  50%  { transform: scale(1.05) translate(-1.2%, -0.6%); }
+  100% { transform: scale(1.09) translate(-2%, -1%); }
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+@media (max-width: 1100px) {
+  .headline { font-size: 60px; }
+  .kicker { left: 40px; }
+}
+
+@media (max-width: 880px) {
+  .testimonial.regardingly { flex-direction: column; }
+  .test-left, .test-right { width: 100%; }
+  .test-right { height: 420px; min-height: 420px; }
+  .test-left { padding: 30px; }
+  .headline { font-size: 42px; }
+  .kicker { left: 30px; }
+  .slider { min-height: 200px; }
+}
+
+@media (max-width: 520px) {
+  .headline { font-size: 32px; }
+  .avatar { width: 64px; height: 64px; }
+  .test-right { height: 260px; }
+}
+
+/* Reduced motion (accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  .hero-img,
+  .slide-inner {
+    animation: none !important;
+    transform: none !important;
+  }
+}

@@ -170,7 +170,7 @@ const navData = [
     align: 'left',
     children: [
       { label: 'About Us', href: '/about' },
-      { label: 'Contact Us', href: '/contact' },
+      { label: 'Contact Us', href: '/contact/us' },
       { label: 'Media', href: '/media' },
       { label: 'Our Blog', href: '/blog' },
       {
