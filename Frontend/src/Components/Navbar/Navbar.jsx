@@ -1,3 +1,4 @@
+// NavbarAdvanced.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import {
   FaEnvelope,
@@ -20,7 +21,7 @@ import './Navbar.css';
 const LOGO_GIF = 'https://legalterminus.com/wp-content/uploads/2023/09/Legal-Terminus-LOGO-GIF_300-x-150.gif';
 
 const navData = [
-  { id: 'home', label: 'Home', href: '/home' },
+  { id: 'home', label: 'Home', href: '/' },
 
   {
     id: 'setup-business',
@@ -30,8 +31,8 @@ const navData = [
         id: 'profit',
         label: 'Profit Making Structure',
         items: [
-          { label: 'Private Limited Company Registration In India', href: '/private-limited' },
-          { label: 'Incorporation Of Wholly Owned Subsidiary In India', href: '/wholly-owned' },
+          { label: 'Private Limited Company Registration In India', href: '/private-limited-company-registration-in-india' },
+          { label: 'Incorporation Of Wholly Owned Subsidiary In India', href: '/incorption-registration-in-india' },
           { label: 'Public Limited Company Registration In India', href: '/public-limited' },
           { label: 'One Person Company Registration In India', href: '/one-person-company' },
           { label: 'Limited Liability Partnership Registration In India', href: '/llp' },
@@ -153,7 +154,7 @@ const navData = [
         id: 'tm-services',
         label: 'Registration And Compliance Services',
         items: [
-          { label: 'Trademark Application', href: '/trademark/application' },
+          { label: 'Trademark Application', href: '/' },
           { label: 'Trademark Renewal', href: '/trademark/renewal' },
           { label: 'Reply Of Examination Report', href: '/trademark/exam-reply' },
           { label: 'Trademark Opposition', href: '/trademark/opposition' },
@@ -203,6 +204,10 @@ export default function NavbarAdvanced() {
   const drawerRef = useRef(null);
   const megaTimeoutRef = useRef(null);
 
+  // NEW: mobile two-step state:
+  // mobileActiveSub holds a key like "topId__catId" to indicate which submenu inside a top-level section is open (shows mega items)
+  const [mobileActiveSub, setMobileActiveSub] = useState(null);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', onScroll);
@@ -215,6 +220,9 @@ export default function NavbarAdvanced() {
       setTimeout(() => drawerRef.current?.focus(), 0);
     } else {
       document.body.classList.remove('no-scroll');
+      // when drawer closes reset mobile-specific state
+      setMobileExpanded({});
+      setMobileActiveSub(null);
     }
     return () => document.body.classList.remove('no-scroll');
   }, [isMenuOpen]);
@@ -318,12 +326,30 @@ export default function NavbarAdvanced() {
   const openNested = (key) => setNestedOpenItem(key);
   const closeNested = () => setNestedOpenItem(null);
 
+  // MOBILE: toggles the top-level section in the drawer
   const toggleMobileSection = (id) => {
-    setMobileExpanded(prev => ({ ...prev, [id]: !prev[id] }));
+    setMobileExpanded(prev => {
+      const newState = { ...prev, [id]: !prev[id] };
+      // if we are collapsing the top-level, also clear any active sub within it
+      if (!newState[id]) {
+        // if the active sub belongs to this top section, clear it
+        if (mobileActiveSub && mobileActiveSub.startsWith(`${id}__`)) {
+          setMobileActiveSub(null);
+        }
+      }
+      return newState;
+    });
+  };
+
+  // MOBILE: toggles a submenu (i.e., category -> show its items). key is "{topId}__{catId}"
+  const toggleMobileSub = (topId, catId) => {
+    const key = `${topId}__${catId}`;
+    setMobileActiveSub(prev => (prev === key ? null : key));
   };
 
   return (
     <header className={`header-wrapper ${scrolled ? 'scrolled' : ''}`}>
+
       {/* TOP BAR */}
       <div className="topbar">
         <div className="topbar-inner">
@@ -424,7 +450,7 @@ export default function NavbarAdvanced() {
                                       <>
                                         <span>{cat.label}</span>
                                         <FaChevronRight className={`mini-left`} />
-                                        
+
                                       </>
                                     ) : (
                                       <>
@@ -504,65 +530,61 @@ export default function NavbarAdvanced() {
                             /* DIRECT-CHILD MODE */
                             <>
                               <div className="mega-left-compact" role="tablist" aria-label={`${it.label} links`} ref={leftColRef}>
-                                {it.children.map((child, idx) => {
-                                  const key = nestedKey(it.id, null, idx);
-                                  const hasNested = !!child.children && Array.isArray(child.children) && child.children.length > 0;
-                                  return (
-                                    <div key={key} style={{ position: 'relative' }}>
-                                      <button
-                                        ref={el => { if (el) megaLeftRefs.current[key] = el; }}
-                                        className={`mega-tab-compact ${nestedOpenItem === key ? 'active' : ''}`}
-                                        onMouseEnter={() => {
-                                          if (hasNested) openNested(key); else setNestedOpenItem(null);
-                                        }}
-                                        onFocus={() => { if (hasNested) openNested(key); else setNestedOpenItem(null); }}
-                                        onClick={() => {
-                                          if (!hasNested) {
-                                            setMegaOpenFor(null);
-                                            setActiveMegaTab(null);
-                                          } else {
-                                            openNested(key);
-                                          }
-                                        }}
-                                      >
-                                        {hasNested ? (
-                                          it.align === 'left' ? (
-                                            <>
-                                              <FaChevronRight className="mini-left" />
-                                              <span>{child.label}</span>
-                                            </>
-                                          ) : (
-                                            <>
-                                              <span>{child.label}</span>
-                                              <FaChevronRight className="mini-right" />
-                                            </>
-                                          )
-                                        ) : (
-                                          <span style={{ width: '100%', textAlign: 'left' }}>{child.label}</span>
-                                        )}
-                                      </button>
+                                  {it.children.map((child, idx) => {
+                                    const key = nestedKey(it.id, null, idx);
+                                    const hasNested = !!child.children && Array.isArray(child.children) && child.children.length > 0;
 
-                                      {hasNested && (
-                                        <div
-                                          className={`nested-panel ${nestedOpenItem === key ? 'open' : ''}`}
-                                          onMouseEnter={() => openNested(key)}
-                                          onMouseLeave={() => setTimeout(() => {
-                                            if (nestedOpenItem === key) setNestedOpenItem(null);
-                                          }, 120)}
-                                        >
-                                          <ul className="nested-links">
-                                            {child.children.map((sub, si) => (
-                                              <li key={`${key}__c__${si}`}>
-                                                <a href={sub.href} onClick={() => { setMegaOpenFor(null); setNestedOpenItem(null); }}>{sub.label}</a>
-                                              </li>
-                                            ))}
-                                          </ul>
-                                        </div>
-                                      )}
-                                    </div>
-                                  );
-                                })}
-                              </div>
+                                    return (
+                                      <div key={key} style={{ position: 'relative' }}>
+
+                                        {!hasNested ? (
+                                          // ✔ FIXED: DIRECT LINK WORKS
+                                          <a
+                                            href={child.href}
+                                            className="mega-tab-compact"
+                                            onClick={() => { setMegaOpenFor(null); setNestedOpenItem(null); }}
+                                            style={{ textAlign: 'left' }}
+                                          >
+                                            {child.label}
+                                          </a>
+                                        ) : (
+                                          <button
+                                            ref={el => { if (el) megaLeftRefs.current[key] = el; }}
+                                            className={`mega-tab-compact ${nestedOpenItem === key ? 'active' : ''}`}
+                                            onMouseEnter={() => openNested(key)}
+                                            onClick={() => openNested(key)}
+                                          >
+                                            {child.label}
+                                            <FaChevronRight className="mini-right" />
+                                          </button>
+                                        )}
+
+                                        {hasNested && (
+                                          <div
+                                            className={`nested-panel ${nestedOpenItem === key ? 'open' : ''}`}
+                                            onMouseEnter={() => openNested(key)}
+                                            onMouseLeave={() => setNestedOpenItem(null)}
+                                          >
+                                            <ul className="nested-links">
+                                              {child.children.map((sub, si) => (
+                                                <li key={si}>
+                                                  <a
+                                                    href={sub.href}
+                                                    onClick={() => { setMegaOpenFor(null); setNestedOpenItem(null); }}
+                                                  >
+                                                    {sub.label}
+                                                  </a>
+                                                </li>
+                                              ))}
+                                            </ul>
+                                          </div>
+                                        )}
+
+                                      </div>
+                                    );
+                                  })}
+                                </div>
+
 
                               <div className="mega-right-panel" />
                             </>
@@ -649,6 +671,7 @@ export default function NavbarAdvanced() {
                       </a>
                     ) : (
                       <>
+                        {/* Top-level toggle: opens the section (step 1) */}
                         <button
                           className="premium-nav-link"
                           onClick={() => toggleMobileSection(item.id)}
@@ -658,44 +681,59 @@ export default function NavbarAdvanced() {
                           <FaChevronRight className="premium-link-arrow" />
                         </button>
 
+                        {/* Expanded area for the top-level item */}
                         <div className={`premium-sublist ${mobileExpanded[item.id] ? 'expanded' : ''}`}>
                           {item.children.map((cat) => {
+                            // If cat has items -> this becomes the second-step: clicking it shows the actual items (mega)
                             if (cat.items) {
+                              const subKey = `${item.id}__${cat.id}`;
+                              const isActiveSub = mobileActiveSub === subKey;
                               return (
                                 <div key={cat.id} className="premium-subsection">
-                                  <div className="premium-subsection-head"><strong>{cat.label}</strong></div>
-                                  <ul className="premium-sublinks">
-                                    {cat.items.map((sub, i) => (
-                                      <li key={i}>
-                                        <a href={sub.href} onClick={() => setIsMenuOpen(false)} className="premium-nav-link simple">
-                                          <span className="premium-link-text">{sub.label}</span>
-                                          <FaChevronRight className="premium-link-arrow" />
-                                        </a>
-                                      </li>
-                                    ))}
-                                  </ul>
+                                  <button
+                                    className="premium-nav-link simple"
+                                    onClick={() => toggleMobileSub(item.id, cat.id)}
+                                    aria-expanded={isActiveSub}
+                                  >
+                                    <span className="premium-link-text"><strong>{cat.label}</strong></span>
+                                    <FaChevronRight className="premium-link-arrow" />
+                                  </button>
+
+                                  {/* This is the mega items panel (step 2) - only visible when this cat is active */}
+                                  <div className={`premium-sublist ${isActiveSub ? 'expanded' : ''}`} style={{ paddingLeft: 12 }}>
+                                    <ul className="premium-sublinks">
+                                      {cat.items.map((sub, i) => (
+                                        <li key={i}>
+                                          <a href={sub.href} onClick={() => { setIsMenuOpen(false); setMobileActiveSub(null); }} className="premium-nav-link simple">
+                                            <span className="premium-link-text">{sub.label}</span>
+                                            <FaChevronRight className="premium-link-arrow" />
+                                          </a>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
                                 </div>
                               );
                             } else {
+                              // Direct child (no 'items') - could be link or nested children
+                              const hasInnerChildren = !!cat.children && Array.isArray(cat.children) && cat.children.length > 0;
                               return (
                                 <div key={cat.label} className="premium-subsection">
-                                  <div className="premium-subsection-head"><strong>{cat.label}</strong></div>
-                                  <ul className="premium-sublinks">
-                                    <li>
-                                      <a href={cat.href} onClick={() => setIsMenuOpen(false)} className="premium-nav-link simple">
-                                        <span className="premium-link-text">{cat.label}</span>
-                                        <FaChevronRight className="premium-link-arrow" />
-                                      </a>
-                                      {cat.children && cat.children.map((c2, idx2) => (
-                                        <div key={idx2} style={{ marginLeft: 12 }}>
-                                          <a href={c2.href} onClick={() => setIsMenuOpen(false)} className="premium-nav-link simple">
-                                            <span className="premium-link-text">{c2.label}</span>
-                                            <FaChevronRight className="premium-link-arrow" />
-                                          </a>
-                                        </div>
+                                  <a href={cat.href} onClick={() => setIsMenuOpen(false)} className="premium-nav-link simple">
+                                    <span className="premium-link-text">{cat.label}</span>
+                                    <FaChevronRight className="premium-link-arrow" />
+                                  </a>
+
+                                  {hasInnerChildren && (
+                                    <div style={{ marginLeft: 12 }}>
+                                      {cat.children.map((c2, idx2) => (
+                                        <a key={idx2} href={c2.href} onClick={() => setIsMenuOpen(false)} className="premium-nav-link simple" style={{ marginTop: 6 }}>
+                                          <span className="premium-link-text">{c2.label}</span>
+                                          <FaChevronRight className="premium-link-arrow" />
+                                        </a>
                                       ))}
-                                    </li>
-                                  </ul>
+                                    </div>
+                                  )}
                                 </div>
                               );
                             }
@@ -740,6 +778,7 @@ export default function NavbarAdvanced() {
           </div>
         </div>
       </aside>
+      
     </header>
   );
 }

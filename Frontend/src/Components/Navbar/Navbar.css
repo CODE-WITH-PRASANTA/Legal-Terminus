@@ -11,7 +11,6 @@ body.no-scroll { overflow: hidden; }
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
-  position: relative;
 }
 
 /* ---------------- TOP BAR ---------------- */
@@ -482,3 +481,39 @@ body.no-scroll { overflow: hidden; }
 
 /* GIF rendering tweaks */
 .brand-logo, .premium-drawer-logo { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+
+
+/* Remove underline + make anchor look like button */
+.mega-tab-compact {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  text-decoration: none;       /* remove underline */
+  color: inherit;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Hover effect same as button */
+.mega-tab-compact:hover {
+  background: #f7f7f7;
+  color: #222;
+}
+
+/* Active state (for nested) */
+.mega-tab-compact.active {
+  background: #eee;
+  font-weight: 600;
+}
+
+/* Icon alignment for nested arrow */
+.mini-right {
+  margin-left: auto;
+  font-size: 12px;
+  opacity: 0.7;
+}

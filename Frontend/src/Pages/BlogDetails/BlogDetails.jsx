@@ -1,26 +1,29 @@
 import React from 'react'
 import './BlogDetails.css'
 import BlogDetailsBanner from '../../Components/BlogDetailsBanner/BlogDetailsBanner'
-import WhatWeOffer from '../../Components/WhatWeOffer/WhatWeOffer'
-import BlogDetailsAboutUs from '../../Components/BlogDetailsAboutUs/BlogDetailsAboutUs'
-import BlogDetailsOurClient from '../../Components/BlogDetailsOurClient/BlogDetailsOurClient'
-import BlogDetailsPricingPlans from '../../Components/BlogDetailsPricingPlans/BlogDetailsPricingPlans'
-import BlogDetailsFaq from '../../Components/BlogDetailsFaq/BlogDetailsFaq'
-import BlogDetailsTestimonial from '../../Components/BlogDetailsTestimonial/BlogDetailsTestimonial'
-import BlogDetailsOurLatestNews from '../../Components/BlogDetailsOurLatestNews/BlogDetailsOurLatestNews'
+// import WhatWeOffer from '../../Components/WhatWeOffer/WhatWeOffer'
+// import BlogDetailsAboutUs from '../../Components/BlogDetailsAboutUs/BlogDetailsAboutUs'
+// import BlogDetailsOurClient from '../../Components/BlogDetailsOurClient/BlogDetailsOurClient'
+// import BlogDetailsPricingPlans from '../../Components/BlogDetailsPricingPlans/BlogDetailsPricingPlans'
+// import BlogDetailsFaq from '../../Components/BlogDetailsFaq/BlogDetailsFaq'
+// import BlogDetailsTestimonial from '../../Components/BlogDetailsTestimonial/BlogDetailsTestimonial'
+// import BlogDetailsOurLatestNews from '../../Components/BlogDetailsOurLatestNews/BlogDetailsOurLatestNews'
+import BlogDetailsArticleSection from '../../Components/BlogDetailsArticleSection/BlogDetailsArticleSection'
 
 const BlogDetails = () => {
   return (
     <>
-    <BlogDetailsBanner/>
+    {/* <BlogDetailsBanner/>
     <WhatWeOffer/>
     <BlogDetailsAboutUs/>
     <BlogDetailsOurClient/>
     <BlogDetailsPricingPlans/>
     <BlogDetailsFaq/>
     <BlogDetailsTestimonial/>
-    <BlogDetailsOurLatestNews/>
-    
+    <BlogDetailsOurLatestNews/> */}
+    <BlogDetailsBanner/>
+    <BlogDetailsArticleSection/>
+
     </>
   )
 }
