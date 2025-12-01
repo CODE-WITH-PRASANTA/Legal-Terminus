@@ -21,6 +21,11 @@
   box-shadow: 0 18px 40px rgba(33, 89, 25, 0.08);
   padding: 0;
   overflow: hidden;
+
+  /* sticky on scroll */
+  position: sticky;
+  top: 0;       /* change if you have a fixed header (e.g. 70px) */
+  z-index: 50;
 }
 
 /* Tabs wrapper */
