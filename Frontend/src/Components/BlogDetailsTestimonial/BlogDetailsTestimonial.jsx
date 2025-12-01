@@ -40,8 +40,9 @@ const BlogDetailsTestimonial = () => {
   const intervalRef = useRef(null);
 
   useEffect(() => {
-    // Respect reduced motion preference
-    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduce =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return;
 
     intervalRef.current = setInterval(() => {
@@ -54,9 +55,11 @@ const BlogDetailsTestimonial = () => {
   }, []);
 
   return (
-    <section className="testimonial regardingly" aria-label="Testimonials section">
+    <section
+      className="testimonial regardingly"
+      aria-label="Testimonials section"
+    >
       <div className="testimonial-inner">
-        {/* LEFT (centered content + 3D slider) */}
         <div
           className="test-left center-left"
           role="region"
@@ -75,13 +78,16 @@ const BlogDetailsTestimonial = () => {
             {testimonials.map((t, i) => {
               const isActive = i === index;
               const offset = i - index;
-              // Normalize offset to the smallest range for wrapping
               let rel = offset;
-              if (offset <= -Math.floor(testimonials.length / 2)) rel = offset + testimonials.length;
-              else if (offset > Math.floor(testimonials.length / 2)) rel = offset - testimonials.length;
+              if (offset <= -Math.floor(testimonials.length / 2))
+                rel = offset + testimonials.length;
+              else if (offset > Math.floor(testimonials.length / 2))
+                rel = offset - testimonials.length;
 
-              // Build pos class: e.g. pos--1, pos1, etc.
-              const posClass = `pos${rel < 0 ? rel : rel === 0 ? "" : rel}`.replace(/^pos$/, "pos0");
+              const posClass = `pos${rel < 0 ? rel : rel === 0 ? "" : rel}`.replace(
+                /^pos$/,
+                "pos0"
+              );
 
               return (
                 <article
@@ -96,7 +102,11 @@ const BlogDetailsTestimonial = () => {
                     <p className="slide-text">{t.quote}</p>
 
                     <div className="avatar-row">
-                      <img src={t.avatar} alt={`${t.name} avatar`} className="avatar" />
+                      <img
+                        src={t.avatar}
+                        alt={`${t.name} avatar`}
+                        className="avatar"
+                      />
                     </div>
 
                     <div className="person-name">{t.name}</div>
@@ -108,7 +118,6 @@ const BlogDetailsTestimonial = () => {
           </div>
         </div>
 
-        {/* RIGHT (hero image with Ken Burns) */}
         <div className="test-right" aria-hidden>
           <img src={testmain} alt="Hero" className="hero-img" />
           <div className="hero-overlay" aria-hidden />

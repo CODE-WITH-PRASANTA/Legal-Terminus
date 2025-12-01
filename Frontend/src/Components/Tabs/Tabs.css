@@ -1,0 +1,407 @@
+/* FILE: Tabs.css
+   Full CSS (mobile-first) with sticky tabs row and measured offset to prevent panel headings being hidden.
+*/
+
+/* -----------------------
+   Base component layout (mobile-first base)
+   ----------------------- */
+.tabs-outer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 22px 16px;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, rgba(245,247,250,0.28), rgba(255,255,255,1));
+  min-width: 0;
+}
+
+.tabs-wrap.full-width {
+  /* component-local style anchors (not :root) */
+  --bg: #ffffff;
+  --muted: #f1f5f9;
+  --text: #0b1220;
+  --heading-primary: #0B6B2E;
+  --accent-orange: #FF7A00;
+  --radius: 12px;
+
+  /* dynamic CSS var set by JS: --tabs-sticky-height */
+  --tabs-sticky-height: 84px; /* fallback value if JS hasn't run yet */
+
+  width: calc(100% - 32px);
+  max-width: 1400px;
+  background: var(--bg);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px rgba(12,15,20,0.06);
+  padding: 14px;
+  box-sizing: border-box;
+  border: 1px solid rgba(15,23,42,0.04);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  min-width: 0;
+}
+
+/* Tab row (scrollable horizontally on narrow screens) */
+/* NOTE: keep tabs on a single scrollable row (no wrapping) to avoid overlap.
+   Use flex: 0 0 auto on tabs so they do not shrink and overlap each other. */
+.tabs-row {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  overflow-x: auto;
+  padding: 10px 6px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+  min-width: 0;
+  flex-wrap: nowrap; /* critical: force single-line row and enable horizontal scroll */
+}
+
+/* --- STICKY TAB ROW (minimal visual change) --- */
+/* Make the tabs row sticky inside its container */
+.tabs-row {
+  position: sticky;
+  top: 18px;            /* nudges it slightly down from the viewport top (matches outer padding) */
+  z-index: 40;          /* sit above panel content but below any modal layers */
+  background: transparent;
+}
+
+/* Ensure the sticky row visually "blocks" content beneath (no text bleed) while preserving look */
+.tabs-wrap.full-width .tabs-row {
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.98));
+  -webkit-backdrop-filter: saturate(1.03) blur(2px);
+  backdrop-filter: saturate(1.03) blur(2px);
+}
+
+/* lightweight tab style */
+/* prevent shrinking which previously caused overlap; constrain max-width to keep labels readable */
+.tab.modern {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transform: translateZ(0);
+  transition: transform 160ms ease, box-shadow 200ms ease, color 150ms, background 200ms;
+  font-weight: 600;
+  color: var(--text);
+  min-width: 140px;
+  max-width: 320px;      /* prevents an individual tab from growing too large and colliding */
+  flex: 0 0 auto;        /* critical: don't shrink and don't grow beyond max-width */
+  justify-content: flex-start;
+  white-space: nowrap;   /* default: single-line label on larger screens */
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* hover and focus-visible */
+.tab.modern:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(16,24,40,0.06);
+}
+.tab.modern:focus-visible {
+  box-shadow: 0 10px 28px rgba(11,107,46,0.08);
+  outline: 3px solid rgba(11,107,46,0.12);
+  outline-offset: 3px;
+}
+
+/* Tab icon preserved for markup parity but visually collapsed to remove extra spacing */
+.tab-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+/* label */
+.tab-label {
+  font-size: 14px;
+  color: inherit;
+  line-height: 1;
+  padding-left: 0;
+  margin-left: 0;
+  word-break: normal;
+  overflow-wrap: anywhere; /* allows breakpoints inside long words when necessary */
+}
+
+/* active and inactive states */
+.tab.modern.active {
+  color: white;
+  background: linear-gradient(90deg, var(--heading-primary), var(--accent-orange));
+  box-shadow: 0 8px 26px rgba(11,107,46,0.12);
+}
+.tab.modern:not(.active) {
+  background: linear-gradient(180deg, rgba(248,250,252,0.86), rgba(244,246,248,0.72));
+  border: 1px solid rgba(226,232,240,0.9);
+}
+
+/* underline indicator */
+.tab-indicator {
+  position: absolute;
+  bottom: 8px; /* adjusted to sit nicely when sticky */
+  left: 0;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--heading-primary), var(--accent-orange));
+  box-shadow: 0 6px 18px rgba(11,107,46,0.12);
+  transition: transform 240ms cubic-bezier(.2,.9,.2,1), width 240ms cubic-bezier(.2,.9,.2,1);
+  pointer-events: none;
+  will-change: transform, width;
+}
+
+/* Panels stacked vertically */
+.tab-panel {
+  margin-top: 14px;
+  display: block;
+  padding: 0;
+  border-radius: 10px;
+  background: transparent;
+  min-width: 0;
+}
+
+.panel-content {
+  background: linear-gradient(180deg, rgba(255,255,255,1), rgba(250,251,253,0.98));
+  margin: 10px 0;
+  padding: 18px;
+  border-radius: 10px;
+  min-height: 160px;
+  box-shadow: 0 6px 24px rgba(12,15,20,0.03);
+  transition: box-shadow 220ms ease, transform 220ms ease;
+  /* Use measured height for scroll offset so headings are visible below sticky row */
+  scroll-margin-top: var(--tabs-sticky-height, 84px);
+  box-sizing: border-box;
+  min-width: 0;
+  word-wrap: break-word;
+}
+.panel-content.is-active {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(12,15,20,0.06);
+  border: 1px solid rgba(11,107,46,0.06);
+}
+
+/* Typography helpers (preserve color and sizes) */
+h2 {
+  color: var(--heading-primary);
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+h2.heading-accent { color: var(--accent-orange); }
+h2.heading-black { color: #000000; }
+
+p { color: #475569; margin: 8px 0; line-height: 1.5; }
+
+/* Buttons and small inline icon fills */
+button, .btn, .panel-content button {
+  background-color: var(--heading-primary);
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 140ms ease, box-shadow 160ms ease;
+  box-sizing: border-box;
+}
+button:hover, .btn:hover, .panel-content button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(11,107,46,0.12);
+}
+
+.panel-content svg {
+  stroke: var(--heading-primary);
+  fill: var(--heading-primary);
+}
+
+/* Section grid (preserved layout) */
+.section-card {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 18px;
+  box-sizing: border-box;
+  min-width: 0;
+}
+.section-right {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), var(--muted));
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(12,15,20,0.03);
+  border: 1px solid rgba(15,23,42,0.03);
+  box-sizing: border-box;
+}
+
+/* -----------------------
+   Like option visibility (visible by default: desktop & tablet).
+   It will be hidden on mobile via max-width media queries below.
+   ----------------------- */
+
+/* Base: ensure like option is visible on non-mobile by default */
+.like-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+/* -----------------------
+   Responsive rules (ONLY max-width media queries)
+   Breakpoints: 1280, 1024, 768, 480, 360
+   ----------------------- */
+
+/* <= 1280px: slightly reduce paddings and max widths */
+@media (max-width: 1280px) {
+  .tabs-wrap.full-width {
+    padding: 14px;
+    max-width: 1200px;
+  }
+  .tab.modern {
+    min-width: 130px;
+    padding: 10px 12px;
+    max-width: 280px;
+  }
+  .section-card {
+    grid-template-columns: 1fr 300px;
+    gap: 16px;
+  }
+}
+
+/* <= 1024px: medium tablets and small laptops */
+/* Ensure tabs remain a single row and don't overlap by preventing shrink and allowing label wrap */
+@media (max-width: 1024px) {
+  .tabs-wrap.full-width {
+    padding: 12px;
+    max-width: 980px;
+    width: calc(100% - 32px);
+  }
+  .tabs-row { gap: 8px; }
+  .tab.modern {
+    min-width: 120px;
+    padding: 10px 10px;
+    font-size: 14px;
+    max-width: 240px;
+    flex: 0 0 auto; /* ensure no shrink */
+  }
+  .tab-label { white-space: nowrap; }
+  .tab-indicator { bottom: 5px; height: 4px; }
+  .section-card { grid-template-columns: 1fr 280px; gap: 14px; }
+  .panel-content { padding: 16px; }
+}
+
+/* <= 768px: tablets and large phones - ensure no overflow, collapse right column */
+/* On this breakpoint, allow tab labels to wrap to two lines so they don't force huge widths */
+@media (max-width: 768px) {
+  .tabs-wrap.full-width {
+    padding: 12px;
+    width: calc(100% - 28px);
+    max-width: 720px;
+  }
+  .tabs-row { padding: 8px 6px; gap: 8px; }
+  .tab.modern {
+    min-width: 110px;
+    padding: 9px 10px;
+    font-size: 13px;
+    gap: 6px;
+    max-width: 46%;      /* allow two tabs per visible row if user resizes; still scrollable */
+    flex: 0 0 auto;      /* do not shrink */
+  }
+  .tab-label {
+    white-space: normal; /* allow wrapping */
+    line-height: 1.1;
+    overflow-wrap: break-word;
+  }
+  .section-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .section-right { padding: 14px; }
+  .panel-content { padding: 14px; min-height: 140px; }
+  .tab-indicator { bottom: 5px; height: 3.5px; }
+}
+
+/* <= 480px: small phones - tighten spacing and ensure readable text wrap */
+/* Hide .like-option on mobile */
+@media (max-width: 480px) {
+  .tabs-wrap.full-width {
+    padding: 10px;
+    width: calc(100% - 20px);
+  }
+  .tabs-row {
+    gap: 6px;
+    padding: 6px 4px;
+  }
+  .tab.modern {
+    min-width: 88px;
+    padding: 8px 10px;
+    font-size: 13px;
+    gap: 6px;
+    max-width: 48%;      /* allow two compact tabs side-by-side if viewport permits */
+    flex: 0 0 auto;      /* avoid shrinking that caused overlap */
+  }
+  .tab-label {
+    font-size: 13px;
+    white-space: normal; /* wrap label to avoid overflow */
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+  }
+  .panel-content { padding: 12px; margin: 8px 0; }
+  .section-right { padding: 12px; }
+
+  /* **Hide the like option on mobile screens** */
+  .like-option {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+}
+
+/* <= 360px: very small screens - ensure no horizontal overflow and readable line lengths */
+@media (max-width: 360px) {
+  .tabs-outer { padding: 10px 8px; }
+  .tabs-wrap.full-width { padding: 10px; width: calc(100% - 16px); }
+  .tabs-row { gap: 6px; padding: 6px 4px; }
+  .tab.modern { min-width: 76px; padding: 7px 8px; font-size: 12px; max-width: 52%; }
+  .tab-label { font-size: 12px; white-space: normal; }
+  .panel-content { padding: 10px; min-height: 120px; }
+  .section-card { gap: 10px; }
+
+  /* reinforce hide on very small devices as well */
+  .like-option { display: none !important; }
+}
+
+/* -----------------------
+   Reduced-motion support
+   ----------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .tab.modern,
+  .tab-indicator,
+  .panel-content,
+  button {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* -----------------------
+   Small helpers
+   ----------------------- */
+.tabs-row::-webkit-scrollbar { height: 8px; }
+.tabs-row::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, rgba(37,99,235,0.12), rgba(11,107,46,0.08));
+  border-radius: 999px;
+}
+
+/* visually-hidden helper */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; border: 0; padding: 0; margin: -1px;
+}

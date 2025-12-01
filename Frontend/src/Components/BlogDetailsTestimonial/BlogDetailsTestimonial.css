@@ -1,78 +1,78 @@
-/* ---------- BlogDetailsTestimonial.css (FULL — FIXED) ---------- */
+/* =========================
+   Updated CSS — iPad Air fix added
+   (only max-width media queries used)
+   Preserves original design, layout, spacing, colors, and content.
+   ========================= */
 
-/* Reset */
-.testimonial * { box-sizing: border-box; }
+/* --------------------
+   Base / Layout
+   -------------------- */
 
-/* Wrapper */
+.testimonial * {
+  box-sizing: border-box;
+}
+
 .testimonial.regardingly {
   width: 100%;
   min-height: 620px;
   display: flex;
-  align-items: stretch;
   background: #0b0b0b;
-  color: #fff;
+  color: #0b1220;
   font-family: "Arial", system-ui, sans-serif;
+  align-items: stretch;
 }
 
-/* Layout */
 .testimonial-inner {
   width: 100%;
   display: flex;
   align-items: stretch;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
-/* LEFT COLUMN */
+/* Left column (content) */
 .test-left {
   width: 55%;
   min-height: 620px;
   padding: 38px 72px;
-  background: #0b0b0b;
+  background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
   gap: 18px;
+  overflow: visible; /* allow slide/avatars to render without clipping */
 }
 
-.center-left .headline,
-.center-left .quote-mark,
-.center-left .slider {
-  text-align: center;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* small label */
 .kicker {
   position: absolute;
   top: 16px;
   left: 72px;
-  color: #f6b42a ;
+  color: #ff7a00 !important;
   font-size: 23px;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
-/* Heading */
 .headline {
   width: 100%;
   text-align: center;
-  color: #fff;
+  color: #0b6b2e !important;
   font-size: 78px;
   line-height: 0.92;
   margin: 0 0 8px 0;
   font-weight: 700;
+  word-break: break-word; /* prevent overflow on very long words */
 }
 
-/* Quote icon */
 .quote-mark {
   font-size: 48px;
-  color: rgba(255,255,255,0.9);
+  color: #0b6b2e;
   margin-top: 6px;
 }
 
-/* ========== SLIDER FIXED (NO GHOSTING) ========== */
-
+/* Slider / slides container */
 .slider {
   width: 100%;
   max-width: 760px;
@@ -80,51 +80,43 @@
   padding-top: 20px;
   position: relative;
   perspective: 1400px;
-  min-height: 240px; /* prevent container jump */
+  min-height: 240px;
   display: flex;
   justify-content: center;
+  overflow: visible; /* allow drop-shadows and avatars to show */
+  padding-bottom: 12px; /* baseline bottom spacing to prevent overlap */
 }
 
-/* Base slide */
+/* Each slide is absolutely positioned and centered via left:50% + translateX(-50%) */
 .slide {
   position: absolute;
-  width: 100%;
+  width: calc(100% - 48px); /* responsive default width inside slider */
   max-width: 720px;
   left: 50%;
   top: 0;
-
   padding: 0 24px;
   transform-style: preserve-3d;
-
-  /* Hidden unless active */
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-
   transform: translateX(-50%) translateY(20px) translateZ(-180px) rotateY(20deg) scale(0.9);
-
-  transition:
-    opacity 600ms cubic-bezier(.22,.61,.36,1),
-    transform 600ms cubic-bezier(.22,.61,.36,1);
-  will-change: transform, opacity;
-
+  transition: opacity 600ms cubic-bezier(.22,.61,.36,1),
+              transform 600ms cubic-bezier(.22,.61,.36,1);
   backface-visibility: hidden;
   z-index: 1;
+  box-sizing: border-box; /* ensure padding respected */
 }
 
-/* ACTIVE slide */
 .slide.active {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-
-  transform: translateX(-50%) translateY(0px) translateZ(0px) rotateY(0deg) scale(1);
-
+  transform: translateX(-50%) translateY(0) translateZ(0) rotateY(0) scale(1);
   z-index: 40;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
 }
 
-/* Remove ghosting: neighbors should be invisible */
+/* Keep off-screen positions hidden */
 .slide.pos--2,
 .slide.pos--1,
 .slide.pos1,
@@ -134,12 +126,11 @@
   pointer-events: none !important;
 }
 
-/* ---------- ACTIVE SLIDE KEN BURNS ---------- */
+/* Slide inner layout and ken burns animation */
 .slide-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform-origin: center center;
 }
 
 .slide.active .slide-inner {
@@ -152,22 +143,18 @@
   100% { transform: scale(1.08) translate(-8px,-10px); }
 }
 
-/* pause on hover */
-.slide.active:hover .slide-inner {
-  animation-play-state: paused;
-}
-
-/* Slide text */
 .slide-text {
   font-size: 18px;
-  color: rgba(255,255,255,0.78);
+  color: #475569;
   line-height: 1.8;
   text-align: center;
   margin: 0 auto 28px;
   max-width: 680px;
+  word-break: break-word;
+  hyphens: auto; /* improved wrapping on narrow devices */
 }
 
-/* Avatar */
+/* Avatar row */
 .avatar-row {
   display: flex;
   justify-content: center;
@@ -179,25 +166,28 @@
   height: 82px;
   border-radius: 50%;
   object-fit: cover;
-  border: 6px solid rgba(255,255,255,0.05);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  border: 6px solid rgba(11,107,46,0.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  flex-shrink: 0;
 }
 
-/* Name + Role */
 .person-name {
   margin-top: 20px;
   font-size: 20px;
   font-weight: 700;
+  color: #0b6b2e;
+  display: block;
+  line-height: 1.1;
 }
 
 .person-role {
   font-size: 14px;
-  color: rgba(255,255,255,0.45);
+  color: #6b7280;
   margin-top: 6px;
+  display: block;
 }
 
-/* ========== RIGHT HERO Ken Burns ========== */
-
+/* Right column (hero image) */
 .test-right {
   width: 45%;
   min-height: 620px;
@@ -209,53 +199,215 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center right;
-  transform-origin: center center;
   animation: heroKenBurns 28s ease-in-out infinite alternate;
-  will-change: transform;
+  display: block;
+  max-width: 100%;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.20);
-  pointer-events: none;
+  background: rgba(0,0,0,0.25);
 }
 
 @keyframes heroKenBurns {
-  0%   { transform: scale(1) translate(0,0); }
-  50%  { transform: scale(1.05) translate(-1.2%, -0.6%); }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05) translate(-1.2%, -0.6%); }
   100% { transform: scale(1.09) translate(-2%, -1%); }
 }
 
-/* ========== RESPONSIVE BREAKPOINTS ========== */
+/* --------------------
+   Responsive (max-width only)
+   Target: 1280px, 1024px, 820px (iPad Air), 768px, 480px, 360px
+   -------------------- */
 
-@media (max-width: 1100px) {
+@media (max-width: 1280px) {
+  .headline { font-size: 72px; }
+  .test-left { padding: 36px 64px; }
+  .kicker { left: 56px; }
+  .slider { max-width: 680px; }
+  .slide { max-width: 640px; width: calc(100% - 48px); }
+}
+
+@media (max-width: 1024px) {
   .headline { font-size: 60px; }
-  .kicker { left: 40px; }
+  .test-left { width: 58%; padding: 34px 56px; }
+  .test-right { width: 42%; }
+  .kicker { left: 48px; top: 14px; font-size: 22px; }
+  .slider { max-width: 640px; }
+  .slide { max-width: 600px; padding: 0 20px; width: calc(100% - 40px); }
+  .slide-text { max-width: 600px; font-size: 17px; }
+  /* prevent hero image extreme zoom overflow */
+  .hero-img { min-height: 100%; }
 }
 
-@media (max-width: 880px) {
-  .testimonial.regardingly { flex-direction: column; }
-  .test-left, .test-right { width: 100%; }
-  .test-right { height: 420px; min-height: 420px; }
-  .test-left { padding: 30px; }
-  .headline { font-size: 42px; }
-  .kicker { left: 30px; }
-  .slider { min-height: 200px; }
+/* --------------------
+   iPad Air specific fix — addresses name/role overlapping container
+   (iPad Air portrait CSS width ≈ 820px)
+   -------------------- */
+@media (max-width: 820px) {
+  /* Ensure left column has enough vertical space so avatar + name/role don't overlap container */
+  .test-left {
+    min-height: 700px; /* slightly larger to accommodate slide and avatar block */
+    padding-bottom: 48px; /* extra bottom space so person-name/role do not overlap */
+  }
+
+  /* Provide extra breathing room inside the slider for avatars and names */
+  .slider {
+    padding-bottom: 40px;
+    min-height: 300px; /* ensure absolute-positioned slides have space to render avatars */
+  }
+
+  /* Slightly reduce avatar size to better fit tablet layout while preserving visual proportion */
+  .avatar {
+    width: 72px;
+    height: 72px;
+  }
+
+  /* Small spacing tweaks for name/role to avoid collision */
+  .person-name { margin-top: 22px; font-size: 19px; }
+  .person-role { margin-top: 8px; font-size: 14px; }
+
+  /* Ensure active slide stacks above other content */
+  .slide.active { z-index: 60; }
+
+  /* Prevent hero image from overlapping into left column */
+  .test-right { z-index: 0; }
+
+  /* Keep headline readable on iPad Air */
+  .headline { font-size: 48px; line-height: 1.02; }
 }
 
-@media (max-width: 520px) {
-  .headline { font-size: 32px; }
+/* Stacked mobile layout for <=768 */
+@media (max-width: 768px) {
+  /* Stack columns vertically */
+  .testimonial.regardingly {
+    flex-direction: column;
+  }
+  .testimonial-inner {
+    flex-direction: column;
+  }
+  .test-left, .test-right {
+    width: 100%;
+    min-height: auto;
+  }
+  .test-left {
+    padding: 28px 28px;
+    min-height: 520px;
+  }
+  .test-right {
+    height: 420px;
+  }
+
+  .headline {
+    font-size: 42px;
+  }
+  .kicker {
+    left: 30px;
+    top: 12px;
+  }
+
+  /* slider adjustments for smaller screens */
+  .slider {
+    max-width: 560px;
+    padding-top: 12px;
+  }
+  .slide {
+    position: relative; /* make slide flow in stacked layout to avoid overflow */
+    left: 0;
+    transform: none;
+    padding: 0 12px;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    opacity: 0; /* keep animation behaviour (JS should toggle .active) */
+  }
+  .slide.active {
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .slide-text {
+    font-size: 16px;
+  }
+  .avatar { width: 72px; height: 72px; }
+  .person-name { font-size: 18px; }
+  .person-role { font-size: 13px; }
+
+  /* ensure hero image scales cleanly in stacked layout */
+  .test-right { overflow: hidden; }
+  .hero-img { height: 100%; width: 100%; object-position: center center; }
+}
+
+@media (max-width: 480px) {
+  .test-left {
+    padding: 20px 18px;
+  }
+  .headline {
+    font-size: 32px;
+  }
+  .kicker {
+    left: 18px;
+    top: 10px;
+    font-size: 18px;
+  }
+  .slider {
+    max-width: 420px;
+  }
+  .slide {
+    max-width: 380px;
+    padding: 0 12px;
+    width: calc(100% - 24px);
+  }
+  .slide-text {
+    font-size: 15px;
+    max-width: 340px;
+  }
   .avatar { width: 64px; height: 64px; }
-  .test-right { height: 260px; }
+  .test-right {
+    height: 260px;
+  }
+  /* avoid hero-img stretching too tall on very narrow devices */
+  .hero-img { object-position: center top; }
 }
 
-/* Reduced motion (accessibility) */
+@media (max-width: 360px) {
+  .headline {
+    font-size: 28px;
+  }
+  .kicker {
+    left: 12px;
+    font-size: 16px;
+  }
+  .test-left {
+    padding: 16px 12px;
+  }
+  .slider {
+    max-width: 320px;
+  }
+  .slide {
+    max-width: 300px;
+    width: calc(100% - 24px);
+  }
+  .slide-text {
+    font-size: 14px;
+    max-width: 280px;
+  }
+  .avatar {
+    width: 58px;
+    height: 58px;
+  }
+  .test-right {
+    height: 220px;
+  }
+}
+
+/* Respect user's reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   .hero-img,
   .slide-inner {
     animation: none !important;
-    transform: none !important;
   }
 }

@@ -1,0 +1,184 @@
+/* =========================
+   ourclients.css — cleaned & fully responsive
+   Uses ONLY @media (max-width: ...) breakpoints
+   Preserves exact design, spacing, colors and content
+   ========================= */
+
+/* Base / layout */
+.ourclients-root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #fff;
+  padding: 36px 0;
+}
+
+.ourclients-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.ourclients-title {
+  text-align: center;
+  font-size: 34px;
+  letter-spacing: 2px;
+  margin: 6px 0 28px 0;
+  font-weight: 700;
+  color: #0B6B2E;
+}
+
+/* Carousel shell */
+.ourclients-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 72px;
+  box-sizing: border-box;
+}
+
+/* Scroller (visible area) */
+.ourclients-scroller {
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: auto; /* JS handles easing */
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  will-change: scroll-position;
+}
+
+/* Hide scrollbar (visual only) */
+.ourclients-scroller::-webkit-scrollbar { height: 0; width: 0; display: none; }
+.ourclients-scroller { scrollbar-width: none; -ms-overflow-style: none; }
+
+/* Track & cards */
+.ourclients-track {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  padding: 12px 0;
+  margin: 0;
+  align-items: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+  transform: translateZ(0);
+}
+
+.ourclients-card {
+  flex: 0 0 auto;
+  width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transition: transform 220ms cubic-bezier(.2,.8,.2,1);
+}
+
+.ourclients-card:hover { transform: translateY(-6px); }
+
+/* Logo tile */
+.ourclients-logo {
+  width: 160px;
+  height: 92px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.ourclients-logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Arrows */
+.ourclients-arrow {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 8px;
+  background: #0d6b2f;
+  color: #fff;
+  cursor: pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
+  box-shadow: 0 6px 14px rgba(12,67,30,0.14);
+}
+
+.ourclients-arrow-left { left: 12px; }
+.ourclients-arrow-right { right: 12px; }
+
+.ourclients-arrow:hover { transform: translateY(-50%) scale(1.06); background: #0b5a29; }
+
+.ourclients-arrow:focus-visible {
+  box-shadow: 0 0 0 4px rgba(45,179,74,0.16);
+  border-radius: 8px;
+}
+
+/* =========================
+   Responsive (max-width) breakpoints
+   Breakpoints: 1280, 1024, 768, 480, 360
+   ========================= */
+
+/* <= 1280px */
+@media (max-width: 1280px) {
+  .ourclients-inner { max-width: 1100px; padding: 0 14px; }
+  .ourclients-carousel { padding: 0 56px; }
+  .ourclients-track { gap: 36px; }
+  .ourclients-card { width: 150px; }
+  .ourclients-logo { width: 150px; height: 86px; border-radius: 11px; }
+}
+
+/* <= 1024px */
+@media (max-width: 1024px) {
+  .ourclients-inner { max-width: 960px; padding: 0 14px; }
+  .ourclients-carousel { padding: 0 48px; }
+  .ourclients-track { gap: 32px; }
+  .ourclients-card { width: 140px; }
+  .ourclients-logo { width: 140px; height: 84px; border-radius: 10px; }
+  .ourclients-title { font-size: 32px; }
+  .ourclients-arrow { width: 42px; height: 42px; }
+}
+
+/* <= 768px */
+@media (max-width: 768px) {
+  .ourclients-inner { max-width: 720px; padding: 0 12px; }
+  .ourclients-carousel { padding: 0 40px; }
+  .ourclients-track { gap: 28px; }
+  .ourclients-card { width: 128px; }
+  .ourclients-logo { width: 128px; height: 76px; border-radius: 10px; padding: 8px; }
+  .ourclients-title { font-size: 28px; margin-bottom: 18px; }
+  .ourclients-arrow { width: 40px; height: 40px; }
+}
+
+/* <= 480px */
+@media (max-width: 480px) {
+  .ourclients-inner { max-width: 460px; padding: 0 10px; }
+  .ourclients-carousel { padding: 0 28px; }
+  .ourclients-track { gap: 20px; }
+  .ourclients-card { width: 110px; }
+  .ourclients-logo { width: 110px; height: 64px; border-radius: 8px; padding: 8px; }
+  .ourclients-title { font-size: 22px; letter-spacing: 1.2px; }
+  .ourclients-arrow { width: 36px; height: 36px; }
+}
+
+/* <= 360px */
+@media (max-width: 360px) {
+  .ourclients-inner { max-width: 320px; padding: 0 8px; }
+  .ourclients-carousel { padding: 0 18px; }
+  .ourclients-track { gap: 14px; }
+  .ourclients-card { width: 92px; }
+  .ourclients-logo { width: 92px; height: 56px; border-radius: 6px; padding: 6px; }
+  .ourclients-title { font-size: 20px; margin-bottom: 10px; }
+  .ourclients-arrow { width: 34px; height: 34px; }
+}
