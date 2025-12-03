@@ -3,15 +3,7 @@ import React, { useState, useMemo } from "react";
 import { AiOutlinePlus, AiOutlineMinus, AiOutlineSearch } from "react-icons/ai";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Faq.css";
-import img from '../../assets/Blog-3.webp'
-
-/**
- * Component must remain `Faq`.
- * - Added a small presentational wrapper `.faq-right-scroll` so the right column becomes
- *   an independently scrollable region while the left card remains sticky.
- * - All original classNames preserved; only a wrapper was added and no logic changed.
- * - Mobile-first; sticky/scroll behavior is disabled on narrow screens in CSS.
- */
+import img from "../../assets/Blog-3.webp";
 
 const QA = [
   {
@@ -97,52 +89,52 @@ const QA = [
   {
     q: "Is GST Registration Mandatory for a Private Limited Company?",
     a:
-      "GST registration is not universally mandatory—it becomes compulsory only when annual turnover exceeds ₹20 lakh (₹10 lakh in special category states)."
+      "GST registration is mandatory only when annual turnover exceeds ₹20 lakh (₹10 lakh in special category states)."
   },
   {
     q: "What Are the Key Advantages of Registering as a Private Limited Company?",
     a:
-      "Private Limited Companies offer limited liability, separate legal entity status, perpetual succession, enhanced credibility, ease of raising private equity or venture capital, tax benefits, protected company name, and flexibility with share transfers and ESOPs."
+      "Private Limited Companies offer limited liability, separate legal entity status, perpetual succession, enhanced credibility, ease of raising funds, tax benefits, and flexibility in ownership."
   },
   {
     q: "What Are the Disadvantages of Registering as a Private Limited Company?",
     a:
-      "It is a complex and costly setup, stringent compliance obligations, limited access to public funding, restrictions on share transfer, maximum of 200 members, mandatory disclosure of financials, and a complicated winding-up process."
+      "More compliance, higher cost, mandatory disclosures, limited access to public funding, max 200 members, and more complex winding-up process."
   },
   {
     q: "How Does Limited Liability Work In a Private Limited Company?",
     a:
-      "Limited liability means shareholders are liable only up to their share capital; personal assets remain safe if the company faces liabilities. Exceptions exist only in cases of fraud or misrepresentation."
+      "Shareholders are liable only up to their share capital. Personal assets remain protected except in cases of fraud."
   },
   {
     q: "What Is the Difference Between a Director and a Shareholder?",
     a:
-      "Shareholders are owners holding equity; they invest capital and have ownership rights. Directors manage day-to-day operations and governance. A person can be both, but the two roles carry distinct responsibilities."
+      "Shareholders own the company; directors manage operations. A person can be both, but the roles differ legally."
   },
   {
     q: "Can a Private Limited Company Raise Funds From the Public?",
     a:
-      "No. Private Limited Companies are not permitted to offer shares to the public or issue a public prospectus. They must raise funds through private investors or institutions only."
+      "No, they cannot invite the public to subscribe to shares or issue a public prospectus. Only private funding is allowed."
   },
   {
     q: "Can a Private Limited Company Be Converted Into Another Business Structure?",
     a:
-      "Yes, a Private Limited Company can be converted into an LLP if all shareholders become partners, assets are free from security interests, and conditions are met. It can also convert into a Public Limited Company via meetings, special resolution, and filing Form INC-27 with ROC."
+      "Yes. It can convert into an LLP or Public Limited Company by fulfilling legal conditions and filing required ROC forms."
   },
   {
     q: "Can I Change My Company’s Registered Office After Registration?",
     a:
-      "Yes, to change a registered office, hold a Board meeting, pass a Special Resolution, file Form MGT-14, and submit Form INC-22 (plus INC-23 if moving out-of-state). Notify creditors, obtain required approvals, and update the ROC accordingly."
+      "Yes. File MGT-14 and INC-22 (plus INC-23 for state change), notify stakeholders, and update statutory records."
   },
   {
-    q: "Can Foreign Nationals or Nris Be Directors in a Private Limited Company?",
+    q: "Can Foreign Nationals or NRIs Be Directors in a Private Limited Company?",
     a:
-      "Yes, NRIs and foreign nationals can be directors if they obtain a DIN and DSC. However, the company must have at least one resident director who has stayed in India for 182 days or more in the previous calendar year."
+      "Yes, with DIN & DSC. However, one director must be a resident of India staying 182+ days in the previous year."
   },
   {
     q: "What is the Corporate Identification Number (CIN)?",
     a:
-      "CIN is a unique 21-character alphanumeric code assigned during registration. It identifies the company’s type, location, and year of incorporation."
+      "CIN is a unique 21-character alphanumeric code identifying company type, state, industry, and year of incorporation."
   }
 ];
 
@@ -156,94 +148,63 @@ const Faq = () => {
 
   const filtered = useMemo(() => {
     if (!query.trim()) return QA;
-    const q = query.trim().toLowerCase();
+    const q = query.toLowerCase();
     return QA.filter(
       (item) =>
-        item.q.toLowerCase().includes(q) || item.a.toLowerCase().includes(q)
+        item.q.toLowerCase().includes(q) ||
+        item.a.toLowerCase().includes(q)
     );
   }, [query]);
 
   return (
-    <section className="faq-container faq-advanced" aria-labelledby="faq-main-title">
+    <section className="faq-container">
       <div className="faq-inner">
-        {/* LEFT: descriptive content card (will be sticky on wide screens via CSS) */}
+
+        {/* LEFT SIDE — unchanged layout */}
         <div className="faq-left">
           <div className="faq-left-card">
-            <h1 id="faq-main-title" className="faq-title">Company Registration FAQ's</h1>
+            <h1 className="faq-title">Company Registration FAQ's</h1>
 
             <p className="faq-lead">
-              Starting a Private Limited Company is a big milestone for any entrepreneur. With the right guidance, the process can be smooth and straightforward. Whether you're curious about the SPICe+ forms, the documents you'll need, or what comes after registration, we've got you covered.
+              Starting a Private Limited Company is a big milestone for any entrepreneur.
             </p>
 
             <p className="faq-paragraph">
-              To make things easier, we've answered some of the most common questions about Private Limited Company registration. These FAQs will help you understand each step clearly and give you the confidence to move forward. Explore the answers below and take the first step toward building your business.
+              These FAQs help you understand the registration steps with full clarity.
             </p>
 
-            <div className="faq-stats" aria-hidden="true">
-              <div className="stat">
-                <div className="stat-num">7k+</div>
-                <div className="stat-label">Queries answered</div>
-              </div>
-              <div className="stat">
-                <div className="stat-num">50%</div>
-                <div className="stat-label">Avg. cost savings</div>
-              </div>
-              <div className="stat">
-                <div className="stat-num">1-2w</div>
-                <div className="stat-label">Typical registration time</div>
-              </div>
+            <div className="faq-stats">
+              <div className="stat"><div className="stat-num">7k+</div><div className="stat-label">Queries answered</div></div>
+              <div className="stat"><div className="stat-num">50%</div><div className="stat-label">Avg. savings</div></div>
+              <div className="stat"><div className="stat-num">1–2w</div><div className="stat-label">Processing time</div></div>
             </div>
 
             <div className="faq-visual">
-              <img
-                src={img}
-                alt="Company registration illustration"
-                className="faq-hero-image"
-              />
+              <img src={img} alt="Illustration" className="faq-hero-image" />
             </div>
           </div>
         </div>
 
-        {/* RIGHT: search + accordion list */}
-        <aside className="faq-right" aria-label="Frequently Asked Questions">
-          {/* NEW wrapper: this makes the right column independently scrollable */}
+        {/* RIGHT SIDE — FAQ stays on right */}
+        <aside className="faq-right">
           <div className="faq-right-scroll">
             <div className="faq-right-inner">
+
+              {/* SEARCH BAR ONLY (buttons removed) */}
               <div className="faq-controls">
-                <label htmlFor="faq-search" className="visually-hidden">Search FAQs</label>
-                <div className="faq-search" role="search">
-                  <AiOutlineSearch className="faq-search-icon" aria-hidden="true" />
+                <div className="faq-search">
+                  <AiOutlineSearch className="faq-search-icon" />
                   <input
-                    id="faq-search"
                     className="faq-search-input"
-                    placeholder="Search questions (e.g., DSC, SPICe+)"
+                    placeholder="Search questions..."
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
-                    aria-label="Search frequently asked questions"
                   />
-                </div>
-
-                <div className="faq-controls-actions">
-                  <button
-                    type="button"
-                    className="faq-control-btn"
-                    onClick={() => { setOpenIndex(-1); setQuery(""); }}
-                    aria-label="Reset search and collapse all"
-                  >
-                    Reset
-                  </button>
-                  <button
-                    type="button"
-                    className="faq-control-btn primary"
-                    onClick={() => setOpenIndex((prev) => (prev === 0 ? -1 : 0))}
-                    aria-label="Toggle first FAQ"
-                  >
-                    Toggle first
-                  </button>
                 </div>
               </div>
 
-              <div className="faq-list" role="list">
+              {/* FAQ LIST */}
+              <div className="faq-list">
                 {filtered.length === 0 && (
                   <div className="faq-empty">No results found for “{query}”.</div>
                 )}
@@ -251,32 +212,22 @@ const Faq = () => {
                 {filtered.map((item, idx) => {
                   const isOpen = openIndex === idx;
                   return (
-                    <div key={idx} className={`faq-card faq-card-enhanced ${isOpen ? "open" : ""}`} role="listitem">
-                      <button
-                        className="faq-question"
-                        aria-expanded={isOpen}
-                        aria-controls={`faq-panel-${idx}`}
-                        id={`faq-btn-${idx}`}
-                        onClick={() => toggle(idx)}
-                      >
+                    <div key={idx} className={`faq-card ${isOpen ? "open" : ""}`}>
+                      <button className="faq-question" onClick={() => toggle(idx)}>
                         <span className="faq-qtext">{item.q}</span>
-                        <span className="faq-icon" aria-hidden="true">
+                        <span className="faq-icon">
                           {isOpen ? <AiOutlineMinus /> : <AiOutlinePlus />}
                         </span>
                       </button>
 
-                      <AnimatePresence initial={false}>
+                      <AnimatePresence>
                         {isOpen && (
                           <motion.div
-                            key={`panel-${idx}`}
-                            id={`faq-panel-${idx}`}
-                            role="region"
-                            aria-labelledby={`faq-btn-${idx}`}
                             className="faq-answer-wrap"
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.28, ease: "easeInOut" }}
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.25 }}
                           >
                             <div className="faq-answer">
                               {item.a.split("\n\n").map((para, i) => (
@@ -290,9 +241,11 @@ const Faq = () => {
                   );
                 })}
               </div>
+
             </div>
           </div>
         </aside>
+
       </div>
     </section>
   );

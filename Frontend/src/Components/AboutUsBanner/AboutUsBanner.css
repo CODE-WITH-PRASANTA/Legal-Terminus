@@ -1,0 +1,106 @@
+/* ROOT SECTION */
+.AboutUsBanner-root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 36px 20px;
+  background-position: center center;
+  background-size: cover;
+  min-height: 220px;
+  font-family: Montserrat, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+}
+
+/* TRANSPARENT OVERLAY — image fully visible */
+.AboutUsBanner-root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 0;
+}
+
+/* INNER WRAPPER */
+.AboutUsBanner-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  width: 100%;
+  padding: 28px 24px;
+}
+
+/* TITLE */
+.AboutUsBanner-title {
+  font-weight: 800;
+  margin: 0 0 14px 0;
+  line-height: 1.02;
+  letter-spacing: -0.5px;
+  font-size: 42px;
+}
+
+/* ORANGE UNDERLINE */
+.AboutUsBanner-underline {
+  width: 78px;
+  height: 6px;
+  background: #f3a21a;
+  margin: 8px auto 18px auto;
+  border-radius: 6px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15) inset;
+}
+
+/* SUBTITLE */
+.AboutUsBanner-subtitle {
+  margin: 0 auto;
+  max-width: 980px;
+  font-size: 18px;
+  line-height: 1.55;
+  font-weight: 500;
+  opacity: 0.98;
+}
+
+/* RESPONSIVE MEDIA QUERY */
+/* Extra Large Devices (Desktops ≥ 1200px) */
+@media (min-width: 1200px) {
+  .AboutUsBanner-inner {
+    max-width: 1180px;
+  }
+}
+
+/* Large Devices (Desktops / Laptops 992px – 1199px) */
+@media (max-width: 1199px) {
+  .AboutUsBanner-root {
+    min-height: 220px;
+  }
+}
+
+/* Medium Devices (Tablets 768px – 991px) */
+@media (max-width: 991px) {
+  .AboutUsBanner-title {
+    font-size: 42px;
+  }
+}
+
+/* Small Devices (Tablets / Mobiles 576px – 767px) */
+@media (max-width: 767px) {
+  .AboutUsBanner-root {
+    min-height: 200px;
+  }
+  .AboutUsBanner-inner {
+    width: 100%;
+  }
+}
+
+/* Extra Small Devices (Mobiles ≤ 575px) */
+@media (max-width: 575px) {
+  .AboutUsBanner-root {
+    min-height: 180px;
+    text-align: center;
+  }
+  .AboutUsBanner-inner {
+    width: 100%;
+  }
+}
+

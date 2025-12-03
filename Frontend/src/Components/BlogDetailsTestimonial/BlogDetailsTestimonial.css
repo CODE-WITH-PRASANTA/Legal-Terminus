@@ -1,12 +1,6 @@
 /* =========================
-   Updated CSS — iPad Air fix added
-   (only max-width media queries used)
-   Preserves original design, layout, spacing, colors, and content.
+   Base / Layout (desktop-first)
    ========================= */
-
-/* --------------------
-   Base / Layout
-   -------------------- */
 
 .testimonial * {
   box-sizing: border-box;
@@ -16,7 +10,6 @@
   width: 100%;
   min-height: 620px;
   display: flex;
-  background: #0b0b0b;
   color: #0b1220;
   font-family: "Arial", system-ui, sans-serif;
   align-items: stretch;
@@ -35,14 +28,13 @@
   width: 55%;
   min-height: 620px;
   padding: 38px 72px;
-  background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
   gap: 18px;
-  overflow: visible; /* allow slide/avatars to render without clipping */
+  overflow: visible;
 }
 
 .kicker {
@@ -63,7 +55,7 @@
   line-height: 0.92;
   margin: 0 0 8px 0;
   font-weight: 700;
-  word-break: break-word; /* prevent overflow on very long words */
+  word-break: break-word;
 }
 
 .quote-mark {
@@ -72,7 +64,7 @@
   margin-top: 6px;
 }
 
-/* Slider / slides container */
+/* Slider container */
 .slider {
   width: 100%;
   max-width: 760px;
@@ -83,14 +75,14 @@
   min-height: 240px;
   display: flex;
   justify-content: center;
-  overflow: visible; /* allow drop-shadows and avatars to show */
-  padding-bottom: 12px; /* baseline bottom spacing to prevent overlap */
+  overflow: visible;
+  padding-bottom: 12px;
 }
 
-/* Each slide is absolutely positioned and centered via left:50% + translateX(-50%) */
+/* Slides */
 .slide {
   position: absolute;
-  width: calc(100% - 48px); /* responsive default width inside slider */
+  width: calc(100% - 48px);
   max-width: 720px;
   left: 50%;
   top: 0;
@@ -104,7 +96,7 @@
               transform 600ms cubic-bezier(.22,.61,.36,1);
   backface-visibility: hidden;
   z-index: 1;
-  box-sizing: border-box; /* ensure padding respected */
+  box-sizing: border-box;
 }
 
 .slide.active {
@@ -116,7 +108,6 @@
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
 }
 
-/* Keep off-screen positions hidden */
 .slide.pos--2,
 .slide.pos--1,
 .slide.pos1,
@@ -126,7 +117,6 @@
   pointer-events: none !important;
 }
 
-/* Slide inner layout and ken burns animation */
 .slide-inner {
   display: flex;
   flex-direction: column;
@@ -138,8 +128,8 @@
 }
 
 @keyframes slideKenBurns {
-  0%   { transform: scale(1) translate(0,0); }
-  50%  { transform: scale(1.04) translate(-4px,-6px); }
+  0% { transform: scale(1) translate(0,0); }
+  50% { transform: scale(1.04) translate(-4px,-6px); }
   100% { transform: scale(1.08) translate(-8px,-10px); }
 }
 
@@ -151,10 +141,9 @@
   margin: 0 auto 28px;
   max-width: 680px;
   word-break: break-word;
-  hyphens: auto; /* improved wrapping on narrow devices */
 }
 
-/* Avatar row */
+/* Avatar */
 .avatar-row {
   display: flex;
   justify-content: center;
@@ -168,7 +157,6 @@
   object-fit: cover;
   border: 6px solid rgba(11,107,46,0.06);
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  flex-shrink: 0;
 }
 
 .person-name {
@@ -176,18 +164,17 @@
   font-size: 20px;
   font-weight: 700;
   color: #0b6b2e;
-  display: block;
-  line-height: 1.1;
+  text-align: center;
 }
 
 .person-role {
   font-size: 14px;
   color: #6b7280;
   margin-top: 6px;
-  display: block;
+  text-align: center;
 }
 
-/* Right column (hero image) */
+/* Right image */
 .test-right {
   width: 45%;
   min-height: 620px;
@@ -200,8 +187,6 @@
   height: 100%;
   object-fit: cover;
   animation: heroKenBurns 28s ease-in-out infinite alternate;
-  display: block;
-  max-width: 100%;
 }
 
 .hero-overlay {
@@ -216,198 +201,122 @@
   100% { transform: scale(1.09) translate(-2%, -1%); }
 }
 
-/* --------------------
-   Responsive (max-width only)
-   Target: 1280px, 1024px, 820px (iPad Air), 768px, 480px, 360px
-   -------------------- */
-
-@media (max-width: 1280px) {
-  .headline { font-size: 72px; }
-  .test-left { padding: 36px 64px; }
-  .kicker { left: 56px; }
-  .slider { max-width: 680px; }
-  .slide { max-width: 640px; width: calc(100% - 48px); }
-}
-
-@media (max-width: 1024px) {
-  .headline { font-size: 60px; }
-  .test-left { width: 58%; padding: 34px 56px; }
-  .test-right { width: 42%; }
-  .kicker { left: 48px; top: 14px; font-size: 22px; }
-  .slider { max-width: 640px; }
-  .slide { max-width: 600px; padding: 0 20px; width: calc(100% - 40px); }
-  .slide-text { max-width: 600px; font-size: 17px; }
-  /* prevent hero image extreme zoom overflow */
-  .hero-img { min-height: 100%; }
-}
-
-/* --------------------
-   iPad Air specific fix — addresses name/role overlapping container
-   (iPad Air portrait CSS width ≈ 820px)
-   -------------------- */
-@media (max-width: 820px) {
-  /* Ensure left column has enough vertical space so avatar + name/role don't overlap container */
-  .test-left {
-    min-height: 700px; /* slightly larger to accommodate slide and avatar block */
-    padding-bottom: 48px; /* extra bottom space so person-name/role do not overlap */
-  }
-
-  /* Provide extra breathing room inside the slider for avatars and names */
-  .slider {
-    padding-bottom: 40px;
-    min-height: 300px; /* ensure absolute-positioned slides have space to render avatars */
-  }
-
-  /* Slightly reduce avatar size to better fit tablet layout while preserving visual proportion */
-  .avatar {
-    width: 72px;
-    height: 72px;
-  }
-
-  /* Small spacing tweaks for name/role to avoid collision */
-  .person-name { margin-top: 22px; font-size: 19px; }
-  .person-role { margin-top: 8px; font-size: 14px; }
-
-  /* Ensure active slide stacks above other content */
-  .slide.active { z-index: 60; }
-
-  /* Prevent hero image from overlapping into left column */
-  .test-right { z-index: 0; }
-
-  /* Keep headline readable on iPad Air */
-  .headline { font-size: 48px; line-height: 1.02; }
-}
-
-/* Stacked mobile layout for <=768 */
-@media (max-width: 768px) {
-  /* Stack columns vertically */
+/* --------- Strong mobile overrides: paste at the very end of your CSS --------- */
+@media (max-width: 900px) {
+  /* center the outer container on small screens */
   .testimonial.regardingly {
-    flex-direction: column;
+    justify-content: center !important;
+    padding-left: 0;
+    padding-right: 0;
   }
+
+  /* keep the inner column centered and constrained */
   .testimonial-inner {
     flex-direction: column;
-  }
-  .test-left, .test-right {
+    align-items: center;
     width: 100%;
-    min-height: auto;
-  }
-  .test-left {
-    padding: 28px 28px;
-    min-height: 520px;
-  }
-  .test-right {
-    height: 420px;
-  }
-
-  .headline {
-    font-size: 42px;
-  }
-  .kicker {
-    left: 30px;
-    top: 12px;
-  }
-
-  /* slider adjustments for smaller screens */
-  .slider {
-    max-width: 560px;
-    padding-top: 12px;
-  }
-  .slide {
-    position: relative; /* make slide flow in stacked layout to avoid overflow */
-    left: 0;
-    transform: none;
-    padding: 0 12px;
-    width: 100%;
-    max-width: 520px;
     margin: 0 auto;
-    opacity: 0; /* keep animation behaviour (JS should toggle .active) */
-  }
-  .slide.active {
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+    box-sizing: border-box;
   }
 
-  .slide-text {
-    font-size: 16px;
-  }
-  .avatar { width: 72px; height: 72px; }
-  .person-name { font-size: 18px; }
-  .person-role { font-size: 13px; }
-
-  /* ensure hero image scales cleanly in stacked layout */
-  .test-right { overflow: hidden; }
-  .hero-img { height: 100%; width: 100%; object-position: center center; }
-}
-
-@media (max-width: 480px) {
+  /* center and constrain the white card so it never hugs the left edge */
   .test-left {
-    padding: 20px 18px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: 760px !important;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
   }
-  .headline {
-    font-size: 32px;
-  }
-  .kicker {
-    left: 18px;
-    top: 10px;
-    font-size: 18px;
-  }
-  .slider {
-    max-width: 420px;
-  }
-  .slide {
-    max-width: 380px;
-    padding: 0 12px;
-    width: calc(100% - 24px);
-  }
-  .slide-text {
-    font-size: 15px;
-    max-width: 340px;
-  }
-  .avatar { width: 64px; height: 64px; }
-  .test-right {
-    height: 260px;
-  }
-  /* avoid hero-img stretching too tall on very narrow devices */
-  .hero-img { object-position: center top; }
-}
 
-@media (max-width: 360px) {
-  .headline {
-    font-size: 28px;
-  }
-  .kicker {
-    left: 12px;
-    font-size: 16px;
-  }
-  .test-left {
-    padding: 16px 12px;
-  }
+  /* center the slider area */
   .slider {
-    max-width: 320px;
+    width: 100% !important;
+    max-width: 720px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    perspective: none !important;
+    padding-top: 12px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
   }
+
+  /* ensure slides are normal flow, centered, and constrained */
   .slide {
-    max-width: 300px;
-    width: calc(100% - 24px);
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 640px !important;
+    margin: 0 auto !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    box-sizing: border-box;
   }
-  .slide-text {
-    font-size: 14px;
-    max-width: 280px;
+
+  /* hide other slides to avoid any multi-column issues */
+  .slider .slide:not(.active) {
+    display: none !important;
   }
+
+  /* center textual content */
+  .slide-text,
+  .person-name,
+  .person-role,
+  .avatar-row {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* slightly smaller avatar on mobile */
   .avatar {
-    width: 58px;
-    height: 58px;
+    width: 68px !important;
+    height: 68px !important;
   }
+
+  /* responsive headline centered */
+  .headline {
+    font-size: clamp(30px, 8vw, 78px) !important;
+    line-height: 1 !important;
+    padding: 0 10px !important;
+    text-align: center !important;
+  }
+
+  /* keep kicker visible but not overlapping */
+  .kicker {
+    left: 20px !important;
+    top: 12px !important;
+  }
+
+  /* mobile hero image constrained and centered below the card */
   .test-right {
-    height: 220px;
+    order: 2;
+    width: 100%;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 360px;
+    box-sizing: border-box;
   }
 }
 
-/* Respect user's reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  .hero-img,
-  .slide-inner {
-    animation: none !important;
-  }
+/* keep very-small tweaks for narrowest phones */
+@media (max-width: 480px) {
+  .test-right { height: 260px; }
+  .headline { font-size: clamp(26px, 10vw, 60px) !important; }
+  .avatar { width: 60px !important; height: 60px !important; }
 }

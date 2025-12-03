@@ -8,6 +8,8 @@ import ContactUs from "./Pages/ContactUs/ContactUs";
 import IncorptionPage from "./Pages/IncorptionPage/IncorptionPage";
 import BlogDetails from "./Pages/BlogDetails/BlogDetails";
 import Blog from "./Pages/Blog/Blog";
+import AboutUs from "./Pages/AboutUs/AboutUs";
+import MediaHub from "./Pages/MediaHub/MediaHub";
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
         <Route path="/contact/us" element={<ContactUs />} />
         <Route path="/blog/details" element={<BlogDetails />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/media" element={<MediaHub />} />
+
 
 
 

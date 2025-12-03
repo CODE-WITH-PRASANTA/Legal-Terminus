@@ -1,0 +1,206 @@
+/* ---------- NewsImageSlider.css (REPLACE CONTENT) ---------- */
+
+/* Root / wrapper */
+.three-wrapper {
+  width: 100%;
+  margin: 28px auto;
+  text-align: center;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  background: radial-gradient(1200px 300px at 10% 10%, rgba(11,107,46,0.04), transparent 10%),
+              radial-gradient(1000px 260px at 90% 90%, rgba(22,163,74,0.03), transparent 12%),
+              linear-gradient(180deg, #fbfdfb 0%, #ffffff 100%);
+  padding: 28px 16px;
+  box-sizing: border-box;
+  border-radius: 14px;
+}
+
+/* Header */
+.three-header {
+  font-size: 34px;
+  color: #0b6b2e;
+  font-weight: 800;
+  margin: 6px 0 18px;
+  font-family: "Merriweather", serif;
+  letter-spacing: 0.2px;
+  line-height: 1.05;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 6px;
+  transition: transform 0.3s ease;
+}
+
+.three-header:hover {
+  transform: translateY(-2px);
+}
+
+.three-header::after {
+  content: "";
+  height: 3px;
+  background: linear-gradient(90deg, #16a34a 0%, #0b6b2e 100%);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  transition: width 0.38s cubic-bezier(.2,.9,.2,1);
+}
+
+/* Slider outer container */
+.three-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: visible;
+  padding: 18px 8px 28px;
+  box-sizing: border-box;
+}
+
+/* Track that moves horizontally */
+.three-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(.22,.9,.35,1);
+  will-change: transform;
+  align-items: stretch;
+}
+
+/* Each slide */
+.three-slide {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 220px;
+  transition: transform 0.4s cubic-bezier(.2,.9,.2,1), box-shadow 0.3s;
+  perspective: 800px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Hover / focus effect on slide - gentle scale and lift */
+.three-slide:hover,
+.three-slide:focus-within {
+  transform: translateY(-6px) scale(1.02);
+  z-index: 10;
+}
+
+/* Newspaper images */
+.three-slide img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,250,250,0.95));
+  box-shadow:
+    0 10px 30px rgba(7, 16, 13, 0.06),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  transition: transform 0.5s cubic-bezier(.2,.9,.2,1), box-shadow 0.3s;
+  -webkit-user-drag: none;
+  user-select: none;
+  display: block;
+}
+
+/* Slight image lift on slide hover */
+.three-slide:hover img,
+.three-slide:focus-within img {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    0 22px 50px rgba(7, 16, 13, 0.12),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* Arrow Buttons */
+.three-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(180deg,#16a34a 0%, #0b6b2e 100%);
+  color: #fff;
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+  box-shadow: 0 10px 30px rgba(11,107,46,0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s;
+  opacity: 0.98;
+}
+
+.three-arrow.left {
+  left: 6px;
+}
+
+.three-arrow.right {
+  right: 6px;
+}
+
+.three-arrow:hover {
+  transform: translateY(-50%) scale(1.06);
+  box-shadow: 0 18px 38px rgba(11,107,46,0.2);
+}
+
+.three-arrow:focus {
+  outline: 3px solid rgba(22,163,74,0.18);
+  outline-offset: 4px;
+  box-shadow: 0 14px 34px rgba(11,107,46,0.2);
+}
+
+/* Mobile adjustments */
+/* Responsive adjustments (simple, non-intrusive) */
+@media (max-width: 900px) {
+  .three-track {
+    gap: 12px;
+  }
+
+  /* make slides take a larger portion of the viewport so they remain readable without changing fonts or removing padding */
+  .three-slide {
+    flex: 0 0 72%;
+    min-width: 72%;
+    max-width: 72%;
+  }
+
+  /* ensure images scale to their slide */
+  .three-slide img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* slightly reduce arrow footprint to avoid overlap on narrower screens (no padding changes) */
+  .three-arrow {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .three-track {
+    gap: 10px;
+  }
+
+  /* single prominent slide view on very small screens */
+  .three-slide {
+    flex: 0 0 92%;
+    min-width: 92%;
+    max-width: 92%;
+  }
+
+  .three-slide img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .three-arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}
