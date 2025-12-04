@@ -1,0 +1,133 @@
+/* Workingprocess.css
+   Clean, responsive cards similar to the provided design
+*/
+
+:root{
+  --blue: #4CAF50;      /* deep blue */
+  --orange: #e8a233;    /* warm orange */
+  --card-radius: 10px;
+  --card-padding: 34px;
+  --text-white: #ffffff;
+  --muted-shadow: 0 8px 20px rgba(11,79,115,0.12);
+  --muted-shadow-orange: 0 8px 20px rgba(232,162,51,0.12);
+  --max-width: 1400px;
+  --gap: 28px;
+  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.wp-section {
+  padding: 56px 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.wp-inner {
+  width: 100%;
+  max-width: var(--max-width);
+  text-align: center;
+}
+
+/* Title + small underline */
+.wp-title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0b1a22; /* dark text */
+}
+
+.wp-divider {
+  width: 64px;
+  height: 4px;
+  background: linear-gradient( #4CAF50);
+  margin: 14px auto 32px auto;
+  border-radius: 4px;
+}
+
+/* Grid of cards */
+.wp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+  align-items: stretch;
+  padding: 0 12px;
+}
+
+/* Card */
+.wp-card {
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  color: var(--text-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 170px;
+  box-shadow: var(--muted-shadow);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Icon */
+.wp-card__icon {
+  margin-bottom: 18px;
+}
+.wp-card__icon svg {
+  width: 50px;
+  height: 50px;
+  color: rgba(255,255,255,0.95);
+  display: block;
+}
+
+/* Title lines */
+.wp-card__title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.wp-card__title-line {
+  display: block;
+}
+
+/* Color variants */
+.wp-card--blue {
+  background: linear-gradient(180deg, var(--blue));
+  box-shadow: var(--muted-shadow);
+}
+
+.wp-card--orange {
+  background: linear-gradient(180deg, var(--orange), #d18620);
+  box-shadow: var(--muted-shadow-orange);
+}
+
+/* Hover / focus */
+.wp-card:hover,
+.wp-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  cursor: default;
+}
+
+/* Make the blocks breathe on small screens */
+@media (max-width: 1100px) {
+  .wp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .wp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wp-card {
+    min-height: 140px;
+    padding: 22px;
+  }
+
+  .wp-title {
+    font-size: 24px;
+  }
+}
