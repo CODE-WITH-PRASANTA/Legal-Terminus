@@ -7,6 +7,12 @@ import PvtltdCompanyTab from '../../Components/PvtltdCompanyTab/PvtltdCompanyTab
 import PvtltdPvtTypes from '../../Components/PvtltdPvtTypes/PvtltdPvtTypes'
 import PvtltdRequirementsTab from '../../Components/PvtltdRequirementsTab/PvtltdRequirementsTab'
 import PvtltdProcess from '../../Components/PvtltdProcess/PvtltdProcess'
+import PvtltdDocument from '../../Components/PvtltdDocument/PvtltdDocument'
+import PvtltdFAQ from '../../Components/PvtltdFAQ/PvtltdFAQ'
+import PvtltdTermsCondition from '../../Components/PvtltdTermsCondition/PvtltdTermsCondition'
+import PvtltdTestimonial from '../../Components/PvtltdTestimonial/PvtltdTestimonial'
+import PvtltdVideoTestimonial from '../../Components/PvtltdVideoTestimonial/PvtltdVideoTestimonial'
+import PvtltdOurclints from '../../Components/PvtltdOurclints/PvtltdOurclints'
 
 const PrivateLimited = () => {
   return (
@@ -19,6 +25,14 @@ const PrivateLimited = () => {
         <PvtltdPvtTypes />
         <PvtltdRequirementsTab />
         <PvtltdProcess />
+        <PvtltdDocument />
+        <PvtltdFAQ />
+        <PvtltdTermsCondition />
+        <PvtltdTestimonial />
+        <PvtltdVideoTestimonial />
+        <PvtltdOurclints />
+
+    
     </div>
   )
 }

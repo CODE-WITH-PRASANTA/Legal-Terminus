@@ -8,6 +8,7 @@ import ContactUs from "./Pages/ContactUs/ContactUs";
 import IncorptionPage from "./Pages/IncorptionPage/IncorptionPage";
 import BlogDetails from "./Pages/BlogDetails/BlogDetails";
 import Blog from "./Pages/Blog/Blog";
+import Publicltd from "./Pages/Publicltd/Publicltd";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         {/*   ALL SubPages */}
         <Route path="/private-limited-company-registration-in-india" element={<PrivateLimited />} />
         <Route path="/incorption-registration-in-india" element={<IncorptionPage />} />
+        <Route path="/Public-Limited-Company-Registration-in-India" element={<Publicltd />} />
       </Routes>
       <Footer />
     </Router>

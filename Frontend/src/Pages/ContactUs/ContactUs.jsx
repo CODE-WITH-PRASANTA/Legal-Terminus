@@ -8,6 +8,7 @@ import './ContactUs.css'
 // import ExpertSection from '../../Components/ExpertSection/ExpertSection'
 // import ContactUsBlogSection from '../../Components/ContactUsBlogSection/ContactUsBlogSection'
 import ContactUsSection from '../../Components/ContactUsSection/ContactUsSection'
+import BannerContact from '../../Components/BannerContact/BannerContact'
 
 
 const ContactUs = () => {
@@ -21,7 +22,7 @@ const ContactUs = () => {
     <ExpertSection/>
     <ContactUsBlogSection/> */}
 
-
+    <BannerContact/>
     <ContactUsSection/>
   
    

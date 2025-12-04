@@ -1,0 +1,142 @@
+/* ===============================
+   Video Testimonial — Responsive CSS
+   Uses ONLY @media (max-width: ...) breakpoints
+   Preserves design, spacing, colors, and content
+   =============================== */
+
+/* Root */
+.vt-root {
+  background: #ffffff;
+  padding: 44px 0 56px;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Inner container centers content and prevents overflow */
+.vt-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+/* Title */
+.vt-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 28px 0;
+  color: #0B6B2E;
+  letter-spacing: 1px;
+  line-height: 1.05;
+  word-wrap: break-word;
+}
+
+/* Grid layout (two columns on wide screens) */
+.vt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  justify-items: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Card — width chosen to match design but responsive due to max-width */
+.vt-card {
+  width: 520px;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+/* Embed wrapper — 16:9 to match YouTube standard */
+.vt-embed {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(16, 24, 40, 0.06);
+  transition: transform 220ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms ease;
+  position: relative;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hover lift for pointer devices */
+.vt-card:hover .vt-embed {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 48px rgba(16,24,40,0.10);
+}
+
+/* iframe fills the wrapper exactly */
+.vt-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  object-fit: cover;
+}
+
+/* Focus ring for keyboard users */
+.vt-card:focus-within .vt-embed {
+  outline: 3px solid rgba(45,179,74,0.12);
+  outline-offset: 4px;
+}
+
+/* ============================
+   Responsive rules (max-width only)
+   Breakpoints: 1280, 1024, 768, 480, 360
+   ============================ */
+
+/* <= 1280px */
+@media (max-width: 1280px) {
+  .vt-card { width: 480px; }
+  .vt-grid { gap: 36px; }
+  .vt-title { font-size: 34px; }
+}
+
+/* <= 1024px */
+@media (max-width: 1024px) {
+  .vt-inner { max-width: 960px; padding: 0 18px; }
+  .vt-card { width: 420px; }
+  .vt-grid { gap: 32px; }
+  .vt-title { font-size: 32px; }
+}
+
+/* <= 768px — stack into single column for tablets & large phones */
+@media (max-width: 768px) {
+  .vt-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .vt-card {
+    width: 100%;
+    max-width: 540px;
+  }
+  .vt-inner { padding: 0 16px; }
+  .vt-title { font-size: 30px; margin-bottom: 20px; }
+}
+
+/* <= 480px — compact phones */
+@media (max-width: 480px) {
+  .vt-root { padding: 28px 0 40px; }
+  .vt-inner { padding: 0 12px; }
+  .vt-title { font-size: 22px; margin-bottom: 16px; }
+
+  .vt-card { width: 100%; max-width: 360px; }
+  .vt-grid { gap: 20px; justify-items: center; }
+
+  .vt-embed { border-radius: 8px; }
+}
+
+/* <= 360px — very small phones */
+@media (max-width: 360px) {
+  .vt-title { font-size: 20px; margin-bottom: 12px; }
+  .vt-card { max-width: 320px; }
+  .vt-embed { border-radius: 6px; }
+}

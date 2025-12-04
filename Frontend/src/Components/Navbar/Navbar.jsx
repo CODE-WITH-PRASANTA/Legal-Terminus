@@ -33,7 +33,7 @@ const navData = [
         items: [
           { label: 'Private Limited Company Registration In India', href: '/private-limited-company-registration-in-india' },
           { label: 'Incorporation Of Wholly Owned Subsidiary In India', href: '/incorption-registration-in-india' },
-          { label: 'Public Limited Company Registration In India', href: '/public-limited' },
+          { label: 'Public Limited Company Registration In India', href: '/Public-Limited-Company-Registration-in-India' },
           { label: 'One Person Company Registration In India', href: '/one-person-company' },
           { label: 'Limited Liability Partnership Registration In India', href: '/llp' },
           { label: 'Partnership Firm Registration In India', href: '/partnership' },

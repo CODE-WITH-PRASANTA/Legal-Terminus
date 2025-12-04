@@ -1,8 +1,7 @@
 import React from "react";
 import "./PvtltdPvtTypes.css";
+import typesIllustration from "../../assets/f-3 img.webp"
 
-// replace with your actual image path
-import typesIllustration from "../../assets/f-3 img.webp";
 
 const PvtTypes = () => {
   return (
