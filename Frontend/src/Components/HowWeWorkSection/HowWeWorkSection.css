@@ -1,0 +1,357 @@
+/* SECTION WRAPPER */
+.howwework {
+  padding: 90px 0 120px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+/* CONTAINER */
+.howwework-container {
+  width: 90%;
+  max-width: 1350px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 50px;
+  background-image: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,0.02));
+  -webkit-font-smoothing: antialiased;
+}
+
+/* LEFT SIDE */
+.howwework-left {
+  width: 50%;
+  padding-right: 40px;
+}
+
+.howwework-tag {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f6b42a !important;
+  margin-bottom: 14px;
+  padding: 6px 12px;
+  display: inline-block;
+  background: rgba(246,180,42,0.10);
+  border-radius: 8px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+  transition: box-shadow 220ms ease, background 220ms ease;
+}
+
+@media (hover: hover) {
+  .howwework-tag:hover {
+    background: linear-gradient(90deg, rgba(246,180,42,0.15), rgba(246,180,42,0.06));
+    box-shadow: 0 6px 18px rgba(246,180,42,0.10);
+  }
+}
+
+.howwework-title {
+  font-size: 42px;
+  line-height: 1.25;
+  color: #0a1a33;
+  font-weight: 800;
+  margin-bottom: 22px;
+  letter-spacing: -0.3px;
+}
+
+.howwework-desc {
+  width: 95%;
+  color: #6d7783;
+  font-size: 17px;
+  line-height: 1.65;
+  margin-bottom: 40px;
+  opacity: 0.98;
+}
+
+.howwework-steps {
+  position: relative;
+  padding-left: 50px;
+}
+
+.howwework-steps::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 6px;
+  width: 3px;
+  height: calc(100% - 12px);
+  background: rgba(246,180,42,0.35);
+  border-radius: 4px;
+}
+
+.howwework-step {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  gap: 16px;
+}
+
+.howwework-step-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(246,180,42,0.12) !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #f6b42a !important;
+  margin-right: 20px;
+  flex-shrink: 0;
+  border: 3px solid rgba(246,180,42,0.45) !important;
+}
+
+.howwework-step h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0a1a33;
+}
+
+.howwework-step p {
+  font-size: 16px;
+  color: #6d7783;
+  line-height: 1.6;
+  width: 95%;
+}
+
+/* RIGHT SIDE */
+.howwework-right {
+  width: 50%;
+  position: relative;
+}
+
+/* IMAGE */
+.howwework-image {
+  width: 100%;
+    max-height: 520px;   /* new height — still big */
+
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.10);
+}
+
+/* FLOATING CARD */
+.howwework-floating-card {
+  position: absolute;
+  right: 32px;
+  bottom: -40px;
+  width: 380px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 32px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.howwework-floating-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #f6b42a !important;
+  background: #fff7e1;
+  padding: 10px 14px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+}
+
+.howwework-btn {
+  background: transparent;
+  border: none;
+  color: #f6b42a;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* -----------------------
+   RESPONSIVE ADDITIONS
+   ----------------------- */
+
+/* <= 1200px */
+@media (max-width: 1200px) {
+  .howwework-container {
+    flex-wrap: wrap;
+    gap: 36px;
+  }
+
+  .howwework-left {
+    width: 58%;
+    padding-right: 28px;
+  }
+
+  .howwework-right {
+    width: 40%;
+  }
+
+  .howwework-floating-card {
+    right: 20px;
+    bottom: -36px;
+    width: 340px;
+    padding: 28px;
+  }
+}
+
+/* <= 900px TABLET */
+@media (max-width: 900px) {
+  .howwework {
+    padding: 64px 0 80px;
+  }
+
+  .howwework-container {
+    width: 94%;
+    gap: 28px;
+  }
+
+  .howwework-left,
+  .howwework-right {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .howwework-title {
+    font-size: 34px;
+  }
+
+  .howwework-desc {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .howwework-steps {
+    padding-left: 42px;
+  }
+
+  .howwework-step-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 20px;
+  }
+
+  .howwework-floating-card {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    width: calc(100% - 48px);
+    max-width: 520px;
+    bottom: -32px;
+    padding: 20px;
+  }
+}
+
+/* <= 600px MOBILE */
+@media (max-width: 600px) {
+  .howwework {
+    padding: 48px 0 56px;
+  }
+
+  .howwework-container {
+    width: 96%;
+    gap: 20px;
+  }
+
+  .howwework-title {
+    font-size: 28px;
+  }
+
+  .howwework-desc {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .howwework-step-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+
+  .howwework-floating-card {
+    width: calc(100% - 32px);
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    padding: 18px;
+    bottom: -24px;
+  }
+
+  .howwework-floating-card h3 {
+    font-size: 18px;
+    padding: 8px 10px;
+  }
+}
+
+/* <= 420px SMALL PHONES */
+@media (max-width: 420px) {
+  .howwework-title {
+    font-size: 24px;
+  }
+
+  .howwework-desc {
+    font-size: 14px;
+  }
+
+  .howwework-step-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+  }
+
+  .howwework-floating-card {
+    width: calc(100% - 24px);
+    padding: 14px;
+    bottom: -18px;
+  }
+}
+
+/* >= 1400px WIDE DESKTOP */
+@media (min-width: 1400px) {
+  .howwework-container {
+    gap: 64px;
+  }
+
+  .howwework-title {
+    font-size: 48px;
+  }
+
+  .howwework-desc {
+    font-size: 18px;
+  }
+
+  .howwework-floating-card {
+    width: 420px;
+    right: 40px;
+    bottom: -48px;
+    padding: 36px;
+  }
+}
+
+/* >= 2560px 4K */
+@media (min-width: 2560px) {
+  .howwework {
+    padding: 120px 0 160px;
+  }
+
+  .howwework-container {
+    max-width: 2200px;
+    gap: 90px;
+  }
+
+  .howwework-title {
+    font-size: 64px;
+  }
+
+  .howwework-desc {
+    font-size: 20px;
+  }
+
+  .howwework-step-icon {
+    width: 76px;
+    height: 76px;
+    font-size: 28px;
+  }
+
+  .howwework-floating-card {
+    width: 520px;
+    right: 72px;
+    bottom: -64px;
+    padding: 42px;
+  }
+}

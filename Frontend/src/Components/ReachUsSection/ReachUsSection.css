@@ -1,0 +1,343 @@
+/* Base reset for this component */
+.ReachUs-root {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #222;
+}
+
+/* ---------------- TOP CONTENT ---------------- */
+.ReachUs-top {
+  background: #fff;
+  padding: 36px 0 24px;
+}
+
+.ReachUs-topInner {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* Left copy (large heading + paragraphs) */
+.ReachUs-copy {
+  flex: 1 1 60%;
+  min-width: 320px;
+}
+
+.ReachUs-headline {
+  font-size: 30px;
+  font-weight: 800;
+  margin: 8px 0 22px;
+  color: #0B6B2E;
+  line-height: 1.05;
+}
+
+.ReachUs-paragraph {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #4b5563; /* muted dark */
+  margin-bottom: 18px;
+}
+
+/* Right illustration */
+.ReachUs-illustrationWrap {
+  width: 260px;
+  flex: 0 0 260px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.ReachUs-illustration {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  display: block;
+}
+
+/* ---------------- CTA / CONTACT FOOTER (GREEN THEME) ---------------- */
+/* main CTA background uses deep -> mid green gradient */
+.ReachUs-cta {
+  background: linear-gradient(135deg, #033a1d 0%, #0b6b2e 45%, #13a63a 100%);
+  color: #fff;
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* container layout unchanged */
+.ReachUs-ctaInner {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left column for contacts */
+.ReachUs-contacts {
+  flex: 1 1 70%;
+}
+
+.ReachUs-ctaTitle {
+  margin: 0 0 8px 0;
+  font-size: 36px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.ReachUs-ctaSubtitle {
+  margin: 0 0 20px 0;
+  font-size: 16px;
+  opacity: 0.95;
+}
+
+/* Contact list style */
+.ReachUs-contactList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.ReachUs-contactItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 220px;
+}
+
+/* icon container (keeps shape) */
+.ReachUs-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fff;
+}
+
+/* Use green family to match the logo (slight variety) */
+.ReachUs-icon--mail { background: #26c32e; }      /* bright logo green */
+.ReachUs-icon--phone { background: #1fb04a; }     /* mid green */
+.ReachUs-icon--whatsapp { background: #06c756; }  /* whatsapp-green */
+.ReachUs-icon--site { background: #0b8c5a; }      /* deeper green */
+
+/* Ensure react-icons svgs are white */
+.ReachUs-icon svg {
+  color: #fff;
+  display: block;
+}
+
+/* contact text stays readable */
+.ReachUs-contactText {
+  font-size: 15px;
+  color: rgba(255,255,255,0.95);
+}
+
+/* Steps list */
+.ReachUs-steps {
+  list-style: none;
+  padding: 10px 0 0 0;
+  margin: 0;
+  display: block;
+}
+
+.ReachUs-step {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #f7fbff;
+}
+
+/* step icons: translucent white background */
+.ReachUs-stepIcon {
+  background: rgba(255,255,255,0.12);
+  width: 36px;
+  height: 36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:8px;
+  color: #fff;
+}
+
+.ReachUs-stepIcon svg {
+  color: #fff;
+  display:block;
+}
+
+/* Right CTA action column */
+.ReachUs-ctaAction {
+  flex: 0 0 210px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+}
+
+/* CTA button: green with dark-green text for contrast */
+.ReachUs-getStarted {
+  background: #26c32e;               /* logo green */
+  color: #05261a;                    /* very dark green for text contrast */
+  border: none;
+  padding: 14px 26px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(6,77,33,0.25);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.12s ease;
+}
+
+.ReachUs-getStarted:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(6,77,33,0.28);
+  opacity: 0.98;
+}
+
+/* ---------------- Floating WhatsApp FAB (green) ---------------- */
+.ReachUs-whatsappFab {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(180deg,#16b654,#0f8a46);
+  border-radius: 50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 10px 20px rgba(2,36,16,0.22);
+  z-index: 999;
+  text-decoration: none;
+}
+
+.ReachUs-whatsappIcon {
+  color: #fff;
+  font-size: 20px;
+}
+
+/* ---------------- Responsive rules ---------------- */
+/* Large Devices (Desktops / Laptops) */
+@media (max-width: 1199px) {
+  .ReachUs-topInner {
+    gap: 24px;
+  }
+
+  .ReachUs-illustrationWrap {
+    width: 220px;
+    flex: 0 0 220px;
+  }
+
+  .ReachUs-ctaInner {
+    gap: 20px;
+  }
+}
+
+/* Medium Devices (Tablets) */
+@media (max-width: 991px) {
+  .ReachUs-topInner,
+  .ReachUs-ctaInner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ReachUs-copy {
+    flex: 1 1 100%;
+    min-width: auto;
+    width: 100%;
+  }
+
+  .ReachUs-illustrationWrap {
+    flex: 0 0 auto;
+    width: 80%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  .ReachUs-ctaAction {
+    flex: 0 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+  }
+
+  .ReachUs-contacts {
+    width: 100%;
+  }
+
+  .ReachUs-contactList {
+    justify-content: center;
+  }
+}
+
+/* Small Devices (Large phones / small tablets) */
+@media (max-width: 767px) {
+  .ReachUs-topInner,
+  .ReachUs-ctaInner {
+    width: 95%;
+    gap: 16px;
+  }
+
+  .ReachUs-illustration {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+  }
+
+  .ReachUs-contactItem {
+    min-width: 160px;
+  }
+
+  .ReachUs-steps {
+    padding-top: 8px;
+  }
+
+  .ReachUs-ctaAction {
+    margin-top: 14px;
+  }
+}
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 575px) {
+  .ReachUs-topInner,
+  .ReachUs-ctaInner {
+    width: 96%;
+    gap: 12px;
+  }
+
+  .ReachUs-illustrationWrap {
+    width: 100%;
+    flex: 0 0 auto;
+    justify-content: center;
+  }
+
+  .ReachUs-illustration {
+    max-width: 100%;
+  }
+
+  .ReachUs-contactList {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .ReachUs-contactItem {
+    min-width: 140px;
+  }
+
+  .ReachUs-whatsappFab {
+    right: 12px;
+    bottom: 12px;
+  }
+}

@@ -32,7 +32,7 @@ const navData = [
         label: 'Profit Making Structure',
         items: [
           { label: 'Private Limited Company Registration In India', href: '/private-limited-company-registration-in-india' },
-          { label: 'Incorporation Of Wholly Owned Subsidiary In India', href: '/wholly-owned' },
+          { label: 'Incorporation Of Wholly Owned Subsidiary In India', href: '/incorption-registration-in-india' },
           { label: 'Public Limited Company Registration In India', href: '/public-limited' },
           { label: 'One Person Company Registration In India', href: '/one-person-company' },
           { label: 'Limited Liability Partnership Registration In India', href: '/llp' },
@@ -165,7 +165,7 @@ const navData = [
     align: 'left',
     children: [
       { label: 'About Us', href: '/about' },
-      { label: 'Contact Us', href: '/contact' },
+      { label: 'Contact Us', href: '/contact/us' },
       { label: 'Media', href: '/media' },
       { label: 'Our Blog', href: '/blog' },
       {

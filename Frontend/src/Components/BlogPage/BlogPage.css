@@ -1,0 +1,407 @@
+/* BlogPage.css — Full stylesheet (responsive, no min-width, classes unchanged)
+   - Fonts preserved
+   - Responsive behavior via max-width queries (desktop-first)
+   - Accent color for main headings, dates, buttons, icons set to #45A049
+   - No changes to JSX, class names, structure, or layout — only CSS
+*/
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Manrope:wght@300;400;600;700&display=swap");
+
+/* ------------------------------------------------------------------
+   Default (large / 4K-first)
+   Default layout optimized for very large screens; smaller screens
+   are handled by cascading max-width queries below.
+   ------------------------------------------------------------------ */
+.blogpage-root {
+  background: #f6f2ef;
+  padding: 36px 56px 160px;
+  font-family: "Manrope", sans-serif;
+  color: #10221a;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container */
+.blogpage-grid-wrap {
+  max-width: 2080px;
+  margin: 0 auto 48px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Grid: default 4 columns on ultra-wide */
+.blogpage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem 3rem;
+}
+
+/* Card */
+.blogpage-card {
+  border-radius: 10px;
+  transition: transform 0.28s cubic-bezier(.2, .8, .2, 1), box-shadow 0.28s ease;
+  will-change: transform;
+  background: transparent;
+}
+
+/* Hover effect — subtle green-tinted shadow to match accent */
+.blogpage-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(69, 160, 73, 0.09);
+}
+
+/* Media area */
+.blogpage-card-media {
+  position: relative;
+  height: 16rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.blogpage-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.6s ease;
+  display: block;
+}
+
+.blogpage-card:hover .blogpage-card-image {
+  transform: scale(1.06);
+}
+
+/* Tags (badge pills) */
+.blogpage-tags {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 3;
+}
+
+.blogpage-tag {
+  background: rgba(3, 39, 31, 0.7);
+  color: #f6f7f6;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  box-shadow: 0 2px 6px rgba(3, 39, 31, 0.15);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Card body (beige tile) */
+.blogpage-card-body {
+  background: #eae4e0;
+  padding: 22px 24px 26px;
+  border-radius: 10px;
+  margin-top: 12px;
+}
+
+/* Date — changed to accent color */
+.blogpage-date {
+  font-size: 14px;
+  color: #45A049; /* accent */
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* Title — main card headings use accent color */
+.blogpage-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  line-height: 1.12;
+  margin: 0 0 12px;
+  color: #45A049; /* accent */
+  font-weight: 500;
+}
+
+/* Excerpt */
+.blogpage-excerpt {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #8b8b89;
+  margin: 0;
+}
+
+/* Divider */
+.blogpage-divider {
+  border: none;
+  height: 1px;
+  background: rgba(16, 34, 26, 0.06);
+  max-width: 2080px;
+  margin: 48px auto 56px;
+}
+
+/* Newsletter section */
+.blogpage-newsletter {
+  text-align: center;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 48px 22px 72px;
+  box-sizing: border-box;
+}
+
+.blogpage-newsletter-label {
+  letter-spacing: 6px;
+  font-weight: 700;
+  color: #8f938b;
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 0.75rem;
+}
+
+/* Newsletter heading uses accent color */
+.blogpage-newsletter-heading {
+  margin: 18px 0 28px;
+  font-family: "Playfair Display", serif;
+  color: #45A049; /* accent */
+  font-size: 6rem;
+  line-height: 1.02;
+  font-weight: 400;
+}
+
+.blogpage-newsletter-heading em {
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Newsletter form */
+.blogpage-newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.125rem;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+/* Input */
+.blogpage-input {
+  width: 34rem;
+  padding: 14px 18px;
+  border: none;
+  border-bottom: 1px solid rgba(16, 34, 26, 0.08);
+  background: transparent;
+  font-size: 0.9375rem;
+  outline: none;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.blogpage-input::placeholder {
+  color: #b9b6b4;
+}
+
+/* Submit (button) - background changed to accent, arrow kept white for contrast */
+.blogpage-submit {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 999px;
+  background: #45A049; /* accent */
+  color: #ffffff;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(69, 160, 73, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-grid;
+  place-items: center;
+}
+
+/* Submit hover uses slightly stronger accent shadow */
+.blogpage-submit:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(69, 160, 73, 0.22);
+}
+
+/* Accessibility helper */
+.blogpage-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* Ensure newsletter form children don't overflow when wrapping */
+.blogpage-newsletter-form > * {
+  min-width: 0;
+}
+
+/* Keep images crisp on high-DPI screens */
+.blogpage-card-image {
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* -------------------------------------------------------------------
+   Responsive: use ONLY max-width queries to step down from large -> small
+   ------------------------------------------------------------------- */
+
+/* Large desktops and wide screens (up to 1999px) => 3 columns */
+@media (max-width: 1999px) {
+  .blogpage-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.25rem 2.5rem;
+  }
+
+  .blogpage-grid-wrap {
+    max-width: 1520px;
+  }
+
+  .blogpage-card-media {
+    height: 13.5rem;
+  }
+
+  .blogpage-newsletter-heading {
+    font-size: 4.75rem;
+  }
+
+  .blogpage-input {
+    width: 30rem;
+  }
+}
+
+/* Desktop typical (up to 1399px) => 3 columns, more compact */
+@media (max-width: 1399px) {
+  .blogpage-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 2.25rem;
+  }
+
+  .blogpage-grid-wrap {
+    max-width: 1240px;
+  }
+
+  .blogpage-card-media {
+    height: 11.25rem;
+  }
+
+  .blogpage-newsletter-heading {
+    font-size: 3.5rem;
+  }
+
+  .blogpage-input {
+    width: 26.25rem;
+  }
+
+  .blogpage-title {
+    font-size: 1.375rem;
+  }
+}
+
+/* Small laptops and larger tablets (up to 1099px) => 2 columns */
+@media (max-width: 1099px) {
+  .blogpage-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1.75rem;
+  }
+
+  .blogpage-grid-wrap {
+    max-width: 1120px;
+  }
+
+  .blogpage-card-media {
+    height: 11.5rem;
+  }
+
+  .blogpage-newsletter-heading {
+    font-size: 2.75rem;
+  }
+}
+
+/* Tablets and medium screens (up to 899px) => 2 columns, adjusted */
+@media (max-width: 899px) {
+  .blogpage-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 1.25rem;
+  }
+
+  .blogpage-card-media {
+    height: 12.5rem;
+  }
+
+  .blogpage-newsletter-heading {
+    font-size: 3rem;
+  }
+
+  .blogpage-input {
+    width: 22rem;
+  }
+
+  .blogpage-newsletter-form {
+    gap: 1rem;
+  }
+}
+
+/* Small phones and phablets (up to 600px) => single column and stacked form */
+@media (max-width: 600px) {
+  .blogpage-root {
+    padding: 20px 20px 48px;
+  }
+
+  .blogpage-grid {
+    grid-template-columns: 1fr;
+    gap: 1.125rem 1rem;
+  }
+
+  .blogpage-card-media {
+    height: 13.75rem;
+  }
+
+  .blogpage-newsletter-heading {
+    font-size: 2.25rem;
+    margin: 1rem 0 1.25rem;
+  }
+
+  .blogpage-newsletter-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .blogpage-input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .blogpage-submit {
+    width: 100%;
+    height: 48px;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+}
+
+/* Very small phones (up to 420px) - tighten spacing */
+@media (max-width: 420px) {
+  .blogpage-root {
+    padding: 16px 12px 28px;
+  }
+
+  .blogpage-grid {
+    gap: 0.875rem 0.875rem;
+  }
+
+  .blogpage-card-media {
+    height: 10rem;
+  }
+
+  .blogpage-newsletter-heading {
+    font-size: 1.75rem;
+  }
+
+  .blogpage-input {
+    width: 100%;
+  }
+
+  .blogpage-submit {
+    height: 44px;
+  }
+}

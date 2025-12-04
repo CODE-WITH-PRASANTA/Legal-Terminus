@@ -1,0 +1,322 @@
+/* =========================
+   Base / Layout (desktop-first)
+   ========================= */
+
+.testimonial * {
+  box-sizing: border-box;
+}
+
+.testimonial.regardingly {
+  width: 100%;
+  min-height: 620px;
+  display: flex;
+  color: #0b1220;
+  font-family: "Arial", system-ui, sans-serif;
+  align-items: stretch;
+}
+
+.testimonial-inner {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+/* Left column (content) */
+.test-left {
+  width: 55%;
+  min-height: 620px;
+  padding: 38px 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 18px;
+  overflow: visible;
+}
+
+.kicker {
+  position: absolute;
+  top: 16px;
+  left: 72px;
+  color: #ff7a00 !important;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.headline {
+  width: 100%;
+  text-align: center;
+  color: #0b6b2e !important;
+  font-size: 78px;
+  line-height: 0.92;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.quote-mark {
+  font-size: 48px;
+  color: #0b6b2e;
+  margin-top: 6px;
+}
+
+/* Slider container */
+.slider {
+  width: 100%;
+  max-width: 760px;
+  margin-top: 16px;
+  padding-top: 20px;
+  position: relative;
+  perspective: 1400px;
+  min-height: 240px;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+  padding-bottom: 12px;
+}
+
+/* Slides */
+.slide {
+  position: absolute;
+  width: calc(100% - 48px);
+  max-width: 720px;
+  left: 50%;
+  top: 0;
+  padding: 0 24px;
+  transform-style: preserve-3d;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(20px) translateZ(-180px) rotateY(20deg) scale(0.9);
+  transition: opacity 600ms cubic-bezier(.22,.61,.36,1),
+              transform 600ms cubic-bezier(.22,.61,.36,1);
+  backface-visibility: hidden;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0) translateZ(0) rotateY(0) scale(1);
+  z-index: 40;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+}
+
+.slide.pos--2,
+.slide.pos--1,
+.slide.pos1,
+.slide.pos2 {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.slide-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slide.active .slide-inner {
+  animation: slideKenBurns 16s ease-in-out infinite alternate;
+}
+
+@keyframes slideKenBurns {
+  0% { transform: scale(1) translate(0,0); }
+  50% { transform: scale(1.04) translate(-4px,-6px); }
+  100% { transform: scale(1.08) translate(-8px,-10px); }
+}
+
+.slide-text {
+  font-size: 18px;
+  color: #475569;
+  line-height: 1.8;
+  text-align: center;
+  margin: 0 auto 28px;
+  max-width: 680px;
+  word-break: break-word;
+}
+
+/* Avatar */
+.avatar-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.avatar {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid rgba(11,107,46,0.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.person-name {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0b6b2e;
+  text-align: center;
+}
+
+.person-role {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 6px;
+  text-align: center;
+}
+
+/* Right image */
+.test-right {
+  width: 45%;
+  min-height: 620px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: heroKenBurns 28s ease-in-out infinite alternate;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+
+@keyframes heroKenBurns {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05) translate(-1.2%, -0.6%); }
+  100% { transform: scale(1.09) translate(-2%, -1%); }
+}
+
+/* --------- Strong mobile overrides: paste at the very end of your CSS --------- */
+@media (max-width: 900px) {
+  /* center the outer container on small screens */
+  .testimonial.regardingly {
+    justify-content: center !important;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* keep the inner column centered and constrained */
+  .testimonial-inner {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  /* center and constrain the white card so it never hugs the left edge */
+  .test-left {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: 760px !important;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  /* center the slider area */
+  .slider {
+    width: 100% !important;
+    max-width: 720px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    perspective: none !important;
+    padding-top: 12px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+  /* ensure slides are normal flow, centered, and constrained */
+  .slide {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 640px !important;
+    margin: 0 auto !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    box-sizing: border-box;
+  }
+
+  /* hide other slides to avoid any multi-column issues */
+  .slider .slide:not(.active) {
+    display: none !important;
+  }
+
+  /* center textual content */
+  .slide-text,
+  .person-name,
+  .person-role,
+  .avatar-row {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* slightly smaller avatar on mobile */
+  .avatar {
+    width: 68px !important;
+    height: 68px !important;
+  }
+
+  /* responsive headline centered */
+  .headline {
+    font-size: clamp(30px, 8vw, 78px) !important;
+    line-height: 1 !important;
+    padding: 0 10px !important;
+    text-align: center !important;
+  }
+
+  /* keep kicker visible but not overlapping */
+  .kicker {
+    left: 20px !important;
+    top: 12px !important;
+  }
+
+  /* mobile hero image constrained and centered below the card */
+  .test-right {
+    order: 2;
+    width: 100%;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 360px;
+    box-sizing: border-box;
+  }
+}
+
+/* keep very-small tweaks for narrowest phones */
+@media (max-width: 480px) {
+  .test-right { height: 260px; }
+  .headline { font-size: clamp(26px, 10vw, 60px) !important; }
+  .avatar { width: 60px !important; height: 60px !important; }
+}

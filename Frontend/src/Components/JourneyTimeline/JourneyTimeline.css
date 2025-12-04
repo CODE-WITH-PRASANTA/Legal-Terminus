@@ -1,0 +1,177 @@
+:root{
+  --journey-bg: #ffffff;
+  --card-bg: rgba(255,255,255,0.95);
+  --muted: #58616a;
+  --accent-shadow: rgba(8, 120, 50, 0.08);
+  --card-radius: 14px;
+  --max-width: 1300px;
+  --container-gap: 22px;
+  --font-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Wrapper */
+.Journey-root {
+  width: 100%;
+  background: var(--journey-bg);
+  padding: 56px 0 80px;
+  font-family: var(--font-sans);
+  color: #111;
+}
+
+/* Container */
+.Journey-container{
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Title */
+.Journey-heading{
+  font-size: 44px;
+  font-weight: 800;
+  margin: 0 0 50px;
+  color: #0e1720;
+  text-align: center;
+  color:#16a34a;
+}
+
+/* Grid: responsive using auto-fit with minmax for flexibility */
+.Journey-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--container-gap);
+  align-items: start;
+}
+
+/* Card */
+.Journey-card{
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.98));
+  border-radius: var(--card-radius);
+  padding: 40px 22px 28px;
+  min-height: 200px;
+  box-shadow: 0 6px 22px rgba(15, 20, 25, 0.04), 0 1px 0 rgba(255,255,255,0.5) inset;
+  transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover / focus */
+.Journey-card:hover,
+.Journey-card:focus-within{
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(8,18,28,0.10), 0 2px 6px rgba(0,0,0,0.06);
+  outline: none;
+}
+
+/* Badge wrapper - places SVG overlapping card top-left */
+.Journey-badgeWrapper{
+  position: absolute;
+  top: -18px;
+  left: 18px;
+  width: 116px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Ensure SVG scales nicely */
+.Journey-badge{
+  display:block;
+  width: 116px;
+  height: 44px;
+  filter: drop-shadow(0 6px 14px rgba(10,30,10,0.10));
+  border-radius: 6px;
+}
+
+/* Content */
+.Journey-content{
+  margin-top: 26px; /* space under badge */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Journey-text{
+  margin: 0;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.68;
+}
+
+/* subtle divider line near bottom (optional) */
+.Journey-card::after{
+  content: "";
+  display:block;
+  margin-top: 12px;
+  height: 1px;
+  width: 46px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02));
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+/* Accessibility: keep focus visible when keyboard navigating */
+.Journey-card:focus-within,
+.Journey-card:focus {
+  box-shadow: 0 18px 40px rgba(8,18,28,0.12), 0 0 0 4px rgba(20,160,90,0.06);
+}
+
+/* Large devices (desktops/laptops) */
+@media (max-width: 1199px) {
+  .Journey-container {
+    width: 92%;
+  }
+  .Journey-grid {
+    gap: 20px;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (max-width: 991px) {
+  .Journey-container {
+    width: 94%;
+  }
+  .Journey-heading {
+    text-align: center;
+  }
+  .Journey-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* Small devices (large phones/small tablets) */
+@media (max-width: 767px) {
+  .Journey-container {
+    width: 96%;
+  }
+  .Journey-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+  }
+  .Journey-badgeWrapper {
+    left: 14px;
+    top: -16px;
+  }
+}
+
+/* Extra small devices (phones) */
+@media (max-width: 575px) {
+  .Journey-container {
+    width: 98%;
+  }
+  .Journey-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .Journey-card {
+    border-radius: 12px;
+  }
+  .Journey-heading {
+    text-align: center;
+    margin-bottom: 26px;
+  }
+}
+

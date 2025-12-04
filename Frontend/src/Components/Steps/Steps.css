@@ -1,0 +1,246 @@
+:root { --Steps-bg: #ffffff; }
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+.Steps-outer {
+  width: 100%;
+  background: transparent;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #213547;
+}
+
+.Steps-title {
+  text-align: center;
+  font-size: 32px; /* bigger */
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #16a34a;
+}
+
+.Steps-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+}
+
+.Steps-row--top { margin-bottom: 70px; }
+.Steps-row--bottom { margin-top: 20px; }
+
+.Steps-itemWrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.Steps-card {
+  width: 260px;
+  padding: 18px;
+  border: 1px solid;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+  transition: transform 0.18s ease;
+}
+
+.Steps-card--small {
+  width: 250px;
+  padding: 16px;
+}
+
+.Steps-card:hover {
+  transform: translateY(-4px);
+}
+
+.Steps-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.Steps-iconCircle {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  border: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.Steps-iconCircle::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 36px;
+  height: 22px;
+  background: var(--Steps-bg);
+  border-radius: 8px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.Steps-icon {
+  width: 28px;  /* bigger */
+  height: 28px; /* bigger */
+  color: currentColor;
+}
+
+.Steps-number {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  padding: 4px 8px;
+  font-size: 14px; /* bigger */
+  font-weight: 700;
+  border-radius: 8px;
+  color: #ffffff;
+  border: none;
+  z-index: 3;
+  line-height: 1;
+  box-shadow: none;
+}
+
+.Steps-cardTitle {
+  margin: 0;
+  font-size: 18px; /* bigger */
+  font-weight: 700;
+  color: inherit;
+  margin-left: 6px;
+}
+
+.Steps-list {
+  margin-top: 12px;
+  list-style: none;
+  padding: 0;
+  font-size: 15px; /* bigger */
+  color: #5d676c;
+}
+
+.Steps-list li {
+  margin: 6px 0;
+  padding-left: 12px;
+  position: relative;
+}
+
+.Steps-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  left: 0;
+  top: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.18;
+}
+
+.Steps-arrowRight,
+.Steps-arrowDown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.Steps-arrowDown { margin-left: 10px; }
+
+/* ----------------------------- */
+/*   RESPONSIVE — ALL DEVICES    */
+/* ----------------------------- */
+
+@media (max-width: 1200px) {
+  .Steps-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .Steps-card,
+  .Steps-card--small {
+    width: min(340px, 100%);
+  }
+}
+
+@media (max-width: 992px) {
+  .Steps-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .Steps-card,
+  .Steps-card--small {
+    width: min(320px, 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .Steps-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .Steps-card,
+  .Steps-card--small {
+    width: 90%;
+  }
+
+    /* Reduce the big vertical gap between rows (4 → 5 etc.) */
+  .Steps-row--top {
+    margin-bottom: 0; /* was 70px */
+  }
+
+  .Steps-row--bottom {
+    margin-top: 10px; /* smaller gap */
+  }
+
+  /* Reduce general vertical spacing */
+  .Steps-row {
+    gap: 12px;
+  }
+
+   .Steps-itemWrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .Steps-card,
+  .Steps-card--small {
+    width: 95%;
+  }
+
+   .Steps-arrowRight {
+    transform: rotate(90deg); /* turn right arrow into down arrow */
+  }
+
+ 
+  
+}
+
+@media (max-width: 400px) {
+  .Steps-card,
+  .Steps-card--small {
+    width: 100%;
+  }
+
+  .Steps-row {
+    gap: 12px;
+  }
+}
