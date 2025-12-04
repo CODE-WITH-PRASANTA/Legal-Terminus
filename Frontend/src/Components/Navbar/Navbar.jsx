@@ -20,9 +20,9 @@ import './Navbar.css';
 
 const LOGO_GIF = 'https://legalterminus.com/wp-content/uploads/2023/09/Legal-Terminus-LOGO-GIF_300-x-150.gif';
 
+// ... same navData as before (kept for brevity) ...
 const navData = [
   { id: 'home', label: 'Home', href: '/' },
-
   {
     id: 'setup-business',
     label: 'Setting Up a Business',
@@ -51,7 +51,6 @@ const navData = [
       }
     ]
   },
-
   {
     id: 'registrations',
     label: 'Registrations & Returns',
@@ -99,7 +98,6 @@ const navData = [
       }
     ]
   },
-
   {
     id: 'event-compliances',
     label: 'Event Based Compliances',
@@ -143,12 +141,10 @@ const navData = [
       }
     ]
   },
-
-  // Trademark - LEFT ALIGNED for demo
   {
     id: 'trademark',
     label: 'Trademark',
-    align: 'left', // <--- important: left-align this mega
+    align: 'left',
     children: [
       {
         id: 'tm-services',
@@ -163,8 +159,6 @@ const navData = [
       }
     ]
   },
-
-  // KNOW US: direct children style (Policies has nested children)
   {
     id: 'know-us',
     label: 'Know Us',
@@ -204,9 +198,12 @@ export default function NavbarAdvanced() {
   const drawerRef = useRef(null);
   const megaTimeoutRef = useRef(null);
 
-  // NEW: mobile two-step state:
-  // mobileActiveSub holds a key like "topId__catId" to indicate which submenu inside a top-level section is open (shows mega items)
+  // MOBILE two-step state:
   const [mobileActiveSub, setMobileActiveSub] = useState(null);
+
+  // HEADER ref + dynamic spacer for fixed header behavior
+  const headerRef = useRef(null);
+  const [headerHeight, setHeaderHeight] = useState(0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -214,13 +211,25 @@ export default function NavbarAdvanced() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // measure header height (on mount + resize + when scrolled or when menu opens)
+  useEffect(() => {
+    function measure() {
+      const h = headerRef.current ? headerRef.current.getBoundingClientRect().height : 0;
+      setHeaderHeight(Math.ceil(h));
+      // set CSS var as well for any global use
+      document.documentElement.style.setProperty('--site-header-height', `${Math.ceil(h)}px`);
+    }
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, [scrolled, isMenuOpen]);
+
   useEffect(() => {
     if (isMenuOpen) {
       document.body.classList.add('no-scroll');
       setTimeout(() => drawerRef.current?.focus(), 0);
     } else {
       document.body.classList.remove('no-scroll');
-      // when drawer closes reset mobile-specific state
       setMobileExpanded({});
       setMobileActiveSub(null);
     }
@@ -271,16 +280,13 @@ export default function NavbarAdvanced() {
     setActiveMegaTab(tabId);
     setNestedOpenItem(null);
 
-    // compute positions
     const buttonEl = megaLeftRefs.current[tabId];
     const leftContainer = leftColRef.current;
     const outer = leftContainer?.closest('.mega-inner-compact') || leftContainer;
 
-    // width used for the panel; must match CSS .mega-right-panel width
     const panelWidth = 360;
     const gap = 10;
 
-    // check if the parent top-level item (the mega) is left-aligned
     const topItem = navData.find(n => n.id === megaOpenFor);
     const isLeftAligned = !!(topItem && topItem.align === 'left');
 
@@ -289,15 +295,12 @@ export default function NavbarAdvanced() {
       const leftRect = leftContainer.getBoundingClientRect();
       const outerRect = outer.getBoundingClientRect();
 
-      // top relative to outer container (so absolute positioning inside .mega-inner-compact works)
       const top = Math.round(btnRect.top - outerRect.top);
 
       let left;
       if (isLeftAligned) {
-        // place the panel to the LEFT side of the left column
         left = Math.round(leftRect.left - outerRect.left - panelWidth - gap);
       } else {
-        // default: place the panel to the RIGHT side of the left column
         left = Math.round(leftRect.right - outerRect.left + gap);
       }
 
@@ -307,32 +310,25 @@ export default function NavbarAdvanced() {
     }
   };
 
-  // Recompute panel position on resize when a tab is active
   useEffect(() => {
     function onResize() {
       if (activeMegaTab) {
-        // small timeout to allow layout to settle
         setTimeout(() => showRightPanel(activeMegaTab), 40);
       }
     }
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeMegaTab, megaOpenFor]);
 
-  // nested key helper
   const nestedKey = (topId, catId, idx) => `${topId}__${catId || 'child'}__${idx}`;
 
   const openNested = (key) => setNestedOpenItem(key);
   const closeNested = () => setNestedOpenItem(null);
 
-  // MOBILE: toggles the top-level section in the drawer
   const toggleMobileSection = (id) => {
     setMobileExpanded(prev => {
       const newState = { ...prev, [id]: !prev[id] };
-      // if we are collapsing the top-level, also clear any active sub within it
       if (!newState[id]) {
-        // if the active sub belongs to this top section, clear it
         if (mobileActiveSub && mobileActiveSub.startsWith(`${id}__`)) {
           setMobileActiveSub(null);
         }
@@ -341,204 +337,205 @@ export default function NavbarAdvanced() {
     });
   };
 
-  // MOBILE: toggles a submenu (i.e., category -> show its items). key is "{topId}__{catId}"
   const toggleMobileSub = (topId, catId) => {
     const key = `${topId}__${catId}`;
     setMobileActiveSub(prev => (prev === key ? null : key));
   };
 
   return (
-    <header className={`header-wrapper ${scrolled ? 'scrolled' : ''}`}>
+    <>
+      {/* HEADER (fixed) */}
+      <header
+        ref={headerRef}
+        className={`header-wrapper ${scrolled ? 'scrolled' : ''} header-fixed`}
+        aria-label="Site header"
+        role="banner"
+      >
 
-      {/* TOP BAR */}
-      <div className="topbar">
-        <div className="topbar-inner">
-          <div className="topbar-left">
-            <div className="topbar-contact">
-              <a href="mailto:sales21@legalterminus.com" className="topbar-link">
-                <FaEnvelope className="topbar-icon" />
-                sales21@legalterminus.com
-              </a>
-              <span className="topbar-sep">|</span>
-              <a href="tel:8280093456" className="topbar-link">
-                <FaPhone className="topbar-icon" style={{ transform: 'rotate(90deg)' }} />
-                8280093456
-              </a>
+        {/* TOP BAR */}
+        <div className="topbar">
+          <div className="topbar-inner">
+            <div className="topbar-left">
+              <div className="topbar-contact">
+                <a href="mailto:sales21@legalterminus.com" className="topbar-link">
+                  <FaEnvelope className="topbar-icon" />
+                  sales21@legalterminus.com
+                </a>
+                <span className="topbar-sep">|</span>
+                <a href="tel:8280093456" className="topbar-link">
+                  <FaPhone className="topbar-icon" style={{ transform: 'rotate(90deg)' }} />
+                  8280093456
+                </a>
+              </div>
             </div>
-          </div>
 
-          <div className="topbar-right">
-            <div className="topbar-tag">Turning big ideas into great products!</div>
-            <div className="topbar-socials">
-              <a className="social" href="https://www.facebook.com/LegalTerminusofficial" aria-label="Facebook"><FaFacebookF /></a>
-              <a className="social" href="https://www.instagram.com/legalterminus/" aria-label="Instagram"><FaInstagram /></a>
-              <a className="social" href="https://twitter.com/legalterminus" aria-label="Twitter"><FaTwitter /></a>
-              <a className="social" href="#twitter" aria-label="Whatsapp"><FaWhatsapp /></a>
-              <a className="social" href="https://www.youtube.com/@LegalTerminus" aria-label="youtube"><FaYoutube /></a>
-              <a className="social" href="https://www.linkedin.com/company/legalterminus/" aria-label="LinkedIn"><FaLinkedinIn /></a>
+            <div className="topbar-right">
+              <div className="topbar-tag">Turning big ideas into great products!</div>
+              <div className="topbar-socials">
+                <a className="social" href="https://www.facebook.com/LegalTerminusofficial" aria-label="Facebook"><FaFacebookF /></a>
+                <a className="social" href="https://www.instagram.com/legalterminus/" aria-label="Instagram"><FaInstagram /></a>
+                <a className="social" href="https://twitter.com/legalterminus" aria-label="Twitter"><FaTwitter /></a>
+                <a className="social" href="#twitter" aria-label="Whatsapp"><FaWhatsapp /></a>
+                <a className="social" href="https://www.youtube.com/@LegalTerminus" aria-label="youtube"><FaYoutube /></a>
+                <a className="social" href="https://www.linkedin.com/company/legalterminus/" aria-label="LinkedIn"><FaLinkedinIn /></a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* MAIN NAV */}
-      <nav className="main-nav" role="navigation" aria-label="Main navigation">
-        <div className="nav-inner">
-          <div className="nav-left">
-            <a className="brand" href="/">
-              <img
-                src={LOGO_GIF}
-                alt="Industrify Logo"
-                className={`brand-logo ${scrolled ? 'small' : ''}`}
-                width={scrolled ? 160 : 200}
-                height={scrolled ? 45 : 55}
-              />
-            </a>
-          </div>
+        {/* MAIN NAV */}
+        <nav className="main-nav" role="navigation" aria-label="Main navigation">
+          <div className="nav-inner">
+            <div className="nav-left">
+              <a className="brand" href="/">
+                <img
+                  src={LOGO_GIF}
+                  alt="Industrify Logo"
+                  className={`brand-logo ${scrolled ? 'small' : ''}`}
+                  width={scrolled ? 160 : 200}
+                  height={scrolled ? 45 : 55}
+                />
+              </a>
+            </div>
 
-          <div className="nav-center" aria-hidden={false}>
-            <ul className="nav-list" role="menubar">
-              {navData.map((it) => {
-                const hasMega = Array.isArray(it.children) && it.children.length > 0;
-                return (
-                  <li
-                    key={it.id}
-                    className="nav-list-item"
-                    role="none"
-                    onMouseEnter={() => hasMega && openMegaCompact(it.id)}
-                    onMouseLeave={() => hasMega && closeMegaDelayed()}
-                  >
-                    {hasMega ? (
-                      <button
-                        className="nav-link nav-link-button"
-                        aria-haspopup="true"
-                        aria-expanded={megaOpenFor === it.id}
-                        onFocus={() => openMegaCompact(it.id)}
-                        onBlur={() => closeMegaDelayed()}
-                      >
-                        {it.label}
-                      </button>
-                    ) : (
-                      <a role="menuitem" href={it.href} className="nav-link">{it.label}</a>
-                    )}
+            <div className="nav-center" aria-hidden={false}>
+              <ul className="nav-list" role="menubar">
+                {navData.map((it) => {
+                  const hasMega = Array.isArray(it.children) && it.children.length > 0;
+                  return (
+                    <li
+                      key={it.id}
+                      className="nav-list-item"
+                      role="none"
+                      onMouseEnter={() => hasMega && openMegaCompact(it.id)}
+                      onMouseLeave={() => hasMega && closeMegaDelayed()}
+                    >
+                      {hasMega ? (
+                        <button
+                          className="nav-link nav-link-button"
+                          aria-haspopup="true"
+                          aria-expanded={megaOpenFor === it.id}
+                          onFocus={() => openMegaCompact(it.id)}
+                          onBlur={() => closeMegaDelayed()}
+                        >
+                          {it.label}
+                        </button>
+                      ) : (
+                        <a role="menuitem" href={it.href} className="nav-link">{it.label}</a>
+                      )}
 
-                    {/* MEGA */}
-                    {hasMega && (
-                      <div
-                        className={`mega-menu ${megaOpenFor === it.id ? (activeMegaTab ? 'expanded' : 'compact') : ''} ${it.align === 'left' ? 'left-align' : ''}`}
-                        onMouseEnter={() => openMegaCompact(it.id)}
-                        onMouseLeave={() => closeMegaDelayed()}
-                        aria-hidden={megaOpenFor !== it.id}
-                      >
-                        <div className="mega-inner-compact">
-                          { (Array.isArray(it.children) && it.children[0] && it.children[0].items) ? (
-                            /* CATEGORY MODE: left column shows categories, right panel displays items */
-                            <>
-                              {/* LEFT COLUMN: attach ref so we can compute positions */}
-                              <div className="mega-left-compact" role="tablist" aria-label={`${it.label} categories`} ref={leftColRef}>
-                                {it.children.map((cat) => (
-                                  <button
-                                    key={cat.id}
-                                    ref={el => { if (el) megaLeftRefs.current[cat.id] = el; }}
-                                    className={`mega-tab-compact ${activeMegaTab === cat.id ? 'active' : ''}`}
-                                    onMouseEnter={() => showRightPanel(cat.id)}
-                                    onFocus={() => showRightPanel(cat.id)}
-                                    onClick={() => showRightPanel(cat.id)}
-                                    aria-selected={activeMegaTab === cat.id}
-                                  >
-                                    {it.align === 'left' ? (
-                                      <>
-                                        <span>{cat.label}</span>
-                                        <FaChevronRight className={`mini-left`} />
+                      {/* MEGA */}
+                      {hasMega && (
+                        <div
+                          className={`mega-menu ${megaOpenFor === it.id ? (activeMegaTab ? 'expanded' : 'compact') : ''} ${it.align === 'left' ? 'left-align' : ''}`}
+                          onMouseEnter={() => openMegaCompact(it.id)}
+                          onMouseLeave={() => closeMegaDelayed()}
+                          aria-hidden={megaOpenFor !== it.id}
+                        >
+                          <div className="mega-inner-compact">
+                            { (Array.isArray(it.children) && it.children[0] && it.children[0].items) ? (
+                              /* CATEGORY MODE */
+                              <>
+                                <div className="mega-left-compact" role="tablist" aria-label={`${it.label} categories`} ref={leftColRef}>
+                                  {it.children.map((cat) => (
+                                    <button
+                                      key={cat.id}
+                                      ref={el => { if (el) megaLeftRefs.current[cat.id] = el; }}
+                                      className={`mega-tab-compact ${activeMegaTab === cat.id ? 'active' : ''}`}
+                                      onMouseEnter={() => showRightPanel(cat.id)}
+                                      onFocus={() => showRightPanel(cat.id)}
+                                      onClick={() => showRightPanel(cat.id)}
+                                      aria-selected={activeMegaTab === cat.id}
+                                    >
+                                      {it.align === 'left' ? (
+                                        <>
+                                          <span>{cat.label}</span>
+                                          <FaChevronRight className={`mini-left`} />
+                                        </>
+                                      ) : (
+                                        <>
+                                          <span>{cat.label}</span>
+                                          <FaChevronRight className="mini-right" />
+                                        </>
+                                      )}
+                                    </button>
+                                  ))}
+                                </div>
 
-                                      </>
-                                    ) : (
-                                      <>
-                                        <span>{cat.label}</span>
-                                        <FaChevronRight className="mini-right" />
-                                      </>
-                                    )}
-                                  </button>
-                                ))}
-                              </div>
+                                <div
+                                  className={`mega-right-panel ${activeMegaTab ? 'visible' : ''}`}
+                                  role="region"
+                                  aria-live="polite"
+                                  style={{
+                                    top: rightPanelStyle.top != null ? `${rightPanelStyle.top}px` : undefined,
+                                    left: rightPanelStyle.left != null ? `${rightPanelStyle.left}px` : undefined
+                                  }}
+                                >
+                                  {it.children.map((cat) => (
+                                    <div key={cat.id} className={`mega-col ${activeMegaTab === cat.id ? 'visible' : ''}`}>
+                                      <ul className="mega-links">
+                                        {cat.items.map((item, idx) => {
+                                          const key = nestedKey(it.id, cat.id, idx);
+                                          const hasNested = !!item.children && Array.isArray(item.children) && item.children.length > 0;
+                                          return (
+                                            <li key={key} className="mega-link-row">
+                                              {hasNested ? (
+                                                <button
+                                                  className="mega-link nested-trigger"
+                                                  type="button"
+                                                  onMouseEnter={() => openNested(key)}
+                                                  onFocus={() => openNested(key)}
+                                                  onClick={() => openNested(key)}
+                                                  aria-haspopup="true"
+                                                  aria-expanded={nestedOpenItem === key}
+                                                >
+                                                  <span>{item.label}</span>
+                                                </button>
+                                              ) : (
+                                                <a className="mega-link" href={item.href} onClick={() => { setMegaOpenFor(null); setActiveMegaTab(null); }}>
+                                                  <span>{item.label}</span>
+                                                </a>
+                                              )}
 
-                              {/* RIGHT PANEL: we now apply inline style to position it parallel to the left tab */}
-                              <div
-                                className={`mega-right-panel ${activeMegaTab ? 'visible' : ''}`}
-                                role="region"
-                                aria-live="polite"
-                                style={{
-                                  top: rightPanelStyle.top != null ? `${rightPanelStyle.top}px` : undefined,
-                                  left: rightPanelStyle.left != null ? `${rightPanelStyle.left}px` : undefined
-                                }}
-                              >
-                                {it.children.map((cat) => (
-                                  <div key={cat.id} className={`mega-col ${activeMegaTab === cat.id ? 'visible' : ''}`}>
-                                    <ul className="mega-links">
-                                      {cat.items.map((item, idx) => {
-                                        const key = nestedKey(it.id, cat.id, idx);
-                                        const hasNested = !!item.children && Array.isArray(item.children) && item.children.length > 0;
-                                        return (
-                                          <li key={key} className="mega-link-row">
-                                            {hasNested ? (
-                                              <button
-                                                className="mega-link nested-trigger"
-                                                type="button"
-                                                onMouseEnter={() => openNested(key)}
-                                                onFocus={() => openNested(key)}
-                                                onClick={() => openNested(key)}
-                                                aria-haspopup="true"
-                                                aria-expanded={nestedOpenItem === key}
-                                              >
-                                                <span>{item.label}</span>
-                                              </button>
-                                            ) : (
-                                              <a className="mega-link" href={item.href} onClick={() => { setMegaOpenFor(null); setActiveMegaTab(null); }}>
-                                                <span>{item.label}</span>
-                                              </a>
-                                            )}
-
-                                            {hasNested && (
-                                              <div
-                                                className={`nested-panel ${nestedOpenItem === key ? 'open' : ''}`}
-                                                onMouseEnter={() => openNested(key)}
-                                                onMouseLeave={() => setTimeout(() => {
-                                                  if (nestedOpenItem === key) setNestedOpenItem(null);
-                                                }, 120)}
-                                                aria-hidden={nestedOpenItem !== key}
-                                              >
-                                                <ul className="nested-links">
-                                                  {item.children.map((sub, sidx) => (
-                                                    <li key={`${key}__${sidx}`}>
-                                                      <a href={sub.href} onClick={() => { setMegaOpenFor(null); setActiveMegaTab(null); setNestedOpenItem(null); }}>
-                                                        {sub.label}
-                                                      </a>
-                                                    </li>
-                                                  ))}
-                                                </ul>
-                                              </div>
-                                            )}
-                                          </li>
-                                        );
-                                      })}
-                                    </ul>
-                                  </div>
-                                ))}
-                              </div>
-                            </>
-                          ) : (
-                            /* DIRECT-CHILD MODE */
-                            <>
-                              <div className="mega-left-compact" role="tablist" aria-label={`${it.label} links`} ref={leftColRef}>
+                                              {hasNested && (
+                                                <div
+                                                  className={`nested-panel ${nestedOpenItem === key ? 'open' : ''}`}
+                                                  onMouseEnter={() => openNested(key)}
+                                                  onMouseLeave={() => setTimeout(() => {
+                                                    if (nestedOpenItem === key) setNestedOpenItem(null);
+                                                  }, 120)}
+                                                  aria-hidden={nestedOpenItem !== key}
+                                                >
+                                                  <ul className="nested-links">
+                                                    {item.children.map((sub, sidx) => (
+                                                      <li key={`${key}__${sidx}`}>
+                                                        <a href={sub.href} onClick={() => { setMegaOpenFor(null); setActiveMegaTab(null); setNestedOpenItem(null); }}>
+                                                          {sub.label}
+                                                        </a>
+                                                      </li>
+                                                    ))}
+                                                  </ul>
+                                                </div>
+                                              )}
+                                            </li>
+                                          );
+                                        })}
+                                      </ul>
+                                    </div>
+                                  ))}
+                                </div>
+                              </>
+                            ) : (
+                              /* DIRECT-CHILD MODE */
+                              <>
+                                <div className="mega-left-compact" role="tablist" aria-label={`${it.label} links`} ref={leftColRef}>
                                   {it.children.map((child, idx) => {
                                     const key = nestedKey(it.id, null, idx);
                                     const hasNested = !!child.children && Array.isArray(child.children) && child.children.length > 0;
 
                                     return (
                                       <div key={key} style={{ position: 'relative' }}>
-
                                         {!hasNested ? (
-                                          // ✔ FIXED: DIRECT LINK WORKS
                                           <a
                                             href={child.href}
                                             className="mega-tab-compact"
@@ -579,206 +576,203 @@ export default function NavbarAdvanced() {
                                             </ul>
                                           </div>
                                         )}
-
                                       </div>
                                     );
                                   })}
                                 </div>
 
-
-                              <div className="mega-right-panel" />
-                            </>
-                          )}
+                                <div className="mega-right-panel" />
+                              </>
+                            )}
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
 
-          <div className="nav-right">
-            <button className="icon-btn search-btn" aria-label="Search" onClick={() => alert('Implement search overlay')} title="Search">
-              <FaUser />
-            </button>
+            <div className="nav-right">
+              <button className="icon-btn search-btn" aria-label="Search" onClick={() => alert('Implement search overlay')} title="Search">
+                <FaUser />
+              </button>
 
-            <button
-              className={`menu-trigger ${isMenuOpen ? 'open' : ''}`}
-              aria-expanded={isMenuOpen}
-              aria-controls="premium-drawer"
-              onClick={() => setIsMenuOpen((s) => !s)}
-            >
-              <span className="menu-bar" />
-              <span className="menu-bar" />
-              <span className="menu-bar" />
-            </button>
-          </div>
-        </div>
-      </nav>
-
-      {/* Drawer overlay */}
-      <div
-        className={`premium-drawer-overlay ${isMenuOpen ? 'active' : ''}`}
-        onClick={() => setIsMenuOpen(false)}
-        aria-hidden={!isMenuOpen}
-      />
-
-      {/* MOBILE DRAWER */}
-      <aside
-        id="premium-drawer"
-        ref={drawerRef}
-        className={`premium-drawer ${isMenuOpen ? 'open' : ''}`}
-        aria-hidden={!isMenuOpen}
-        tabIndex={-1}
-      >
-        <div className="premium-drawer-header">
-          <div className="premium-drawer-brand">
-            <img src={LOGO_GIF} alt="Industrify Logo" className="premium-drawer-logo" width={180} height={50} />
-            <span className="premium-drawer-tagline">Excellence in Every Pixel</span>
-          </div>
-
-          <button className="premium-close-btn" onClick={() => setIsMenuOpen(false)} aria-label="Close menu">
-            <FaTimes />
-          </button>
-        </div>
-
-        <div className="premium-drawer-content">
-          <div className="drawer-about">
-            <h3 className="drawer-about-title">About Us</h3>
-            <p className="drawer-about-text">
-              We must explain to you how all seds this mistakens idea off denouncing pleasures and praising pain was born and I will give you a completed accounts of the system and expound.
-            </p>
-
-            <div className="drawer-cta-wrap">
-              <a href="#contact" className="drawer-cta" onClick={() => setIsMenuOpen(false)}>
-                Get In Touch <FaArrowRight />
-              </a>
+              <button
+                className={`menu-trigger ${isMenuOpen ? 'open' : ''}`}
+                aria-expanded={isMenuOpen}
+                aria-controls="premium-drawer"
+                onClick={() => setIsMenuOpen((s) => !s)}
+              >
+                <span className="menu-bar" />
+                <span className="menu-bar" />
+                <span className="menu-bar" />
+              </button>
             </div>
           </div>
+        </nav>
 
-          {/* Drawer navigation */}
-          <nav aria-label="Drawer Navigation">
-            <ul className="premium-nav-list">
-              {navData.map((item) => {
-                const hasChildren = !!item.children;
-                return (
-                  <li key={item.id} className="premium-nav-item">
-                    {!hasChildren ? (
-                      <a className="premium-nav-link" href={item.href} onClick={() => setIsMenuOpen(false)}>
-                        <span className="premium-link-text">{item.label}</span>
-                        <FaChevronRight className="premium-link-arrow" />
-                      </a>
-                    ) : (
-                      <>
-                        {/* Top-level toggle: opens the section (step 1) */}
-                        <button
-                          className="premium-nav-link"
-                          onClick={() => toggleMobileSection(item.id)}
-                          aria-expanded={!!mobileExpanded[item.id]}
-                        >
-                          <span className="premium-link-text">{item.label}</span>
-                          <FaChevronRight className="premium-link-arrow" />
-                        </button>
+        {/* Drawer overlay */}
+        <div
+          className={`premium-drawer-overlay ${isMenuOpen ? 'active' : ''}`}
+          onClick={() => setIsMenuOpen(false)}
+          aria-hidden={!isMenuOpen}
+        />
 
-                        {/* Expanded area for the top-level item */}
-                        <div className={`premium-sublist ${mobileExpanded[item.id] ? 'expanded' : ''}`}>
-                          {item.children.map((cat) => {
-                            // If cat has items -> this becomes the second-step: clicking it shows the actual items (mega)
-                            if (cat.items) {
-                              const subKey = `${item.id}__${cat.id}`;
-                              const isActiveSub = mobileActiveSub === subKey;
-                              return (
-                                <div key={cat.id} className="premium-subsection">
-                                  <button
-                                    className="premium-nav-link simple"
-                                    onClick={() => toggleMobileSub(item.id, cat.id)}
-                                    aria-expanded={isActiveSub}
-                                  >
-                                    <span className="premium-link-text"><strong>{cat.label}</strong></span>
-                                    <FaChevronRight className="premium-link-arrow" />
-                                  </button>
+        {/* MOBILE DRAWER */}
+        <aside
+          id="premium-drawer"
+          ref={drawerRef}
+          className={`premium-drawer ${isMenuOpen ? 'open' : ''}`}
+          aria-hidden={!isMenuOpen}
+          tabIndex={-1}
+        >
+          <div className="premium-drawer-header">
+            <div className="premium-drawer-brand">
+              <img src={LOGO_GIF} alt="Industrify Logo" className="premium-drawer-logo" width={180} height={50} />
+              <span className="premium-drawer-tagline">Excellence in Every Pixel</span>
+            </div>
 
-                                  {/* This is the mega items panel (step 2) - only visible when this cat is active */}
-                                  <div className={`premium-sublist ${isActiveSub ? 'expanded' : ''}`} style={{ paddingLeft: 12 }}>
-                                    <ul className="premium-sublinks">
-                                      {cat.items.map((sub, i) => (
-                                        <li key={i}>
-                                          <a href={sub.href} onClick={() => { setIsMenuOpen(false); setMobileActiveSub(null); }} className="premium-nav-link simple">
-                                            <span className="premium-link-text">{sub.label}</span>
-                                            <FaChevronRight className="premium-link-arrow" />
-                                          </a>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  </div>
-                                </div>
-                              );
-                            } else {
-                              // Direct child (no 'items') - could be link or nested children
-                              const hasInnerChildren = !!cat.children && Array.isArray(cat.children) && cat.children.length > 0;
-                              return (
-                                <div key={cat.label} className="premium-subsection">
-                                  <a href={cat.href} onClick={() => setIsMenuOpen(false)} className="premium-nav-link simple">
-                                    <span className="premium-link-text">{cat.label}</span>
-                                    <FaChevronRight className="premium-link-arrow" />
-                                  </a>
+            <button className="premium-close-btn" onClick={() => setIsMenuOpen(false)} aria-label="Close menu">
+              <FaTimes />
+            </button>
+          </div>
 
-                                  {hasInnerChildren && (
-                                    <div style={{ marginLeft: 12 }}>
-                                      {cat.children.map((c2, idx2) => (
-                                        <a key={idx2} href={c2.href} onClick={() => setIsMenuOpen(false)} className="premium-nav-link simple" style={{ marginTop: 6 }}>
-                                          <span className="premium-link-text">{c2.label}</span>
-                                          <FaChevronRight className="premium-link-arrow" />
-                                        </a>
-                                      ))}
-                                    </div>
-                                  )}
-                                </div>
-                              );
-                            }
-                          })}
-                        </div>
-                      </>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
+          <div className="premium-drawer-content">
+            <div className="drawer-about">
+              <h3 className="drawer-about-title">About Us</h3>
+              <p className="drawer-about-text">
+                We must explain to you how all seds this mistakens idea off denouncing pleasures and praising pain was born and I will give you a completed accounts of the system and expound.
+              </p>
 
-          <div className="drawer-contact">
-            <h4 className="drawer-contact-title">Contact Info</h4>
-
-            <div className="drawer-contact-item">
-              <FaMapMarkerAlt className="drawer-contact-icon" />
-              <div className="drawer-contact-text">
-                Australia - 175 24th Street, Office 3567 Melbourn, EA 265
+              <div className="drawer-cta-wrap">
+                <a href="#contact" className="drawer-cta" onClick={() => setIsMenuOpen(false)}>
+                  Get In Touch <FaArrowRight />
+                </a>
               </div>
             </div>
 
-            <div className="drawer-contact-item">
-              <FaPhone className="drawer-contact-icon" style={{ transform: 'rotate(90deg)' }} />
-              <div className="drawer-contact-text">8280093456</div>
+            {/* Drawer navigation */}
+            <nav aria-label="Drawer Navigation">
+              <ul className="premium-nav-list">
+                {navData.map((item) => {
+                  const hasChildren = !!item.children;
+                  return (
+                    <li key={item.id} className="premium-nav-item">
+                      {!hasChildren ? (
+                        <a className="premium-nav-link" href={item.href} onClick={() => setIsMenuOpen(false)}>
+                          <span className="premium-link-text">{item.label}</span>
+                          <FaChevronRight className="premium-link-arrow" />
+                        </a>
+                      ) : (
+                        <>
+                          <button
+                            className="premium-nav-link"
+                            onClick={() => toggleMobileSection(item.id)}
+                            aria-expanded={!!mobileExpanded[item.id]}
+                          >
+                            <span className="premium-link-text">{item.label}</span>
+                            <FaChevronRight className="premium-link-arrow" />
+                          </button>
+
+                          <div className={`premium-sublist ${mobileExpanded[item.id] ? 'expanded' : ''}`}>
+                            {item.children.map((cat) => {
+                              if (cat.items) {
+                                const subKey = `${item.id}__${cat.id}`;
+                                const isActiveSub = mobileActiveSub === subKey;
+                                return (
+                                  <div key={cat.id} className="premium-subsection">
+                                    <button
+                                      className="premium-nav-link simple"
+                                      onClick={() => toggleMobileSub(item.id, cat.id)}
+                                      aria-expanded={isActiveSub}
+                                    >
+                                      <span className="premium-link-text"><strong>{cat.label}</strong></span>
+                                      <FaChevronRight className="premium-link-arrow" />
+                                    </button>
+
+                                    <div className={`premium-sublist ${isActiveSub ? 'expanded' : ''}`} style={{ paddingLeft: 12 }}>
+                                      <ul className="premium-sublinks">
+                                        {cat.items.map((sub, i) => (
+                                          <li key={i}>
+                                            <a href={sub.href} onClick={() => { setIsMenuOpen(false); setMobileActiveSub(null); }} className="premium-nav-link simple">
+                                              <span className="premium-link-text">{sub.label}</span>
+                                              <FaChevronRight className="premium-link-arrow" />
+                                            </a>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  </div>
+                                );
+                              } else {
+                                const hasInnerChildren = !!cat.children && Array.isArray(cat.children) && cat.children.length > 0;
+                                return (
+                                  <div key={cat.label} className="premium-subsection">
+                                    <a href={cat.href} onClick={() => setIsMenuOpen(false)} className="premium-nav-link simple">
+                                      <span className="premium-link-text">{cat.label}</span>
+                                      <FaChevronRight className="premium-link-arrow" />
+                                    </a>
+
+                                    {hasInnerChildren && (
+                                      <div style={{ marginLeft: 12 }}>
+                                        {cat.children.map((c2, idx2) => (
+                                          <a key={idx2} href={c2.href} onClick={() => setIsMenuOpen(false)} className="premium-nav-link simple" style={{ marginTop: 6 }}>
+                                            <span className="premium-link-text">{c2.label}</span>
+                                            <FaChevronRight className="premium-link-arrow" />
+                                          </a>
+                                        ))}
+                                      </div>
+                                    )}
+                                  </div>
+                                );
+                              }
+                            })}
+                          </div>
+                        </>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+
+            <div className="drawer-contact">
+              <h4 className="drawer-contact-title">Contact Info</h4>
+
+              <div className="drawer-contact-item">
+                <FaMapMarkerAlt className="drawer-contact-icon" />
+                <div className="drawer-contact-text">
+                  Australia - 175 24th Street, Office 3567 Melbourn, EA 265
+                </div>
+              </div>
+
+              <div className="drawer-contact-item">
+                <FaPhone className="drawer-contact-icon" style={{ transform: 'rotate(90deg)' }} />
+                <div className="drawer-contact-text">8280093456</div>
+              </div>
+
+              <div className="drawer-contact-item">
+                <FaEnvelope className="drawer-contact-icon" />
+                <div className="drawer-contact-text">sales21@legalterminus.com</div>
+              </div>
             </div>
 
-            <div className="drawer-contact-item">
-              <FaEnvelope className="drawer-contact-icon" />
-              <div className="drawer-contact-text">sales21@legalterminus.com</div>
+            <div className="premium-social-section">
+              <div className="premium-social-grid">
+                <a className="premium-social-link" href="https://www.facebook.com/LegalTerminusofficial" aria-label="Facebook"><FaFacebookF /></a>
+                <a className="premium-social-link" href="https://www.instagram.com/legalterminus/" aria-label="Instagram"><FaInstagram /></a>
+                <a className="premium-social-link" href="#twitter" aria-label="Twitter"><FaTwitter /></a>
+                <a className="premium-social-link" href="#linkedin" aria-label="LinkedIn"><FaLinkedinIn /></a>
+              </div>
             </div>
           </div>
+        </aside>
 
-          <div className="premium-social-section">
-            <div className="premium-social-grid">
-              <a className="premium-social-link" href="https://www.facebook.com/LegalTerminusofficial" aria-label="Facebook"><FaFacebookF /></a>
-              <a className="premium-social-link" href="https://www.instagram.com/legalterminus/" aria-label="Instagram"><FaInstagram /></a>
-              <a className="premium-social-link" href="#twitter" aria-label="Twitter"><FaTwitter /></a>
-              <a className="premium-social-link" href="#linkedin" aria-label="LinkedIn"><FaLinkedinIn /></a>
-            </div>
-          </div>
-        </div>
-      </aside>
-      
-    </header>
+      </header>
+
+      {/* Spacer to keep document flow — height is the measured header height */}
+      <div aria-hidden="true" style={{ height: headerHeight ? `${headerHeight}px` : 'auto', width: '100%' }} />
+    </>
   );
 }

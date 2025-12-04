@@ -9,6 +9,9 @@ import WhyUs from "../WhyUs/WhyUs";
 import OurClients from "../OurClients/OurClients";
 import BlogDetailsTestimonial from "../BlogDetailsTestimonial/BlogDetailsTestimonial";
 
+/**
+ * Tab items — keep these as you had them
+ */
 const TAB_ITEMS = [
   { id: "inc", label: "Incorporation of wholly owned" },
   { id: "steps", label: "Steps of incorporation" },
@@ -19,6 +22,9 @@ const TAB_ITEMS = [
   { id: "clients", label: "Our client" }
 ];
 
+/**
+ * PanelsMap: uncomment and wire components when ready
+ */
 const PanelsMap = {
   inc: <Incorporation />,
   steps: <Steps />,
@@ -31,57 +37,65 @@ const PanelsMap = {
 
 const Tabs = () => {
   const [active, setActive] = useState(TAB_ITEMS[0].id);
-  const tabsRef = useRef([]);
-  const containerRef = useRef(null);
-  const indicatorRef = useRef(null);
 
-  // Measure & expose the tabs-row height to CSS so scrollIntoView won't hide headings under sticky row.
+  // refs for each tab button and the scrolling row
+  const tabsRef = useRef([]);
+  const rowRef = useRef(null);
+
+  // sticky-on-scroll state and measurements
+  const [isFixed, setIsFixed] = useState(false);
+  const rowTopRef = useRef(0);
+  const rowHeightRef = useRef(0);
+
+  // Measure row height/top and store CSS var for scroll-margin
   useEffect(() => {
-    const updateStickyHeight = () => {
-      const rowEl = containerRef.current;
-      if (rowEl) {
-        const extra = 12; // breathing room in px
-        const h = Math.ceil(rowEl.getBoundingClientRect().height + extra);
-        const wrap = rowEl.closest(".tabs-wrap");
-        if (wrap) wrap.style.setProperty("--tabs-sticky-height", `${h}px`);
-      }
+    const update = () => {
+      const rowEl = rowRef.current;
+      if (!rowEl) return;
+      const rect = rowEl.getBoundingClientRect();
+      const extra = 12;
+      const total = Math.ceil(rect.height + extra);
+      rowHeightRef.current = rect.height;
+      rowTopRef.current = rect.top + window.scrollY;
+      const wrap = rowEl.closest(".TabSec-wrap");
+      if (wrap) wrap.style.setProperty("--tabsec-sticky-height", `${total}px`);
     };
 
-    updateStickyHeight();
-    window.addEventListener("resize", updateStickyHeight);
-    window.addEventListener("load", updateStickyHeight);
-
+    if (typeof window !== "undefined") {
+      update();
+      window.addEventListener("resize", update);
+      window.addEventListener("load", update);
+    }
     return () => {
-      window.removeEventListener("resize", updateStickyHeight);
-      window.removeEventListener("load", updateStickyHeight);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", update);
+        window.removeEventListener("load", update);
+      }
     };
   }, []);
 
-  // focus handling for keyboard navigation and indicator positioning
+  // Keep active tab visible inside horizontal scroller (buffered)
   useEffect(() => {
     const activeIndex = TAB_ITEMS.findIndex((t) => t.id === active);
     const el = tabsRef.current[activeIndex];
-    if (el && indicatorRef.current && containerRef.current) {
-      const containerRect = containerRef.current.getBoundingClientRect();
-      const rect = el.getBoundingClientRect();
-      const left = rect.left - containerRect.left + containerRef.current.scrollLeft;
-      indicatorRef.current.style.width = `${rect.width}px`;
-      indicatorRef.current.style.transform = `translateX(${left}px)`;
-      // ensure active tab visible in scrollable row
-      const buffer = 12;
-      const elLeft = el.offsetLeft;
-      const elRight = elLeft + el.offsetWidth;
-      const viewLeft = containerRef.current.scrollLeft;
-      const viewRight = viewLeft + containerRef.current.offsetWidth;
-      if (elLeft - buffer < viewLeft) {
-        containerRef.current.scrollTo({ left: elLeft - buffer, behavior: "smooth" });
-      } else if (elRight + buffer > viewRight) {
-        containerRef.current.scrollTo({ left: elRight - containerRef.current.offsetWidth + buffer, behavior: "smooth" });
-      }
+    const container = rowRef.current;
+    if (!el || !container) return;
+    const buffer = 14;
+    const elLeft = el.offsetLeft;
+    const elRight = elLeft + el.offsetWidth;
+    const viewLeft = container.scrollLeft;
+    const viewRight = viewLeft + container.clientWidth;
+    if (elLeft - buffer < viewLeft) {
+      container.scrollTo({ left: Math.max(0, elLeft - buffer), behavior: "smooth" });
+    } else if (elRight + buffer > viewRight) {
+      container.scrollTo({
+        left: elRight - container.clientWidth + buffer,
+        behavior: "smooth"
+      });
     }
   }, [active]);
 
-  // keyboard interactions (ArrowLeft, ArrowRight, Home, End, Enter/Space)
+  // keyboard navigation: ArrowLeft/ArrowRight/Home/End/Enter/Space
   const onKeyDown = (e, index) => {
     const max = TAB_ITEMS.length;
     if (e.key === "ArrowRight") {
@@ -104,70 +118,122 @@ const Tabs = () => {
       setActive(TAB_ITEMS[max - 1].id);
     } else if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      const targetId = TAB_ITEMS[index].id;
-      const el = document.getElementById(`panel-${targetId}`);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-      setActive(TAB_ITEMS[index].id);
+      const id = TAB_ITEMS[index].id;
+      const panel = document.getElementById(`panel-${id}`);
+      if (panel) panel.scrollIntoView({ behavior: "smooth", block: "start" });
+      setActive(id);
     }
   };
 
-  // click: set active and scroll to stacked panel
+  // click behavior: set active, scroll to panel, focus button without scrolling viewport
   const handleTabClick = (id, index) => {
     setActive(id);
-    const el = document.getElementById(`panel-${id}`);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-      const btn = tabsRef.current[index];
-      if (btn) btn.focus({ preventScroll: true });
-    }
+    const panel = document.getElementById(`panel-${id}`);
+    if (panel) panel.scrollIntoView({ behavior: "smooth", block: "start" });
+    const btn = tabsRef.current[index];
+    if (btn) btn.focus({ preventScroll: true });
   };
 
+  // sticky toggle on scroll + recompute on resize
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const handleScroll = () => {
+      if (!rowTopRef.current) return;
+      const scrollY = window.scrollY || window.pageYOffset;
+      if (scrollY >= rowTopRef.current && !isFixed) setIsFixed(true);
+      else if (scrollY < rowTopRef.current && isFixed) setIsFixed(false);
+    };
+
+    const onResize = () => {
+      const rowEl = rowRef.current;
+      if (!rowEl) return;
+      const rect = rowEl.getBoundingClientRect();
+      rowHeightRef.current = rect.height;
+      rowTopRef.current = rect.top + window.scrollY;
+      const wrap = rowEl.closest(".TabSec-wrap");
+      if (wrap) wrap.style.setProperty("--tabsec-sticky-height", `${Math.ceil(rect.height + 12)}px`);
+    };
+
+    onResize();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [isFixed]);
+
   return (
-    <div className="tabs-outer">
-      <div className="tabs-wrap full-width" aria-live="polite">
-        <div
-          className="tabs-row"
+    <div className="TabSec-outer">
+      <div className="TabSec-wrap full-width">
+        <header className="TabSec-header">
+          <div className="TabSec-title">
+            <h1>Company Formation</h1>
+            <p className="TabSec-sub">Clear steps, documents and support for wholly owned incorporation</p>
+          </div>
+          <div className="TabSec-meta" aria-hidden="true">
+            <div className="TabSec-pill">Trusted · Transparent · Fast</div>
+          </div>
+        </header>
+
+        <div aria-hidden="true" className="TabSec-visuallyHidden">Navigation tabs for company information</div>
+
+        {/* Spacer prevents page jump when the row becomes fixed */}
+        {isFixed && (
+          <div
+            className="TabSec-spacer"
+            style={{ height: rowHeightRef.current ? `${rowHeightRef.current}px` : undefined }}
+            aria-hidden="true"
+          />
+        )}
+
+        <nav
+          ref={rowRef}
+          className={`TabSec-row ${isFixed ? "TabSec-fixed" : ""}`}
           role="tablist"
           aria-label="Company information tabs"
-          ref={containerRef}
         >
-          {TAB_ITEMS.map((t, i) => (
-            <button
-              key={t.id}
-              ref={(el) => (tabsRef.current[i] = el)}
-              id={`tab-${t.id}`}
-              role="tab"
-              aria-controls={`panel-${t.id}`}
-              aria-selected={active === t.id}
-              tabIndex={active === t.id ? 0 : -1}
-              className={`tab modern ${active === t.id ? "active" : ""}`}
-              onClick={() => handleTabClick(t.id, i)}
-              onKeyDown={(e) => onKeyDown(e, i)}
-              title={t.label}
-            >
-              <span className="tab-icon" aria-hidden="true" />
-              <span className="tab-label">{t.label}</span>
-            </button>
-          ))}
+          <div className="TabSec-inner" role="presentation">
+            {TAB_ITEMS.map((t, i) => (
+              <button
+                key={t.id}
+                ref={(el) => (tabsRef.current[i] = el)}
+                id={`tab-${t.id}`}
+                role="tab"
+                aria-controls={`panel-${t.id}`}
+                aria-selected={active === t.id}
+                tabIndex={active === t.id ? 0 : -1}
+                className={`TabSec-tab ${active === t.id ? "TabSec-active" : ""}`}
+                onClick={() => handleTabClick(t.id, i)}
+                onKeyDown={(e) => onKeyDown(e, i)}
+                title={t.label}
+                type="button"
+              >
+                <span className="TabSec-tabIcon" aria-hidden="true" />
+                <span className="TabSec-tabLabel">{t.label}</span>
+              </button>
+            ))}
+          </div>
+        </nav>
 
-          <div className="tab-indicator" ref={indicatorRef} aria-hidden="true" />
-        </div>
-
-        <div className="tab-panel">
+        <main className="TabSec-panel" role="region" aria-live="polite">
           {TAB_ITEMS.map((t) => (
             <section
               key={t.id}
               id={`panel-${t.id}`}
               role="region"
               aria-labelledby={`tab-${t.id}`}
-              className={`panel-content ${active === t.id ? "is-active" : ""}`}
+              className={`TabSec-panelContent ${active === t.id ? "TabSec-isActive" : ""}`}
             >
-              {PanelsMap[t.id]}
+              <div className="TabSec-panelInner">
+                <div className="TabSec-panelHeading">
+                  <h2>{t.label}</h2>
+                </div>
+                <div className="TabSec-panelBody">{PanelsMap[t.id]}</div>
+              </div>
             </section>
           ))}
-        </div>
+        </main>
       </div>
     </div>
   );

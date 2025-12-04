@@ -1,285 +1,248 @@
-/* FILE: Documents.css
-   Revised to fix Surface Duo / narrow foldable layout issues.
-   - Keeps original colors, spacing, and content.
-   - Uses a responsive grid that adapts to available width (auto-fit + minmax) so columns never become too narrow on dual-screen/narrow viewports.
-   - Ensures equal-height cards (prevents visual overlap / misalignment) by making cards stretch to the grid row size.
-   - Keeps all breakpoints using ONLY @media (max-width: ...).
-   - Preserves .documents-* class names (no JSX changes required).
-*/
+/* Modern masonry-like grid CSS for Documents component
+   Replace your existing Documents.css with this file (contents only).
+   NOTE: No HTML/JS changed — only CSS. Cards will flow in a responsive, modern masonry column layout. */
 
-/* -----------------------
-   Consolidated defensive helpers
-   ----------------------- */
-.documents-container,
-.documents-hero,
-.documents-card,
-.documents-item,
-.documents-card-left,
-.documents-body,
-.documents-head {
+:root{
+  --accent: #0b6b2e;
+  --muted: #55606a;
+  --badge-bg: #ff7a00;
+  --card-border: rgba(9,30,66,0.06);
+  --card-shadow: 0 22px 48px rgba(11,40,20,0.06);
+  --card-hover-shadow: 0 40px 80px rgba(11,40,20,0.12);
+  --radius: 14px;
+  --glass: rgba(255,255,255,0.8);
+}
+
+/* baseline */
+.Documents-container,
+.Documents-hero,
+.Documents-card,
+.Documents-item,
+.Documents-body,
+.Documents-head {
   box-sizing: border-box;
-  min-width: 0;           /* prevents children from forcing horizontal scroll */
+  min-width: 0;
   overflow-wrap: anywhere;
 }
 
-/* -----------------------
-   Container + typography
-   ----------------------- */
-.documents-container {
-  padding: 18px;
+/* container — no background/borders as requested */
+.Documents-container {
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 18px;
   color: #0b1220;
+  line-height: 1.6;
   background: transparent;
 }
 
 /* HERO */
-.documents-hero {
-  border-radius: 12px;
-  padding: 16px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(250,251,253,0.96));
-  box-shadow: 0 12px 40px rgba(8,17,22,0.04);
-  border: 1px solid rgba(15,23,42,0.04);
-}
-.documents-hero-inner { max-width: 980px; margin: 0; }
-.documents-hero-top {
+.Documents-hero { padding: 18px 6px; margin-bottom: 20px; }
+.Documents-hero-inner { max-width: 1180px; margin: 0 auto; }
+.Documents-hero-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
 }
-.documents-title {
-  font-size: 22px;
-  color: #0B6B2E;
+.Documents-title {
   margin: 0;
-  font-weight: 800;
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--accent);
+  letter-spacing: -0.2px;
 }
-.documents-hero-chip {
-  background: #FF7A00;
-  color: #ffffff;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-weight: 800;
-  font-size: 13px;
-  white-space: nowrap;
-}
-.documents-lead {
-  margin: 10px 0 0 0;
-  color: #475569;
-  line-height: 1.6;
-  max-width: 72ch;
-}
-
-/* -----------------------
-   Cards grid & items (desktop-first)
-   ----------------------- */
-/* Title/subtitle */
-.documents-subtitle {
-  font-size: 18px;
-  color: #0B6B2E;
-  margin: 18px 0 10px 0;
-  font-weight: 800;
-}
-
-/* Grid: use auto-fit/minmax so columns adapt to available width.
-   This prevents extremely narrow columns on foldables (Surface Duo) and
-   ensures the layout gracefully falls to 1 column when space is small.
-*/
-.documents-list { list-style: none; margin: 0; padding: 0; }
-.documents-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-  align-items: stretch;
-  grid-auto-rows: 1fr; /* force rows to be equal height so cards match in a row */
-}
-
-/* each item */
-.documents-item { min-width: 0; }
-
-/* CARD: make each card a column to allow top-to-bottom flow and stretch to fill grid cell */
-.documents-card {
-  display: flex;
-  flex-direction: column;  /* card content vertical stack */
-  justify-content: space-between;
-  gap: 12px;
-  padding: 14px;
-  border-radius: 12px;
-  background: linear-gradient(180deg, rgba(255,255,255,1), rgba(248,250,252,0.98));
-  border: 1px solid rgba(15,23,42,0.04);
-  box-shadow: 0 8px 28px rgba(8,17,22,0.03);
-  box-sizing: border-box;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;            /* stretch to fill the grid cell (equal height) */
-  word-break: break-word;
-}
-
-/* Top portion: icon + title + badge */
-.documents-card-top {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  min-width: 0;
-}
-
-/* left column (icon) */
-.documents-icon {
-  width: 46px;
-  height: 46px;
+.Documents-hero-chip {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, rgba(11,107,46,0.08), rgba(11,107,46,0.04));
-  color: #0B6B2E;
-  border-radius: 12px;
-  flex-shrink: 0;
-}
-.documents-icon svg { width: 22px; height: 22px; display: block; }
-
-/* body wrapper */
-.documents-body { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; }
-
-/* head row (title + badge) */
-.documents-head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  min-width: 0;
-}
-.documents-item-title {
-  margin: 0;
-  font-size: 15px;
-  color: #0b1220;
-  font-weight: 800;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  line-height: 1.15;
-}
-
-/* badge (keeps same visual) */
-.documents-badge {
-  background: #FF7A00;
-  color: #ffffff;
-  padding: 6px 10px;
+  padding: 8px 14px;
+  background: var(--badge-bg);
+  color: #fff;
+  font-weight: 900;
+  font-size: 14px;
   border-radius: 999px;
-  font-weight: 800;
-  font-size: 12px;
-  white-space: nowrap;
-  flex-shrink: 0;
 }
-
-/* description: placed below head and allowed to grow */
-.documents-item-desc {
-  margin: 10px 0 0 0;
-  font-size: 13px;
-  color: #6b7380;
-  line-height: 1.5;
-  max-width: 80ch;
-  flex: 1 1 auto; /* allow description to take remaining vertical space */
-  overflow-wrap: anywhere;
-}
-
-/* decorative meta area appears below or to the side depending on width */
-.documents-card-meta {
+.Documents-lead {
   margin-top: 12px;
+  color: var(--muted);
+  max-width: 78ch;
+  font-size: 17px;
+}
+
+/* subtitle */
+.Documents-subtitle {
+  font-size: 22px;
+  margin: 12px 0 18px 0;
+  color: var(--accent);
+  font-weight: 900;
+}
+
+/* --- MODERN MASONRY-LIKE GRID (pure CSS column layout) --- */
+/* Use column layout so cards of varying heights flow naturally like a modern masonry grid. */
+.Documents-list { list-style: none; margin: 0; padding: 0; }
+.Documents-grid {
+  /* columns create masonry flow; gap handled with column-gap and item margins */
+  column-gap: 22px;
+  column-fill: balance;
+  column-count: 4; /* default on large screens */
+  width: 100%;
+}
+
+/* make each list item flow as a block inside a column */
+.Documents-item {
+  display: inline-block; /* important for column flow */
+  width: 100%;
+  margin: 0 0 22px 0; /* vertical spacing between items */
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+
+
+/* ITEM & CARD */
+.Documents-card {
+  position: relative;
+  display: block;
+  background: #fff;             /* cards keep background */
+  border-radius: var(--radius);
+  border: 1px solid var(--card-border);
+  padding: 22px;
+  box-shadow: var(--card-shadow);
+  overflow: visible;
+  transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms ease, filter 260ms ease;
+  isolation: isolate;
+  /* remove fixed min-height so cards can be natural height */
+  min-height: 0;
+  /* ensure cards render as block-level in columns and take full column width */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* accent stripe (left) — decorative but only on card */
+.Documents-accent{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  border-radius: 8px 0 0 8px;
+  background: linear-gradient(180deg, rgba(11,107,46,0.95), rgba(255,122,0,0.95));
+  transform-origin: left center;
+  transition: transform 260ms ease, opacity 260ms ease;
+  opacity: 0.9;
+}
+
+/* hover/focus micro-interaction */
+.Documents-card:hover,
+.Documents-card:focus {
+  transform: translateY(-8px) rotate(-0.25deg) scale(1.01);
+  box-shadow: var(--card-hover-shadow);
+  outline: none;
+}
+.Documents-card:focus { box-shadow: 0 0 0 4px rgba(11,107,46,0.06), var(--card-hover-shadow); }
+
+/* soft halo using pseudo-element (appears on hover) */
+.Documents-card::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  transition: opacity 260ms ease, transform 260ms ease;
+  opacity: 0;
+  transform: scale(0.98);
+  box-shadow: 0 18px 60px rgba(11,107,46,0.04);
+}
+.Documents-card:hover::after { opacity: 1; transform: scale(1); }
+
+/* top content: icon centered + text below (full width) */
+.Documents-card-top { display: block; }
+
+/* ICON: larger, centered, slight ring */
+.Documents-icon {
+  width: 72px;
+  height: 72px;
+  margin: 6px auto 14px auto;
   display: flex;
   align-items: center;
-  flex-shrink: 0;
-}
-.documents-glow {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: linear-gradient(90deg, rgba(11,107,46,0.12), rgba(255,122,0,0.06));
-  box-shadow: 0 8px 20px rgba(11,107,46,0.06);
+  justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(11,107,46,0.06), rgba(11,107,46,0.02));
+  color: var(--accent);
+  font-size: 34px;
+  box-shadow: 0 6px 18px rgba(11,107,46,0.03);
 }
 
-/* note */
-.documents-note {
-  margin-top: 16px;
-  color: #475569;
-  font-size: 14px;
+/* body fills width */
+.Documents-body-full { width: 100%; display: block; }
+
+/* HEAD: title + ribbon badge */
+.Documents-head {
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.Documents-item-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+  color: #0b1220;
+  line-height: 1.12;
+  letter-spacing: -0.1px;
+}
+
+/* ribbon badge: folded look */
+.Documents-badge {
+  display: inline-block;
+  position: relative;
+  padding: 8px 14px;
+  background: var(--badge-bg);
+  color: #fff;
+  font-weight: 900;
+  font-size: 13px;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px rgba(255,122,0,0.08);
+  transform: translateZ(0);
+}
+
+/* DESCRIPTION: roomy, full width */
+.Documents-item-desc {
+  margin-top: 12px;
+  font-size: 16px;
+  color: var(--muted);
   line-height: 1.6;
+  width: 100%;
+  max-width: 100%;
 }
 
-/* -----------------------
-   RESPONSIVE (max-width only)
-   - Keep existing breakpoints + added narrow breakpoints handled implicitly by auto-fit/minmax
-   ----------------------- */
-
-/* <=1280px: small adjustment to gap */
-@media (max-width: 1280px) {
-  .documents-cards-grid { gap: 14px; }
-  .documents-hero-inner { max-width: 900px; }
+/* NOTE */
+.Documents-note {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 78ch;
 }
 
-/* <=1024px: 2-ish columns (auto-fit will choose column count based on available width) */
-@media (max-width: 1024px) {
-  .documents-hero-inner { max-width: 680px; }
-  .documents-title { font-size: 20px; }
-  .documents-cards-grid { gap: 14px; }
+/* small accessibility tweak: make keyboard focus visible and consistent */
+.Documents-card:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(11,107,46,0.08), var(--card-hover-shadow);
 }
 
-/* <=768px: mid-size screens — tighten paddings and font sizes */
-@media (max-width: 768px) {
-  .documents-container { padding: 14px; }
-  .documents-card { padding: 12px; gap: 10px; }
-  .documents-title { font-size: 18px; }
-  .documents-lead { font-size: 14px; }
-  .documents-glow { display: none; }
+
+/* Responsive media queries — simple, non-intrusive (no font-size or padding changes) */
+@media (max-width: 1200px) {
+  .Documents-grid { column-count: 3; column-gap: 20px; }
+  .Documents-hero-inner { max-width: 100%; padding-left: 0; padding-right: 0; }
 }
 
-/* <=720px: important single-column fallback for narrow foldables (Surface Duo single-panel widths).
-   We keep auto-fit grid but reinforce single-column behavior by ensuring the min column width
-   (260px) cannot be satisfied twice in very narrow viewports: result is 1 column.
-*/
-@media (max-width: 720px) {
-  .documents-container { padding: 12px; }
-  .documents-cards-grid { gap: 12px; grid-auto-rows: auto; }
-  .documents-card { padding: 12px; }
-  .documents-card-top { align-items: flex-start; }
-  .documents-card-meta { display: none; } /* hide decorative meta earlier to save space */
+@media (max-width: 900px) {
+  .Documents-grid { column-count: 2; column-gap: 18px; }
 }
 
-/* <=560px: narrow portrait and some fold pairings */
-@media (max-width: 560px) {
-  .documents-cards-grid { gap: 10px; }
-  .documents-card { padding: 12px; }
-  .documents-icon { width: 40px; height: 40px; }
-  .documents-item-title { font-size: 15px; }
-  .documents-item-desc { font-size: 13px; max-width: 100%; }
-  .documents-badge { padding: 5px 8px; font-size: 11px; }
-}
-
-/* <=480px: small phones */
-@media (max-width: 480px) {
-  .documents-container { padding: 12px; }
-  .documents-cards-grid { gap: 10px; }
-  .documents-card { padding: 12px; }
-  .documents-icon { width: 40px; height: 40px; }
-  .documents-item-title { font-size: 15px; }
-  .documents-item-desc { font-size: 13px; }
-  .documents-card-meta { display: none; }
-}
-
-/* <=360px: very small phones */
-@media (max-width: 360px) {
-  .documents-container { padding: 10px; }
-  .documents-title { font-size: 16px; }
-  .documents-subtitle { font-size: 16px; }
-  .documents-cards-grid { gap: 8px; }
-  .documents-card { padding: 10px; gap: 8px; }
-  .documents-icon { width: 36px; height: 36px; }
-  .documents-item-desc { font-size: 13px; line-height: 1.45; }
-  .documents-badge { padding: 5px 8px; font-size: 11px; }
-}
-
-/* Accessibility: reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .documents-card, .documents-hero, .documents-glow, .documents-icon {
-    transition: none !important;
-    animation: none !important;
-  }
+@media (max-width: 600px) {
+  .Documents-grid { column-count: 1; column-gap: 14px; }
 }

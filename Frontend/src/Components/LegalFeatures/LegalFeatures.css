@@ -1,0 +1,139 @@
+/* Main wrapper */
+.LegalFeatures-root {
+  width: 100%;
+  background: #ffffff;
+  padding: 50px 0 70px;
+}
+
+/* Container */
+.LegalFeatures-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Heading */
+.LegalFeatures-heading {
+  font-size: 32px;
+  font-weight: 800;
+  color: #16a34a;
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+/* Grid layout */
+.LegalFeatures-grid {
+  display: flex;
+  gap: 28px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Feature card */
+.LegalFeatures-card {
+  flex: 1 1 30%;
+  background: #f8f8f8;
+  padding: 40px 30px;
+  border-radius: 20px;
+  min-width: 280px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+}
+
+/* Icon */
+.LegalFeatures-icon {
+  font-size: 60px;
+  color: #f4a63a; /* orange */
+  margin-bottom: 24px;
+}
+
+/* Title */
+.LegalFeatures-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+/* Text */
+.LegalFeatures-text {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive */
+/* Large screens (desktops / laptops) */
+@media (max-width: 1199px) {
+  .LegalFeatures-container {
+    width: 92%;
+  }
+
+  .LegalFeatures-grid {
+    gap: 24px;
+  }
+
+  .LegalFeatures-card {
+    flex: 1 1 32%;
+    min-width: 260px;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (max-width: 991px) {
+  .LegalFeatures-container {
+    width: 94%;
+  }
+
+  .LegalFeatures-grid {
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .LegalFeatures-card {
+    flex: 1 1 45%;
+    min-width: 240px;
+    max-width: 48%;
+  }
+}
+
+/* Small devices (large phones / small tablets) */
+@media (max-width: 767px) {
+  .LegalFeatures-container {
+    width: 96%;
+  }
+
+  .LegalFeatures-grid {
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+  }
+
+  .LegalFeatures-card {
+    flex: 1 1 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .LegalFeatures-heading {
+    text-align: center;
+  }
+}
+
+/* Extra small devices (phones) */
+@media (max-width: 575px) {
+  .LegalFeatures-container {
+    width: 98%;
+  }
+
+  .LegalFeatures-grid {
+    gap: 14px;
+  }
+
+  .LegalFeatures-card {
+    border-radius: 16px;
+    width: 100%;
+  }
+
+  .LegalFeatures-heading {
+    margin-bottom: 32px;
+  }
+}
