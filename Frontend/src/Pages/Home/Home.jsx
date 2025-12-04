@@ -4,6 +4,9 @@ import Herosection from '../../Components/Herosection/Herosection'
 import Premiumbusiness from '../../Components/Premiumbusiness/Premiumbusiness'
 import Compilance from '../../Components/Compilance/Compilance'
 import Workingprocess from '../../Components/Workingprocess/Workingprocess'
+import Whoweare from '../../Components/Whoweare/Whoweare'
+import Featureslegalservice from '../../Components/Featureslegalservice/Featureslegalservice'
+import Legalhelp from '../../Components/Legalhelp/Legalhelp'
 
 const Home = () => {
   return (
@@ -12,6 +15,9 @@ const Home = () => {
         <Compilance/>
         <Premiumbusiness/>
         <Workingprocess/>
+        <Legalhelp/>
+        <Whoweare/>
+        <Featureslegalservice/>
     </>
   )
 }
