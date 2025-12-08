@@ -157,45 +157,45 @@ const Faq = () => {
   }, [query]);
 
   return (
-    <section className="faq-container">
-      <div className="faq-inner">
+    <section className="incorption-faq-container">
+      <div className="incorption-faq-inner">
 
         {/* LEFT SIDE — unchanged layout */}
-        <div className="faq-left">
-          <div className="faq-left-card">
-            <h1 className="faq-title">Company Registration FAQ's</h1>
+        <div className="incorption-faq-left">
+          <div className="incorption-faq-left-card">
+            <h1 className="incorption-faq-title">Company Registration FAQ's</h1>
 
-            <p className="faq-lead">
+            <p className="incorption-faq-lead">
               Starting a Private Limited Company is a big milestone for any entrepreneur.
             </p>
 
-            <p className="faq-paragraph">
+            <p className="incorption-faq-paragraph">
               These FAQs help you understand the registration steps with full clarity.
             </p>
 
-            <div className="faq-stats">
+            <div className="incorption-faq-stats">
               <div className="stat"><div className="stat-num">7k+</div><div className="stat-label">Queries answered</div></div>
               <div className="stat"><div className="stat-num">50%</div><div className="stat-label">Avg. savings</div></div>
               <div className="stat"><div className="stat-num">1–2w</div><div className="stat-label">Processing time</div></div>
             </div>
 
-            <div className="faq-visual">
-              <img src={img} alt="Illustration" className="faq-hero-image" />
+            <div className="incorption-faq-visual">
+              <img src={img} alt="Illustration" className="incorption-faq-hero-image" />
             </div>
           </div>
         </div>
 
         {/* RIGHT SIDE — FAQ stays on right */}
-        <aside className="faq-right">
-          <div className="faq-right-scroll">
-            <div className="faq-right-inner">
+        <aside className="incorption-faq-right">
+          <div className="incorption-faq-right-scroll">
+            <div className="incorption-faq-right-inner">
 
               {/* SEARCH BAR ONLY (buttons removed) */}
-              <div className="faq-controls">
-                <div className="faq-search">
-                  <AiOutlineSearch className="faq-search-icon" />
+              <div className="incorption-faq-controls">
+                <div className="incorption-faq-search">
+                  <AiOutlineSearch className="incorption-faq-search-icon" />
                   <input
-                    className="faq-search-input"
+                    className="incorption-faq-search-input"
                     placeholder="Search questions..."
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
@@ -204,18 +204,18 @@ const Faq = () => {
               </div>
 
               {/* FAQ LIST */}
-              <div className="faq-list">
+              <div className="incorption-faq-list">
                 {filtered.length === 0 && (
-                  <div className="faq-empty">No results found for “{query}”.</div>
+                  <div className="incorption-faq-empty">No results found for “{query}”.</div>
                 )}
 
                 {filtered.map((item, idx) => {
                   const isOpen = openIndex === idx;
                   return (
-                    <div key={idx} className={`faq-card ${isOpen ? "open" : ""}`}>
-                      <button className="faq-question" onClick={() => toggle(idx)}>
-                        <span className="faq-qtext">{item.q}</span>
-                        <span className="faq-icon">
+                    <div key={idx} className={`incorption-faq-card ${isOpen ? "open" : ""}`}>
+                      <button className="incorption-faq-question" onClick={() => toggle(idx)}>
+                        <span className="incorption-faq-qtext">{item.q}</span>
+                        <span className="incorption-faq-icon">
                           {isOpen ? <AiOutlineMinus /> : <AiOutlinePlus />}
                         </span>
                       </button>
@@ -223,13 +223,13 @@ const Faq = () => {
                       <AnimatePresence>
                         {isOpen && (
                           <motion.div
-                            className="faq-answer-wrap"
+                            className="incorption-faq-answer-wrap"
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.25 }}
                           >
-                            <div className="faq-answer">
+                            <div className="incorption-faq-answer">
                               {item.a.split("\n\n").map((para, i) => (
                                 <p key={i}>{para}</p>
                               ))}
