@@ -1,5 +1,24 @@
 import React from "react";
+import {
+  AiOutlineFile,
+  AiOutlineProfile,
+  AiOutlineCalendar,
+  AiOutlineKey,
+  AiOutlineFileAdd,
+  AiOutlineUpload,
+  AiOutlineCheckCircle,
+} from "react-icons/ai";
 import "./Steps.css";
+
+const iconSet = [
+  AiOutlineFile,
+  AiOutlineProfile,
+  AiOutlineCalendar,
+  AiOutlineKey,
+  AiOutlineFileAdd,
+  AiOutlineUpload,
+  AiOutlineCheckCircle,
+];
 
 const Steps = () => {
   const steps = [
@@ -42,9 +61,7 @@ const Steps = () => {
     {
       id: 5,
       title: "Incorporation Document Preparation",
-      bullets: [
-        "Preparation of incorporation documents after name approval",
-      ],
+      bullets: ["Preparation of incorporation documents after name approval"],
       color: "#8E2C50",
     },
     {
@@ -59,160 +76,123 @@ const Steps = () => {
     {
       id: 7,
       title: "Registration Certificate Issuance",
-      bullets: [
-        "Processing by the department",
-        "Issuance of registration certificate",
-      ],
+      bullets: ["Processing by the department", "Issuance of registration certificate"],
       color: "#ff6f90",
     },
   ];
 
   return (
-    <section className="inc-timeline-outer" aria-label="7 step incorporation timeline">
-      <div className="inc-panel">
-        <h2 className="inc-title">Before you Apply for Incorporation</h2>
+    <section className="Steps-outer">
+      <h2 className="Steps-title">Before you Apply for Incorporation</h2>
 
-        {/* Desktop connector line + chevrons (kept as-is) */}
-        <div className="inc-line" aria-hidden="true" />
-
-        <div className="inc-chevrons" role="list">
-          {steps.map((step, idx) => {
-            const nextColor = steps[idx + 1] ? steps[idx + 1].color : "#ffffff";
-            const filterId = `shadow-${step.id}`;
-
-            return (
-              <div
-                className="chev-wrap"
-                key={step.id}
-                role="listitem"
-                aria-label={`Step ${step.id} - ${step.title}`}
-              >
-                <svg
-                  className="chev-svg"
-                  viewBox="0 0 220 80"
-                  preserveAspectRatio="none"
-                  aria-hidden="true"
-                >
-                  <defs>
-                    <filter id={filterId} x="-50%" y="-50%" width="200%" height="200%">
-                      <feDropShadow dx="0" dy="6" stdDeviation="12" floodColor="#203849" floodOpacity="0.06" />
-                    </filter>
-                  </defs>
-
-                  <g filter={`url(#${filterId})`}>
-                    <path
-                      d="M18 4 h150 a12 12 0 0 1 12 12 v48 a12 12 0 0 1 -12 12 h-150 l-28 -36 28 -36 z"
-                      fill={step.color}
-                      stroke="none"
-                    />
-                  </g>
-
-                  <rect x="64" y="22" rx="8" ry="8" width="48" height="36" fill="rgba(255,255,255,0.08)" />
-
-                  <text
-                    x="88"
-                    y="47"
-                    textAnchor="middle"
-                    fontWeight="800"
-                    fontSize="18"
-                    fill="#fff"
-                    fontFamily="Segoe UI, Roboto, Arial, sans-serif"
+      {/* TOP GRID (1–4) */}
+      <div className="Steps-row Steps-row--top">
+        {steps.slice(0, 4).map((s, idx) => {
+          const Icon = iconSet[s.id - 1];
+          const lastTop = idx === 3;
+          return (
+            <div key={s.id} className="Steps-itemWrap">
+              <article className="Steps-card" style={{ borderColor: s.color }}>
+                <div className="Steps-header">
+                  <div
+                    className="Steps-iconCircle"
+                    style={{ borderColor: s.color, color: s.color }}
                   >
-                    {String(step.id).padStart(2, "0")}
-                  </text>
-
-                  {idx < steps.length - 1 && (
-                    <circle cx="206" cy="40" r="6" fill={nextColor} stroke="rgba(255,255,255,0.95)" strokeWidth="1" />
-                  )}
-
-                  <path d="M166 6 L182 6 L208 40 L182 74 L166 74 Z" fill={step.color} opacity="0.10" />
-                </svg>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Desktop columns (kept as-is) */}
-        <div className="inc-cols" role="list">
-          {steps.map((s) => (
-            <div className="inc-col" key={s.id} role="listitem" aria-label={s.title}>
-              <div className="col-head" style={{ color: s.color }}>
-                {s.title}
-              </div>
-
-              <ul className="col-list">
-                {s.bullets.map((b, i) => (
-                  <li key={i}>{b}</li>
-                ))}
-              </ul>
-
-              <div className="col-dot" style={{ background: s.color }} aria-hidden="true" />
-            </div>
-          ))}
-        </div>
-
-        {/* NEW: Card layout for tablet & mobile.
-            Visible only at <=1024px via CSS. Each card shows the chevron svg + its content.
-            Class names preserved; .step-cards and .step-card are new helpers. */}
-        <div className="step-cards" aria-hidden="false">
-          {steps.map((s, idx) => {
-            const nextColor = steps[idx + 1] ? steps[idx + 1].color : "#ffffff";
-            const filterId = `shadow-card-${s.id}`;
-            return (
-              <article className="step-card" key={`card-${s.id}`} aria-label={`Step card ${s.id}`}>
-                <div className="card-chev">
-                  <svg
-                    className="chev-svg"
-                    viewBox="0 0 220 80"
-                    preserveAspectRatio="none"
-                    aria-hidden="true"
-                  >
-                    <defs>
-                      <filter id={filterId} x="-50%" y="-50%" width="200%" height="200%">
-                        <feDropShadow dx="0" dy="6" stdDeviation="12" floodColor="#203849" floodOpacity="0.06" />
-                      </filter>
-                    </defs>
-
-                    <g filter={`url(#${filterId})`}>
-                      <path
-                        d="M18 4 h150 a12 12 0 0 1 12 12 v48 a12 12 0 0 1 -12 12 h-150 l-28 -36 28 -36 z"
-                        fill={s.color}
-                        stroke="none"
-                      />
-                    </g>
-
-                    <rect x="64" y="22" rx="8" ry="8" width="48" height="36" fill="rgba(255,255,255,0.08)" />
-
-                    <text
-                      x="88"
-                      y="47"
-                      textAnchor="middle"
-                      fontWeight="800"
-                      fontSize="18"
-                      fill="#fff"
-                      fontFamily="Segoe UI, Roboto, Arial, sans-serif"
-                    >
+                    <Icon className="Steps-icon" />
+                    <span className="Steps-number" style={{ color: s.color }}>
                       {String(s.id).padStart(2, "0")}
-                    </text>
+                    </span>
+                  </div>
+                  <h3 className="Steps-cardTitle" style={{ color: s.color }}>
+                    {s.title}
+                  </h3>
+                </div>
 
-                    {idx < steps.length - 1 && (
-                      <circle cx="206" cy="40" r="6" fill={nextColor} stroke="rgba(255,255,255,0.95)" strokeWidth="1" />
-                    )}
+                <ul className="Steps-list">
+                  {s.bullets.map((b, i) => (
+                    <li key={i}>{b}</li>
+                  ))}
+                </ul>
+              </article>
 
-                    <path d="M166 6 L182 6 L208 40 L182 74 L166 74 Z" fill={s.color} opacity="0.10" />
+              {!lastTop && (
+                <div className="Steps-arrowRight" style={{ color: s.color }}>
+                  <svg width="70" height="24" viewBox="0 0 70 24">
+                    <path d="M2 12 H58" stroke="currentColor" strokeWidth="2" />
+                    <path
+                      d="M52 6 L60 12 L52 18"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      fill="none"
+                    />
                   </svg>
                 </div>
+              )}
 
-                <div className="card-content">
-                  <div className="col-head" style={{ color: s.color }}>{s.title}</div>
-                  <ul className="col-list">
-                    {s.bullets.map((b, i) => <li key={i}>{b}</li>)}
-                  </ul>
+              {lastTop && (
+                <div className="Steps-arrowDown" style={{ color: s.color }}>
+                  <svg width="28" height="60" viewBox="0 0 28 60">
+                    <path d="M14 2 V50" stroke="currentColor" strokeWidth="2" />
+                    <path
+                      d="M7 44 L14 52 L21 44"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      fill="none"
+                    />
+                  </svg>
                 </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* BOTTOM GRID (5–7) */}
+      <div className="Steps-row Steps-row--bottom">
+        {steps.slice(4).map((s, idx) => {
+          const Icon = iconSet[s.id - 1];
+          const isLast = idx === steps.slice(4).length - 1;
+          return (
+            <div key={s.id} className="Steps-itemWrap Steps-itemWrap--bottom">
+              <article className="Steps-card Steps-card--small" style={{ borderColor: s.color }}>
+                <div className="Steps-header">
+                  <div
+                    className="Steps-iconCircle"
+                    style={{ borderColor: s.color, color: s.color }}
+                  >
+                    <Icon className="Steps-icon" />
+                    <span className="Steps-number" style={{ color: s.color }}>
+                      {String(s.id).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <h3 className="Steps-cardTitle" style={{ color: s.color }}>
+                    {s.title}
+                  </h3>
+                </div>
+
+                <ul className="Steps-list">
+                  {s.bullets.map((b, i) => (
+                    <li key={i}>{b}</li>
+                  ))}
+                </ul>
               </article>
-            );
-          })}
-        </div>
+
+              {!isLast && (
+                <div className="Steps-arrowRight" style={{ color: s.color }}>
+                  <svg width="70" height="24" viewBox="0 0 70 24">
+                    <path d="M2 12 H58" stroke="currentColor" strokeWidth="2" />
+                    <path
+                      d="M52 6 L60 12 L52 18"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </section>
   );

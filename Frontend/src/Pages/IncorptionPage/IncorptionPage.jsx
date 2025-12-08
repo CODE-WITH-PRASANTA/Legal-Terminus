@@ -9,7 +9,7 @@ const IncorptionPage = () => {
     <div>
         <IncorptionBreadcrum />
         <Tabs/>
-        <VideoTestimonial/>
+        {/* <VideoTestimonial/> */}
     </div>
   )
 }

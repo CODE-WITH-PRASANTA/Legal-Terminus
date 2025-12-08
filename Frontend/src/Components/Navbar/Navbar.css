@@ -52,18 +52,14 @@ body.no-scroll { overflow: hidden; }
   position: sticky;
   top: 0;
   z-index: 1200;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   width: 100%;
 }
 
-.header-wrapper.scrolled .main-nav {
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-  transform: translateY(0);
-  background: rgba(255, 255, 255, 0.95);
-}
+
 
 .nav-inner {
   width: calc(100% - 4rem);
@@ -305,7 +301,13 @@ body.no-scroll { overflow: hidden; }
 }
 
 /* ---------------- Drawer (mobile) ---------------- */
-:root { --drawer-bg: #ffffff; --drawer-text: #0f172a; --drawer-muted: #6b7280; --drawer-cta-bg: linear-gradient(90deg,#ff5a3c,#ff4b2f); }
+:root { 
+  --drawer-bg: #ffffff; 
+  --drawer-text: #0f172a; 
+  --drawer-muted: #6b7280; 
+  --drawer-cta-bg: linear-gradient(90deg,#ff5a3c,#ff4b2f);
+  --site-header-height: 0px; /* updated by JS/React on mount/resize */
+}
 
 .premium-drawer-overlay {
   position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -517,3 +519,47 @@ body.no-scroll { overflow: hidden; }
   font-size: 12px;
   opacity: 0.7;
 }
+
+/* ---------------- Fixed header support (ADDED) ---------------- */
+/* This block makes the header fixed. The React component measures the header
+   height and writes it into the --site-header-height CSS variable; the component
+   also inserts a spacer div after the header to preserve document flow. */
+
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1600; /* ensure above normal page content */
+  will-change: transform;
+}
+
+/* ensure overlays and drawer sit above the fixed header */
+.premium-drawer-overlay {
+  z-index: 1620;
+}
+.premium-drawer {
+  z-index: 1621;
+}
+
+/* bump mega-menu above header so it shows over header elements when opened */
+.mega-menu {
+  z-index: 1603; /* overrides earlier 1400 to play nicely with fixed header */
+}
+
+/* Nested panels & other floating elements should sit above header too */
+.nested-panel {
+  z-index: 1622;
+}
+
+/* keep main-nav transitions intact (we're using header-fixed on the header wrapper) */
+.main-nav {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Optional: If you prefer a global non-spacer approach, you can use:
+   body { padding-top: var(--site-header-height); }
+   Note: this file sets --site-header-height default; the React component updates it on mount/resize.
+*/
+
+/* end of stylesheet */

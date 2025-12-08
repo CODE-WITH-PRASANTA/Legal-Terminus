@@ -1,0 +1,62 @@
+:root {
+  --text-main: #111111;
+  --text-sub: #555965;
+  --bg-page: #ffffff;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.llp-wrapper {
+  background: var(--bg-page);
+  padding: 60px 0 80px;
+}
+
+/* common section wrapper */
+.llp-section {
+  max-width: 1180px;
+  margin: 0 auto 60px;
+  padding: 0 24px;
+}
+
+/* main titles – big and bold like reference */
+.llp-title {
+  font-size: 44px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 28px;
+}
+
+/* subheading line in second section */
+.llp-subheading {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-main);
+  margin: 26px 0 14px;
+}
+
+/* body text */
+.llp-paragraph {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text-sub);
+  margin-bottom: 20px;
+}
+
+/* small screens */
+@media (max-width: 768px) {
+  .llp-title {
+    font-size: 32px;
+  }
+
+  .llp-paragraph {
+    font-size: 16px;
+  }
+
+  .llp-section {
+    margin-bottom: 40px;
+  }
+}

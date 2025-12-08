@@ -1,0 +1,100 @@
+:root {
+  --primary: #1aa91a;
+  --text-main: #111111;
+  --text-sub: #555965;
+  --bg: #ffffff;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.llp-checklist-wrapper {
+  padding: 60px 0 90px;
+  background: var(--bg);
+}
+
+.llp-checklist-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.llp-checklist-title {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text-main);
+}
+
+.llp-checklist-intro {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--text-sub);
+  margin-bottom: 40px;
+}
+
+/* -------- GRID -------- */
+
+.llp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* -------- CARDS -------- */
+
+.llp-card {
+  padding: 24px 26px;
+  background: #fafafa;
+  border-left: 4px solid var(--primary); /* green border accent */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.llp-card:hover {
+  background: #f3fff3;
+  transform: translateY(-4px);
+}
+
+.llp-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-main);
+}
+
+.llp-card-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 16px;
+}
+
+/* -------- LIST -------- */
+
+.llp-list {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.llp-list li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-sub);
+}
+
+.llp-list strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* -------- Responsive -------- */
+
+@media (max-width: 992px) {
+  .llp-grid {
+    grid-template-columns: 1fr;
+  }
+}

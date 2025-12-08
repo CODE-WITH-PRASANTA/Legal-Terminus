@@ -94,7 +94,7 @@ const BlogDetailsTestimonial = () => {
                   key={t.id}
                   className={`slide ${isActive ? "active" : ""} ${posClass}`}
                   aria-hidden={!isActive}
-                  role="group"
+                  role="listitem"
                   aria-roledescription="slide"
                   aria-label={`${i + 1} of ${testimonials.length}`}
                 >
