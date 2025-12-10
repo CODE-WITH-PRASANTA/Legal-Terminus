@@ -22,7 +22,7 @@ function App() {
 
 
         {/*   ALL SubPages */}
-                <Route path="/Public-Limited-Company-Registration-in-India" element={<Publicltd />} />
+        <Route path="/Public-Limited-Company-Registration-in-India" element={<Publicltd />} />
         <Route path="/private-limited-company-registration-in-india" element={<PrivateLimited />} />
         <Route path="/incorption-registration-in-india" element={<IncorptionPage />} />
       </Routes>
