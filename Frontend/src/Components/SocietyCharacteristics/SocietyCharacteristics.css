@@ -1,0 +1,177 @@
+/* === Base (mobile-first) =============================== */
+
+.society-char-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #111827;
+  box-sizing: border-box;
+}
+
+/* Header */
+.society-char-header h2 {
+  font-size: 1.6rem; /* ~25px on mobile */
+  font-weight: 700;
+  color: #27ae60;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+.society-char-header p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+
+/* GRID – 1 column by default (small screens) */
+.society-char-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* Card */
+.society-char-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px 16px 18px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    border-color 0.2s ease, background 0.2s ease;
+  overflow: hidden;
+}
+
+/* subtle gradient overlay */
+.society-char-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 86, 166, 0.09),
+    rgba(249, 115, 22, 0.06)
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* keep content above overlay */
+.society-char-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.society-char-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #d49247de;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 86, 166, 0.35);
+}
+
+.society-char-card h3 {
+  font-size: 1rem;
+  margin: 8px 0 6px;
+  color: #111827;
+  font-weight: 700;
+}
+
+.society-char-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+/* Hover effects (only really noticeable on larger screens) */
+@media (hover: hover) {
+  .society-char-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.16);
+    border-color: #bfdbfe;
+  }
+
+  .society-char-card:hover::before {
+    opacity: 1;
+  }
+}
+
+/* === Breakpoints ======================================= */
+
+/* ≥ 480px – slightly larger phones */
+@media (min-width: 480px) {
+  .society-char-wrapper {
+    padding: 28px 20px 44px;
+  }
+
+  .society-char-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .society-char-card {
+    padding: 18px 18px 20px;
+  }
+}
+
+/* ≥ 640px – small tablets: 2 columns */
+@media (min-width: 640px) {
+  .society-char-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .society-char-header p {
+    max-width: 90%;
+  }
+}
+
+/* ≥ 900px – tablets / small laptops: 3 columns */
+@media (min-width: 900px) {
+  .society-char-wrapper {
+    padding: 36px 24px 52px;
+  }
+
+  .society-char-header h2 {
+    font-size: 2rem;
+  }
+
+  .society-char-header p {
+    font-size: 1rem;
+    max-width: 80%;
+  }
+
+  .society-char-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .society-char-card {
+    padding: 18px 20px 22px;
+  }
+}
+
+/* ≥ 1200px – large desktops */
+@media (min-width: 1200px) {
+  .society-char-wrapper {
+    padding: 48px 0 64px;
+  }
+
+  .society-char-header h2 {
+    font-size: 2.15rem;
+  }
+
+  .society-char-header p {
+    max-width: 70%;
+  }
+}

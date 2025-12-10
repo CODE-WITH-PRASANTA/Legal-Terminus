@@ -1,36 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-/* Section base */
-.gt-section {
+.tv-section {
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   background: #ffffff;
   padding: 64px 20px 72px;
 }
 
-.gt-container {
-  max-width: 1360px;
+.tv-container {
+  max-width: 1120px;
   margin: 0 auto;
 }
 
-/* Heading */
-.gt-heading {
+/* Heading / intro */
+.tv-heading {
   text-align: center;
   font-size: 32px;
   font-weight: 700;
   letter-spacing: 1.2px;
-  margin: 0 0 40px;
+  margin: 0 0 10px;
   color: #111827;
 }
 
+.tv-subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: #4b5563;
+  margin: 0 0 36px;
+}
+
 /* Slider wrapper (for side arrows) */
-.gt-slider-wrapper {
+.tv-slider-wrapper {
   position: relative;
-  padding: 0 52px; /* space so arrows don't overlap cards */
+  padding: 0 52px; /* space for arrows */
 }
 
 /* Horizontal slider */
-.gt-slider {
+.tv-slider {
   display: flex;
   gap: 24px;
   overflow-x: auto;
@@ -38,100 +44,68 @@
   padding-bottom: 8px;
 }
 
-.gt-slider::-webkit-scrollbar {
+.tv-slider::-webkit-scrollbar {
   display: none;
 }
-.gt-slider {
+.tv-slider {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-/* Testimonial card */
-.gt-card {
-  min-width: 290px;
-  max-width: 290px;
+/* Card */
+.tv-card {
+  min-width: 320px;
+  max-width: 320px;
   flex-shrink: 0;
 
   background: #fbfbfb;
   border-radius: 18px;
-  border: 2px solid #1aa91a;
-  padding: 36px 28px 32px;
+  border: 2px solid #27ae60;
+  padding: 20px 18px 24px;
   text-align: center;
-  position: relative;
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
 }
 
-/* Quote marks */
-.gt-quote {
+/* Video wrapper with 16:9 aspect ratio */
+.tv-video-wrap {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+  margin-bottom: 16px;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.2);
+}
+
+/* Aspect ratio box */
+.tv-video-aspect {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+}
+
+.tv-video {
   position: absolute;
-  font-size: 40px;
-  color: #1aa91a;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
-.gt-quote-top {
-  top: 10px;
-  left: 18px;
-}
-
-.gt-quote-bottom {
-  bottom: 10px;
-  right: 24px;
-}
-
-/* Avatar */
-.gt-avatar-wrap {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 18px;
-}
-
-.gt-avatar {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: #1aa91a;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
+/* Name + role */
+.tv-name {
+  margin: 6px 0 4px;
+  font-size: 17px;
   font-weight: 600;
-  border: 4px solid #e5f8e8;
+  color: #27ae60;
 }
 
-/* Text */
-.gt-text {
-  margin: 0 0 22px;
-  font-size: 15px;
-  line-height: 1.7;
-  color: #333333;
-}
-
-/* Name & role */
-.gt-name {
-  margin: 0 0 6px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #1aa91a;
-}
-
-.gt-role {
-  margin: 0 0 12px;
+.tv-role {
+  margin: 0;
   font-size: 14px;
   color: #111827;
 }
 
-/* Stars */
-.gt-stars {
-  display: flex;
-  justify-content: center;
-  gap: 3px;
-  font-size: 18px;
-  color: #ff9900;
-}
-
-/* SIDE ARROWS (left & right of cards) */
-.gt-side-arrow {
+/* Side arrows */
+.tv-side-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -139,7 +113,7 @@
   height: 44px;
   border-radius: 50%;
   border: none;
-  background: #1aa91a;
+  background: #27ae60;
   color: #ffffff;
   font-size: 24px;
   cursor: pointer;
@@ -151,16 +125,16 @@
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.gt-side-arrow:hover {
-  background: #128a15;
+.tv-side-arrow:hover {
+  background: #1ded73;
   transform: translateY(-50%) scale(1.06);
 }
 
-.gt-left {
+.tv-left {
   left: 10px;
 }
 
-.gt-right {
+.tv-right {
   right: 10px;
 }
 
@@ -169,35 +143,40 @@
 ------------------------ */
 
 @media (max-width: 1024px) {
-  .gt-heading {
+  .tv-heading {
     font-size: 28px;
   }
-  .gt-slider-wrapper {
+  .tv-slider-wrapper {
     padding: 0 40px;
   }
 }
 
 @media (max-width: 768px) {
-  .gt-section {
+  .tv-section {
     padding: 52px 16px 60px;
   }
 
-  .gt-heading {
+  .tv-heading {
     font-size: 24px;
-    margin-bottom: 28px;
+    margin-bottom: 8px;
   }
 
-  .gt-card {
-    min-width: 260px;
-    max-width: 260px;
-    padding: 30px 22px 28px;
+  .tv-subtitle {
+    font-size: 14px;
+    margin-bottom: 26px;
   }
 
-  .gt-slider-wrapper {
+  .tv-card {
+    min-width: 280px;
+    max-width: 280px;
+    padding: 18px 16px 22px;
+  }
+
+  .tv-slider-wrapper {
     padding: 0 32px;
   }
 
-  .gt-side-arrow {
+  .tv-side-arrow {
     width: 40px;
     height: 40px;
     font-size: 20px;
@@ -205,28 +184,28 @@
 }
 
 @media (max-width: 520px) {
-  .gt-section {
+  .tv-section {
     padding: 44px 10px 52px;
   }
 
-  .gt-heading {
+  .tv-heading {
     font-size: 22px;
   }
 
-  .gt-slider-wrapper {
+  .tv-slider-wrapper {
     padding: 0 24px;
   }
 
-  .gt-card {
-    min-width: 240px;
-    max-width: 240px;
+  .tv-card {
+    min-width: 250px;
+    max-width: 250px;
   }
 
-  .gt-left {
+  .tv-left {
     left: 4px;
   }
 
-  .gt-right {
+  .tv-right {
     right: 4px;
   }
 }

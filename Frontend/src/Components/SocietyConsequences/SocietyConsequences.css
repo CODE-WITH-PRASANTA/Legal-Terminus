@@ -1,0 +1,105 @@
+/* ===== Container ========================================= */
+
+.nc-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px 56px;
+  font-family: system-ui, sans-serif;
+  color: #111827;
+  box-sizing: border-box;
+}
+
+.nc-header h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #27ae60;
+  margin-bottom: 12px;
+}
+
+.nc-header p {
+  font-size: 0.96rem;
+  color: #4b5563;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+/* ===== Grid ============================================== */
+
+.nc-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* ===== Cards ============================================= */
+
+.nc-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px 20px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
+  transition: 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft gradient hover effect */
+.nc-card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(
+    circle at top left,
+    rgba(220, 38, 38, 0.18),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.nc-card:hover {
+  transform: translateY(-4px);
+  border-color: #fecaca;
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.18);
+}
+
+.nc-card:hover::before {
+  opacity: 1;
+}
+
+/* Card content above glow */
+.nc-card * {
+  position: relative;
+  z-index: 2;
+}
+
+.nc-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.nc-text {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ===== Responsive Grid =================================== */
+
+@media (min-width: 600px) {
+  .nc-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .nc-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
