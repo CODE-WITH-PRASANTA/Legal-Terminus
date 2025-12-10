@@ -1,5 +1,5 @@
 import { FaRegFileAlt, FaCreditCard, FaHeadset, FaEnvelope } from "react-icons/fa";
-import './WorkingProcess.css'
+import './WorkingProcessPro.css'
 
 const steps = [
   {
