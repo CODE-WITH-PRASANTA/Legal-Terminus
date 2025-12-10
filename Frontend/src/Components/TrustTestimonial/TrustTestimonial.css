@@ -1,20 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 /* Section base */
-.gt-section {
+.tr-section {
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   background: #ffffff;
   padding: 64px 20px 72px;
 }
 
-.gt-container {
+.tr-container {
   max-width: 1360px;
   margin: 0 auto;
 }
 
 /* Heading */
-.gt-heading {
+.tr-heading {
   text-align: center;
   font-size: 32px;
   font-weight: 700;
@@ -24,13 +24,13 @@
 }
 
 /* Slider wrapper (for side arrows) */
-.gt-slider-wrapper {
+.tr-slider-wrapper {
   position: relative;
   padding: 0 52px; /* space so arrows don't overlap cards */
 }
 
 /* Horizontal slider */
-.gt-slider {
+.tr-slider {
   display: flex;
   gap: 24px;
   overflow-x: auto;
@@ -38,23 +38,23 @@
   padding-bottom: 8px;
 }
 
-.gt-slider::-webkit-scrollbar {
+.tr-slider::-webkit-scrollbar {
   display: none;
 }
-.gt-slider {
+.tr-slider {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
 /* Testimonial card */
-.gt-card {
+.tr-card {
   min-width: 290px;
   max-width: 290px;
   flex-shrink: 0;
 
   background: #fbfbfb;
   border-radius: 18px;
-  border: 2px solid #1aa91a;
+  border: 2px solid #27ae60;
   padding: 36px 28px 32px;
   text-align: center;
   position: relative;
@@ -62,34 +62,34 @@
 }
 
 /* Quote marks */
-.gt-quote {
+.tr-quote {
   position: absolute;
   font-size: 40px;
-  color: #1aa91a;
+  color: #d49247de;
 }
 
-.gt-quote-top {
+.tr-quote-top {
   top: 10px;
   left: 18px;
 }
 
-.gt-quote-bottom {
+.tr-quote-bottom {
   bottom: 10px;
   right: 24px;
 }
 
 /* Avatar */
-.gt-avatar-wrap {
+.tr-avatar-wrap {
   display: flex;
   justify-content: center;
   margin-bottom: 18px;
 }
 
-.gt-avatar {
+.tr-avatar {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: #1aa91a;
+  background: #d49247de;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -100,7 +100,7 @@
 }
 
 /* Text */
-.gt-text {
+.tr-text {
   margin: 0 0 22px;
   font-size: 15px;
   line-height: 1.7;
@@ -108,21 +108,21 @@
 }
 
 /* Name & role */
-.gt-name {
+.tr-name {
   margin: 0 0 6px;
   font-size: 18px;
   font-weight: 600;
-  color: #1aa91a;
+  color: #d49247de;
 }
 
-.gt-role {
+.tr-role {
   margin: 0 0 12px;
   font-size: 14px;
   color: #111827;
 }
 
 /* Stars */
-.gt-stars {
+.tr-stars {
   display: flex;
   justify-content: center;
   gap: 3px;
@@ -131,7 +131,7 @@
 }
 
 /* SIDE ARROWS (left & right of cards) */
-.gt-side-arrow {
+.tr-side-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -139,7 +139,7 @@
   height: 44px;
   border-radius: 50%;
   border: none;
-  background: #1aa91a;
+  background: #27ae60;
   color: #ffffff;
   font-size: 24px;
   cursor: pointer;
@@ -151,16 +151,16 @@
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.gt-side-arrow:hover {
-  background: #128a15;
+.tr-side-arrow:hover {
+  background: #1ded73;
   transform: translateY(-50%) scale(1.06);
 }
 
-.gt-left {
+.tr-left {
   left: 10px;
 }
 
-.gt-right {
+.tr-right {
   right: 10px;
 }
 
@@ -169,35 +169,35 @@
 ------------------------ */
 
 @media (max-width: 1024px) {
-  .gt-heading {
+  .tr-heading {
     font-size: 28px;
   }
-  .gt-slider-wrapper {
+  .tr-slider-wrapper {
     padding: 0 40px;
   }
 }
 
 @media (max-width: 768px) {
-  .gt-section {
+  .tr-section {
     padding: 52px 16px 60px;
   }
 
-  .gt-heading {
+  .tr-heading {
     font-size: 24px;
     margin-bottom: 28px;
   }
 
-  .gt-card {
+  .tr-card {
     min-width: 260px;
     max-width: 260px;
     padding: 30px 22px 28px;
   }
 
-  .gt-slider-wrapper {
+  .tr-slider-wrapper {
     padding: 0 32px;
   }
 
-  .gt-side-arrow {
+  .tr-side-arrow {
     width: 40px;
     height: 40px;
     font-size: 20px;
@@ -205,28 +205,28 @@
 }
 
 @media (max-width: 520px) {
-  .gt-section {
+  .tr-section {
     padding: 44px 10px 52px;
   }
 
-  .gt-heading {
+  .tr-heading {
     font-size: 22px;
   }
 
-  .gt-slider-wrapper {
+  .tr-slider-wrapper {
     padding: 0 24px;
   }
 
-  .gt-card {
+  .tr-card {
     min-width: 240px;
     max-width: 240px;
   }
 
-  .gt-left {
+  .tr-left {
     left: 4px;
   }
 
-  .gt-right {
+  .tr-right {
     right: 4px;
   }
 }

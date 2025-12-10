@@ -9,6 +9,9 @@ import IncorptionPage from "./Pages/IncorptionPage/IncorptionPage";
 import BlogDetails from "./Pages/BlogDetails/BlogDetails";
 import Blog from "./Pages/Blog/Blog";
 import Publicltd from "./Pages/Publicltd/Publicltd";
+import Trust from "./Pages/Trust/Trust";
+import Society from "./Pages/Society/Society";
+import Section8 from "./Pages/Section8/Section8";
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
         <Route path="/Public-Limited-Company-Registration-in-India" element={<Publicltd />} />
         <Route path="/private-limited-company-registration-in-india" element={<PrivateLimited />} />
         <Route path="/incorption-registration-in-india" element={<IncorptionPage />} />
+        <Route path="/trust" element={<Trust />} />
+        <Route path="/society" element={<Society />} />
+        <Route path="/section-8" element={<Section8 />} />
       </Routes>
       <Footer />
     </Router>

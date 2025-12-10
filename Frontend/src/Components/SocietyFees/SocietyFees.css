@@ -1,0 +1,171 @@
+/* ===== Container (mobile-first) ============================= */
+
+.fp-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px 56px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #111827;
+  box-sizing: border-box;
+}
+
+.fp-header h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+
+.fp-header p {
+  font-size: 0.98rem;
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.fp-section {
+  margin-top: 22px;
+}
+
+.fp-subtitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #d49247de;
+  margin-bottom: 14px;
+}
+
+/* note under costs */
+.fp-note {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.fp-link {
+  color: #16f9bc;
+  font-weight: 600;
+}
+
+/* ===== Grid ================================================== */
+
+.fp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+/* separate classes just in case we want different layouts later */
+.fp-grid--costs {
+  margin-bottom: 8px;
+}
+
+.fp-grid--penalties {
+  margin-top: 8px;
+}
+
+/* ===== Cards ================================================= */
+
+.fp-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px 18px 22px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease,
+    border-color 0.22s ease, background 0.22s ease;
+}
+
+/* gradient glow layers – different for costs vs penalties */
+.fp-card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.fp-card--cost::before {
+  background: radial-gradient(
+    circle at top left,
+    rgba(22, 163, 74, 0.18),
+    transparent 60%
+  );
+}
+
+.fp-card--penalty::before {
+  background: radial-gradient(
+    circle at top left,
+    rgba(220, 38, 38, 0.18),
+    transparent 60%
+  );
+}
+
+/* Hover effects (only on hover-capable devices) */
+@media (hover: hover) {
+  .fp-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.18);
+  }
+
+  .fp-card--cost:hover {
+    border-color: #bbf7d0; /* soft green */
+  }
+
+  .fp-card--penalty:hover {
+    border-color: #fecaca; /* soft red */
+  }
+
+  .fp-card:hover::before {
+    opacity: 1;
+  }
+}
+
+/* keep content above glow */
+.fp-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* text inside cards */
+.fp-card-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.fp-card-text {
+  font-size: 0.92rem;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+/* ===== Responsive =========================================== */
+
+/* ≥ 600px: 2-column grids */
+@media (min-width: 600px) {
+  .fp-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .fp-grid--costs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ≥ 900px: penalties grid goes 3 columns */
+@media (min-width: 900px) {
+  .fp-grid--penalties {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* if you want 3-wide penalties on very large screens, uncomment:
+  .fp-grid--penalties {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  */
+}
