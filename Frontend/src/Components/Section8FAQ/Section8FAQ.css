@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ================================
+   SECTION WRAPPER
+================================ */
+
+.societyfaqsection {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #ffffff;
+  padding: 72px 24px 64px;
+}
+
+.societyfaqcontainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr; /* left / right ratio */
+  column-gap: 72px;
+  align-items: flex-start;
+}
+
+/* ================================
+   LEFT SIDE (STATIC CONTENT)
+================================ */
+
+.societyfaqleft {
+  color: #111827;
+}
+
+.societyfaqtitle {
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin: 0 0 22px;
+}
+
+.societyfaqintro {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+  margin: 0 0 16px;
+}
+
+/* ================================
+   RIGHT SIDE (CONSTANT HEIGHT + SCROLL)
+================================ */
+
+.societyfaqright {
+  display: flex;
+  flex-direction: column;
+  max-height: 540px; /* constant height on desktop */
+  width: 100%;
+}
+
+.societyfaqlist {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* Scrollbar styling */
+.societyfaqlist::-webkit-scrollbar {
+  width: 6px;
+}
+
+.societyfaqlist::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.societyfaqlist::-webkit-scrollbar-thumb {
+  background: rgba(26, 169, 26, 0.45);
+  border-radius: 999px;
+}
+
+/* ================================
+   FAQ ITEMS
+================================ */
+
+.societyfaqitem {
+  border-bottom: 1px solid rgba(26, 169, 26, 0.22);
+}
+
+.societyfaqquestion {
+  width: 100%;
+  padding: 18px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* keyboard focus ring */
+.societyfaqquestion:focus {
+  box-shadow: 0 0 0 4px rgba(26, 169, 26, 0.12);
+  border-radius: 6px;
+}
+
+.societyfaqicon {
+  font-size: 18px;
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+}
+
+.societyfaqicon.open {
+  transform: rotate(180deg);
+}
+
+.societyfaqanswer {
+  padding: 0 0 16px;
+}
+
+.societyfaqanswer p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+/* Active / hover */
+.societyfaqitem.active .societyfaqquestion {
+  color: #1aa91a;
+}
+
+.societyfaqitem:hover .societyfaqquestion {
+  color: #d49247de;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1024px) {
+  .societyfaqsection {
+    padding: 60px 20px 52px;
+  }
+
+  .societyfaqcontainer {
+    column-gap: 40px;
+  }
+
+  .societyfaqtitle {
+    font-size: 34px;
+  }
+
+  .societyfaqright {
+    max-height: 520px;
+  }
+}
+
+@media (max-width: 768px) {
+  .societyfaqsection {
+    padding: 48px 16px 44px;
+  }
+
+  .societyfaqcontainer {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .societyfaqtitle {
+    font-size: 30px;
+  }
+
+  .societyfaqright {
+    max-height: none;
+  }
+
+  .societyfaqlist {
+    overflow-y: visible;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .societyfaqsection {
+    padding: 40px 12px 40px;
+  }
+
+  .societyfaqtitle {
+    font-size: 26px;
+  }
+
+  .societyfaqquestion {
+    font-size: 14px;
+  }
+
+  .societyfaqanswer p,
+  .societyfaqintro {
+    font-size: 13.5px;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

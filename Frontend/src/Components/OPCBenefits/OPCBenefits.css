@@ -1,0 +1,111 @@
+.opc-section {
+  padding: 72px 24px;
+  background: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+.opc-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.opc-main-title {
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.opc-intro {
+  font-size: 15.5px;
+  color: #4b5563;
+  max-width: 900px;
+  line-height: 1.9;
+  margin-bottom: 48px;
+}
+
+.opc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.opc-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 28px 26px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.opc-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: #1a73e8;
+  border-radius: 4px 0 0 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.opc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+}
+
+.opc-card:hover::before {
+  opacity: 1;
+}
+
+.opc-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.opc-card ul {
+  padding-left: 18px;
+}
+
+.opc-card li {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: #374151;
+  margin-bottom: 10px;
+}
+
+.opc-requirements {
+  margin-top: 64px;
+}
+
+.opc-sub-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.opc-requirements p {
+  font-size: 15.5px;
+  line-height: 1.9;
+  color: #4b5563;
+  max-width: 900px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .opc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .opc-main-title {
+    font-size: 30px;
+  }
+
+  .opc-sub-title {
+    font-size: 26px;
+  }
+}

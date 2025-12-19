@@ -1,0 +1,154 @@
+/* LLPInfo.css
+   Full responsive styling for LLPInfo component.
+   Uses a grid layout and typographic scale similar to your reference.
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root{
+  --max-width:1200px;
+  --primary:#27ae60;      
+  --muted:#6b7280;        /* paragraph color */
+  --accent:#e9f6ff;       /* subtle card background if needed */
+  --gap:32px;
+}
+
+/* Section wrapper */
+.llp-section{
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:#fff;
+  padding:56px 18px;
+  color:var(--muted);
+}
+
+/* Container grid: two-column desktop, stacked on mobile */
+.llp-container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: 1fr 420px; /* main content + side block */
+  gap:var(--gap);
+  align-items:start;
+}
+
+/* HERO / MAIN PART */
+.llp-hero{
+  /* subtle entrance effect */
+  animation: fadeInUp 0.55s ease both;
+}
+
+.llp-title{
+  margin:0 0 18px 0;
+  color:var(--primary);
+  font-size:42px;
+  line-height:1.05;
+  font-weight:700;
+  letter-spacing: -0.6px;
+}
+
+/* Paragraphs block - maintain readable measure */
+.llp-paragraphs{
+  display:block;
+  margin-top:18px;
+}
+
+.llp-paragraphs p{
+  margin:0 0 18px 0;
+  color:#4b5563; /* slightly darker for better contrast */
+  font-size:18px;
+  line-height:1.82;
+  font-weight:400;
+  text-align:justify;
+  text-justify:auto;
+  hyphens:auto;
+}
+
+/* ASIDE / ACT BLOCK */
+.llp-act{
+  background:linear-gradient(180deg, rgba(233,246,255,0.65), rgba(255,255,255,0.6));
+  border-radius:10px;
+  padding:28px;
+  box-shadow: 0 6px 18px rgba(20,40,60,0.06);
+  border:1px solid rgba(31,79,122,0.06);
+  position:sticky;
+  top:28px; /* keeps visible on desktop while scrolling */
+  align-self:start;
+  animation: fadeIn 0.55s ease both;
+}
+
+.llp-act-title{
+  margin:0 0 14px 0;
+  color:var(--primary);
+  font-size:34px;
+  font-weight:700;
+  line-height:1.08;
+}
+
+/* Act description */
+.llp-act-text{
+  margin:0;
+  color:#4b5563;
+  font-size:16px;
+  line-height:1.9;
+  text-align:left;
+}
+
+/* subtle hover focus for the side card (good on desktop) */
+.llp-act:hover{
+  transform: translateY(-4px);
+  transition: transform 220ms ease;
+  box-shadow: 0 14px 36px rgba(20,40,60,0.10);
+}
+
+/* small screens: stack layout */
+@media (max-width: 1024px){
+  .llp-container {
+    grid-template-columns: 1fr 360px;
+    gap:24px;
+  }
+  .llp-title{ font-size:36px; }
+  .llp-paragraphs p{ font-size:17px; }
+  .llp-act{ padding:22px; }
+  .llp-act-title{ font-size:30px; }
+}
+
+/* stack fully on mobile */
+@media (max-width: 768px){
+  .llp-container{
+    grid-template-columns: 1fr;
+    gap:18px;
+  }
+  .llp-act{
+    position:relative;
+    top:0;
+  }
+  .llp-title{ font-size:28px; text-align:left; }
+  .llp-paragraphs p{ font-size:15.5px; line-height:1.8; }
+  .llp-act{ padding:20px; border-radius:8px; }
+  .llp-act-title{ font-size:22px; }
+}
+
+/* very small phones */
+@media (max-width: 420px){
+  .llp-section{ padding:36px 12px; }
+  .llp-title{ font-size:22px; line-height:1.12; }
+  .llp-paragraphs p{ font-size:15px; }
+  .llp-act-title{ font-size:20px; }
+}
+
+/* small keyframe utilities */
+@keyframes fadeInUp {
+  from { opacity:0; transform: translateY(10px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity:0; transform: scale(0.995); }
+  to   { opacity:1; transform: scale(1); }
+}
+
+/* Accessibility: focus visible state for keyboard users */
+.llp-act:focus,
+.llp-act:focus-within {
+  outline: 3px solid rgba(31,79,122,0.12);
+  outline-offset: 4px;
+}

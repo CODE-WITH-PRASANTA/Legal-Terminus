@@ -1,0 +1,238 @@
+/* LLPProcess.css
+   - Two-part layout: header + snake timeline
+   - Responsive grid
+   - Unique hover effects
+   - No image imports
+*/
+
+/* ===== Container ===== */
+.soc-wrap {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 36px 18px 64px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* ===== Header Section ===== */
+.soc-header {
+  margin-bottom: 28px;
+}
+
+.soc-title {
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 800;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+
+.soc-intro {
+  max-width: 90ch;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #575757;
+}
+
+/* ===== Timeline Grid ===== */
+.soc-timeline {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+/* ===== Step Card ===== */
+.soc-step {
+  position: relative;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 18px 22px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover Effect */
+@media (hover: hover) {
+  .soc-step:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
+  }
+}
+
+/* Step Number */
+.soc-step-index {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #d49247;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* Step Title */
+.soc-step-title {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Step Text */
+.soc-step-text {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #575757;
+}
+
+/* ===== Connectors (Hidden on mobile) ===== */
+.soc-connector {
+  display: none;
+}
+
+/* ===== Tablet (2 columns) ===== */
+@media (min-width: 600px) and (max-width: 899px) {
+  .soc-timeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+}
+
+/* ===== Desktop Snake Layout ===== */
+@media (min-width: 900px) {
+  .soc-timeline {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 28px;
+    align-items: stretch;
+  }
+
+  .soc-step {
+    min-height: 210px;
+  }
+
+  /* Second row reverse snake */
+  .soc-step--6 {
+    grid-column: 5;
+    grid-row: 2;
+  }
+  .soc-step--7 {
+    grid-column: 4;
+    grid-row: 2;
+  }
+  .soc-step--8 {
+    grid-column: 3;
+    grid-row: 2;
+  }
+  .soc-step--9 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  /* Show connectors */
+  .soc-connector {
+    display: block;
+    position: absolute;
+    background: #d49247;
+    border-radius: 2px;
+  }
+
+  /* Right Connector */
+  .soc-connector--right {
+    top: 50%;
+    right: -44px;
+    width: 40px;
+    height: 2px;
+    transform: translateY(-50%);
+  }
+
+  .soc-connector--right::after {
+    content: "";
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    transform: translateY(-50%);
+    background: #d49247;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+  }
+
+  /* Left Connector */
+  .soc-connector--left {
+    top: 50%;
+    left: -44px;
+    width: 40px;
+    height: 2px;
+    transform: translateY(-50%);
+  }
+
+  .soc-connector--left::after {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    transform: translateY(-50%);
+    background: #d49247;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  }
+
+  /* Down Connector */
+  .soc-connector--down {
+    left: 50%;
+    bottom: -44px;
+    width: 2px;
+    height: 40px;
+    transform: translateX(-50%);
+  }
+
+  .soc-connector--down::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    transform: translateX(-50%);
+    background: #d49247;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+  }
+}
+
+/* ===== Mobile Tweaks ===== */
+@media (max-width: 520px) {
+  .soc-title {
+    font-size: 1.6rem;
+  }
+
+  .soc-intro {
+    font-size: 0.95rem;
+  }
+
+  .soc-step {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .soc-step-index {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .soc-step {
+    transition: none;
+  }
+}

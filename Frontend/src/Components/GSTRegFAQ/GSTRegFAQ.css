@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ===============================
+   SECTION
+================================ */
+
+.gstfaq-section {
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  padding: 72px 24px;
+}
+
+.gstfaq-container {
+  max-width: 1180px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  gap: 72px;
+}
+
+/* ===============================
+   LEFT
+================================ */
+
+.gstfaq-left {
+  color: #1f2937;
+}
+
+.gstfaq-title {
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.gstfaq-intro {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+/* ===============================
+   RIGHT
+================================ */
+
+.gstfaq-right {
+  max-height: 540px;
+  display: flex;
+}
+
+.gstfaq-list {
+  width: 100%;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* Scrollbar */
+.gstfaq-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.gstfaq-list::-webkit-scrollbar-thumb {
+  background: #1aa91a;
+  border-radius: 20px;
+}
+
+/* ===============================
+   FAQ ITEM
+================================ */
+
+.gstfaq-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.gstfaq-question {
+  width: 100%;
+  padding: 18px 0;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #111827;
+}
+
+.gstfaq-question:hover {
+  color: #1aa91a;
+}
+
+.gstfaq-arrow {
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+
+.gstfaq-arrow.open {
+  transform: rotate(180deg);
+}
+
+/* ===============================
+   ANSWER
+================================ */
+
+.gstfaq-answer {
+  padding-bottom: 16px;
+}
+
+.gstfaq-answer p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #4b5563;
+}
+
+/* ===============================
+   ACTIVE
+================================ */
+
+.gstfaq-item.active .gstfaq-question {
+  color: #1aa91a;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1024px) {
+  .gstfaq-container {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gstfaq-container {
+    grid-template-columns: 1fr;
+  }
+
+  .gstfaq-right {
+    max-height: none;
+  }
+
+  .gstfaq-list {
+    overflow: visible;
+  }
+}
+
+@media (max-width: 480px) {
+  .gstfaq-title {
+    font-size: 26px;
+  }
+
+  .gstfaq-question {
+    font-size: 14px;
+  }
+
+  .gstfaq-answer p {
+    font-size: 13.5px;
+  }
+}

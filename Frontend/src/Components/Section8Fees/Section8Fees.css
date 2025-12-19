@@ -1,0 +1,194 @@
+/* -------------------------
+   Section8Fees.css (FULL)
+   ------------------------- */
+
+:root{
+  --accent: #27ae60;
+  --muted: #6b7280;
+  --row-border: rgba(17,24,39,0.06);
+  --ribbon-start: #1f66a6;
+  --ribbon-end: #719313;
+  --card-bg: #ffffff;
+}
+
+/* Wrapper */
+.fees-wrapper {
+  max-width: 1200px;
+  margin: 36px auto;
+  padding: 20px;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #111827;
+  box-sizing: border-box;
+}
+
+/* Header */
+.fees-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.fees-intro {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+/* Table container */
+.fees-table {
+  border-radius: 10px;
+  overflow: visible;
+}
+
+/* Header row */
+.fees-row.fees-head {
+  display: grid;
+  grid-template-columns: 1fr 2fr 0.9fr;
+  gap: 0;
+  background: linear-gradient(180deg, var(--accent), #1f6699);
+  color: #fff;
+  padding: 18px 20px;
+  align-items: center;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+/* Body */
+.fees-body {
+  margin-top: 8px;
+  display: grid;
+  gap: 0;
+}
+
+/* Each row */
+.fees-row.fees-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr 0.9fr;
+  padding: 20px 20px;
+  align-items: start;
+  border-bottom: 1px solid var(--row-border);
+  background: var(--card-bg);
+  position: relative;
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+}
+
+/* alternating */
+.fees-row.fees-item.even { background: #fff; }
+.fees-row.fees-item.odd { background: #fbfbfb; }
+
+/* Ribbon accent element (subtle animated accent) */
+.row-ribbon {
+  position: absolute;
+  top: 12px;
+  right: -42px;
+  width: 120px;
+  height: 36px;
+  transform: rotate(18deg);
+  background: linear-gradient(90deg, var(--ribbon-start), var(--ribbon-end));
+  border-radius: 8px;
+  box-shadow: 0 6px 14px rgba(31,78,140,0.08);
+  opacity: 0.0; /* hidden by default on desktop rows */
+  transition: transform 220ms ease, right 220ms ease, opacity 220ms ease, filter 220ms ease;
+  pointer-events: none;
+}
+
+/* Show ribbon on hover/focus for micro-interaction */
+.fees-row.fees-item:hover,
+.fees-row.fees-item:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(16,24,40,0.06);
+  background: linear-gradient(180deg,#fff,#fbfdff);
+}
+.fees-row.fees-item:hover .row-ribbon,
+.fees-row.fees-item:focus-within .row-ribbon {
+  opacity: 1;
+  right: -34px;
+  transform: rotate(18deg) translateY(-6px) translateX(-6px) scale(1.02);
+  filter: saturate(1.05) brightness(1.02);
+}
+
+/* Column content */
+.col { padding: 0 8px; }
+.type-inner {
+  font-weight: 700;
+  color: #0f2d50;
+}
+.desc-inner {
+  color: var(--muted);
+  line-height: 1.8;
+}
+.cost-inner {
+  font-weight: 700;
+  text-align: left;
+  color: #0f2d50;
+}
+
+/* mobile: make cost text right-aligned on wide phones */
+@media (min-width: 600px) {
+  .cost-inner { text-align: right; }
+}
+
+/* Hover on individual columns: subtle background */
+.fees-row.fees-item:hover .col { background: transparent; }
+
+/* =======================
+   RESPONSIVE TRANSFORM
+   (table -> stacked cards)
+   ======================= */
+
+@media (max-width: 900px) {
+  .fees-row.fees-head { display: none; } /* hide header on mobile */
+
+  /* make body rows stacked cards */
+  .fees-body { display: grid; gap: 14px; }
+
+  .fees-row.fees-item {
+    display: block;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(15,23,42,0.04);
+    border: 1px solid rgba(17,24,39,0.04);
+    background: linear-gradient(180deg,#fff,#fbfbff);
+  }
+
+  .fees-row.fees-item .col {
+    display: block;
+    padding: 8px 0;
+  }
+
+  .type-inner { font-size: 15px; }
+  .desc-inner { font-size: 14px; color: #444; }
+  .cost-inner { font-size: 15px; color: #0f2d50; margin-top: 6px; font-weight:700; }
+
+  /* show ribbon inside stack for flair, smaller & positioned top-right */
+  .row-ribbon {
+    top: 8px;
+    right: 12px;
+    transform: rotate(8deg);
+    width: 86px;
+    height: 28px;
+    opacity: 0.95;
+  }
+
+  .fees-row.fees-item:hover .row-ribbon { transform: rotate(8deg) translateY(-4px) translateX(-6px) scale(1.01); }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+  .fees-wrapper { padding: 12px; }
+  .fees-title { font-size: 24px; }
+  .desc-inner { font-size: 14px; }
+  .type-inner { font-size: 15px; }
+  .cost-inner { font-size: 14px; }
+}
+
+/* Accessibility: focus-visible outlines for keyboard users */
+.fees-row.fees-item:focus-within,
+.fees-row.fees-item:focus {
+  outline: 3px solid rgba(31,78,140,0.08);
+  outline-offset: 6px;
+}
+
+/* small helpers */
+.col { word-break: break-word; }

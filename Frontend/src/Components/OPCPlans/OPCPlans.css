@@ -1,0 +1,162 @@
+/* BASE STRUCTURE */
+.pp-section {
+  font-family: "Poppins", sans-serif;
+  padding: 40px 20px;
+  background: #fff;
+}
+
+.pp-inner {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.pp-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.pp-sub {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+
+/* GRID */
+.pp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  align-items: stretch; /* <-- ensures equal height */
+}
+
+/* CARD WRAPPER FOR RIBBON ABSOLUTE POSITIONING */
+.pp-card-wrapper {
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+
+/* ACTUAL CARD */
+.pp-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 26px;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* EXACT REFERENCE RIBBON STYLE */
+.pp-ribbon {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.pp-ribbon-text {
+  background: #fdd835;
+  padding: 6px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.pp-ribbon-tag {
+  background: #3e6c01;
+  color: #fff;
+  padding: 6px 4px;
+  font-size: 13px;
+  border-radius: 0 0 4px 2px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* PRICING */
+.pp-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.pp-card-desc {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 18px;
+}
+
+.pp-price-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pp-old-price {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.pp-discount {
+  background: #e8fbe8;
+  color: #1aa91a;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+.pp-new-price {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1aa91a;
+  margin: 18px 0;
+}
+
+.pp-note {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* CTA BUTTON */
+.pp-btn {
+  width: 100%;
+  background: #1aa91a;
+  color: white;
+  border: none;
+  padding: 14px 0;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  margin: 10px 0 20px;
+  cursor: pointer;
+}
+
+.pp-btn:hover {
+  opacity: 0.9;
+}
+
+/* FEATURES LIST */
+.pp-feat-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.pp-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pp-features li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}

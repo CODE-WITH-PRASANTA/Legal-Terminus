@@ -12,6 +12,10 @@ import Publicltd from "./Pages/Publicltd/Publicltd";
 import Trust from "./Pages/Trust/Trust";
 import Society from "./Pages/Society/Society";
 import Section8 from "./Pages/Section8/Section8";
+import LLP from "./Pages/LLP/LLP";
+import OPC from "./Pages/OPC/OPC";
+import GSTRegistration from "./Pages/GSTRegistration/GSTRegistration";
+import GSTReturn from "./Pages/GSTReturn/GSTReturn";
 
 function App() {
   return (
@@ -22,6 +26,7 @@ function App() {
         <Route path="/contact/us" element={<ContactUs />} />
         <Route path="/blog/details" element={<BlogDetails />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/one-person-company" element={<OPC />} />
 
 
         {/*   ALL SubPages */}
@@ -31,6 +36,9 @@ function App() {
         <Route path="/trust" element={<Trust />} />
         <Route path="/society" element={<Society />} />
         <Route path="/section-8" element={<Section8 />} />
+        <Route path="/llp" element={<LLP />} />
+        <Route path="/gst-registration" element={<GSTRegistration />} />
+        <Route path="/gst-return-filing" element={<GSTReturn />} />
       </Routes>
       <Footer />
     </Router>

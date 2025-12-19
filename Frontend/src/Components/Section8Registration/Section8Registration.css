@@ -1,0 +1,191 @@
+/* ---------- BASE ---------- */
+:root{
+  --accent: #27ae60;
+  --muted: #6b7280;
+  --card-bg: #fff;
+  --row-border: rgba(17,24,39,0.06);
+  --ribbon-start: #1f66a6;
+  --ribbon-end: #719313;
+}
+
+.reg-wrapper {
+  max-width: 1200px;
+  margin: 36px auto;
+  padding: 18px;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #111827;
+}
+
+/* ---------- STEPS (top) ---------- */
+.reg-steps { margin-bottom: 36px; }
+.reg-title {
+  font-size: 30px;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.reg-lead {
+  color: var(--muted);
+  margin-bottom: 18px;
+  line-height: 1.75;
+}
+
+/* steps grid: 2-column on desktop, single column on small screens */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+/* individual step card */
+.step-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,251,255,0.98));
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 8px 28px rgba(16,24,40,0.04);
+  transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease;
+  border: 1px solid rgba(17,24,39,0.03);
+}
+.step-card:hover, .step-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(16,24,40,0.08);
+}
+
+/* step headers */
+.step-number {
+  font-size: 13px;
+  color: var(--accent);
+  margin: 0;
+  font-weight: 700;
+}
+.step-title {
+  font-size: 18px;
+  margin: 8px 0 10px;
+  color: #0f2d50;
+}
+.step-bullets { margin: 0 0 0 18px; color: var(--muted); line-height: 1.7; }
+.step-bullets li { margin-bottom: 8px; }
+
+/* ---------- COMPLIANCE TABLE ---------- */
+.compliance-section { margin-top: 26px; }
+.compliance-title {
+  font-size: 24px;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.compliance-lead { color: var(--muted); margin-bottom: 14px; }
+
+/* table wrapper */
+.compliance-table-wrap {
+  background: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* header row (desktop only) */
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 0.9fr 1fr;
+  background: linear-gradient(180deg, var(--accent), #1f6699);
+  color: #fff;
+  padding: 16px 18px;
+  font-weight: 700;
+  border-radius: 8px;
+  align-items: center;
+}
+
+/* columns */
+.table-header .col { padding: 0 8px; }
+
+/* body rows container */
+.table-body { margin-top: 8px; }
+
+/* each row: grid matching header */
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 0.9fr 1fr;
+  gap: 0;
+  padding: 20px 18px;
+  align-items: start;
+  border-bottom: 1px solid var(--row-border);
+  background: var(--card-bg);
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+}
+
+/* alternating */
+.table-row.even { background: #fff; }
+.table-row.odd { background: #fbfbfb; }
+
+/* hover */
+.table-row:hover, .table-row:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(16,24,40,0.06);
+  background: linear-gradient(180deg, #fff, #fbfdff);
+  outline: none;
+}
+
+/* column styling */
+.col { padding: 0 8px; color: #374151; font-size: 15px; line-height: 1.7; }
+.col strong { color: #0f2d50; }
+
+/* small screens: collapse to cards (stacked) */
+@media (max-width: 900px) {
+  .steps-grid { grid-template-columns: 1fr; }
+  .table-header { display: none; }
+  .table-row {
+    display: block;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(17,24,39,0.04);
+    background: linear-gradient(180deg,#ffffff,#fbfbff);
+    position: relative;
+    overflow: visible;
+    min-height: 0;
+  }
+
+  /* unique effect: ribbon accent top-right (smaller) */
+  .table-row::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -36px;
+    width: 110px;
+    height: 34px;
+    transform: rotate(18deg);
+    background: linear-gradient(90deg, var(--ribbon-start), var(--ribbon-end));
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(31,78,140,0.12);
+    transition: transform 220ms ease, right 220ms ease;
+    opacity: 0.95;
+    pointer-events: none;
+  }
+  .table-row:hover::after { transform: rotate(18deg) translateY(-6px) translateX(-8px) scale(1.03); right: -28px; }
+
+  .table-row .col { display: block; padding: 8px 0; }
+  .table-row .col.area { font-weight: 700; color: #0f2d50; margin-bottom: 6px; }
+  .table-row .col.req::before { content: "Requirement:"; font-weight:700; display:block; color:#374151; margin-bottom:6px; }
+  .table-row .col.due::before { content: "Due:"; font-weight:700; display:block; color:#374151; margin-bottom:6px; }
+  .table-row .col.forms::before { content: "Forms/Remarks:"; font-weight:700; display:block; color:#374151; margin-bottom:6px; }
+}
+
+/* responsive typography tweaks */
+@media (max-width: 768px) {
+  .reg-wrapper { padding: 12px; max-width: 1000px; }
+  .reg-title { font-size: 26px; }
+  .step-title { font-size: 16px; }
+  .table-row { padding: 12px; }
+}
+
+/* small phones */
+@media (max-width: 420px) {
+  .reg-wrapper { padding: 10px; margin: 12px auto; }
+  .reg-title { font-size: 22px; }
+  .table-row { padding: 10px; }
+  .table-row::after { width: 86px; height: 28px; right: -18px; top: -8px; transform: rotate(10deg); }
+}
+
+/* accessibility focus */
+.step-card:focus-within, .step-card:focus, .table-row:focus-within {
+  outline: 3px solid rgba(31,78,140,0.08);
+  outline-offset: 6px;
+}
