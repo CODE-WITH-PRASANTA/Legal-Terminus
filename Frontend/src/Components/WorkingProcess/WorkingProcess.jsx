@@ -24,25 +24,25 @@ const steps = [
   }
 ];
 
-const WorkingProcess = () => (
-  <section className="WP-root">
-    <h2 className="WP-title">Our Working Process</h2>
-    <div className="WP-underline"></div>
+const WorkingProcessPro = () => (
+  <section className="WPP-root">
+    <h2 className="WPP-title">Our Working Process</h2>
+    <div className="WPP-underline"></div>
 
-    <div className="WP-grid">
-      {steps.map((item, i) => (
+    <div className="WPP-grid">
+      {steps.map((item, index) => (
         <div
-          key={i}
-          className={`WP-card ${
-            item.color === "green" ? "WP-green" : "WP-lightgreen"
+          key={index}
+          className={`WPP-card ${
+            item.color === "green" ? "WPP-green" : "WPP-lightgreen"
           }`}
         >
-          <div className="WP-icon">{item.icon}</div>
-          <p className="WP-text">{item.text}</p>
+          <div className="WPP-icon">{item.icon}</div>
+          <p className="WPP-text">{item.text}</p>
         </div>
       ))}
     </div>
   </section>
 );
 
-export default WorkingProcess;
+export default WorkingProcessPro;
