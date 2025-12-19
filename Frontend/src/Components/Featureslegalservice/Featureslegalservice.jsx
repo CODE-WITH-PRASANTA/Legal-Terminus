@@ -1,5 +1,5 @@
 import React from "react";
-import "./FeaturesLegalService.css";
+import './Featureslegalservice.css'
 
 const leftCards = [
   {

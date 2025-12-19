@@ -16,6 +16,8 @@ import LLP from "./Pages/LLP/LLP";
 import OPC from "./Pages/OPC/OPC";
 import GSTRegistration from "./Pages/GSTRegistration/GSTRegistration";
 import GSTReturn from "./Pages/GSTReturn/GSTReturn";
+import EPFReg from "./Pages/EPFReg/EPFReg"
+
 
 function App() {
   return (
@@ -39,6 +41,7 @@ function App() {
         <Route path="/llp" element={<LLP />} />
         <Route path="/gst-registration" element={<GSTRegistration />} />
         <Route path="/gst-return-filing" element={<GSTReturn />} />
+        <Route path="/epf" element={<EPFReg />} />
       </Routes>
       <Footer />
     </Router>

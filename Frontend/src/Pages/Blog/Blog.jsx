@@ -8,8 +8,6 @@ const Blog = () => {
     <>
     <BlogBanner/>
     <BlogPage/>
-
-    
     </>
     
   )
