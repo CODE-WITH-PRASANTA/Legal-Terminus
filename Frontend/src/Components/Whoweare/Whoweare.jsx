@@ -1,5 +1,5 @@
 import React from "react";
-import "./WhoWeAre.css";
+import './Whoweare.css'
 
 const WhoWeAre = () => {
   const items = [
