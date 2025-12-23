@@ -315,7 +315,7 @@
   gap: 6px;
   border: 0;
   background: transparent;
-  color: var(--accent);
+  color: var(--heading);
   font-weight: 600;
   cursor: pointer;
   padding: 4px 10px;
@@ -628,13 +628,6 @@
     border: 1px solid #26314d;
     box-shadow: 0 20px 40px rgba(0,0,0,0.35);
   }
-  /* Icons */
-  .pb-card-icon {
-    background: #1b2640;
-    border-color: #2d3a5f;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-  }
-
   /* Text */
   .pb-card-title,
   .pb-head {

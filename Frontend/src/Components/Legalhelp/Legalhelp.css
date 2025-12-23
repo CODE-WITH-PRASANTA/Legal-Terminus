@@ -156,12 +156,16 @@
   padding: 6px 6px 6px 18px;
   z-index: 1;
 }
-
-.lh-cards{
+.lh-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
+
+  max-height: 600px;      /* adjust height as needed */
+  overflow-y: auto;       /* vertical scrolling */
+  padding-right: 6px;     /* space for scrollbar */
 }
+
 
 /* individual card */
 .lh-card{

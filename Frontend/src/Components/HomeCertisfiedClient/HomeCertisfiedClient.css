@@ -1,0 +1,159 @@
+/* ===============================
+   CERTIFIED CLIENT CTA SECTION
+   =============================== */
+
+.hc-section {
+  width: 100%;
+  background: #ffffff;
+}
+
+.hc-wrapper {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: 48px;
+  padding: 90px 40px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+}
+
+/* Dark overlay */
+.hc-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(4, 22, 18, 0.95),
+    rgba(7, 36, 28, 0.92)
+  );
+  z-index: 1;
+}
+
+/* Decorative curves */
+.hc-curve {
+  position: absolute;
+  bottom: -1px;
+  width: 180px;
+  height: 180px;
+  background: #ffbf70;
+  z-index: 2;
+}
+
+.hc-curve--left {
+  left: -60px;
+  border-top-right-radius: 100%;
+}
+
+.hc-curve--right {
+  right: -60px;
+  border-top-left-radius: 100%;
+}
+
+/* Content */
+.hc-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  text-align: center;
+}
+
+/* Stat block */
+.hc-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hc-number {
+  font-size: clamp(42px, 6vw, 64px);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+}
+
+.hc-label {
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Divider */
+.hc-divider {
+  width: 1px;
+  height: 70px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+}
+/* ===============================
+   RESPONSIVE MEDIA QUERIES ONLY
+   =============================== */
+
+/* Tablets & small laptops */
+@media (max-width: 1024px) {
+  .hc-wrapper {
+    padding: 80px 32px;
+    border-radius: 40px;
+  }
+
+  .hc-content {
+    gap: 60px;
+  }
+}
+
+/* Tablets & large mobiles */
+@media (max-width: 768px) {
+  .hc-wrapper {
+    padding: 70px 24px;
+    border-radius: 32px;
+  }
+
+  .hc-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .hc-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+  }
+}
+
+/* Small mobiles */
+@media (max-width: 480px) {
+  .hc-wrapper {
+    padding: 60px 20px;
+    border-radius: 28px;
+  }
+
+  .hc-curve {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .hc-wrapper {
+    padding: 50px 16px;
+  }
+}
