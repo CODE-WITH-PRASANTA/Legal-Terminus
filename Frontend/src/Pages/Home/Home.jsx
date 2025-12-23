@@ -12,8 +12,8 @@ const Home = () => {
   return (
     <>
         <Herosection/>
-        <Compilance/>
         <Premiumbusiness/>
+        <Compilance/>
         <Workingprocess/>
         <Legalhelp/>
         <Whoweare/>

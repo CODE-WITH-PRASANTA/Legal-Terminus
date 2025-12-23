@@ -265,71 +265,97 @@
   grid-column: 1 / -1;
 }
 
-/* ---------------- responsive ---------------- */
-@media (min-width: 1024px) {
-  /* make left column sticky on desktop for better UX */
-  .lh-left{
-    position: sticky;
-    top: 92px;
-    align-self: start;
+/* =========================
+   TABLET VIEW (≤ 1024px)
+========================= */
+@media (max-width: 1024px) {
+  .lh-grid {
+    grid-template-columns: 260px 1fr;
+  }
+
+  .lh-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .lh-title {
+    font-size: 28px;
+  }
+
+  .lh-sub {
+    font-size: 14px;
   }
 }
 
-@media (max-width: 1100px){
-  .lh-grid{ grid-template-columns: 1fr; }
-  .lh-left{ order: 2; position: relative; top: auto; }
-  .lh-right{ order: 1; padding-left: 0; }
-  .lh-left__accent{ display: none; }
-  .lh-cards{ grid-template-columns: repeat(2, 1fr); }
-}
-
+/* =========================
+   MOBILE VIEW (≤ 768px)
+========================= */
 @media (max-width: 768px) {
-  /* convert left tabs into a top horizontal pill row */
-  .lh-grid{ grid-template-columns: 1fr; gap: 22px; }
-  .lh-left{
-    order: 1;
-    padding: 6px;
-    margin-bottom: 6px;
-  }
-  .lh-tabs{
-    display: flex;
-    gap: 12px;
-    overflow: auto;
-    max-height: none;
-    background: transparent;
-    padding: 6px;
-    box-shadow: none;
-  }
-  .lh-tab{
-    padding: 10px 14px;
-    background: linear-gradient(180deg,#fff,#fbfdff);
-    color: var(--lh-text);
-    border-radius: 12px;
-    box-shadow: 0 8px 18px rgba(11,20,30,0.04);
-    font-weight: 600;
-  }
-  .lh-tab.is-active{
-    border-left: 0;
-    background: linear-gradient(90deg,#e9fff7,#fbf9ff);
-    color: var(--lh-blue);
-    transform: none;
-    padding-left: 12px;
+  .lh-grid {
+    grid-template-columns: 1fr;
   }
 
-  .lh-left__accent{ display:none; }
-  .lh-cards{ grid-template-columns: 1fr; gap: 18px; }
-  .lh-card{ min-height: auto; padding: 18px; }
-  .lh-card__media{ width: 64px; }
-  .lh-media__badge{ width: 48px; height: 48px; border-radius: 10px; }
+  .lh-left {
+    padding: 0;
+  }
+
+  .lh-left__accent {
+    display: none;
+  }
+
+  .lh-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    max-height: none;
+    border-radius: 8px;
+  }
+
+  .lh-tabs__item {
+    flex: 0 0 auto;
+  }
+
+  .lh-tab {
+    white-space: nowrap;
+    padding: 14px 16px;
+  }
+
+  .lh-right {
+    padding: 0;
+  }
+
+  .lh-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .lh-title {
+    font-size: 24px;
+  }
 }
 
-/* very small phones */
-@media (max-width: 420px) {
-  .lh-title{ font-size: 22px; }
-  .lh-sub{ font-size: 13px; padding: 0 8px; }
-  .lh-tab__label{ font-size: 13px; }
-  .lh-card__title{ font-size: 15px; }
-  .lh-card__excerpt{ font-size: 13px; }
-  .lh-grid{ grid-template-columns: 1fr; }
-  .lh-cards{ grid-template-columns: 1fr; gap: 14px; }
+/* =========================
+   SMALL MOBILE (≤ 480px)
+========================= */
+@media (max-width: 480px) {
+  .lh-title {
+    font-size: 22px;
+  }
+
+  .lh-sub {
+    font-size: 13px;
+    padding: 0 6px;
+  }
+
+  .lh-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .lh-card__media {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .lh-card__cta {
+    justify-content: flex-start;
+  }
 }

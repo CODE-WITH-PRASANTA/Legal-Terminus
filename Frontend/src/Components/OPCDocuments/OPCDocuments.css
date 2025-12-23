@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.opc-docs-section {
+  padding: 80px 24px;
+  background: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+.opc-docs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* LEFT */
+.opc-docs-title {
+  font-size: 42px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.opc-docs-subtitle {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+/* GRID */
+.opc-docs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.opc-doc-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px 22px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.opc-doc-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1aa91a, #0f766e);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.opc-doc-card:hover::before {
+  opacity: 0.05;
+}
+
+.opc-doc-card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.opc-doc-card p {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+.opc-doc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  border-color: #1aa91a;
+}
+
+/* RIGHT IMAGE */
+.opc-docs-image img {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  margin-left: auto;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .opc-docs-container {
+    grid-template-columns: 1fr;
+  }
+
+  .opc-docs-image img {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .opc-docs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .opc-docs-title {
+    font-size: 32px;
+  }
+}

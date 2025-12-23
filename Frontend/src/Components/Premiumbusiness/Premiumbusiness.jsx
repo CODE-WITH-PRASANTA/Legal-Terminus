@@ -163,14 +163,14 @@ export default function Premiumbusiness() {
                       <p className="pb-card-desc">
                         {s.short}
                         <button
-                          className="read-btn"
+                          className="preminum-read-btn"
                           onClick={() => toggleIndex(i)}
                           aria-expanded={isOpen}
                           aria-controls={`panel-${i}`}
                           aria-label={isOpen ? `Show less about ${s.title}` : `Read more about ${s.title}`}
                         >
                           {isOpen ? " Show less" : " Read more"}
-                          <svg className="read-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                          <svg className="preminum-read-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
                             <path d={isOpen ? "M18 15L12 9L6 15" : "M6 9L12 15L18 9"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </button>

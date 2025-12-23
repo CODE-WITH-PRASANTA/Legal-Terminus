@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ================= GLOBAL ================= */
+
+.gstret-hero,
+.gstret-advantages {
+  font-family: "Poppins", sans-serif;
+  color: #1f2937;
+}
+
+/* ================= HERO ================= */
+
+.gstret-hero {
+  background: linear-gradient(90deg, #fff6e5, #ffe2b3);
+  padding: 80px 24px;
+}
+
+.gstret-hero-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.gstret-hero-img img {
+  width: 100%;
+  max-width: 420px;
+}
+
+.gstret-hero-content h2 {
+  font-size: 32px;
+  margin-bottom: 14px;
+}
+
+.gstret-hero-content h3 {
+  margin-top: 26px;
+  font-size: 22px;
+}
+
+.gstret-hero-content p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+/* ================= ADVANTAGES ================= */
+
+.gstret-advantages {
+  padding: 90px 24px;
+  background: #ffffff;
+  min-height: 130vh;
+}
+
+.gstret-title {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.gstret-subtitle {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 60px;
+  font-size: 15px;
+  color: #6b7280;
+}
+
+.gstret-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+}
+
+/* LEFT IMAGE */
+
+.gstret-image img {
+  width: 100%;
+  max-width: 420px;
+}
+
+.gstret-image.sticky {
+  position: sticky;
+  top: 120px;
+}
+
+/* CARDS */
+
+.gstret-cards {
+  display: grid;
+  gap: 24px;
+}
+
+.gstret-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  gap: 18px;
+  transition: all 0.3s ease;
+}
+
+.gstret-card:hover {
+  transform: translateY(-6px);
+  border-color: #f59e0b;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
+}
+
+.gstret-icon {
+  background: #fff7e6;
+  color: #f59e0b;
+  font-size: 22px;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.gstret-card h4 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.gstret-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #4b5563;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .gstret-hero-grid,
+  .gstret-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gstret-image.sticky {
+    position: relative;
+    top: auto;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gstret-title {
+    font-size: 26px;
+  }
+
+  .gstret-hero-content h2 {
+    font-size: 26px;
+  }
+}
+/* ================= BENEFITS SECTION ================= */
+
+.gstret-advantages {
+  background: #ffffff;
+  padding: 90px 24px;
+}
+
+/* FIXED HEIGHT CONTAINER */
+.gstret-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+
+  height: 75vh;              /* 🔑 KEY: fixed height */
+  align-items: flex-start;
+}
+
+/* LEFT IMAGE (STICKY) */
+.gstret-image {
+  display: flex;
+  justify-content: center;
+}
+
+.gstret-image img {
+  width: 100%;
+  max-width: 420px;
+}
+
+.gstret-image.sticky {
+  position: sticky;
+  top: 100px;                /* stays visible */
+}
+
+/* RIGHT SIDE SCROLLABLE CARDS */
+.gstret-cards {
+  height: 100%;              /* 🔑 takes full grid height */
+  overflow-y: auto;          /* 🔑 scroll only cards */
+  padding-right: 10px;
+  display: grid;
+  gap: 24px;
+}
+
+/* Optional smooth scrollbar */
+.gstret-cards::-webkit-scrollbar {
+  width: 6px;
+}
+
+.gstret-cards::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.5);
+  border-radius: 10px;
+}
+@media (max-width: 1024px) {
+  .gstret-grid {
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .gstret-cards {
+    overflow: visible;
+    height: auto;
+  }
+
+  .gstret-image.sticky {
+    position: relative;
+    top: auto;
+  }
+}

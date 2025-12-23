@@ -1,0 +1,202 @@
+/* LlpOverview.css
+   Use Poppins or system fallback for the clean look from your screenshots.
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: #ffffff; color: #222; }
+
+/* SECTION WRAPPER */
+.llp-overview {
+  padding: 56px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* GRID LAYOUT */
+.llp-container {
+  display: grid;
+  grid-template-columns: 1fr 420px; /* left content + right illustration */
+  gap: 40px;
+  align-items: start;
+}
+
+/* LEFT COLUMN */
+.llp-left {
+  min-width: 0; /* allow text to truncate nicely on small screens */
+}
+
+/* TITLE with animated underline */
+.llp-title {
+  margin: 0 0 18px;
+  font-size: 44px;
+  line-height: 1.05;
+  color: #27ae60; /* accent */
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  position: relative;
+  padding-bottom: 18px;
+}
+
+.llp-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  height: 6px;
+  background: linear-gradient(90deg, #27ae60, #3aa0d7);
+  border-radius: 4px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform .45s cubic-bezier(.2,.9,.2,1);
+}
+.llp-title:hover::after,
+.llp-title:focus::after { transform: scaleX(1); }
+
+/* LEAD PARAGRAPH */
+.llp-lead {
+  margin: 0 0 26px;
+  color: #6b7280;       /* paragraph gray */
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* FEATURES LIST */
+.llp-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+/* individual feature item */
+.llp-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(250,250,250,0.9));
+  box-shadow: 0 6px 18px rgba(22,38,61,0.06); /* card-shadow */
+  transition: transform .25s ease, box-shadow .25s ease;
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+
+/* little decorative bullet (green dot) */
+.llp-feature::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: #d49247de; /* feature-accent */
+  flex: 0 0 10px;
+  transform-origin: center;
+  transform: translateY(0);
+  transition: transform .25s ease;
+}
+
+/* hover effect */
+.llp-feature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(31,111,178,0.12); /* subtle blue shadow on hover */
+}
+.llp-feature:hover::before {
+  transform: translateY(-2px) scale(1.08);
+}
+
+/* Title + text layout */
+.llp-feature-title {
+  display: block;
+  font-weight: 600;
+  color: #2b2b2b;
+  min-width: 210px;
+  width: 100%;
+  flex-basis: 230px;
+  flex-shrink: 0;
+}
+
+/* The descriptive text under the title within the same li */
+.llp-feature-text {
+  color: #6b7280;
+  line-height: 1.85;
+  font-size: 15px;
+  display: block;
+  margin-left: 6px;
+}
+
+/* RIGHT COLUMN (illustration) */
+.llp-right {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.illustration-wrap {
+  width: 100%;
+  max-width: 420px;
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(31,111,178,0.03), rgba(255,255,255,0.7));
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(22,38,61,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .45s cubic-bezier(.2,.9,.2,1), box-shadow .25s ease;
+}
+.illustration-wrap:hover {
+  transform: translateY(-8px) rotate(-0.6deg);
+  box-shadow: 0 22px 44px rgba(31,111,178,0.12);
+}
+
+.llp-illustration {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* SMALLER SCREENS - responsivity */
+@media (max-width: 1100px) {
+  .llp-container {
+    grid-template-columns: 1fr 360px;
+    gap: 32px;
+  }
+  .llp-title { font-size: 40px; }
+  .llp-feature-title { min-width: 190px; flex-basis: 200px; }
+}
+
+@media (max-width: 860px) {
+  .llp-container {
+    grid-template-columns: 1fr;
+  }
+  .llp-right {
+    order: -1; /* if you prefer illustration above on small screens */
+    margin-bottom: 18px;
+    justify-content: flex-start;
+  }
+  .illustration-wrap {
+    max-width: 100%;
+    padding: 18px;
+  }
+  .llp-title { font-size: 34px; }
+  .llp-lead { font-size: 15px; }
+  .llp-feature { padding: 12px; }
+  .llp-feature-title { flex-basis: 180px; min-width: 160px; }
+  .llp-feature-text { font-size: 14.5px; }
+}
+
+@media (max-width: 480px) {
+  .llp-overview { padding: 34px 14px; }
+  .llp-title { font-size: 26px; padding-bottom: 12px; }
+  .llp-features { gap: 12px; }
+  .llp-feature { padding: 10px; border-radius: 6px; }
+  .llp-feature-title { display: block; width: 100%; flex-basis: auto; min-width: 0; font-size: 15px; }
+  .llp-feature-text { display: block; margin-left: 0; font-size: 14px; }
+  .illustration-wrap { padding: 12px; }
+}

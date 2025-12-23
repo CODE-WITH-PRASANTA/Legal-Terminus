@@ -1,0 +1,213 @@
+/* SocietyRegistrationSteps.css
+   - Two-part layout: header (big title + intro) + 9-step snake timeline
+   - Mobile-first, responsive
+   - Unique prefix: soc-
+   - No image imports or :root usage
+*/
+
+/* ===== Container ===== */
+.soc-wrap {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 36px 18px 64px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #27ae60;
+  box-sizing: border-box;
+}
+
+/* ===== PART 1 - Header (first image) ===== */
+.soc-header {
+  margin-bottom: 22px;
+}
+.soc-title {
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 800;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+.soc-intro {
+  margin: 0 0 26px;
+  color: #575757;
+  line-height: 1.8;
+  font-size: 1rem;
+  max-width: 88ch;
+}
+
+/* ===== PART 2 - Timeline (snake) ===== */
+.soc-timeline {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+/* Step card base */
+.soc-step {
+  position: relative;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 18px 20px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 8px 20px rgba(15,23,42,0.06);
+  overflow: visible; /* connectors will extend outside */
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+/* small lift on hover for pointer devices */
+@media (hover: hover) {
+  .soc-step:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 44px rgba(15,23,42,0.10);
+  }
+}
+
+/* index bubble */
+.soc-step-index {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: #d49247de;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-bottom: 10px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+/* step title and text */
+.soc-step-title {
+  margin: 0 0 8px;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #111827;
+}
+.soc-step-text {
+  margin: 0;
+  color: #575757;
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+/* connectors hidden on small screens */
+.soc-connector {
+  display: none;
+}
+
+/* ===== Tablet (2 columns) ===== */
+@media (min-width: 600px) and (max-width: 899px) {
+  .soc-timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+}
+
+/* ===== Desktop snake (5 columns) =====
+   Layout:
+   Row1: steps 1 2 3 4 5 (left→right)
+   Row2: steps 6 7 8 9    (right→left) placed so snake flows
+*/
+@media (min-width: 900px) {
+  .soc-timeline {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 28px;
+    align-items: start;
+  }
+
+  .soc-step { min-height: 200px; }
+
+  /* place row 2 steps in snake reverse order (6..9) */
+  .soc-step--6 { grid-column: 5; grid-row: 2; }
+  .soc-step--7 { grid-column: 4; grid-row: 2; }
+  .soc-step--8 { grid-column: 3; grid-row: 2; }
+  .soc-step--9 { grid-column: 2; grid-row: 2; }
+
+  /* show connectors on desktop */
+  .soc-connector {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    background: #d49247de; /* connector color */
+    border-radius: 2px;
+  }
+
+  /* RIGHT arrows for steps 1→2, 2→3, 3→4, 4→5 */
+  .soc-connector--right {
+    top: 50%;
+    right: -44px;
+    width: 40px;
+    height: 2px;
+    transform: translateY(-50%);
+  }
+  .soc-connector--right::after {
+    content: "";
+    position: absolute;
+    right: -7px;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    transform: translateY(-50%);
+    background: #d49247de;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+  }
+
+  /* LEFT arrows for steps 6←7←8←9 */
+  .soc-connector--left {
+    top: 50%;
+    left: -44px;
+    width: 40px;
+    height: 2px;
+    transform: translateY(-50%);
+  }
+  .soc-connector--left::after {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    transform: translateY(-50%);
+    background: #d49247de;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  }
+
+  /* DOWN arrow for 5 -> 6 */
+  .soc-connector--down {
+    left: 50%;
+    bottom: -44px;
+    width: 2px;
+    height: 40px;
+    transform: translateX(-50%);
+  }
+  .soc-connector--down::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -7px;
+    width: 12px;
+    height: 12px;
+    transform: translateX(-50%);
+    background: #d49247de;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+  }
+}
+
+/* ===== Small screens tweak: stack everything and hide connectors ===== */
+@media (max-width: 899px) {
+  .soc-step { min-height: auto; }
+  .soc-connector { display: none !important; }
+}
+
+/* ===== Minor responsive text tweaks ===== */
+@media (max-width: 520px) {
+  .soc-title { font-size: 1.6rem; }
+  .soc-intro { font-size: 0.95rem; }
+  .soc-step-index { width: 30px; height: 30px; }
+  .soc-step { padding: 14px; border-radius: 12px; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .soc-step { transition: none !important; }
+}

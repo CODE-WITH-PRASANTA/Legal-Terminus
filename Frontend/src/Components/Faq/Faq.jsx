@@ -3,7 +3,7 @@ import React, { useState, useMemo } from "react";
 import { AiOutlinePlus, AiOutlineMinus, AiOutlineSearch } from "react-icons/ai";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Faq.css";
-import img from "../../assets/Blog-3.webp";
+import img from "../../assets/Blog-2.webp";
 
 const QA = [
   {

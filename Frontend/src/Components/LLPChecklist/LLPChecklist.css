@@ -1,0 +1,257 @@
+/* LLPChecklist.css
+   - Unique prefix: ubc-
+   - No :root usage (per request)
+   - Responsive grid/list layouts and multiple effects (lift/pulse/fade)
+   - Accessible focus states and reduced-motion respect
+*/
+
+/* Basic layout and typography */
+.ubc-wrap {
+  background: #ffffff;
+  padding: 36px 18px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #27ae60; /* dark slate */
+}
+
+.ubc-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Header */
+.ubc-header {
+  margin-bottom: 18px;
+}
+
+.ubc-title {
+  font-size: clamp(1.6rem, 2.6vw, 2.6rem);
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.ubc-intro {
+  margin: 0 0 16px 0;
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 80ch;
+}
+
+/* Controls */
+.ubc-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.ubc-control-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ubc-control-label {
+  font-size: 0.9rem;
+  color: #374151;
+  margin-right: 6px;
+  font-weight: 600;
+}
+
+.ubc-btn {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(31,41,55,0.06);
+  background: #fff;
+  color: #374151;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background .18s ease, transform .12s ease, box-shadow .12s ease;
+}
+.ubc-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(15,23,42,0.06); }
+.ubc-btn:focus { outline: none; box-shadow: 0 0 0 4px rgba(99,102,241,0.12); }
+.ubc-btn--active { background: linear-gradient(90deg,#6366f1,#7c3aed); color: #fff; border-color: rgba(124,58,237,0.18); }
+
+/* Checklist container that holds sections */
+.ubc-checklist {
+  margin-top: 22px;
+  display: grid;
+  gap: 22px;
+}
+
+/* Each section (Pre-Filing, Filing, Post-Filing) */
+.ubc-section {
+  background: transparent;
+}
+
+/* Section title */
+.ubc-section-title {
+  font-size: 1.06rem;
+  margin: 6px 0 12px 0;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Items list - base styles */
+.ubc-items {
+  display: grid;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each checklist item card */
+.ubc-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(250,250,255,0.85));
+  border: 1px solid rgba(15, 23, 42, 0.04);
+  box-shadow: 0 8px 18px rgba(15,23,42,0.04);
+  transition: transform .26s cubic-bezier(.2,.9,.2,1), box-shadow .22s ease, background .18s ease;
+  cursor: default;
+}
+
+/* Left dot */
+.ubc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(180deg,#6366f1,#7c3aed);
+  display: inline-block;
+  margin-top: 6px;
+  box-shadow: 0 4px 12px rgba(99,102,241,0.12);
+}
+
+/* Item title and text */
+.ubc-item-title {
+  font-size: 0.98rem;
+  display: block;
+  margin-bottom: 6px;
+  color: #111827;
+}
+.ubc-item-text {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 0.96rem;
+}
+
+/* -------------------------
+   Layout variants (grid / list)
+   apply to .ubc-checklist container via classes from JSX
+   ------------------------- */
+
+/* Default: grid-3 (3 columns of sections) - on wider screens show sections side-by-side */
+.ubc-layout--grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* grid-2: two columns for sections */
+.ubc-layout--grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* list: single column (stacked sections) */
+.ubc-layout--list {
+  grid-template-columns: 1fr;
+}
+
+/* For each section, inside when columns are present, we want the items to be grid and form cards */
+/* We'll tune the inner .ubc-items to look like multi-column if needed on very wide screens */
+.ubc-layout--grid-3 .ubc-items,
+.ubc-layout--grid-2 .ubc-items {
+  grid-template-columns: 1fr;
+}
+
+/* When layout is list, items remain single column (default behavior) */
+
+/* -------------------------
+   Effect variations (lift / pulse / fade)
+   applied by adding a class on the root: ubc-effect--<name>
+   ------------------------- */
+
+/* 1) Lift effect: subtle upward translation on hover/focus */
+.ubc-effect--lift .ubc-item:hover,
+.ubc-effect--lift .ubc-item:focus-within {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 42px rgba(15,23,42,0.10);
+}
+
+/* 2) Pulse effect: gentle scale on hover */
+.ubc-effect--pulse .ubc-item:hover,
+.ubc-effect--pulse .ubc-item:focus-within {
+  transform: scale(1.02);
+  box-shadow: 0 16px 38px rgba(15,23,42,0.10);
+}
+
+/* 3) Fade effect: lower opacity normally, reveal on hover */
+.ubc-effect--fade .ubc-item {
+  opacity: 0.92;
+  transition: opacity .36s ease, transform .36s ease;
+}
+.ubc-effect--fade .ubc-item:hover,
+.ubc-effect--fade .ubc-item:focus-within {
+  opacity: 1;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(15,23,42,0.08);
+}
+
+/* -------------------------
+   Staggered reveal animation for items (applies at load)
+   ------------------------- */
+@keyframes ubc-reveal {
+  from { opacity: 0; transform: translateY(10px) scale(0.995); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* apply animation to all items with slight stagger using nth-child */
+.ubc-item {
+  animation: ubc-reveal 420ms cubic-bezier(.2,.9,.2,1) both;
+}
+.ubc-items .ubc-item:nth-child(1) { animation-delay: .04s; }
+.ubc-items .ubc-item:nth-child(2) { animation-delay: .08s; }
+.ubc-items .ubc-item:nth-child(3) { animation-delay: .12s; }
+.ubc-items .ubc-item:nth-child(4) { animation-delay: .16s; }
+.ubc-items .ubc-item:nth-child(5) { animation-delay: .20s; }
+.ubc-items .ubc-item:nth-child(6) { animation-delay: .24s; }
+.ubc-items .ubc-item:nth-child(7) { animation-delay: .28s; }
+.ubc-items .ubc-item:nth-child(8) { animation-delay: .32s; }
+
+/* -------------------------
+   Responsive behaviour
+   ------------------------- */
+
+/* Narrow screens: stack sections in single column */
+@media (max-width: 1000px) {
+  .ubc-layout--grid-3,
+  .ubc-layout--grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .ubc-inner { padding: 0 10px; }
+}
+
+/* Item layout for very small screens: collapse grid columns inside items */
+@media (max-width: 520px) {
+  .ubc-item {
+    grid-template-columns: 18px 1fr;
+    padding: 12px 12px;
+    border-radius: 10px;
+  }
+  .ubc-dot { width: 8px; height: 8px; margin-top: 6px; }
+  .ubc-title { font-size: 1.4rem; }
+}
+
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .ubc-item, .ubc-item::before, .ubc-items .ubc-item {
+    animation: none !important;
+    transition: none !important;
+  }
+}

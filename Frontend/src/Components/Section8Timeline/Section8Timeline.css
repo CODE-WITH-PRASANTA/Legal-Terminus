@@ -1,0 +1,241 @@
+/* Section8Timeline.css
+   Responsive two-column grid + unique effects
+   - Animated accent bar
+   - Card lift + gradient fill on hover
+   - Fade/slide in reveal
+*/
+
+/* Import neutral system font fallback */
+:root {
+  --s8-blue: #27ae60;
+  --s8-muted: #4b5563;
+  --s8-bg: #ffffff;
+  --s8-accent-start: #a7f3d0;
+  --s8-accent-end: #93c5fd;
+  --s8-card-shadow: 0 10px 30px rgba(2,6,23,0.08);
+  --s8-radius: 16px;
+}
+
+.s8-section {
+  background: var(--s8-bg);
+  padding: 48px 20px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif;
+  color: #0f172a;
+  box-sizing: border-box;
+}
+
+/* outer container */
+.s8-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1fr 1.2fr; /* left / right */
+  align-items: start;
+}
+
+/* LEFT: heading + intro + CTA */
+.s8-left {
+  padding-right: 12px;
+}
+
+.s8-heading {
+  color: var(--s8-blue);
+  font-size: 1.9rem;
+  margin: 0 0 12px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.s8-intro {
+  color: var(--s8-muted);
+  line-height: 1.75;
+  margin: 0 0 18px;
+  font-size: 1rem;
+}
+
+/* CTA block */
+.s8-cta {
+  margin-top: 18px;
+  background: linear-gradient(90deg, rgba(14,165,233,0.06), rgba(167,243,208,0.04));
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(15,23,42,0.04);
+}
+
+.s8-cta p {
+  margin: 0;
+  color: var(--s8-muted);
+  font-weight: 600;
+}
+
+.s8-cta-button {
+  background: linear-gradient(135deg, #ff9f1c, #ff7a1a);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(255,122,26,0.18);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.s8-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(255,122,26,0.18);
+}
+
+/* RIGHT: grid of cards */
+.s8-right {
+  padding-left: 12px;
+}
+
+/* grid for cards */
+.s8-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+}
+
+/* card base */
+.s8-card {
+  position: relative;
+  display: block;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.98));
+  border-radius: var(--s8-radius);
+  padding: 18px 20px 18px 22px;
+  border: 1px solid rgba(15,23,42,0.05);
+  box-shadow: var(--s8-card-shadow);
+  overflow: visible;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.28s ease;
+  cursor: default;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: s8-fadeInUp 420ms forwards cubic-bezier(.22,.9,.36,1);
+}
+
+/* accent vertical bar (animated) */
+.s8-card-accent {
+  position: absolute;
+  left: -6px;
+  top: 12px;
+  bottom: 12px;
+  width: 6px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, var(--s8-accent-start), var(--s8-accent-end));
+  box-shadow: 0 6px 18px rgba(37,99,235,0.08);
+  transition: transform 0.28s ease;
+}
+
+/* title + text */
+.s8-card-title {
+  margin: 0 0 8px;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.s8-card-text {
+  margin: 0;
+  color: var(--s8-muted);
+  line-height: 1.7;
+  font-size: 0.96rem;
+}
+
+/* hover: card fills with subtle gradient and lifts */
+@media (hover: hover) {
+  .s8-card:hover {
+    transform: translateY(-6px) scale(1.005);
+    box-shadow: 0 20px 48px rgba(2,6,23,0.14);
+    background: linear-gradient(135deg, rgba(147,197,253,0.06), rgba(167,243,208,0.06));
+  }
+
+  /* accent subtly expands on hover */
+  .s8-card:hover .s8-card-accent {
+    transform: scaleY(1.06);
+  }
+}
+
+/* small left border glow on focus for accessibility */
+.s8-card:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.06);
+}
+
+/* animations */
+@keyframes s8-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive breakpoints */
+
+/* tablet: two-column card grid */
+@media (min-width: 720px) {
+  .s8-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* large desktop: keep two columns but more spacing */
+@media (min-width: 1100px) {
+  .s8-container {
+    gap: 36px;
+  }
+
+  .s8-grid {
+    gap: 22px;
+  }
+
+  .s8-heading {
+    font-size: 2.2rem;
+  }
+}
+
+/* small screens: single column layout (stacked) */
+@media (max-width: 860px) {
+  .s8-container {
+    grid-template-columns: 1fr;
+  }
+
+  .s8-left {
+    order: 1;
+  }
+
+  .s8-right {
+    order: 2;
+  }
+
+  .s8-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .s8-cta-button {
+    width: 100%;
+    margin-top: 8px;
+  }
+}
+
+/* accessibility text scale */
+@media (prefers-reduced-motion: reduce) {
+  .s8-card {
+    animation: none;
+    transition: none;
+  }
+  .s8-cta-button,
+  .s8-card:hover {
+    transition: none;
+  }
+}
