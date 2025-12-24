@@ -335,14 +335,11 @@
   .footer-center { grid-column: 1 / -1; order: -1; }
 }
 @media (max-width: 768px) {
-  .premium-footer { padding:60px 16px 30px; }
-  .footer-columns { grid-template-columns:1fr; gap:35px; }
   .footer-bottom-content { flex-direction:column; text-align:center; gap:15px; }
   .footer-logo { width: min(180px,100%); }
   .social-btn { width:44px; height:44px; }
 }
 @media (max-width:480px) {
-  .premium-footer { padding:50px 12px 24px; }
   .contact-callout { flex-direction:column; text-align:center; gap:12px; }
   .footer-socials { gap:8px; }
   .payment-methods { flex-wrap:wrap; justify-content:center; }

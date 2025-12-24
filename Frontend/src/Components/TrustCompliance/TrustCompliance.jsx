@@ -1,5 +1,5 @@
 import React from "react";
-import "./trustCompliance.css";
+import './TrustCompliance.css'
 
 const ComplianceRequirementsSection = () => {
   return (

@@ -1,0 +1,109 @@
+/* ===============================
+   FULL SCREEN LOADER
+================================ */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.page-loader.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.page-loader.hide {
+  opacity: 0;
+}
+
+/* ===============================
+   LOADER BOX
+================================ */
+.loader-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===============================
+   LOGO
+================================ */
+.loader-logo {
+  width: 140px;
+  max-width: 75%;
+  animation: logoPulse 1.8s infinite ease-in-out;
+}
+
+@keyframes logoPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
+/* ===============================
+   BRAND TEXT
+================================ */
+.loader-brand {
+  margin-top: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1eff05; /* LOGO GREEN */
+}
+
+/* ===============================
+   LOADING TEXT
+================================ */
+.loader-text {
+  font-size: 14px;
+  color: #555;
+  animation: fadeText 1.6s infinite ease-in-out;
+}
+
+@keyframes fadeText {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .loader-logo {
+    width: 120px;
+  }
+  .loader-brand {
+    font-size: 16px;
+    letter-spacing: 1.4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loader-logo {
+    width: 100px;
+  }
+  .loader-brand {
+    font-size: 15px;
+  }
+  .loader-text {
+    font-size: 12px;
+  }
+}

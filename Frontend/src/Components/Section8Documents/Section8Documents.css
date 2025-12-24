@@ -1,188 +1,231 @@
-/* ---------- BASE / LAYOUT ---------- */
-:root{
-  --accent: #27ae60;
-  --muted: #6b7280;
-  --bg: #ffffff;
-  --card-bg: rgba(255,255,255,0.9);
-  --glass: rgba(255,255,255,0.6);
+/* ===============================
+   ROOT VARIABLES
+================================ */
+:root {
+  --sec8docs-accent: #27ae60;
+  --sec8docs-muted: #6b7280;
+  --sec8docs-text: #111827;
+  --sec8docs-card-bg: #ffffff;
 }
 
-.sd-wrapper {
+/* ===============================
+   WRAPPER
+================================ */
+.sec8docs-wrapper {
   max-width: 1200px;
   margin: 48px auto;
   padding: 20px;
-  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #111827;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  color: var(--sec8docs-text);
 }
 
-/* Header */
-.sd-header {
-  margin-bottom: 20px;
+/* ===============================
+   HEADER
+================================ */
+.sec8docs-header {
+  margin-bottom: 24px;
 }
-.sd-title {
+
+.sec8docs-title {
   font-size: 30px;
   font-weight: 700;
-  color: var(--accent);
-  margin: 6px 0 10px;
-}
-.sd-intro {
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 18px;
+  color: var(--sec8docs-accent);
+  margin: 0 0 10px;
 }
 
-/* Grid: 3 columns desktop, 2 tablets, 1 mobile */
-.sd-grid {
+.sec8docs-intro {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--sec8docs-muted);
+}
+
+/* ===============================
+   GRID
+================================ */
+.sec8docs-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-/* ---------- CARD ---------- */
-.sd-card {
+/* ===============================
+   CARD
+================================ */
+.sec8docs-card {
   position: relative;
-  overflow: visible;
-  padding: 18px 20px 20px 20px;
+  padding: 18px 20px 22px;
   border-radius: 12px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,251,255,0.98));
-  box-shadow: 0 10px 30px rgba(16,24,40,0.06);
-  transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms ease, background 260ms ease;
-  border: 1px solid rgba(17,24,39,0.03);
-  min-height: 120px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(250, 251, 255, 0.98)
+  );
+  box-shadow: 0 10px 30px rgba(16, 24, 40, 0.06);
+  border: 1px solid rgba(17, 24, 39, 0.04);
+  transition: transform 260ms cubic-bezier(.2,.9,.2,1),
+    box-shadow 260ms ease,
+    background 260ms ease;
 }
 
-/* Animated accent ribbon in top-right corner (unique effect) */
-.sd-card .card-accent {
+/* Hover effect */
+.sec8docs-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 46px rgba(16, 24, 40, 0.12);
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
+}
+
+/* ===============================
+   ACCENT RIBBON
+================================ */
+.sec8docs-card-accent {
   position: absolute;
   top: 12px;
   right: -40px;
   width: 120px;
   height: 36px;
   transform: rotate(18deg);
-  background: linear-gradient(90deg, rgba(31,78,140,0.95), rgba(113,147,19,0.95));
-  box-shadow: 0 6px 18px rgba(31,78,140,0.12);
+  background: linear-gradient(
+    90deg,
+    rgba(31, 78, 140, 0.95),
+    rgba(113, 147, 19, 0.95)
+  );
   border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(31, 78, 140, 0.12);
   opacity: 0.95;
-  transition: transform 260ms ease, right 260ms ease, opacity 200ms ease;
   pointer-events: none;
+  transition: transform 260ms ease, right 260ms ease;
 }
 
-/* When hover: accent slides a bit and brightens */
-.sd-card:hover .card-accent {
+.sec8docs-card:hover .sec8docs-card-accent {
   transform: rotate(18deg) translateY(-6px) translateX(-8px) scale(1.03);
   right: -32px;
-  opacity: 1;
-  filter: saturate(1.06) brightness(1.03);
 }
 
-/* Card hover lift */
-.sd-card:hover {
-  transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 20px 46px rgba(16,24,40,0.12);
-  background: linear-gradient(180deg, #ffffff, #f8fbff);
-}
-
-/* Title inside card */
-.card-title {
+/* ===============================
+   CARD TITLE
+================================ */
+.sec8docs-card-title {
   font-size: 18px;
   font-weight: 700;
   color: #0f2d50;
   margin: 4px 0 12px;
 }
 
-/* LIST (bulleted) */
-.card-list {
+/* ===============================
+   LIST
+================================ */
+.sec8docs-list {
   list-style: none;
-  margin: 0;
   padding: 0;
-  display: block;
+  margin: 0;
 }
-.card-list-item {
+
+.sec8docs-list-item {
   display: flex;
   gap: 12px;
   align-items: flex-start;
   margin-bottom: 12px;
-  color: #374151;
-  line-height: 1.7;
   font-size: 15px;
+  line-height: 1.7;
+  color: #374151;
 }
 
-/* custom dot */
-.list-dot {
+/* Dot */
+.sec8docs-list-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  flex: 0 0 8px;
-  background: linear-gradient(180deg, var(--accent), #719313);
-  box-shadow: 0 2px 6px rgba(31,78,140,0.12);
-  transform-origin: center;
+  flex-shrink: 0;
+  background: linear-gradient(
+    180deg,
+    var(--sec8docs-accent),
+    #719313
+  );
+  box-shadow: 0 2px 6px rgba(31, 78, 140, 0.12);
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-/* subtle interaction: enlarge dot on card hover */
-.sd-card:hover .list-dot {
+.sec8docs-card:hover .sec8docs-list-dot {
   transform: scale(1.25);
-  box-shadow: 0 6px 16px rgba(31,78,140,0.14);
+  box-shadow: 0 6px 16px rgba(31, 78, 140, 0.14);
 }
 
-/* subtle emphasis for section headings inside lists (if needed) */
-.card-list-item strong {
-  color: #0f2d50;
-  margin-right: 6px;
+.sec8docs-list-text {
+  max-width: calc(100% - 22px);
+  word-break: break-word;
 }
 
-/* ---------- RESPONSIVE BREAKPOINTS ---------- */
+/* ===============================
+   RESPONSIVE
+================================ */
 
-/* 2-column for medium screens */
+/* Tablets */
 @media (max-width: 1024px) {
-  .sd-grid {
+  .sec8docs-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
   }
 
-  .sd-title { font-size: 28px; }
+  .sec8docs-title {
+    font-size: 28px;
+  }
 }
 
-/* single column for tablets/phones */
+/* Mobile */
 @media (max-width: 768px) {
-  .sd-wrapper { padding: 14px; margin: 28px auto; }
-  .sd-grid { grid-template-columns: 1fr; gap: 14px; }
+  .sec8docs-wrapper {
+    padding: 14px;
+    margin: 28px auto;
+  }
 
-  /* move accent inside top-right for small devices and reduce size */
-  .sd-card .card-accent {
+  .sec8docs-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .sec8docs-card-accent {
     right: 8px;
     top: 8px;
-    transform: rotate(10deg);
     width: 86px;
     height: 30px;
-    border-radius: 6px;
-    opacity: 0.85;
+    transform: rotate(10deg);
   }
-  .sd-card:hover .card-accent {
+
+  .sec8docs-card:hover .sec8docs-card-accent {
     transform: rotate(10deg) translateY(-4px) translateX(-6px) scale(1.02);
     right: 10px;
   }
 
-  .sd-title { font-size: 26px; }
-  .card-title { font-size: 17px; }
-  .card-list-item { font-size: 15px; }
+  .sec8docs-title {
+    font-size: 26px;
+  }
 }
 
-/* very small phones */
+/* Small phones */
 @media (max-width: 420px) {
-  .sd-wrapper { padding: 12px; margin: 18px auto; }
-  .sd-title { font-size: 22px; }
-  .card-title { font-size: 16px; }
-  .card-list-item { font-size: 14px; }
-  .sd-card { padding: 14px; border-radius: 10px; min-height: auto; }
+  .sec8docs-title {
+    font-size: 22px;
+  }
+
+  .sec8docs-card-title {
+    font-size: 16px;
+  }
+
+  .sec8docs-list-item {
+    font-size: 14px;
+  }
+
+  .sec8docs-card {
+    padding: 14px;
+    border-radius: 10px;
+  }
 }
 
-/* ---------- ACCESSIBILITY / SMALL HELPERS ---------- */
-.sd-card:focus-within,
-.sd-card:focus {
-  outline: 3px solid rgba(31,78,140,0.1);
+/* ===============================
+   ACCESSIBILITY
+================================ */
+.sec8docs-card:focus,
+.sec8docs-card:focus-within {
+  outline: 3px solid rgba(31, 78, 140, 0.12);
   outline-offset: 6px;
 }
-
-.card-list-item span { display: inline-block; max-width: calc(100% - 22px); word-break: break-word; }

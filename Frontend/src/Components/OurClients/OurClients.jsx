@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import "./ourclients.css";
+import './OurClients.css'
 
 import client1 from "../../assets/our (1).webp";
 import client2 from "../../assets/our (2).webp";
