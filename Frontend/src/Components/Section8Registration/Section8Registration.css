@@ -13,90 +13,64 @@
   color: #0f172a;
 }
 
-.gst-subheading {
-  text-align: center;
-  color: #475569;
-  margin-bottom: 50px;
-}
-
-/* ================= SNAKE GRID ================= */
-.snake-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  margin-bottom: 80px;
-}
-
-.snake-step {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.snake-step.right-align {
-  flex-direction: row-reverse;
-}
-
-/* ================= STEP CARD ================= */
-.step-card {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 26px;
-  width: 360px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.step-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 50px rgba(244, 166, 42, 0.25);
-}
-
-.step-badge {
-  position: absolute;
-  top: -14px;
-  left: -14px;
-  background: #f4a62a;
-  color: #fff;
-  font-weight: 600;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-}
-
-.step-card h4 {
-  margin-bottom: 8px;
-  color: #0f172a;
-}
-
-.step-card p {
-  font-size: 14px;
-  color: #475569;
-}
-
-/* ================= ARROWS ================= */
-.snake-arrow {
-  flex-shrink: 0;
-}
-
-.arrow-left {
-  transform: rotate(180deg);
-}
-
-/* ================= PENALTY ================= */
-.penalty-grid {
+/* steps grid: 2-column on desktop, single column on small screens */
+.section8-steps-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   margin-bottom: 80px;
 }
 
-.penalty-card {
-  border-radius: 16px;
-  padding: 30px;
+/* individual step card */
+.section8-step-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,251,255,0.98));
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 8px 28px rgba(16,24,40,0.04);
+  transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease;
+  border: 1px solid rgba(17,24,39,0.03);
+}
+.section8-step-card:hover, .section8-step-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(16,24,40,0.08);
+}
+
+/* step headers */
+.section8-step-number {
+  font-size: 13px;
+  color: var(--accent);
+  margin: 0;
+  font-weight: 700;
+}
+.section8-step-title {
+  font-size: 18px;
+  margin: 8px 0 10px;
+  color: #0f2d50;
+}
+.section8-step-bullets { margin: 0 0 0 18px; color: var(--muted); line-height: 1.7; }
+.section8-step-bullets li { margin-bottom: 8px; }
+
+/* ---------- COMPLIANCE TABLE ---------- */
+.compliance-section { margin-top: 26px; }
+.compliance-title {
+  font-size: 24px;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.compliance-lead { color: var(--muted); margin-bottom: 14px; }
+
+/* table wrapper */
+.compliance-table-wrap {
+  background: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* header row (desktop only) */
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 0.9fr 1fr;
+  background: linear-gradient(180deg, var(--accent), #1f6699);
   color: #fff;
 }
 
@@ -175,9 +149,18 @@
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
-  .penalty-grid,
-  .components-grid {
-    grid-template-columns: 1fr;
+  .section8-steps-grid { grid-template-columns: 1fr; }
+  .table-header { display: none; }
+  .table-row {
+    display: block;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(17,24,39,0.04);
+    background: linear-gradient(180deg,#ffffff,#fbfbff);
+    position: relative;
+    overflow: visible;
+    min-height: 0;
   }
 
   .snake-step,
@@ -185,7 +168,31 @@
     flex-direction: column;
   }
 
-  .snake-arrow {
-    display: none;
-  }
+  .table-row .col { display: block; padding: 8px 0; }
+  .table-row .col.area { font-weight: 700; color: #0f2d50; margin-bottom: 6px; }
+  .table-row .col.req::before { content: "Requirement:"; font-weight:700; display:block; color:#374151; margin-bottom:6px; }
+  .table-row .col.due::before { content: "Due:"; font-weight:700; display:block; color:#374151; margin-bottom:6px; }
+  .table-row .col.forms::before { content: "Forms/Remarks:"; font-weight:700; display:block; color:#374151; margin-bottom:6px; }
+}
+
+/* responsive typography tweaks */
+@media (max-width: 768px) {
+  .reg-wrapper { padding: 12px; max-width: 1000px; }
+  .reg-title { font-size: 26px; }
+  .section8-step-title { font-size: 16px; }
+  .table-row { padding: 12px; }
+}
+
+/* small phones */
+@media (max-width: 420px) {
+  .reg-wrapper { padding: 10px; margin: 12px auto; }
+  .reg-title { font-size: 22px; }
+  .table-row { padding: 10px; }
+  .table-row::after { width: 86px; height: 28px; right: -18px; top: -8px; transform: rotate(10deg); }
+}
+
+/* accessibility focus */
+.section8-step-card:focus-within, .section8-step-card:focus, .table-row:focus-within {
+  outline: 3px solid rgba(31,78,140,0.08);
+  outline-offset: 6px;
 }

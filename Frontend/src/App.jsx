@@ -21,6 +21,7 @@ import GSTReturn from "./Pages/GSTReturn/GSTReturn";
 import EPFReg from "./Pages/EPFReg/EPFReg";
 
 import RouteLoaderWrapper from "./Components/PageLoader/RouteLoaderWrapper";
+import FloatIcon from "./Components/FloatIcon/FloatIcon";
 
 function App() {
   return (
@@ -57,6 +58,9 @@ function App() {
           <Route path="/epf" element={<EPFReg />} />
         </Routes>
       </RouteLoaderWrapper>
+
+      {/* ✅ FLOAT ICON – ALWAYS VISIBLE */}
+      <FloatIcon />
 
       <Footer />
     </Router>

@@ -1,0 +1,72 @@
+.float-icons {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 14px;
+  z-index: 9999;
+}
+
+/* COMMON ICON */
+.float-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  opacity: 0;
+  transform: translateY(10px) scale(0.9);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* OPEN STATE */
+.float-icons.open .float-icon {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* SVG */
+.float-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: #fff;
+}
+
+/* WHATSAPP */
+.float-icon.whatsapp {
+  background: linear-gradient(135deg, #25D366, #1ebe5d);
+}
+
+/* CALL */
+.float-icon.call {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+/* MAIN BUTTON */
+.float-icon.main {
+  background: linear-gradient(135deg, #111827, #000);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .float-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .float-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+}
