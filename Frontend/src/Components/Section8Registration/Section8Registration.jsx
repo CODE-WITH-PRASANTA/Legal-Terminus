@@ -189,17 +189,17 @@ const RegistrationProcess = () => {
   return (
     <main className="reg-wrapper">
       <section className="reg-steps">
-        <h1 className="reg-title">How to Register a Section 8 Company: Step-by-Step Process</h1>
+        <h1 className="reg-title">How to Register a Section 8 Company: section8-step-by-Step Process</h1>
         <p className="reg-lead">
           Here's a guide on the steps for incorporation of a Section 8 company through the MCA online portal.
         </p>
 
-        <div className="steps-grid">
+        <div className="section8-steps-grid">
           {steps.map((s) => (
-            <article key={s.id} className="step-card">
-              <h2 className="step-number">Step {s.id}</h2>
-              <h3 className="step-title">{s.title.replace(/^Step \d+\.\s*/, "")}</h3>
-              <ul className="step-bullets">
+            <article key={s.id} className="section8-step-card">
+              <h2 className="section8-step-number">Step {s.id}</h2>
+              <h3 className="section8-step-title">{s.title.replace(/^Step \d+\.\s*/, "")}</h3>
+              <ul className="section8-step-bullets">
                 {s.body.map((b, i) => <li key={i}>{b}</li>)}
               </ul>
             </article>

@@ -1,0 +1,269 @@
+/* SECTION */
+.hae-section {
+  background: linear-gradient(135deg, #f8f2e8, #eef7f4);
+  padding: 50px 0 0;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease;
+  margin-top: 50px;
+}
+
+.hae-section.hae-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* LAYOUT */
+.hae-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* IMAGE */
+.hae-images {
+  transform: translateX(-40px);
+  opacity: 0;
+  transition: all 0.9s ease 0.2s;
+}
+
+.hae-visible .hae-images {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.hae-image {
+  border-radius: 26px;
+  overflow: hidden;
+}
+
+.hae-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.hae-content {
+  transform: translateX(40px);
+  opacity: 0;
+  transition: all 0.9s ease 0.4s;
+}
+
+.hae-visible .hae-content {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.hae-subtitle {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #0f766e;
+  font-weight: 700;
+}
+
+.hae-title {
+  font-size: 44px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 18px 0;
+  line-height: 1.2;
+}
+
+.hae-description {
+  font-size: 16px;
+  color: #475569;
+  max-width: 520px;
+  line-height: 1.8;
+  margin-bottom: 45px;
+}
+
+/* STATS */
+.hae-stats {
+  display: flex;
+  gap: 50px;
+}
+
+.hae-stat {
+  text-align: start;
+}
+
+.hae-circle {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 10px;
+  background: #fff;
+  transition: transform 0.35s ease;
+}
+
+.hae-circle--green {
+  border: 3px solid #10b981;
+  color: #10b981;
+}
+
+.hae-circle--blue {
+  border: 3px solid #3b82f6;
+  color: #3b82f6;
+}
+
+.hae-circle--orange {
+  border: 3px solid #f59e0b;
+  color: #f59e0b;
+}
+
+.hae-stat:hover .hae-circle {
+  transform: scale(1.12);
+}
+
+.hae-stat span {
+  font-size: 14px;
+  color: #334155;
+  font-weight: 600;
+}
+
+/* CTA */
+.hae-cta {
+  margin-top: 110px;
+  background: linear-gradient(90deg, #0f766e, #115e59);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  padding: 26px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.hae-cta-divider {
+  width: 2px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.hae-phone-icon {
+  background: #fbbf24;
+  color: #000;
+  padding: 8px 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+
+/* ===================== TABLET & SMALL LAPTOP ===================== */
+@media (max-width: 1024px) {
+  .hae-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .hae-title {
+    font-size: 38px;
+  }
+
+  .hae-stats {
+    justify-content: space-between;
+  }
+
+  .hae-description {
+    max-width: 100%;
+  }
+}
+
+/* ===================== TABLET PORTRAIT ===================== */
+@media (max-width: 768px) {
+  .hae-section {
+    padding: 40px 0 0;
+  }
+
+  .hae-title {
+    font-size: 34px;
+    line-height: 1.25;
+  }
+
+  .hae-subtitle {
+    font-size: 13px;
+  }
+
+  .hae-stats {
+    gap: 30px;
+  }
+
+  .hae-circle {
+    width: 84px;
+    height: 84px;
+    font-size: 17px;
+  }
+
+  .hae-cta {
+    font-size: 16px;
+    padding: 22px;
+  }
+}
+
+/* ===================== MOBILE ===================== */
+@media (max-width: 576px) {
+  .hae-title {
+    font-size: 28px;
+  }
+
+  .hae-description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .hae-stats {
+    align-items: center;
+    gap: 26px;
+  }
+
+  .hae-circle {
+    width: 80px;
+    height: 80px;
+    font-size: 16px;
+  }
+
+  .hae-stat span {
+    font-size: 13px;
+  }
+
+  .hae-cta {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+    padding: 20px;
+  }
+
+  .hae-cta-divider {
+    display: none;
+  }
+}
+
+/* ===================== SMALL MOBILE ===================== */
+@media (max-width: 380px) {
+  .hae-title {
+    font-size: 25px;
+  }
+
+  .hae-description {
+    font-size: 14px;
+  }
+
+  .hae-circle {
+    width: 74px;
+    height: 74px;
+  }
+}
+

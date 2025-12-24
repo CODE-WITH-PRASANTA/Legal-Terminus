@@ -4,9 +4,9 @@ import './Featureslegalservice.css'
 const leftCards = [
   {
     id: 1,
-    title: "Why Corpbiz?",
+    title: "Why Legal Terminus?",
     text:
-      "Corpbiz is a tech-enabled and AI-driven platform where professionals are dedicated to providing legal and financial services to clients.",
+      "Legal Terminus is a modern legal and compliance platform designed to simplify business registrations, documentation, and legal processes through expert-driven solutions.",
     variant: "soft",
     icon: (
       <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
@@ -17,9 +17,9 @@ const leftCards = [
   },
   {
     id: 2,
-    title: "India's Largest Legal Tech Company",
+    title: "Trusted Legal & Compliance Experts",
     text:
-      "Corpbiz is a professional service provider that provides business registration, taxation and licensing services. We have a large network of experienced professionals working with us.",
+      "Legal Terminus works with experienced lawyers, chartered accountants, and compliance professionals to deliver accurate, reliable, and timely legal services across India.",
     variant: "soft",
     icon: (
       <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
@@ -30,8 +30,9 @@ const leftCards = [
   },
   {
     id: 3,
-    title: "99.9% Client Satisfaction",
-    text: "In order to ensure client satisfaction, we continuously strive to improve the quality of our services.",
+    title: "Client-Centric Approach",
+    text:
+      "We focus on transparency, timely delivery, and personalized support to ensure a smooth and hassle-free experience for every client.",
     variant: "soft",
     icon: (
       <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
@@ -42,9 +43,9 @@ const leftCards = [
   },
   {
     id: 4,
-    title: "Excellent Advisory Services",
+    title: "End-to-End Legal Support",
     text:
-      "With the largest professional network, we are dedicated to offering the best advisory services so that you don't face any complications in your business.",
+      "From company incorporation to taxation, compliance, and ongoing legal assistance, Legal Terminus provides complete end-to-end business support.",
     variant: "soft",
     icon: (
       <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
@@ -57,25 +58,27 @@ const leftCards = [
 
 const rightBullets = [
   {
-    title: "Quick Response:",
-    text: "We make sure to answer every query on time. Moreover, none of our emails or calls go unanswered.",
+    title: "Prompt Communication:",
+    text:
+      "Our team ensures quick responses to client queries through calls, emails, and digital channels, keeping you informed at every step.",
   },
   {
-    title: "Advanced Technology:",
+    title: "Technology-Driven Platform:",
     text:
-      "Our high-tech platform with customer empowerment tools enables customers to get the best. You can connect with our experts with just a single click.",
+      "Legal Terminus leverages digital tools and streamlined workflows to simplify complex legal and compliance processes.",
   },
   {
-    title: "Hassle-free Registration:",
+    title: "Simple & Hassle-Free Process:",
     text:
-      "Corpbiz has made the registration process easy. You can leave the hassle of registration to us and focus on other important works.",
+      "We handle documentation, filings, and follow-ups, allowing you to focus on growing your business without legal stress.",
   },
   {
-    title: "Expert Guidance:",
+    title: "Professional Legal Guidance:",
     text:
-      "Our experienced team of professionals provides insightful advice on business execution related to compliance, rules, taxation.",
+      "Our experts provide clear and practical advice on business registration, compliance, taxation, and regulatory requirements.",
   },
 ];
+
 
 const FeaturesLegalService = () => {
   return (
