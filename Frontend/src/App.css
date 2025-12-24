@@ -9,3 +9,10 @@ body {
   font-family: sans-serif;
   background-color: #f8f9fa;
 }
+
+.float-icons {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+}
