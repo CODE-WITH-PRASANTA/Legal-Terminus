@@ -17,24 +17,48 @@ import PvtltdOurclints from '../../Components/PvtltdOurclints/PvtltdOurclints'
 const PrivateLimited = () => {
   return (
     <div>
-        <Breadcrum/>
-        <PvtltdPlanandPricing />
-        <PvtltdZolvitPremium />
-        <PvtltdTabs />
-        <PvtltdCompanyTab />   
-        <PvtltdPvtTypes />
-        <PvtltdRequirementsTab />
-        <PvtltdProcess />
-        <PvtltdDocument />
-        <PvtltdFAQ />
-        <PvtltdTermsCondition />
-        <PvtltdTestimonial />
-        <PvtltdVideoTestimonial />
-        <PvtltdOurclints />
+      <Breadcrum />
 
-    
+      <div id="plans">
+        <PvtltdPlanandPricing />
+      </div>
+
+      <div id="premium">
+        <PvtltdZolvitPremium />
+      </div>
+
+      <PvtltdTabs />
+
+      <div id="company">
+        <PvtltdCompanyTab />
+      </div>
+
+      <div id="types">
+        <PvtltdPvtTypes />
+      </div>
+
+      <div id="requirements">
+        <PvtltdRequirementsTab />
+      </div>
+
+      <div id="process">
+        <PvtltdProcess />
+      </div>
+
+      <div id="documents">
+        <PvtltdDocument />
+      </div>
+
+      <div id="faq">
+        <PvtltdFAQ />
+      </div>
+
+      <PvtltdTermsCondition />
+      <PvtltdTestimonial />
+      <PvtltdVideoTestimonial />
+      <PvtltdOurclints />
     </div>
-  )
-}
+  );
+};
 
 export default PrivateLimited
