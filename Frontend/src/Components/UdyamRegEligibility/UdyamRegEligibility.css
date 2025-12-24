@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ===============================
+   SECTION
+================================ */
+
+.udyam-eligibility-section {
+  background: #ffffff;
+  padding: 70px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.udyam-eligibility-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===============================
+   TEXT
+================================ */
+
+.udyam-eligibility-title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.udyam-eligibility-intro {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 18px;
+}
+
+.udyam-eligibility-points {
+  padding-left: 18px;
+  margin-bottom: 14px;
+}
+
+.udyam-eligibility-points li {
+  font-size: 14.5px;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.udyam-eligibility-note {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+/* ===============================
+   GRID TABLE
+================================ */
+
+.udyam-eligibility-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+/* Header */
+.udyam-eligibility-grid-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.5fr;
+  background: #f9fafb;
+  font-weight: 600;
+  font-size: 14px;
+  color: #111827;
+  padding: 16px 18px;
+}
+
+/* Row */
+.udyam-eligibility-grid-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.5fr;
+  padding: 18px;
+  font-size: 14.5px;
+  color: #374151;
+  background: #ffffff;
+  position: relative;
+  cursor: default;
+
+  transition:
+    background 0.4s ease,
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* Divider */
+.udyam-eligibility-grid-row:not(:last-child) {
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Unique hover effect */
+.udyam-eligibility-grid-row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(245, 158, 11, 0.12),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.udyam-eligibility-grid-row:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(245, 158, 11, 0.15);
+  background: #fffdf9;
+  z-index: 2;
+}
+
+.udyam-eligibility-grid-row:hover::before {
+  opacity: 1;
+}
+
+/* Highlight type */
+.udyam-eligibility-type {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .udyam-eligibility-grid-header,
+  .udyam-eligibility-grid-row {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+  }
+
+  .udyam-eligibility-grid-header span {
+    font-size: 13px;
+  }
+
+  .udyam-eligibility-grid-row span {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .udyam-eligibility-title {
+    font-size: 24px;
+  }
+
+  .udyam-eligibility-section {
+    padding: 50px 16px;
+  }
+}

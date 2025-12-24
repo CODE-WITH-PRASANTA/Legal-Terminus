@@ -1,0 +1,133 @@
+/* ===============================
+   SECTION
+================================ */
+.tcg-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f9fafb, #eef2f7);
+  font-family: "Inter", sans-serif;
+}
+
+/* ===============================
+   CONTAINER
+================================ */
+.tcg-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ===============================
+   TITLE
+================================ */
+.tcg-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.tcg-subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: #16a34a;
+  max-width: 760px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+
+/* ===============================
+   GRID
+================================ */
+.tcg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+/* ===============================
+   CARD
+================================ */
+.tcg-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 40px 34px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  transition: all 0.45s ease;
+  overflow: hidden;
+}
+
+/* Top gradient bar */
+.tcg-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.tcg-card:hover::before {
+  opacity: 1;
+}
+
+/* Hover animation */
+.tcg-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.16);
+}
+
+/* ===============================
+   ICON
+================================ */
+.tcg-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: rgba(22, 163, 74, 0.12);
+  color: #16a34a;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.4s ease;
+}
+
+.tcg-card:hover .tcg-icon {
+  background: #16a34a;
+  color: #ffffff;
+  transform: rotate(360deg);
+}
+
+/* ===============================
+   TEXT
+================================ */
+.tcg-text {
+  font-size: 15.5px;
+  color: #374151;
+  line-height: 1.75;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .tcg-title {
+    font-size: 26px;
+  }
+
+  .tcg-subtitle {
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+
+  .tcg-card {
+    padding: 28px 24px;
+  }
+}

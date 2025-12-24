@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ===============================
+   SECTION
+================================ */
+.udyam-process-section {
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  padding: 80px 20px;
+}
+
+.udyam-process-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===============================
+   HEADING
+================================ */
+.udyam-process-heading {
+  font-size: 34px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #111827;
+}
+
+/* ===============================
+   GRID
+================================ */
+.udyam-process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+
+/* ===============================
+   STEP WRAPPER
+================================ */
+.udyam-step-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* ===============================
+   STEP CARD
+================================ */
+.udyam-step-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.35s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.udyam-step-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(22, 163, 74, 0.2);
+  border-color: #16a34a;
+}
+
+/* ===============================
+   BADGE
+================================ */
+.udyam-step-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+/* ===============================
+   TITLE
+================================ */
+.udyam-step-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #111827;
+}
+
+/* ===============================
+   LIST
+================================ */
+.udyam-step-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.udyam-step-list li {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #4b5563;
+  position: relative;
+  padding-left: 18px;
+}
+
+.udyam-step-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* ===============================
+   ARROW
+================================ */
+.udyam-step-arrow {
+  font-size: 28px;
+  color: #9ca3af;
+  margin-left: 14px;
+  transition: all 0.3s ease;
+}
+
+.udyam-step-wrapper:hover .udyam-step-arrow {
+  color: #16a34a;
+  transform: translateX(6px);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 1200px) {
+  .udyam-process-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .udyam-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .udyam-step-wrapper {
+    flex-direction: column;
+  }
+
+  .udyam-step-arrow {
+    transform: rotate(90deg);
+    margin: 14px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .udyam-process-heading {
+    font-size: 26px;
+  }
+
+  .udyam-step-title {
+    font-size: 16px;
+  }
+
+  .udyam-step-list li {
+    font-size: 13.5px;
+  }
+}

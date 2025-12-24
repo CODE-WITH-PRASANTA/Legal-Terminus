@@ -17,6 +17,10 @@ import OPC from "./Pages/OPC/OPC";
 import GSTRegistration from "./Pages/GSTRegistration/GSTRegistration";
 import GSTReturn from "./Pages/GSTReturn/GSTReturn";
 import EPFReg from "./Pages/EPFReg/EPFReg"
+import UdyamReg from "./Pages/UdyamReg/UdyamReg"
+import ESICReg from "./Pages/ESICReg/ESICReg"
+import ShopReg from "./Pages/ShopReg/ShopReg"
+import ProfessionalReg from "./Pages/ProfessionalReg/ProfessionalReg"
 
 
 function App() {
@@ -42,6 +46,11 @@ function App() {
         <Route path="/gst-registration" element={<GSTRegistration />} />
         <Route path="/gst-return-filing" element={<GSTReturn />} />
         <Route path="/epf" element={<EPFReg />} />
+        <Route path="/udyam" element={<UdyamReg />} />
+        <Route path="/esic" element={<ESICReg />} />
+        <Route path="/shop-establishment" element={<ShopReg />} />
+        <Route path="/professional-tax" element={<ProfessionalReg />} />   
+
       </Routes>
       <Footer />
     </Router>

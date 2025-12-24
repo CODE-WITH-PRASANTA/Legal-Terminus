@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ===============================
+   SECTION
+================================ */
+
+.msme-docs-section {
+  background: #ffffff;
+  padding: 70px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.msme-docs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* ===============================
+   TEXT
+================================ */
+
+.msme-docs-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 14px;
+}
+
+.msme-docs-intro {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+/* ===============================
+   GRID
+================================ */
+
+.msme-docs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+/* ===============================
+   CARD
+================================ */
+
+.msme-docs-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background: #f9fafb;
+  border-radius: 14px;
+  cursor: default;
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+/* Accent bar on hover */
+.msme-docs-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #f59e0b, #fbbf24);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+/* Hover effect */
+.msme-docs-card:hover {
+  transform: translateY(-6px);
+  background: #fffdf9;
+  box-shadow: 0 18px 35px rgba(245, 158, 11, 0.18);
+}
+
+.msme-docs-card:hover::before {
+  opacity: 1;
+}
+
+/* ===============================
+   DOT ICON
+================================ */
+
+.msme-docs-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #f59e0b;
+  flex-shrink: 0;
+  transition: transform 0.35s ease, background 0.35s ease;
+}
+
+.msme-docs-card:hover .msme-docs-dot {
+  transform: scale(1.4);
+  background: #d97706;
+}
+
+/* ===============================
+   TEXT
+================================ */
+
+.msme-docs-text {
+  font-size: 14.5px;
+  color: #374151;
+  line-height: 1.6;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .msme-docs-container {
+    padding: 28px 22px;
+  }
+
+  .msme-docs-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .msme-docs-section {
+    padding: 50px 14px;
+  }
+
+  .msme-docs-card {
+    padding: 16px;
+  }
+
+  .msme-docs-text {
+    font-size: 14px;
+  }
+}

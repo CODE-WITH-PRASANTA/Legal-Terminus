@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.epf-wrapper {
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  color: #1f2937;
+}
+
+/* ================= OVERVIEW ================= */
+
+.epf-overview {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 24px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.epf-overview-text h2 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.epf-overview-text p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+  margin-bottom: 14px;
+}
+
+.epf-overview-img img {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* ================= INFO ================= */
+
+.epf-info {
+  background: linear-gradient(90deg, #fff7e6, #ffe2b8);
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.epf-info-text h2 {
+  font-size: 34px;
+  margin-bottom: 16px;
+}
+
+.epf-info-text p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #374151;
+  margin-bottom: 14px;
+}
+
+.epf-primary-btn {
+  background: #f59e0b;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.epf-primary-btn:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+/* ================= EMPLOYEE GRID ================= */
+
+.epf-employee {
+  max-width: 1200px;
+  margin: auto;
+  padding: 90px 24px;
+}
+
+.epf-employee h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.epf-employee p {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 40px;
+}
+
+.epf-employee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.epf-employee-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  transition: all 0.3s ease;
+}
+
+.epf-employee-card:hover {
+  border-color: #f59e0b;
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.epf-check {
+  color: #1aa91a;
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+.epf-employee-card h4 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.epf-employee-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+/* ================= CTA ================= */
+
+.epf-cta {
+  text-align: center;
+  padding: 40px 24px 80px;
+}
+
+.epf-secondary-btn {
+  background: #f59e0b;
+  color: #fff;
+  padding: 16px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.epf-secondary-btn:hover {
+  background: #d97706;
+  transform: translateY(-3px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .epf-overview,
+  .epf-info {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .epf-overview-img img,
+  .epf-info-img img {
+    margin: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .epf-overview-text h2,
+  .epf-info-text h2,
+  .epf-employee h2 {
+    font-size: 26px;
+  }
+}
