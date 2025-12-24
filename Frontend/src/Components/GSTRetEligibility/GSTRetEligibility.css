@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/* ===============================
+   SECTION
+================================ */
+
+.gst-eligibility-section {
+  background-color: #ffffff;
+  padding: 64px 24px;
+  font-family: "Poppins", sans-serif;
+}
+
+.gst-eligibility-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===============================
+   TITLE & SUBTITLE
+================================ */
+
+.gst-eligibility-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.gst-eligibility-subtitle {
+  font-size: 15px;
+  color: #64748b;
+  margin-bottom: 28px;
+}
+
+/* ===============================
+   LIST
+================================ */
+
+.gst-eligibility-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gst-eligibility-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: #1f2937;
+  padding: 10px 0;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.gst-eligibility-item:hover {
+  transform: translateX(6px);
+  color: #2563eb;
+}
+
+/* ===============================
+   ICON
+================================ */
+
+.gst-eligibility-icon {
+  color: #0ea5e9;
+  font-size: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .gst-eligibility-title {
+    font-size: 26px;
+  }
+
+  .gst-eligibility-subtitle,
+  .gst-eligibility-item {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gst-eligibility-section {
+    padding: 48px 16px;
+  }
+}

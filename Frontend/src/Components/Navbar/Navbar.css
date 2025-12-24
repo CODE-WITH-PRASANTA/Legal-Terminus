@@ -1,0 +1,559 @@
+
+/* ---------------- Header base ---------------- */
+.header-wrapper {
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+}
+
+/* ---------------- TOP BAR ---------------- */
+.topbar {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: #ffffff;
+  font-size: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  width: 100%;
+}
+
+.topbar-inner {
+  max-width: 1400px;
+  width: calc(100% - 4rem);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar-left { display:flex; align-items:center; }
+.topbar-contact { display:flex; align-items:center; gap:12px; }
+.topbar-right { display:flex; align-items:center; gap:20px; }
+
+.topbar-icon { width: 14px; height: 14px; opacity: 0.9; flex-shrink: 0; color: #ffffff; }
+.topbar-link { color:#fff; text-decoration:none; font-weight:600; display:flex; align-items:center; gap:8px; padding:6px 12px; border-radius:6px; background: rgba(255,255,255,0.08); transition: all .18s ease; }
+.topbar-link:hover { background: rgba(255,255,255,0.14); }
+.topbar-sep { color: rgba(255,255,255,0.6); margin: 0 8px; }
+.topbar-tag { color: rgba(255,255,255,0.95); font-size: 14px; font-weight: 500; letter-spacing: 0.2px; white-space:nowrap; }
+
+.topbar-socials { display: flex; gap: 6px; }
+.topbar-socials .social { width:32px; height:32px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); color:#fff; text-decoration:none; transition: all .2s ease; }
+
+/* ---------------- MAIN NAV ---------------- */
+.main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+  
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+
+
+.nav-inner {
+  width: calc(100% - 4rem);
+  margin: 0 auto;
+  padding: 16px 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Brand */
+.brand { display:flex; align-items:center; gap:12px; text-decoration:none; transition: transform 0.3s ease; }
+.brand:hover { transform: translateY(-2px); }
+.brand-logo { width:200px; height:55px; object-fit:contain; transition: all 0.4s ease; filter: brightness(1.1) contrast(1.1); }
+.brand-logo.small { width:160px; height:45px; }
+
+/* Center nav */
+.nav-center { flex: 1; display:flex; justify-content:center; align-items:center; }
+.nav-list { display:inline-flex; gap:32px; list-style:none; margin:0; padding:0; align-items:center; }
+.nav-list > li { position: relative; } /* important so mega aligns under each li */
+
+/* nav links */
+.nav-link {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 8px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  letter-spacing: -0.2px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.nav-link:hover, .nav-link:focus {
+  color: #166534;
+  transform: translateY(-2px);
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+.nav-link:hover::after { width: 70%; }
+
+/* right buttons */
+.nav-right { display:flex; align-items:center; gap:16px; }
+.icon-btn {
+  background: transparent; border: none; padding: 12px; display: inline-flex; align-items: center; justify-content: center; border-radius: 12px; cursor: pointer; color: #475569; font-size: 18px; transition: all 0.3s ease; background: rgba(34,197,94,0.05); border: 1px solid rgba(34,197,94,0.1);
+}
+.icon-btn:hover { background: rgba(34,197,94,0.1); color: #166534; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(34,197,94,0.15); }
+
+/* menu trigger */
+.menu-trigger { display:flex; flex-direction:column; gap:4px; width:52px; height:52px; padding:14px; border-radius:12px; border:1px solid rgba(34,197,94,0.2); background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(34,197,94,0.05)); cursor:pointer; transition: all 0.4s ease; position: relative; overflow: hidden; flex-shrink: 0; }
+.menu-bar { width:22px; height:2px; background: linear-gradient(135deg, #22c55e, #16a34a); display:block; transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); border-radius: 2px; }
+
+/* ---------------- Compact -> Expanded Mega Menu ---------------- */
+/* container: aligned under each li via left:0; top:100% */
+/* add extra vertical space for breathing room */
+.mega-menu {
+  position: absolute;
+  top: calc(100% + 12px); /* increased vertical space */
+  left: 0;                   /* ALIGN under the individual li by default */
+  transform: translateY(6px);
+  z-index: 1400;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.18s ease;
+  display: block;
+}
+
+/* Left alignment variant:
+   - anchors the mega's right edge to the li's right edge, so it opens to the left
+*/
+.mega-menu.left-align {
+  left: auto;
+  right: 0;
+}
+
+/* visible states */
+.mega-menu.compact,
+.mega-menu.expanded {
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(6px);
+}
+
+/* inner wrapper: POSITION CONTEXT ADDED */
+.mega-inner-compact {
+  position: relative; /* <-- needed so right panel can be absolutely positioned relative to this box */
+  display: flex;
+  gap: 18px; /* increased gap for more breathing room between columns */
+  align-items: flex-start; /* keep columns top-aligned so no big vertical whitespace */
+}
+
+/* when left-align we want the right panel to visually appear on the left side,
+   so reverse the order visually (columns are row-reversed) */
+.mega-menu.left-align .mega-inner-compact {
+  flex-direction: row-reverse;
+}
+
+/* left compact column - small neat box */
+.mega-left-compact {
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px;
+  min-width: 260px; /* narrower so it doesn't take too much space */
+  box-shadow: 0 10px 24px rgba(15,23,42,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+  position: relative;
+  z-index: 2;
+}
+
+/* each left row button */
+.mega-tab-compact {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  padding: 12px 14px;
+  margin: 6px 0;
+  background: transparent;
+  border: none;
+  text-align:left;
+  font-weight:700;
+  cursor:pointer;
+  border-radius:8px;
+  /* transition: all .14s ease; */
+}
+.mega-tab-compact .mini-right { opacity: .6; }
+.mega-tab-compact:hover { background: rgba(34,197,94,0.04); transform: translateX(4px); color:#166534; box-shadow: 0 6px 18px rgba(34,197,94,0.04); }
+.mega-tab-compact.active { background: linear-gradient(90deg, rgba(34,197,94,0.06), rgba(34,197,94,0.02)); color:#16a34a; }
+
+/* show right panel only when a left tab is active */
+/* RIGHT PANEL NOW ABSOLUTELY POSITIONED */
+.mega-right-panel {
+  position: absolute;              /* absolute so we can position it next to the left column */
+  top: 0;                           /* will be overridden inline by React when needed */
+  left: calc(100% + 10px);         /* fallback default — will also be overridden inline */
+  width: 360px;
+  min-height: 0; /* remove forced min-height to avoid blank white area */
+  border-radius: 8px;
+  overflow: visible;
+  transition: all 0.18s ease;
+  opacity: 0;
+  transform: translateY(8px) scale(.99);
+  pointer-events: none;
+  display: none; /* hide by default */
+  z-index: 3;
+}
+.mega-right-panel.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  display: block;
+}
+
+/* selected mega column */
+.mega-col { display:none; padding: 12px; background:#fff; border:1px solid rgba(0,0,0,0.04); box-shadow: 0 10px 24px rgba(15,23,42,0.06); border-radius:8px; position: relative; }
+.mega-col.visible { display:block; }
+
+/* right-panel links */
+.mega-links { list-style:none; margin:0; padding:0; display:grid; grid-template-columns: 1fr; gap: 12px; }
+.mega-link {
+  display:flex; align-items:center; justify-content:space-between; padding: 12px; border-radius:8px; text-decoration:none; color:#0f172a; font-weight:600; background: #fff; border:1px solid rgba(0,0,0,0.03);
+}
+.mega-link:hover { transform: translateY(-4px); color:#166534; box-shadow:0 10px 30px rgba(34,197,94,0.04); }
+.mega-link-arrow { color:#22c55e; opacity:0.9; }
+
+.mega-link-row { position: relative; }
+
+.mega-link.nested-trigger {
+  display:flex; align-items:center; justify-content:space-between; padding: 12px; border-radius:8px; text-decoration:none; color:#0f172a; font-weight:600; background: #fff; border:1px solid rgba(0,0,0,0.03); width:100%;
+}
+.mega-link.nested-trigger:hover { background: rgba(34,197,94,0.02); color:#166534; }
+
+/* Nested panel (submenu that appears adjacent to a mega link) */
+.nested-panel {
+  position: absolute;
+  top: 0;
+  left: calc(100% + 12px); /* add spacing between parent and nested */
+  min-width: 260px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 10px 30px rgba(15,23,42,0.09);
+  border: 1px solid rgba(0,0,0,0.04);
+  transform: translateX(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.14s ease;
+  z-index: 1450;
+  pointer-events: none;
+}
+
+/* when compact (only left column shown) make sure no right panel area exists */
+.mega-menu.compact .mega-right-panel { display: none; opacity: 0; pointer-events: none; }
+
+/* when left-align we flip nested panel to the left and keep gap */
+.mega-menu.left-align .nested-panel {
+  left: auto;
+  right: calc(100% + 12px);
+  transform: translateX(-6px);
+}
+
+/* activated nested panel */
+.nested-panel.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* nested links */
+.nested-links { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+.nested-links a { display:block; padding:8px 12px; border-radius:8px; text-decoration:none; color:#0f172a; background: #fff; border:1px solid rgba(0,0,0,0.03); }
+.nested-links a:hover { background: rgba(34,197,94,0.03); color:#166534; transform: translateX(2px); }
+
+/* nested icon helpers: default on the right; when menu is left-aligned use .mini-left */
+.mini-right { margin-left: 12px; }
+.mini-left { margin-right: 12px; order: -1; /* ensure it visually sits before the text */ }
+
+/* hide mega on small screens */
+@media (max-width: 768px) {
+  .mega-menu { display: none; }
+  .nav-center { display: none; }
+}
+
+/* ---------------- Drawer (mobile) ---------------- */
+:root { 
+  --drawer-bg: #ffffff; 
+  --drawer-text: #0f172a; 
+  --drawer-muted: #6b7280; 
+  --drawer-cta-bg: linear-gradient(90deg,#ff5a3c,#ff4b2f);
+  --site-header-height: 0px; /* updated by JS/React on mount/resize */
+}
+
+.premium-drawer-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+  backdrop-filter: blur(20px); z-index: 9998;
+  opacity: 0; visibility: hidden; transition: all 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+.premium-drawer-overlay.active { opacity: 1; visibility: visible; }
+
+.premium-drawer {
+  position: fixed; top: 0; right: -100%; width: 92%; max-width: 450px; height: 100vh;
+  background: var(--drawer-bg); box-shadow: -25px 0 50px rgba(0,0,0,0.15), -10px 0 50px rgba(34,197,94,0.08);
+  z-index: 9999; transition: all 0.5s cubic-bezier(0.4,0,0.2,1); overflow: hidden; display:flex; flex-direction:column; color: var(--drawer-text);
+}
+.premium-drawer.open { right: 0; transform: translateX(0); }
+
+.premium-drawer::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, #22c55e, #16a34a, transparent);
+  animation: premiumShimmer 3s infinite;
+}
+@keyframes premiumShimmer { 0%,100%{opacity:0.5} 50%{opacity:1} }
+
+.premium-drawer-header { padding: 32px 28px 24px; background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.04)); border-bottom: 1px solid rgba(34,197,94,0.08); position: relative; }
+.premium-drawer-brand { display:flex; flex-direction:column; gap:12px; }
+.premium-drawer-logo { width:180px; height:50px; object-fit:contain; filter: brightness(1) contrast(1.2); }
+.premium-drawer-tagline { color:#16a34a; font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; }
+
+.premium-close-btn { position:absolute; top:28px; right:28px; width:44px; height:44px; border:none; background: linear-gradient(135deg,#ef4444,#dc2626); color:white; border-radius:12px; cursor:pointer; }
+
+.premium-drawer-content { flex:1; padding:28px; overflow-y:auto; display:flex; flex-direction:column; gap:22px; }
+
+.premium-nav-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; }
+.premium-nav-item { position: relative; overflow:hidden; border-radius:16px; background: rgba(255,255,255,0.6); border: 1px solid rgba(34,197,94,0.06); transition: all 0.4s ease; }
+.premium-nav-item:hover { background: rgba(255,255,255,0.95); border-color: rgba(34,197,94,0.16); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(34,197,94,0.06); }
+
+.premium-nav-link { display:flex; align-items:center; justify-content:space-between; padding:18px 20px; text-decoration:none; color:var(--drawer-text); font-weight:600; font-size:16px; border-radius:12px; background:transparent; width:100%; border:none; cursor:pointer; text-align:left; }
+.premium-nav-link.simple { padding:12px 18px; background: transparent; border-radius:10px; }
+.premium-nav-link:hover { color:#166534; transform: translateX(6px); }
+
+.premium-link-text { flex:1; position:relative; z-index:2; }
+.premium-link-arrow { color:#22c55e; opacity:0.8; transition: all 0.3s ease; width:16px; height:16px; z-index:2; }
+
+.premium-sublist { max-height:0; overflow:hidden; transition: max-height 0.32s ease; padding:0 18px; }
+.premium-sublist.expanded { max-height:1000px; padding: 12px 18px 18px 18px; }
+
+.premium-subsection { margin-bottom:12px; }
+.premium-subsection-head { margin-bottom:8px; color:#166534; font-weight:700; }
+.premium-sublinks { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+.premium-sublinks a { display:flex; align-items:center; justify-content:space-between; text-decoration:none; color:var(--drawer-text); padding:10px 12px; border-radius:10px; background: rgba(255,255,255,0.8); border:1px solid rgba(0,0,0,0.03); }
+.premium-sublinks a:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(34,197,94,0.04); color:#166534; }
+
+.drawer-about-title { margin:0 0 12px 0; font-size:20px; font-weight:700; color:#45a049; letter-spacing:-0.2px; }
+.drawer-about-text { margin:0 0 18px 0; color:var(--drawer-muted); line-height:1.65; font-size:15px; max-width:380px; }
+.drawer-cta { display:inline-flex; gap:12px; align-items:center; padding:12px 26px; font-weight:700; font-size:16px; color:white; text-decoration:none; border-radius:6px; background:#45a049; }
+
+.drawer-contact { margin-top:6px; display:flex; flex-direction:column; gap:12px; }
+.drawer-contact-title { margin:6px 0 8px 0; font-size:18px; font-weight:700; color:var(--drawer-text); }
+.drawer-contact-item { display:flex; gap:12px; align-items:flex-start; padding:6px 0; }
+.drawer-contact-icon { flex-shrink:0; width:18px; height:18px; margin-top:2px; color:#45a049; }
+.drawer-contact-text { color:var(--drawer-muted); font-size:15px; line-height:1.5; }
+
+.premium-social-section { margin-top:auto; padding:28px 0 20px; border-top:1px solid rgba(34,197,94,0.08); }
+.premium-social-grid { display:flex; justify-content:center; gap:16px; }
+.premium-social-link { display:inline-flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:14px; text-decoration:none; transition: all 0.4s ease; background: linear-gradient(135deg, rgba(34,197,94,0.06), rgba(34,197,94,0.03)); border:1px solid rgba(34,197,94,0.12); color:#166534; overflow:hidden; }
+.premium-social-link:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 25px rgba(34,197,94,0.12); }
+
+.premium-drawer-content::-webkit-scrollbar { width: 6px; }
+.premium-drawer-content::-webkit-scrollbar-track { background: rgba(34,197,94,0.03); border-radius: 3px; }
+.premium-drawer-content::-webkit-scrollbar-thumb { background: linear-gradient(135deg, #22c55e, #16a34a); border-radius: 3px; }
+.premium-drawer-content::-webkit-scrollbar-thumb:hover { background: linear-gradient(135deg, #16a34a, #15803d); }
+
+/* responsive tweaks */
+@media (max-width: 1200px) {
+  .nav-inner { padding: 16px 1.5rem; width: calc(100% - 3rem); }
+  .nav-list { gap: 24px; }
+  .mega-menu { left: 0; min-width: 260px; }
+}
+
+/* Tablet: keep topbar stacked for medium screens (<=992) */
+@media (max-width: 992px) {
+  .nav-center { display: none; }
+  .topbar-inner { flex-direction: column; gap: 12px; padding: 12px 1.5rem; }
+  .topbar-contact { flex-wrap: wrap; justify-content: center; }
+  .brand-logo { width: 180px; height: 50px; }
+}
+
+/* MOBILE: single-line topbar (<=768) -> condensed, no hiding */
+@media (max-width: 768px) {
+  /* keep nav-inner compact */
+  .nav-inner { padding: 14px 1rem; }
+
+  /* Make topbar a single responsive row: condense spacing & sizes */
+  .topbar-inner {
+    flex-direction: row;              /* single row */
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 1rem;
+    width: calc(100% - 2rem);
+  }
+
+  /* shrink fonts/icons so everything fits in one line */
+  .topbar { font-size: 13px; padding: 8px 0; }
+  .topbar-link { padding: 6px 8px; gap: 6px; font-size: 13px; }
+  .topbar-icon { width: 12px; height: 12px; }
+
+  /* keep both left and right visible; reduce gaps and sizes */
+  .topbar-left { display:flex; align-items:center; gap:8px; flex: 1 1 auto; min-width: 0; }
+  .topbar-contact { display:flex; align-items:center; gap:8px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .topbar-sep { display:none; } /* hide separator on very tight widths */
+
+  .topbar-right { display:flex !important; align-items:center; gap:8px; flex-shrink:0; }
+
+  .topbar-tag { font-size: 12px; white-space:nowrap; max-width: 140px; overflow:hidden; text-overflow:ellipsis; }
+  .topbar-socials { gap: 6px; }
+  .topbar-socials .social { width: 28px; height: 28px; border-radius: 6px; font-size: 12px; }
+
+  /* let the topbar allow horizontal scrolling if content truly overflows */
+  .topbar-inner { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* brand/logo slightly smaller */
+  .brand-logo { width: 160px; height: 45px; }
+}
+
+/* HIDE drawer navigation on desktop */
+@media (min-width: 769px) {
+  .premium-nav-list {
+    display: none !important;
+  }
+}
+
+/* MOBILE adjustments for drawer & hiding requested sections on very small screens */
+@media (max-width: 768px) {
+  .brand-logo { width: 160px; height: 45px; }
+  .premium-drawer { width: 100%; max-width: none; }
+  .premium-drawer-header { padding: 28px 20px 20px; }
+  .premium-drawer-content { padding: 20px; }
+  .premium-close-btn { top: 24px; right: 20px; width: 40px; height: 40px; }
+  .mega-menu { display: none; } /* hide mega on small screens */
+
+  /* HIDE these drawer sections on mobile as requested */
+  .drawer-about,
+  .drawer-contact,
+  .premium-social-section {
+    display: none !important;
+  }
+}
+
+/* hide the topbar right section (tag + socials) on very tiny screens only (<= 480px)
+   — this keeps the bar single-line on extremely narrow devices while preserving most UX. */
+@media (max-width: 480px) {
+  .topbar-right { display: none !important; }
+  .topbar-contact { gap:6px; }
+  .topbar-tag { display:none; }
+}
+
+/* further tiny tweaks */
+@media (max-width: 520px) {
+  .topbar-inner { padding: 10px 1rem; }
+  .topbar-right { flex-direction: column; gap: 12px; } /* fallback if it wraps */
+  .brand-logo { width: 140px; height: 40px; }
+  .menu-trigger { width: 48px; height: 48px; padding: 12px; }
+  .premium-nav-link { padding: 20px; font-size: 16px; }
+}
+
+@media (max-width: 380px) {
+  .brand-logo { width: 130px; height: 36px; }
+  .topbar-tag { font-size: 12px; text-align: center; }
+}
+
+/* Accessibility focus */
+
+/* GIF rendering tweaks */
+.brand-logo, .premium-drawer-logo { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+
+
+/* Remove underline + make anchor look like button */
+.mega-tab-compact {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  text-decoration: none;       /* remove underline */
+  color: inherit;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Hover effect same as button */
+.mega-tab-compact:hover {
+  background: #f7f7f7;
+  color: #222;
+}
+
+/* Active state (for nested) */
+.mega-tab-compact.active {
+  background: #eee;
+  font-weight: 600;
+}
+
+/* Icon alignment for nested arrow */
+.mini-right {
+  margin-left: auto;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* ---------------- Fixed header support (ADDED) ---------------- */
+/* This block makes the header fixed. The React component measures the header
+   height and writes it into the --site-header-height CSS variable; the component
+   also inserts a spacer div after the header to preserve document flow. */
+
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1600; /* ensure above normal page content */
+  will-change: transform;
+}
+
+/* ensure overlays and drawer sit above the fixed header */
+.premium-drawer-overlay {
+  z-index: 1620;
+}
+.premium-drawer {
+  z-index: 1621;
+}
+
+/* bump mega-menu above header so it shows over header elements when opened */
+.mega-menu {
+  z-index: 1603; /* overrides earlier 1400 to play nicely with fixed header */
+}
+
+/* Nested panels & other floating elements should sit above header too */
+.nested-panel {
+  z-index: 1622;
+}
+
+/* keep main-nav transitions intact (we're using header-fixed on the header wrapper) */
+.main-nav {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Optional: If you prefer a global non-spacer approach, you can use:
+   body { padding-top: var(--site-header-height); }
+   Note: this file sets --site-header-height default; the React component updates it on mount/resize.
+*/
+
+/* end of stylesheet */

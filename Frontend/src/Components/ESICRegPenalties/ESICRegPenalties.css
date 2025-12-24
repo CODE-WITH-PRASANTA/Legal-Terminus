@@ -1,0 +1,107 @@
+/* ===========================
+   SECTION
+=========================== */
+.esi-comp-section {
+  padding: 70px 20px;
+  background: #f8fafc;
+  font-family: "Inter", sans-serif;
+}
+
+/* ===========================
+   GRID
+=========================== */
+.esi-comp-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+.esi-comp-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  border-top: 4px solid transparent;
+}
+
+.esi-comp-card:hover {
+  transform: translateY(-8px);
+  border-top: 4px solid #2563eb;
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.15);
+}
+
+/* ===========================
+   TITLES
+=========================== */
+.esi-comp-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.esi-comp-subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 24px 0 12px;
+  color: #1f2937;
+}
+
+/* ===========================
+   TEXT
+=========================== */
+.esi-comp-text {
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* ===========================
+   LIST
+=========================== */
+.esi-comp-list {
+  list-style: none;
+  padding: 0;
+}
+
+.esi-comp-list li {
+  position: relative;
+  padding-left: 34px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  color: #1f2937;
+  transition: transform 0.3s ease;
+}
+
+.esi-comp-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.esi-comp-list li:hover {
+  transform: translateX(6px);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+  .esi-comp-title {
+    font-size: 21px;
+  }
+
+  .esi-comp-subtitle {
+    font-size: 17px;
+  }
+}

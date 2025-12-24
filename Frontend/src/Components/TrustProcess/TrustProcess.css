@@ -1,0 +1,224 @@
+.steps-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 40px 80px;
+  font-family: "Poppins", sans-serif;
+  color: #1f2933;
+}
+
+/* TITLE + INTRO */
+.steps-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #27ae60;
+  margin-bottom: 6px;
+}
+
+.steps-intro {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 26px;
+}
+
+/* GRID */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 26px;
+}
+
+/* CARD */
+.step-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(39, 174, 96, 0.25);
+  padding: 20px;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.05);
+  transition: 0.2s ease;
+}
+
+.step-card:hover {
+  border-color: #27ae60;
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
+  background: #f4fbf7;
+}
+
+/* FORCE SAME HEIGHT ON LARGER SCREENS */
+.equal-height {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+}
+
+/* HEADER */
+.step-header {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.step-number {
+  font-size: 20px;
+  font-weight: 700;
+  color: #d49247de;
+  margin-right: 6px;
+}
+
+.step-title {
+  font-size: 18px;
+  color: #d49247de;
+}
+
+/* COLLAPSIBLE CONTENT */
+.step-content {
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.collapsed {
+  max-height: 85px;
+}
+
+.expanded {
+  max-height: 600px;
+}
+
+/* READ MORE BUTTON */
+.read-more-btn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border: 1px solid #27ae60;
+  background: #ffffff;
+  color: #27ae60;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.read-more-btn:hover {
+  background: #27ae60;
+  color: white;
+}
+
+/* TEXT */
+.step-text,
+.step-body-intro {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.step-bullets {
+  padding-left: 20px;
+}
+
+.step-bullets li {
+  margin-bottom: 4px;
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+   ========================= */
+
+/* Large tablets / small laptops */
+@media (max-width: 1024px) {
+  .steps-section {
+    padding: 0 30px 70px;
+    margin: 60px auto;
+  }
+
+  .steps-grid {
+    gap: 22px;
+  }
+
+  .equal-height {
+    min-height: 200px;
+  }
+}
+
+/* Tablets & portrait devices */
+@media (max-width: 768px) {
+  .steps-section {
+    padding: 0 20px 60px;
+    margin: 50px auto;
+  }
+
+  .steps-title {
+    font-size: 26px;
+    text-align: left;
+  }
+
+  .steps-intro {
+    font-size: 15px;
+  }
+
+  /* one card per row on smaller screens */
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .step-card {
+    padding: 16px 14px;
+  }
+
+  .step-number {
+    font-size: 18px;
+  }
+
+  .step-title {
+    font-size: 17px;
+  }
+
+  .step-text,
+  .step-body-intro,
+  .step-bullets li {
+    font-size: 14px;
+  }
+
+  /* Let cards grow naturally on mobile */
+  .equal-height {
+    min-height: auto;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .steps-section {
+    padding: 0 16px 50px;
+    margin: 40px auto;
+  }
+
+  .steps-title {
+    font-size: 22px;
+  }
+
+  .steps-intro {
+    font-size: 14px;
+  }
+
+  .step-card {
+    padding: 14px 12px;
+    border-radius: 10px;
+  }
+
+  .step-number {
+    font-size: 16px;
+  }
+
+  .step-title {
+    font-size: 16px;
+  }
+
+  .read-more-btn {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .collapsed {
+    max-height: 110px; /* give a bit more room on tiny screens */
+  }
+}

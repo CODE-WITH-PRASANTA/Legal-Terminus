@@ -1,0 +1,104 @@
+/* ===========================
+   SECTION
+=========================== */
+.esi-doc-section {
+  padding: 70px 20px;
+  background: #f9fafb;
+  font-family: "Inter", sans-serif;
+}
+
+/* ===========================
+   GRID LAYOUT
+=========================== */
+.esi-doc-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* ===========================
+   BLOCK
+=========================== */
+.esi-doc-block {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  border-left: 4px solid transparent;
+}
+
+.esi-doc-block:hover {
+  transform: translateY(-8px);
+  border-left: 4px solid #2563eb;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* ===========================
+   TITLES
+=========================== */
+.esi-doc-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.esi-doc-subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 22px 0 12px;
+  color: #1f2937;
+}
+
+.esi-doc-intro {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 18px;
+}
+
+/* ===========================
+   LIST
+=========================== */
+.esi-doc-list {
+  list-style: none;
+  padding: 0;
+}
+
+.esi-doc-list li {
+  position: relative;
+  padding-left: 34px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  color: #1f2937;
+  transition: transform 0.3s ease;
+}
+
+.esi-doc-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.esi-doc-list li:hover {
+  transform: translateX(6px);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+  .esi-doc-title {
+    font-size: 22px;
+  }
+
+  .esi-doc-subtitle {
+    font-size: 17px;
+  }
+}

@@ -1,0 +1,814 @@
+/* ClientFeedback.css */
+
+/* -----------------------------------------
+   Root variables
+   (kept identical to original values)
+   ----------------------------------------- */
+:root {
+  --card-gap: 28px;
+  --card-radius: 14px;
+  --card-padding: 34px;
+  --transition-ms: 600ms; /* keep in sync with TRANS_MS in JSX */
+}
+
+/* -----------------------------------------
+   Mobile-first base styles (smallest screens)
+   These set the baseline for phones.
+   ----------------------------------------- */
+
+/* Section */
+.cf-section {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 56px 16px;
+  position: relative;
+  background: linear-gradient(
+      0deg,
+      rgba(10,10,10,0.6),
+      rgba(10,10,10,0.25)
+    ),
+    url("https://images.unsplash.com/photo-1521791136064-b7cde9b79552")
+      center/cover no-repeat;
+  color: #fff;
+}
+
+/* overlay */
+.cf-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Content container */
+.cf-content {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 2;
+  padding: 0 8px;
+}
+
+/* Headings */
+.cf-subtitle {
+  color: #ffd37a;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.cf-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  line-height: 1.08;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.45);
+}
+
+.cf-desc {
+  font-size: 14px;
+  max-width: 100%;
+  margin: 0 auto 20px auto;
+  opacity: 0.95;
+  padding: 0 6px;
+  box-sizing: border-box;
+}
+
+/* Slider layout */
+.cf-slider {
+  position: relative;
+  width: 100%;
+  margin-top: 18px;
+  box-sizing: border-box;
+}
+
+.cf-slider-viewport {
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* track (uses JS var --txpx for transform) */
+.cf-slider-track {
+  display: flex;
+  gap: var(--card-gap);
+  transition: transform var(--transition-ms) cubic-bezier(.2,.9,.2,1);
+  transform: translateX(var(--txpx, 0px));
+  align-items: stretch;
+  will-change: transform;
+  box-sizing: border-box;
+}
+
+/* temporarily disable transition while snapping */
+.cf-slider-track.no-transition {
+  transition: none !important;
+}
+
+/* Card: on mobile each card occupies full width */
+.cf-card {
+  flex: 0 0 100%;
+  background: rgba(255,255,255,0.98);
+  color: #222;
+  border-radius: var(--card-radius);
+  box-shadow: 0 12px 40px rgba(7,7,7,0.12);
+  position: relative;
+  transition: transform .25s ease;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0; /* prevent overflow from child content */
+}
+
+/* Inner card content */
+.cf-card-inner {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* Quote mark */
+.cf-quote-mark {
+  font-size: 40px;
+  color: #f4c150;
+  font-weight: 800;
+  opacity: 0.95;
+  line-height: 0.7;
+  margin-bottom: 6px;
+}
+
+/* Main text */
+.cf-text {
+  font-size: 14px;
+  color: #344047;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  min-height: 72px;
+  overflow-wrap: break-word;
+}
+
+/* User area */
+.cf-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.cf-user img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(16,16,16,0.12);
+  flex: 0 0 auto;
+}
+
+.cf-name {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1;
+}
+
+.cf-role {
+  margin: 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Dots */
+.cf-dots {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cf-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.22s ease, background 0.22s ease;
+  flex: 0 0 auto;
+}
+
+.cf-dot.active {
+  background: #ffd37a;
+  transform: scale(1.2);
+}
+
+/* small hover tilt */
+.cf-card:hover {
+  transform: translateY(-4px) rotateX(2deg);
+}
+
+/* accessibility focus */
+.cf-dot:focus {
+  outline: 3px solid rgba(255,211,122,0.5);
+  outline-offset: 4px;
+}
+
+/* Generic table handling (if tables are present anywhere) -
+   Mobile/tablet: horizontal scroll.
+   Desktop/large screens will preserve normal layout via media queries.
+*/
+.cf-content table,
+.cf-section table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.cf-content .table-wrapper,
+.cf-section .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Ensure images within cards do not overflow */
+.cf-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* -----------------------------------------
+   Responsive overrides using ONLY max-width queries
+   (ordered from largest max-width → smaller)
+   This pattern preserves a mobile-first base and uses
+   descending max-width values so each breakpoint can
+   override the previous rules as needed.
+   ----------------------------------------- */
+
+/* 4K & large desktops up to 3840px
+   (applies to devices with width <= 3840px: used to scale up spacing/typography from mobile)
+*/
+@media (max-width: 3840px) {
+  .cf-content {
+    max-width: 1600px;
+    padding: 0 24px;
+  }
+
+  .cf-title {
+    font-size: 48px;
+    margin-bottom: 18px;
+    line-height: 1.03;
+  }
+
+  .cf-desc {
+    font-size: 18px;
+    max-width: 980px;
+    margin-bottom: 30px;
+  }
+
+  .cf-quote-mark {
+    font-size: 64px;
+    margin-bottom: 8px;
+  }
+
+  .cf-card-inner {
+    padding: 40px;
+  }
+
+  .cf-text {
+    font-size: 16px;
+    min-height: 96px;
+  }
+
+  .cf-user img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .cf-name {
+    font-size: 18px;
+  }
+
+  .cf-role {
+    font-size: 14px;
+  }
+}
+
+/* Large desktops / widescreen up to 2560px */
+@media (max-width: 2560px) {
+  .cf-content {
+    max-width: 1400px;
+    padding: 0 28px;
+  }
+
+  .cf-title {
+    font-size: 46px;
+  }
+
+  .cf-card {
+    flex: 0 0 calc((100% - (var(--card-gap) * 2)) / 3);
+  }
+
+  .cf-card-inner {
+    padding: var(--card-padding);
+  }
+
+  .cf-text {
+    font-size: 15px;
+    min-height: 84px;
+  }
+
+  .cf-user img {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+/* Desktop / laptop up to 1920px */
+@media (max-width: 1920px) {
+  .cf-content {
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+
+  .cf-title {
+    font-size: 40px;
+  }
+
+  .cf-card {
+    gap: var(--card-gap);
+    flex: 0 0 calc((100% - (var(--card-gap) * 2)) / 3);
+  }
+
+  /* ensure the slider track centers properly on larger widths */
+  .cf-slider-viewport {
+    padding: 0;
+  }
+}
+
+/* Large laptop / small desktop up to 1366px */
+@media (max-width: 1366px) {
+  .cf-content {
+    max-width: 1100px;
+    padding: 0 18px;
+  }
+
+  .cf-title {
+    font-size: 36px;
+  }
+
+  .cf-card {
+    flex: 0 0 calc((100% - (var(--card-gap) * 2)) / 3);
+  }
+
+  .cf-card-inner {
+    padding: 34px;
+  }
+
+  .cf-quote-mark {
+    font-size: 54px;
+  }
+
+  .cf-user img {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+/* Tablet and small laptops up to 1100px
+   switch to a two-card layout to maintain design balance
+*/
+@media (max-width: 1100px) {
+  .cf-content {
+    max-width: 980px;
+    padding: 0 16px;
+  }
+
+  .cf-title {
+    font-size: 32px;
+  }
+
+  /* two-card precise layout: card = (100% - gap)/2 */
+  .cf-card {
+    flex: 0 0 calc((100% - var(--card-gap)) / 2);
+  }
+
+  .cf-card-inner {
+    padding: 30px;
+  }
+
+  .cf-text {
+    min-height: 88px;
+  }
+
+  .cf-dots {
+    margin-top: 18px;
+  }
+
+  /* reduce quote size a bit for better balance */
+  .cf-quote-mark {
+    font-size: 52px;
+  }
+}
+
+/* Tablet portrait & large phones up to 1024px
+   ensure touch-friendly spacing and tilt disabled on very small widths
+*/
+@media (max-width: 1024px) {
+  .cf-content {
+    max-width: 820px;
+    padding: 0 14px;
+  }
+
+  .cf-title {
+    font-size: 30px;
+  }
+
+  .cf-desc {
+    font-size: 15px;
+    max-width: 720px;
+  }
+
+  .cf-card {
+    flex: 0 0 calc((100% - var(--card-gap)) / 2);
+  }
+
+  .cf-card-inner {
+    padding: 28px;
+  }
+
+  .cf-quote-mark {
+    font-size: 48px;
+  }
+
+  .cf-user img {
+    width: 56px;
+    height: 56px;
+  }
+
+  /* reduce hover tilt on touch devices & smaller screens */
+  .cf-card:hover {
+    transform: none;
+  }
+}
+
+/* Small tablets & large phones up to 760px
+   stack cards to single-column, adjust paddings/typography
+*/
+@media (max-width: 760px) {
+  .cf-section {
+    padding: 56px 12px;
+  }
+
+  .cf-content {
+    max-width: 720px;
+    padding: 0 12px;
+  }
+
+  .cf-title {
+    font-size: 28px;
+  }
+
+  .cf-desc {
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+
+  .cf-card {
+    flex: 0 0 100%;
+  }
+
+  .cf-slider-track {
+    gap: 18px;
+  }
+
+  .cf-card-inner {
+    padding: 24px;
+  }
+
+  .cf-quote-mark {
+    font-size: 44px;
+  }
+
+  .cf-text {
+    font-size: 15px;
+    min-height: 84px;
+  }
+
+  .cf-user img {
+    width: 52px;
+    height: 52px;
+  }
+
+  /* ensure dots remain touch friendly */
+  .cf-dot {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Small phones up to 420px
+   fine-tune for smallest screens
+*/
+@media (max-width: 420px) {
+  .cf-section {
+    padding: 42px 10px;
+  }
+
+  .cf-content {
+    padding: 0 10px;
+  }
+
+  .cf-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .cf-desc {
+    font-size: 13px;
+    margin-bottom: 14px;
+    padding: 0 6px;
+  }
+
+  .cf-card-inner {
+    padding: 20px;
+  }
+
+  .cf-quote-mark {
+    font-size: 40px;
+  }
+
+  .cf-text {
+    font-size: 14px;
+    min-height: 72px;
+    margin-bottom: 12px;
+  }
+
+  .cf-user img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .cf-name {
+    font-size: 14px;
+  }
+
+  .cf-role {
+    font-size: 12px;
+  }
+
+  .cf-dot {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Extra small phones and rare portrait narrow viewports up to 320px */
+@media (max-width: 320px) {
+  .cf-section {
+    padding: 36px 8px;
+  }
+
+  .cf-title {
+    font-size: 20px;
+  }
+
+  .cf-card-inner {
+    padding: 18px;
+  }
+
+  .cf-quote-mark {
+    font-size: 36px;
+  }
+
+  .cf-text {
+    font-size: 13px;
+    min-height: 64px;
+  }
+
+  .cf-user img {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* -----------------------------------------
+   Extra defensive rules to prevent overflow,
+   fix layout and alignment issues across sizes
+   ----------------------------------------- */
+
+/* Make sure flex children shrink properly to avoid overflow */
+.cf-card,
+.cf-card-inner,
+.cf-user,
+.cf-text,
+.cf-name,
+.cf-role {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent the slider track from producing horizontal scrollbar
+   when cards are laid out with gaps on very small widths */
+.cf-slider-track {
+  padding-bottom: 2px; /* small buffer so shadows don't cause overflow */
+}
+
+/* Smooth image rendering on hi-dpi screens */
+.cf-user img,
+.cf-card img {
+  -webkit-font-smoothing: antialiased;
+  -webkit-optimize-contrast: optimizeSpeed;
+}
+
+/* Ensure dots group keeps centered alignment on any width */
+.cf-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Keep strong contrast for accessibility */
+.cf-subtitle,
+.cf-title,
+.cf-desc,
+.cf-name,
+.cf-role {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility: if a table exists, wrap with horizontal scroll below 1024px */
+@media (max-width: 1024px) {
+  .cf-content table,
+  .cf-section table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cf-content table thead,
+  .cf-section table thead {
+    display: table-header-group;
+  }
+}
+
+/* Fix for potential long words or non-breaking content inside cards */
+.cf-text,
+.cf-name,
+.cf-role {
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* End of ClientFeedback.css */
+
+/* -----------------------------------------
+   ClientFeedback.css — Responsive fixes added
+   (Only CSS returned as requested)
+   These rules augment the existing styles to ensure
+   consistent responsive behavior across screen sizes,
+   fix gap/column-gap cross-browser behavior, center the
+   slider viewport, and prevent unexpected overflow.
+   No class names, JSX structure, or content were changed.
+   ----------------------------------------- */
+
+/* Make gap robust across browsers (use both gap and column-gap) */
+.cf-slider-track {
+  gap: var(--card-gap);
+  column-gap: var(--card-gap);
+}
+
+/* Ensure slider is horizontally centered and constrained */
+.cf-slider {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Viewport should center content and not exceed useful max width.
+   We use a flexible max-width that adapts to 1/2/3 card layouts defined
+   in the existing media queries. The JS measures card width so we keep
+   viewport flexible, but preventing an overly-wide viewport helps centering. */
+.cf-slider-viewport {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y; /* allow vertical scrolling while keeping horizontal slider gestures predictable */
+}
+
+/* Defensive rule: ensure the transform variable always has px fallback */
+.cf-slider-track {
+  /* keep existing transition and will-change; define fallback for --txpx */
+  transform: translateX(calc(var(--txpx, 0px)));
+}
+
+/* Prevent any child from forcing a larger width than the card basis */
+.cf-card,
+.cf-card * {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Make images and inline content shrink to avoid overflow in narrow columns */
+.cf-user img,
+.cf-card img {
+  flex-shrink: 0;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Smooth edge case: ensure track won't create a horizontal scrollbar due to shadows
+   (keeps small buffer but avoids visible gaps on most devices) */
+.cf-slider-track {
+  padding-bottom: 2px; /* small buffer already used — keep consistent */
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Improve centering when there are fewer than 3 visible cards (e.g. on very large screens
+   the flex-basis calculations in media queries create fixed card widths — ensure track centers) */
+@media (min-width: 1100px) {
+  /* On wider viewports the cards are multi-column; center the track within the viewport */
+  .cf-slider-track {
+    justify-content: flex-start;
+    align-items: stretch;
+    /* create horizontal centering by allowing an inline padding that the JS measurement ignores */
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .cf-slider-viewport {
+    display: block;
+  }
+}
+
+/* Accessibility: respect reduced motion preference (turn off subtle card hover and heavy transform) */
+@media (prefers-reduced-motion: reduce) {
+  .cf-slider-track,
+  .cf-card,
+  .cf-dot,
+  .cf-card-inner {
+    transition: none !important;
+    animation: none !important;
+  }
+  .cf-card:hover {
+    transform: none;
+  }
+}
+
+/* Small adjustment to ensure dots stay reachable on very small heights (sticky-ish spacing) */
+@media (max-height: 520px) {
+  .cf-dots {
+    margin-top: 10px;
+    gap: 8px;
+  }
+}
+
+/* Extra defensive fix for extremely wide 4K displays where the computed card width
+   could become very large — cap card max-width so measurement stays reasonable */
+@media (min-width: 2000px) {
+  .cf-card {
+    max-width: 520px;
+  }
+}
+
+/* Ensure vertical rhythm is preserved when fonts scale large on high DPI devices */
+@media (min-resolution: 2dppx) and (min-width: 1600px) {
+  .cf-card-inner {
+    padding: calc(var(--card-padding) + 6px);
+  }
+}
+
+/* Prevent focus outline clipping on very small screens */
+.cf-dot,
+.cf-card:focus,
+.cf-card-inner:focus {
+  outline-offset: 4px;
+}
+
+/* Ensure table wrappers remain usable on many form factors (extra safe) */
+@media (max-width: 1100px) {
+  .cf-content .table-wrapper,
+  .cf-section .table-wrapper {
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+  }
+}
+
+/* Tiny visual polish — keep box shadows from creating overflow on very narrow widths */
+@media (max-width: 420px) {
+  .cf-card {
+    box-shadow: 0 8px 26px rgba(7,7,7,0.10);
+  }
+}

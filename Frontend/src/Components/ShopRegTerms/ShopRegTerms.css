@@ -1,0 +1,108 @@
+/* ===========================
+   SECTION
+=========================== */
+.tc-section {
+  padding: 70px 20px;
+  background: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+.tc-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+.tc-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.tc-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.tc-subtitle {
+  font-size: 16px;
+  color: #16a34a;
+  max-width: 720px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* ===========================
+   GRID
+=========================== */
+.tc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+.tc-card {
+  background: #f9fafb;
+  border-radius: 18px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  border-left: 5px solid transparent;
+}
+
+.tc-card:hover {
+  transform: translateY(-8px);
+  border-left: 5px solid #16a34a;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* ===========================
+   NUMBER BADGE
+=========================== */
+.tc-number {
+  position: absolute;
+  top: -16px;
+  left: 24px;
+  background: #16a34a;
+  color: #ffffff;
+  font-weight: 800;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.4);
+}
+
+/* ===========================
+   TEXT
+=========================== */
+.tc-card p {
+  font-size: 15.5px;
+  color: #374151;
+  line-height: 1.7;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+  .tc-title {
+    font-size: 24px;
+  }
+
+  .tc-card {
+    padding: 26px 22px;
+  }
+}

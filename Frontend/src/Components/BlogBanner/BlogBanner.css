@@ -1,0 +1,290 @@
+/* BlogBanner.css — Final responsive version (NO min-width anywhere)
+   Desktop-first → scales down using ONLY max-width media queries.
+   All animations, SVGs, colors, spacing preserved.
+*/
+
+/* =========================================
+   BASE (DESKTOP / LARGE SCREENS)
+   ========================================= */
+.blogpage-banner {
+  position: relative;
+  padding: 4.2rem 3rem; 
+  background: #f6f2ef;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.07);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 22rem; /* Increased height */
+}
+
+/* SVG Background */
+.blogpage-banner-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  pointer-events: none;
+  transform-origin: center;
+  animation: svg-subtle-zoom 11s ease-in-out infinite alternate;
+}
+
+@keyframes svg-subtle-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+/* SVG bubbles animation */
+.svg-bubble-a { animation: moveA 13s ease-in-out infinite; }
+.svg-bubble-b { animation: moveB 14s ease-in-out infinite; }
+.svg-bubble-c { animation: moveC 16s ease-in-out infinite; }
+
+@keyframes moveA { 0%{transform:translateY(0)}50%{transform:translateY(-14px)}100%{transform:translateY(0)} }
+@keyframes moveB { 0%{transform:translateY(0)}50%{transform:translateY(-18px)}100%{transform:translateY(0)} }
+@keyframes moveC { 0%{transform:translateY(0)}50%{transform:translateY(-12px)}100%{transform:translateY(0)} }
+
+.svg-wave {
+  animation: waveShift 16s linear infinite;
+  opacity: 0.07;
+}
+@keyframes waveShift { 0%{transform:translateX(0)}50%{transform:translateX(-12px)}100%{transform:translateX(0)} }
+
+/* Floating DOM bubbles */
+.blogpage-banner-art {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.blogpage-banner-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: #45A049;
+  opacity: 0.15;
+  filter: blur(22px);
+}
+
+.bubble-1 { width: 150px; height: 150px; top: 10%; left: 16%; animation: float1 8s ease-in-out infinite; }
+.bubble-2 { width: 110px; height: 110px; top: 62%; left: 70%; animation: float2 7s ease-in-out infinite; }
+.bubble-3 { width: 85px; height: 85px; top: 40%; left: 52%; animation: float3 9s ease-in-out infinite; }
+
+@keyframes float1 {
+  0%{transform:translateY(0)}50%{transform:translateY(-16px) translateX(12px)}100%{transform:translateY(0)}
+}
+@keyframes float2 {
+  0%{}50%{transform:translateY(-14px) translateX(-10px)}100%{}
+}
+@keyframes float3 {
+  0%{}50%{transform:translateY(-10px) translateX(14px)}100%{}
+}
+
+/* Content container */
+.blogpage-banner-content {
+  position: relative;
+  z-index: 3;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+/* Breadcrumb */
+.blogpage-banner-breadcrumb {
+  position: relative;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(255,255,255,0.7);
+  padding: 0.45rem 0.8rem;
+  border-radius: 100px;
+  border: 1px solid rgba(16,34,26,0.08);
+  box-shadow: 0 8px 22px rgba(16,34,26,0.06);
+  backdrop-filter: blur(6px);
+}
+
+.blogpage-banner-breadcrumb-item {
+  background: transparent;
+  border: none;
+  padding: 0.28rem 0.35rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #10221a;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.blogpage-banner-breadcrumb-item.active { color: #45A049; }
+.blogpage-bc-sep { width: 14px; opacity: 0.75; }
+
+/* Heading */
+.blogpage-banner-heading {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  color: #45A049;
+  margin: 0;
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+/* Subtitle */
+.blogpage-banner-sub {
+  color: #10221a;
+  font-size: 1.2rem;
+  max-width: 65ch;
+  opacity: 0.95;
+  margin: 0;
+}
+
+/* CTA Buttons */
+.blogpage-banner-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.blogpage-banner-btn {
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  background: #45A049;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(69,160,73,0.25);
+  transition: 0.2s ease;
+}
+
+.blogpage-banner-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(69,160,73,0.35);
+}
+
+.blogpage-banner-btn.secondary {
+  background: transparent;
+  border: 2px solid #45A049;
+  color: #45A049;
+}
+
+.blogpage-banner-btn.secondary:hover {
+  background: #45A049;
+  color: white;
+}
+
+/* =========================================
+   RESPONSIVE — ONLY max-width queries
+   ========================================= */
+
+/* Large Laptops (≤ 1599px) */
+@media (max-width: 1599px) {
+  .blogpage-banner {
+    padding: 3.5rem 2.5rem;
+    min-height: 20rem;
+  }
+  .blogpage-banner-heading { font-size: 2.4rem; }
+  .bubble-1 { width: 130px; height: 130px; }
+  .bubble-2 { width: 95px; height: 95px; }
+}
+
+/* Normal Laptops (≤ 1299px) */
+@media (max-width: 1299px) {
+  .blogpage-banner {
+    padding: 3rem 2rem;
+    min-height: 18rem;
+  }
+  .blogpage-banner-heading { font-size: 2.2rem; }
+  .blogpage-banner-sub { font-size: 1.1rem; }
+}
+
+/* Tablets Landscape (≤ 1099px) */
+@media (max-width: 1099px) {
+  .blogpage-banner {
+    padding: 2.6rem 1.8rem;
+    min-height: 17rem;
+  }
+  .blogpage-banner-heading { font-size: 2rem; }
+  .blogpage-banner-sub { font-size: 1.05rem; }
+  .bubble-1 { width: 110px; height: 110px; }
+  .bubble-2 { width: 80px; height: 80px; }
+}
+
+/* Tablets Portrait (≤ 899px) */
+@media (max-width: 899px) {
+  .blogpage-banner {
+    padding: 2.4rem 1.4rem;
+    min-height: 16rem;
+  }
+  .blogpage-banner-heading { font-size: 1.8rem; }
+  .blogpage-banner-sub { font-size: 1rem; }
+  .blogpage-banner-breadcrumb { padding: 0.35rem 0.7rem; }
+  .blogpage-banner-actions { gap: 0.75rem; }
+}
+
+/* Large Phones (≤ 690px) */
+@media (max-width: 690px) {
+  .blogpage-banner {
+    padding: 2rem 1.2rem;
+    min-height: 15rem;
+  }
+  .blogpage-banner-heading { font-size: 1.65rem; }
+  .blogpage-banner-sub { font-size: 0.95rem; }
+  .blogpage-banner-btn { width: 100%; }
+}
+
+/* Medium Phones (≤ 520px) */
+@media (max-width: 520px) {
+  .blogpage-banner {
+    padding: 1.8rem 1rem;
+    min-height: 14rem;
+  }
+  .blogpage-banner-heading { font-size: 1.45rem; }
+  .blogpage-banner-sub { font-size: 0.9rem; }
+  .bubble-1 { width: 80px; height: 80px; }
+  .bubble-2 { width: 60px; height: 60px; }
+}
+
+/* Small Phones (≤ 420px) */
+@media (max-width: 420px) {
+  .blogpage-banner {
+    padding: 1.6rem 0.85rem;
+    min-height: 13rem;
+  }
+  .blogpage-banner-heading { font-size: 1.25rem; }
+  .blogpage-banner-sub { font-size: 0.85rem; }
+  .blogpage-banner-breadcrumb { font-size: 0.75rem; }
+  .blogpage-banner-btn { font-size: 0.9rem; padding: 0.6rem 1rem; }
+}
+
+/* Tiny Phones (≤ 360px) */
+@media (max-width: 360px) {
+  .blogpage-banner {
+    padding: 1.4rem 0.7rem;
+    min-height: 12.5rem;
+  }
+  .blogpage-banner-heading { font-size: 1.15rem; }
+  .blogpage-banner-sub { font-size: 0.8rem; }
+  .blogpage-banner-btn { width: 100%; }
+}
+
+/* Reduced Motion (Accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  .blogpage-banner-svg,
+  .svg-bubble-a,
+  .svg-bubble-b,
+  .svg-bubble-c,
+  .blogpage-banner-bubble {
+    animation: none !important;
+  }
+}

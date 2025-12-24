@@ -1,0 +1,1042 @@
+:root {
+  --orange: #ff7a00;
+  --dark: #0f1724;
+  --muted: #6b7280;
+  --card-bg: #fff;
+}
+
+/* Root section with background image */
+.breadcrum {
+  --overlay: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.98));
+  background-image: var(--bg), var(--overlay);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center right;
+  padding: 28px 64px;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* center inner content and limit width */
+.ret-breadcrum-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+}
+
+.ret-breadcrum-left-panel {
+  max-width: 700px;
+}
+.ret-breadcrum-title {
+  font-size: 52px;
+  line-height: 1.1;
+  margin: 0 0 12px 0;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: relative;
+}
+
+/* --- Stylish Orange Text --- */
+.ret-breadcrum-orange {
+  background: #0b6b2e;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  animation: fadeSlide 0.6s ease-out forwards;
+  opacity: 0;
+  text-align: start;
+}
+
+/* --- Clean Black Text --- */
+.ret-breadcrum-black {
+  color: #0f172a;
+  animation: fadeSlide2 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+/* --- Smooth Entrance Animations --- */
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlide2 {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .ret-breadcrum-title {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+}
+
+.ret-breadcrum-subtitle {
+  margin: 6px 0 18px 0;
+  font-size: 18px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.ret-breadcrum-desc {
+  color: #334155;
+  max-width: 620px;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+/* included heading */
+.ret-breadcrum-included {
+  color: var(--orange);
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+/* features columns */
+.ret-breadcrum-features {
+  display: flex;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.ret-breadcrum-col {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ret-breadcrum-col li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  color: #0f1724;
+  font-weight: 500;
+}
+
+/* Icon Circle */
+.ret-breadcrum-col li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0b6b2e, #27ae60);
+}
+
+/* Checkmark */
+.ret-breadcrum-col li::after {
+  content: "✓";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-55%);
+
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+}
+
+
+/* star note */
+.ret-breadcrum-note {
+  margin-top: 14px;
+  color: #374151;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.ret-breadcrum-star {
+  color: #f59e0b;
+  margin-right: 8px;
+}
+
+/* CTA row */
+.ret-breadcrum-cta-row {
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* schedule button */
+.ret-breadcrum-schedule-btn {
+  background: #0b6b2e;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 6px 12px rgba(31, 71, 143, 0.18);
+}
+
+/* reviews placeholders */
+.ret-breadcrum-reviews {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.ret-breadcrum-google,
+.ret-breadcrum-trustpilot {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+  color: #334155;
+}
+
+.ret-breadcrum-g-icon,
+.ret-breadcrum-t-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(16, 24, 40, 0.06);
+  font-weight: 700;
+}
+
+.ret-breadcrum-g-text,
+.ret-breadcrum-t-text {
+  line-height: 1.3;
+}
+
+  :root{
+  /* new palette: greens, white and true black */
+  --bg-accent-1: #0b6b2e;    /* deep forest green */
+  --bg-accent-2: #27ae60;    /* bright green */
+  --accent-contrast: #ffffff; /* white */
+  --accent-dark: #030303;     /* near-black for CTA and text accents */
+  --card-bg: #ffffff;         /* card stays white for premium contrast */
+  --muted: #6b7280;
+  --input-border: #e6e8eb;
+  --shadow-1: 0 12px 36px rgba(2,6,23,0.10);
+  --glass: linear-gradient(180deg, rgba(255,255,255,1), rgba(255,255,255,0.98));
+  --radius-lg: 14px;
+  --radius-sm: 10px;
+}
+
+/* RIGHT PANEL — increased width and spacing */
+.ret-breadcrum-right-panel{
+  width: 440px; /* increased from 360px */
+  min-width: 320px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--accent-dark);
+  isolation: isolate;
+  padding-left: 8px;
+}
+
+/* RIBBON / BADGE — tuned to green palette */
+.ret-breadcrum-ribbon{
+  position: absolute;
+  left: -12px;
+  top: -32px;
+  /* background: linear-gradient(90deg, var(--bg-accent-2), var(--bg-accent-1)); */
+  color: var(--accent-contrast);
+  padding: 10px 16px;
+  font-size: 13px;
+  border-radius: 10px;
+  /* box-shadow: 0 16px 36px rgba(11,107,46,0.14); */
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 6;
+  letter-spacing: 0.2px;
+  font-weight: 700;
+  transform: rotate(-1.8deg);
+  
+}
+.ret-breadcrum-ribbon img{
+  height: 70px;
+  width: 150px;
+}
+
+/* small price pill */
+.ret-breadcrum-price{
+  background: rgba(255,255,255,0.12);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--accent-contrast);
+  box-shadow: inset 0 -6px 12px rgba(0,0,0,0.06);
+}
+
+/* Form card - slightly bigger to match larger panel */
+.ret-breadcrum-form-card{
+  background: var(--glass);
+  border-radius: var(--radius-lg);
+  padding: 26px;               /* increased padding */
+  box-shadow: var(--shadow-1);
+  border: 1px solid rgba(2,6,23,0.06);
+  margin-left: auto;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 4;
+  overflow: hidden;
+  backdrop-filter: blur(6px) saturate(120%);
+  transition: transform .18s cubic-bezier(.2,.9,.2,1);
+}
+.ret-breadcrum-form-card:hover{ transform: translateY(-4px); }
+
+/* heading */
+.ret-breadcrum-form-title{
+  margin: 2px 0 12px;
+  font-size: 23px;
+  color: #ff7a00;
+  font-weight: 800;
+  letter-spacing: 0.1px;
+  padding: 40px 18px 0px;
+}
+
+/* subtitle/helper text */
+.ret-breadcrum-form-card .ret-breadcrum-sub {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+/* === Compact, Professional Form Styling === */
+
+.ret-breadcrum-lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Input & Select (Unified compact style) */
+.ret-breadcrum-input,
+.ret-breadcrum-select {
+  width: 100%;
+  padding: 14px 14px;
+  border-radius: 10px;
+  border: 1px solid #d7dce1;
+  background: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  color: #0f172a;
+  box-shadow: 0 4px 14px rgba(16, 24, 40, 0.05);
+  transition: 0.2s ease;
+  outline: none;
+}
+
+.ret-breadcrum-input::placeholder {
+  color: #9aa4b2;
+}
+
+/* Focus */
+.ret-breadcrum-input:focus,
+.ret-breadcrum-select:focus {
+  border-color: #27ae60;
+  box-shadow: 0 8px 20px rgba(39, 174, 96, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Phone row */
+.ret-breadcrum-phone-row {
+  display: flex;
+  gap: 12px;
+}
+
+.ret-breadcrum-phone {
+  flex: 1;
+}
+
+/* WhatsApp row */
+.ret-breadcrum-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #6b7180;
+}
+
+/* Toggle */
+.ret-breadcrum-toggle {
+  width: 46px;
+  height: 26px;
+  background: #ff7a00;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.ret-breadcrum-toggle::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: 0.2s ease;
+}
+
+.ret-breadcrum-whatsapp input[type="checkbox"]:checked + .ret-breadcrum-toggle {
+  background: #27ae60;
+}
+
+.ret-breadcrum-whatsapp input[type="checkbox"]:checked + .ret-breadcrum-toggle::after {
+  left: 23px;
+}
+
+/* Submit button — compact version */
+.ret-breadcrum-get-started {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  border: none;
+  background: linear-gradient(90deg, #27ae60, #0b6b2e);
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(11, 107, 46, 0.18);
+  transition: 0.2s ease;
+}
+
+.ret-breadcrum-get-started:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(11, 107, 46, 0.22);
+}
+
+.ret-breadcrum-get-started:active {
+  transform: translateY(-1px);
+}
+
+/* === MOBILE RESPONSIVE (Compact scaling) === */
+@media (max-width: 600px) {
+  .ret-breadcrum-input,
+  .ret-breadcrum-select {
+    padding: 12px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  .ret-breadcrum-get-started {
+    padding: 16px 16px;
+    font-size: 15px;
+  }
+
+  .ret-breadcrum-toggle {
+    width: 42px;
+    height: 24px;
+  }
+
+  .ret-breadcrum-toggle::after {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
+/* phone row + country code */
+.ret-breadcrum-phone-row{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.ret-breadcrum-country{
+  background: linear-gradient(180deg, #ffffff, #f7fff8);
+  padding: 12px 14px;
+  border-radius: 10px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width: 86px;      /* wider to match increased input size */
+  text-align:center;
+  border:1px solid var(--input-border);
+  font-size:15px;
+  color: var(--accent-dark);
+  font-weight:700;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.04);
+}
+.ret-breadcrum-input.ret-breadcrum-phone{ flex:1; }
+
+/* select styling — keep roomy */
+.ret-breadcrum-select{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  padding-right: 48px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #9ca3af 50%),
+    linear-gradient(135deg, #9ca3af 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(50% - 2px),
+                   calc(100% - 14px) calc(50% - 2px);
+  background-size: 8px 8px, 8px 8px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding-left: 14px;
+  height: auto;
+}
+
+/* WhatsApp toggle row */
+.ret-breadcrum-whatsapp{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  color: var(--muted);
+  font-size:14px;
+}
+
+/* bold icon word */
+.ret-breadcrum-wh-icon{ font-weight:700; color: var(--accent-dark); }
+
+/* accessible checkbox hide (keeps keyboard access) */
+.ret-breadcrum-whatsapp input[type="checkbox"]{
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* visual toggle — slightly larger */
+.ret-breadcrum-toggle{
+  width:52px;
+  height:30px;
+  background:#ff7a00;
+  border-radius:999px;
+  position:relative;
+  display:inline-block;
+  vertical-align:middle;
+  transition: background .18s ease, box-shadow .12s ease;
+  box-shadow: inset 0 -2px 6px rgba(0,0,0,0.03);
+}
+.ret-breadcrum-toggle::after{
+  content:"";
+  width:24px;
+  height:24px;
+  background:#fff;
+  border-radius:50%;
+  position:absolute;
+  top:3px;
+  left:3px;
+  transition: left .18s cubic-bezier(.2,.9,.2,1), transform .18s ease;
+  box-shadow: 0 8px 22px rgba(2,6,23,0.12);
+}
+
+/* checked state — green background and thumb moved to right */
+.ret-breadcrum-whatsapp input[type="checkbox"]:checked + .ret-breadcrum-toggle{
+  background: linear-gradient(90deg, var(--bg-accent-2), var(--bg-accent-1));
+}
+.ret-breadcrum-whatsapp input[type="checkbox"]:checked + .ret-breadcrum-toggle::after{
+  left: 25px;
+  transform: translateX(0);
+}
+
+/* keyboard focus style */
+.ret-breadcrum-whatsapp input[type="checkbox"]:focus + .ret-breadcrum-toggle{
+  box-shadow: 0 0 0 8px rgba(39,174,96,0.10);
+}
+
+/* CTA button — now bold black with green hover for strong contrast */
+.ret-breadcrum-get-started{
+  width:100%;
+  background: linear-gradient(90deg, var(--bg-accent-2), var(--bg-accent-1)); /* green on hover */
+  border: none;
+  color: var(--accent-contrast);        /* white */
+  padding: 16px 18px;                   /* larger touch target */
+  border-radius: 12px;
+  font-weight: 900;
+  margin-top: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+  box-shadow: 0 18px 48px rgba(3,3,3,0.14);
+  transition: transform .12s ease, box-shadow .18s ease, background .12s ease;
+}
+.ret-breadcrum-get-started:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 26px 60px rgba(39,174,96,0.14);
+  /* background: var(--accent-dark); */
+  background: #ff7a00;
+  
+}
+.ret-breadcrum-get-started:active{ transform: translateY(-1px); }
+
+/* small fine print */
+.ret-breadcrum-disclaimer{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:10px;
+  line-height:1.35;
+}
+
+/* responsive tweaks: on smaller screens we scale the panel down */
+@media (max-width:960px){
+  .ret-breadcrum-right-panel{
+    width:100%;
+    padding: 0 12px;
+  }
+  .ret-breadcrum-ribbon{
+    left: 12px;
+    top: -16px;
+    transform: rotate(0deg);
+  }
+  .ret-breadcrum-form-card{
+    padding: 18px;
+    border-radius: 12px;
+  }
+}
+
+/* utilities */
+.ret-breadcrum-input.has-icon{ padding-left:48px; position:relative; }
+.ret-breadcrum-input + .input-icon{ position:relative; left:14px; top:-44px; pointer-events:none; opacity:.95; }
+
+/* subtle accent stripe on the right edge to tie into background */
+.ret-breadcrum-form-card::before{
+  content:"";
+  position:absolute;
+  right:0;
+  top:0;
+  height:100%;
+  width:8px; /* slightly wider to show on larger card */
+  border-top-right-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+  background: linear-gradient(180deg, var(--bg-accent-2), var(--bg-accent-1));
+  opacity:0.14;
+  pointer-events:none;
+}
+
+
+/* Mobile-First Premium Enhancements */
+@media (max-width: 768px) {
+  .breadcrum {
+    padding: 32px 20px;
+    background-position: center center;
+    background-attachment: fixed;
+  }
+
+  .ret-breadcrum-inner {
+    flex-direction: column;
+    gap: 0px;
+    align-items: stretch;
+  }
+
+  /* LEFT PANEL MOBILE ENHANCEMENTS */
+  .ret-breadcrum-left-panel {
+    padding: 0px 0px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(11, 107, 46, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .ret-breadcrum-title {
+    font-size: 32px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #ff7a00 0%, #0b6b2e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center !important;
+  }
+
+  .ret-breadcrum-subtitle {
+    font-size: 16px;
+    margin: 12px 0 20px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, rgba(11, 107, 46, 0.08), rgba(255, 122, 0, 0.08));
+    border-radius: 12px;
+    display: inline-block;
+  }
+
+  .ret-breadcrum-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: left;
+    max-width: 100%;
+    padding: 0 8px;
+  }
+
+  .ret-breadcrum-included {
+    font-size: 20px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .ret-breadcrum-included::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff7a00, #0b6b2e);
+    border-radius: 2px;
+  }
+
+  /* FEATURES GRID FOR MOBILE */
+  .ret-breadcrum-features {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .ret-breadcrum-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+/* Section title */
+.ret-breadcrum-included {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  text-transform: capitalize;
+  letter-spacing: -0.3px;
+}
+
+/* Column layout */
+.ret-breadcrum-features {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* UL columns */
+.ret-breadcrum-col {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /* clean spacing between items */
+}
+
+/* Each feature tile */
+.ret-breadcrum-col li {
+  text-align: left;
+  padding: 18px 18px 18px 58px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  border: 1px solid rgba(11, 107, 46, 0.12);
+  box-shadow: 0 6px 18px rgba(11, 107, 46, 0.06);
+  
+  position: relative;
+  font-size: 15px;
+  font-weight: 500;
+  color: #0f172a;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+/* Hover effect – premium soft lift */
+.ret-breadcrum-col li:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 10px 24px rgba(11, 107, 46, 0.12);
+}
+
+/* Tap effect for mobile */
+.ret-breadcrum-col li:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 12px rgba(11, 107, 46, 0.12);
+}
+
+/* Gradient icon capsule */
+.ret-breadcrum-col li::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #0b6b2e, #27ae60);
+  box-shadow: 0 4px 10px rgba(11, 107, 46, 0.35);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Checkmark symbol */
+.ret-breadcrum-col li::after {
+  content: "✓";
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Star Note Box */
+.ret-breadcrum-note {
+  margin-top: 28px;
+  padding: 18px 20px;
+  text-align: center;
+
+  background: linear-gradient(
+    135deg,
+    rgba(245, 158, 11, 0.12),
+    rgba(255, 122, 0, 0.12)
+  );
+
+  border-radius: 14px;
+  border-left: 5px solid #f59e0b;
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.2);
+
+  font-size: 15px;
+  font-weight: 500;
+  color: #9a5a00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Star icon */
+.ret-breadcrum-star {
+  font-size: 22px;
+  color: #f59e0b;
+}
+
+
+  /* CTA ROW MOBILE OPTIMIZATION */
+  .ret-breadcrum-cta-row {
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .ret-breadcrum-schedule-btn {
+    padding: 18px 32px;
+    font-size: 16px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(11, 107, 46, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ret-breadcrum-schedule-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .ret-breadcrum-schedule-btn:active::after {
+    left: 100%;
+  }
+
+  .ret-breadcrum-reviews {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .ret-breadcrum-google,
+  .ret-breadcrum-trustpilot {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  /* RIGHT PANEL MOBILE ENHANCEMENTS */
+  .ret-breadcrum-right-panel {
+    width: 100%;
+    padding: 0;
+    /* margin-top: 20px; */
+  }
+
+  .ret-breadcrum-ribbon {
+    position: relative;
+    left: -100px;
+    top: 35px;
+    transform: none;
+    justify-content: center;
+    margin-bottom: -20px;
+    z-index: 10;
+    transform: rotate(-1.8deg);
+  }
+
+  .ret-breadcrum-form-card {
+    margin-left: 0;
+    padding: 28px 24px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(11, 107, 46, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .ret-breadcrum-form-title {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 29px 5px 0px;
+  }
+
+  .ret-breadcrum-input {
+    padding: 18px 16px;
+    font-size: 16px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(16, 24, 40, 0.08);
+  }
+
+  .ret-breadcrum-phone-row {
+    gap: 10px;
+  }
+
+  .ret-breadcrum-country {
+    min-width: 100px;
+    padding: 16px 12px;
+    border-radius: 12px;
+  }
+
+  .ret-breadcrum-get-started {
+    padding: 20px 24px;
+    font-size: 17px;
+    border-radius: 14px;
+    margin-top: 16px;
+    box-shadow: 0 12px 36px rgba(11, 107, 46, 0.25);
+  }
+
+  /* FORM INTERACTIVE ENHANCEMENTS */
+  .ret-breadcrum-input:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(16, 24, 40, 0.12), 0 0 0 4px rgba(39, 174, 96, 0.1);
+  }
+
+  .ret-breadcrum-toggle {
+    width: 56px;
+    height: 32px;
+  }
+
+  .ret-breadcrum-toggle::after {
+    width: 26px;
+    height: 26px;
+    top: 3px;
+    left: 3px;
+  }
+
+  .ret-breadcrum-whatsapp input[type="checkbox"]:checked + .ret-breadcrum-toggle::after {
+    left: 27px;
+  }
+}
+
+/* Ultra-Mobile Optimization (Small Phones) */
+@media (max-width: 480px) {
+  .breadcrum {
+    padding: 0px 0px;
+  }
+
+  .ret-breadcrum-left-panel {
+    padding: 20px 16px;
+  }
+
+  .ret-breadcrum-title {
+    font-size: 28px;
+  }
+
+  .ret-breadcrum-subtitle {
+    font-size: 15px;
+    padding: 10px 16px;
+  }
+
+  .ret-breadcrum-form-card {
+    padding: 24px 20px;
+  }
+
+  .ret-breadcrum-cta-row {
+    gap: 20px;
+  }
+
+  .ret-breadcrum-reviews {
+    gap: 36px;
+  }
+}
+
+/* Tablet Responsive Adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .breadcrum {
+    padding: 40px 32px;
+  }
+
+  .ret-breadcrum-inner {
+    gap: 0px;
+    max-width: 100%;
+  }
+
+  .ret-breadcrum-right-panel {
+    width: 380px;
+  }
+
+  .ret-breadcrum-left-panel {
+    padding: 24px 28px;
+  }
+}
+
+/* Smooth animations for all interactive elements */
+.ret-breadcrum-col li,
+.ret-breadcrum-schedule-btn,
+.ret-breadcrum-get-started,
+.ret-breadcrum-input,
+.ret-breadcrum-toggle {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced focus states for accessibility */
+.ret-breadcrum-schedule-btn:focus,
+.ret-breadcrum-get-started:focus,
+.ret-breadcrum-input:focus {
+  outline: 2px solid #0b6b2e;
+  outline-offset: 2px;
+}
+
+/* Premium hover effects for desktop */
+@media (hover: hover) and (min-width: 769px) {
+  .ret-breadcrum-col li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(11, 107, 46, 0.12);
+  }
+
+  .ret-breadcrum-schedule-btn:hover::after {
+    left: 100%;
+  }
+}
+
+/* Optional: ensures spacing for newly added input */
+.ret-breadcrum-lead-form .ret-breadcrum-input {
+  margin-bottom: 14px;
+}

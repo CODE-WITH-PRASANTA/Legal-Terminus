@@ -1,0 +1,101 @@
+:root {
+  --green-primary: #16c216;  /* Button color (brand green) */
+  --green-light: #c8f8c5;    /* Very light green background */
+  --white: #ffffff;
+}
+
+.NL-root {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.NL-box {
+  width: 100%;
+  max-width: 1200px;
+  background: var(--green-light);
+  border-radius: 28px;
+  padding: 40px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.NL-left {
+  flex: 1;
+}
+
+.NL-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #000; /* dark title on light box */
+  margin: 0 0 10px;
+}
+
+.NL-subtitle {
+  color: #000;
+  opacity: 0.8;
+  font-size: 16px;
+  margin: 0;
+}
+
+.NL-form {
+  flex: 1;
+  display: flex;
+  background: var(--white);
+  border-radius: 30px;
+  padding: 4px;
+  align-items: center;
+}
+
+.NL-input {
+  flex: 1;
+  padding: 14px 18px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-radius: 30px;
+}
+
+.NL-btn {
+  background: var(--green-primary);
+  color: var(--white);
+  font-weight: 800;
+  padding: 14px 24px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.NL-btn:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .NL-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .NL-form {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .NL-input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .NL-btn {
+    width: 100%;
+    min-width: 0;
+    align-self: stretch;
+  }
+}
+

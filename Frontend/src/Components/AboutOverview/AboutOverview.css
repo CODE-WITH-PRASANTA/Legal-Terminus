@@ -1,0 +1,104 @@
+/* ROOT */
+.AboutOverview-root {
+  width: 100%;
+  padding: 60px 0;
+  background: #fafafa;
+  font-family: "Inter", sans-serif;
+}
+
+/* LAYOUT */
+.AboutOverview-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* LEFT CONTENT */
+.AboutOverview-content {
+  flex: 1;
+  max-width: 700px;
+}
+
+.AboutOverview-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color:#0B6B2E;
+}
+
+.AboutOverview-subheading {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.AboutOverview-text {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 14px;
+}
+
+.AboutOverview-highlight {
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 30px;
+  color: #333;
+}
+
+/* RIGHT IMAGE */
+.AboutOverview-imageWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.AboutOverview-image {
+  width: 100%;
+  max-width: 620px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Large Devices (Desktops/Laptops 992px – 1199px) */
+@media (max-width: 1199px) {
+  .AboutOverview-container {
+    gap: 30px;
+  }
+}
+
+/* Medium Devices (Tablets 768px – 991px) */
+@media (max-width: 991px) {
+  .AboutOverview-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .AboutOverview-imageWrapper {
+    justify-content: center;
+  }
+}
+
+/* Small Devices (Mobiles/Tablets 576px – 767px) */
+@media (max-width: 767px) {
+  .AboutOverview-container {
+    width: 95%;
+  }
+  .AboutOverview-image {
+    max-width: 100%;
+  }
+}
+
+/* Extra Small Devices (Mobiles ≤ 575px) */
+@media (max-width: 575px) {
+  .AboutOverview-container {
+    width: 96%;
+  }
+  .AboutOverview-content,
+  .AboutOverview-imageWrapper {
+    width: 100%;
+  }
+}

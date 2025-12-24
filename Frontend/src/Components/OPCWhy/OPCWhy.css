@@ -1,0 +1,92 @@
+.opc-help-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 20px;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  color: #1f2937;
+}
+
+.opc-help-header {
+  max-width: 900px;
+  margin-bottom: 48px;
+}
+
+.opc-help-header h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.opc-help-header p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #6b7280;
+}
+
+/* ===== Grid ===== */
+.opc-help-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+/* ===== Cards ===== */
+.opc-help-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px 26px 30px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.opc-help-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Badge ===== */
+.opc-help-badge {
+  position: absolute;
+  top: -14px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #eb9525, #1e40af);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 18px rgba(235, 153, 37, 0.35);
+}
+
+/* ===== Text ===== */
+.opc-help-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.opc-help-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #4b5563;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .opc-help-section {
+    padding: 48px 16px;
+  }
+
+  .opc-help-card {
+    padding: 22px;
+  }
+}

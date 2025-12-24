@@ -1,0 +1,247 @@
+/* Full updated CSS (carousel-enabled) - keep all class names unchanged */
+
+/* Global wrapper (unchanged visuals) */
+.blogdetailsourlatestnews-regardingly {
+  width: 100%;
+  background: #ffffff;
+  color: #111111;
+  font-family: "Inter", "Helvetica Neue", Arial, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  padding: 60px 64px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.blogdetailsourlatestnews-inner.container {
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+/* Header */
+.blogdetailsourlatestnews-header {
+  margin-bottom: 36px;
+  text-align: left;
+}
+
+.blogdetailsourlatestnews-kicker {
+  color: #f6b42a;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(246,180,42,0.08);
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.02);
+  margin-bottom: 10px;
+}
+
+.blogdetailsourlatestnews-title {
+  font-size: 34px;
+  line-height: 1.12;
+  margin: 6px 0 0 0;
+  font-weight: 700;
+  color: #0b0b0b;
+}
+
+/* ---------- Carousel viewport (replaces grid behavior) ---------- */
+/* Keep the original class name but this acts as a viewport with overflow hidden */
+.blogdetailsourlatestnews-grid {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 24px;
+  /* we keep height based on cards; min-height ensures layout stability */
+  min-height: 520px;
+  padding: 10px 0;
+}
+
+/* The moving track holding duplicated items */
+.carousel-track {
+  display: flex;
+  align-items: stretch;
+  gap: 36px; /* same gap as before */
+  padding-left: 24px; /* small padding so first card isn't flush to edge */
+  will-change: transform;
+  transition: transform 700ms cubic-bezier(.22,.61,.36,1);
+}
+
+/* Card (mostly same visuals) */
+.blogdetailsourlatestnews-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 420ms cubic-bezier(.2,.9,.25,1), box-shadow 420ms ease, border-color 420ms ease;
+  will-change: transform, box-shadow;
+  transform-origin: center;
+  box-shadow: 0 8px 24px rgba(17,17,17,0.06);
+  border: 1px solid rgba(15,15,15,0.03);
+  min-height: 460px;
+  width: calc((100% - 72px) / 3); /* three cards visible: account for gap (36px) */
+  flex: 0 0 auto;
+  position: relative;
+  isolation: isolate;
+  cursor: default;
+  opacity: 1;
+}
+
+/* Slight hover lift */
+.blogdetailsourlatestnews-card:hover,
+.blogdetailsourlatestnews-card:focus-within {
+  transform: translateY(-12px) rotateX(0.6deg) scale(1.012);
+  box-shadow: 0 30px 60px rgba(11,11,11,0.12);
+  border-color: rgba(246,180,42,0.06);
+  z-index: 6;
+}
+
+/* For small-pointer devices disable hover transform */
+@media (hover: none) {
+  .blogdetailsourlatestnews-card:hover { transform: none; box-shadow: 0 10px 26px rgba(11,11,11,0.06); }
+}
+
+/* Media area */
+.blogdetailsourlatestnews-media {
+  width: 100%;
+  height: 260px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.blogdetailsourlatestnews-media::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(90deg,#f6b42a 0%, rgba(246,180,42,0.9) 60%, rgba(246,180,42,0.35) 100%);
+  opacity: 0.95;
+}
+
+.blogdetailsourlatestnews-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: center;
+  transition: transform 900ms cubic-bezier(.2,.9,.25,1), filter 600ms ease;
+  will-change: transform, filter;
+}
+
+.blogdetailsourlatestnews-card:hover .blogdetailsourlatestnews-image,
+.blogdetailsourlatestnews-card:focus-within .blogdetailsourlatestnews-image {
+  transform: scale(1.08) translateY(-4px);
+  filter: contrast(1.02) saturate(1.02);
+}
+
+.blogdetailsourlatestnews-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.00) 40%, rgba(0,0,0,0.06) 100%);
+  pointer-events: none;
+}
+
+/* Body */
+.blogdetailsourlatestnews-body {
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1 1 auto;
+}
+
+.blogdetailsourlatestnews-category {
+  color: #9b9b9b;
+  font-size: 12px;
+  letter-spacing: .6px;
+  font-weight: 700;
+}
+
+.blogdetailsourlatestnews-posttitle {
+  font-size: 22px;
+  color: #0b0b0b;
+  margin: 0;
+  line-height: 1.24;
+  font-weight: 700;
+}
+
+.blogdetailsourlatestnews-card:hover .blogdetailsourlatestnews-posttitle {
+  color: #000000;
+  text-decoration: none;
+}
+
+.blogdetailsourlatestnews-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #9b9b9b;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+.blogdetailsourlatestnews-divider {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: rgba(0,0,0,0.06);
+  border-radius: 50%;
+  align-self: center;
+}
+
+.blogdetailsourlatestnews-comments .icon {
+  vertical-align: middle;
+  margin-right: 6px;
+  font-size: 16px;
+  color: #9b9b9b;
+}
+
+/* keyboard focus */
+.blogdetailsourlatestnews-card:focus-within,
+.blogdetailsourlatestnews-card:focus {
+  outline: 0;
+  box-shadow: 0 34px 60px rgba(11,11,11,0.14), 0 0 0 6px rgba(246,180,42,0.08);
+}
+
+/* responsive: two columns visible */
+@media (max-width: 980px) {
+  .blogdetailsourlatestnews-grid { min-height: 420px; }
+  .carousel-track { gap: 28px; padding-left: 18px; }
+  .blogdetailsourlatestnews-card { width: calc((100% - 28px) / 2); }
+  .blogdetailsourlatestnews-regardingly { padding-left: 36px; padding-right: 36px; }
+}
+
+/* mobile: single column visible, track becomes scrollable */
+@media (max-width: 620px) {
+  .blogdetailsourlatestnews-grid { min-height: auto; }
+  .carousel-track {
+    gap: 18px;
+    padding-left: 14px;
+    transition: none !important;
+  }
+  .blogdetailsourlatestnews-card { width: calc(100% - 28px); min-height: 420px; }
+  .blogdetailsourlatestnews-image { height: 220px; }
+  .blogdetailsourlatestnews-posttitle { font-size: 20px; }
+  .blogdetailsourlatestnews-title { font-size: 28px; }
+  .blogdetailsourlatestnews-regardingly { padding-left: 20px; padding-right: 20px; }
+  /* make it scrollable on mobile for usability (user can swipe) */
+  .carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .blogdetailsourlatestnews-card { scroll-snap-align: start; flex: 0 0 auto; }
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track,
+  .blogdetailsourlatestnews-card,
+  .blogdetailsourlatestnews-image {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}

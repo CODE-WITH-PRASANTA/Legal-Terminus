@@ -1,0 +1,113 @@
+/* ===========================
+   SECTION
+=========================== */
+.esi-proc-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8fafc, #eef2f7);
+  font-family: "Inter", sans-serif;
+}
+
+.esi-proc-main-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 60px;
+}
+
+/* ===========================
+   GRID
+=========================== */
+.esi-proc-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  position: relative;
+}
+
+/* ===========================
+   STEP CARD
+=========================== */
+.esi-proc-step {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.esi-proc-step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 65px rgba(0, 0, 0, 0.15);
+}
+
+/* ===========================
+   STEP HEADER
+=========================== */
+.esi-proc-step-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.esi-proc-step-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* ===========================
+   LIST
+=========================== */
+.esi-proc-step ul {
+  padding-left: 18px;
+}
+
+.esi-proc-step li {
+  font-size: 15px;
+  color: #374151;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* ===========================
+   ARROW
+=========================== */
+.esi-proc-arrow {
+  position: absolute;
+  right: -28px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 26px;
+  color: #2563eb;
+  animation: arrowMove 1.5s infinite ease-in-out;
+}
+
+@keyframes arrowMove {
+  0% { transform: translate(0, -50%); }
+  50% { transform: translate(6px, -50%); }
+  100% { transform: translate(0, -50%); }
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 900px) {
+  .esi-proc-arrow {
+    display: none;
+  }
+
+  .esi-proc-main-title {
+    font-size: 24px;
+  }
+}

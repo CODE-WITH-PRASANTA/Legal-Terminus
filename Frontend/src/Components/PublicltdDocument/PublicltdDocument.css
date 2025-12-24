@@ -1,0 +1,190 @@
+:root {
+  --primary: #1aa91a;
+  --text-main: #111111;
+  --text-sub: #555965;
+  --bg: #ffffff;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* ------------------------------
+   MAIN WRAPPER
+------------------------------ */
+.llp-docs-wrapper {
+  background: var(--bg);
+  padding: 60px 0 80px;
+}
+
+.llp-docs-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ------------------------------
+   HEADER SECTION
+------------------------------ */
+
+.llp-docs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.llp-docs-text {
+  flex: 1.3;
+}
+
+.llp-docs-title {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-main);
+  margin-bottom: 18px;
+}
+
+.llp-docs-intro {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text-sub);
+}
+
+.llp-docs-illustration {
+  flex: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.llp-docs-illustration img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ------------------------------
+   GRID LAYOUT
+------------------------------ */
+
+.llp-docs-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+
+/* ------------------------------
+   CARD DESIGN
+------------------------------ */
+
+.llp-doc-card {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 20px 22px;
+  border: 1px solid rgba(26, 169, 26, 0.25); /* subtle green border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.llp-doc-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  background: #f3fff3;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ------------------------------
+   CARD HEADER
+------------------------------ */
+
+.llp-doc-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.llp-doc-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 2px solid var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.llp-doc-card-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+}
+
+/* ------------------------------
+   LIST STYLE
+------------------------------ */
+
+.llp-doc-card ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 4px;
+}
+
+.llp-doc-card li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-sub);
+  margin-bottom: 6px;
+}
+
+/* ------------------------------
+   RESPONSIVE BEHAVIOR
+------------------------------ */
+
+/* Medium screens */
+@media (max-width: 992px) {
+  .llp-docs-header {
+    flex-direction: column;
+  }
+
+  .llp-docs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .llp-docs-title {
+    font-size: 34px;
+  }
+
+  .llp-docs-intro {
+    font-size: 16px;
+  }
+}
+
+/* Small screens */
+@media (max-width: 640px) {
+  .llp-docs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .llp-doc-card {
+    padding: 18px 18px;
+  }
+
+  .llp-doc-card-header h3 {
+    font-size: 17px;
+  }
+
+  .llp-doc-card li {
+    font-size: 14px;
+  }
+}

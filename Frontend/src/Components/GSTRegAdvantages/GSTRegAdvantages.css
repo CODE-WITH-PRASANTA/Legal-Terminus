@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #1f2937;
+}
+
+/* ================= HERO SECTION ================= */
+
+.gst-hero {
+  background: linear-gradient(90deg, #fff7e6, #ffe3b3);
+  padding: 80px 24px;
+}
+
+.gst-hero-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.gst-hero-image img {
+  width: 100%;
+  max-width: 420px;
+}
+
+.gst-hero-content h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.gst-hero-content p {
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 14px;
+  color: #374151;
+}
+
+/* ================= BENEFITS SECTION ================= */
+
+.gst-benefits {
+  background: #ffffff;
+  padding: 90px 24px;
+  min-height: 130vh; /* KEY: ensures image stays visible */
+}
+
+.gst-section-title {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.gst-section-subtitle {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 60px;
+  font-size: 15px;
+  color: #6b7280;
+}
+
+.gst-benefits-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+  align-items: stretch;
+}
+
+/* LEFT IMAGE */
+
+.gst-benefits-image {
+  display: flex;
+  justify-content: center;
+}
+
+.gst-benefits-image img {
+  width: 100%;
+  max-width: 420px;
+  height: 420px
+}
+
+.gst-benefits-image.sticky {
+  position: sticky;
+  top: 120px;
+  align-self: flex-start;
+}
+
+/* RIGHT CARDS */
+
+.gst-benefits-cards {
+  display: grid;
+  gap: 24px;
+  padding-bottom: 80px;
+}
+
+.gst-benefit-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.gst-benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+  border-color: #f59e0b;
+}
+
+.gst-card-icon {
+  font-size: 28px;
+  background: #fff7e6;
+  color: #f59e0b;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.gst-benefit-card h4 {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+
+.gst-benefit-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #4b5563;
+}
+
+/* CTA */
+
+.gst-cta {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.gst-cta button {
+  background: #f59e0b;
+  border: none;
+  color: #ffffff;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gst-cta button:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .gst-hero-grid,
+  .gst-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gst-benefits-image.sticky {
+    position: relative;
+    top: auto;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gst-section-title {
+    font-size: 26px;
+  }
+
+  .gst-hero-content h2 {
+    font-size: 26px;
+  }
+}

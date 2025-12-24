@@ -1,0 +1,136 @@
+.char-section {
+  max-width: 1300px;
+  margin: 60px auto;
+  padding: 0 40px 60px;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  color: #1f2933;
+}
+
+/* Heading & intro */
+.char-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #27ae60;
+  margin-bottom: 14px;
+}
+
+.char-intro {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 24px;
+}
+
+/* Grid layout */
+.char-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px 40px;
+}
+
+/* Individual “bullet” card */
+.char-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;
+  align-items: flex-start;
+}
+
+/* Dot like bullet */
+.char-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-top: 8px;
+  background-color: #111827;
+}
+
+/* Title + text inside card */
+.char-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.char-card-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #4b5563;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+/* Large tablets / small laptops */
+@media (max-width: 1024px) {
+  .char-section {
+    margin: 40px auto;
+    padding: 0 30px 50px;
+  }
+
+  .char-title {
+    font-size: 28px;
+  }
+
+  .char-intro {
+    font-size: 15px;
+  }
+
+  .char-grid {
+    gap: 18px 30px;
+  }
+}
+
+/* Tablets & medium screens */
+@media (max-width: 768px) {
+  .char-section {
+    margin: 40px auto;
+    padding: 0 24px 40px;
+  }
+
+  .char-title {
+    font-size: 26px;
+  }
+
+  .char-intro {
+    font-size: 15px;
+  }
+
+  /* Stack cards in a single column for readability */
+  .char-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .char-section {
+    margin: 30px auto;
+    padding: 0 16px 32px;
+  }
+
+  .char-title {
+    font-size: 22px;
+  }
+
+  .char-intro {
+    font-size: 14px;
+  }
+
+  .char-card-title {
+    font-size: 15px;
+  }
+
+  .char-card-text {
+    font-size: 14px;
+  }
+
+  .char-dot {
+    width: 6px;
+    height: 6px;
+    margin-top: 7px;
+  }
+}

@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.stepscards-section {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #ffffff;
+  padding: 72px 24px 64px;
+}
+
+.stepscards-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Header (top part) */
+.stepscards-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.stepscards-title {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #111827; /* black like reference */
+  margin: 0 0 16px;
+}
+
+.stepscards-sub {
+  margin: 0 0 18px;
+  font-size: 15px;
+  color: #1aa91a; /* green like reference subtitle */
+}
+
+.stepscards-time-pill {
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 999px;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Flow of cards with arrows */
+.stepscards-flow {
+  margin-top: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+}
+
+/* Each card */
+.stepscards-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  padding: 22px 22px 20px;
+  max-width: 320px;
+  min-width: 280px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stepscards-step-label {
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+/* Green circle (icon area) */
+.stepscards-circle-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  background-color: #1aa91a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.stepscards-circle-letter {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Card title & text */
+.stepscards-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1aa91a; /* green title like references on sides */
+  margin: 0 0 8px;
+}
+
+.stepscards-card-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #111827;
+}
+
+/* Arrow between cards */
+.stepscards-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px 24px;
+}
+
+.stepscards-arrow-line {
+  width: 40px;
+  height: 2px;
+  background-color: #1aa91a;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.stepscards-arrow-head {
+  font-size: 18px;
+  color: #1aa91a;
+}
+
+/* Notes box */
+.stepscards-notes-wrapper {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.stepscards-notes-inner {
+  border-radius: 10px;
+  border: 2px solid #1aa91a;
+  padding: 18px 24px;
+  max-width: 1000px;
+}
+
+.stepscards-notes-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #111827;
+}
+
+/* -----------------------------
+   Responsive
+------------------------------ */
+
+@media (max-width: 1200px) {
+  .stepscards-card {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 992px) {
+  .stepscards-section {
+    padding: 60px 20px 52px;
+  }
+
+  .stepscards-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stepscards-section {
+    padding: 48px 16px 48px;
+  }
+
+  .stepscards-title {
+    font-size: 26px;
+  }
+
+  .stepscards-flow {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stepscards-card {
+    width: 100%;
+    max-width: 480px;
+    margin-bottom: 18px;
+  }
+
+  .stepscards-arrow {
+    margin: 0 0 18px;
+    flex-direction: column;
+  }
+
+  .stepscards-arrow-line {
+    width: 2px;
+    height: 26px;
+    margin: 0 0 4px;
+  }
+
+  .stepscards-notes-inner {
+    padding: 14px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stepscards-section {
+    padding: 40px 12px 40px;
+  }
+
+  .stepscards-title {
+    font-size: 22px;
+  }
+
+  .stepscards-card-title {
+    font-size: 15px;
+  }
+
+  .stepscards-card-text,
+  .stepscards-notes-list {
+    font-size: 13.5px;
+  }
+}

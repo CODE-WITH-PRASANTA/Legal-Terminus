@@ -1,0 +1,335 @@
+:root{
+  --lh-max: 1400px;
+  --lh-gap: 28px;
+  --lh-radius: 12px;
+  --lh-accent: #4CAF50;        /* PRIMARY COLOR */
+  --lh-blue: #0b597c;
+  --lh-bg: #fbfdff;
+  --lh-soft: #f6f8fb;
+  --lh-text: #0f1723;
+  --lh-muted: #6b7280;
+  --lh-shadow: 0 18px 40px rgba(11,20,30,0.06);
+  --lh-smooth: cubic-bezier(.2,.9,.2,1);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Root */
+.lh-root{
+  padding: 36px 20px 80px;
+  background: linear-gradient(180deg,#fff 0%,#f7fbff 100%);
+  display: flex;
+  justify-content: center;
+}
+
+.lh-inner{
+  width: 100%;
+  max-width: var(--lh-max);
+}
+
+/* Heading */
+.lh-title{
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--lh-text);
+  margin: 8px 0 8px;
+}
+
+/* NEW: centered green underline (hr-style) */
+.lh-underline{
+  width: 84px;
+  height: 6px;
+  margin: 10px auto 20px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--lh-accent), #2e8b3c);
+  box-shadow: 0 6px 18px rgba(76,175,80,0.12);
+}
+
+/* optional small subtle animation on load (uncomment if desired)
+.lh-underline { transform-origin: center; transform: scaleX(0); animation: grow 420ms cubic-bezier(.2,.9,.2,1) forwards 120ms; }
+@keyframes grow { to { transform: scaleX(1); } }
+*/
+
+.lh-sub{
+  text-align: center;
+  color: var(--lh-muted);
+  max-width: 900px;
+  margin: 8px auto 28px;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* Grid: left tabs + right cards */
+.lh-grid{
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--lh-gap);
+  align-items: start;
+  align-content: start;
+}
+
+/* LEFT - tabs column */
+.lh-left{
+  position: relative;
+  padding: 12px;
+  z-index: 3;
+}
+
+/* tabs container */
+.lh-tabs{
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  background: linear-gradient(180deg, #094f6a 0%, #0b597c 100%);
+  border-radius: 10px;
+  box-shadow: 0 18px 40px rgba(11,20,30,0.06);
+  overflow: hidden;
+  max-height: 74vh;
+}
+
+/* allow scrolling the tab list if it overflows */
+.lh-tabs::-webkit-scrollbar { width: 6px; }
+.lh-tabs::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.06); border-radius: 8px; }
+
+/* each tab */
+.lh-tabs__item{ margin: 0; }
+
+.lh-tab{
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: transparent;
+  color: #eef8ff;
+  padding: 18px 14px;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: background .18s var(--lh-smooth), transform .18s var(--lh-smooth);
+}
+
+.lh-tab__icon{ display: inline-flex; align-items: center; justify-content:center; width:36px; height:36px; color: #c9f0ff; }
+.lh-tab__label{ font-size: 15px; line-height: 1; color: #f6fcff; }
+
+/* subtle hover */
+.lh-tab:hover{
+  background: rgba(255,255,255,0.03);
+  transform: translateY(-2px);
+}
+
+/* active tab box style */
+.lh-tab.is-active{
+  background: linear-gradient(90deg,#fff 0%, rgba(255,255,255,0.98) 100%);
+  color: var(--lh-blue);
+  box-shadow: 0 12px 30px rgba(11,20,30,0.08);
+  transform: none;
+  border-left: 6px solid var(--lh-accent);
+  padding-left: 12px; /* keep spacing with left accent */
+}
+
+/* when active, make icon colored */
+.lh-tab.is-active .lh-tab__icon{ color: var(--lh-accent); }
+
+/* FIX: ensure active tab label uses the primary accent and overrides other rules */
+.lh-tab.is-active .lh-tab__label{
+  color: var(--lh-accent) !important;
+}
+
+/* slim vertical accent bar placed just inside the grid gap (no negative offsets) */
+.lh-left__accent{
+  position: absolute;
+  right: -8px;   
+  top: 48px;
+  bottom: 48px;
+  width: 8px;
+  background: linear-gradient(180deg, rgba(76,175,80,0.15) 0%, var(--lh-accent) 40%, rgba(76,175,80,0.9) 60%, transparent 100%);
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(11,20,30,0.04);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* RIGHT - card grid */
+.lh-right{
+  padding: 6px 6px 6px 18px;
+  z-index: 1;
+}
+
+.lh-cards{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+/* individual card */
+.lh-card{
+  background: linear-gradient(180deg,#fff 0%, #fbfdff 100%);
+  border-radius: 12px;
+  box-shadow: var(--lh-shadow);
+  display: flex;
+  gap: 18px;
+  padding: 20px;
+  border: 1px solid rgba(15,23,35,0.04);
+  transition: transform .22s var(--lh-smooth), box-shadow .22s var(--lh-smooth);
+  min-height: 170px;
+  position: relative;
+}
+
+.lh-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 30px 70px rgba(11,20,30,0.08);
+}
+
+.lh-card__media{
+  width: 84px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding-top: 6px;
+}
+
+.lh-media__badge{
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(180deg, #e8f6ea 0%, #dff3df 100%); /* green-tinged */
+  box-shadow: 0 8px 18px rgba(11,20,30,0.05);
+  color: var(--lh-accent);
+}
+
+/* card body */
+.lh-card__body{
+  flex: 1;
+  display:flex;
+  flex-direction: column;
+}
+
+.lh-card__title{
+  margin: 0 0 8px 0;
+  color: var(--lh-blue);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.lh-hr{
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg,#c6f2d1, #b8f0d7);
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
+.lh-card__excerpt{
+  color: var(--lh-muted);
+  font-size: 14px;
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* small circular CTA on right-bottom */
+.lh-card__cta{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  margin-top: 8px;
+}
+
+.lh-cta{
+  background: linear-gradient(180deg,var(--lh-accent), #3b8b3b);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(11,20,30,0.08);
+  transition: transform .18s var(--lh-smooth);
+}
+
+.lh-cta:hover{ transform: translateY(-3px); }
+
+/* empty state */
+.lh-empty{
+  padding: 40px;
+  text-align: center;
+  color: var(--lh-muted);
+  font-size: 15px;
+  grid-column: 1 / -1;
+}
+
+/* ---------------- responsive ---------------- */
+@media (min-width: 1024px) {
+  /* make left column sticky on desktop for better UX */
+  .lh-left{
+    position: sticky;
+    top: 92px;
+    align-self: start;
+  }
+}
+
+@media (max-width: 1100px){
+  .lh-grid{ grid-template-columns: 1fr; }
+  .lh-left{ order: 2; position: relative; top: auto; }
+  .lh-right{ order: 1; padding-left: 0; }
+  .lh-left__accent{ display: none; }
+  .lh-cards{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  /* convert left tabs into a top horizontal pill row */
+  .lh-grid{ grid-template-columns: 1fr; gap: 22px; }
+  .lh-left{
+    order: 1;
+    padding: 6px;
+    margin-bottom: 6px;
+  }
+  .lh-tabs{
+    display: flex;
+    gap: 12px;
+    overflow: auto;
+    max-height: none;
+    background: transparent;
+    padding: 6px;
+    box-shadow: none;
+  }
+  .lh-tab{
+    padding: 10px 14px;
+    background: linear-gradient(180deg,#fff,#fbfdff);
+    color: var(--lh-text);
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(11,20,30,0.04);
+    font-weight: 600;
+  }
+  .lh-tab.is-active{
+    border-left: 0;
+    background: linear-gradient(90deg,#e9fff7,#fbf9ff);
+    color: var(--lh-blue);
+    transform: none;
+    padding-left: 12px;
+  }
+
+  .lh-left__accent{ display:none; }
+  .lh-cards{ grid-template-columns: 1fr; gap: 18px; }
+  .lh-card{ min-height: auto; padding: 18px; }
+  .lh-card__media{ width: 64px; }
+  .lh-media__badge{ width: 48px; height: 48px; border-radius: 10px; }
+}
+
+/* very small phones */
+@media (max-width: 420px) {
+  .lh-title{ font-size: 22px; }
+  .lh-sub{ font-size: 13px; padding: 0 8px; }
+  .lh-tab__label{ font-size: 13px; }
+  .lh-card__title{ font-size: 15px; }
+  .lh-card__excerpt{ font-size: 13px; }
+  .lh-grid{ grid-template-columns: 1fr; }
+  .lh-cards{ grid-template-columns: 1fr; gap: 14px; }
+}

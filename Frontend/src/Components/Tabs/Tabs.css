@@ -1,0 +1,387 @@
+
+
+/* Theme variables */
+:root {
+  --tabsec-primary: #16a34a;   /* logo green (prominent) */
+  --tabsec-accent: #ff8a00;    /* orange accent */
+  --tabsec-dark: #0b1220;      /* main text */
+  --tabsec-muted: #515c66;     /* muted copy */
+  --tabsec-radius: 12px;
+  --tabsec-sticky-extra: 12px;
+  --tabsec-maxwidth: 1500px;
+  --tabsec-gap: 12px;
+}
+
+/* Outer wrapper */
+.TabSec-outer {
+  width: 100%;
+  padding: 28px 18px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--tabsec-dark);
+  min-width: 0;
+}
+
+/* Centered container */
+.TabSec-wrap.full-width {
+  width: 100%;
+  max-width: var(--tabsec-maxwidth);
+  padding: 18px;
+  border-radius: var(--tabsec-radius);
+  box-sizing: border-box;
+  background: transparent;
+}
+/* -------------------------
+   TabSec header - responsive
+   - keeps font sizes unchanged
+   - improves wrapping, spacing and stacking
+   ------------------------- */
+
+.TabSec-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tabsec-gap);
+  margin-bottom: 10px;
+
+  /* allow children to wrap (so long titles don't overflow) */
+  flex-wrap: wrap;
+  /* ensure internal flex items can shrink properly */
+  align-content: center;
+}
+
+/* Title area: allow shrinking so long titles wrap instead of forcing overflow */
+.TabSec-title {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;          /* important for text truncation/wrapping in flex items */
+  flex: 1 1 auto;        /* take remaining space but allow shrink */
+}
+
+/* Keep same font-size but tighten line-height for better multi-line behavior */
+.TabSec-title h1 {
+  margin: 0;
+  color: var(--tabsec-primary);
+  font-size: 22px;       /* unchanged as requested */
+  font-weight: 700;
+  line-height: 1.05;     /* tighter to preserve vertical rhythm */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+/* Subtitle stays same size but uses subtle spacing */
+.TabSec-sub {
+  margin: 6px 0 0;
+  color: var(--tabsec-muted);
+  font-size: 15px;       /* unchanged */
+  line-height: 1.4;
+  opacity: 0.95;
+}
+
+/* Pill meta: visually distinct, but responsive placement */
+.TabSec-pill {
+  background: rgba(22,163,74,0.08);
+  color: var(--tabsec-primary);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;       /* unchanged */
+  white-space: nowrap;
+  flex: 0 0 auto;        /* don't let pill grow or shrink unexpectedly */
+  margin-left: 8px;
+}
+
+/* Make sure the header's second column (pill) doesn't push content */
+.TabSec-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+  gap: 8px;
+}
+
+/* -------------------------
+   Responsive adjustments
+   - tablet and smaller: allow pill to flow beneath title (keeps font sizes)
+   - very small: center pill under title for balanced appearance
+   ------------------------- */
+
+/* Tablet and large phones */
+@media (max-width: 768px) {
+  .TabSec-header {
+    align-items: flex-start; /* stack better when wrapping */
+  }
+
+  /* Ensure the title takes full available width first */
+  .TabSec-title {
+    flex: 1 1 100%;
+    margin-right: 0;
+  }
+
+  /* Move the pill to the next "row" under the title and subtitle */
+  .TabSec-meta {
+    flex-basis: 100%;
+    justify-content: flex-start;
+    margin-top: 8px;
+  }
+
+  .TabSec-pill {
+    margin-left: 0;
+  }
+}
+
+/* Very small phones: center the pill below the title for a tidy layout */
+@media (max-width: 480px) {
+  .TabSec-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .TabSec-title {
+    width: 100%;
+  }
+
+  .TabSec-meta {
+    width: 100%;
+    margin-top: 6px;
+  }
+
+  .TabSec-pill {
+    margin: 0;
+  }
+}
+
+/* Accessible hidden helper */
+.TabSec-visuallyHidden {
+  border: 0 !important;
+  clip: rect(1px,1px,1px,1px) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+/* Spacer for sticky row */
+.TabSec-spacer { width: 100%; }
+
+/* Tabs row */
+.TabSec-row {
+  position: relative;
+  z-index: 1200;
+  width: 100%;
+  padding: 8px 0;
+  box-sizing: border-box;
+}
+
+/* When fixed: subtle backdrop with border to separate from content */
+.TabSec-row.TabSec-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid rgba(6,10,20,0.06);
+  padding: 10px 0;
+  box-shadow: 0 6px 18px rgba(6,10,20,0.04);
+}
+
+/* Horizontal scroller inner */
+.TabSec-inner {
+  display: flex;
+  gap: 10px;
+  padding: 6px 18px;
+  overflow-x: auto;
+  
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.TabSec-inner::-webkit-scrollbar { display: none; }
+
+/* Tab pill */
+.TabSec-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(6,10,20,0.04);
+  background: transparent;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  white-space: nowrap;
+  scroll-snap-align: start;
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+  color: var(--tabsec-dark);
+}
+.TabSec-tab:focus-visible {
+  outline: 3px solid rgba(22,163,74,0.12);
+  outline-offset: 4px;
+  border-radius: 999px;
+}
+
+/* Decorative left icon */
+.TabSec-tabIcon {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(22,163,74,0.08);
+  flex: 0 0 auto;
+}
+
+/* Active tab look — green prominence like the logo */
+.TabSec-tab.TabSec-active {
+  color: var(--tabsec-primary);
+  background: rgba(22,163,74,0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(6,10,20,0.04);
+  border: 1px solid rgba(22,163,74,0.12);
+}
+.TabSec-tab.TabSec-active .TabSec-tabIcon {
+  background: var(--tabsec-accent); /* orange icon for active */
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,0.3);
+}
+
+/* Panel region */
+.TabSec-panel {
+  margin-top: 14px;
+  padding: 0;
+  min-width: 0;
+}
+
+/* Panel content card */
+.TabSec-panelContent {
+  background: transparent;
+  margin: 12px 0;
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(6,10,20,0.04);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  scroll-margin-top: var(--tabsec-sticky-height, 84px);
+}
+.TabSec-panelContent.TabSec-isActive {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(6,10,20,0.05);
+  border: 1px solid rgba(6,10,20,0.06);
+  padding: 0px;
+}
+
+/* Panel heading & body */
+.TabSec-panelHeading h2 {
+  margin: 0 0 8px 0;
+  color: var(--tabsec-primary);
+  font-size: 20px;
+  font-weight: 700;
+}
+.TabSec-panelBody {
+  color: var(--tabsec-muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Buttons using primary green */
+button,
+.TabSec-btn,
+.TabSec-panelContent button {
+  background-color: var(--tabsec-primary);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+}
+button:hover,
+.TabSec-btn:hover,
+.TabSec-panelContent button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(6,10,20,0.08);
+}
+
+/* helpers (example layout utilities) */
+.TabSec-sectionCard {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 320px;
+}
+.TabSec-sectionRight {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(6,10,20,0.03);
+}
+
+/* Tab label multi-line handling */
+.TabSec-tabLabel {
+  display: inline-block;
+  max-width: 320px;
+  word-break: break-word;
+  line-height: 1.1;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Responsive tweaks (NO font-size reductions) */
+@media (max-width: 1024px) {
+  :root { --tabsec-maxwidth: 920px; }
+  .TabSec-wrap.full-width { padding: 16px; }
+
+  /* Tab remains same font-size */
+  .TabSec-tab {
+    padding: 9px 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .TabSec-wrap.full-width { padding: 12px; }
+
+  /* Maintain same font-size, only adjust width & padding */
+  .TabSec-tab {
+    padding: 8px 12px;
+    min-width: 120px;
+    max-width: 260px;
+  }
+}
+
+
+
+
+@media (max-width: 480px) {
+  .TabSec-outer { padding: 0px 0px; }
+  .TabSec-wrap.full-width { padding: 10px; }
+
+  /* Header spacing only */
+  .TabSec-header { gap: 8px; }
+
+  /* Sub-title keeps original font-size, so remove overrides */
+
+  /* Tabs stay same font-size — only adjust padding & widths */
+  .TabSec-tab {
+    padding: 8px 10px;
+    min-width: 110px;
+    max-width: 220px;
+    transform: none;
+  }
+
+  .TabSec-tabIcon {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Panel padding responsive but text unchanged */
+  .TabSec-panelContent {
+    padding: 14px;
+    scroll-margin-top: calc(var(--tabsec-sticky-height, 84px) + 6px);
+  }
+}

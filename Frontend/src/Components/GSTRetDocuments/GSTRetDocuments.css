@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* =========================
+   SECTION WRAPPER
+========================= */
+
+.gst-docs-section {
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  padding: 80px 24px;
+}
+
+.gst-docs-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 70px;
+  align-items: center;
+}
+
+/* =========================
+   LEFT IMAGE
+========================= */
+
+.gst-docs-image {
+  display: flex;
+  justify-content: center;
+}
+
+.gst-docs-image img {
+  width: 100%;
+  max-width: 420px;
+  transition: transform 0.5s ease;
+}
+
+.gst-docs-image:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================
+   RIGHT CONTENT
+========================= */
+
+.gst-docs-content {
+  color: #1f2937;
+}
+
+.gst-docs-title {
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.gst-docs-subtitle {
+  font-size: 15px;
+  color: #6b7280;
+  margin-bottom: 28px;
+  line-height: 1.8;
+}
+
+/* =========================
+   LIST
+========================= */
+
+.gst-docs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px;
+  display: grid;
+  row-gap: 14px;
+}
+
+.gst-docs-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 15px;
+  line-height: 1.7;
+  padding: 12px 14px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.gst-docs-item:hover {
+  background: #fff7e6;
+  transform: translateX(6px);
+}
+
+.gst-docs-check {
+  color: #f59e0b;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.gst-docs-btn {
+  background: #f59e0b;
+  color: #ffffff;
+  border: none;
+  padding: 14px 30px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gst-docs-btn:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(245, 158, 11, 0.35);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  .gst-docs-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .gst-docs-image img {
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gst-docs-title {
+    font-size: 26px;
+  }
+
+  .gst-docs-subtitle {
+    font-size: 14px;
+  }
+
+  .gst-docs-item {
+    font-size: 14px;
+  }
+}
