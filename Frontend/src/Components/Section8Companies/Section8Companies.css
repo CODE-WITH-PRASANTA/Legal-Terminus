@@ -1,207 +1,160 @@
-/* Section12Registration.css
-   Responsive grid + unique card effects for 12A/80G section
-*/
-
-:root {
-  --s12-blue: #27ae60;
-  --s12-muted: #4b5563;
-  --s12-accent-start: #ffd8a8;
-  --s12-accent-end: #ffe6c2;
-  --s12-radius: 14px;
-  --s12-shadow: 0 10px 28px rgba(2,6,23,0.06);
+/* ================= BASE ================= */
+.s12reg-section {
+  background: #f8fafc;
+  padding: 80px 20px;
 }
 
-.s12-section {
-  padding: 48px 20px;
-  background: #fff;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: #0f172a;
-  box-sizing: border-box;
-}
-
-.s12-container {
+.s12reg-container {
   max-width: 1200px;
   margin: 0 auto;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #111827;
 }
 
-.s12-header {
-  margin-bottom: 22px;
+/* ================= HEADER ================= */
+.s12reg-header {
+  max-width: 900px;
+  margin-bottom: 56px;
 }
 
-.s12-title {
-  font-size: 1.95rem;
-  color: var(--s12-blue);
-  margin: 0 0 12px;
+.s12reg-title {
+  font-size: 2.2rem;
   font-weight: 700;
-  line-height: 1.15;
+  color: #27ae60;
+  margin-bottom: 16px;
 }
 
-.s12-intro {
-  margin: 0;
-  color: var(--s12-muted);
+.s12reg-intro {
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.75;
+  color: #4b5563;
 }
 
-/* grid for cards: single column on small screens, two columns on mid, 3 wide stacking on large */
-.s12-grid {
+/* ================= GRID ================= */
+.s12reg-grid {
   display: grid;
-  gap: 18px;
-  grid-template-columns: 1fr;
-  margin-top: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
 }
 
-/* wide card spans columns on larger screens */
-.s12-card {
+/* ================= CARD ================= */
+.s12reg-card {
   position: relative;
-  background: linear-gradient(180deg, #ffffff, #fffaf3);
-  border-radius: var(--s12-radius);
-  padding: 18px 20px 20px 22px;
-  border: 1px solid rgba(15,23,42,0.04);
-  box-shadow: var(--s12-shadow);
-  overflow: visible;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.28s ease;
-  opacity: 0;
-  transform: translateY(8px);
-  animation: s12-fadeIn 420ms forwards cubic-bezier(.22,.9,.36,1);
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 32px rgba(15, 23, 42, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Accent bar (soft warm color) */
-.s12-accent {
+.s12reg-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.12);
+}
+
+.s12reg-card-wide {
+  grid-column: span 2;
+}
+
+/* Accent bar */
+.s12reg-accent {
   position: absolute;
-  left: -10px;
-  top: 14px;
-  bottom: 14px;
-  width: 10px;
-  border-radius: 10px;
-  background: linear-gradient(180deg, var(--s12-accent-start), var(--s12-accent-end));
-  box-shadow: 0 6px 18px rgba(255, 156, 46, 0.08);
-  transition: transform 0.26s ease;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: #bc93a8;
+  border-radius: 16px 0 0 16px;
 }
 
-/* card text */
-.s12-card-title {
-  margin: 0 0 8px;
-  font-size: 1.05rem;
-  color: #0b2a57;
-  font-weight: 700;
+/* ================= TEXT ================= */
+.s12reg-card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 12px;
 }
 
-.s12-card-desc {
-  margin: 0 0 12px;
-  color: var(--s12-muted);
-  line-height: 1.7;
+.s12reg-card-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #4b5563;
+  margin-bottom: 16px;
 }
 
-/* subtitles and lists */
-.s12-subtitle {
-  margin: 8px 0;
+.s12reg-subtitle {
   font-size: 1rem;
-  color: #0b2a57;
-  font-weight: 700;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1e293b;
 }
 
-.s12-list,
-.s12-docs {
-  margin: 0;
+/* ================= LISTS ================= */
+.s12reg-list,
+.s12reg-docs {
   padding-left: 18px;
-  color: var(--s12-muted);
-  line-height: 1.7;
+  margin-bottom: 14px;
 }
 
-.s12-list li,
-.s12-docs li {
-  margin-bottom: 10px;
-  font-size: 0.96rem;
-}
-
-/* combined steps layout */
-.s12-steps {
-  margin-top: 8px;
-  display: grid;
-  gap: 10px;
-}
-
-.s12-step-title {
-  margin: 0 0 6px;
-  font-size: 0.98rem;
-  font-weight: 700;
-  color: #0b2a57;
-}
-
-.s12-step-text {
-  margin: 0;
-  color: var(--s12-muted);
+.s12reg-list li,
+.s12reg-docs li {
   font-size: 0.95rem;
   line-height: 1.7;
+  margin-bottom: 8px;
+  color: #374151;
 }
 
-/* concluding note */
-.s12-conclude {
+/* ================= STEPS ================= */
+.s12reg-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
   margin-top: 12px;
-  color: var(--s12-muted);
+}
+
+.s12reg-step {
+  background: #f9fafb;
+  padding: 14px;
+  border-radius: 10px;
+}
+
+.s12reg-step-title {
+  font-size: 0.95rem;
   font-weight: 600;
+  margin-bottom: 4px;
+  color: #0f172a;
 }
 
-/* Hover & focus effects */
-@media (hover: hover) {
-  .s12-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 22px 48px rgba(2,6,23,0.12);
-    background: linear-gradient(135deg, rgba(255,236,204,0.5), rgba(255,255,255,0.9));
-  }
-
-  .s12-card:hover .s12-accent {
-    transform: scaleY(1.06);
-  }
+.s12reg-step-text {
+  font-size: 0.9rem;
+  color: #4b5563;
 }
 
-/* fade in animation */
-@keyframes s12-fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ================= NOTE ================= */
+.s12reg-note {
+  font-size: 0.9rem;
+  color: #374151;
+  margin-top: 12px;
+  font-weight: 500;
 }
 
-/* Responsive breakpoints */
-@media (min-width: 720px) {
-  .s12-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  /* make the combined process card span both columns (full width) */
-  .s12-card--wide {
-    grid-column: 1 / -1;
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .s12reg-card-wide {
+    grid-column: span 1;
   }
 }
 
-@media (min-width: 1100px) {
-  .s12-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
+@media (max-width: 600px) {
+  .s12reg-section {
+    padding: 60px 16px;
   }
 
-  .s12-card--wide {
-    grid-column: 1 / -1; /* still span full width for emphasis */
-  }
-}
-
-/* small screen adjustments */
-@media (max-width: 520px) {
-  .s12-section {
-    padding: 28px 14px;
+  .s12reg-title {
+    font-size: 1.8rem;
   }
 
-  .s12-title {
-    font-size: 1.4rem;
+  .s12reg-card {
+    padding: 22px;
   }
-
-  .s12-card {
-    padding: 14px 14px 16px 18px;
-  }
-}
-
-/* Accessibility: reduce motion */
-@media (prefers-reduced-motion: reduce) {
-  .s12-card { animation: none; transition: none; }
-  .s12-accent { transition: none; }
 }

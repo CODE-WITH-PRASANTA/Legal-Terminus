@@ -1,21 +1,28 @@
 import React, { useState } from "react";
 import "./PvtltdTabs.css";
 
-const tabLabels = [
-  "Private Limited Company",
-  "Pvt Types",
-  "Requirements",
-  "Process & Steps",
-  "Documents",
-  "FAQ's",
+const tabs = [
+  { label: "Private Limited Company", id: "company" },
+  { label: "Pvt Types", id: "types" },
+  { label: "Requirements", id: "requirements" },
+  { label: "Process & Steps", id: "process" },
+  { label: "Documents", id: "documents" },
+  { label: "FAQ's", id: "faq" },
 ];
 
-const PvtTabs = ({ onTabChange }) => {
+const PvtTabs = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleClick = (index) => {
+  const handleClick = (index, id) => {
     setActiveIndex(index);
-    if (onTabChange) onTabChange(tabLabels[index], index);
+
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   };
 
   return (
@@ -23,14 +30,14 @@ const PvtTabs = ({ onTabChange }) => {
       <div className="pvt-tabs-container">
         <div className="pvt-tabs-card">
           <div className="pvt-tabs-list">
-            {tabLabels.map((label, index) => (
+            {tabs.map((tab, index) => (
               <button
-                key={label}
+                key={tab.id}
                 type="button"
                 className={`pvt-tab ${index === activeIndex ? "active" : ""}`}
-                onClick={() => handleClick(index)}
+                onClick={() => handleClick(index, tab.id)}
               >
-                {label}
+                {tab.label}
               </button>
             ))}
           </div>

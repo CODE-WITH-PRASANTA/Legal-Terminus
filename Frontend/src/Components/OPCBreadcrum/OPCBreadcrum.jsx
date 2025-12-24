@@ -1,140 +1,113 @@
-import React from 'react';
-import './OPCBreadcrum.css';
-import bgImage from '../../assets/breadcrum.png';
+import React from "react";
+import "./OPCBreadcrum.css";
 
-const PublicBreadcrum = () => {
+const Breadcrum = () => {
   return (
-    <section
-      className="opc-breadcrum"
-      style={{ '--bg': `url(${bgImage})` }}
-    >
-      <div className="opc-breadcrum-inner">
+    <section className="lt-public-hero">
+      <div className="lt-public-container">
 
-        {/* LEFT PANEL */}
-        <div className="opc-breadcrum-left-panel">
+        {/* LEFT CONTENT */}
+        <div className="lt-public-content">
 
-          <h1 className="opc-breadcrum-title">
-            <span className="opc-breadcrum-orange">One Person Company (OPC) Online</span>{' '}
-            <span className="opc-breadcrum-black">in India</span>
+          <span className="lt-public-tag">
+            One Person Company (OPC) Online Registration
+          </span>
+
+          <h1 className="lt-public-title">
+            One Person Company (OPC) Online Registration
+            <span> in India</span>
           </h1>
 
-          <h3 className="opc-breadcrum-subtitle">
-            <strong>Save 50% Today</strong>{' '}
-            <span>
-              on <strong>Professional Services</strong>
-            </span>
-          </h3>
-
-          <p className="opc-breadcrum-desc">
+          <p className="lt-public-description">
             Legal Terminus can help you with Public Limited Company registration in a smooth and hassle-free manner. We offer competitive professional fees starting at Rs. 3,999/- for Public Limited Company registration in India.
           </p>
 
-          <h4 className="opc-breadcrum-included">What's Included?</h4>
-
-          <div className="opc-breadcrum-features">
-            <ul className="opc-breadcrum-col">
-              <li>Registration in 1–2 Weeks</li>
-              <li>MCA Name Approval</li>
-              <li>DSC in 2–4 Days</li>
-            </ul>
-
-            <ul className="opc-breadcrum-col">
-              <li>DIN, PAN, and SPICE+ Compliance</li>
-              <li>MOA & AOA Drafting</li>
-            </ul>
+          <div className="lt-public-features">
+            <div className="lt-feature-item"> Minimum 2 Directors Required</div>
+            <div className="lt-feature-item"> Separate Legal Entity</div>
+            <div className="lt-feature-item"> Limited Liability Protection</div>
+            <div className="lt-feature-item"> High Business Credibility</div>
           </div>
 
-          <p className="opc-breadcrum-note">
-            <span className="opc-breadcrum-star">★</span>
-            Register 100+ Public Limited Companies Every Month + Save 18% with GST Registration
-          </p>
-
-          <div className="opc-breadcrum-cta-row">
-            <button className="opc-breadcrum-schedule-btn">Book a Schedule ➜</button>
-
-            <div className="opc-breadcrum-reviews">
-              <div className="opc-breadcrum-google">
-                <img src="https://corpbiz.io/img/google.webp" alt="" />
-              </div>
-
-              <div className="opc-breadcrum-trustpilot">
-                <img src="https://corpbiz.io/img/trustpilot.webp" alt="" />
-              </div>
+          <div className="lt-public-highlights">
+            <div>
+              <h3>12,000+</h3>
+              <p>Companies Registered</p>
+            </div>
+            <div>
+              <h3>99%</h3>
+              <p>Approval Success Rate</p>
+            </div>
+            <div>
+              <h3>15+</h3>
+              <p>Years of Legal Expertise</p>
             </div>
           </div>
 
         </div>
 
-        {/* RIGHT PANEL */}
-        <aside className="opc-breadcrum-right-panel">
+        {/* RIGHT FORM */}
+        <aside className="lt-public-form-wrapper">
+          <div className="lt-public-form-card">
 
-          <div className="opc-breadcrum-ribbon">
-            <img src="https://corpbiz.io/img/offer_icon.webp" alt="" />
-          </div>
+            <h3 className="lt-form-title">
+              Get Expert Assistance
+            </h3>
 
-          <div className="opc-breadcrum-form-card">
-            <h3 className="opc-breadcrum-form-title">Get Free Expert Consultation</h3>
+            <p className="lt-form-subtitle">
+              Talk to our Private Limited Company registration expert
+            </p>
 
             <form
-              className="opc-breadcrum-lead-form"
+              className="lt-public-form"
               onSubmit={(e) => e.preventDefault()}
             >
-              <input
-                className="opc-breadcrum-input"
-                placeholder="Your Name"
-                type="text"
-              />
+              <input type="text" placeholder="Full Name" required />
+              <input type="email" placeholder="Email Address" required />
+              <input type="tel" placeholder="Mobile Number" required />
 
-              <input
-                className="opc-breadcrum-input"
-                placeholder="Email Address"
-                type="email"
-              />
-
-              <div className="opc-breadcrum-phone-row">
-                <input
-                  className="opc-breadcrum-input opc-breadcrum-phone"
-                  placeholder="Mobile Number"
-                  type="tel"
-                />
-              </div>
-
-              <select className="opc-breadcrum-input opc-breadcrum-select">
-                <option>Select State</option>
+              <select required>
+                <option value="">Select Your State</option>
                 <option>Maharashtra</option>
                 <option>Delhi</option>
                 <option>Karnataka</option>
+                <option>Tamil Nadu</option>
+                <option>Other</option>
               </select>
 
-              <select className="opc-breadcrum-input opc-breadcrum-select">
-                <option>Select Preferable Time to Call</option>
-                <option>9:00 AM – 10:00 AM</option>
-                <option>10:00 AM – 11:00 AM</option>
-                <option>11:00 AM – 12:00 PM</option>
-                <option>12:00 PM – 1:00 PM</option>
-                <option>1:00 PM – 2:00 PM</option>
-                <option>2:00 PM – 3:00 PM</option>
-                <option>3:00 PM – 4:00 PM</option>
-                <option>4:00 PM – 5:00 PM</option>
-                <option>5:00 PM – 6:00 PM</option>
-                <option>6:00 PM – 7:00 PM</option>
+              <select>
+                <option value="">Preferred Call Time</option>
+                <option>10:00 AM – 12:00 PM</option>
+                <option>12:00 PM – 2:00 PM</option>
+                <option>2:00 PM – 4:00 PM</option>
+                <option>4:00 PM – 6:00 PM</option>
               </select>
 
-              <label className="opc-breadcrum-whatsapp">
-                Get Update on <span className="opc-breadcrum-wh-icon">Whatsapp</span>
-                <input type="checkbox" defaultChecked />
-                <span className="opc-breadcrum-toggle" />
-              </label>
+              <div className="lt-whatsapp-row">
+                <label className="lt-whatsapp-label">
+                  <input type="checkbox" defaultChecked />
+                  <span className="lt-custom-checkbox"></span>
+                  <span className="lt-whatsapp-text">
+                    Receive updates on <strong>WhatsApp</strong>
+                  </span>
+                </label>
+              </div>
 
-              <button className="opc-breadcrum-get-started" type="submit">
-                GET STARTED NOW
+              <button type="submit">
+                Book Free Consultation
               </button>
             </form>
+
+            <p className="lt-form-note">
+              🔒 100% Confidential • No Spam • No Hidden Charges
+            </p>
+
           </div>
         </aside>
+
       </div>
     </section>
   );
 };
 
-export default PublicBreadcrum;
+export default Breadcrum;
