@@ -426,8 +426,3 @@ a:focus{ outline:var(--focus-ring) solid rgba(2,91,138,0.12); outline-offset:3px
     padding: 0px;
   }
 }
-
-/* general safeguard for any viewport: prevent visual overflow from images/SVGs */
-@media (max-width:1800px) {
-  img, svg { max-width: 100%; height: auto; display: block; }
-}

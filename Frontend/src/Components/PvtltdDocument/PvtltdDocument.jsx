@@ -1,5 +1,5 @@
 import React from "react";
-import "./PvtltdDocument.css";
+import "./PvtLtdDocument.css";
 
 const documents = [
   {
@@ -19,9 +19,9 @@ const documents = [
   {
     id: 2,
     iconLabel: "ID",
-    title: "Passport size Photograph",
+    title: "Passport Size Photograph",
     description:
-      "Passport size photograph – all the proposed directors and shareholders.",
+      "Passport size photograph of all proposed directors and shareholders.",
   },
   {
     id: 3,
@@ -35,14 +35,14 @@ const documents = [
     iconLabel: "RA",
     title: "Rent Agreement",
     description:
-      "Rent agreement duly notarised with respect to the registered office address of the company (if on rent).",
+      "Duly notarised rent agreement for the registered office address (if on rent).",
   },
   {
     id: 5,
     iconLabel: "NOC",
     title: "No Objection Certificate",
     description:
-      "A No Objection Certificate (NOC) from the owner for use of his/her premises as the registered office of the proposed company.",
+      "No Objection Certificate (NOC) from the owner allowing use of the premises as the registered office.",
   },
   {
     id: 6,
@@ -53,40 +53,40 @@ const documents = [
   },
 ];
 
-const DocumentsPvt = () => {
+const PvtLtdDocuments = () => {
   const [isKycExpanded, setIsKycExpanded] = React.useState(false);
 
   return (
-    <section className="docs-section">
-      <div className="docs-container">
-        {/* Heading + intro */}
-        <header className="docs-header">
-          <h2 className="docs-title">
-            DOCUMENTS REQUIRED FOR PRIVATE LIMITED COMPANY REGISTRATION IN INDIA
+    <section className="pvtreg-docs-section">
+      <div className="pvtreg-docs-container">
+        {/* Header */}
+        <header className="pvtreg-docs-header">
+          <h2 className="pvtreg-docs-title">
+            Documents Required for Private Limited Company Registration
           </h2>
-          <p className="docs-subtitle">
-            The following essential documents / information are required for
-            registration
+          <p className="pvtreg-docs-subtitle">
+            The following essential documents and information are required for
+            incorporation.
           </p>
         </header>
 
         {/* Cards */}
-        <div className="docs-grid">
+        <div className="pvtreg-docs-grid">
           {documents.map((doc) => (
-            <article key={doc.id} className="docs-card">
-              <div className="docs-icon-circle">
-                <span className="docs-icon-label">{doc.iconLabel}</span>
+            <article key={doc.id} className="pvtreg-docs-card">
+              <div className="pvtreg-docs-icon">
+                <span>{doc.iconLabel}</span>
               </div>
-              <div className="docs-card-body">
-                <h3 className="docs-card-title">{doc.title}</h3>
 
-                {/* Description with Read More for KYC only */}
+              <div className="pvtreg-docs-card-body">
+                <h3 className="pvtreg-docs-card-title">{doc.title}</h3>
+
                 <p
-                  className={`docs-card-text ${
+                  className={`pvtreg-docs-card-text ${
                     doc.id === 1
                       ? isKycExpanded
-                        ? "is-expanded"
-                        : "is-collapsed"
+                        ? "pvtreg-expanded"
+                        : "pvtreg-collapsed"
                       : ""
                   }`}
                 >
@@ -96,7 +96,7 @@ const DocumentsPvt = () => {
                 {doc.id === 1 && (
                   <button
                     type="button"
-                    className="docs-readmore-btn"
+                    className="pvtreg-docs-readmore"
                     onClick={() => setIsKycExpanded((prev) => !prev)}
                   >
                     {isKycExpanded ? "Read less" : "Read more"}
@@ -108,28 +108,25 @@ const DocumentsPvt = () => {
         </div>
 
         {/* Notes */}
-        <div className="docs-notes-wrapper">
-          <div className="docs-notes-inner">
-            <ul className="docs-notes-list">
-              <li>
-                <strong>Note 1</strong> A detailed checklist will be provided by
-                our team in this respect as a ready reckoner.
-              </li>
-              <li>
-                <strong>Note 2</strong> All the documents mentioned above shall
-                be self-certified by the respective proposed directors /
-                members / shareholders.
-              </li>
-              <li>
-                <strong>Note 3</strong> All the utility bills or bank
-                statements shall not be less than 2 months old.
-              </li>
-            </ul>
-          </div>
+        <div className="pvtreg-docs-notes">
+          <ul>
+            <li>
+              <strong>Note 1:</strong> A detailed checklist will be shared by our
+              team as a ready reference.
+            </li>
+            <li>
+              <strong>Note 2:</strong> All documents must be self-certified by
+              the respective directors or shareholders.
+            </li>
+            <li>
+              <strong>Note 3:</strong> Utility bills or bank statements should
+              not be older than 2 months.
+            </li>
+          </ul>
         </div>
       </div>
     </section>
   );
 };
 
-export default DocumentsPvt;
+export default PvtLtdDocuments;

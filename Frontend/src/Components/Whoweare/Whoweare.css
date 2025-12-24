@@ -1,21 +1,22 @@
 :root{
-  --accent: #e59b2a;
-  --heading-green: #4CAF50;     /* heading color */
-  --title-color: #0b1a2b;
-  --card-radius: 18px;
+  --accent: #22c55e; /* legal green */
+  --heading-green: #16a34a;
+  --title-color: #0f172a;
+  --card-radius: 20px;
   --container-max: 1400px;
-  --hero-height: 550px;
+  --hero-height: 560px;
   --left-overlay-width: 52%;
-  --light-shadow: 0 8px 22px rgba(8,10,12,0.10);
+  --light-shadow: 0 18px 40px rgba(2,6,23,0.25);
   --font-sans: Inter, system-ui, sans-serif;
 }
 
 /* ROOT */
 .wwe-root {
-  padding: 40px 18px 64px;
+  padding: 60px 18px 80px;
   font-family: var(--font-sans);
   display: flex;
   justify-content: center;
+  background: linear-gradient(180deg, #f8fafc, #ffffff);
 }
 
 .wwe-inner {
@@ -26,18 +27,20 @@
 /* TITLES */
 .wwe-subtitle {
   text-align: center;
-  color: var(--accent);
+  color: var(--title-color);
   font-weight: 600;
-  margin: 6px 0 8px;
+  margin: 6px 0 10px;
   font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .wwe-title {
   text-align: center;
-  font-size: 34px;
+  font-size: 36px;
   font-weight: 800;
-  margin-bottom: 22px;
-  color: var(--heading-green);
+  margin-bottom: 30px;
+  color: var(--title-color);
 }
 
 /* HERO CARD */
@@ -46,28 +49,34 @@
   overflow: hidden;
   height: var(--hero-height);
   position: relative;
-  background-image: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop");
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 6, 23, 0.94),
+      rgba(2, 6, 23, 0.75),
+      rgba(2, 6, 23, 0.35)
+    ),
+    url("../../assets/whoweare.webp");
+
   background-size: cover;
   background-position: center;
   box-shadow: var(--light-shadow);
 }
 
-.wwe-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(6,8,10,0.80), rgba(6,8,10,0.45), rgba(6,8,10,0.08));
-  z-index: 0;
-}
-
-/* LEFT OVERLAY */
+/* LEFT OVERLAY – GLASS EFFECT */
 .wwe-left-bg {
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
   width: var(--left-overlay-width);
-  background: linear-gradient(90deg, rgba(8,10,12,0.92), rgba(8,10,12,0.55));
+  background: linear-gradient(
+    90deg,
+    rgba(2, 6, 23, 0.96),
+    rgba(2, 6, 23, 0.70)
+  );
+  backdrop-filter: blur(6px);
   z-index: 0;
 }
 
@@ -77,13 +86,13 @@
   z-index: 1;
   display: flex;
   height: 100%;
-  padding: 44px 36px;
-  gap: 28px;
+  padding: 56px 44px;
+  gap: 40px;
 }
 
 .wwe-left {
   width: 48%;
-  min-width: 260px;
+  min-width: 280px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,9 +100,10 @@
 
 .wwe-heading {
   color: #ffffff;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 800;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
+  letter-spacing: -0.3px;
 }
 
 /* LIST */
@@ -106,25 +116,27 @@
 .wwe-list li {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   color: #fff;
-  font-weight: 700;
-  margin-bottom: 12px;
+  font-weight: 600;
+  margin-bottom: 14px;
 }
 
 .wwe-check {
-  width: 28px;
-  height: 28px;
-  background: #fff;
-  color: var(--accent);
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(145deg, #ffffff, #e5e7eb);
+  color: var(--title-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .wwe-item-text {
   color: rgba(255,255,255,0.95);
+  line-height: 1.5;
 }
 
 /* SPACER */
@@ -132,7 +144,7 @@
   flex: 1;
 }
 
-/* CENTER PLAY BUTTON (DESKTOP) */
+/* PLAY BUTTON */
 .wwe-play {
   position: absolute;
   top: 50%;
@@ -140,123 +152,88 @@
   width: 110px;
   height: 110px;
   border-radius: 999px;
-  background: white;
+  background: linear-gradient(145deg, #ffffff, #f1f5f9);
   display: flex;
   align-items: center;
   justify-content: center;
   transform: translate(-50%, -50%);
-  box-shadow: 0 18px 40px rgba(11,20,28,0.28);
+  box-shadow: 0 22px 50px rgba(2,6,23,0.45);
   border: none;
   cursor: pointer;
-  transition: transform .18s ease, box-shadow .18s ease;
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .wwe-play:hover {
-  transform: translate(-50%, -50%) translateY(-6px);
-  box-shadow: 0 28px 60px rgba(11,20,28,0.38);
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 32px 70px rgba(2,6,23,0.55);
 }
 
-/* RESPONSIVE (unchanged until mobile) */
+/* RESPONSIVE */
 @media (max-width: 980px) {
   .wwe-left {
     width: 100%;
   }
 }
 
-/* ---------- MOBILE: center play button INSIDE hero without overlapping text ---------- */
+/* MOBILE */
 @media (max-width: 560px) {
-  /* stack content vertically and reserve vertical space so play doesn't cover list */
   .wwe-card-inner {
     flex-direction: column;
     align-items: center;
-    padding-top: 24px;
-    /* reserve enough bottom space so the centered play button sits below the list */
-    padding-bottom: 140px;
-    gap: 18px;
-  }
-
-  .wwe-heading {
-    font-size: 22px;
+    padding: 32px 24px 150px;
+    gap: 20px;
   }
 
   .wwe-left {
     width: 100%;
-    max-width: 520px;
-    padding-bottom: 12px;
   }
 
-  .wwe-list li {
-    margin-bottom: 10px;
-    font-size: 15px;
+  .wwe-heading {
+    font-size: 22px;
+    text-align: center;
   }
 
-  .wwe-item-text {
-    font-size: 15px;
-  }
-
-  /* Keep left overlay full width for contrast */
   .wwe-left-bg {
     width: 100%;
     border-radius: var(--card-radius);
   }
 
-  /* Position play absolutely centered in hero (but above reserved bottom area) */
   .wwe-play {
-    position: absolute;
-    left: 50%;
-    top: 70%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    width: 88px;
-    height: 88px;
-    z-index: 3;
-    box-shadow: 0 10px 28px rgba(11,20,28,0.18);
+    width: 86px;
+    height: 86px;
+    top: 72%;
   }
 
-  .wwe-play:hover {
-    transform: translate(-50%, -50%) translateY(-3px);
-  }
-
-  /* let hero expand naturally */
   .wwe-hero {
     height: auto;
     padding-bottom: 40px;
-    background-position: center top;
   }
 
-  /* remove spacer to avoid empty area */
   .wwe-spacer {
     display: none;
   }
 }
 
-/* very small phones */
+/* VERY SMALL */
 @media (max-width: 420px) {
-  .wwe-play {
-    width: 72px;
-    height: 72px;
-    box-shadow: 0 8px 20px rgba(11,20,28,0.16);
-    position: relative;
-    top: -36;
+  .wwe-title {
+    font-size: 24px;
   }
 
   .wwe-heading {
     font-size: 20px;
   }
 
-  .wwe-title {
-    font-size: 22px;
-  }
-
-  .wwe-list li {
-    font-size: 14px;
+  .wwe-play {
+    width: 72px;
+    height: 72px;
   }
 }
 
-/* lightweight transitions (keeps site light) */
+/* PERFORMANCE */
 .wwe-hero,
 .wwe-card-inner,
 .wwe-play {
-  will-change: transform, box-shadow;
+  will-change: transform;
   backface-visibility: hidden;
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import './Herosection.css'
+import right3danimation from '../../assets/VID_20251223_175719.mp4'
 
 const Herosection = () => {
   const tags = [
@@ -63,7 +64,7 @@ const Herosection = () => {
         <div className="hs-hero__right" aria-hidden="false">
           <div className="hs-video-card">
             <video
-              src="https://corpbiz.io/img/animate-video.mp4"
+              src={right3danimation}
               autoPlay
               muted
               loop

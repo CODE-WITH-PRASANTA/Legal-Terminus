@@ -1,220 +1,159 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
-.docs-section {
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  background-color: #ffffff;
-  padding: 72px 24px 64px;
+/* ================= BASE ================= */
+.pvtreg-docs-section {
+  background: #f8fafc;
+  padding: 80px 20px;
 }
 
-.docs-container {
-  max-width: 1180px;
+.pvtreg-docs-container {
+  max-width: 1200px;
   margin: 0 auto;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #111827;
 }
 
-/* Header */
-.docs-header {
-  text-align: center;
-  margin-bottom: 40px;
+/* ================= HEADER ================= */
+.pvtreg-docs-header {
+  max-width: 900px;
+  margin-bottom: 48px;
 }
 
-.docs-title {
-  font-size: 34px;
+.pvtreg-docs-title {
+  font-size: 2.2rem;
   font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #111827; /* black like reference */
-  margin: 0 0 16px;
+  margin-bottom: 12px;
+  color: #0f172a;
 }
 
-.docs-subtitle {
-  margin: 0;
-  font-size: 15px;
-  color: #16b646; /* green like reference */
+.pvtreg-docs-subtitle {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4b5563;
 }
 
-/* Cards layout */
-.docs-grid {
-  margin-top: 40px;
+/* ================= GRID ================= */
+.pvtreg-docs-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
 }
 
-/* Individual card */
-.docs-card {
+/* ================= CARD ================= */
+.pvtreg-docs-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 26px;
   display: flex;
-  align-items: flex-start;
   gap: 18px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.docs-icon-circle {
-  flex-shrink: 0;
-  width: 82px;
-  height: 82px;
+.pvtreg-docs-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.12);
+}
+
+/* Icon */
+.pvtreg-docs-icon {
+  min-width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background-color: #1aa91a; /* dark grey circle like icon bg */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.docs-icon-label {
-  font-size: 18px;
-  font-weight: 600;
+  background: #27ae60;
   color: #ffffff;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  font-size: 0.95rem;
 }
 
-.docs-card-body {
+/* Card body */
+.pvtreg-docs-card-body {
   flex: 1;
 }
 
-.docs-card-title {
-  margin: 0 0 6px;
-  font-size: 16px;
+.pvtreg-docs-card-title {
+  font-size: 1.1rem;
   font-weight: 600;
-  color: #111827;
+  margin-bottom: 6px;
+  color: #0f172a;
 }
 
-.docs-card-text {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.8;
-  color: #111827;
+.pvtreg-docs-card-text {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #4b5563;
+  margin-bottom: 6px;
 }
 
-/* Notes box at bottom */
-.docs-notes-wrapper {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-}
-
-.docs-notes-inner {
-  border-radius: 10px;
-  border: 2px solid #1aa91a;
-  padding: 18px 24px;
-  max-width: 1000px;
-}
-
-.docs-notes-list {
-  list-style: disc;
-  padding-left: 20px;
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.8;
-  color: #111827;
-}
-
-/* -----------------------------
-   Responsive
------------------------------- */
-
-@media (max-width: 1024px) {
-  .docs-section {
-    padding: 60px 20px 52px;
-  }
-
-  .docs-title {
-    font-size: 30px;
-  }
-
-  .docs-grid {
-    gap: 28px;
-  }
-}
-
-@media (max-width: 768px) {
-  .docs-section {
-    padding: 48px 16px 44px;
-  }
-
-  .docs-title {
-    font-size: 26px;
-  }
-
-  .docs-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .docs-notes-inner {
-    padding: 14px 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .docs-section {
-    padding: 40px 12px 40px;
-  }
-
-  .docs-title {
-    font-size: 22px;
-  }
-
-  .docs-card-title {
-    font-size: 15px;
-  }
-
-  .docs-card-text,
-  .docs-notes-list {
-    font-size: 13.5px;
-  }
-}
-
-
-/* Read more / Read less handling only for KYC text */
-.docs-card-text {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.8;
-  color: #111827;
-  max-height: none;
-  transition: max-height 0.3s ease;
-}
-
-/* Collapsed state for KYC description */
-.docs-card-text.is-collapsed {
-  max-height: 70px; /* show only a couple of lines */
+/* Read more behavior */
+.pvtreg-collapsed {
+  max-height: 48px;
   overflow: hidden;
-  position: relative;
 }
 
-/* Optional fade-out effect at the bottom when collapsed */
-.docs-card-text.is-collapsed::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 24px;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0),
-    #ffffff
-  );
+.pvtreg-expanded {
+  max-height: none;
 }
 
-/* Expanded state for KYC description */
-.docs-card-text.is-expanded {
-  max-height: 500px; /* big enough to show the whole content */
-}
-
-/* Read more button styling */
-.docs-readmore-btn {
-  margin-top: 6px;
-  padding: 0;
-  border: none;
+/* Read more button */
+.pvtreg-docs-readmore {
   background: none;
-  font-size: 13px;
-  font-weight: 500;
-  color: #1aa91a;
+  border: none;
+  color: #27ae60;
+  font-size: 0.9rem;
+  font-weight: 600;
   cursor: pointer;
+  padding: 0;
 }
 
-.docs-readmore-btn:hover {
-  text-decoration: underline;
+/* ================= NOTES ================= */
+.pvtreg-docs-notes {
+  margin-top: 50px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 26px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
 }
 
-.docs-readmore-btn:focus {
-  outline: none;
+.pvtreg-docs-notes ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.pvtreg-docs-notes li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .pvtreg-docs-section {
+    padding: 60px 16px;
+  }
+
+  .pvtreg-docs-title {
+    font-size: 1.8rem;
+  }
+
+  .pvtreg-docs-card {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 420px) {
+  .pvtreg-docs-title {
+    font-size: 1.6rem;
+  }
+
+  .pvtreg-docs-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pvtreg-docs-icon {
+    width: 48px;
+    height: 48px;
+  }
 }

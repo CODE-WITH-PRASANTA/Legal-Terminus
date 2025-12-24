@@ -1,181 +1,155 @@
-.s8-wrapper {
+/* Base Wrapper */
+.sec8o-wrapper {
   max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 24px 80px;
-  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  color: #111827;
+  margin: 0 auto;
+  padding: 80px 20px;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #1f2937;
 }
 
-/* Base text blocks */
-.s8-block {
-  margin-bottom: 48px;
+/* Blocks */
+.sec8o-block {
+  margin-bottom: 72px;
 }
 
-.s8-title {
-  font-size: 32px;
+/* Headings */
+.sec8o-title {
+  font-size: 2.4rem;
   font-weight: 700;
+  margin-bottom: 24px;
   color: #27ae60;
-
-
-.s8-subtitle {
-  font-size: 24px;
-  font-weight: 700;
-  color: #d49247de;
-  margin-bottom: 12px;
 }
 
-.s8-text {
-  font-size: 16px;
-  line-height: 1.9;
+.sec8o-subtitle {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #1e293b;
+}
+
+/* Text */
+.sec8o-text {
+  font-size: 1rem;
+  line-height: 1.75;
   color: #4b5563;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  max-width: 900px;
 }
 
-/* ==========
-   GRID CARDS
-   ========== */
-
-.s8-grid {
+/* Grid */
+.sec8o-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 18px 24px;
-  margin-top: 18px;
+  gap: 24px;
+  margin-top: 32px;
 }
 
-/* Feature & purpose cards */
-.s8-card {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 12px;
-  padding: 14px 16px;
-  border-radius: 12px;
+/* Card */
+.sec8o-card {
   background: #ffffff;
-  box-shadow: 0 10px 28px rgba(21, 101, 20, 0.06);
-  transition: transform 0.18s ease, box-shadow 0.18s ease,
-    background-color 0.18s ease;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.s8-card-soft {
+.sec8o-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* Soft Cards */
+.sec8o-card-soft {
   background: #f9fafb;
+  border: 1px solid #e5e7eb;
 }
 
-.s8-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 34px rgba(21, 133, 53, 0.1);
-  background-color: #fdfdfd;
-}
-
-/* Bullet circle for cards */
-.s8-card-bullet {
+/* Bullet */
+.sec8o-bullet {
   width: 10px;
   height: 10px;
-  border-radius: 999px;
-  margin-top: 6px;
-  background: #888c1f;
+  background: #719313;
+  border-radius: 50%;
+  margin-top: 7px;
+  flex-shrink: 0;
 }
 
-/* Text inside cards */
-.s8-card-heading {
-  font-size: 15.5px;
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 4px;
+/* Card Text */
+.sec8o-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #0f172a;
 }
 
-.s8-card-text {
-  font-size: 14.5px;
-  line-height: 1.8;
+.sec8o-card-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: #4b5563;
 }
 
-/* Purpose section spacing tweak */
-.s8-purpose-block {
-  margin-top: 8px;
+/* Purpose Section */
+.sec8o-purpose {
+  background: linear-gradient(to bottom, #f8fafc, #ffffff);
+  padding: 60px 40px;
+  border-radius: 28px;
 }
 
-/* ================
-   LEGAL FRAMEWORK
-   ================ */
-
-.s8-grid-legal {
-  grid-template-columns: minmax(0, 1fr);
+/* Legal Section */
+.sec8o-grid-legal {
+  grid-template-columns: 1fr;
 }
 
-.s8-legal-card {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 12px;
-  padding: 14px 18px;
-  border-radius: 10px;
-  background: #ecf3ff;
-  border: 1px solid #719313;
-  transition: transform 0.18s ease, box-shadow 0.18s ease,
-    border-color 0.18s ease;
+.sec8o-legal-card {
+  background: #ffffff;
+  border-left: 4px solid #719313;
+  padding: 22px 26px;
+  border-radius: 12px;
+  display: flex;
+  gap: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
 }
 
-.s8-legal-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
-  border-color: #404811;
+.sec8o-legal-dot {
+  width: 8px;
+  height: 8px;
+  background: #719313;
+  border-radius: 50%;
+  margin-top: 9px;
 }
 
-.s8-legal-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-  margin-top: 7px;
-  background: #888c1f;
-}
-
-/* ==========
-   RESPONSIVE
-   ========== */
-
-@media (max-width: 768px) {
-  .s8-wrapper {
-    margin: 40px auto;
-    padding: 0 16px 60px;
+/* Tablet */
+@media (max-width: 1024px) {
+  .sec8o-wrapper {
+    padding: 60px 20px;
   }
 
-  .s8-title {
-    font-size: 26px;
-  }
-
-  .s8-subtitle {
-    font-size: 22px;
-  }
-
-  .s8-text {
-    font-size: 15px;
+  .sec8o-title {
+    font-size: 2.1rem;
   }
 }
 
-@media (max-width: 480px) {
-  .s8-wrapper {
-    padding: 0 14px 48px;
+/* Mobile */
+@media (max-width: 640px) {
+  .sec8o-wrapper {
+    padding: 48px 16px;
   }
 
-  .s8-title {
-    font-size: 24px;
+  .sec8o-title {
+    font-size: 1.85rem;
   }
 
-  .s8-subtitle {
-    font-size: 20px;
+  .sec8o-subtitle {
+    font-size: 1.4rem;
   }
 
-  .s8-card,
-  .s8-legal-card {
-    padding: 12px 14px;
+  .sec8o-purpose {
+    padding: 36px 20px;
   }
 
-  .s8-card-heading {
-    font-size: 15px;
+  .sec8o-card {
+    padding: 20px;
   }
-
-  .s8-card-text {
-    font-size: 14px;
-  }
-}
-
 }

@@ -1,250 +1,162 @@
-/* CertificateSection.css
-   Responsive grid + card effects for Certificate of Incorporation section
-*/
-
-:root{
-  --cert-blue: #27ae60;
-  --cert-muted: #4b5563;
-  --cert-accent-start: #ffd9b8;
-  --cert-accent-end: #fff1e0;
-  --cert-radius: 14px;
-  --cert-shadow: 0 12px 30px rgba(2,6,23,0.06);
-  --cert-gap: 20px;
+/* ================= BASE ================= */
+.s8cert-section {
+  background: #f8fafc;
+  padding: 80px 20px;
 }
 
-.cert-section{
-  padding: 48px 18px;
-  background: #fff;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: #0f172a;
-  box-sizing: border-box;
-}
-
-.cert-container{
-  max-width: 1300px;
+.s8cert-container {
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  gap: var(--cert-gap);
-  grid-template-columns: 1fr 1.1fr; /* left / right */
-  align-items: start;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 48px;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #111827;
 }
 
-/* left column */
-.cert-left{
-  padding-right: 12px;
-}
-
-.cert-title{
-  color: var(--cert-blue);
-  font-size: 1.95rem;
-  margin: 0 0 12px;
-  line-height: 1.12;
+/* ================= LEFT ================= */
+.s8cert-title {
+  font-size: 2.1rem;
   font-weight: 700;
+  margin-bottom: 14px;
+  color: #0f172a;
 }
 
-.cert-intro{
-  color: var(--cert-muted);
+.s8cert-intro {
   font-size: 1rem;
   line-height: 1.75;
-  margin: 0 0 16px;
+  color: #4b5563;
+  margin-bottom: 22px;
 }
 
-/* highlights list (left) */
-.cert-highlights{
+.s8cert-highlights {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: grid;
-  gap: 8px;
 }
 
-.cert-highlight{
-  color: var(--cert-muted);
-  line-height: 1.6;
-}
-
-.cert-highlight-title{
-  color: #111827;
-  font-weight: 700;
-}
-
-/* right column: grid */
-.cert-right{
-  padding-left: 12px;
-}
-
-.cert-grid{
-  display: grid;
-  gap: 16px;
-  grid-template-columns: 1fr;
-}
-
-/* regular small card */
-.cert-card{
-  position: relative;
-  background: linear-gradient(180deg, #ffffff, #fffaf7);
-  border-radius: var(--cert-radius);
-  padding: 16px 18px 18px 20px;
-  border: 1px solid rgba(15,23,42,0.04);
-  box-shadow: var(--cert-shadow);
-  overflow: visible;
-  transition: transform .22s ease, box-shadow .22s ease, background .28s ease;
-  opacity: 0;
-  transform: translateY(8px);
-  animation: cert-fadeIn 420ms forwards cubic-bezier(.22,.9,.36,1);
-}
-
-/* steps big card */
-.cert-steps-card{
-  position: relative;
-  background: linear-gradient(180deg, #ffffff, #fffdf9);
-  border-radius: calc(var(--cert-radius) + 2px);
-  padding: 18px 20px 20px 22px;
-  border: 1px solid rgba(15,23,42,0.05);
-  box-shadow: 0 16px 38px rgba(2,6,23,0.06);
-  overflow: visible;
-  transition: transform .22s ease, box-shadow .22s ease, background .28s ease;
-  opacity: 0;
-  transform: translateY(8px);
-  animation: cert-fadeIn 420ms forwards cubic-bezier(.22,.9,.36,1);
-}
-
-/* left accent bar */
-.cert-card-accent{
-  position: absolute;
-  left: -8px;
-  top: 12px;
-  bottom: 12px;
-  width: 8px;
-  border-radius: 8px;
-  background: linear-gradient(180deg, var(--cert-accent-start), var(--cert-accent-end));
-  box-shadow: 0 6px 18px rgba(255,150,35,0.07);
-  transition: transform .26s ease, box-shadow .26s ease;
-}
-
-/* card title + body */
-.cert-card-title{
-  margin: 0 0 8px;
-  font-size: 1.02rem;
-  font-weight: 700;
-  color: #0b2a57;
-}
-
-.cert-card-body{
-  margin: 0;
-  color: var(--cert-muted);
+.s8cert-highlight {
+  margin-bottom: 14px;
   line-height: 1.7;
-  font-size: 0.96rem;
 }
 
-/* steps list styles */
-.cert-steps{
-  margin: 12px 0 0;
-  padding-left: 0;
-  list-style: none;
+.s8cert-highlight-title {
+  color: #0f172a;
+}
+
+.s8cert-highlight-text {
+  color: #4b5563;
+}
+
+/* ================= RIGHT GRID ================= */
+.s8cert-grid {
   display: grid;
-  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
 }
 
-.cert-step{
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
+/* ================= CARD ================= */
+.s8cert-card {
+  position: relative;
+  background: #ffffff;
+  padding: 24px 24px 26px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cert-step-num{
-  color: var(--cert-blue);
-  font-weight: 800;
-  min-width: 26px;
-  text-align: right;
+.s8cert-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 44px rgba(15, 23, 42, 0.12);
 }
 
-.cert-step-content{
-  min-width: 0;
+.s8cert-card-wide {
+  grid-column: span 2;
 }
 
-.cert-step-title{
-  font-weight: 700;
-  color: #0b2a57;
-  margin-bottom: 4px;
+/* Accent bar */
+.s8cert-accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background: #27ae60;
+  border-radius: 16px 0 0 16px;
 }
 
-.cert-step-text{
-  color: var(--cert-muted);
+/* ================= CARD TEXT ================= */
+.s8cert-card-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.s8cert-card-text {
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.65;
+  color: #4b5563;
 }
 
-/* hover effects (desktop) */
-@media (hover: hover){
-  .cert-card:hover, .cert-steps-card:hover{
-    transform: translateY(-6px);
-    box-shadow: 0 22px 48px rgba(2,6,23,0.12);
-    background: linear-gradient(135deg, rgba(255,246,236,0.6), rgba(255,255,255,0.95));
+/* ================= STEPS ================= */
+.s8cert-steps {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+}
+
+.s8cert-step {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.s8cert-step-num {
+  min-width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #27ae60;
+  color: #fff;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+  font-size: 0.85rem;
+}
+
+.s8cert-step-title {
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+.s8cert-step-text {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .s8cert-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
-  .cert-card:hover .cert-card-accent,
-  .cert-steps-card:hover .cert-card-accent{
-    transform: scaleY(1.06);
-    box-shadow: 0 10px 26px rgba(255,150,35,0.12);
+
+  .s8cert-card-wide {
+    grid-column: span 1;
   }
 }
 
-/* fade-in animation */
-@keyframes cert-fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive layout */
-@media (min-width: 720px){
-  .cert-grid{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+@media (max-width: 600px) {
+  .s8cert-section {
+    padding: 60px 16px;
   }
 
-  /* steps card spans both columns on medium screens */
-  .cert-steps-card{
-    grid-column: 1 / -1;
+  .s8cert-title {
+    font-size: 1.8rem;
   }
 
-  /* show more left highlights as grid */
-  .cert-highlights{
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 1100px){
-  .cert-container{
-    grid-template-columns: 1fr 1.2fr;
-    gap: 28px;
-  }
-
-  .cert-grid{
-    gap: 22px;
-  }
-}
-
-/* small screen tweaks */
-@media (max-width: 520px){
-  .cert-container{
+  .s8cert-grid {
     grid-template-columns: 1fr;
   }
-
-  .cert-left, .cert-right{
-    padding: 0;
-  }
-
-  .cert-title{
-    font-size: 1.5rem;
-  }
-
-  .cert-card, .cert-steps-card{
-    padding: 14px;
-  }
-}
-
-/* reduced motion preference */
-@media (prefers-reduced-motion: reduce){
-  .cert-card, .cert-steps-card { animation: none; transition: none; }
-  .cert-card-accent { transition: none; }
 }

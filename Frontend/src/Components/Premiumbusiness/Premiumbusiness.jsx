@@ -12,36 +12,37 @@ const PREMIUM_ICONS = [
 
 const SERVICES = [
   {
-    title: "Startup Registration",
-    short: `Corpbiz will assist in incorporating your company from basics till the end while providing startup recognition...`,
-    full: `We handle name reservation, incorporation paperwork (SPICe/eForm), DIN/DSC assistance, MoA/AoA drafting & filing, bank account guidance, GST/TAN registration help and post-incorporation compliance so your company starts right.`
+    title: "Company & Startup Registration",
+    short: `Legal Terminus simplifies the process of registering your startup or company with expert legal guidance...`,
+    full: `We assist with Private Limited, LLP, OPC, Partnership and Proprietorship registration, including name approval, incorporation filing, DIN & DSC, MoA/AoA drafting, PAN/TAN, bank account setup and post-registration compliance support.`
   },
   {
-    title: "Environmental Consultancy",
-    short: `Elevate the environmental initiatives of your business and meet regulatory standards towards a sustainable future with Corpbiz...`,
-    full: `Our services include EIA assistance, consent to establish/operate support, waste management plans, environment audits, ISO 14001 advisory, ESG reporting guidance and liaison with pollution control boards.`
+    title: "Licenses & Government Registrations",
+    short: `Get hassle-free licensing and government approvals with Legal Terminus’ expert-managed process...`,
+    full: `Our services include FSSAI License, PSARA License, Trade License, Labour Registration, Shop & Establishment, MSME/Udyam Registration and other statutory approvals with complete documentation and follow-ups.`
   },
   {
-    title: "Regulatory (BIS, CDSCO, ISO)",
-    short: `We have a team of professionals who will guide you through the process of regulatory compliance, such as BIS, CDSCO, ISO, etc...`,
-    full: `We support product testing & BIS certification, CDSCO regulatory filings for medical products, and ISO management systems (9001/13485/27001) — including pre-audit readiness and auditor coordination.`
+    title: "Trademark & Intellectual Property",
+    short: `Protect your brand identity and intellectual assets with Legal Terminus’ IP solutions...`,
+    full: `We provide Trademark Registration, Copyright Registration, Trademark Objection & Opposition handling, Renewal services and brand protection strategies to secure your intellectual property rights.`
   },
   {
-    title: "Tax and Auditing",
-    short: `Get your tax and auditing work done in a hassle-free manner with us...`,
-    full: `We offer corporate & indirect tax advisory, quarterly/annual filings, statutory audits, tax structuring, transfer pricing guidance and assistance with notices. Our CAs manage bookkeeping, GST returns, TDS and audit reports.`
+    title: "Taxation & Compliance Services",
+    short: `Stay compliant and stress-free with our professional taxation and regulatory compliance services...`,
+    full: `Legal Terminus offers GST Registration & Returns, Income Tax Filing, TDS Compliance, ROC Filings, Annual Compliance, and professional CA-managed tax advisory services.`
   },
   {
-    title: "Advisory and Consultancy",
-    short: `Our team of experts are dedicated to providing you with advisory and consultancy for any of your business-related requirements...`,
-    full: `We advise on corporate law, contracts, funding strategy, ESOP structuring, HR & payroll setup, business strategy and provide bespoke advisory tailored to your company stage.`
+    title: "NGO & Trust Registration",
+    short: `Legal Terminus helps you legally establish and manage NGOs, Trusts and Societies in India...`,
+    full: `We assist in NGO Registration, Trust & Society Registration, Section 8 Company setup, 12A & 80G Certification, compliance filings and documentation for smooth non-profit operations.`
   },
   {
-    title: "Licensing",
-    short: `There are various laws in India that a company is required to comply with; Corpbiz helps you complete all the licensing requirements...`,
-    full: `We assist with FSSAI, PSARA, trade licenses, labour registrations and sectoral permits — handling documentation, application filing, inspection coordination and follow-up until issuance.`
+    title: "Legal Advisory & Documentation",
+    short: `Get expert legal advice and professionally drafted documents tailored to your business needs...`,
+    full: `Our legal experts provide contract drafting, agreement review, legal notices, business advisory, compliance consultation and ongoing legal support for startups and enterprises.`
   }
 ];
+
 
 function PremiumIcon({ path, id }) {
   return (
@@ -91,43 +92,49 @@ export default function Premiumbusiness() {
       <div className="pb-wrapper">
         <div className="pb-left">
           <div className="pb-left-content">
-            <h3 id="pb-heading" className="pb-head">
-              Business Management Made <span className="highlight">Simpler</span>
+           <h3 id="pb-heading" className="pb-head">
+              Legal Solutions Made <span className="highlight">Simple</span>
             </h3>
 
-            <p className="pb-intro">
-              At Corpbiz, we are not just a platform; we are your partner who guides you in the business world. As India's leading legal service provider and tech-enabled platform, we connect startups and enterprises with more than 10,000+ professionals including lawyers, chartered accountants, company secretaries, and 1,500 engineers.
-            </p>
 
-            <div className="pb-stats">
+            <p className="pb-intro">
+            Legal Terminus is a trusted legal and compliance platform dedicated to helping startups,
+            businesses, NGOs, and enterprises manage their legal, regulatory, and compliance
+            requirements with ease. Our expert-driven approach ensures accuracy, transparency,
+            and timely execution at every step.
+          </p>
+
+
+           <div className="pb-stats">
               <div className="pb-stat">
-                <span className="pb-stat-number">10K+</span>
-                <span className="pb-stat-label">Experts</span>
+                <span className="pb-stat-number">5K+</span>
+                <span className="pb-stat-label">Clients Served</span>
               </div>
               <div className="pb-stat">
-                <span className="pb-stat-number">1.5K+</span>
-                <span className="pb-stat-label">Engineers</span>
+                <span className="pb-stat-number">500+</span>
+                <span className="pb-stat-label">Legal Experts</span>
               </div>
               <div className="pb-stat">
-                <span className="pb-stat-number">24/7</span>
-                <span className="pb-stat-label">Support</span>
+                <span className="pb-stat-number">Pan India</span>
+                <span className="pb-stat-label">Service Reach</span>
               </div>
             </div>
 
-            <p className="pb-cta">
-              Our commitment to integrity is steadfast, providing unbiased advice through our vast network of experts. Join Corpbiz for top-notch legal solutions where your dreams can be fulfilled.
-            </p>
+          <p className="pb-cta">
+            At Legal Terminus, we believe legal compliance should be simple, transparent, and accessible.
+            Our experienced professionals work closely with you to deliver reliable legal solutions
+            that support your growth and long-term success.
+          </p>
+
 
             <div className="pb-actions">
-              <button className="pb-primary">
-                <span>Explore Services</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-              <button className="pb-ghost">
-                <span>Book Consultation</span>
-              </button>
+             <button className="pb-primary">
+                  <span>View Legal Services</span>
+                </button>
+
+                <button className="pb-ghost">
+                  <span>Get Expert Consultation</span>
+                </button>
             </div>
           </div>
         </div>
@@ -163,14 +170,14 @@ export default function Premiumbusiness() {
                       <p className="pb-card-desc">
                         {s.short}
                         <button
-                          className="read-btn"
+                          className="preminum-read-btn"
                           onClick={() => toggleIndex(i)}
                           aria-expanded={isOpen}
                           aria-controls={`panel-${i}`}
                           aria-label={isOpen ? `Show less about ${s.title}` : `Read more about ${s.title}`}
                         >
                           {isOpen ? " Show less" : " Read more"}
-                          <svg className="read-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                          <svg className="preminum-read-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
                             <path d={isOpen ? "M18 15L12 9L6 15" : "M6 9L12 15L18 9"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </button>
