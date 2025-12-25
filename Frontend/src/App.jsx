@@ -20,6 +20,10 @@ import LLP from "./Pages/LLP/LLP";
 import GSTRegistration from "./Pages/GSTRegistration/GSTRegistration";
 import GSTReturn from "./Pages/GSTReturn/GSTReturn";
 import EPFReg from "./Pages/EPFReg/EPFReg";
+import UdyamReg from './Pages/UdyamReg/UdyamReg';
+import ESICReg from './Pages/ESICReg/ESICReg';
+import ProfessionalReg from './Pages/ProfessionalReg/ProfessionalReg';
+import ShopReg from './Pages/ShopReg/ShopReg';
 
 import RouteLoaderWrapper from "./Components/PageLoader/RouteLoaderWrapper";
 import FloatIcon from "./Components/FloatIcon/FloatIcon";
@@ -57,6 +61,11 @@ function App() {
           <Route path="/gst-registration" element={<GSTRegistration />} />
           <Route path="/gst-return-filing" element={<GSTReturn />} />
           <Route path="/epf" element={<EPFReg />} />
+          <Route path="/udyam" element={<UdyamReg />} />
+          <Route path="/esic" element={<ESICReg />}/>
+          <Route path="/professional-tax" element={<ProfessionalReg />}/>
+          <Route path="/shop-establishment" element={<ShopReg />}/>
+          
         </Routes>
       </RouteLoaderWrapper>
 
