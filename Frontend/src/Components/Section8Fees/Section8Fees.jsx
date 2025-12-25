@@ -61,45 +61,60 @@ const fees = [
 
 const Section8Fees = () => {
   return (
-    <section className="fees-wrapper" aria-labelledby="fees-heading">
-      <header className="fees-header">
-        <h2 id="fees-heading" className="fees-title">
+    <section className="s8fees-wrapper" aria-labelledby="s8fees-heading">
+      <header className="s8fees-header">
+        <h2 id="s8fees-heading" className="s8fees-title">
           Section 8 Company Registration Fees
         </h2>
-        <p className="fees-intro">
-          The total Section 8 Company registration fees are a combination of government charges and professional service costs. The overall cost can vary based on the complexity of the application and the state of registration. Here are the details:
+        <p className="s8fees-intro">
+          The total Section 8 Company registration fees are a combination of
+          government charges and professional service costs. The overall cost
+          varies based on complexity and state of registration.
         </p>
       </header>
 
-      <div className="fees-table" role="table" aria-label="Registration fees table">
-        {/* Desktop header */}
-        <div className="fees-row fees-head" role="row">
-          <div className="col col-type" role="columnheader">Type of Fee</div>
-          <div className="col col-desc" role="columnheader">Description</div>
-          <div className="col col-cost" role="columnheader">Estimated Cost (INR)</div>
+      <div
+        className="s8fees-table"
+        role="table"
+        aria-label="Section 8 registration fees"
+      >
+        {/* Desktop Header */}
+        <div className="s8fees-row s8fees-head" role="row">
+          <div className="s8fees-col s8fees-col-type" role="columnheader">
+            Type of Fee
+          </div>
+          <div className="s8fees-col s8fees-col-desc" role="columnheader">
+            Description
+          </div>
+          <div className="s8fees-col s8fees-col-cost" role="columnheader">
+            Estimated Cost (INR)
+          </div>
         </div>
 
         {/* Body */}
-        <div className="fees-body" role="rowgroup">
+        <div className="s8fees-body" role="rowgroup">
           {fees.map((f, idx) => (
             <div
-              className={`fees-row fees-item ${idx % 2 === 0 ? "even" : "odd"}`}
+              key={f.type}
+              className={`s8fees-row s8fees-item ${
+                idx % 2 === 0 ? "s8fees-even" : "s8fees-odd"
+              }`}
               role="row"
               tabIndex={0}
-              key={f.type}
             >
-              <div className="col col-type" role="cell">
-                <div className="type-inner">{f.type}</div>
-              </div>
-              <div className="col col-desc" role="cell">
-                <div className="desc-inner">{f.desc}</div>
-              </div>
-              <div className="col col-cost" role="cell">
-                <div className="cost-inner">{f.cost}</div>
+              <div className="s8fees-col s8fees-col-type" role="cell">
+                <div className="s8fees-type">{f.type}</div>
               </div>
 
-              {/* ribbon accent (for card/mobile appearance and hover) */}
-              <div className="row-ribbon" aria-hidden="true" />
+              <div className="s8fees-col s8fees-col-desc" role="cell">
+                <div className="s8fees-desc">{f.desc}</div>
+              </div>
+
+              <div className="s8fees-col s8fees-col-cost" role="cell">
+                <div className="s8fees-cost">{f.cost}</div>
+              </div>
+
+              <div className="s8fees-ribbon" aria-hidden="true" />
             </div>
           ))}
         </div>

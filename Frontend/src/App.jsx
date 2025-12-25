@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -6,8 +7,8 @@ import Footer from "./Components/Footer/Footer";
 
 import Home from "./Pages/Home/Home";
 import ContactUs from "./Pages/ContactUs/ContactUs";
-import BlogDetails from "./Pages/BlogDetails/BlogDetails";
 import Blog from "./Pages/Blog/Blog";
+import BlogDetails from "./Pages/BlogDetails/BlogDetails";
 import OPC from "./Pages/OPC/OPC";
 import Publicltd from "./Pages/Publicltd/Publicltd";
 import PrivateLimited from "./Pages/PrivateLimited/PrivateLimited";
@@ -38,7 +39,7 @@ function App() {
 
           {/* Sub Pages */}
           <Route
-            path="/Public-Limited-Company-Registration-in-India"
+            path="/public-limited-company-registration-in-india"
             element={<Publicltd />}
           />
           <Route
@@ -46,7 +47,7 @@ function App() {
             element={<PrivateLimited />}
           />
           <Route
-            path="/incorption-registration-in-india"
+            path="/incorporation-registration-in-india"
             element={<IncorptionPage />}
           />
           <Route path="/trust" element={<Trust />} />
@@ -59,7 +60,7 @@ function App() {
         </Routes>
       </RouteLoaderWrapper>
 
-      {/* ✅ FLOAT ICON – ALWAYS VISIBLE */}
+      {/* Floating Icon – Always Visible */}
       <FloatIcon />
 
       <Footer />

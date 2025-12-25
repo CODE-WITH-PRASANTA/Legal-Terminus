@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/* ===============================
+   SECTION
+================================ */
+.udyam-intro-section {
+  padding: 60px 20px;
+  background: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===============================
+   CARD
+================================ */
+.udyam-intro-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 42px 44px;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.udyam-intro-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.08);
+}
+
+/* ===============================
+   HEADINGS
+================================ */
+.udyam-intro-heading {
+  font-size: 28px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 18px;
+}
+
+.udyam-sub-heading {
+  font-size: 22px;
+  font-weight: 600;
+  color: #111827;
+  margin-top: 30px;
+  margin-bottom: 14px;
+}
+
+/* ===============================
+   TEXT
+================================ */
+.udyam-intro-text {
+  font-size: 15.5px;
+  line-height: 1.9;
+  color: #4b5563;
+  margin-bottom: 14px;
+}
+
+.udyam-highlight-text {
+  margin-top: 18px;
+  font-size: 15.5px;
+  line-height: 1.9;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .udyam-intro-card {
+    padding: 30px 26px;
+  }
+
+  .udyam-intro-heading {
+    font-size: 24px;
+  }
+
+  .udyam-sub-heading {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .udyam-intro-card {
+    padding: 24px 20px;
+    border-radius: 14px;
+  }
+
+  .udyam-intro-heading {
+    font-size: 22px;
+  }
+
+  .udyam-sub-heading {
+    font-size: 18px;
+  }
+
+  .udyam-intro-text,
+  .udyam-highlight-text {
+    font-size: 14.5px;
+  }
+}

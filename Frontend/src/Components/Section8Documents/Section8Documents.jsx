@@ -32,32 +32,51 @@ const docGroups = [
   },
 ];
 
-const DocumentsRequired = () => {
+const Section8Documents = () => {
   return (
-    <section className="sd-wrapper" aria-labelledby="sd-heading">
-      <div className="sd-header">
-        <h2 id="sd-heading" className="sd-title">
+    <section
+      className="sec8docs-wrapper"
+      aria-labelledby="sec8docs-heading"
+    >
+      <div className="sec8docs-header">
+        <h2 id="sec8docs-heading" className="sec8docs-title">
           Documents Required for Section 8 Company Registration
         </h2>
-        <p className="sd-intro">
+        <p className="sec8docs-intro">
           Here's a checklist for the incorporation of a Section 8 company via
           the MCA portal (mca.gov.in):
         </p>
       </div>
 
-      <div className="sd-grid">
+      <div className="sec8docs-grid">
         {docGroups.map((group) => (
-          <article key={group.id} className="sd-card" aria-labelledby={`${group.id}-title`}>
-            <div className="card-accent" aria-hidden="true" />
-            <h3 id={`${group.id}-title`} className="card-title">
+          <article
+            key={group.id}
+            className="sec8docs-card"
+            aria-labelledby={`sec8docs-${group.id}-title`}
+          >
+            <div
+              className="sec8docs-card-accent"
+              aria-hidden="true"
+            />
+
+            <h3
+              id={`sec8docs-${group.id}-title`}
+              className="sec8docs-card-title"
+            >
               {group.title}
             </h3>
 
-            <ul className="card-list">
+            <ul className="sec8docs-list">
               {group.items.map((item, i) => (
-                <li key={i} className="card-list-item">
-                  <span className="list-dot" aria-hidden="true" />
-                  <span>{item}</span>
+                <li key={i} className="sec8docs-list-item">
+                  <span
+                    className="sec8docs-list-dot"
+                    aria-hidden="true"
+                  />
+                  <span className="sec8docs-list-text">
+                    {item}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -68,4 +87,4 @@ const DocumentsRequired = () => {
   );
 };
 
-export default DocumentsRequired;
+export default Section8Documents;

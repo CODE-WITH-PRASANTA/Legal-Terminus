@@ -3,114 +3,95 @@ import "./PvtltdProcess.css";
 
 const steps = [
   {
-    id: 1,
-    shortTitle: "Document Submission",
-    description:
+    title: "Step 1 – Document Submission",
+    text:
       "Provision of requisite documents / information to us (as per the checklist to be provided by us).",
   },
   {
-    id: 2,
-    shortTitle: "Company Name & Objects Finalization",
-    description:
+    title: "Step 2 –  Company Name & Objects Finalization",
+    text:
       "Finalisation of objects along with name of the proposed company (based on a search report duly conducted and provided by our team).",
   },
   {
-    id: 3,
-    shortTitle: "Name Reservation Application",
-    description:
+    title: "Step 3 – Name Reservation Application",
+    text:
       "Filing of application for name reservation in requisite e-form along with applicable government fees.",
   },
   {
-    id: 4,
-    shortTitle: "Digital Signature Certificates",
-    description:
+    title: "Step 4 –  Digital Signature Certificates",
+    text:
       "Preparation of requisite numbers of DSC with respect to the proposed promoters & directors and registration of DSC in the MCA portal.",
   },
   {
-    id: 5,
-    shortTitle: "Incorporation Document Preparation",
-    description:
+    title: "Step 5 – Incorporation Document Preparation",
+    text:
       "Preparation of further incorporation documents upon receipt of the name approval letter from the department.",
   },
   {
-    id: 6,
-    shortTitle: "Final Form Upload & Fee Payment",
-    description:
+    title: "Step 6 – Final Form Upload & Fee Payment",
+    text:
       "Uploading of final incorporation forms to the MCA portal along with applicable government fees.",
   },
   {
-    id: 7,
-    shortTitle: "Registration Certificate Issuance",
-    description:
+    title: "Step 7 – Registration Certificate Issuance",
+    text:
       "Processing of the application by the department and issuance of the registration certificate.",
   },
 ];
 
-const PvtStepsCards = () => {
+const GSTProcess = () => {
   return (
-    <section className="stepscards-section">
-      <div className="stepscards-container">
-        {/* Header (from 1st image) */}
-        <header className="stepscards-header">
-          <h2 className="stepscards-title">
-            STEPS FOR PRIVATE LIMITED COMPANY REGISTRATION IN INDIA
-          </h2>
-          <p className="stepscards-sub">
-            The broad process of registering a Private Limited company involves
+    <section className="gst-wrapper">
+      {/* ================== PROCESS SECTION ================== */}
+      <h2 className="gst-heading">STEPS FOR PRIVATE LIMITED COMPANY REGISTRATION IN INDIA</h2>
+      <p className="gst-subheading">
+        The broad process of registering a Private Limited company involves
             the following steps:
-          </p>
-          <div className="stepscards-time-pill">
-            Total time: Approximately 15–20 working days
+      </p>
+
+      <div className="snake-grid">
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className={`snake-step ${
+              index % 2 !== 0 ? "right-align" : ""
+            }`}
+          >
+            <div className="step-card">
+              <span className="step-badge">{index + 1}</span>
+              <h4>{step.title}</h4>
+              <p>{step.text}</p>
+            </div>
+
+            {/* SVG Arrow */}
+            {index < steps.length - 1 && (
+              <svg
+                className={`snake-arrow ${
+                  index % 2 !== 0 ? "arrow-left" : "arrow-right"
+                }`}
+                width="120"
+                height="60"
+                viewBox="0 0 120 60"
+                fill="none"
+              >
+                <path
+                  d="M5 30 H100"
+                  stroke="#f4a62a"
+                  strokeWidth="3"
+                  strokeDasharray="6 6"
+                />
+                <polygon
+                  points="100,24 115,30 100,36"
+                  fill="#f4a62a"
+                />
+              </svg>
+            )}
           </div>
-        </header>
-
-        {/* Card flow (your 2nd image, but as cards with arrows) */}
-        <div className="stepscards-flow">
-          {steps.map((step, index) => {
-            const isLast = index === steps.length - 1;
-            return (
-              <React.Fragment key={step.id}>
-                <article className="stepscards-card">
-                  <div className="stepscards-step-label">Step {step.id}</div>
-                  <div className="stepscards-circle-icon">
-                    <span className="stepscards-circle-letter">
-                      {step.id.toString().padStart(2, "0")}
-                    </span>
-                  </div>
-                  <h3 className="stepscards-card-title">{step.shortTitle}</h3>
-                  <p className="stepscards-card-text">{step.description}</p>
-                </article>
-
-                {!isLast && (
-                  <div className="stepscards-arrow" aria-hidden="true">
-                    <span className="stepscards-arrow-line" />
-                    <span className="stepscards-arrow-head">➜</span>
-                  </div>
-                )}
-              </React.Fragment>
-            );
-          })}
-        </div>
-
-        {/* Notes (from 3rd image) */}
-        <div className="stepscards-notes-wrapper">
-          <div className="stepscards-notes-inner">
-            <ul className="stepscards-notes-list">
-              <li>
-                <strong>Note 1</strong> COI, MOA, and AOA of the incorporated
-                company shall be provided by us.
-              </li>
-              <li>
-                <strong>Note 2</strong> PAN, TAN, EPF, ESI, and bank account
-                details shall be received through your registered mail ID
-                directly from the department.
-              </li>
-            </ul>
-          </div>
-        </div>
+        ))}
       </div>
+
     </section>
   );
 };
 
-export default PvtStepsCards;
+export default GSTProcess;

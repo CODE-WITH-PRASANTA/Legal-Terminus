@@ -43,87 +43,105 @@ const keyDocs = [
 
 export default function Section12Registration() {
   return (
-    <section className="s12-section" aria-labelledby="s12-heading">
-      <div className="s12-container">
-        <header className="s12-header">
-          <h2 id="s12-heading" className="s12-title">
+    <section className="s12reg-section" aria-labelledby="s12reg-heading">
+      <div className="s12reg-container">
+        <header className="s12reg-header">
+          <h2 id="s12reg-heading" className="s12reg-title">
             Registration under Sections 12A/12AB and 80G for Section 8 Companies
           </h2>
-          <p className="s12-intro">
-            For a Section 8 Company incorporation alone doesn't provide tax benefits.
-            The next step is getting registrations under Section 12AB (tax exemption)
-            and 80G (donor deduction) of the Income Tax Act — vital for financial
-            sustainability and credibility.
+          <p className="s12reg-intro">
+            Incorporation alone does not provide tax benefits to a Section 8 Company.
+            Registration under Section 12AB (income tax exemption) and 80G (donor tax
+            deduction) is essential for long-term financial sustainability and trust.
           </p>
         </header>
 
-        <div className="s12-grid">
-          {/* 12A/12AB block */}
-          <article className="s12-card" style={{ animationDelay: "0ms" }}>
-            <div className="s12-accent" />
-            <h3 className="s12-card-title">1. Section 12A/12AB Registration: For Tax Exemption on Income</h3>
-            <p className="s12-card-desc">
-              Section 12A registration (now governed by 12AB) is a one-time process
-              that grants a Section 8 Company tax-exempt status (for charitable income).
+        <div className="s12reg-grid">
+          {/* 12AB */}
+          <article className="s12reg-card">
+            <span className="s12reg-accent" />
+            <h3 className="s12reg-card-title">
+              Section 12A / 12AB Registration
+            </h3>
+            <p className="s12reg-card-desc">
+              Section 12AB registration grants tax exemption on income generated
+              from charitable activities of a Section 8 Company.
             </p>
 
-            <h4 className="s12-subtitle">Benefits:</h4>
-            <ul className="s12-list">
+            <h4 className="s12reg-subtitle">Key Benefits</h4>
+            <ul className="s12reg-list">
               {benefits12A.map((b, i) => (
-                <li key={i}><strong>{b.split(":")[0]}:</strong> {b.split(":").slice(1).join(":").trim()}</li>
+                <li key={i}>
+                  <strong>{b.split(":")[0]}:</strong>{" "}
+                  {b.split(":").slice(1).join(":").trim()}
+                </li>
               ))}
             </ul>
           </article>
 
-          {/* 80G block */}
-          <article className="s12-card" style={{ animationDelay: "120ms" }}>
-            <div className="s12-accent" />
-            <h3 className="s12-card-title">2. Section 80G Registration: To Encourage Donations</h3>
-            <p className="s12-card-desc">
-              80G registration benefits donors of a Section 8 company by allowing them tax
-              deductions on donations, incentivizing giving and improving funding.
+          {/* 80G */}
+          <article className="s12reg-card">
+            <span className="s12reg-accent" />
+            <h3 className="s12reg-card-title">
+              Section 80G Registration
+            </h3>
+            <p className="s12reg-card-desc">
+              80G registration enables donors to claim tax deductions,
+              encouraging higher and repeat donations.
             </p>
 
-            <h4 className="s12-subtitle">Benefits:</h4>
-            <ul className="s12-list">
+            <h4 className="s12reg-subtitle">Key Benefits</h4>
+            <ul className="s12reg-list">
               {benefits80G.map((b, i) => (
-                <li key={i}><strong>{b.split(":")[0]}:</strong> {b.split(":").slice(1).join(":").trim()}</li>
+                <li key={i}>
+                  <strong>{b.split(":")[0]}:</strong>{" "}
+                  {b.split(":").slice(1).join(":").trim()}
+                </li>
               ))}
             </ul>
           </article>
 
-          {/* Combined application process */}
-          <article className="s12-card s12-card--wide" style={{ animationDelay: "240ms" }}>
-            <div className="s12-accent" />
-            <h3 className="s12-card-title">The Combined Application Process (Form 10A/10AB)</h3>
-            <p className="s12-card-desc">
-              New Section 8 Companies must apply for provisional registration for both sections
-              at the same time via Form 10A/10AB.
+          {/* Combined process */}
+          <article className="s12reg-card s12reg-card-wide">
+            <span className="s12reg-accent" />
+            <h3 className="s12reg-card-title">
+              Combined Application Process (Form 10A / 10AB)
+            </h3>
+            <p className="s12reg-card-desc">
+              Newly incorporated Section 8 Companies must apply for provisional
+              registration for both sections together.
             </p>
 
-            <div className="s12-steps">
-              {combinedProcess.map((step, idx) => (
-                <div className="s12-step" key={idx}>
-                  <h5 className="s12-step-title">{step.title}</h5>
-                  <p className="s12-step-text">{step.text}</p>
+            <div className="s12reg-steps">
+              {combinedProcess.map((step, i) => (
+                <div key={i} className="s12reg-step">
+                  <h5 className="s12reg-step-title">{step.title}</h5>
+                  <p className="s12reg-step-text">{step.text}</p>
                 </div>
               ))}
             </div>
           </article>
 
-          {/* Key documents */}
-          <article className="s12-card" style={{ animationDelay: "360ms" }}>
-            <div className="s12-accent" />
-            <h3 className="s12-card-title">Key Documents Required</h3>
-            <p className="s12-card-desc">For filing Form 10A/10AB you need to upload:</p>
+          {/* Documents */}
+          <article className="s12reg-card">
+            <span className="s12reg-accent" />
+            <h3 className="s12reg-card-title">
+              Key Documents Required
+            </h3>
+            <p className="s12reg-card-desc">
+              The following documents are required while filing Form 10A / 10AB:
+            </p>
 
-            <ul className="s12-docs">
+            <ul className="s12reg-docs">
               {keyDocs.map((d, i) => (
                 <li key={i}>{d}</li>
               ))}
             </ul>
 
-            <p className="s12-conclude">These certificates are the key to financial sustainability, allowing tax-free operations and encouraging donations.</p>
+            <p className="s12reg-note">
+              These registrations enable tax-free operations and make the
+              organization attractive to donors.
+            </p>
           </article>
         </div>
       </div>

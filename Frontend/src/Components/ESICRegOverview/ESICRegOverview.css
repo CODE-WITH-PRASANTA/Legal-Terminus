@@ -1,0 +1,180 @@
+/* ===========================
+   SECTION
+=========================== */
+.esi-section {
+  background: linear-gradient(135deg, #f8fafc, #eef2f7);
+  padding: 60px 20px;
+  font-family: "Inter", sans-serif;
+}
+
+/* ===========================
+   GRID LAYOUT
+=========================== */
+.esi-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* ===========================
+   CARDS (LEFT & MIDDLE)
+=========================== */
+.esi-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+}
+
+.esi-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.15);
+}
+
+/* ===========================
+   TITLES & TEXT
+=========================== */
+.esi-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #1f2937;
+}
+
+.esi-center {
+  text-align: center;
+}
+
+.esi-subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.esi-note {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ===========================
+   OVERVIEW LIST
+=========================== */
+.esi-points {
+  margin-top: 16px;
+  padding-left: 18px;
+}
+
+.esi-points li {
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+/* ===========================
+   ELIGIBILITY GRID
+=========================== */
+.esi-entity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.esi-entity-box {
+  background: #f9fafb;
+  padding: 14px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.esi-entity-box:hover {
+  background: #ffb703;
+  transform: translateX(6px);
+}
+
+/* ===========================
+   FORM SECTION (WITH BORDER)
+=========================== */
+.esi-form-section {
+  padding: 10px 0 10px 30px;
+  border-left: 3px solid #ffb703;
+}
+
+/* ===========================
+   FORM
+=========================== */
+.esi-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.esi-form input,
+.esi-form select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.esi-form input:focus,
+.esi-form select:focus {
+  border-color: #ffb703;
+  box-shadow: 0 0 0 3px rgba(255, 183, 3, 0.25);
+  outline: none;
+}
+
+/* ===========================
+   ERROR STYLES
+=========================== */
+.esi-error {
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.esi-error-input {
+  border-color: #dc2626 !important;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+.esi-btn {
+  grid-column: span 2;
+  padding: 14px;
+  background: linear-gradient(135deg, #ffb703, #f59e0b);
+  border: none;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.esi-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(245, 158, 11, 0.45);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+  .esi-form-section {
+    padding: 20px 0 0;
+    border-left: none;
+    border-top: 3px solid #ffb703;
+  }
+}
+
+@media (max-width: 600px) {
+  .esi-btn {
+    grid-column: span 1;
+  }
+}
