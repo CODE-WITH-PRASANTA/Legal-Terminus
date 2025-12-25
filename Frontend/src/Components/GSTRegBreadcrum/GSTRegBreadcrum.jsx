@@ -1,139 +1,132 @@
-import React from 'react';
-import './GSTRegBreadcrum.css';
-import bgImage from '../../assets/breadcrum.png';
+import React from "react";
+import "./GSTRegBreadcrum.css";
 
-const Breadcrum = () => {
+const GSTRegBreadcrum = () => {
   return (
-    <section
-      className="breadcrum"
-      style={{ '--bg': `url(${bgImage})` }}
-    >
-      <div className="reg-breadcrum-inner">
-        {/* LEFT PANEL */}
-        <div className="reg-breadcrum-left-panel">
-         <h1 className="reg-breadcrum-title">
-              <span className="reg-breadcrum-orange">GST Registration Online</span>{' '}
-              <span className="reg-breadcrum-black">in India</span>
-            </h1>
+    <section className="gstv2-hero-section">
+      <div className="gstv2-hero-container">
 
-          <h3 className="reg-breadcrum-subtitle">
-            <strong>Save 50% Today</strong>{' '}
-            <span>
-              on <strong>Professional Services</strong>
-            </span>
-          </h3>
+        {/* LEFT CONTENT */}
+        <div className="gstv2-content-left">
 
-          <p className="reg-breadcrum-desc">
-            Legal Terminus can help you with Private Limited Company registration, as and when required, in a hassle-free manner within a reasonable time span. We provide competitive professional fees starting at Rs. 3,999/- for your needs in private limited company registration in India. 
+          <span className="gstv2-badge">
+            GST REGISTRATION • PAN INDIA
+          </span>
+
+          <h1 className="gstv2-heading">
+            Register Your Business Under
+            <span className="gstv2-highlight"> GST</span> in India
+          </h1>
+
+          <p className="gstv2-description">
+            GST Registration is mandatory for businesses involved in taxable
+            supply of goods or services. <strong>Legal Terminus</strong> provides
+            end-to-end GST registration services with accurate filing,
+            documentation support, and ongoing compliance guidance.
           </p>
 
-          <h4 className="reg-breadcrum-included">What's Included?</h4>
+          <p className="gstv2-sub-description">
+            Whether you are a startup, freelancer, or established business,
+            our GST experts ensure a smooth and hassle-free registration
+            process across India.
+          </p>
 
-          <div className="reg-breadcrum-features">
-            <ul className="reg-breadcrum-col">
-              <li>Registration in 1-2 Weeks</li>
-              <li>MCA Name Approval</li>
-              <li>DSC in 2-4 Days</li>
-            </ul>
-            <ul className="reg-breadcrum-col">
-              <li>DIN, PAN, and SPICE+ Compliance</li>
-              <li>MOA &amp; AOA Drafting</li>
-            </ul>
+          {/* STATS */}
+          <div className="gstv2-stats-wrapper">
+            <div className="gstv2-stat-card">
+              <h3 className="gstv2-stat-value">7–10 Days</h3>
+              <p className="gstv2-stat-label">Average Completion</p>
+            </div>
+
+            <div className="gstv2-stat-card">
+              <h3 className="gstv2-stat-value">₹0</h3>
+              <p className="gstv2-stat-label">Government Fees</p>
+            </div>
+
+            <div className="gstv2-stat-card">
+              <h3 className="gstv2-stat-value">PAN India</h3>
+              <p className="gstv2-stat-label">Service Coverage</p>
+            </div>
           </div>
 
-          <p className="reg-breadcrum-note">
-            <span className="reg-breadcrum-star">★</span>
-            Register 100+ Companies Every Month + Save 18% with GST Registration
-          </p>
+          {/* POINTS */}
+          <ul className="gstv2-feature-list">
+            <li className="gstv2-feature-item">GSTIN Certificate Issuance</li>
+            <li className="gstv2-feature-item">Complete Application Filing</li>
+            <li className="gstv2-feature-item">Expert GST Compliance Support</li>
+            <li className="gstv2-feature-item">Dedicated Relationship Manager</li>
+            <li className="gstv2-feature-item">Transparent & Secure Process</li>
+            <li className="gstv2-feature-item">Suitable for All Business Types</li>
+          </ul>
 
-          <div className="reg-breadcrum-cta-row">
-            <button className="reg-breadcrum-schedule-btn">Book a Schedule ➜</button>
+          {/* CTA */}
+          <div className="gstv2-action-row">
+            <button className="gstv2-primary-action">
+              Speak to a GST Consultant
+            </button>
 
-            <div className="reg-breadcrum-reviews">
-              <div className="reg-breadcrum-google">
-                <img src="https://corpbiz.io/img/google.webp" alt="" />
+            <span className="gstv2-trust-note">
+              🔒 Trusted by businesses across India
+            </span>
+          </div>
+        </div>
+
+        {/* RIGHT FORM */}
+        <div className="gstv2-form-section">
+          <div className="gstv2-form-box">
+
+            <div className="gstv2-form-header">
+              <h3 className="gstv2-form-title">Free GST Consultation</h3>
+              <p className="gstv2-form-subtitle">
+                Request a callback from our GST expert
+              </p>
+            </div>
+
+            <form className="gstv2-form-body" onSubmit={(e) => e.preventDefault()}>
+              <input className="gstv2-input-field" type="text" placeholder="Full Name" required />
+              <input className="gstv2-input-field" type="email" placeholder="Email Address" required />
+              <input className="gstv2-input-field" type="tel" placeholder="Mobile Number" required />
+
+              <select className="gstv2-select-field" required>
+                <option value="">Business Type</option>
+                <option>Proprietorship</option>
+                <option>Partnership</option>
+                <option>Private Limited</option>
+                <option>LLP</option>
+                <option>Other</option>
+              </select>
+
+              <select className="gstv2-select-field" required>
+                <option value="">State</option>
+                <option>Maharashtra</option>
+                <option>Delhi</option>
+                <option>Karnataka</option>
+                <option>Tamil Nadu</option>
+                <option>Other</option>
+              </select>
+
+              {/* WHATSAPP */}
+              <div className="gstv2-whatsapp-section">
+                <input type="checkbox" id="gstWhatsapp" className="gstv2-whatsapp-checkbox" defaultChecked />
+                <label htmlFor="gstWhatsapp" className="gstv2-whatsapp-label">
+                  Receive updates on <strong>WhatsApp</strong>
+                </label>
               </div>
-              <div className="reg-breadcrum-trustpilot">
-                <img src="https://corpbiz.io/img/trustpilot.webp" alt="" />
-                
-              </div>
+
+              <button type="submit" className="gstv2-submit-button">
+                Get Free Consultation
+              </button>
+            </form>
+
+            <div className="gstv2-form-footer">
+              Your information is safe with us • No spam
             </div>
           </div>
         </div>
 
-        {/* RIGHT PANEL (FORM CARD) */}
-        <aside className="reg-breadcrum-right-panel">
-          <div className="reg-breadcrum-ribbon">
-            <img src="https://corpbiz.io/img/offer_icon.webp" alt="" />
-          </div>
-
-          <div className="reg-breadcrum-form-card">
-            <h3 className="reg-breadcrum-form-title">Get Free Expert Consultation</h3>
-
-            <form
-                className="reg-breadcrum-lead-form"
-                onSubmit={(e) => e.preventDefault()}
-              >
-                <input
-                  className="reg-breadcrum-input"
-                  placeholder="Your Name"
-                  type="text"
-                />
-
-                <input
-                  className="reg-breadcrum-input"
-                  placeholder="Email Address"
-                  type="email"
-                />
-
-                <div className="reg-breadcrum-phone-row">
-                  <input
-                    className="reg-breadcrum-input reg-breadcrum-phone"
-                    placeholder="Mobile Number"
-                    type="tel"
-                  />
-                </div>
-
-                <select className="reg-breadcrum-input reg-breadcrum-select">
-                  <option>Select State</option>
-                  <option>Maharashtra</option>
-                  <option>Delhi</option>
-                  <option>Karnataka</option>
-                </select>
-
-              {/* ⭐ Preferable Call Timing Dropdown */}
-                  <select className="reg-breadcrum-input reg-breadcrum-select">
-                    <option>Select Preferable Time to Call</option>
-                    <option>9:00 AM – 10:00 AM</option>
-                    <option>10:00 AM – 11:00 AM</option>
-                    <option>11:00 AM – 12:00 PM</option>
-                    <option>12:00 PM – 1:00 PM</option>
-                    <option>1:00 PM – 2:00 PM</option>
-                    <option>2:00 PM – 3:00 PM</option>
-                    <option>3:00 PM – 4:00 PM</option>
-                    <option>4:00 PM – 5:00 PM</option>
-                    <option>5:00 PM – 6:00 PM</option>
-                    <option>6:00 PM – 7:00 PM</option>
-                  </select>
-
-
-                <label className="reg-breadcrum-whatsapp">
-                  Get Update on{' '}
-                  <span className="reg-breadcrum-wh-icon">Whatsapp</span>
-                  <input type="checkbox" defaultChecked />
-                  <span className="reg-breadcrum-toggle" />
-                </label>
-
-                <button className="reg-breadcrum-get-started" type="submit">
-                  GET STARTED NOW
-                </button>
-              </form>
-
-          </div>
-        </aside>
       </div>
     </section>
   );
 };
 
-export default Breadcrum;
+export default GSTRegBreadcrum;
