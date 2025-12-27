@@ -147,7 +147,7 @@ const OurClients = () => {
   const pausedRef = useRef(false);
   const resumeTimerRef = useRef(null);
 
-  const SPEED = 220;
+  const SPEED = 60;
   const SMOOTHING = 0.12;
 
   // ------------------------------------
