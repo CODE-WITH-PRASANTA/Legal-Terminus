@@ -8,7 +8,7 @@ const steps = [
       "Provision of requisite documents / information to us (as per the checklist to be provided by us).",
   },
   {
-    title: "Step 2 –  Company Name & Objects Finalization",
+    title: "Step 2 – Company Name & Objects Finalization",
     text:
       "Finalisation of objects along with name of the proposed company (based on a search report duly conducted and provided by our team).",
   },
@@ -18,7 +18,7 @@ const steps = [
       "Filing of application for name reservation in requisite e-form along with applicable government fees.",
   },
   {
-    title: "Step 4 –  Digital Signature Certificates",
+    title: "Step 4 – Digital Signature Certificates",
     text:
       "Preparation of requisite numbers of DSC with respect to the proposed promoters & directors and registration of DSC in the MCA portal.",
   },
@@ -42,54 +42,33 @@ const steps = [
 const GSTProcess = () => {
   return (
     <section className="gst-wrapper">
-      {/* ================== PROCESS SECTION ================== */}
-      <h2 className="gst-heading">STEPS FOR PRIVATE LIMITED COMPANY REGISTRATION IN INDIA</h2>
+      <h2 className="gst-heading">
+        STEPS FOR PRIVATE LIMITED COMPANY REGISTRATION IN INDIA
+      </h2>
       <p className="gst-subheading">
         The broad process of registering a Private Limited company involves
-            the following steps:
+        the following steps:
       </p>
 
-      <div className="snake-grid">
+      <div className="timeline">
+        <div className="timeline-line" />
+
         {steps.map((step, index) => (
           <div
             key={index}
-            className={`snake-step ${
-              index % 2 !== 0 ? "right-align" : ""
+            className={`timeline-item ${
+              index % 2 === 0 ? "left" : "right"
             }`}
           >
-            <div className="step-card">
-              <span className="step-badge">{index + 1}</span>
+            <div className="timeline-dot">{index + 1}</div>
+
+            <div className="timeline-card">
               <h4>{step.title}</h4>
               <p>{step.text}</p>
             </div>
-
-            {/* SVG Arrow */}
-            {index < steps.length - 1 && (
-              <svg
-                className={`snake-arrow ${
-                  index % 2 !== 0 ? "arrow-left" : "arrow-right"
-                }`}
-                width="120"
-                height="60"
-                viewBox="0 0 120 60"
-                fill="none"
-              >
-                <path
-                  d="M5 30 H100"
-                  stroke="#f4a62a"
-                  strokeWidth="3"
-                  strokeDasharray="6 6"
-                />
-                <polygon
-                  points="100,24 115,30 100,36"
-                  fill="#f4a62a"
-                />
-              </svg>
-            )}
           </div>
         ))}
       </div>
-
     </section>
   );
 };
