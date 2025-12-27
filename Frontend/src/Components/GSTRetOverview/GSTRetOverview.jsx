@@ -1,5 +1,5 @@
 import React from "react";
-import "./GstRetOverview.css";
+import "./GSTRetOverview.css";
 import overviewImg from "../../assets/img-5.webp"; // <-- update path if needed
 
 const GstReturnOverview = () => {

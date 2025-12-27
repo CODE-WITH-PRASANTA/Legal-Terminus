@@ -1,5 +1,5 @@
 import React from "react";
-import "./PvtLtdDocument.css";
+import "./PvtltdDocument.css";
 
 const documents = [
   {
