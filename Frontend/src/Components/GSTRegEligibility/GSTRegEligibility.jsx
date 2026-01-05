@@ -1,6 +1,7 @@
 import React from "react";
 import "./GSTRegEligibility.css";
-import eligibilityImg from "../../assets/img-2.webp"; // right-side illustration
+import eligibilityImg from "../../assets/img-2.webp";
+import { FaCheckCircle } from "react-icons/fa";
 
 const checklist = [
   "Businesses having an aggregate annual turnover of more than INR 40 Lakhs must apply for GST registration (INR 20 Lakhs for special category states).",
@@ -22,11 +23,11 @@ const otherEntities = [
 
 const GSTEligibility = () => {
   return (
-    <section className="gst-eligibility-section">
-      <div className="gst-container">
+    <section className="GSTRegEligibility-section">
+      <div className="GSTRegEligibility-container">
 
         {/* SECTION 1 */}
-        <div className="gst-header">
+        <div className="GSTRegEligibility-header">
           <h2>Eligibility Criteria for New GST Registration</h2>
           <p>
             GST registration is essential for certain businesses and service providers.
@@ -35,41 +36,45 @@ const GSTEligibility = () => {
         </div>
 
         {/* SECTION 2 */}
-        <div className="gst-grid">
-          <div className="gst-left">
+        <div className="GSTRegEligibility-grid">
+          <div className="GSTRegEligibility-left">
             <h3>Eligibility Checklist for Filing GST Registration</h3>
 
-            <ul className="gst-list">
+            <ul className="GSTRegEligibility-list">
               {checklist.map((item, index) => (
                 <li key={index}>
-                  <span className="gst-check">✓</span>
+                  <FaCheckCircle className="GSTRegEligibility-icon" />
                   {item}
                 </li>
               ))}
             </ul>
 
-            <button className="gst-btn">Apply for GST Registration Now</button>
+            <button className="GSTRegEligibility-btn">
+              Apply for GST Registration Now
+            </button>
           </div>
         </div>
 
         {/* SECTION 3 */}
-        <div className="gst-grid gst-grid-alt">
-          <div className="gst-left">
+        <div className="GSTRegEligibility-grid GSTRegEligibility-grid-alt">
+          <div className="GSTRegEligibility-left">
             <h3>Other Entities Eligible to Apply for GST Registration</h3>
 
-            <ul className="gst-list">
+            <ul className="GSTRegEligibility-list">
               {otherEntities.map((item, index) => (
                 <li key={index}>
-                  <span className="gst-check">✓</span>
+                  <FaCheckCircle className="GSTRegEligibility-icon" />
                   {item}
                 </li>
               ))}
             </ul>
 
-            <button className="gst-btn">Complete Your GST Registration Fast</button>
+            <button className="GSTRegEligibility-btn">
+              Complete Your GST Registration Fast
+            </button>
           </div>
 
-          <div className="gst-right">
+          <div className="GSTRegEligibility-right">
             <img src={eligibilityImg} alt="GST Eligibility Illustration" />
           </div>
         </div>

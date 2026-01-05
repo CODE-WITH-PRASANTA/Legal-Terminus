@@ -1,34 +1,106 @@
 import React, { useState } from "react";
 import "./GSTRegTabs.css";
 
+/* TAB CONTENT */
+import GSTRegOverview from "../GSTRegOverview/GSTRegOverview";
+import Advantages from "../GSTRegAdvantages/GSTRegAdvantages";
+import Eligibility from "../GSTRegEligibility/GSTRegEligibility";
+import Documents from "../GSTRegDocument/GSTRegDocument";
+import Process from "../GSTRegProcess/GSTRegProcess";
+import Features from "../GSTRegFeatures/GSTRegFeatures";
+import Types from "../GSTRegTypes/GSTRegTypes";
+import FAQs from "../GSTRegFAQ/GSTRegFAQ";
+
 const TABS = [
-  "Overview",
-  "Advantages",
-  "Eligibility Criteria",
-  "Documents Required",
-  "Process",
-  "Features",
-  "Types",
-  "FAQs",
+  { id: "overview", label: "Overview", component: <GSTRegOverview /> },
+  { id: "advantages", label: "Advantages", component: <Advantages /> },
+  { id: "eligibility", label: "Eligibility", component: <Eligibility /> },
+  { id: "documents", label: "Documents", component: <Documents /> },
+  { id: "process", label: "Process", component: <Process /> },
+  { id: "features", label: "Features", component: <Features /> },
+  { id: "types", label: "Types", component: <Types /> },
+  { id: "faqs", label: "FAQs", component: <FAQs /> },
 ];
 
 const TabsBar = () => {
-  const [activeTab, setActiveTab] = useState("Overview");
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const goTo = (index) => {
+    if (index >= 0 && index < TABS.length) {
+      setActiveIndex(index);
+    }
+  };
 
   return (
-    <div className="reg-wrapper">
-      <div className="reg-container">
-        {TABS.map((tab) => (
-          <button
-            key={tab}
-            className={`tab-item ${activeTab === tab ? "active" : ""}`}
-            onClick={() => setActiveTab(tab)}
-          >
-            {tab}
-          </button>
+    <section className="gst-tabs">
+      {/* Header */}
+      <header className="gst-tabs-header">
+        <h1>GST Registration Guide</h1>
+        <p>Complete step-by-step guide for GST registration in India</p>
+      </header>
+
+      {/* Progress */}
+      <div className="gst-progress">
+        {TABS.map((_, i) => (
+          <span
+            key={i}
+            className={`gst-progress-step ${
+              i <= activeIndex ? "active" : ""
+            }`}
+          />
         ))}
       </div>
-    </div>
+
+      {/* Tabs */}
+      <nav className="gst-tabs-nav">
+        <div
+          className="gst-tabs-indicator"
+          style={{ transform: `translateX(${activeIndex * 100}%)` }}
+        />
+        {TABS.map((tab, i) => (
+          <button
+            key={tab.id}
+            className={`gst-tab ${i === activeIndex ? "active" : ""}`}
+            onClick={() => goTo(i)}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </nav>
+
+      {/* Content */}
+      <main className="gst-tab-content">
+        <div className="gst-tab-header">
+          <h2>{TABS[activeIndex].label}</h2>
+          <span>
+            {activeIndex + 1} / {TABS.length}
+          </span>
+        </div>
+
+        <div className="gst-tab-body">
+          {TABS[activeIndex].component}
+        </div>
+
+        {/* Navigation */}
+        <div className="gst-tab-actions">
+          <button
+            disabled={activeIndex === 0}
+            onClick={() => goTo(activeIndex - 1)}
+            className="primary"
+          >
+            ← Previous
+          </button>
+
+          <button
+            disabled={activeIndex === TABS.length - 1}
+            onClick={() => goTo(activeIndex + 1)}
+            className="primary"
+          >
+            Next →
+          </button>
+        </div>
+      </main>
+    </section>
   );
 };
 

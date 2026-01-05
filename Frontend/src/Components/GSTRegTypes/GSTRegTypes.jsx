@@ -1,20 +1,22 @@
 import React from "react";
 import "./GSTRegTypes.css";
-import timelineImg from "../../assets/img-2.webp"; // ONLY IMAGE IMPORT
+import timelineImg from "../../assets/img-2.webp";
 
 const GSTOverview = () => {
   return (
-    <section className="gst-wrapper">
+    <section className="GSTOverview-wrapper">
 
       {/* ================= Difference Table ================= */}
-      <div className="gst-section">
-        <h2 className="gst-heading">Difference Between GST and Income Tax</h2>
-        <p className="gst-subtext">
+      <div className="GSTOverview-section">
+        <h2 className="GSTOverview-heading">
+          Difference Between GST and Income Tax
+        </h2>
+        <p className="GSTOverview-subtext">
           The table below specifies the difference between GST and Income Tax:
         </p>
 
-        <div className="gst-table">
-          <div className="gst-table-head">
+        <div className="GSTOverview-table">
+          <div className="GSTOverview-table-head">
             <span>S.No.</span>
             <span>GST (Goods and Services Tax)</span>
             <span>Income Tax</span>
@@ -43,7 +45,7 @@ const GSTOverview = () => {
               "Mandatory if income exceeds ₹3 lakhs.",
             ],
           ].map((row, i) => (
-            <div className="gst-table-row" key={i}>
+            <div className="GSTOverview-table-row" key={i}>
               <span>{row[0]}</span>
               <span>{row[1]}</span>
               <span>{row[2]}</span>
@@ -53,10 +55,13 @@ const GSTOverview = () => {
       </div>
 
       {/* ================= Timeline & Fees ================= */}
-      <div className="gst-section gst-grid-2">
+      <div className="GSTOverview-section GSTOverview-grid-2">
         <div>
-          <h2 className="gst-heading">Timeline and Fees for GST Registration</h2>
-          <ul className="gst-checklist">
+          <h2 className="GSTOverview-heading">
+            Timeline and Fees for GST Registration
+          </h2>
+
+          <ul className="GSTOverview-checklist">
             <li>GST registration is mandatory for legal compliance.</li>
             <li>Approval timeline: 7–10 working days.</li>
             <li>Entire process may take up to 30 days.</li>
@@ -64,21 +69,23 @@ const GSTOverview = () => {
             <li>No government fee for GST certificate.</li>
           </ul>
 
-          <button className="gst-btn">Register Your Business for GST Today</button>
+          <button className="GSTOverview-btn">
+            Register Your Business for GST Today
+          </button>
         </div>
 
-        <div className="gst-image-box">
+        <div className="GSTOverview-image-box">
           <img src={timelineImg} alt="GST Timeline" />
         </div>
       </div>
 
       {/* ================= Trust Section ================= */}
-      <div className="gst-section">
-        <h2 className="gst-heading center">
+      <div className="GSTOverview-section">
+        <h2 className="GSTOverview-heading center">
           Why Trust Corpbiz for GST Registration Certificate?
         </h2>
 
-        <div className="gst-cards">
+        <div className="GSTOverview-cards">
           {[
             {
               title: "Simplified Registration",
@@ -117,7 +124,7 @@ const GSTOverview = () => {
               text: "Round-the-clock assistance.",
             },
           ].map((card, i) => (
-            <div className="gst-card" key={i}>
+            <div className="GSTOverview-card" key={i}>
               <h4>{card.title}</h4>
               <p>{card.text}</p>
             </div>
@@ -125,9 +132,12 @@ const GSTOverview = () => {
         </div>
 
         <div className="center">
-          <button className="gst-btn">Apply Online for GST Easily</button>
+          <button className="GSTOverview-btn">
+            Apply Online for GST Easily
+          </button>
         </div>
       </div>
+
     </section>
   );
 };

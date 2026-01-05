@@ -1,45 +1,59 @@
 import React from "react";
+import {
+  FiShield,
+  FiZap,
+  FiBarChart2,
+  FiLock,
+  FiTrendingUp,
+  FiAward,
+} from "react-icons/fi";
 import "./GSTRegAdvantages.css";
-import gstHero from "../../assets/img-4.webp"; // replace with your image path
-import gstBenefitsImg from "../../assets/img-3.webp"; // replace with your image path
+import gstHero from "../../assets/img-4.webp";
+import gstBenefitsImg from "../../assets/img-3.webp";
 
 const benefits = [
   {
     title: "Regulatory Compliance",
     desc:
-      "GST registration safeguards the interests of individuals and business entities operating in India. It ensures legal and tax compliance, preventing penalties.",
+      "GST registration safeguards businesses in India by ensuring legal compliance and preventing penalties.",
+    icon: <FiShield />,
   },
   {
     title: "Easy Compliance",
     desc:
-      "GST registration simplifies tax filing and online payments, helping businesses streamline operational processes efficiently.",
+      "Simplifies GST filing, online payments, and return submissions for businesses.",
+    icon: <FiZap />,
   },
   {
     title: "Maintains Transparency",
     desc:
-      "GST registration allows businesses to maintain updated records, fostering transparency and building trust with stakeholders.",
+      "Ensures updated tax records and improves trust with vendors and authorities.",
+    icon: <FiBarChart2 />,
   },
   {
     title: "Legal Protection",
     desc:
-      "GST registration safeguards legal and regulatory standards, protecting the business’s legal rights.",
+      "Protects businesses by maintaining statutory and regulatory safeguards.",
+    icon: <FiLock />,
   },
   {
-    title: "Improve Credit Score",
+    title: "Improves Credit Score",
     desc:
-      "Businesses that manage GST and regulatory compliance efficiently experience improved credit profiles.",
+      "Consistent GST compliance enhances creditworthiness and financial reputation.",
+    icon: <FiTrendingUp />,
   },
   {
     title: "Market Advantage",
     desc:
-      "GST-registered businesses earn greater trust from customers and gain better market credibility.",
+      "GST-registered businesses enjoy higher credibility and customer trust.",
+    icon: <FiAward />,
   },
 ];
 
 const GSTBenefits = () => {
   return (
     <>
-      {/* ================= HERO / CERTIFICATE SECTION ================= */}
+      {/* ================= HERO SECTION ================= */}
       <section className="gst-hero">
         <div className="gst-hero-grid">
           <div className="gst-hero-image">
@@ -49,15 +63,13 @@ const GSTBenefits = () => {
           <div className="gst-hero-content">
             <h2>What is a GST Registration Certificate?</h2>
             <p>
-              GST registration certificate is an official document issued by the
-              Government of India to businesses registered under GST. It
-              validates legal standing and displays GSTIN, business name, and
-              registered address.
+              A GST Registration Certificate is an official document issued by
+              the Government of India to registered businesses, validating their
+              legal GST status.
             </p>
             <p>
-              GST registration is essential for LLPs, OPCs, private limited
-              companies, and public limited companies to ensure compliance and
-              credibility.
+              It is mandatory for LLPs, OPCs, private limited companies, and
+              public limited companies to ensure compliance and credibility.
             </p>
           </div>
         </div>
@@ -66,28 +78,34 @@ const GSTBenefits = () => {
       {/* ================= BENEFITS SECTION ================= */}
       <section className="gst-benefits">
         <h2 className="gst-section-title">
-          What are the Benefits of GST Registration?
+          Benefits of GST Registration
         </h2>
         <p className="gst-section-subtitle">
-          GST registration offers a variety of benefits to individuals and
-          business entities, including the following:
+          GST registration empowers businesses with compliance, transparency,
+          and long-term growth advantages.
         </p>
 
         <div className="gst-benefits-grid">
-          {/* LEFT – STICKY IMAGE */}
-          <div className="gst-benefits-image sticky">
-            <img src={gstBenefitsImg} alt="GST Benefits Illustration" />
+          {/* LEFT SIDE – VISUAL CARD (YOUR CODE ADDED) */}
+          <div className="gst-benefits-left">
+            <div className="gst-visual-card">
+              <span className="gst-badge">GST Registration</span>
+              <img src={gstBenefitsImg} alt="GST Benefits" />
+              <h3>Why GST Registration?</h3>
+              <p>
+                GST registration gives your business legal recognition, better
+                credibility, and access to long-term growth opportunities.
+              </p>
+            </div>
           </div>
 
-          {/* RIGHT – CARDS */}
+          {/* RIGHT SIDE – CARDS */}
           <div className="gst-benefits-cards">
             {benefits.map((item, index) => (
               <div className="gst-benefit-card" key={index}>
-                <div className="gst-card-icon">🛡️</div>
-                <div>
-                  <h4>{item.title}</h4>
-                  <p>{item.desc}</p>
-                </div>
+                <div className="gst-card-icon">{item.icon}</div>
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
               </div>
             ))}
 

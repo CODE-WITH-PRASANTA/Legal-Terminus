@@ -17,14 +17,14 @@ const GSTRegistration = () => {
       <GSTRegBreadcrum />
       <GSTRegPlans />
       <GSTRegTabs />
-      <GSTRegOverview />
+      {/* <GSTRegOverview />
       <GSTRegAdvantages />
       <GSTRegEligibility />
       <GSTRegDocument />
       <GSTRegProcess />
       <GSTRegFeatures />
       <GSTRegTypes />
-      <GSTRegFAQ />
+      <GSTRegFAQ /> */}
     
     </div>
   )

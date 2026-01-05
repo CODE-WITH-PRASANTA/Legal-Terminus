@@ -3,134 +3,144 @@
 /* ===============================
    SECTION
 ================================ */
-.gst-docs-section {
+.GSTDocuments-section {
   font-family: "Poppins", sans-serif;
   background: #ffffff;
-  padding: 80px 24px;
+  padding: 90px 24px;
 }
 
-.gst-docs-container {
+.GSTDocuments-container {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 64px;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 72px;
   align-items: center;
 }
 
 /* ===============================
    IMAGE
 ================================ */
-.gst-docs-image {
+.GSTDocuments-image {
   display: flex;
   justify-content: center;
 }
 
-.gst-docs-image img {
+.GSTDocuments-image img {
   max-width: 100%;
   height: auto;
-  transition: transform 0.4s ease;
+  border-radius: 14px;
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
 
-.gst-docs-image img:hover {
-  transform: scale(1.04);
+.GSTDocuments-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.12);
 }
 
 /* ===============================
    CONTENT
 ================================ */
-.gst-docs-content h2 {
-  font-size: 32px;
+.GSTDocuments-content h2 {
+  font-size: 34px;
   font-weight: 600;
   color: #111827;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
-.gst-docs-desc {
+.GSTDocuments-desc {
   font-size: 15px;
   line-height: 1.9;
   color: #4b5563;
-  margin-bottom: 28px;
+  margin-bottom: 34px;
+  max-width: 720px;
 }
 
 /* ===============================
    LIST
 ================================ */
-.gst-docs-list {
+.GSTDocuments-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 36px;
+  margin: 0 0 42px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  column-gap: 28px;
+  row-gap: 18px;
 }
 
-.gst-doc-item {
+.GSTDocuments-item {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  padding: 10px 0;
   font-size: 15px;
   line-height: 1.8;
   color: #374151;
-  transition: transform 0.25s ease, color 0.25s ease;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
-.gst-doc-item:hover {
+.GSTDocuments-item:hover {
   transform: translateX(6px);
-  color: #f4a734;
+  background: rgba(17, 128, 17, 0.06);
+  color: #118011;
 }
 
-.check-icon {
-  color: #f4a734;
+.GSTDocuments-check {
+  color: #118011;
   font-size: 14px;
   margin-top: 4px;
+  flex-shrink: 0;
 }
 
 /* ===============================
    BUTTON
 ================================ */
-.gst-docs-btn {
-  background: #f4a734;
+.GSTDocuments-btn {
+  background: #118011;
   color: #ffffff;
   border: none;
-  padding: 14px 28px;
+  padding: 15px 34px;
   font-size: 15px;
   font-weight: 500;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 6px 16px rgba(244, 167, 52, 0.35);
-  transition: all 0.3s ease;
+  box-shadow: 0 10px 26px rgba(17, 128, 17, 0.35);
+  transition: all 0.35s ease;
 }
 
-.gst-docs-btn:hover {
-  background: #e69524;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(244, 167, 52, 0.45);
+.GSTDocuments-btn:hover {
+  background: #0e6b0e;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(17, 128, 17, 0.45);
 }
 
 /* ===============================
    RESPONSIVE
 ================================ */
 @media (max-width: 992px) {
-  .gst-docs-container {
+  .GSTDocuments-container {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 54px;
   }
 
-  .gst-docs-content h2 {
+  .GSTDocuments-content h2 {
     font-size: 28px;
   }
 }
 
 @media (max-width: 576px) {
-  .gst-docs-section {
-    padding: 60px 16px;
+  .GSTDocuments-section {
+    padding: 70px 16px;
   }
 
-  .gst-docs-content h2 {
+  .GSTDocuments-content h2 {
     font-size: 24px;
   }
 
-  .gst-docs-desc,
-  .gst-doc-item {
+  .GSTDocuments-desc,
+  .GSTDocuments-item {
     font-size: 14px;
   }
 }

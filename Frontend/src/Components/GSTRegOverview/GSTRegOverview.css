@@ -37,7 +37,7 @@
 }
 
 .gst-overview-title span {
-  color: #f4a42c;
+  color: #1aa91a;
 }
 
 .gst-overview-left p {
@@ -58,7 +58,7 @@
   font-weight: 600;
   border: none;
   border-radius: 6px;
-  background: #f4a42c;
+  background: #1aa91a;
   color: #ffffff;
   cursor: pointer;
   transition: all 0.3s ease;

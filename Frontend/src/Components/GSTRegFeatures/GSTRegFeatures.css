@@ -1,140 +1,152 @@
-.gst-wrapper {
+/* ================= BASE ================= */
+.GstInfoSection-wrapper {
   max-width: 1200px;
   margin: auto;
-  padding: 60px 20px;
+  padding: 70px 20px;
   font-family: "Inter", sans-serif;
   color: #1f2937;
 }
 
-.gst-section {
-  margin-bottom: 80px;
+.GstInfoSection-section {
+  margin-bottom: 90px;
 }
 
-.grid-two {
+/* ================= GRID ================= */
+.GstInfoSection-grid-two {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
+  gap: 70px;
   align-items: center;
 }
 
-.gst-center {
+.GstInfoSection-center {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 
-.gst-image img {
+/* ================= IMAGE ================= */
+.GstInfoSection-image img {
   width: 100%;
   max-width: 420px;
-  transition: transform 0.4s ease;
+  border-radius: 18px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.gst-image img:hover {
+.GstInfoSection-image img:hover {
   transform: scale(1.05);
+  box-shadow: 0 30px 60px rgba(26, 169, 26, 0.35);
 }
 
-.gst-content h2 {
-  font-size: 32px;
-  margin-bottom: 15px;
+/* ================= CONTENT ================= */
+.GstInfoSection-content h2 {
+  font-size: 34px;
+  margin-bottom: 16px;
+  color: #1aa91a;
 }
 
-.subtitle {
+.GstInfoSection-subtitle {
   font-size: 16px;
   color: #6b7280;
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 }
 
-.gst-list {
+/* ================= LIST ================= */
+.GstInfoSection-list {
   list-style: none;
   padding: 0;
 }
 
-.grid-list {
+.GstInfoSection-grid-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
+  gap: 20px;
 }
 
-.gst-list li {
-  padding-left: 32px;
+.GstInfoSection-list li {
+  padding-left: 34px;
   position: relative;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
-.gst-list li::before {
+.GstInfoSection-list li::before {
   content: "✔";
   position: absolute;
   left: 0;
-  color: #f59e0b;
+  color: #1aa91a;
   font-weight: bold;
 }
 
-.cta-btn {
-  margin-top: 30px;
-  padding: 14px 32px;
-  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+/* ================= CTA ================= */
+.GstInfoSection-cta-btn {
+  margin-top: 35px;
+  padding: 15px 36px;
+  background: linear-gradient(135deg, #1aa91a, #4ade80);
   border: none;
-  border-radius: 6px;
-  color: #fff;
+  border-radius: 8px;
+  color: #ffffff;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.35s ease;
 }
 
-.cta-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(245, 158, 11, 0.35);
+.GstInfoSection-cta-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(26, 169, 26, 0.45);
 }
 
-.gst-card {
-  padding: 40px;
-  border-radius: 14px;
+/* ================= CARDS ================= */
+.GstInfoSection-card {
+  padding: 45px;
+  border-radius: 18px;
   transition: all 0.4s ease;
 }
 
-.gst-card h3 {
+.GstInfoSection-card h3 {
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
-.gst-card ul {
+.GstInfoSection-card ul {
   list-style: none;
   padding: 0;
 }
 
-.gst-card ul li {
+.GstInfoSection-card ul li {
   padding-left: 30px;
   margin-bottom: 14px;
   position: relative;
 }
 
-.gst-card ul li::before {
+.GstInfoSection-card ul li::before {
   content: "✔";
   position: absolute;
   left: 0;
-  color: #facc15;
+  color: #d9f99d;
 }
 
-.gst-card.light {
-  background: #8fa6bc;
+/* CARD COLORS */
+.GstInfoSection-light {
+  background: linear-gradient(135deg, #1aa91a, #22c55e);
   color: #ffffff;
 }
 
-.gst-card.dark {
-  background: #1f4f7a;
+.GstInfoSection-dark {
+  background: linear-gradient(135deg, #166534, #14532d);
   color: #ffffff;
 }
 
-.gst-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.25);
+.GstInfoSection-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 55px rgba(0, 0, 0, 0.25);
 }
 
+/* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
-  .grid-two {
+  .GstInfoSection-grid-two {
     grid-template-columns: 1fr;
   }
 
-  .gst-content h2 {
-    font-size: 26px;
+  .GstInfoSection-content h2 {
+    font-size: 28px;
   }
 }
