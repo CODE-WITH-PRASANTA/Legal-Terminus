@@ -1,146 +1,202 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-/* ===============================
-   SECTION
-================================ */
-.GSTDocuments-section {
+.gst-section {
   font-family: "Poppins", sans-serif;
-  background: #ffffff;
-  padding: 90px 24px;
+  background: linear-gradient(180deg, #f8fafc, #ffffff);
+  
 }
 
-.GSTDocuments-container {
-  max-width: 1200px;
-  margin: 0 auto;
+/* ================= LAYOUT ================= */
+.gst-wrapper {
+  max-width: 1300px;
+  margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 72px;
+  grid-template-columns: 1fr 320px 1fr;
   align-items: center;
+  gap: 60px;
 }
 
-/* ===============================
-   IMAGE
-================================ */
-.GSTDocuments-image {
+.gst-column {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* ================= CARD ================= */
+.gst-card {
+  display: flex;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  transition: 0.4s ease;
+}
+
+.gst-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Card Text */
+.gst-text h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.gst-text p {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+/* ================= ICON ================= */
+.gst-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* ================= CARD BACKGROUNDS ================= */
+.bg-blue {
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+}
+.bg-orange {
+  background: linear-gradient(135deg, #ffedd5, #fff7ed);
+}
+.bg-purple {
+  background: linear-gradient(135deg, #ede9fe, #f5f3ff);
+}
+.bg-red {
+  background: linear-gradient(135deg, #fee2e2, #fef2f2);
+}
+.bg-teal {
+  background: linear-gradient(135deg, #ccfbf1, #f0fdfa);
+}
+.bg-green {
+  background: linear-gradient(135deg, #dcfce7, #f0fdf4);
+}
+.bg-indigo {
+  background: linear-gradient(135deg, #e0e7ff, #eef2ff);
+}
+.bg-pink {
+  background: linear-gradient(135deg, #fce7f3, #fdf2f8);
+}
+
+/* ================= CENTER ================= */
+.gst-center {
+  position: relative;
   display: flex;
   justify-content: center;
 }
 
-.GSTDocuments-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 14px;
-  transition: transform 0.45s ease, box-shadow 0.45s ease;
+.gst-hexagon {
+  width: 220px;
+  height: 220px;
+  background: linear-gradient(145deg, #118011, #22c55e);
+  clip-path: polygon(
+    25% 6%,
+    75% 6%,
+    100% 50%,
+    75% 94%,
+    25% 94%,
+    0% 50%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 30px 70px rgba(17, 128, 17, 0.6);
+  z-index: 2;
 }
 
-.GSTDocuments-image img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.12);
+.gst-hex-content {
+  text-align: center;
+  color: #ffffff;
 }
 
-/* ===============================
-   CONTENT
-================================ */
-.GSTDocuments-content h2 {
+.gst-hex-content h3 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.gst-hex-content span {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* ================= CONNECTOR LINES ================= */
+.gst-lines {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+}
+
+.gst-lines line {
+  stroke: #118011;
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+}
+
+/* ================= BOTTOM ================= */
+.gst-bottom {
+  text-align: center;
+  margin-top: 120px;
+}
+
+.gst-bottom h2 {
   font-size: 34px;
   font-weight: 600;
-  color: #111827;
-  margin-bottom: 18px;
+  color: #0f172a;
 }
 
-.GSTDocuments-desc {
-  font-size: 15px;
-  line-height: 1.9;
-  color: #4b5563;
-  margin-bottom: 34px;
+.gst-bottom h2 span {
+  color: #118011;
+}
+
+.gst-bottom p {
   max-width: 720px;
-}
-
-/* ===============================
-   LIST
-================================ */
-.GSTDocuments-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 42px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  column-gap: 28px;
-  row-gap: 18px;
-}
-
-.GSTDocuments-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  margin: 20px auto 40px;
+  color: #475569;
   font-size: 15px;
   line-height: 1.8;
-  color: #374151;
-  padding: 10px 14px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
 }
 
-.GSTDocuments-item:hover {
-  transform: translateX(6px);
-  background: rgba(17, 128, 17, 0.06);
-  color: #118011;
-}
-
-.GSTDocuments-check {
-  color: #118011;
-  font-size: 14px;
-  margin-top: 4px;
-  flex-shrink: 0;
-}
-
-/* ===============================
-   BUTTON
-================================ */
-.GSTDocuments-btn {
-  background: #118011;
+.gst-btn {
+  background: linear-gradient(135deg, #118011, #22c55e);
   color: #ffffff;
   border: none;
-  padding: 15px 34px;
+  padding: 16px 46px;
   font-size: 15px;
-  font-weight: 500;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
-  box-shadow: 0 10px 26px rgba(17, 128, 17, 0.35);
-  transition: all 0.35s ease;
+  box-shadow: 0 20px 45px rgba(17, 128, 17, 0.55);
 }
 
-.GSTDocuments-btn:hover {
-  background: #0e6b0e;
-  transform: translateY(-3px);
-  box-shadow: 0 16px 34px rgba(17, 128, 17, 0.45);
-}
-
-/* ===============================
-   RESPONSIVE
-================================ */
-@media (max-width: 992px) {
-  .GSTDocuments-container {
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .gst-wrapper {
     grid-template-columns: 1fr;
-    gap: 54px;
+    gap: 70px;
   }
 
-  .GSTDocuments-content h2 {
-    font-size: 28px;
+  .gst-lines {
+    display: none;
   }
 }
 
 @media (max-width: 576px) {
-  .GSTDocuments-section {
-    padding: 70px 16px;
+  .gst-bottom h2 {
+    font-size: 26px;
   }
 
-  .GSTDocuments-content h2 {
-    font-size: 24px;
-  }
-
-  .GSTDocuments-desc,
-  .GSTDocuments-item {
-    font-size: 14px;
+  .gst-hexagon {
+    width: 180px;
+    height: 180px;
   }
 }
