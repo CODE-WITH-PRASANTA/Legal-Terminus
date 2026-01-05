@@ -1,24 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 /* ===============================
-   SECTION WRAPPER
+   SECTION
 ================================ */
 .gst-reg-section {
   font-family: "Poppins", sans-serif;
-  background: #ffffff;
-  padding: 72px 20px 80px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  padding: 80px 20px;
 }
 
 .gst-reg-header {
   text-align: center;
-  max-width: 900px;
-  margin: 0 auto 56px;
+  max-width: 1200px;
+  margin: 0 auto 64px;
 }
 
 .gst-reg-title {
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   color: #111827;
 }
 
@@ -27,55 +27,53 @@
 }
 
 .gst-reg-subtitle {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.8;
   color: #4b5563;
 }
 
 /* ===============================
-   GRID LAYOUT
+   GRID
 ================================ */
 .gst-reg-grid {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  align-items: stretch;
+  gap: 32px;
 }
 
 /* ===============================
-   CARD BASE
+   CARD
 ================================ */
 .gst-reg-card {
   background: #ffffff;
-  border-radius: 14px;
-  padding: 32px 28px 30px;
+  border-radius: 16px;
+  padding: 36px 30px 32px;
   border: 1px solid #e5e7eb;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: all 0.35s ease;
 }
 
-/* Hover */
 .gst-reg-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15);
+  transform: translateY(-12px);
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.18);
 }
 
 /* ===============================
-   HIGHLIGHT (GOLD CARD)
+   HIGHLIGHT
 ================================ */
 .gst-reg-card.highlight {
-  background: #2b5c8a;
+  background: linear-gradient(180deg, #2b5c8a 0%, #1f4f7a 100%);
   color: #ffffff;
   border: none;
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .gst-reg-card.highlight:hover {
-  transform: scale(1.06) translateY(-6px);
+  transform: scale(1.07) translateY(-8px);
 }
 
 .gst-reg-card.highlight h3,
@@ -86,33 +84,34 @@
 }
 
 /* ===============================
-   CARD HEADER
+   HEADER
 ================================ */
 .gst-reg-card-header h3 {
   font-size: 22px;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .gst-reg-card-subtitle {
   font-size: 14px;
   line-height: 1.7;
   color: #4b5563;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 /* ===============================
-   BADGES
+   BADGE
 ================================ */
 .gst-reg-badge {
   display: inline-block;
+  width: fit-content;
   background: #22c55e;
   color: #ffffff;
   font-size: 12px;
   font-weight: 600;
-  padding: 4px 10px;
+  padding: 6px 14px;
   border-radius: 999px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .gst-reg-badge.gold {
@@ -124,18 +123,17 @@
    PRICING
 ================================ */
 .gst-reg-price-box {
-  margin: 16px 0 22px;
+  margin: 20px 0 24px;
 }
 
 .gst-reg-old-price {
   font-size: 14px;
   text-decoration: line-through;
   color: #9ca3af;
-  margin-bottom: 4px;
 }
 
 .gst-reg-price {
-  font-size: 36px;
+  font-size: 38px;
   font-weight: 700;
   color: #111827;
 }
@@ -151,12 +149,9 @@
    GUARANTEE
 ================================ */
 .gst-reg-guarantee {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
   padding: 16px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px dashed rgba(0, 0, 0, 0.12);
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.12);
   margin-bottom: 22px;
 }
 
@@ -170,37 +165,50 @@
 }
 
 /* ===============================
-   FEATURES LIST
+   FEATURES
 ================================ */
 .gst-reg-features {
   list-style: none;
   padding: 0;
-  margin: 0 0 28px;
-  flex-grow: 1; /* ensures equal height cards */
+  margin: 0 0 18px;
+  flex-grow: 1;
 }
 
 .gst-reg-features li {
   position: relative;
   padding-left: 26px;
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.9;
   margin-bottom: 10px;
   color: #111827;
 }
 
-/* check icon */
 .gst-reg-features li::before {
   content: "✓";
   position: absolute;
   left: 0;
-  top: 0;
-  font-size: 14px;
   font-weight: 700;
   color: #22c55e;
 }
 
-/* gold card check */
 .gst-reg-card.highlight .gst-reg-features li::before {
+  color: #f2a93b;
+}
+
+/* ===============================
+   READ MORE
+================================ */
+.gst-reg-readmore {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f4f7a;
+  cursor: pointer;
+  margin-bottom: 18px;
+}
+
+.gst-reg-card.highlight .gst-reg-readmore {
   color: #f2a93b;
 }
 
@@ -211,29 +219,24 @@
   margin-top: auto;
   width: 100%;
   border: none;
-  padding: 14px 16px;
+  padding: 15px 18px;
   font-size: 15px;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  background: #1f4f7a;
+  background: linear-gradient(135deg, #1f4f7a, #163b5c);
   color: #ffffff;
-  transition: background 0.25s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .gst-reg-btn:hover {
-  background: #163b5c;
   transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
 }
 
-/* Gold button */
 .gst-reg-card.highlight .gst-reg-btn {
-  background: #f2a93b;
+  background: linear-gradient(135deg, #f2a93b, #f5b84f);
   color: #111827;
-}
-
-.gst-reg-card.highlight .gst-reg-btn:hover {
-  background: #e39a2d;
 }
 
 /* ===============================
@@ -243,32 +246,19 @@
   .gst-reg-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
   .gst-reg-card.highlight {
     transform: none;
   }
 }
 
 @media (max-width: 768px) {
-  .gst-reg-title {
-    font-size: 32px;
-  }
-
   .gst-reg-grid {
     grid-template-columns: 1fr;
-  }
-
-  .gst-reg-card {
-    padding: 28px 22px;
   }
 }
 
 @media (max-width: 480px) {
   .gst-reg-title {
-    font-size: 26px;
-  }
-
-  .gst-reg-price {
-    font-size: 30px;
+    font-size: 28px;
   }
 }

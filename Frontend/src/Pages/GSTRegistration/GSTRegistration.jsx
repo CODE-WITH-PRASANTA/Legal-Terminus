@@ -25,7 +25,6 @@ const GSTRegistration = () => {
       <GSTRegFeatures />
       <GSTRegTypes />
       <GSTRegFAQ />
-    
     </div>
   )
 }

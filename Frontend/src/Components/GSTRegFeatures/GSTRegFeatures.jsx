@@ -1,24 +1,24 @@
 import React from "react";
 import "./GSTRegFeatures.css";
-import roleImg from "../../assets/feature_img.webp"; // ONLY IMAGE IMPORT
+import roleImg from "../../assets/feature_img.webp";
 
 const GstInfoSection = () => {
   return (
-    <div className="gst-wrapper">
+    <div className="GstInfoSection-wrapper">
 
-      {/* ===== Section 1: Role of GST Certificate (WITH IMAGE) ===== */}
-      <section className="gst-section grid-two">
-        <div className="gst-image">
+      {/* ===== Section 1: Role of GST Certificate ===== */}
+      <section className="GstInfoSection-section GstInfoSection-grid-two">
+        <div className="GstInfoSection-image">
           <img src={roleImg} alt="Role of GST Registration Certificate" />
         </div>
 
-        <div className="gst-content">
+        <div className="GstInfoSection-content">
           <h2>Role of GST Registration Certificate</h2>
-          <p className="subtitle">
+          <p className="GstInfoSection-subtitle">
             The following are the crucial roles of the GST registration certificate:
           </p>
 
-          <ul className="gst-list">
+          <ul className="GstInfoSection-list">
             <li>Legally allows businesses to levy and collect GST from customers.</li>
             <li>Authenticates eligibility to claim GST input tax credits.</li>
             <li>Helps secure loans and financial assistance from institutions.</li>
@@ -28,14 +28,14 @@ const GstInfoSection = () => {
         </div>
       </section>
 
-      {/* ===== Section 2: Common Mistakes (NO IMAGE) ===== */}
-      <section className="gst-section">
+      {/* ===== Section 2: Common Mistakes ===== */}
+      <section className="GstInfoSection-section">
         <h2>Common Mistakes to Avoid During GST Registration</h2>
-        <p className="subtitle">
+        <p className="GstInfoSection-subtitle">
           Businesses should avoid the following errors to ensure compliance:
         </p>
 
-        <ul className="gst-list grid-list">
+        <ul className="GstInfoSection-list GstInfoSection-grid-list">
           <li><strong>Wrong Documentation:</strong> Incorrect invoices and records.</li>
           <li><strong>Inadequate GST Scheme Understanding:</strong> Misinterpretation of composition scheme.</li>
           <li><strong>Missing Return Deadlines:</strong> Delays lead to penalties.</li>
@@ -45,20 +45,22 @@ const GstInfoSection = () => {
           <li><strong>Ignoring GST Notices:</strong> Non-response to compliance alerts.</li>
         </ul>
 
-        <button className="cta-btn">GST Apply Online</button>
+        <button className="GstInfoSection-cta-btn">
+          GST Apply Online
+        </button>
       </section>
 
       {/* ===== Section 3: GSTIN Heading ===== */}
-      <section className="gst-center">
+      <section className="GstInfoSection-center">
         <h2>GSTIN and its Significance for GST Registration</h2>
-        <p className="subtitle">
+        <p className="GstInfoSection-subtitle">
           A comprehensive guide enumerating GSTIN and its importance:
         </p>
       </section>
 
       {/* ===== Section 4: GSTIN Cards ===== */}
-      <section className="gst-section grid-two">
-        <div className="gst-card light">
+      <section className="GstInfoSection-section GstInfoSection-grid-two">
+        <div className="GstInfoSection-card GstInfoSection-light">
           <h3>Features of GSTIN Under GST Registration</h3>
           <ul>
             <li>GSTIN is a unique 15-digit alphanumeric identifier.</li>
@@ -68,7 +70,7 @@ const GstInfoSection = () => {
           </ul>
         </div>
 
-        <div className="gst-card dark">
+        <div className="GstInfoSection-card GstInfoSection-dark">
           <h3>Structure of GSTIN Under GST Registration</h3>
           <ul>
             <li>First 2 digits represent the State Code.</li>
