@@ -80,25 +80,6 @@ const TabsBar = () => {
         <div className="gst-tab-body">
           {TABS[activeIndex].component}
         </div>
-
-        {/* Navigation */}
-        <div className="gst-tab-actions">
-          <button
-            disabled={activeIndex === 0}
-            onClick={() => goTo(activeIndex - 1)}
-            className="primary"
-          >
-            ← Previous
-          </button>
-
-          <button
-            disabled={activeIndex === TABS.length - 1}
-            onClick={() => goTo(activeIndex + 1)}
-            className="primary"
-          >
-            Next →
-          </button>
-        </div>
       </main>
     </section>
   );
