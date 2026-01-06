@@ -1,6 +1,6 @@
 import React from "react";
 import "./Whoweare.css";
-import Whoweareimg from "../../assets/whoweare.webp";
+import Whowearevideo from "../../assets/whowearevideo.mp4";
 
 const WhoWeAre = () => {
   const items = [

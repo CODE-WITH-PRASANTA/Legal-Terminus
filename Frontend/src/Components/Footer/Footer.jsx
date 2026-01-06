@@ -31,31 +31,25 @@ const Footer = () => {
               <li>
                 <a href="#about">
                   <span className="link-icon">→</span>
-                  <span className="link-text">About Us</span>
+                  <span className="link-text">Terms & Conditions</span>
                 </a>
               </li>
               <li>
                 <a href="#services">
                   <span className="link-icon">→</span>
-                  <span className="link-text">Our Services</span>
+                  <span className="link-text">Privacy Policy</span>
                 </a>
               </li>
               <li>
                 <a href="#blog">
                   <span className="link-icon">→</span>
-                  <span className="link-text">Latest Blog</span>
+                  <span className="link-text">Refund Policy</span>
                 </a>
               </li>
               <li>
                 <a href="#contact">
                   <span className="link-icon">→</span>
-                  <span className="link-text">Contact Us</span>
-                </a>
-              </li>
-              <li>
-                <a href="#product">
-                  <span className="link-icon">→</span>
-                  <span className="link-text">Products</span>
+                  <span className="link-text">Confidentiality Policy</span>
                 </a>
               </li>
             </ul>
@@ -68,31 +62,31 @@ const Footer = () => {
               <li>
                 <a href="#privacy">
                   <span className="link-icon">→</span>
-                  <span className="link-text">Privacy Policy</span>
+                  <span className="link-text">Business Registration</span>
                 </a>
               </li>
               <li>
                 <a href="#support">
                   <span className="link-icon">→</span>
-                  <span className="link-text">Customer Support</span>
+                  <span className="link-text">Registration Srvices</span>
                 </a>
               </li>
               <li>
                 <a href="#disclaimer">
                   <span className="link-icon">→</span>
-                  <span className="link-text">Disclaimer</span>
+                  <span className="link-text">Compliances Services</span>
                 </a>
               </li>
               <li>
                 <a href="#faq">
                   <span className="link-icon">→</span>
-                  <span className="link-text">FAQ</span>
+                  <span className="link-text">Trademark Services</span>
                 </a>
               </li>
               <li>
                 <a href="#terms">
                   <span className="link-icon">→</span>
-                  <span className="link-text">Terms & Conditions</span>
+                  <span className="link-text">Licenses</span>
                 </a>
               </li>
             </ul>
@@ -158,7 +152,7 @@ const Footer = () => {
                   <span className="ci"><FaMapMarkerAlt /></span>
                   <div className="contact-info">
                     <span className="contact-label">Visit Us</span>
-                    <span>Office 12, Athens, Greece</span>
+                    <span>Flat No 1B, RK Enclave, Plot No A/155, Saheed Nagar, Bhubaneswar, Odisha 751007</span>
                   </div>
                 </div>
               </li>

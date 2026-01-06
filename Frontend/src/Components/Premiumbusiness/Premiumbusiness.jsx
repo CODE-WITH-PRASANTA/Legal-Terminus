@@ -13,34 +13,30 @@ const PREMIUM_ICONS = [
 const SERVICES = [
   {
     title: "Company & Startup Registration",
-    short: `Legal Terminus simplifies the process of registering your startup or company with expert legal guidance...`,
-    full: `We assist with Private Limited, LLP, OPC, Partnership and Proprietorship registration, including name approval, incorporation filing, DIN & DSC, MoA/AoA drafting, PAN/TAN, bank account setup and post-registration compliance support.`
+    short: `We help you register Private Limited Companies, LLPs, OPCs, Partnerships, and Proprietorships. Our team handles everything—from name approval and company registration to DIN, DSC, PAN/TAN etc.`,
   },
   {
     title: "Licenses & Government Registrations",
-    short: `Get hassle-free licensing and government approvals with Legal Terminus’ expert-managed process...`,
-    full: `Our services include FSSAI License, PSARA License, Trade License, Labour Registration, Shop & Establishment, MSME/Udyam Registration and other statutory approvals with complete documentation and follow-ups.`
+    short: `Legal Terminus assists with FSSAI, Trade License, Labour Registration, Shop & Establishment, MSME/Udyam Registration, and other government registrations.`,
   },
   {
     title: "Trademark & Intellectual Property",
-    short: `Protect your brand identity and intellectual assets with Legal Terminus’ IP solutions...`,
-    full: `We provide Trademark Registration, Copyright Registration, Trademark Objection & Opposition handling, Renewal services and brand protection strategies to secure your intellectual property rights.`
+    short: `We provide Trademark Registration, handle objections and oppositions, manage renewals, and help safeguard your brand from misuse—ensuring your ideas stay protected.`,
   },
   {
     title: "Taxation & Compliance Services",
-    short: `Stay compliant and stress-free with our professional taxation and regulatory compliance services...`,
-    full: `Legal Terminus offers GST Registration & Returns, Income Tax Filing, TDS Compliance, ROC Filings, Annual Compliance, and professional CA-managed tax advisory services.`
+    short: `Legal Terminus offers GST Registration and Returns, Income Tax Filing, TDS compliance, ROC filings, annual compliances, and expert tax guidance handled by qualified professionals.`,
   },
-  {
-    title: "NGO & Trust Registration",
-    short: `Legal Terminus helps you legally establish and manage NGOs, Trusts and Societies in India...`,
-    full: `We assist in NGO Registration, Trust & Society Registration, Section 8 Company setup, 12A & 80G Certification, compliance filings and documentation for smooth non-profit operations.`
-  },
-  {
-    title: "Legal Advisory & Documentation",
-    short: `Get expert legal advice and professionally drafted documents tailored to your business needs...`,
-    full: `Our legal experts provide contract drafting, agreement review, legal notices, business advisory, compliance consultation and ongoing legal support for startups and enterprises.`
-  }
+  // {
+  //   title: "Non-Profit Making Structures",
+  //   short: `Legal Terminus helps you legally establish and manage Non-Profit company, Trusts and Societies Registration in India...`,
+  //   full: `We guide you through the registration of Non-Profit Companies, Trusts, and Societies in India, including Section 8 Company setup and 12A & 80G certification. Legal Terminus also provides ongoing compliance and documentation support to ensure your non-profit runs smoothly and stays legally compliant.`
+  // },
+  // {
+  //   title: "Legal Advisory & Documentation",
+  //   short: `Get expert legal advice and professionally drafted documents tailored to your business needs...`,
+  //   full: `Our experts provide contract drafting, agreement review, legal notices, business advice, and ongoing legal assistance—tailored to support startups and growing businesses.`
+  // }
 ];
 
 
@@ -98,14 +94,16 @@ export default function Premiumbusiness() {
 
 
             <p className="pb-intro">
-            Legal Terminus is a trusted legal and compliance platform dedicated to helping startups,
-            businesses, NGOs, and enterprises manage their legal, regulatory, and compliance
-            requirements with ease. Our expert-driven approach ensures accuracy, transparency,
-            and timely execution at every step.
+            Welcome to Legal Terminus Private Limited, your trusted partner for legal and business support in India. We help startups, businesses, NGOs, and enterprises with company registration, trademark filing, GST, FSSAI, and other legal requirements.
+  <br /><br />
+Legal Terminus makes legal work simple and stress-free. Our experienced team handles the complete process with care, honesty, and on-time delivery, so you don’t have to worry about paperwork or compliance. We work closely with you and explain everything in clear, simple terms.
+  <br /><br />
+With a strong focus on customer satisfaction and smart solutions, Legal Terminus supports you at every step—so you can focus on growing your business while we take care of the legal work.
+
           </p>
 
 
-           <div className="pb-stats">
+           {/* <div className="pb-stats">
               <div className="pb-stat">
                 <span className="pb-stat-number">5K+</span>
                 <span className="pb-stat-label">Clients Served</span>
@@ -118,13 +116,7 @@ export default function Premiumbusiness() {
                 <span className="pb-stat-number">Pan India</span>
                 <span className="pb-stat-label">Service Reach</span>
               </div>
-            </div>
-
-          <p className="pb-cta">
-            At Legal Terminus, we believe legal compliance should be simple, transparent, and accessible.
-            Our experienced professionals work closely with you to deliver reliable legal solutions
-            that support your growth and long-term success.
-          </p>
+            </div> */}
 
 
             <div className="pb-actions">
@@ -176,7 +168,7 @@ export default function Premiumbusiness() {
                           aria-controls={`panel-${i}`}
                           aria-label={isOpen ? `Show less about ${s.title}` : `Read more about ${s.title}`}
                         >
-                          {isOpen ? " Show less" : " Read more"}
+                          {/* {isOpen ? " Show less" : " Read more"} */}
                           <svg className="preminum-read-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
                             <path d={isOpen ? "M18 15L12 9L6 15" : "M6 9L12 15L18 9"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
@@ -190,7 +182,7 @@ export default function Premiumbusiness() {
                       data-open={isOpen ? "true" : "false"}
                       aria-hidden={!isOpen}
                     >
-                      <div className="pb-card-full-wrapper">
+                      {/* <div className="pb-card-full-wrapper">
                         <p className="pb-card-full">{s.full}</p>
                         <button className="pb-card-action">
                           Learn more
@@ -198,7 +190,7 @@ export default function Premiumbusiness() {
                             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </button>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </article>

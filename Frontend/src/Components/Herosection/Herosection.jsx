@@ -1,6 +1,6 @@
 import React from 'react'
 import './Herosection.css'
-import right3danimation from '../../assets/VID_20251223_175719.mp4'
+import right3danimation from '../../assets/Hero-Video.mp4'
 
 const Herosection = () => {
   const tags = [
@@ -71,11 +71,7 @@ const Herosection = () => {
               playsInline
               className="hs-video-card__media"
             />
-            <img
-              src="https://corpbiz.io/img/banner.png"
-              alt="Hero Illustration"
-              className="hs-video-card__overlay-image"
-            />
+        
           </div>
         </div>
 

@@ -14,8 +14,7 @@ const HomeLatestBlog = () => {
             Latest News And Articles From <br /> Legal Terminus Blog
           </h2>
           <p className="hlb-subdesc">
-            Stay updated with the latest legal insights, compliance updates,
-            taxation news, and expert opinions from Legal Terminus.
+            Stay informed with the latest legal insights, compliance updates, taxation news, and expert guidance curated by the Legal Terminus team.
           </p>
         </div>
 

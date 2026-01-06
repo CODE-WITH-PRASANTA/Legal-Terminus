@@ -4,9 +4,9 @@ import './Featureslegalservice.css'
 const leftCards = [
   {
     id: 1,
-    title: "Why Legal Terminus?",
+    title: "Easy Accessibility & Cost efficiency",
     text:
-      "Legal Terminus is a modern legal and compliance platform designed to simplify business registrations, documentation, and legal processes through expert-driven solutions.",
+      "Our online platform is especially designed to allow you quick and efficient access to specific services required by you at extremely competitive price.",
     variant: "soft",
     icon: (
       <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
@@ -17,9 +17,9 @@ const leftCards = [
   },
   {
     id: 2,
-    title: "Trusted Legal & Compliance Experts",
+    title: "Excellent Reminder Policy",
     text:
-      "Legal Terminus works with experienced lawyers, chartered accountants, and compliance professionals to deliver accurate, reliable, and timely legal services across India.",
+      "Our Excellent reminder policy will never let you spend a single penny towards penalty or late fee for any compliance.",
     variant: "soft",
     icon: (
       <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
@@ -30,9 +30,9 @@ const leftCards = [
   },
   {
     id: 3,
-    title: "Client-Centric Approach",
+    title: "Easy Return and Grievance Redressal Policy",
     text:
-      "We focus on transparency, timely delivery, and personalized support to ensure a smooth and hassle-free experience for every client.",
+      "While we take stern steps to ensure that our clients do not face any issues while availing our services, we have set-up a Grievance Redressal Team to take care of all your grievances in a timely manner. Our promoters take every single grievance very seriously and personally oversee resolution in each case.",
     variant: "soft",
     icon: (
       <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
@@ -43,9 +43,9 @@ const leftCards = [
   },
   {
     id: 4,
-    title: "End-to-End Legal Support",
+    title: "Highly Experienced Consultants",
     text:
-      "From company incorporation to taxation, compliance, and ongoing legal assistance, Legal Terminus provides complete end-to-end business support.",
+      "You will get tailormade advice, based on various relevant parameters, such as your industry segment, business needs, type and size of your entity, by our highly experienced Consultants.",
     variant: "soft",
     icon: (
       <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
@@ -58,24 +58,24 @@ const leftCards = [
 
 const rightBullets = [
   {
-    title: "Prompt Communication:",
+    title: "Easy Accessibility & Cost efficiency",
     text:
-      "Our team ensures quick responses to client queries through calls, emails, and digital channels, keeping you informed at every step.",
+      "Our online platform is especially designed to allow you quick and efficient access to specific services required by you at extremely competitive price.",
   },
   {
-    title: "Technology-Driven Platform:",
+    title: "Excellent Reminder Policy",
     text:
-      "Legal Terminus leverages digital tools and streamlined workflows to simplify complex legal and compliance processes.",
+      "Our Excellent reminder policy will never let you spend a single penny towards penalty or late fee for any compliance.",
   },
   {
-    title: "Simple & Hassle-Free Process:",
+    title: "Easy Return and Grievance Redressal Policy",
     text:
-      "We handle documentation, filings, and follow-ups, allowing you to focus on growing your business without legal stress.",
+      "While we take stern steps to ensure that our clients do not face any issues while availing our services, we have set-up a Grievance Redressal Team to take care of all your grievances in a timely manner. Our promoters take every single grievance very seriously and personally oversee resolution in each case.",
   },
   {
-    title: "Professional Legal Guidance:",
+    title: "Highly Experienced Consultants",
     text:
-      "Our experts provide clear and practical advice on business registration, compliance, taxation, and regulatory requirements.",
+      "You will get tailormade advice, based on various relevant parameters, such as your industry segment, business needs, type and size of your entity, by our highly experienced Consultants.",
   },
 ];
 
@@ -108,12 +108,12 @@ const FeaturesLegalService = () => {
           {/* RIGHT: Title + bullets */}
           <div className="fls-right">
             <h2 id="fls-heading" className="fls-title">
-              Features of Our <span className="fls-title--highlight">Legal Service</span>
+              Why We<span className="fls-title--highlight">Stand Out</span>
             </h2>
 
             <p className="fls-intro">
-              Corpbiz is a tech-driven platform committed to delivering professional services all over India. We deliver exceptional
-              services to our clients, and our dedication and commitment can be seen in the following ways:
+              Legal Terminus is a modern service platform that provides reliable legal and business support across India. We focus on delivering quality services with honesty, clarity, and care. Our commitment to our clients is reflected in the way we work and the results we deliver.
+
             </p>
 
             <ul className="fls-list" role="list">

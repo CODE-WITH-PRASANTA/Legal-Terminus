@@ -4,22 +4,22 @@ import './WorkingProcessPro.css'
 const steps = [
   {
     icon: <FaRegFileAlt />,
-    text: "Fill Up Application Form",
+    text: "Fill out the application form",
     color: "green"
   },
   {
     icon: <FaCreditCard />,
-    text: "Make Online Payment",
+    text: "Complete the online payment",
     color: "lightgreen"
   },
   {
     icon: <FaHeadset />,
-    text: "Executive will process Application",
+    text: "Our executive processes your application",
     color: "green"
   },
   {
     icon: <FaEnvelope />,
-    text: "Get Confirmation on Mail",
+    text: "Receive confirmation via email",
     color: "lightgreen"
   }
 ];

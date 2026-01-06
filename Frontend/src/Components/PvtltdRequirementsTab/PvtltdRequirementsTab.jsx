@@ -8,13 +8,12 @@ const RequirementsPvt = () => {
         {/* Heading + intro */}
         <header className="req-header">
           <h2 className="req-title">
-            Requirements for Private Limited Company Registration
+            Benefits of Private Limited Company Registration in India
           </h2>
           <p className="req-subtitle">
-            For private limited company registration in India, certain legal and
-            procedural requirements must be fulfilled under the Companies Act,
-            2013. Meeting these minimum conditions ensures a valid incorporation
-            and smooth operation post-registration.
+            The Ministry of Corporate Affairs (MCA) manages the company registration process in India. It includes registering the business with the Registrar of Companies (RoC) and obtaining a Digital Signature Certificate (DSC) and Director Identification Number (DIN).
+
+
           </p>
         </header>
 
@@ -22,71 +21,42 @@ const RequirementsPvt = () => {
         <div className="req-grid">
           {/* 1 */}
           <article className="req-card">
-            <h3 className="req-card-title">Minimum Two Directors</h3>
+            <h3 className="req-card-title">Separate Legal Identity</h3>
             <div className="req-card-underline" />
             <p className="req-card-text">
-              A private limited company must have at least two directors. At
-              least one director must be a resident of India, meaning they have
-              stayed in the country for a minimum of 182 days during the
-              financial year.
+Once registered, a company becomes its own legal entity. It can own property, sign contracts, and operate separately from its owners.
+
             </p>
           </article>
 
           {/* 2 */}
           <article className="req-card">
-            <h3 className="req-card-title">Minimum Two Shareholders</h3>
+            <h3 className="req-card-title">Limited Liability Protection</h3>
             <div className="req-card-underline" />
             <p className="req-card-text">
-              The company must have a minimum of two shareholders. Directors and
-              shareholders can be the same individuals, and both individuals and
-              corporate entities are eligible to be shareholders.
+              The personal assets of shareholders are safe from company debts and risks, ensuring financial protection.
             </p>
           </article>
 
           {/* 3 */}
           <article className="req-card">
-            <h3 className="req-card-title">Registered Office Address</h3>
+            <h3 className="req-card-title">
+              Access to Government Schemes
+            </h3>
             <div className="req-card-underline" />
             <p className="req-card-text">
-              A valid Indian address must be provided as the company&apos;s
-              registered office. Proof of address and a NOC (No Objection
-              Certificate) from the property owner are required.
+              Registered companies can benefit from government schemes like Startup India for tax benefits and easier compliance, and Make in India for incentives and support for manufacturing businesses.
             </p>
           </article>
 
           {/* 4 */}
           <article className="req-card">
             <h3 className="req-card-title">
-              Digital Signature Certificate (DSC)
+              Increased Credibility
             </h3>
             <div className="req-card-underline" />
             <p className="req-card-text">
-              All proposed directors must have a valid Digital Signature
-              Certificate to digitally sign incorporation documents.
-            </p>
-          </article>
-
-          {/* 5 */}
-          <article className="req-card">
-            <h3 className="req-card-title">
-              Director Identification Number (DIN)
-            </h3>
-            <div className="req-card-underline" />
-            <p className="req-card-text">
-              Each director must obtain a DIN, which serves as a unique
-              identification number issued by the Ministry of Corporate Affairs.
-            </p>
-          </article>
-
-          {/* 6 */}
-          <article className="req-card">
-            <h3 className="req-card-title">Company Name</h3>
-            <div className="req-card-underline" />
-            <p className="req-card-text">
-              A unique name must be chosen for the company, which is not
-              identical or similar to existing companies or trademarks. Meeting
-              these requirements is essential before filing the SPICe+ form for
-              incorporation.
+              A registered company is more trusted by investors, clients, and vendors, making it easier to get funding and partnerships.
             </p>
           </article>
         </div>

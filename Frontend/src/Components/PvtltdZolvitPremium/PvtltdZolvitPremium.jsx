@@ -1,6 +1,6 @@
 import React from "react";
 import "./PvtltdZolvitPremium.css";
-import premiumIllustration from "../../assets/f-1 img.webp";
+import premiumIllustration from "../../assets/lt-company.svg";
 
 const ZolvitPremium = () => {
   return (
@@ -24,13 +24,11 @@ const ZolvitPremium = () => {
             <header className="zp-header">
               <h2 className="zp-title">
                 Legal Terminus{" "}
-                <span className="zp-title-highlight">Premium</span>{" "}
+                <span className="zp-title-highlight">Priority</span>{" "}
                 <span className="zp-title-icon">⚖️</span>
               </h2>
               <p className="zp-subtitle">
-                Designed for startups and growing businesses seeking a smooth,
-                fast, and fully compliant Private Limited Company registration
-                experience with expert legal support.
+Get your company registered faster with Legal Terminus expert-handled process, made for entrepreneurs who value time and want to avoid unnecessary delays.
               </p>
             </header>
 
@@ -40,18 +38,15 @@ const ZolvitPremium = () => {
               <ul className="zp-list zp-features-list">
                 <li className="zp-list-item">
                   <span className="zp-list-icon">🧑‍⚖️</span>
-                  Dedicated legal expert for end-to-end guidance and accurate
-                  documentation.
+                  Get your company registered faster with Legal Terminus expert-handled process, made for entrepreneurs who value time and want to avoid unnecessary delays.
                 </li>
                 <li className="zp-list-item">
                   <span className="zp-list-icon">📑</span>
-                  Complete application preparation and submission within{" "}
-                  <strong>48 working hours.</strong>
+                  Hassle-Free Compliance Solutions
                 </li>
                 <li className="zp-list-item">
                   <span className="zp-list-icon">⏱️</span>
-                  Company incorporation typically completed within{" "}
-                  <strong>5–7 working days</strong>, subject to MCA approvals.
+                  Excellent Reminder Policy
                 </li>
               </ul>
             </section>
@@ -80,14 +75,10 @@ const ZolvitPremium = () => {
               </button>
             </div>
 
-            {/* Pricing */}
+            {/* Pricing
             <p className="zp-pricing">
-              <span className="zp-label">Pricing:</span> Starts from{" "}
-              <span className="zp-price-strong">₹50,000</span>. The package
-              includes Private Limited Company incorporation, DIN & DSC
-              assistance, PAN & TAN, and first-year compliance support such as
-              auditor appointment and basic filings.
-            </p>
+              <span className="zp-label">Starts from ₹3,999 (excluding government fees)</span> for Private Limited Company Registration in India.{" "}The package includes name approval, incorporation, DIN for two directors, e-PAN, e-TAN, and bank account documents. Also covers auditor appointment documents, EPF and ESI registrations.
+              </p> */}
 
           </div>
         </div>
