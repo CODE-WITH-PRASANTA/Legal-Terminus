@@ -1,159 +1,189 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-/* ===============================
-   SECTION
-================================ */
-
-.gstfaq-section {
+/* ================= SECTION ================= */
+.GSTFaq-section {
   font-family: "Poppins", sans-serif;
-  background: #ffffff;
-  padding: 72px 24px;
+  padding: 90px 24px;
+  background: linear-gradient(180deg, #f8fafc, #ffffff);
 }
 
-.gstfaq-container {
-  max-width: 1180px;
+/* ================= LAYOUT ================= */
+.GSTFaq-container {
+  max-width: 1200px;
   margin: auto;
   display: grid;
   grid-template-columns: 0.9fr 1.2fr;
-  gap: 72px;
+  gap: 80px;
 }
 
-/* ===============================
-   LEFT
-================================ */
-
-.gstfaq-left {
-  color: #1f2937;
+/* ================= LEFT ================= */
+.GSTFaq-left {
+  position: sticky;
+  top: 120px;
 }
 
-.gstfaq-title {
-  font-size: 38px;
+.GSTFaq-badge {
+  display: inline-block;
+  background: rgba(26, 169, 26, 0.1);
+  color: #1aa91a;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-.gstfaq-intro {
+.GSTFaq-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 22px;
+  line-height: 1.25;
+  color: #0f172a;
+}
+
+.GSTFaq-intro {
   font-size: 15px;
   line-height: 1.9;
-  color: #4b5563;
+  color: #475569;
+  max-width: 420px;
 }
 
-/* ===============================
-   RIGHT
-================================ */
-
-.gstfaq-right {
-  max-height: 540px;
-  display: flex;
-}
-
-.gstfaq-list {
-  width: 100%;
+/* ================= RIGHT ================= */
+.GSTFaq-right {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  padding: 10px 26px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+  max-height: 600px;
   overflow-y: auto;
-  padding-right: 6px;
 }
 
 /* Scrollbar */
-.gstfaq-list::-webkit-scrollbar {
+.GSTFaq-right::-webkit-scrollbar {
   width: 6px;
 }
 
-.gstfaq-list::-webkit-scrollbar-thumb {
-  background: #1aa91a;
+.GSTFaq-right::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1aa91a, #4ade80);
   border-radius: 20px;
 }
 
-/* ===============================
-   FAQ ITEM
-================================ */
-
-.gstfaq-item {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+/* ================= ITEM ================= */
+.GSTFaq-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  position: relative;
 }
 
-.gstfaq-question {
+.GSTFaq-item::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #1aa91a;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.GSTFaq-item.active::before {
+  opacity: 1;
+}
+
+/* ================= QUESTION ================= */
+.GSTFaq-question {
   width: 100%;
-  padding: 18px 0;
+  padding: 20px 0;
   background: none;
   border: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+  color: #0f172a;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.GSTFaq-item.active .GSTFaq-question {
+  color: #1aa91a;
+  transform: translateX(4px);
+}
+
+/* LEFT QUESTION CONTENT */
+.GSTFaq-q-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-size: 15px;
   font-weight: 500;
-  cursor: pointer;
-  color: #111827;
 }
 
-.gstfaq-question:hover {
-  color: #1aa91a;
-}
-
-.gstfaq-arrow {
+.GSTFaq-q-icon {
   font-size: 18px;
-  transition: transform 0.25s ease;
+  color: #1aa91a;
+  flex-shrink: 0;
 }
 
-.gstfaq-arrow.open {
+/* ================= ARROW ================= */
+.GSTFaq-arrow {
+  font-size: 20px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.GSTFaq-arrow.open {
   transform: rotate(180deg);
 }
 
-/* ===============================
-   ANSWER
-================================ */
-
-.gstfaq-answer {
-  padding-bottom: 16px;
+/* ================= ANSWER ================= */
+.GSTFaq-answer-wrapper {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-6px);
+  transition: all 0.45s ease;
 }
 
-.gstfaq-answer p {
+.GSTFaq-answer-wrapper.show {
+  max-height: 300px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.GSTFaq-answer {
+  padding-bottom: 20px;
+  padding-left: 30px;
+}
+
+.GSTFaq-answer p {
   font-size: 14px;
-  line-height: 1.8;
-  color: #4b5563;
+  line-height: 1.85;
+  color: #475569;
 }
 
-/* ===============================
-   ACTIVE
-================================ */
-
-.gstfaq-item.active .gstfaq-question {
-  color: #1aa91a;
-}
-
-/* ===============================
-   RESPONSIVE
-================================ */
-
+/* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
-  .gstfaq-container {
-    gap: 40px;
-  }
-}
-
-@media (max-width: 768px) {
-  .gstfaq-container {
+  .GSTFaq-container {
     grid-template-columns: 1fr;
+    gap: 50px;
   }
 
-  .gstfaq-right {
-    max-height: none;
-  }
-
-  .gstfaq-list {
-    overflow: visible;
+  .GSTFaq-left {
+    position: static;
   }
 }
 
 @media (max-width: 480px) {
-  .gstfaq-title {
-    font-size: 26px;
+  .GSTFaq-title {
+    font-size: 28px;
   }
 
-  .gstfaq-question {
+  .GSTFaq-q-left {
     font-size: 14px;
   }
 
-  .gstfaq-answer p {
+  .GSTFaq-answer p {
     font-size: 13.5px;
   }
 }
+  

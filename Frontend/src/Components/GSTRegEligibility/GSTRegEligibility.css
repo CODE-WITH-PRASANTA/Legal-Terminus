@@ -1,26 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
-.gst-eligibility-section {
+.GSTRegEligibility-section {
   font-family: "Poppins", sans-serif;
   background: #ffffff;
   padding: 80px 20px;
 }
 
-.gst-container {
+.GSTRegEligibility-container {
   max-width: 1200px;
   margin: auto;
 }
 
 /* ================= HEADER ================= */
 
-.gst-header h2 {
+.GSTRegEligibility-header h2 {
   font-size: 36px;
   font-weight: 600;
   margin-bottom: 12px;
   color: #111827;
 }
 
-.gst-header p {
+.GSTRegEligibility-header p {
   font-size: 15px;
   color: #4b5563;
   max-width: 900px;
@@ -30,7 +28,7 @@
 
 /* ================= GRID ================= */
 
-.gst-grid {
+.GSTRegEligibility-grid {
   display: grid;
   grid-template-columns: 1.3fr 0.7fr;
   gap: 48px;
@@ -38,26 +36,26 @@
   margin-bottom: 80px;
 }
 
-.gst-grid-alt {
+.GSTRegEligibility-grid-alt {
   grid-template-columns: 1.2fr 0.8fr;
 }
 
 /* ================= LEFT ================= */
 
-.gst-left h3 {
+.GSTRegEligibility-left h3 {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 22px;
   color: #111827;
 }
 
-.gst-list {
+.GSTRegEligibility-list {
   list-style: none;
   padding: 0;
   margin-bottom: 32px;
 }
 
-.gst-list li {
+.GSTRegEligibility-list li {
   display: flex;
   align-items: flex-start;
   gap: 14px;
@@ -68,30 +66,22 @@
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.gst-list li:hover {
-  transform: translateX(6px);
-  color: #1aa91a;
+.GSTRegEligibility-icon {
+  color: #118011;
+  font-size: 18px;
+  margin-top: 4px;
+  flex-shrink: 0;
 }
 
-/* Check icon */
-.gst-check {
-  min-width: 22px;
-  height: 22px;
-  background: #1aa91a;
-  color: #ffffff;
-  border-radius: 50%;
-  font-size: 13px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 4px;
+.GSTRegEligibility-list li:hover {
+  transform: translateX(6px);
+  color: #118011;
 }
 
 /* ================= BUTTON ================= */
 
-.gst-btn {
-  background: #f2a93b;
+.GSTRegEligibility-btn {
+  background: #118011;
   color: #ffffff;
   font-size: 15px;
   font-weight: 500;
@@ -100,17 +90,17 @@
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 22px rgba(242, 169, 59, 0.35);
+  box-shadow: 0 8px 22px rgba(17, 128, 17, 0.35);
 }
 
-.gst-btn:hover {
-  background: #e08f1f;
+.GSTRegEligibility-btn:hover {
+  background: #0e6b0e;
   transform: translateY(-2px);
 }
 
 /* ================= RIGHT ================= */
 
-.gst-right img {
+.GSTRegEligibility-right img {
   width: 100%;
   max-width: 420px;
   display: block;
@@ -120,26 +110,26 @@
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 992px) {
-  .gst-grid,
-  .gst-grid-alt {
+  .GSTRegEligibility-grid,
+  .GSTRegEligibility-grid-alt {
     grid-template-columns: 1fr;
   }
 
-  .gst-right img {
+  .GSTRegEligibility-right img {
     margin: 40px auto 0;
   }
 }
 
 @media (max-width: 576px) {
-  .gst-header h2 {
+  .GSTRegEligibility-header h2 {
     font-size: 28px;
   }
 
-  .gst-left h3 {
+  .GSTRegEligibility-left h3 {
     font-size: 20px;
   }
 
-  .gst-list li {
+  .GSTRegEligibility-list li {
     font-size: 14px;
   }
 }

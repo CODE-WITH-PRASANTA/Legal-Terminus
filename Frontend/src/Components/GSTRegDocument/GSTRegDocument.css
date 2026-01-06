@@ -1,136 +1,202 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-/* ===============================
-   SECTION
-================================ */
-.gst-docs-section {
+.gst-section {
   font-family: "Poppins", sans-serif;
-  background: #ffffff;
-  padding: 80px 24px;
+  background: linear-gradient(180deg, #f8fafc, #ffffff);
+  
 }
 
-.gst-docs-container {
-  max-width: 1200px;
-  margin: 0 auto;
+/* ================= LAYOUT ================= */
+.gst-wrapper {
+  max-width: 1300px;
+  margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 64px;
+  grid-template-columns: 1fr 320px 1fr;
   align-items: center;
+  gap: 60px;
 }
 
-/* ===============================
-   IMAGE
-================================ */
-.gst-docs-image {
+.gst-column {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* ================= CARD ================= */
+.gst-card {
+  display: flex;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  transition: 0.4s ease;
+}
+
+.gst-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Card Text */
+.gst-text h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.gst-text p {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+/* ================= ICON ================= */
+.gst-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* ================= CARD BACKGROUNDS ================= */
+.bg-blue {
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+}
+.bg-orange {
+  background: linear-gradient(135deg, #ffedd5, #fff7ed);
+}
+.bg-purple {
+  background: linear-gradient(135deg, #ede9fe, #f5f3ff);
+}
+.bg-red {
+  background: linear-gradient(135deg, #fee2e2, #fef2f2);
+}
+.bg-teal {
+  background: linear-gradient(135deg, #ccfbf1, #f0fdfa);
+}
+.bg-green {
+  background: linear-gradient(135deg, #dcfce7, #f0fdf4);
+}
+.bg-indigo {
+  background: linear-gradient(135deg, #e0e7ff, #eef2ff);
+}
+.bg-pink {
+  background: linear-gradient(135deg, #fce7f3, #fdf2f8);
+}
+
+/* ================= CENTER ================= */
+.gst-center {
+  position: relative;
   display: flex;
   justify-content: center;
 }
 
-.gst-docs-image img {
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.4s ease;
-}
-
-.gst-docs-image img:hover {
-  transform: scale(1.04);
-}
-
-/* ===============================
-   CONTENT
-================================ */
-.gst-docs-content h2 {
-  font-size: 32px;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 16px;
-}
-
-.gst-docs-desc {
-  font-size: 15px;
-  line-height: 1.9;
-  color: #4b5563;
-  margin-bottom: 28px;
-}
-
-/* ===============================
-   LIST
-================================ */
-.gst-docs-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 36px;
-}
-
-.gst-doc-item {
+.gst-hexagon {
+  width: 220px;
+  height: 220px;
+  background: linear-gradient(145deg, #118011, #22c55e);
+  clip-path: polygon(
+    25% 6%,
+    75% 6%,
+    100% 50%,
+    75% 94%,
+    25% 94%,
+    0% 50%
+  );
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 10px 0;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 30px 70px rgba(17, 128, 17, 0.6);
+  z-index: 2;
+}
+
+.gst-hex-content {
+  text-align: center;
+  color: #ffffff;
+}
+
+.gst-hex-content h3 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.gst-hex-content span {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* ================= CONNECTOR LINES ================= */
+.gst-lines {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+}
+
+.gst-lines line {
+  stroke: #118011;
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+}
+
+/* ================= BOTTOM ================= */
+.gst-bottom {
+  text-align: center;
+  margin-top: 120px;
+}
+
+.gst-bottom h2 {
+  font-size: 34px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.gst-bottom h2 span {
+  color: #118011;
+}
+
+.gst-bottom p {
+  max-width: 720px;
+  margin: 20px auto 40px;
+  color: #475569;
   font-size: 15px;
   line-height: 1.8;
-  color: #374151;
-  transition: transform 0.25s ease, color 0.25s ease;
 }
 
-.gst-doc-item:hover {
-  transform: translateX(6px);
-  color: #f4a734;
-}
-
-.check-icon {
-  color: #f4a734;
-  font-size: 14px;
-  margin-top: 4px;
-}
-
-/* ===============================
-   BUTTON
-================================ */
-.gst-docs-btn {
-  background: #f4a734;
+.gst-btn {
+  background: linear-gradient(135deg, #118011, #22c55e);
   color: #ffffff;
   border: none;
-  padding: 14px 28px;
+  padding: 16px 46px;
   font-size: 15px;
-  font-weight: 500;
-  border-radius: 6px;
+  border-radius: 14px;
   cursor: pointer;
-  box-shadow: 0 6px 16px rgba(244, 167, 52, 0.35);
-  transition: all 0.3s ease;
+  box-shadow: 0 20px 45px rgba(17, 128, 17, 0.55);
 }
 
-.gst-docs-btn:hover {
-  background: #e69524;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(244, 167, 52, 0.45);
-}
-
-/* ===============================
-   RESPONSIVE
-================================ */
-@media (max-width: 992px) {
-  .gst-docs-container {
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .gst-wrapper {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 70px;
   }
 
-  .gst-docs-content h2 {
-    font-size: 28px;
+  .gst-lines {
+    display: none;
   }
 }
 
 @media (max-width: 576px) {
-  .gst-docs-section {
-    padding: 60px 16px;
+  .gst-bottom h2 {
+    font-size: 26px;
   }
 
-  .gst-docs-content h2 {
-    font-size: 24px;
-  }
-
-  .gst-docs-desc,
-  .gst-doc-item {
-    font-size: 14px;
+  .gst-hexagon {
+    width: 180px;
+    height: 180px;
   }
 }

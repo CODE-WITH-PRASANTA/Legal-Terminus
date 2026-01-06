@@ -31,59 +31,53 @@ const steps = [
 
 const GSTProcess = () => {
   return (
-    <section className="gst-wrapper">
-      {/* ================== PROCESS SECTION ================== */}
-      <h2 className="gst-heading">How to Apply for GST Registration Online?</h2>
-      <p className="gst-subheading">
+    <section className="GSTProcess-wrapper">
+      <h2 className="GSTProcess-heading">
+        How to Apply for GST Registration Online?
+      </h2>
+
+      <p className="GSTProcess-subheading">
         Follow the step-by-step snake process to complete GST registration easily.
       </p>
 
-      <div className="snake-grid">
-        {steps.map((step, index) => (
-          <div
-            key={index}
-            className={`snake-step ${
-              index % 2 !== 0 ? "right-align" : ""
-            }`}
-          >
-            <div className="step-card">
-              <span className="step-badge">{index + 1}</span>
-              <h4>{step.title}</h4>
-              <p>{step.text}</p>
-            </div>
+      {/* ================= SNAKE PROCESS ================= */}
+      <div className="GSTProcess-snake-grid">
+        {steps.map((step, index) => {
+          const isRight = index % 2 !== 0;
 
-            {/* SVG Arrow */}
-            {index < steps.length - 1 && (
-              <svg
-                className={`snake-arrow ${
-                  index % 2 !== 0 ? "arrow-left" : "arrow-right"
+          return (
+            <div
+              key={index}
+              className={`GSTProcess-snake-step ${
+                isRight ? "GSTProcess-right" : "GSTProcess-left"
+              }`}
+            >
+              {/* Connector */}
+              <span
+                className={`GSTProcess-connector ${
+                  isRight
+                    ? "GSTProcess-from-right"
+                    : "GSTProcess-from-left"
                 }`}
-                width="120"
-                height="60"
-                viewBox="0 0 120 60"
-                fill="none"
-              >
-                <path
-                  d="M5 30 H100"
-                  stroke="#f4a62a"
-                  strokeWidth="3"
-                  strokeDasharray="6 6"
-                />
-                <polygon
-                  points="100,24 115,30 100,36"
-                  fill="#f4a62a"
-                />
-              </svg>
-            )}
-          </div>
-        ))}
+              />
+
+              <div className="GSTProcess-step-card">
+                <span className="GSTProcess-step-badge">
+                  {index + 1}
+                </span>
+                <h4>{step.title}</h4>
+                <p>{step.text}</p>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
-      {/* ================== CONSEQUENCES ================== */}
-      <h2 className="gst-heading">Consequences for Non-Compliance</h2>
+      {/* ================= CONSEQUENCES ================= */}
+      <h2 className="GSTProcess-heading">Consequences for Non-Compliance</h2>
 
-      <div className="penalty-grid">
-        <div className="penalty-card light">
+      <div className="GSTProcess-penalty-grid">
+        <div className="GSTProcess-penalty-card GSTProcess-light">
           <h3>Penalty for Violation in GST</h3>
           <ul>
             <li>10% penalty on unpaid tax</li>
@@ -94,7 +88,7 @@ const GSTProcess = () => {
           </ul>
         </div>
 
-        <div className="penalty-card dark">
+        <div className="GSTProcess-penalty-card GSTProcess-dark">
           <h3>Penalty for Not Registering GST</h3>
           <ul>
             <li>₹10,000 or tax evaded (whichever is higher)</li>
@@ -104,26 +98,32 @@ const GSTProcess = () => {
         </div>
       </div>
 
-      {/* ================== GST COMPONENTS ================== */}
-      <h2 className="gst-heading">Key Components of GST Registration</h2>
+      {/* ================= COMPONENTS ================= */}
+      <h2 className="GSTProcess-heading">
+        Key Components of GST Registration
+      </h2>
 
-      <div className="components-grid">
-        <div className="component-card">
+      <div className="GSTProcess-components-grid">
+        <div className="GSTProcess-component-card">
           <h4>CGST</h4>
           <p>Central Goods & Services Tax imposed by Central Government.</p>
         </div>
-        <div className="component-card">
+
+        <div className="GSTProcess-component-card">
           <h4>SGST</h4>
           <p>State Goods & Services Tax imposed by State Government.</p>
         </div>
-        <div className="component-card">
+
+        <div className="GSTProcess-component-card">
           <h4>IGST</h4>
           <p>Integrated GST for inter-state transactions.</p>
         </div>
       </div>
 
-      <div className="cta-wrapper">
-        <button className="cta-btn">Get Your GST Number Quickly</button>
+      <div className="GSTProcess-cta-wrapper">
+        <button className="GSTProcess-cta-btn">
+          Get Your GST Number Quickly
+        </button>
       </div>
     </section>
   );
