@@ -41,7 +41,7 @@ const steps = [
 
 const GSTProcess = () => {
   return (
-    <section className="gst-wrapper">
+    <section className="pvtltd-gst-wrapper">
       <h2 className="gst-heading">
         STEPS FOR PRIVATE LIMITED COMPANY REGISTRATION IN INDIA
       </h2>
@@ -50,19 +50,19 @@ const GSTProcess = () => {
         the following steps:
       </p>
 
-      <div className="timeline">
-        <div className="timeline-line" />
+      <div className="pvtltd-timeline">
+        <div className="pvtltd-timeline-line" />
 
         {steps.map((step, index) => (
           <div
             key={index}
-            className={`timeline-item ${
+            className={`pvtltd-timeline-item ${
               index % 2 === 0 ? "left" : "right"
             }`}
           >
-            <div className="timeline-dot">{index + 1}</div>
+            <div className="pvtltd-timeline-dot">{index + 1}</div>
 
-            <div className="timeline-card">
+            <div className="pvtltd-timeline-card">
               <h4>{step.title}</h4>
               <p>{step.text}</p>
             </div>
