@@ -102,9 +102,10 @@ Here, we’ve answered the most common questions about company registration—co
                     </span>
                   </button>
                   {isActive && (
-                    <div className="faq-answer">
-                      <p>{item.answer}</p>
-                    </div>
+                   <div className={`faq-answer ${isActive ? "open" : ""}`}>
+                    <p>{item.answer}</p>
+                  </div>
+
                   )}
                 </div>
               );

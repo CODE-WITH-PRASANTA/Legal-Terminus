@@ -20,6 +20,14 @@ const steps = [
 
 const PvtltdDocument = () => {
   return (
+<>
+     {/* ===== HEADLINE ===== */}
+      <div className="pvtltd-doc-header">
+        <h2 className="pvtltd-doc-title">
+          Documents Required for Private Limited Company Registration
+        </h2>
+      </div>
+
     <div className="infographic-wrapper">
       <div className="infographic">
 
@@ -101,6 +109,8 @@ const PvtltdDocument = () => {
 
       </div>
     </div>
+
+    </>
   );
 };
 

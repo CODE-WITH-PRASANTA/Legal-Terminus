@@ -182,3 +182,24 @@
   font-weight: 700;
   margin-right: 6px;
 }
+
+
+
+/* ================= DOCUMENT SECTION HEADER ================= */
+.pvtltd-doc-section {
+  background: #ffffff;
+}
+
+.pvtltd-doc-header {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.pvtltd-doc-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}

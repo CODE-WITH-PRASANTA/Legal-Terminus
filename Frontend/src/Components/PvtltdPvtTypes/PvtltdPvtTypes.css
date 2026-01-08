@@ -130,3 +130,18 @@
     line-height: 1.85;
   }
 }
+
+
+.pvt-types-illustration {
+  max-width: 115%;        /* increase image size */
+  height: auto;
+  display: block;
+}
+
+
+.pvt-types-content {
+  max-width: 760px;
+  max-height: 520px;     /* control visible height */
+  overflow-y: auto;
+  padding-right: 14px;  /* space for scrollbar */
+}
