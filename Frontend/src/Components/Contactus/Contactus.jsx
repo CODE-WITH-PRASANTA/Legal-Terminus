@@ -59,9 +59,7 @@ const ContactUs = () => {
             </h2>
 
             <p className="zen-desc zen-fade-in" style={{ '--zen-delay': '0.3s' }}>
-            Whether you need a stunning website, powerful CRM, mobile app, e-commerce solution,
-              or complete digital transformation — PR WEBSTOCK is here to elevate your brand with 
-              innovation, strategy, and meaningful digital experiences.
+            Whether you need Company Registration, Trademark Filing, GST, FSSAI, or complete Legal and Compliance support, Legal Terminus is here to guide you with clarity, accuracy, and confidence—so you can focus on growing your business without legal worries.
             </p>
 
             <div className="zen-contact-blocks">
@@ -73,7 +71,7 @@ const ContactUs = () => {
                 </div>
                 <div className="zen-contact-text">
                   <div className="zen-contact-label">General Inquiries</div>
-                  <div className="zen-contact-value">+91 7789 801 327</div>
+                  <div className="zen-contact-value">+91 82800 93456</div>
                 </div>
               </div>
 
@@ -86,14 +84,14 @@ const ContactUs = () => {
                 </div>
                 <div className="zen-contact-text">
                   <div className="zen-contact-label">Email Us</div>
-                  <div className="zen-contact-value">prwebstock.com@gmail.com</div>
+                  <div className="zen-contact-value">sales21@legalterminus.com</div>
                 </div>
               </div>
             </div>
 
             <div className="zen-social">
               <div className="zen-social-title zen-fade-in" style={{ '--zen-delay': '0.6s' }}>
-                Follow PR WEBSTOCK on Social Platforms
+                Follow LEGAL TERMINUS on Social Platforms
               </div>
 
               <div className="zen-social-icons">

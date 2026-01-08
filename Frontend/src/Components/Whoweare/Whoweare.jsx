@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Whoweare.css";
-import WhoweareVideo from "../../assets/whoweare.mp4";
+import Whowearevideo from "../../assets/whowearevideo.mp4";
 
 const WhoWeAre = () => {
   const [playVideo, setPlayVideo] = useState(false);
@@ -71,7 +71,7 @@ const WhoWeAre = () => {
             <div className="wwe-video-wrapper">
               <video
                 className="wwe-video"
-                src={WhoweareVideo}
+                src={Whowearevideo}
                 autoPlay
                 controls
                 onEnded={handleVideoEnd}

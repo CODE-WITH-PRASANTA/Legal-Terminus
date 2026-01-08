@@ -5,30 +5,30 @@ import testimonialImg from "../../assets/testimonial.webp";
 const DATA = [
   {
     id: 1,
-    name: "Amit Verma",
+    name: "Debasish Sahu",
     role: "Founder, Startup Pvt. Ltd.",
-    text: "Legal Terminus made our company registration and compliance process extremely smooth. Their team handled everything professionally, kept us informed at every step, and ensured zero compliance issues. Highly reliable legal partners.",
+    text: "I am highly impressed with their refund policy. The process was completely transparent, hassle-free, and handled with professionalism. My refund was processed quickly without any complications.",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
     id: 2,
-    name: "Priya Sharma",
+    name: "Dipti Ranjan Sahoo",
     role: "Director, E-Commerce Business",
-    text: "From GST registration to ongoing compliance, Legal Terminus has been exceptional. Their accuracy, responsiveness, and legal clarity helped us focus on business growth without worrying about regulatory challenges.",
+    text: "We are glad to share that our company Ephorsys Private Limited was successfully incorporated with the support of Legal Terminus. Their team provided excellent guidance throughout the entire process—from documentation to final approval. Everything was handled smoothly, professionally, and on time. Thank you, Legal Terminus, for making our incorporation journey hassle-free! 🙌",
     avatar: "https://randomuser.me/api/portraits/women/45.jpg",
   },
   {
     id: 3,
-    name: "Rahul Mehta",
+    name: "Hemant Sahoo",
     role: "Co-Founder, Tech Startup",
-    text: "Trademark registration and legal documentation were handled seamlessly. The team at Legal Terminus is knowledgeable, transparent, and very professional. We felt confident knowing our legal matters were in expert hands.",
+    text: "I’m really happy I went with Legal Terminus. Not only was their pricing the most reasonable I found, but the team also supported me through the whole incorporation process. A touch more structure in their service would make them unbeatable, but honestly, for the price and the help, they deserve 5 stars.",
     avatar: "https://randomuser.me/api/portraits/men/64.jpg",
   },
   {
     id: 4,
-    name: "Neha Kapoor",
+    name: "Sourav Sahoo",
     role: "Operations Head, Consulting Firm",
-    text: "Legal Terminus has become our go-to legal and compliance partner. Their timely filings, expert advice, and clear communication make them stand out. Truly dependable legal support for growing businesses.",
+    text: "I had an excellent experience with Legal Terminus Private Limited. They got my GST registration completed within just a couple of hours, and I even received my GST certificate the same day. The entire process was quick, smooth, and absolutely hassle-free. Their team is professional, responsive, and truly knows their work. If you’re looking for fast and reliable GST or compliance services, I highly recommend Legal Terminus Private Limited.",
     avatar: "https://randomuser.me/api/portraits/women/68.jpg",
   },
 ];

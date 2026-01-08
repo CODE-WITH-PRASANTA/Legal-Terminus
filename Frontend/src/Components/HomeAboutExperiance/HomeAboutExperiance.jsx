@@ -34,14 +34,15 @@ const HomeAboutExperiance = () => {
           <span className="hae-subtitle">ABOUT LEGAL TERMINUS</span>
 
           <h2 className="hae-title">
-            Simplifying Legal & Compliance <br /> Services for Businesses
+            Your One-Stop Partner For Legal, Tax & Compliance
           </h2>
 
           <p className="hae-description">
-            Legal Terminus helps startups, SMEs, and enterprises manage legal,
-            tax, and regulatory requirements with ease. Our expert-driven
-            approach ensures accuracy, compliance, and timely execution—so
-            you can focus on growing your business with confidence.
+            <strong>Legal Terminus</strong> is India’s one of the leading professional services company who aims at providing business services in a Professional Manner. Legal Terminus, being a one-stop solution, helps your business in meeting the legal/ statutory compliances in a hassle-free manner. The highly knowledgeable and experienced consultants of  Legal Terminus help your business grow in a smooth way.
+<br/><br/>
+The best part of <strong>Legal Terminus</strong> is it takes care of all your filings and lets you concentrate on your business without being worried about the legal complications. Our excellent and timely reminder policy will never let you spend a single penny towards a penalty or late fee under any law.
+
+
           </p>
 
           <div className="hae-stats">
@@ -56,8 +57,8 @@ const HomeAboutExperiance = () => {
             </div>
 
             <div className="hae-stat">
-              <div className="hae-circle hae-circle--orange">24×7</div>
-              <span>Expert Assistance</span>
+              <div className="hae-circle hae-circle--orange">100%</div>
+              <span>Online Registration</span>
             </div>
           </div>
         </div>

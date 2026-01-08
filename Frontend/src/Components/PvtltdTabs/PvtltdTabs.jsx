@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./PvtltdTabs.css";
 
 const tabs = [
-  { label: "Private Limited Company", id: "company" },
-  { label: "Pvt Types", id: "types" },
+  { label: "Why Choose Pvt Ltd", id: "company" },
+  { label: "Types", id: "types" },
   { label: "Requirements", id: "requirements" },
   { label: "Process & Steps", id: "process" },
   { label: "Documents", id: "documents" },

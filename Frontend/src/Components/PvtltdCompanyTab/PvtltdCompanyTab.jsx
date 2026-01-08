@@ -2,7 +2,7 @@ import React from "react";
 import "./PvtltdCompanyTab.css";
 
 // Replace with your actual illustration
-import pvtIllustration from "../../assets/f-2 img.webp";
+import pvtIllustration from "../../assets/whypvt-imp.svg";
 
 const PvtLtdFull = () => {
   return (
@@ -11,30 +11,12 @@ const PvtLtdFull = () => {
       {/* ===========================
           SECTION 1 — OVERVIEW
       ============================ */}
-      <div className="overview-wrapper">
-        <h2 className="overview-title">Overview</h2>
-
+      {/* <div className="overview-wrapper">
+        <h2 className="overview-title">Understanding the Basics
+</h2>
         <p className="overview-text">
-          Private limited company registration in India provides limited
-          liability, legal independence, and access to tax benefits. Governed
-          by the Companies Act, 2013, it requires a DSC, DIN, and documents
-          like ID and address proof. The SPICe+ form enables combined
-          application for name approval, incorporation, PAN, TAN, and GST.
-          Once approved by the RoC, you receive a Certificate of
-          Incorporation, allowing the company to operate legally, own assets,
-          and sign contracts. Compliance tasks like annual returns and
-          financial reporting are mandatory post-registration.
-        </p>
-
-        <p className="overview-text">
-          Vakilsearch streamlines the entire process by providing
-          comprehensive end-to-end support for private limited company
-          registration, legal documentation, and regulatory compliance. Our
-          expert team ensures every step is handled efficiently and
-          accurately, while maintaining complete transparency in pricing with
-          no hidden costs.
-        </p>
-      </div>
+A Private Limited Company is a legally registered business under the Companies Act, 2013, with its own separate identity from its owners. It protects the personal assets of its members, limits who can own shares, and must have a registered office address. </p>
+      </div> */}
 
       {/* ===========================
           SECTION 2 — INTRO
@@ -53,15 +35,14 @@ const PvtLtdFull = () => {
           {/* Text */}
           <div className="pvt-intro-content">
             <h2 className="pvt-intro-title">
-              What is a Private Limited Company (Pvt Ltd)?
+              Why Choose Private Limited Company Registration
             </h2>
             <p className="pvt-intro-text">
-              A private limited company (Pvt Ltd) is a separate legal entity
-              registered under the Companies Act, 2013, offering limited
-              liability protection to its members. It restricts share transfers,
-              requires a registered office address, and is ideal for startups
-              and SMEs seeking credibility, funding, and control.
-            </p>
+              
+Registering a company in India is the first step to legally starting your business. The Companies Act, 2013, sets the rules for company formation, and the Ministry of Corporate Affairs (MCA) oversees the process. Once registered, your business gets a legal identity, along with rights and protections under Indian law. 
+<br></br>
+<br></br>
+Choosing the right type of Private Limited Company is important, as it determines how your business is owned, managed, and legally protected. Different types of private limited companies suit different business needs, depending on factors such as ownership structure. Selecting the correct type also helps ensure smooth compliance with legal regulations. Proper registration with the Ministry of Corporate Affairs (MCA) allows your company to operate legally, access government benefits, and build strong credibility in the market.            </p>
           </div>
         </div>
       </section>

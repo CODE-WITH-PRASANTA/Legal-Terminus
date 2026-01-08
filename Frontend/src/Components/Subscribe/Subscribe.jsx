@@ -31,16 +31,13 @@ const Subscribe = () => {
         {/* LEFT CONTENT */}
         <div className="subscribe-content">
           <h1 className="subscribe-title delay-1">
-            Simplify Your Legal & Compliance Needs–
+            Simplify Your Legal & Compliance Work-
             <br />
-            Talk to Our Experts Today
+            Connect with Our Experts Today
           </h1>
 
           <p className="subscribe-text delay-2">
-            Legal Terminus provides reliable, end-to-end legal, tax, and
-            compliance solutions for startups, businesses, and enterprises.
-            Get expert guidance, accurate filings, and complete peace of mind
-            under one trusted platform.
+            Legal Terminus offers complete legal, tax, and compliance support for startups, businesses, and enterprises. We ensure accurate work, timely service, and reliable support—all in one place.
           </p>
 
           <div className="subscribe-form delay-3">

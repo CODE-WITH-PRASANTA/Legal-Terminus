@@ -1,6 +1,6 @@
 import React from "react";
 import "./PvtltdPvtTypes.css";
-import typesIllustration from "../../assets/f-3 img.webp"
+import typesIllustration from "../../assets/pvtltd-types.png"
 
 
 const PvtTypes = () => {
@@ -19,26 +19,18 @@ const PvtTypes = () => {
         {/* Right content */}
         <div className="pvt-types-content">
           <h2 className="pvt-types-title">
-            Types of Private Limited Company (Pvt. Ltd.)
+            Types of Private Limited Company Registration
           </h2>
 
           <p className="pvt-types-intro">
-            Choosing the right type of private limited company is essential for
-            legal protection, financial planning, and operational flexibility.
-            In India, private companies are categorized based on member
-            liability and capital structure. Below are the three key types:
+            Private Limited Companies can be registered in different forms based on ownership, liability, and business objectives. Choosing the right type helps ensure legal protection, smooth operations, and long-term growth.
           </p>
 
           {/* Type 1 */}
           <div className="pvt-types-block">
             <h3 className="pvt-types-subtitle">Company limited by Shares</h3>
             <p className="pvt-types-text">
-              A company limited by shares is the most widely used structure.
-              Here, the liability of shareholders is limited to the unpaid
-              amount on their subscribed shares. This model protects personal
-              assets and supports ownership through equity. It is ideal for
-              businesses that plan to raise capital from private investors or
-              co-founders without risking personal finances.
+              This is the most common type of Private Limited Company. The liability of shareholders is limited to the unpaid amount on their shares. It is ideal for startups and growing businesses looking to raise funds while protecting personal assets.
             </p>
           </div>
 
@@ -46,12 +38,7 @@ const PvtTypes = () => {
           <div className="pvt-types-block">
             <h3 className="pvt-types-subtitle">Company limited by Guarantee</h3>
             <p className="pvt-types-text">
-              Companies limited by guarantee do not have share capital. Instead,
-              members pledge to pay a specific amount in case of liquidation.
-              This structure is suitable for non-profits, foundations, and
-              social enterprises that need legal recognition without focusing on
-              profit distribution. Members’ liability is limited to their
-              guarantee amount.
+              In this type, members agree to contribute a fixed amount in case of liquidation. It is generally suitable for non-profit or charitable organizations that do not require share capital.
             </p>
           </div>
 
@@ -59,12 +46,7 @@ const PvtTypes = () => {
           <div className="pvt-types-block">
             <h3 className="pvt-types-subtitle">Unlimited Companies</h3>
             <p className="pvt-types-text">
-              In an unlimited company, there is no limit to the liability of its
-              members. If the company faces financial losses or debts, members
-              are personally responsible for covering them. This structure is
-              rarely used but can be suitable for closely held entities where
-              members are comfortable with full liability and want maximum
-              control.
+              An unlimited company does not place any limit on members’ liability. Members are personally responsible for company debts. This structure is less common and is usually chosen by closely held businesses with full control over operations.
             </p>
           </div>
         </div>

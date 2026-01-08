@@ -19,13 +19,11 @@ const Breadcrum = () => {
           </h1>
 
           <p className="lt-public-description">
-            A Private Limited Company is one of the most popular and legally
-            recognized business structures in India, ideal for startups and
-            growing businesses. It offers limited liability, better credibility,
-            and ease of fundraising. <strong>Legal Terminus</strong> provides
-            end-to-end Private Limited Company registration services, ensuring
-            complete legal compliance, documentation accuracy, and fast approval
-            from the Ministry of Corporate Affairs (MCA).
+            A Private Limited Company is a popular and trusted business structure in India, especially for startups and growing businesses. It helps protect personal assets, builds business credibility, and makes it easier to raise funds.
+
+<br/><br/>
+Legal Terminus can help you with Private Limited Company registration in a hassle-free way, whenever you need it. We take care of the complete process—from paperwork to approvals—within a reasonable time. Our professional fees start at ₹3,999, making company registration simple, affordable, and stress-free.
+
           </p>
 
           <div className="lt-public-features">
@@ -37,15 +35,15 @@ const Breadcrum = () => {
 
           <div className="lt-public-highlights">
             <div>
-              <h3>12,000+</h3>
+              <h3>1,000+</h3>
               <p>Companies Registered</p>
             </div>
             <div>
-              <h3>99%</h3>
-              <p>Approval Success Rate</p>
+              <h3>100%</h3>
+              <p>Online Process</p>
             </div>
             <div>
-              <h3>15+</h3>
+              <h3>5+</h3>
               <p>Years of Legal Expertise</p>
             </div>
           </div>
