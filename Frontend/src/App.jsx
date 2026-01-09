@@ -24,9 +24,11 @@ import UdyamReg from './Pages/UdyamReg/UdyamReg';
 import ESICReg from './Pages/ESICReg/ESICReg';
 import ProfessionalReg from './Pages/ProfessionalReg/ProfessionalReg';
 import ShopReg from './Pages/ShopReg/ShopReg';
+import Parternership from "./Pages/Parternership/Parternership";
 
 import RouteLoaderWrapper from "./Components/PageLoader/RouteLoaderWrapper";
 import FloatIcon from "./Components/FloatIcon/FloatIcon";
+
 
 function App() {
   return (
@@ -65,6 +67,7 @@ function App() {
           <Route path="/esic" element={<ESICReg />}/>
           <Route path="/professional-tax" element={<ProfessionalReg />}/>
           <Route path="/shop-establishment" element={<ShopReg />}/>
+          <Route path="/partnership" element={<Parternership/>} />
           
         </Routes>
       </RouteLoaderWrapper>
