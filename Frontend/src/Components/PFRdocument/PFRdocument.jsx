@@ -1,105 +1,94 @@
 import React from "react";
 import "./PFRdocument.css";
 
-// MAIN CENTER IMAGE
-import wheelImg from "../../assets/document111.jpg";
+// REACT ICONS
+import {
+  FaIdCard,
+  FaCamera,
+  FaBolt,
+  FaFileContract,
+  FaCertificate,
+  FaFolderOpen,
+} from "react-icons/fa";
 
-const DocumentsWheel = () => {
+const DocumentsInfographic = () => {
   return (
-    <section className="dw-section">
-      {/* HEADING */}
-      <div className="dw-heading">
-        <h2>Documents Required for Private Limited Company Registration</h2>
-      </div>
+    <section className="di-section">
+      <h2 className="di-heading">
+        Documents Required for Partnership firm registration in india
+      </h2>
 
-      <div className="dw-container">
-        {/* LEFT CARDS */}
-        <div className="dw-cards">
-          <div className="dw-card">
-            <span className="dw-icon red">
-              <i className="fa-solid fa-id-card"></i>
-            </span>
-            <div className="dw-card-content">
-              <h4>1. KYC Documents</h4>
-              <p>
-                Identity and address proof of all directors and shareholders
-                including PAN, Aadhaar, mobile bill or bank statement.
-              </p>
-            </div>
+      <div className="di-wrapper">
+        {/* LEFT COLUMN */}
+        <div className="di-column">
+          <div className="di-card di-left">
+            <span className="di-number">1</span>
+            <FaIdCard className="di-icon" />
+            <h4>KYC Documents</h4>
+            <p>
+              PAN & Aadhaar, Address Proof – Telephone Bill / Mobile Bill /
+              Savings Bank Statement.
+            </p>
           </div>
 
-          <div className="dw-card">
-            <span className="dw-icon orange">
-              <i className="fa-solid fa-camera"></i>
-            </span>
-            <div className="dw-card-content">
-              <h4>2. Passport Size Photograph</h4>
-              <p>
-                Recent passport size photographs of all proposed directors and
-                shareholders.
-              </p>
-            </div>
+          <div className="di-card di-left">
+            <span className="di-number">2</span>
+            <FaCamera className="di-icon" />
+            <h4>Passport Size Photograph</h4>
+            <p>Passport size photograph of all proposed directors.</p>
           </div>
 
-          <div className="dw-card">
-            <span className="dw-icon teal">
-              <i className="fa-solid fa-bolt"></i>
-            </span>
-            <div className="dw-card-content">
-              <h4>3. Electricity Bill</h4>
-              <p>
-                Latest electricity bill of the registered office address of the
-                company.
-              </p>
-            </div>
+          <div className="di-card di-left">
+            <span className="di-number">3</span>
+            <FaBolt className="di-icon" />
+            <h4>Electricity Bill</h4>
+            <p>
+              Electricity bill corresponding to the registered office address.
+            </p>
           </div>
         </div>
 
-        {/* CENTER IMAGE */}
-        <div className="dw-center">
-          <img src={wheelImg} alt="Documents Required" />
-          <span className="dw-center-text">Documents Required</span>
+        {/* CENTER INFOGRAPHIC */}
+        <div className="di-center">
+          <div className="di-rays">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div className="di-circle">
+            <span>Documents Required</span>
+          </div>
         </div>
 
-        {/* RIGHT CARDS */}
-        <div className="dw-cards">
-          <div className="dw-card">
-            <span className="dw-icon beige">
-              <i className="fa-solid fa-file-contract"></i>
-            </span>
-            <div className="dw-card-content">
-              <h4>4. Rent Agreement</h4>
-              <p>
-                Duly notarized rent agreement for the registered office address
-                (if rented).
-              </p>
-            </div>
+        {/* RIGHT COLUMN */}
+        <div className="di-column">
+          <div className="di-card di-right">
+            <span className="di-number">4</span>
+            <FaFileContract className="di-icon" />
+            <h4>Rent Agreement</h4>
+            <p>
+              Duly notarised rent agreement for registered office (if rented).
+            </p>
           </div>
 
-          <div className="dw-card">
-            <span className="dw-icon pink">
-              <i className="fa-solid fa-certificate"></i>
-            </span>
-            <div className="dw-card-content">
-              <h4>5. No Objection Certificate</h4>
-              <p>
-                NOC from the property owner allowing use of premises as
-                registered office.
-              </p>
-            </div>
+          <div className="di-card di-right">
+            <span className="di-number">5</span>
+            <FaCertificate className="di-icon" />
+            <h4>No Objection Certificate</h4>
+            <p>
+              NOC from the owner allowing use of premises as registered office.
+            </p>
           </div>
 
-          <div className="dw-card">
-            <span className="dw-icon yellow">
-              <i className="fa-solid fa-folder-open"></i>
-            </span>
-            <div className="dw-card-content">
-              <h4>6. Other Documents</h4>
-              <p>
-                Any additional documents required by authorities during
-                registration.
-              </p>
-            </div>
+          <div className="di-card di-right">
+            <span className="di-number">6</span>
+            <FaFolderOpen className="di-icon" />
+            <h4>Other Documents</h4>
+            <p>Additional documents as required by our team.</p>
           </div>
         </div>
       </div>
@@ -107,4 +96,4 @@ const DocumentsWheel = () => {
   );
 };
 
-export default DocumentsWheel;
+export default DocumentsInfographic;
