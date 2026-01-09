@@ -3,94 +3,74 @@ import "./LLPProcess.css";
 
 const steps = [
   {
-    title: "Step 1: Consultation and Planning",
+    title: "Step 1 – Document Submission",
     text:
-      "Our professionals talk with you about your business needs and goals to find the most appropriate LLP structure.",
+      "Provision of requisite documents / information to us (as per the checklist to be provided by us).",
   },
   {
-    title: "Step 2: Name Reservation",
+    title: "Step 2 – Company Name & Objects Finalization",
     text:
-      "We conduct a thorough name availability search and reserve a unique name of the LLP that complies with regulatory guidelines. Our team will file the RUN-LLP for the same.",
+      "Finalisation of objects along with name of the proposed company (based on a search report duly conducted and provided by our team).",
   },
   {
-    title: "Step 3: Document Preparation",
+    title: "Step 3 – Name Reservation Application",
     text:
-      "Our team assists in drafting the LLP agreement, outlining partner roles, profit-sharing, and operational procedures according to your specifications.",
+      "Filing of application for name reservation in requisite e-form along with applicable government fees.",
   },
   {
-    title: "Step 4: Digital Signature Certificates (DSC)",
+    title: "Step 4 – Digital Signature Certificates",
     text:
-      "We arrange for the issuance of Digital Signature Certificates (DSC) for all the partners of the LLP.",
+      "Preparation of requisite numbers of DSC with respect to the proposed promoters & directors and registration of DSC in the MCA portal.",
   },
   {
-    title: "Step 5: Filing with Registrar of Companies (ROC)",
+    title: "Step 5 – Incorporation Document Preparation",
     text:
-      "We draft and file Form 2 (application for incorporation of LLP) and other documents with the ROC on your behalf.",
+      "Preparation of further incorporation documents upon receipt of the name approval letter from the department.",
   },
   {
-    title: "Step 6: Verification and Approval",
+    title: "Step 6 – Final Form Upload & Fee Payment",
     text:
-      "Our professionals coordinate with the ROC to check the documents submitted and confirm LLP Act compliance.",
+      "Uploading of final incorporation forms to the MCA portal along with applicable government fees.",
   },
   {
-    title: "Step 7: Certificate of Incorporation",
+    title: "Step 7 – Registration Certificate Issuance",
     text:
-      "On approval of registration of the company, we receive the Incorporation documents from the ROC to confirm the legal existence of your LLP.",
-  },
-  {
-    title: "Step 8: Post-Incorporation Compliance",
-    text:
-      "We help you get PAN and TAN for your LLP, register the LLP agreement, and maintain ongoing compliance with regulatory filings.",
-  },
-  {
-    title: "Step 9: Additional Services",
-    text:
-      "Vakilsearch offers continuous support for annual compliances, trademark registration, professional tax, proposed LLP structure changes, and other legal compliances.",
+      "Processing of the application by the department and issuance of the registration certificate.",
   },
 ];
 
-// connector direction for 9-step snake with 5 columns:
-// 1→2→3→4→5 ↓ 6←7←8←9
-const getConnectorDirection = (index) => {
-  if (index >= 0 && index <= 3) return "right"; // 1→2→3→4
-  if (index === 4) return "down";               // 5↓6
-  if (index >= 5 && index <= 7) return "left";  // 6←7←8
-  return null; // last step no connector
-};
-
-export default function SocietyRegistrationSteps() {
+const GSTProcess = () => {
   return (
-    <section className="soc-wrap">
-      {/* PART 1 — Title + Intro (first image layout) */}
-      <header className="soc-header">
-        <h1 className="soc-title">Vakilsearch's LLP Registration Process</h1>
-        <p className="soc-intro">
-          At Vakilsearch, we make the LLP registration process simple and easy so that our clients can focus on their business.
-          Here's how our LLP registration process generally goes:
-        </p>
-      </header>
+    <section className="llp-gst-wrapper">
+      <h2 className="gst-heading">
+        STEPS FOR LIMITED LIABILITY PARTNERSHIP REGISTRATION IN INDIA
+      </h2>
+      <p className="pv-gst-subheading">
+        The broad process of registering a Limited Liability involves
+        the following steps:
+      </p>
 
-      {/* PART 2 — Snake steps (second image layout) */}
-      <div className="soc-timeline" role="list" aria-label="LLP registration steps">
-        {steps.map((s, i) => {
-          const dir = getConnectorDirection(i);
-          return (
-            <article
-              key={i}
-              className={`soc-step soc-step--${i + 1}`}
-              role="listitem"
-              aria-posinset={i + 1}
-              aria-setsize={steps.length}
-            >
-              <div className="soc-step-index">{i + 1}</div>
-              <h3 className="soc-step-title">{s.title}</h3>
-              <p className="soc-step-text">{s.text}</p>
+      <div className="llp-timeline">
+        <div className="llp-timeline-line" />
 
-              {dir && <div className={`soc-connector soc-connector--${dir}`} aria-hidden />}
-            </article>
-          );
-        })}
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className={`llp-timeline-item ${
+              index % 2 === 0 ? "left" : "right"
+            }`}
+          >
+            <div className="llp-timeline-dot">{index + 1}</div>
+
+            <div className="llp-timeline-card">
+              <h4>{step.title}</h4>
+              <p>{step.text}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
-}
+};
+
+export default GSTProcess;

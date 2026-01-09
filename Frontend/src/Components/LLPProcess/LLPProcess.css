@@ -1,213 +1,222 @@
-/* SocietyRegistrationSteps.css
-   - Two-part layout: header (big title + intro) + 9-step snake timeline
-   - Mobile-first, responsive
-   - Unique prefix: soc-
-   - No image imports or :root usage
-*/
-
-/* ===== Container ===== */
-.soc-wrap {
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 36px 18px 64px;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: #27ae60;
-  box-sizing: border-box;
+/* ================= BASE ================= */
+.llp-gst-wrapper {
+  padding: 60px 24px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: "Poppins", sans-serif;
 }
 
-/* ===== PART 1 - Header (first image) ===== */
-.soc-header {
-  margin-bottom: 22px;
-}
-.soc-title {
-  font-size: clamp(1.8rem, 3.5vw, 3rem);
-  font-weight: 800;
-  margin: 0 0 12px;
-  letter-spacing: -0.02em;
-}
-.soc-intro {
-  margin: 0 0 26px;
-  color: #575757;
-  line-height: 1.8;
-  font-size: 1rem;
-  max-width: 88ch;
+.pv-gst-heading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #16a34a;
+  margin-bottom: 6px;
 }
 
-/* ===== PART 2 - Timeline (snake) ===== */
-.soc-timeline {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
+.pv-gst-subheading {
+  text-align: center;
+  color: #475569;
+  margin-bottom: 50px;
 }
 
-/* Step card base */
-.soc-step {
+/* ================= llp-timeline ================= */
+.llp-timeline {
   position: relative;
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 18px 18px 20px;
-  border: 1px solid #e6e6e6;
-  box-shadow: 0 8px 20px rgba(15,23,42,0.06);
-  overflow: visible; /* connectors will extend outside */
-  transition: transform .18s ease, box-shadow .18s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-/* small lift on hover for pointer devices */
-@media (hover: hover) {
-  .soc-step:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 22px 44px rgba(15,23,42,0.10);
-  }
+/* CENTER LINE */
+.llp-timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #facc15,
+    #f97316,
+    #22c55e
+  );
+  border-radius: 4px;
 }
 
-/* index bubble */
-.soc-step-index {
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  background: #d49247de;
-  color: #fff;
-  display: inline-flex;
+/* ================= ITEM ================= */
+.llp-timeline-item {
+  position: relative;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  width: 100%;
+  min-height: 100px;
+}
+
+/* DOT */
+.llp-timeline-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #facc15, #f97316);
+  color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
   font-weight: 700;
-  margin-bottom: 10px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  z-index: 2;
+  box-shadow: 0 8px 22px rgba(249,115,22,0.45);
 }
 
-/* step title and text */
-.soc-step-title {
-  margin: 0 0 8px;
-  font-size: 1.02rem;
-  font-weight: 700;
-  color: #111827;
-}
-.soc-step-text {
-  margin: 0;
-  color: #575757;
-  line-height: 1.7;
-  font-size: 0.98rem;
+/* CARD */
+.llp-timeline-card {
+  width: 400px;
+  background: #ffffff;
+  padding: 20px 22px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
-/* connectors hidden on small screens */
-.soc-connector {
-  display: none;
+.llp-timeline-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #0f172a;
 }
 
-/* ===== Tablet (2 columns) ===== */
-@media (min-width: 600px) and (max-width: 899px) {
-  .soc-timeline {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
+.llp-timeline-card p {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* ================= LEFT / RIGHT ================= */
+.llp-timeline-item.left {
+  justify-content: flex-start;
+}
+
+.llp-timeline-item.right {
+  justify-content: flex-end;
+}
+
+/* ================= CONNECTORS (DESKTOP) ================= */
+.llp-timeline-item.left::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 150px;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    #f97316,
+    #f97316 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  transform: translateY(-50%);
+}
+
+.llp-timeline-item.left::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: calc(50% - -18px);
+  transform: translateY(-50%);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 8px solid #f97316;
+}
+
+.llp-timeline-item.right::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to left,
+    #f97316,
+    #f97316 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  transform: translateY(-50%);
+}
+
+.llp-timeline-item.right::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(50% - -18px);
+  transform: translateY(-50%);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 8px solid #f97316;
+}
+
+/* ================= MOBILE PREMIUM (ARROWS KEPT) ================= */
+@media (max-width: 900px) {
+  .llp-gst-wrapper {
+    padding: 50px 16px;
   }
-}
 
-/* ===== Desktop snake (5 columns) =====
-   Layout:
-   Row1: steps 1 2 3 4 5 (left→right)
-   Row2: steps 6 7 8 9    (right→left) placed so snake flows
-*/
-@media (min-width: 900px) {
-  .soc-timeline {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 28px;
-    align-items: start;
+  .pv-gst-heading {
+    font-size: 24px;
   }
 
-  .soc-step { min-height: 200px; }
-
-  /* place row 2 steps in snake reverse order (6..9) */
-  .soc-step--6 { grid-column: 5; grid-row: 2; }
-  .soc-step--7 { grid-column: 4; grid-row: 2; }
-  .soc-step--8 { grid-column: 3; grid-row: 2; }
-  .soc-step--9 { grid-column: 2; grid-row: 2; }
-
-  /* show connectors on desktop */
-  .soc-connector {
-    display: block;
-    position: absolute;
-    z-index: 0;
-    background: #d49247de; /* connector color */
-    border-radius: 2px;
+  .pv-gst-subheading {
+    font-size: 14px;
+    margin-bottom: 40px;
   }
 
-  /* RIGHT arrows for steps 1→2, 2→3, 3→4, 4→5 */
-  .soc-connector--right {
-    top: 50%;
-    right: -44px;
+  .llp-timeline-line {
+    left: 18px;
+    width: 3px;
+  }
+
+  .llp-timeline-item {
+    justify-content: flex-start !important;
+    padding-left: 70px;
+  }
+
+  .llp-timeline-dot {
+    left: 18px;
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .llp-timeline-card {
+    width: 100%;
+    background: linear-gradient(180deg, #ffffff, #f8fafc);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+  }
+
+  /* MOBILE ARROWS → */
+  .llp-timeline-item.left::after,
+  .llp-timeline-item.right::after {
+    left: 18px;
+    right: auto;
     width: 40px;
-    height: 2px;
-    transform: translateY(-50%);
-  }
-  .soc-connector--right::after {
-    content: "";
-    position: absolute;
-    right: -7px;
     top: 50%;
-    width: 12px;
-    height: 12px;
-    transform: translateY(-50%);
-    background: #d49247de;
-    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    background: repeating-linear-gradient(
+      to right,
+      #f97316,
+      #f97316 6px,
+      transparent 6px,
+      transparent 12px
+    );
   }
 
-  /* LEFT arrows for steps 6←7←8←9 */
-  .soc-connector--left {
-    top: 50%;
-    left: -44px;
-    width: 40px;
-    height: 2px;
-    transform: translateY(-50%);
+  .llp-timeline-item.left::before,
+  .llp-timeline-item.right::before {
+    left: 52px;
+    right: auto;
+    border-left: 8px solid #f97316;
+    border-right: none;
   }
-  .soc-connector--left::after {
-    content: "";
-    position: absolute;
-    left: -7px;
-    top: 50%;
-    width: 12px;
-    height: 12px;
-    transform: translateY(-50%);
-    background: #d49247de;
-    clip-path: polygon(100% 0, 0 50%, 100% 100%);
-  }
-
-  /* DOWN arrow for 5 -> 6 */
-  .soc-connector--down {
-    left: 50%;
-    bottom: -44px;
-    width: 2px;
-    height: 40px;
-    transform: translateX(-50%);
-  }
-  .soc-connector--down::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -7px;
-    width: 12px;
-    height: 12px;
-    transform: translateX(-50%);
-    background: #d49247de;
-    clip-path: polygon(0 0, 50% 100%, 100% 0);
-  }
-}
-
-/* ===== Small screens tweak: stack everything and hide connectors ===== */
-@media (max-width: 899px) {
-  .soc-step { min-height: auto; }
-  .soc-connector { display: none !important; }
-}
-
-/* ===== Minor responsive text tweaks ===== */
-@media (max-width: 520px) {
-  .soc-title { font-size: 1.6rem; }
-  .soc-intro { font-size: 0.95rem; }
-  .soc-step-index { width: 30px; height: 30px; }
-  .soc-step { padding: 14px; border-radius: 12px; }
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .soc-step { transition: none !important; }
 }

@@ -24,7 +24,11 @@ import UdyamReg from './Pages/UdyamReg/UdyamReg';
 import ESICReg from './Pages/ESICReg/ESICReg';
 import ProfessionalReg from './Pages/ProfessionalReg/ProfessionalReg';
 import ShopReg from './Pages/ShopReg/ShopReg';
+<<<<<<< HEAD
 import Proprietorship from './Pages/Proprietorship/Proprietorship';
+=======
+import Parternership from "./Pages/Parternership/Parternership";
+>>>>>>> 2669a66316cd60af1100b8e23404eff64e31184a
 
 import RouteLoaderWrapper from "./Components/PageLoader/RouteLoaderWrapper";
 import FloatIcon from "./Components/FloatIcon/FloatIcon";
@@ -54,7 +58,7 @@ function App() {
             element={<PrivateLimited />}
           />
           <Route
-            path="/incorporation-registration-in-india"
+            path="/incorption-registration-in-india"
             element={<IncorptionPage />}
           />
           <Route path="/trust" element={<Trust />} />
@@ -68,8 +72,12 @@ function App() {
           <Route path="/esic" element={<ESICReg />}/>
           <Route path="/professional-tax" element={<ProfessionalReg />}/>
           <Route path="/shop-establishment" element={<ShopReg />}/>
+<<<<<<< HEAD
           <Route path="/proprietorship" element={<Proprietorship/>}/>
         
+=======
+          <Route path="/partnership" element={<Parternership/>} />
+>>>>>>> 2669a66316cd60af1100b8e23404eff64e31184a
           
         </Routes>
       </RouteLoaderWrapper>

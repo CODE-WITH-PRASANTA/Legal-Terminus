@@ -1,0 +1,177 @@
+/* ================= ROOT ================= */
+.di-section {
+  padding: 90px 20px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.di-heading {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 70px;
+  color: #0b0b23;
+}
+
+/* ================= LAYOUT ================= */
+.di-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 420px 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ================= COLUMNS ================= */
+.di-column {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* ================= CARD ================= */
+.di-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px 22px 22px 64px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.di-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.12);
+}
+
+.di-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0b0b23;
+  margin-bottom: 6px;
+}
+
+.di-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ================= ICON ================= */
+.di-icon {
+  font-size: 32px;
+  color: #3f51ff;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.di-card:hover .di-icon {
+  transform: scale(1.15);
+  color: #1e2fff;
+}
+
+/* ================= NUMBER ================= */
+.di-number {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #3f51ff;
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= CENTER ================= */
+.di-center {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CENTER CIRCLE */
+.di-circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 800;
+  color: #0b0b23;
+  text-align: center;
+  z-index: 2;
+}
+
+/* ================= INFOGRAPHIC RAYS ================= */
+.di-rays span {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 160px solid;
+  opacity: 0.9;
+}
+
+.di-rays span:nth-child(1) {
+  transform: rotate(0deg);
+  border-bottom-color: #f44336;
+}
+.di-rays span:nth-child(2) {
+  transform: rotate(60deg);
+  border-bottom-color: #ff9800;
+}
+.di-rays span:nth-child(3) {
+  transform: rotate(120deg);
+  border-bottom-color: #ffc107;
+}
+.di-rays span:nth-child(4) {
+  transform: rotate(180deg);
+  border-bottom-color: #4caf50;
+}
+.di-rays span:nth-child(5) {
+  transform: rotate(240deg);
+  border-bottom-color: #03a9f4;
+}
+.di-rays span:nth-child(6) {
+  transform: rotate(300deg);
+  border-bottom-color: #9c27b0;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .di-wrapper {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .di-center {
+    order: -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .di-heading {
+    font-size: 26px;
+  }
+
+  .di-circle {
+    width: 180px;
+    height: 180px;
+    font-size: 16px;
+  }
+
+  .di-card {
+    padding: 20px 20px 20px 56px;
+  }
+}

@@ -137,7 +137,7 @@ const FaqLLP = () => {
       <div className="lp-container">
         {/* Left side – static text */}
         <div className="lp-left">
-          <h2 className="lp-title">FAQs on LLP Registration</h2>
+          <h2 className="lp-title">Limited Liability Partnership FAQ's</h2>
 
           <p className="lp-intro">
             Explore answers to common questions about Limited Liability Partnership (LLP) registration in India,
