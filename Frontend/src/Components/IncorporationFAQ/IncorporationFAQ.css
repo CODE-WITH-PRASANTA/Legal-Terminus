@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ================= SECTION ================= */
+.incfaq-section {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  padding: 72px 24px 64px;
+}
+
+/* ================= LAYOUT ================= */
+.incfaq-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  column-gap: 72px;
+  align-items: flex-start;
+}
+
+/* ================= LEFT ================= */
+.incfaq-left {
+  color: #111827;
+}
+
+.incfaq-title {
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+.incfaq-intro {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+/* ================= RIGHT ================= */
+.incfaq-right {
+  max-height: 540px;
+}
+
+.incfaq-list {
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* Scrollbar */
+.incfaq-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.incfaq-list::-webkit-scrollbar-thumb {
+  background: rgba(26, 169, 26, 0.45);
+  border-radius: 999px;
+}
+
+/* ================= ITEM ================= */
+.incfaq-item {
+  border-bottom: 1px solid rgba(26, 169, 26, 0.22);
+}
+
+.incfaq-question {
+  width: 100%;
+  padding: 18px 0;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #111827;
+  text-align: left;
+}
+
+.incfaq-icon {
+  transition: transform 0.2s ease;
+}
+
+.incfaq-icon.open {
+  transform: rotate(180deg);
+}
+
+/* ================= ANSWER ================= */
+.incfaq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+.incfaq-answer.open {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.incfaq-answer p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #4b5563;
+  margin-bottom: 16px;
+}
+
+/* Active */
+.incfaq-item.active .incfaq-question {
+  color: #1aa91a;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .incfaq-container {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .incfaq-right {
+    max-height: none;
+  }
+
+  .incfaq-list {
+    overflow-y: visible;
+  }
+
+  .incfaq-title {
+    font-size: 30px;
+  }
+}
