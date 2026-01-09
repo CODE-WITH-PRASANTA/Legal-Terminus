@@ -1,137 +1,86 @@
 import React from "react";
 import "./PublicltdProcess.css";
 
-const processSteps = [
+const steps = [
   {
-    step: 1,
-    title: "Consultation and Planning",
-    text: "Our professionals talk with you about your business needs and goals to find the most appropriate LLP structure."
+    title: "Step 1 – Document Submission",
+    text:
+      "Provision of requisite documents / information to us (as per the checklist to be provided by us).",
   },
   {
-    step: 2,
-    title: "Name Reservation",
-    text: "We conduct a thorough name availability search and reserve a unique name of the LLP that complies with regulatory guidelines. Our team will file the RUN-LLP for the same."
+    title: "Step 2 – Company Name & Objects Finalization",
+    text:
+      "Finalisation of objects along with name of the proposed company (based on a search report duly conducted and provided by our team).",
   },
   {
-    step: 3,
-    title: "Document Preparation",
-    text: "Our team assists in drafting the LLP agreement, outlining partner roles, profit-sharing, and operational procedures according to your specifications."
+    title: "Step 3 – Name Reservation Application",
+    text:
+      "Filing of application for name reservation in requisite e-form along with applicable government fees.",
   },
   {
-    step: 4,
-    title: "Digital Signature Certificates (DSC)",
-    text: "We arrange for the issuance of Digital Signature Certificates (DSC) for all the partners of the LLP."
+    title: "Step 4 – Digital Signature Certificates",
+    text:
+      "Preparation of requisite numbers of DSC with respect to the proposed promoters & directors and registration of DSC in the MCA portal.",
   },
   {
-    step: 5,
-    title: "Filing with Registrar of Companies (ROC)",
-    text: "We draft and file Form 2 (application for incorporation of LLP) and other documents with the ROC on your behalf."
+    title: "Step 5 – Incorporation Document Preparation",
+    text:
+      "Preparation of further incorporation documents upon receipt of the name approval letter from the department.",
   },
   {
-    step: 6,
-    title: "Verification and Approval",
-    text: "Our professionals coordinate with the ROC to check the documents submitted and confirm LLP Act compliance."
+    title: "Step 6 – Final Form Upload & Fee Payment",
+    text:
+      "Uploading of final incorporation forms to the MCA portal along with applicable government fees.",
   },
   {
-    step: 7,
-    title: "Certificate of Incorporation",
-    text: "On approval of registration of the company, we receive the Incorporation documents from the ROC to confirm the legal existence of your LLP."
+    title: "Step 7 – Registration Certificate Issuance",
+    text:
+      "Processing of the application by the department and issuance of the registration certificate.",
   },
   {
-    step: 8,
-    title: "Post-Incorporation Compliance",
-    text: "We help you get PAN and TAN for your LLP, register the LLP agreement, and maintain ongoing compliance with regulatory filings."
+    title: "Step 8 – Registration Certificate Issuance",
+    text:
+      "Processing of the application by the department and issuance of the registration certificate.",
   },
   {
-    step: 9,
-    title: "Additional Services",
-    text: "Legal Terminus offers continuous support for annual compliances, trademark registration, professional tax, LLP structure changes, and other legal compliances to help you run and expand your business smoothly."
-  }
+    title: "Step 9 – Registration Certificate Issuance",
+    text:
+      "Processing of the application by the department and issuance of the registration certificate.",
+  },
 ];
 
-const filingsBlocks = [
-  {
-    category: "Financial Statements",
-    bullets: [
-      "LLPs must prepare and file financial statements once a year.",
-      "Statement of Accounts: Contains Balance Sheet, Profit and Loss Account, and Cash Flow Statement.",
-      "Statement of Solvency: Required to be filed by LLPs having a turnover of more than ₹40 lakhs or capital contribution of more than ₹25 lakhs."
-    ]
-  },
-  {
-    category: "Annual Returns",
-    bullets: [
-      "Annual returns are to be filed by LLPs with the Registrar of Companies (ROC).",
-      "Statement of Account: Filed with the ROC within 30 days from the close of six months from the financial year.",
-      "Annual Return Form: Filed within 60 days after the financial year closes."
-    ]
-  },
-  {
-    category: "Audit Requirements (if any)",
-    bullets: [
-      "Audit requirements of LLPs are based on their turnover and capital contribution.",
-      "Audit Requirement: LLPs with a turnover above ₹40 lakhs or capital contribution above ₹25 lakhs must obtain their accounts audited by a Chartered Accountant.",
-      "Exemption: Small LLPs (whose turnover is not more than ₹40 lakhs and whose capital contribution is not more than ₹25 lakhs) are exempted from audit."
-    ]
-  }
-];
-
-const LlpProcessAndFilings = () => {
+const GSTProcess = () => {
   return (
-    <section className="lp-wrapper">
-      <div className="lp-inner">
-        {/* SECTION 1 – REGISTRATION PROCESS */}
-        <section className="lp-section">
-          <h1 className="lp-title">Legal Terminus&apos;s LLP Registration Process</h1>
-          <p className="lp-intro">
-            At Legal Terminus, we make the LLP registration process simple and easy so
-            that our clients can focus on their business. Here&apos;s how our LLP
-            registration process generally goes:
-          </p>
+    <section className="pv-gst-wrapper">
+      <h2 className="pv-gst-heading">
+        STEPS FOR PRIVATE LIMITED COMPANY REGISTRATION IN INDIA
+      </h2>
+      <p className="pv-gst-subheading">
+        The broad process of registering a Private Limited company involves
+        the following steps:
+      </p>
 
-          <div className="lp-process-grid">
-            {processSteps.map((stepObj, index) => (
-              <div key={stepObj.step} className="lp-step-card">
-                <div className="lp-step-header">
-                  <div className="lp-step-circle">{stepObj.step}</div>
-                  <div className="lp-step-arrow">➜</div>
-                  <h3 className="lp-step-title">{stepObj.title}</h3>
-                </div>
-                <p className="lp-step-text">{stepObj.text}</p>
+      <div className="pv-timeline">
+        <div className="pv-timeline-line" />
 
-                {/* small arrow indicator to next step */}
-                {index !== processSteps.length - 1 && (
-                  <div className="lp-step-flow">
-                    Next step <span className="lp-step-flow-arrow">➜</span>
-                  </div>
-                )}
-              </div>
-            ))}
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className={`pv-timeline-item ${
+              index % 2 === 0 ? "left" : "right"
+            }`}
+          >
+            <div className="pv-timeline-dot">{index + 1}</div>
+
+            <div className="pv-timeline-card">
+              <h4>{step.title}</h4>
+              <p>{step.text}</p>
+            </div>
           </div>
-        </section>
-
-        {/* SECTION 2 – ANNUAL FILINGS */}
-        <section className="lp-section">
-          <h1 className="lp-title">
-            Annual Filings for Limited Liability Partnership
-          </h1>
-
-          <div className="lp-filings-grid">
-            {filingsBlocks.map((block, i) => (
-              <div key={block.category} className="lp-filing-card">
-                <h2 className="lp-filing-heading">{block.category}</h2>
-                <ul className="lp-filing-list">
-                  {block.bullets.map((b, idx) => (
-                    <li key={idx}>{b}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
+        ))}
       </div>
     </section>
   );
 };
 
-export default LlpProcessAndFilings;
+export default GSTProcess;

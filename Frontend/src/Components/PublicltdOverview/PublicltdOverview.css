@@ -1,59 +1,151 @@
 :root {
-  --text-main: #111111;
-  --text-sub: #555965;
+  --text-main: #0f172a;
+  --text-sub: #475569;
   --bg-page: #ffffff;
+  --card-bg: #f8fafc;
+  --accent: #16a34a;
+  --act-accent: #2563eb;
 }
 
+/* BASE */
 body {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-}
-
-.llp-wrapper {
   background: var(--bg-page);
-  padding: 60px 0 80px;
 }
 
-/* common section wrapper */
+/* PAGE */
+.llp-wrapper {
+  padding: 70px 0 90px;
+}
+
+/* SECTION */
 .llp-section {
   max-width: 1180px;
   margin: 0 auto 60px;
   padding: 0 24px;
 }
 
-/* main titles – big and bold like reference */
+/* CARD */
+.llp-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 48px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* CLEAN CARD – NO SIDEBAR */
+.llp-card-clean {
+  border-top: 5px solid var(--accent);
+}
+
+/* ACT CARD – SIDEBAR */
+.llp-act {
+  border-left: 6px solid var(--act-accent);
+  background: #f1f5f9;
+}
+
+/* TITLES */
 .llp-title {
   font-size: 44px;
   line-height: 1.2;
   font-weight: 700;
   color: var(--text-main);
-  margin-bottom: 28px;
+  margin-bottom: 26px;
 }
 
-/* subheading line in second section */
+/* SUBHEADING */
 .llp-subheading {
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-main);
-  margin: 26px 0 14px;
+  margin: 30px 0 14px;
 }
 
-/* body text */
+/* PARAGRAPH */
 .llp-paragraph {
   font-size: 18px;
-  line-height: 1.8;
+  line-height: 1.85;
   color: var(--text-sub);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-/* small screens */
-@media (max-width: 768px) {
-  .llp-title {
-    font-size: 32px;
+/* HIGHLIGHT STRIP */
+.llp-highlight-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ecfdf5;
+  color: #065f46;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin: 22px 0 26px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.llp-highlight-box svg {
+  color: var(--accent);
+  width: 22px;
+  height: 22px;
+}
+
+/* ICON BULLETS */
+.llp-icon-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 26px;
+}
+
+.llp-icon-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #ffffff;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-main);
+  margin-bottom: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.llp-icon-list svg {
+  min-width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  color: var(--accent);
+}
+
+/* ACT ICON COLOR */
+.llp-act .llp-icon-list svg {
+  color: var(--act-accent);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .llp-card {
+    padding: 36px;
   }
 
-  .llp-paragraph {
+  .llp-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .llp-title {
+    font-size: 30px;
+  }
+
+  .llp-paragraph,
+  .llp-icon-list li {
     font-size: 16px;
+  }
+
+  .llp-card {
+    padding: 26px 22px;
   }
 
   .llp-section {

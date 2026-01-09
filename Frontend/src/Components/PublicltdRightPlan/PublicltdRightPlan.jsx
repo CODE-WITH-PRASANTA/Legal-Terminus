@@ -229,15 +229,7 @@ const PricingPlans = () => {
             <div className="price-note">+ Govt. Fee</div>
 
             <div className="split-pay-row">
-              <div className="toggle-pill">
-                <div className="toggle-thumb" />
-              </div>
-              <div>
-                <span>
-                  Split payment by 3 with <strong>Zolvit Flex</strong>
-                </span>
-                <a href="#!"> Click here to know more</a>
-              </div>
+              
             </div>
 
             <div className="cashback-bar">

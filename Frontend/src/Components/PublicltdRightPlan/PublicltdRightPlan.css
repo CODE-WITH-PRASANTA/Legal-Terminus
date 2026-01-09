@@ -8,6 +8,7 @@
   --accent-light: #ecffee;
 }
 
+/* RESET */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,6 +20,8 @@ body {
     sans-serif;
 }
 
+/* ================= WRAPPER ================= */
+
 .pricing-wrapper {
   max-width: 1200px;
   margin: 40px auto;
@@ -26,16 +29,17 @@ body {
   background: var(--bg-page);
 }
 
+/* ================= HEADER ================= */
+
 .pricing-header {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .pricing-header h1 {
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 10px;
-  letter-spacing: 0.02em;
 }
 
 .pricing-header p {
@@ -43,64 +47,60 @@ body {
   color: var(--text-sub);
 }
 
+/* ================= GRID ================= */
+
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 32px;
-  align-items: stretch; /* make all cards same height */
+  align-items: stretch;
 }
+
+/* ================= CARD ================= */
 
 .pricing-card {
   background: var(--card-bg);
   border-radius: 18px;
   border: 1px solid var(--border);
-  padding: 24px 24px 28px;
+  padding: 26px 26px 30px;
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  height: 100%;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
-/* Hover effect (same for all 3 cards) */
 .pricing-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 22px 40px rgba(0, 0, 0, 0.1);
   border-color: var(--primary);
 }
 
-/* TOP + FEATURES layout */
+/* ================= TOP ================= */
+
 .card-top {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 6px;
 }
 
-.card-features {
-  margin-top: 18px;
-  flex: 1; /* all feature areas same height */
-  display: flex;
-  flex-direction: column;
-}
-
-/* ribbon for premium */
+/* Ribbon (Premium) */
 .ribbon {
   position: absolute;
   top: 14px;
   left: 24px;
   font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   font-weight: 700;
   background: #ffe48f;
   padding: 4px 10px;
   border-radius: 999px;
 }
 
-.premium-title {
-  margin-top: 24px;
-}
+/* ================= PLAN ================= */
 
 .plan-name {
   font-size: 24px;
@@ -110,16 +110,16 @@ body {
 .plan-subtitle {
   font-size: 14px;
   color: var(--text-sub);
-  margin-top: 4px;
-  margin-bottom: 10px;
   line-height: 1.5;
+  margin-bottom: 10px;
 }
+
+/* ================= PRICE ================= */
 
 .price-row {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 6px;
 }
 
 .old-price {
@@ -151,26 +151,25 @@ body {
   display: flex;
   align-items: baseline;
   gap: 4px;
-  margin-bottom: 2px;
 }
 
 .price-currency {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
 }
 
 .price-amount {
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .price-note {
   font-size: 13px;
   color: var(--text-sub);
-  margin-bottom: 10px;
 }
 
-/* cashback bar */
+/* ================= CASHBACK ================= */
+
 .cashback-bar {
   display: flex;
   align-items: center;
@@ -178,7 +177,7 @@ body {
   border-radius: 12px;
   background: #fff9e6;
   padding: 10px 12px;
-  margin: 12px 0 16px;
+  margin: 14px 0;
   font-size: 13px;
 }
 
@@ -209,9 +208,10 @@ body {
   font-weight: 500;
 }
 
-/* button */
+/* ================= BUTTON ================= */
+
 .plan-button {
-  margin-top: 4px; /* fixed spacing, no auto push */
+  margin-top: 6px;
 }
 
 .plan-button button {
@@ -221,24 +221,26 @@ body {
   border: none;
   font-weight: 600;
   font-size: 15px;
-  letter-spacing: 0.02em;
   cursor: pointer;
   background: var(--primary);
   color: #ffffff;
-  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .pricing-card:hover .plan-button button {
-  transform: translateY(-1px);
   box-shadow: 0 8px 16px rgba(26, 169, 26, 0.4);
 }
 
-.plan-button button:active {
-  transform: translateY(0);
-  box-shadow: none;
+/* ================= FEATURES ================= */
+
+.card-features {
+  margin-top: 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-/* features */
 .features-title {
   font-size: 18px;
   font-weight: 600;
@@ -249,15 +251,15 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   font-size: 14px;
   color: var(--text-sub);
-  flex: 1; /* fill up available height, leaving blank at bottom when shorter */
 }
 
 .features-list li {
   display: flex;
   gap: 8px;
+  align-items: flex-start;
   line-height: 1.5;
 }
 
@@ -272,6 +274,7 @@ body {
   justify-content: center;
   font-size: 11px;
   color: var(--primary);
+  flex-shrink: 0;
 }
 
 .features-list strong {
@@ -279,53 +282,17 @@ body {
   font-weight: 600;
 }
 
-/* split payment row */
-.split-pay-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  margin: 8px 0 16px;
-}
+/* ================= FOOTER NOTE ================= */
 
-.toggle-pill {
-  width: 42px;
-  height: 22px;
-  border-radius: 999px;
-  border: 2px solid var(--primary);
-  padding: 2px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.toggle-thumb {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--primary);
-}
-
-.split-pay-row span {
-  color: var(--text-sub);
-}
-
-.split-pay-row a {
-  color: var(--primary);
-  text-decoration: underline;
-  margin-left: 4px;
-  font-weight: 500;
-}
-
-/* footer note */
 .note {
   font-size: 11px;
   color: #8b8f9b;
-  margin-top: 16px;
+  margin-top: 18px;
   text-align: center;
 }
 
-/* responsive */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 992px) {
   .pricing-grid {
     grid-template-columns: 1fr;
