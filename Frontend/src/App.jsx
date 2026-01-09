@@ -51,7 +51,7 @@ function App() {
             element={<PrivateLimited />}
           />
           <Route
-            path="/incorporation-registration-in-india"
+            path="/incorption-registration-in-india"
             element={<IncorptionPage />}
           />
           <Route path="/trust" element={<Trust />} />

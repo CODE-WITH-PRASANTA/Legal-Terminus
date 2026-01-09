@@ -1,139 +1,112 @@
-import React from 'react'
-import './IncorptionBreadcrum.css'
-import bgImage from '../../assets/breadcrum.png';
+import React from "react";
 
 const IncorptionBreadcrum = () => {
   return (
-      <section
-          className="breadcrum"
-          style={{ '--bg': `url(${bgImage})` }}
-        >
-          <div className="breadcrum-inner">
-            {/* LEFT PANEL */}
-            <div className="breadcrum-left-panel">
-             <h1 className="breadcrum-title">
-                  <span className="breadcrum-orange">Incorporation of Wholly Owned Subsidiary</span>{' '}
-                  <span className="breadcrum-black">in India</span>
-                </h1>
-    
-              <h3 className="breadcrum-subtitle">
-                <strong>Save 50% Today</strong>{' '}
-                <span>
-                  on <strong>Professional Services</strong>
-                </span>
-              </h3>
-    
-              <p className="breadcrum-desc">
-               Legal Terminus can help you with Incorporation of Wholly Owned Subsidiary (WOS) in India, as and when required, in a hassle-free manner within a reasonable time span. We provide expert assistance to meet your business setup needs in India. 
-              </p>
-    
-              <h4 className="breadcrum-included">What's Included?</h4>
-    
-              <div className="breadcrum-features">
-                <ul className="breadcrum-col">
-                  <li>Registration in 1-2 Weeks</li>
-                  <li>MCA Name Approval</li>
-                  <li>DSC in 2-4 Days</li>
-                </ul>
-                <ul className="breadcrum-col">
-                  <li>DIN, PAN, and SPICE+ Compliance</li>
-                  <li>MOA &amp; AOA Drafting</li>
-                </ul>
-              </div>
-    
-              <p className="breadcrum-note">
-                <span className="breadcrum-star">★</span>
-                Register 100+ Companies Every Month + Save 18% with GST Registration
-              </p>
-    
-              <div className="breadcrum-cta-row">
-                <button className="breadcrum-schedule-btn">Book a Schedule ➜</button>
-    
-                <div className="breadcrum-reviews">
-                  <div className="breadcrum-google">
-                    <img src="https://corpbiz.io/img/google.webp" alt="" />
-                  </div>
-                  <div className="breadcrum-trustpilot">
-                    <img src="https://corpbiz.io/img/trustpilot.webp" alt="" />
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-    
-            {/* RIGHT PANEL (FORM CARD) */}
-            <aside className="breadcrum-right-panel">
-              <div className="breadcrum-ribbon">
-                <img src="https://corpbiz.io/img/offer_icon.webp" alt="" />
-              </div>
-    
-              <div className="breadcrum-form-card">
-                <h3 className="breadcrum-form-title">Get Free Expert Consultation</h3>
-    
-                <form
-                    className="breadcrum-lead-form"
-                    onSubmit={(e) => e.preventDefault()}
-                  >
-                    <input
-                      className="breadcrum-input"
-                      placeholder="Your Name"
-                      type="text"
-                    />
-    
-                    <input
-                      className="breadcrum-input"
-                      placeholder="Email Address"
-                      type="email"
-                    />
-    
-                    <div className="breadcrum-phone-row">
-                      <input
-                        className="breadcrum-input breadcrum-phone"
-                        placeholder="Mobile Number"
-                        type="tel"
-                      />
-                    </div>
-    
-                    <select className="breadcrum-input breadcrum-select">
-                      <option>Select State</option>
-                      <option>Maharashtra</option>
-                      <option>Delhi</option>
-                      <option>Karnataka</option>
-                    </select>
-    
-                  {/* ⭐ Preferable Call Timing Dropdown */}
-                      <select className="breadcrum-input breadcrum-select">
-                        <option>Select Preferable Time to Call</option>
-                        <option>9:00 AM – 10:00 AM</option>
-                        <option>10:00 AM – 11:00 AM</option>
-                        <option>11:00 AM – 12:00 PM</option>
-                        <option>12:00 PM – 1:00 PM</option>
-                        <option>1:00 PM – 2:00 PM</option>
-                        <option>2:00 PM – 3:00 PM</option>
-                        <option>3:00 PM – 4:00 PM</option>
-                        <option>4:00 PM – 5:00 PM</option>
-                        <option>5:00 PM – 6:00 PM</option>
-                        <option>6:00 PM – 7:00 PM</option>
-                      </select>
-    
-    
-                    <label className="breadcrum-whatsapp">
-                      Get Update on{' '}
-                      <span className="breadcrum-wh-icon">Whatsapp</span>
-                      <input type="checkbox" defaultChecked />
-                      <span className="breadcrum-toggle" />
-                    </label>
-    
-                    <button className="breadcrum-get-started" type="submit">
-                      GET STARTED NOW
-                    </button>
-                  </form>
-    
-              </div>
-            </aside>
-          </div>
-        </section>
-  )
-}
+    <section className="lt-public-hero">
+      <div className="lt-public-container">
+        {/* LEFT CONTENT */}
+        <div className="lt-public-content">
+          <span className="lt-public-tag">
+            Private Limited Company Registration
+          </span>
 
-export default IncorptionBreadcrum
+          <h1 className="lt-public-title">
+            Incorporation Of Wholly Owned Subsidiary
+            <span> in India</span>
+          </h1>
+
+          <p className="lt-public-description">
+            A Private Limited Company is a popular and trusted business
+            structure in India, especially for startups and growing businesses.
+            It helps protect personal assets, builds business credibility, and
+            makes it easier to raise funds.
+            <br />
+            <br />
+            Legal Terminus can help you with Private Limited Company
+            registration in a hassle-free way, whenever you need it. We take
+            care of the complete process—from paperwork to approvals—within a
+            reasonable time. Our professional fees start at ₹3,999, making
+            company registration simple, affordable, and stress-free.
+          </p>
+
+          <div className="lt-public-features">
+            <div className="lt-feature-item"> Minimum 2 Directors Required</div>
+            <div className="lt-feature-item"> Separate Legal Entity</div>
+            <div className="lt-feature-item"> Limited Liability Protection</div>
+            <div className="lt-feature-item"> High Business Credibility</div>
+          </div>
+
+          <div className="lt-public-highlights">
+            <div>
+              <h3>1,000+</h3>
+              <p>Companies Registered</p>
+            </div>
+            <div>
+              <h3>100%</h3>
+              <p>Online Process</p>
+            </div>
+            <div>
+              <h3>5+</h3>
+              <p>Years of Legal Expertise</p>
+            </div>
+          </div>
+        </div>
+
+        {/* RIGHT FORM */}
+        <aside className="lt-public-form-wrapper">
+          <div className="lt-public-form-card">
+            <h3 className="lt-form-title">Get Expert Assistance</h3>
+
+            <p className="lt-form-subtitle">
+              Talk to our Private Limited Company registration expert
+            </p>
+
+            <form
+              className="lt-public-form"
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <input type="text" placeholder="Full Name" required />
+              <input type="email" placeholder="Email Address" required />
+              <input type="tel" placeholder="Mobile Number" required />
+
+              <select required>
+                <option value="">Select Your State</option>
+                <option>Maharashtra</option>
+                <option>Delhi</option>
+                <option>Karnataka</option>
+                <option>Tamil Nadu</option>
+                <option>Other</option>
+              </select>
+
+              <select>
+                <option value="">Preferred Call Time</option>
+                <option>10:00 AM – 12:00 PM</option>
+                <option>12:00 PM – 2:00 PM</option>
+                <option>2:00 PM – 4:00 PM</option>
+                <option>4:00 PM – 6:00 PM</option>
+              </select>
+
+              <div className="lt-whatsapp-row">
+                <label className="lt-whatsapp-label">
+                  <input type="checkbox" defaultChecked />
+                  <span className="lt-custom-checkbox"></span>
+                  <span className="lt-whatsapp-text">
+                    Receive updates on <strong>WhatsApp</strong>
+                  </span>
+                </label>
+              </div>
+
+              <button type="submit">Book Free Consultation</button>
+            </form>
+
+            <p className="lt-form-note">
+              🔒 100% Confidential • No Spam • No Hidden Charges
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  );
+};
+
+export default IncorptionBreadcrum;
