@@ -3,82 +3,63 @@ import "./OPCBenefits.css";
 
 const OPCBenefits = () => {
   return (
-    <section className="opc-section">
-      <div className="opc-container">
-        <h2 className="opc-main-title">Benefits of a One Person Company</h2>
-        <p className="opc-intro">
-          A One Person Company (OPC) provides protection for limited liability,
-          with the personal assets of the owner not being at risk. It also gives
-          a separate legal identity, adding credibility and continuity to the
-          business.
-        </p>
-
-        <div className="opc-grid">
-          {/* Card 1 */}
-          <div className="opc-card">
-            <h3 className="opc-card-title">Business Operation Benefits</h3>
-            <ul>
-              <li>
-                <strong>Full Control:</strong> The sole owner has complete
-                authority over operations and decision-making.
-              </li>
-              <li>
-                <strong>Ease of Administration:</strong> Fewer regulatory
-                requirements make OPCs easier to manage.
-              </li>
-              <li>
-                <strong>Flexibility:</strong> OPCs can be converted into other
-                company types as the business grows.
-              </li>
-            </ul>
-          </div>
-
-          {/* Card 2 */}
-          <div className="opc-card">
-            <h3 className="opc-card-title">Legal & Compliance Benefits</h3>
-            <ul>
-              <li>
-                <strong>Limited Liability Safeguard:</strong> Owner’s liability
-                is limited to their investment.
-              </li>
-              <li>
-                <strong>Separate Legal Entity:</strong> OPCs can own assets,
-                enter contracts, and sue or be sued independently.
-              </li>
-              <li>
-                <strong>Less Compliance:</strong> No AGM requirement and reduced
-                statutory obligations.
-              </li>
-            </ul>
-          </div>
-
-          {/* Card 3 */}
-          <div className="opc-card">
-            <h3 className="opc-card-title">
-              Funding & Succession Planning
-            </h3>
-            <ul>
-              <li>
-                <strong>Higher Credibility:</strong> Registered status improves
-                access to loans and funding.
-              </li>
-              <li>
-                <strong>Succession Planning:</strong> Nominee director ensures
-                continuity in case of incapacity.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="opc-requirements">
-          <h2 className="opc-sub-title">
-            One Person Company Registration Requirements
+    <section className="opcben-section">
+      <div className="opcben-container">
+        {/* Heading + intro */}
+        <header className="opcben-header">
+          <h2 className="opcben-title">
+            Benefits of One Person Company Registration in India
           </h2>
-          <p>
-            For OPC registration, a single individual can act as the sole
-            shareholder and director. A nominee must be appointed to ensure
-            business continuity in case of incapacity.
+          <p className="opcben-subtitle">
+            The Ministry of Corporate Affairs (MCA) manages the company registration process
+            in India. It includes registering the business with the Registrar of Companies
+            (RoC) and obtaining a Digital Signature Certificate (DSC) and Director
+            Identification Number (DIN).
           </p>
+        </header>
+
+        {/* Cards */}
+        <div className="opcben-grid">
+          {/* 1 */}
+          <article className="opcben-card">
+            <h3 className="opcben-card-title">Separate Legal Identity</h3>
+            <div className="opcben-card-underline" />
+            <p className="opcben-card-text">
+              Once registered, a company becomes its own legal entity. It can own property,
+              sign contracts, and operate separately from its owner.
+            </p>
+          </article>
+
+          {/* 2 */}
+          <article className="opcben-card">
+            <h3 className="opcben-card-title">Limited Liability Protection</h3>
+            <div className="opcben-card-underline" />
+            <p className="opcben-card-text">
+              The personal assets of the owner are safe from company debts and risks,
+              ensuring financial protection.
+            </p>
+          </article>
+
+          {/* 3 */}
+          <article className="opcben-card">
+            <h3 className="opcben-card-title">Access to Government Schemes</h3>
+            <div className="opcben-card-underline" />
+            <p className="opcben-card-text">
+              Registered companies can benefit from government schemes like Startup India
+              for tax benefits and easier compliance, and Make in India for incentives and
+              manufacturing support.
+            </p>
+          </article>
+
+          {/* 4 */}
+          <article className="opcben-card">
+            <h3 className="opcben-card-title">Increased Credibility</h3>
+            <div className="opcben-card-underline" />
+            <p className="opcben-card-text">
+              A registered company is more trusted by investors, clients, and vendors,
+              making it easier to secure funding and partnerships.
+            </p>
+          </article>
         </div>
       </div>
     </section>

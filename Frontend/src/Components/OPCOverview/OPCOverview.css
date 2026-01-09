@@ -1,76 +1,211 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-.opc-section {
-  background-color: #ffffff;
-  padding: 80px 24px;
-  font-family: "Poppins", sans-serif;
+/* --------------------------------------------------
+   OPC INTRO
+-------------------------------------------------- */
+
+.opc-intro-section {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #ffffff;
+    padding: 64px 24px 56px;
 }
 
-.opc-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 64px;
-  align-items: flex-start;
+.opc-intro-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.4fr;
+    column-gap: 64px;
+    align-items: center;
 }
 
-/* LEFT CONTENT */
-.opc-text-wrapper {
-  color: #374151;
+
+/* Illustration */
+
+.opc-intro-illustration-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.opc-heading {
-  font-size: 44px;
-  font-weight: 600;
-  line-height: 1.25;
-  color: #111827;
-  margin-bottom: 24px;
+.opc-intro-illustration {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-.opc-text-wrapper p {
-  font-size: 15.5px;
-  line-height: 1.9;
-  margin-bottom: 20px;
+
+/* Content */
+
+.opc-intro-content {
+    max-width: 720px;
 }
 
-/* RIGHT IMAGE */
-.opc-image-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+.opc-intro-title {
+    font-size: 40px;
+    line-height: 1.25;
+    font-weight: 600;
+    color: #151821;
+    margin: 0 0 18px;
 }
 
-.opc-image-wrapper img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+.opc-intro-text {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #4b5563;
 }
 
-.opc-image-wrapper img:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-}
 
-/* RESPONSIVE */
+/* Responsive */
+
 @media (max-width: 1024px) {
-  .opc-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
+    .opc-intro-section {
+        padding: 52px 20px 44px;
+    }
+    .opc-intro-container {
+        column-gap: 40px;
+        grid-template-columns: 0.95fr 1.3fr;
+    }
+    .opc-intro-title {
+        font-size: 32px;
+    }
+}
 
-  .opc-image-wrapper {
-    justify-content: flex-start;
-  }
+@media (max-width: 768px) {
+    .opc-intro-section {
+        padding: 40px 16px 36px;
+    }
+    .opc-intro-container {
+        grid-template-columns: 1fr;
+        row-gap: 32px;
+    }
+    .opc-intro-illustration-wrap {
+        order: 1;
+    }
+    .opc-intro-content {
+        order: 2;
+    }
+    .opc-intro-title {
+        font-size: 28px;
+        text-align: left;
+    }
+    .opc-intro-text {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 480px) {
-  .opc-heading {
-    font-size: 32px;
-  }
+    .opc-intro-section {
+        padding: 32px 14px 28px;
+    }
+    .opc-intro-title {
+        font-size: 24px;
+    }
+    .opc-intro-text {
+        font-size: 13.5px;
+        line-height: 1.8;
+    }
+}
 
-  .opc-text-wrapper p {
-    font-size: 14px;
-  }
+
+/* --------------------------------------------------
+   COMPANIES ACT CARD
+-------------------------------------------------- */
+
+.opc-act-section {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #ffffff;
+    padding: 24px 24px 56px;
+}
+
+.opc-act-container {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+
+/* Card */
+
+.opc-act-card {
+    border-radius: 20px;
+    padding: 32px 40px;
+    background: linear-gradient(to bottom, #f4f8ff 0%, #ffffff 100%);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+
+/* Title */
+
+.opc-act-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #273143;
+    margin: 0 0 14px;
+}
+
+
+/* Text */
+
+.opc-act-text {
+    margin: 0 0 18px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #4b5563;
+}
+
+
+/* Points */
+
+.opc-act-point {
+    margin: 0 0 10px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #4b5563;
+}
+
+.opc-act-point-label {
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 992px) {
+    .opc-act-section {
+        padding: 20px 20px 44px;
+    }
+    .opc-act-card {
+        padding: 28px 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .opc-act-section {
+        padding: 16px 16px 36px;
+    }
+    .opc-act-card {
+        padding: 24px 20px;
+    }
+    .opc-act-text,
+    .opc-act-point {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .opc-act-section {
+        padding: 12px 14px 28px;
+    }
+    .opc-act-card {
+        padding: 20px 18px;
+    }
+    .opc-act-title {
+        font-size: 18px;
+    }
+    .opc-act-text,
+    .opc-act-point {
+        font-size: 13.5px;
+    }
 }
