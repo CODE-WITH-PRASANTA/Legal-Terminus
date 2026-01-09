@@ -23,6 +23,9 @@ const PrivateLimited = () => {
         <PvtltdPlanandPricing />
       </div>
 
+      <PvtltdTermsCondition />
+
+
       <div id="premium">
         <PvtltdZolvitPremium />
       </div>
@@ -53,7 +56,6 @@ const PrivateLimited = () => {
         <PvtltdFAQ />
       </div>
 
-      <PvtltdTermsCondition />
       <PvtltdTestimonial />
       <PvtltdVideoTestimonial />
       <PvtltdOurclints />

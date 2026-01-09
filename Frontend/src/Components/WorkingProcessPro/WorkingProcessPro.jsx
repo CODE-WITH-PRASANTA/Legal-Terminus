@@ -1,48 +1,78 @@
+import React from "react";
 import { FaRegFileAlt, FaCreditCard, FaHeadset, FaEnvelope } from "react-icons/fa";
-import './WorkingProcessPro.css'
+import "./WorkingProcessPro.css";
 
 const steps = [
   {
-    icon: <FaRegFileAlt />,
+    no: "01",
+    title: "Application",
     text: "Fill out the application form",
-    color: "green"
+    icon: <FaRegFileAlt />,
+    color: "green",
   },
   {
-    icon: <FaCreditCard />,
+    no: "02",
+    title: "Payment",
     text: "Complete the online payment",
-    color: "lightgreen"
+    icon: <FaCreditCard />,
+    color: "yellow",
   },
   {
-    icon: <FaHeadset />,
+    no: "03",
+    title: "Processing",
     text: "Our executive processes your application",
-    color: "green"
+    icon: <FaHeadset />,
+    color: "red",
   },
   {
-    icon: <FaEnvelope />,
+    no: "04",
+    title: "Confirmation",
     text: "Receive confirmation via email",
-    color: "lightgreen"
-  }
+    icon: <FaEnvelope />,
+    color: "purple",
+  },
 ];
 
-const WorkingProcessPro = () => (
-  <section className="WPP-root">
-    <h2 className="WPP-title">Our Working Process</h2>
-    <div className="WPP-underline"></div>
+const WorkingProcessPro = () => {
+  return (
+    <section className="WPI-section">
+      <div className="WPI-container">
 
-    <div className="WPP-grid">
-      {steps.map((item, index) => (
-        <div
-          key={index}
-          className={`WPP-card ${
-            item.color === "green" ? "WPP-green" : "WPP-lightgreen"
-          }`}
-        >
-          <div className="WPP-icon">{item.icon}</div>
-          <p className="WPP-text">{item.text}</p>
+        <div className="WPI-left">
+        <div className="WPI-infographic">
+          <div className="WPI-layer back"></div>
+          <div className="WPI-layer middle"></div>
+
+          <div className="WPI-layer front">
+            <span className="WPI-badge">Legal Terminus</span>
+            <h2>Our Working<br />Process</h2>
+            <p>Simple & Transparent</p>
+          </div>
         </div>
-      ))}
-    </div>
-  </section>
-);
+      </div>
+
+
+
+        {/* RIGHT STEPS */}
+        <div className="WPI-right">
+          {steps.map((step, index) => (
+            <div className="WPI-step-row" key={index}>
+              <span className="WPI-line" />
+              <div className={`WPI-step WPI-${step.color}`}>
+                <div className="WPI-step-icon">{step.icon}</div>
+                <div className="WPI-step-content">
+                  <span className="WPI-step-no">{step.no}</span>
+                  <h4>{step.title}</h4>
+                  <p>{step.text}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+};
 
 export default WorkingProcessPro;
