@@ -1,238 +1,242 @@
-/* LLPProcess.css
-   - Two-part layout: header + snake timeline
-   - Responsive grid
-   - Unique hover effects
-   - No image imports
-*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-/* ===== Container ===== */
-.soc-wrap {
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 36px 18px 64px;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  box-sizing: border-box;
+/* Section base */
+
+.opcproc-section {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #ffffff;
+    padding: 64px 20px 72px;
 }
 
-/* ===== Header Section ===== */
-.soc-header {
-  margin-bottom: 28px;
+.opcproc-container {
+    max-width: 1360px;
+    margin: 0 auto;
 }
 
-.soc-title {
-  font-size: clamp(1.8rem, 3.5vw, 3rem);
-  font-weight: 800;
-  margin: 0 0 12px;
-  letter-spacing: -0.02em;
-  color: #111827;
+
+/* Heading */
+
+.opcproc-heading {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin: 0 0 40px;
+    color: #111827;
 }
 
-.soc-intro {
-  max-width: 90ch;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #575757;
+
+/* Slider wrapper */
+
+.opcproc-slider-wrapper {
+    position: relative;
+    padding: 0 52px;
 }
 
-/* ===== Timeline Grid ===== */
-.soc-timeline {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
+
+/* Horizontal slider */
+
+.opcproc-slider {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 8px;
 }
 
-/* ===== Step Card ===== */
-.soc-step {
-  position: relative;
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 18px 18px 22px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+.opcproc-slider::-webkit-scrollbar {
+    display: none;
 }
 
-/* Hover Effect */
-@media (hover: hover) {
-  .soc-step:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
-  }
+.opcproc-slider {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-/* Step Number */
-.soc-step-index {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: #d49247;
-  color: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.95rem;
-  margin-bottom: 10px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+
+/* Card */
+
+.opcproc-card {
+    min-width: 290px;
+    max-width: 290px;
+    flex-shrink: 0;
+    background: #fbfbfb;
+    border-radius: 18px;
+    border: 2px solid #1aa91a;
+    padding: 36px 28px 32px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
 }
 
-/* Step Title */
-.soc-step-title {
-  margin: 0 0 8px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #111827;
-}
 
-/* Step Text */
-.soc-step-text {
-  margin: 0;
-  font-size: 0.98rem;
-  line-height: 1.7;
-  color: #575757;
-}
+/* Quote marks */
 
-/* ===== Connectors (Hidden on mobile) ===== */
-.soc-connector {
-  display: none;
-}
-
-/* ===== Tablet (2 columns) ===== */
-@media (min-width: 600px) and (max-width: 899px) {
-  .soc-timeline {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
-  }
-}
-
-/* ===== Desktop Snake Layout ===== */
-@media (min-width: 900px) {
-  .soc-timeline {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 28px;
-    align-items: stretch;
-  }
-
-  .soc-step {
-    min-height: 210px;
-  }
-
-  /* Second row reverse snake */
-  .soc-step--6 {
-    grid-column: 5;
-    grid-row: 2;
-  }
-  .soc-step--7 {
-    grid-column: 4;
-    grid-row: 2;
-  }
-  .soc-step--8 {
-    grid-column: 3;
-    grid-row: 2;
-  }
-  .soc-step--9 {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  /* Show connectors */
-  .soc-connector {
-    display: block;
+.opcproc-quote {
     position: absolute;
-    background: #d49247;
-    border-radius: 2px;
-  }
-
-  /* Right Connector */
-  .soc-connector--right {
-    top: 50%;
-    right: -44px;
-    width: 40px;
-    height: 2px;
-    transform: translateY(-50%);
-  }
-
-  .soc-connector--right::after {
-    content: "";
-    position: absolute;
-    right: -8px;
-    top: 50%;
-    width: 12px;
-    height: 12px;
-    transform: translateY(-50%);
-    background: #d49247;
-    clip-path: polygon(0 0, 100% 50%, 0 100%);
-  }
-
-  /* Left Connector */
-  .soc-connector--left {
-    top: 50%;
-    left: -44px;
-    width: 40px;
-    height: 2px;
-    transform: translateY(-50%);
-  }
-
-  .soc-connector--left::after {
-    content: "";
-    position: absolute;
-    left: -8px;
-    top: 50%;
-    width: 12px;
-    height: 12px;
-    transform: translateY(-50%);
-    background: #d49247;
-    clip-path: polygon(100% 0, 0 50%, 100% 100%);
-  }
-
-  /* Down Connector */
-  .soc-connector--down {
-    left: 50%;
-    bottom: -44px;
-    width: 2px;
-    height: 40px;
-    transform: translateX(-50%);
-  }
-
-  .soc-connector--down::after {
-    content: "";
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    width: 12px;
-    height: 12px;
-    transform: translateX(-50%);
-    background: #d49247;
-    clip-path: polygon(0 0, 50% 100%, 100% 0);
-  }
+    font-size: 40px;
+    color: #1aa91a;
 }
 
-/* ===== Mobile Tweaks ===== */
+.opcproc-quote-top {
+    top: 10px;
+    left: 18px;
+}
+
+.opcproc-quote-bottom {
+    bottom: 10px;
+    right: 24px;
+}
+
+
+/* Avatar */
+
+.opcproc-avatar-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.opcproc-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #1aa91a;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600;
+    border: 4px solid #e5f8e8;
+}
+
+
+/* Text */
+
+.opcproc-text {
+    margin: 0 0 22px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333333;
+}
+
+
+/* Name & role */
+
+.opcproc-name {
+    margin: 0 0 6px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1aa91a;
+}
+
+.opcproc-role {
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: #111827;
+}
+
+
+/* Stars */
+
+.opcproc-stars {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    font-size: 18px;
+    color: #ff9900;
+}
+
+
+/* Arrows */
+
+.opcproc-side-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #1aa91a;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+    z-index: 10;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.opcproc-side-arrow:hover {
+    background: #128a15;
+    transform: translateY(-50%) scale(1.06);
+}
+
+.opcproc-left {
+    left: 10px;
+}
+
+.opcproc-right {
+    right: 10px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+    .opcproc-heading {
+        font-size: 28px;
+    }
+    .opcproc-slider-wrapper {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .opcproc-section {
+        padding: 52px 16px 60px;
+    }
+    .opcproc-heading {
+        font-size: 24px;
+        margin-bottom: 28px;
+    }
+    .opcproc-card {
+        min-width: 260px;
+        max-width: 260px;
+        padding: 30px 22px 28px;
+    }
+    .opcproc-slider-wrapper {
+        padding: 0 32px;
+    }
+    .opcproc-side-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
 @media (max-width: 520px) {
-  .soc-title {
-    font-size: 1.6rem;
-  }
-
-  .soc-intro {
-    font-size: 0.95rem;
-  }
-
-  .soc-step {
-    padding: 14px;
-    border-radius: 12px;
-  }
-
-  .soc-step-index {
-    width: 30px;
-    height: 30px;
-    font-size: 0.85rem;
-  }
-}
-
-/* ===== Reduced Motion ===== */
-@media (prefers-reduced-motion: reduce) {
-  .soc-step {
-    transition: none;
-  }
+    .opcproc-section {
+        padding: 44px 10px 52px;
+    }
+    .opcproc-heading {
+        font-size: 22px;
+    }
+    .opcproc-slider-wrapper {
+        padding: 0 24px;
+    }
+    .opcproc-card {
+        min-width: 240px;
+        max-width: 240px;
+    }
+    .opcproc-left {
+        left: 4px;
+    }
+    .opcproc-right {
+        right: 4px;
+    }
 }

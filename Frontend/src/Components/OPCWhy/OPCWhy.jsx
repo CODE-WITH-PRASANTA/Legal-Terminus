@@ -1,77 +1,102 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./OPCWhy.css";
 
-const helpPoints = [
+const videoTestimonials = [
   {
-    title: "Expert Consultation",
-    text:
-      "We deliver professional advice to guide you in realizing the specific needs and advantages of an OPC registration.",
+    name: "Kirti Ranjan Sahu",
+    role: "Proprietor of Keshab Jewellers",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
   {
-    title: "Documentation Support",
-    text:
-      "We help prepare and gather all documents necessary, ensuring compliance with legal requirements.",
+    name: "Gobinda Chandra Mishra",
+    role: "Influencer",
+    videoUrl: "https://www.youtube.com/embed/ysz5PUM2z2A",
   },
   {
-    title: "DIN & DSC Application",
-    text:
-      "We assist in procuring the Director Identification Number (DIN) and Digital Signature Certificate (DSC).",
+    name: "Babaji Samal",
+    role: "MD, AppsSys Technosoft",
+    videoUrl: "https://www.youtube.com/embed/jNQXAC9IVRw",
   },
   {
-    title: "Name Approval",
-    text:
-      "We manage the complete name approval process with the Ministry of Corporate Affairs (MCA).",
-  },
-  {
-    title: "MOA & AOA Drafting",
-    text:
-      "Vakilsearch drafts the Memorandum and Articles of Association tailored to your business needs.",
-  },
-  {
-    title: "ROC Filing",
-    text:
-      "We file all required forms (INC-32, INC-33, INC-34) with the Registrar of Companies.",
-  },
-  {
-    title: "Certificate of Incorporation",
-    text:
-      "We help obtain the Certificate of Incorporation, officially registering your OPC.",
-  },
-  {
-    title: "PAN & TAN Application",
-    text:
-      "We handle PAN and TAN application processes for your company.",
-  },
-  {
-    title: "Post-Incorporation Support",
-    text:
-      "Continuous support for post-incorporation compliances and operational efficiency.",
+    name: "Pritam Rath",
+    role: "Director, Stabdha Utility Insights",
+    videoUrl: "https://www.youtube.com/embed/oHg5SJYRHA0",
   },
 ];
 
-export default function OPCHelps() {
-  return (
-    <section className="opc-help-section">
-      <header className="opc-help-header">
-        <h2>
-          How Vakilsearch Helps in Simplifying the One-Person Company Registration
-          Process?
-        </h2>
-        <p>
-          Vakilsearch provides end-to-end services to make OPC registration easier,
-          ensuring a smooth experience for entrepreneurs.
-        </p>
-      </header>
+const OPCWhy = () => {
+  const sliderRef = useRef(null);
 
-      <div className="opc-help-grid">
-        {helpPoints.map((item, index) => (
-          <div key={index} className="opc-help-card">
-            <div className="opc-help-badge">{index + 1}</div>
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
+  const handleScroll = (direction) => {
+    const container = sliderRef.current;
+    if (!container) return;
+
+    const card = container.querySelector(".opcwhy-card");
+    if (!card) return;
+
+    const gap = 24; // matches CSS gap
+    const cardWidth = card.offsetWidth + gap;
+
+    container.scrollBy({
+      left: direction === "next" ? cardWidth : -cardWidth,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <section className="opcwhy-section">
+      <div className="opcwhy-container">
+        <h2 className="opcwhy-heading">Why Choose One Person Company?</h2>
+        <p className="opcwhy-subtitle">
+          Hear directly from our clients about their experience and the benefits
+          of choosing an OPC structure for their business growth.
+        </p>
+
+        <div className="opcwhy-slider-wrapper">
+          {/* Left arrow */}
+          <button
+            className="opcwhy-side-arrow opcwhy-left"
+            aria-label="Previous video"
+            onClick={() => handleScroll("prev")}
+          >
+            ❮
+          </button>
+
+          {/* Cards slider */}
+          <div className="opcwhy-slider" ref={sliderRef}>
+            {videoTestimonials.map((item, idx) => (
+              <article className="opcwhy-card" key={idx}>
+                <div className="opcwhy-video-wrap">
+                  <div className="opcwhy-video-aspect">
+                    <iframe
+                      className="opcwhy-video"
+                      src={item.videoUrl}
+                      title={item.name}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+
+                <h3 className="opcwhy-name">{item.name}</h3>
+                <p className="opcwhy-role">{item.role}</p>
+              </article>
+            ))}
           </div>
-        ))}
+
+          {/* Right arrow */}
+          <button
+            className="opcwhy-side-arrow opcwhy-right"
+            aria-label="Next video"
+            onClick={() => handleScroll("next")}
+          >
+            ❯
+          </button>
+        </div>
       </div>
     </section>
   );
-}
+};
+
+export default OPCWhy;
