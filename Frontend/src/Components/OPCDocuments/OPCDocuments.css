@@ -1,127 +1,241 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
-.opc-docs-section {
-  padding: 80px 24px;
-  background: #ffffff;
-  font-family: "Poppins", sans-serif;
+.opc-doc-section {
+    font-family: "Poppins", sans-serif;
+    background: #fff;
+    padding: 80px 20px;
 }
 
-.opc-docs-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 64px;
-  align-items: center;
-}
-
-/* LEFT */
-.opc-docs-title {
-  font-size: 42px;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 16px;
-}
-
-.opc-docs-subtitle {
-  font-size: 15px;
-  color: #4b5563;
-  line-height: 1.8;
-  margin-bottom: 36px;
-}
-
-/* GRID */
-.opc-docs-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.opc-doc-card {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 20px 22px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.opc-doc-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #1aa91a, #0f766e);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 0;
-}
-
-.opc-doc-card:hover::before {
-  opacity: 0.05;
-}
-
-.opc-doc-card h4 {
-  font-size: 15px;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 8px;
-  position: relative;
-  z-index: 1;
-}
-
-.opc-doc-card p {
-  font-size: 14px;
-  color: #4b5563;
-  line-height: 1.7;
-  position: relative;
-  z-index: 1;
-}
-
-.opc-doc-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
-  border-color: #1aa91a;
-}
-
-/* RIGHT IMAGE */
-.opc-docs-image img {
-  width: 100%;
-  max-width: 420px;
-  display: block;
-  margin-left: auto;
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .opc-docs-container {
-    grid-template-columns: 1fr;
-  }
-
-  .opc-docs-image img {
+.opc-doc-container {
+    max-width: 1200px;
     margin: 0 auto;
-  }
+    position: relative;
+    text-align: center;
+}
+
+.opc-doc-heading {
+    font-size: 32px;
+    color: #111827;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.opc-doc-sub {
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+
+/* Layout */
+
+.opc-doc-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+
+/* Center Circle */
+
+.opc-doc-center-circle {
+    width: 260px;
+    height: 260px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.opc-doc-dotted-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px dashed rgba(26, 169, 26, 0.3);
+    border-radius: 50%;
+    animation: spin 25s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.opc-doc-circle-inner {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.opc-doc-circle-inner h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1aa91a;
+    letter-spacing: 1px;
+}
+
+
+/* Sides */
+
+.opc-doc-side {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1;
+}
+
+.opc-doc-box {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    border-radius: 16px;
+    padding: 16px 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+}
+
+.opc-doc-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Small connecting circle */
+
+.opc-doc-box::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #1aa91a;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 4px rgba(26, 169, 26, 0.2);
+}
+
+.opc-doc-box.left::after {
+    right: -26px;
+}
+
+.opc-doc-box.right::after {
+    left: -26px;
+}
+
+
+/* Icon Circle */
+
+.opc-doc-icon {
+    background: #1aa91a;
+    color: white;
+    font-size: 22px;
+    min-width: 48px;
+    min-height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 14px;
+}
+
+
+/* Content */
+
+.opc-doc-content h3 {
+    font-size: 15.5px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 6px;
+}
+
+.opc-doc-content p {
+    font-size: 13.5px;
+    color: #444;
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+/* ✅ COLOR VARIANTS */
+
+.color-1 {
+    background: linear-gradient(135deg, #00bcd4, #4dd0e1);
+    color: #fff;
+}
+
+.color-2 {
+    background: linear-gradient(135deg, #26c6da, #80deea);
+    color: #fff;
+}
+
+.color-3 {
+    background: linear-gradient(135deg, #009688, #4db6ac);
+    color: #fff;
+}
+
+.color-4 {
+    background: linear-gradient(135deg, #5c6bc0, #7986cb);
+    color: #fff;
+}
+
+.color-5 {
+    background: linear-gradient(135deg, #3949ab, #5c6bc0);
+    color: #fff;
+}
+
+.color-6 {
+    background: linear-gradient(135deg, #1e88e5, #64b5f6);
+    color: #fff;
+}
+
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+    .opc-doc-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+    .opc-doc-side {
+        width: 100%;
+        align-items: center;
+    }
+    .opc-doc-center-circle {
+        margin: 40px 0;
+    }
+    .opc-doc-box {
+        width: 90%;
+    }
+    .opc-doc-box::after {
+        display: none;
+    }
 }
 
 @media (max-width: 600px) {
-  .opc-docs-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .opc-docs-title {
-    font-size: 32px;
-  }
+    .opc-doc-circle-inner {
+        width: 150px;
+        height: 150px;
+    }
+    .opc-doc-circle-inner h3 {
+        font-size: 15px;
+    }
+    .opc-doc-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    .opc-doc-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }
