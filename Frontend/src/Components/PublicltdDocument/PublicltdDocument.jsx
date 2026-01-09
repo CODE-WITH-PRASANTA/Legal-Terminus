@@ -1,114 +1,70 @@
 import React from "react";
 import "./PublicltdDocument.css";
+import {
+  FaIdCard,
+  FaHome,
+  FaBuilding,
+  FaFileContract,
+  FaSignature,
+  FaUserCheck,
+  FaWpforms,
+  FaClipboardCheck,
+  FaFolderOpen,
+} from "react-icons/fa";
 
-// ✅ IMPORT THE IMAGE HERE
-import ChecklistIllustration from "../../assets/p-2 img.webp";
-
-const documentGroups = [
-  {
-    title: "Identity Proof of Partners",
-    items: [
-      "PAN Card (Indian Nationals) or Passport (Foreign Nationals)",
-      "Aadhaar Card or Voter ID Card",
-      "Passport photograph"
-    ]
-  },
-  {
-    title: "Address Proof of Partners",
-    items: [
-      "Aadhaar Card or Voter ID Card",
-      "Passport or Driving License",
-      "Utility bills (electricity, water, gas bill or telephone bill) not older than 2 months"
-    ]
-  },
-  {
-    title: "Registered Office Proof",
-    items: [
-      "Rent agreement or lease deed (if rented)",
-      "Property receipt or ownership deed (in case of ownership)",
-      "NOC from landlord (in case of rent)"
-    ]
-  },
-  {
-    title: "Partnership Agreement (LLP Agreement)",
-    items: [
-      "Duly drafted LLP agreement defining roles, responsibilities, profit-sharing, and decision-making among partners"
-    ]
-  },
-  {
-    title: "Digital Signature Certificates (DSC)",
-    items: ["DSC of all the partners seeking LLP registration"]
-  },
-  {
-    title: "Consent of Partners",
-    items: ["Consent of every partner to be part of LLP in Form 9"]
-  },
-  {
-    title: "Form for LLP Registration",
-    items: [
-      "Form 2: Incorporation application for LLP including partner details, address & agreement"
-    ]
-  },
-  {
-    title: "Declaration by Designated Partners",
-    items: [
-      "Declaration in Form 1 of LLP for meeting all incorporation requirements"
-    ]
-  },
-  {
-    title: "Other Optional Documents",
-    items: [
-      "Professional qualification proof (if partners are professionals)",
-      "Certificate of incorporation/registration (if partners are corporate entities)"
-    ]
-  }
+const documents = [
+  { no: "1", title: "Identity Proof", icon: <FaIdCard />, gradient: "g1",
+    points: ["PAN Card / Passport", "Aadhaar / Voter ID", "Photograph"] },
+  { no: "2", title: "Address Proof", icon: <FaHome />, gradient: "g2",
+    points: ["Aadhaar / Driving License", "Utility Bill (2 months)"] },
+  { no: "3", title: "Registered Office", icon: <FaBuilding />, gradient: "g3",
+    points: ["Rent / Ownership Deed", "Landlord NOC"] },
+  { no: "4", title: "LLP Agreement", icon: <FaFileContract />, gradient: "g4",
+    points: ["Roles & Responsibilities", "Profit Sharing"] },
+  { no: "5", title: "Digital Signature", icon: <FaSignature />, gradient: "g5",
+    points: ["DSC of all Partners"] },
+  { no: "6", title: "Consent of Partners", icon: <FaUserCheck />, gradient: "g6",
+    points: ["Form 9 Consent"] },
+  { no: "7", title: "LLP Registration Form", icon: <FaWpforms />, gradient: "g7",
+    points: ["Form 2 – Incorporation"] },
+  { no: "8", title: "Declaration", icon: <FaClipboardCheck />, gradient: "g8",
+    points: ["Form 1 Declaration"] },
+  { no: "9", title: "Optional Documents", icon: <FaFolderOpen />, gradient: "g9",
+    points: ["Professional Proof", "Corporate Partner Docs"] },
 ];
 
-const LLPDocumentsGrid = () => {
+const LLPDocuments = () => {
   return (
-    <section className="llp-docs-wrapper">
-      <div className="llp-docs-inner">
+    <section className="infographic-section">
+      <div className="infographic-header">
+        <h2>Documents Required for LLP Registration in India</h2>
+        <p>A visual infographic representation of mandatory LLP documents</p>
+      </div>
 
-        {/* HEADER */}
-        <div className="llp-docs-header">
-          <div className="llp-docs-text">
-            <h1 className="llp-docs-title">
-              Documents Required for LLP Registration in India
-            </h1>
-
-            <p className="llp-docs-intro">
-              In order to register a Limited Liability Partnership (LLP) in India,
-              the following documents are generally required:
-            </p>
-          </div>
-
-          {/* IMAGE IMPORTED PROPERLY */}
-          <div className="llp-docs-illustration">
-            <img src={ChecklistIllustration} alt="LLP Documents Checklist" />
+      <div className="infographic-grid">
+        {/* CENTER HEX HUB */}
+        <div className="hex-hub">
+          <div className="hex-content">
+            <h3>LLP</h3>
+            <span>DOCUMENTS</span>
           </div>
         </div>
 
-        {/* GRID */}
-        <div className="llp-docs-grid">
-          {documentGroups.map((group, index) => (
-            <div key={index} className="llp-doc-card">
-              <div className="llp-doc-card-header">
-                <span className="llp-doc-pill">{index + 1}</span>
-                <h3>{group.title}</h3>
-              </div>
-
-              <ul>
-                {group.items.map((item, idx) => (
-                  <li key={idx}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
+        {/* CARDS */}
+        {documents.map((doc, i) => (
+          <div key={i} className={`info-card ${doc.gradient}`}>
+            <div className="card-icon">{doc.icon}</div>
+            <h4>{doc.title}</h4>
+            <ul>
+              {doc.points.map((p, idx) => (
+                <li key={idx}>{p}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   );
 };
 
-export default LLPDocumentsGrid;
+export default LLPDocuments;

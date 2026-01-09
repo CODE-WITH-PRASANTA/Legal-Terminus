@@ -1,11 +1,12 @@
 import React from "react";
+import { CheckCircle2, FileText, ShieldCheck } from "lucide-react";
 import "./PublicltdOverview.css";
 
 const LLPOverview = () => {
   return (
     <div className="llp-wrapper">
-      {/* PART 1 */}
-      <section className="llp-section">
+      {/* SECTION 1 – CLEAN DESIGN (NO SIDEBAR) */}
+      <section className="llp-section llp-card llp-card-clean">
         <h1 className="llp-title">
           What is Limited Liability Partnership (LLP) Registration
         </h1>
@@ -13,46 +14,77 @@ const LLPOverview = () => {
         <p className="llp-paragraph">
           Limited Liability Partnership (LLP) registration is a popular choice
           for startups and small businesses, blending the features of a
-          partnership and a private company. One key advantage is that LLPs
-          require no minimum capital, making them accessible to new
-          entrepreneurs. The process starts with selecting the availability of
-          an unique business name, which is checked for availability using the
-          RUN-LLP service on the Ministry of Corporate Affairs (MCA) portal.
+          partnership and a private company.
         </p>
+
+        {/* HIGHLIGHT INFO STRIP */}
+        <div className="llp-highlight-box">
+          <CheckCircle2 />
+          <span>
+            LLPs offer flexibility, limited liability protection, and minimal
+            compliance for growing businesses.
+          </span>
+        </div>
+
+        {/* BULLET POINTS */}
+        <ul className="llp-icon-list">
+          <li>
+            <CheckCircle2 />
+            No minimum capital requirement, making it accessible to new
+            entrepreneurs.
+          </li>
+          <li>
+            <CheckCircle2 />
+            Business name availability is checked using the RUN-LLP service on
+            the Ministry of Corporate Affairs (MCA) portal.
+          </li>
+        </ul>
 
         <p className="llp-paragraph">
           To formally register, applicants have to submit a form on the MCA. The
           form provides the proposed name of LLP, the address of its registered
-          office, and details of partners. Every partner should have either a
-          Director Identification Number (DIN) or Designated Partner
-          Identification Number (DPIN), and a Digital Signature Certificate
-          (DSC) to electronically sign documents. Documents necessary are
-          identification and address proof for partners and proof of the
-          registered office address.
+          office, and details of partners.
         </p>
+
+        <ul className="llp-icon-list">
+          <li>
+            <FileText />
+            Every partner must have a DIN or DPIN and a Digital Signature
+            Certificate (DSC).
+          </li>
+          <li>
+            <FileText />
+            Required documents include identity proof, address proof, and
+            registered office proof.
+          </li>
+        </ul>
 
         <p className="llp-paragraph">
           Once the business name is approved, the LLP agreement is prepared to
           establish roles, duties, and profit-sharing percentages between
-          partners. The agreement is a document of internal governance of the
-          LLP. After verification, the MCA delivers a Certificate of
-          Incorporation officially identifying the LLP as an existing legal
-          entity.
+          partners.
         </p>
 
+        <ul className="llp-icon-list">
+          <li>
+            <ShieldCheck />
+            LLP agreement acts as the internal governance document.
+          </li>
+          <li>
+            <ShieldCheck />
+            MCA issues the Certificate of Incorporation after verification.
+          </li>
+        </ul>
+
         <p className="llp-paragraph">
-          After incorporation, the LLP is required to open a bank account in its
-          name and acquire PAN and TAN for tax purposes. Also, businesses can
-          optionally register an MSME to avail government incentives for small
-          businesses. LLPs provide management flexibility, individual assets,
-          and have lesser compliance requirements compared to a private limited
-          company, and hence are a popular choice for small businesses looking
-          for a scalable, low-compliance setup.
+          After incorporation, the LLP must open a bank account, obtain PAN and
+          TAN, and may optionally register as an MSME to access government
+          incentives.
         </p>
       </section>
 
-      {/* PART 2 */}
-      <section className="llp-section">
+      {/* SECTION 2 – SIDEBAR STYLE */}
+      <section className="llp-section llp-card llp-act">
         <h2 className="llp-title">
           Limited Liability Partnership Act, 2008
         </h2>
@@ -67,14 +99,20 @@ const LLPOverview = () => {
           Limited Liability Partnership in Company Law
         </p>
 
-        <p className="llp-paragraph">
-          As per Company Law, Limited Liability Partnerships (LLPs) is an unique
-          entity offering limited liability protection to its partners. LLPs
-          have a separate legal status while maintaining operational flexibility
-          akin to partnerships. This framework under the LLP Act, 2008,
-          facilitates streamlined registration and operational processes for
-          businesses in India.
-        </p>
+        <ul className="llp-icon-list">
+          <li>
+            <CheckCircle2 />
+            LLPs provide limited liability protection to partners.
+          </li>
+          <li>
+            <CheckCircle2 />
+            LLPs have a separate legal identity distinct from partners.
+          </li>
+          <li>
+            <CheckCircle2 />
+            LLP Act, 2008 enables streamlined registration and compliance.
+          </li>
+        </ul>
       </section>
     </div>
   );
