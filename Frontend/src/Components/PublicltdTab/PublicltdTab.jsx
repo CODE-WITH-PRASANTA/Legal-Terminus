@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import "./PublicltdTab.css";
 
 const tabs = [
-  { label: "Why Choose LLP", id: "company" },
+  { label: "Why Choose Public ltd", id: "company" },
   { label: "Features", id: "features" },
   { label: "Benefits", id: "benefits" },
-  { label: "Checklist", id: "checklist" },
   { label: "Documents", id: "documents" },
   { label: "Process", id: "process" },
   { label: "FAQ's", id: "faq" },
