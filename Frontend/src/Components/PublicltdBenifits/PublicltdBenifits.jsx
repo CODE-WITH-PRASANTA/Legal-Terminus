@@ -1,131 +1,68 @@
 import React from "react";
-import {
-  ShieldCheck,
-  Building2,
-  Settings,
-  FileCheck,
-  Percent,
-  RefreshCcw,
-  ArrowLeftRight,
-  BadgeCheck,
-  Landmark,
-  Globe
-} from "lucide-react";
 import "./PublicltdBenifits.css";
 
-const LLPHubInfographic = () => {
-  const leftItems = [
-    {
-      color: "green",
-      icon: <ShieldCheck />,
-      title: "Limited Liability",
-      desc: "LLP registration provides partners with limited liability of the partners, protecting personal assets from business debts and liabilities."
-    },
-    {
-      color: "blue",
-      icon: <Settings />,
-      title: "Flexible Management Structure",
-      desc: "LLPs allow the terms of management and operations to be structured according to the LLP agreement, giving partners freedom to determine roles and decision-making."
-    },
-    {
-      color: "purple",
-      icon: <Percent />,
-      title: "Tax Efficiency",
-      desc: "LLPs are taxed as partnerships, and profits are shared with partners at their respective tax slabs, preventing double taxation."
-    },
-    {
-      color: "orange",
-      icon: <ArrowLeftRight />,
-      title: "Easy Transferability of Ownership",
-      desc: "Ownership changes are easy as per the LLP agreement, allowing investment transfer without affecting operations."
-    },
-    {
-      color: "teal",
-      icon: <Landmark />,
-      title: "Access to Funding",
-      desc: "LLPs enjoy enhanced access to bank loans, venture capital, and government schemes for business growth."
-    }
-  ];
-
-  const rightItems = [
-    {
-      color: "indigo",
-      icon: <Building2 />,
-      title: "Separate Legal Entity",
-      desc: "LLP has a separate legal entity, which enables it to enter contracts, own assets, and sue or be sued in its own name independently of its partners."
-    },
-    {
-      color: "pink",
-      icon: <FileCheck />,
-      title: "Minimum Compliance Burden",
-      desc: "LLPs have less compliance compared to companies, minimising administrative costs and burdens. They are exempt from AGMs and have fewer audit requirements."
-    },
-    {
-      color: "yellow",
-      icon: <RefreshCcw />,
-      title: "Perpetual Succession",
-      desc: "LLPs remain in existence even if partners change due to retirement, resignation, or death."
-    },
-    {
-      color: "emerald",
-      icon: <BadgeCheck />,
-      title: "Credibility and Trust",
-      desc: "LLP registration increases trust with clients, suppliers, and investors due to its legal status and liability protection."
-    },
-    {
-      color: "cyan",
-      icon: <Globe />,
-      title: "Global Recognition",
-      desc: "LLPs are globally recognised, helping businesses expand internationally under bilateral and multilateral agreements."
-    }
-  ];
-
+const RequirementsPvt = () => {
   return (
-    <section className="llp-hub-wrapper">
-      <div className="llp-hub-header">
-        <h2>What are the Benefits of Registering my LLP</h2>
-        <p>
-          Advantages of LLP registration are limited liability protection,
-          flexibility in management, tax benefits, and the ease of meeting
-          regulatory requirements. Some of the advantages are:
-        </p>
-      </div>
+    <section className="req-section">
+      <div className="req-container">
+        {/* Heading + intro */}
+        <header className="req-header">
+          <h2 className="req-title">
+            Benefits of Public Limited Company Registration in India
+          </h2>
+          <p className="req-subtitle">
+            The Ministry of Corporate Affairs (MCA) manages the company registration process in India. It includes registering the business with the Registrar of Companies (RoC) and obtaining a Digital Signature Certificate (DSC) and Director Identification Number (DIN).
 
-      <div className="llp-hub-layout">
-        {/* LEFT COLUMN */}
-        <div className="llp-hub-column left">
-          {leftItems.map((item, index) => (
-            <div className={`llp-hub-card ${item.color}`} key={index}>
-              <span className="llp-hub-line"></span>
-              <div className="llp-hub-icon">{item.icon}</div>
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
-            </div>
-          ))}
-        </div>
 
-        {/* CENTER HUB */}
-        <div className="llp-hub-center">
-          <div className="llp-hub-circle">
-            <span>LLP</span>
-            <small>Benefits</small>
-          </div>
-        </div>
+          </p>
+        </header>
 
-        {/* RIGHT COLUMN */}
-        <div className="llp-hub-column right">
-          {rightItems.map((item, index) => (
-            <div className={`llp-hub-card ${item.color}`} key={index}>
-              <span className="llp-hub-line"></span>
-              <div className="llp-hub-icon">{item.icon}</div>
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
-            </div>
-          ))}
+        {/* Cards */}
+        <div className="req-grid">
+          {/* 1 */}
+          <article className="req-card">
+            <h3 className="req-card-title">Separate Legal Identity</h3>
+            <div className="req-card-underline" />
+            <p className="req-card-text">
+Once registered, a company becomes its own legal entity. It can own property, sign contracts, and operate separately from its owners.
+
+            </p>
+          </article>
+
+          {/* 2 */}
+          <article className="req-card">
+            <h3 className="req-card-title">Limited Liability Protection</h3>
+            <div className="req-card-underline" />
+            <p className="req-card-text">
+              The personal assets of shareholders are safe from company debts and risks, ensuring financial protection.
+            </p>
+          </article>
+
+          {/* 3 */}
+          <article className="req-card">
+            <h3 className="req-card-title">
+              Access to Government Schemes
+            </h3>
+            <div className="req-card-underline" />
+            <p className="req-card-text">
+              Registered companies can benefit from government schemes like Startup India for tax benefits and easier compliance, and Make in India for incentives and support for manufacturing businesses.
+            </p>
+          </article>
+
+          {/* 4 */}
+          <article className="req-card">
+            <h3 className="req-card-title">
+              Increased Credibility
+            </h3>
+            <div className="req-card-underline" />
+            <p className="req-card-text">
+              A registered company is more trusted by investors, clients, and vendors, making it easier to get funding and partnerships.
+            </p>
+          </article>
         </div>
       </div>
     </section>
   );
 };
 
-export default LLPHubInfographic;
+export default RequirementsPvt;

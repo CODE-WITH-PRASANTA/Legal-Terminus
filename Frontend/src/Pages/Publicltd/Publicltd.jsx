@@ -1,6 +1,8 @@
 import React from 'react'
 import PublicBreadcrum from '../../Components/PublicBreadcrum/PublicBreadcrum'
 import PublicltdRightPlan from '../../Components/PublicltdRightPlan/PublicltdRightPlan'
+import PublicltdTermsCondition from '../../Components/PublicltdTermsCondition/PublicltdTermsCondition'
+import PublicltdZolvitPremium from '../../Components/PublicltdZolvitPremium/PublicltdZolvitPremium'
 import PublicltdTab from '../../Components/PublicltdTab/PublicltdTab'
 import PublicltdOverview from '../../Components/PublicltdOverview/PublicltdOverview'
 import PublicltdFeatures from '../../Components/PublicltdFeatures/PublicltdFeatures'
@@ -18,15 +20,40 @@ const Publicltd = () => {
     <div>
       <PublicBreadcrum />
       <PublicltdRightPlan />
+      <PublicltdTermsCondition />
+      <PublicltdZolvitPremium />
       <PublicltdTab />
-      <PublicltdOverview />
-      <PublicltdFeatures />
-      <PublicltdBenifits />
-      <PublicltdChecklist />
-      <PublicltdDocument />
-      <PublicltdProcess />
+
+      <div id="company">
+        < PublicltdOverview/>
+      </div>
+      
+      <div id="features">
+        <PublicltdFeatures/>
+      </div>
+
+      <div id="benefits">
+        <PublicltdBenifits/>
+      </div>
+
+      <div id="checklist">
+        <PublicltdChecklist/>
+      </div>
+      
+      <div id="documents">
+        <PublicltdDocument/>
+      </div>
+
+      <div id="process">
+        <PublicltdProcess />
+      </div>
+
       <PublicltdWhy />
-      <PublicltdFAQ />
+
+      <div id="faq">
+        <PublicltdFAQ />
+      </div>
+      
 
 
     </div>
