@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import {
   FiHome,
-  FiUsers,
-  FiLayers,
-  FiBarChart2,
-  FiGrid,
-  FiCode,
-  FiFileText,
+  FiFile,
+  FiMessageSquare,
+  FiCheckSquare,
+  FiRefreshCcw,
+  FiPlus,
 } from "react-icons/fi";
-import { HiOutlineUserGroup } from "react-icons/hi";
 import { LuLogOut } from "react-icons/lu";
 
 type Props = {
@@ -18,11 +16,10 @@ type Props = {
   mobileMenuOpen: boolean;
 };
 
-const IconSidebar: React.FC<Props> = ({ 
-  onIconClick, 
-  sidebarOpen, 
+const IconSidebar: React.FC<Props> = ({
+  onIconClick,
   isMobile,
-  mobileMenuOpen 
+  mobileMenuOpen,
 }) => {
   const [active, setActive] = useState("dashboard");
 
@@ -32,32 +29,35 @@ const IconSidebar: React.FC<Props> = ({
   };
 
   return (
-    <aside className={`
-      fixed top-0 h-screen
-      bg-white/80 backdrop-blur-xl
-      border-r border-gray-200
-      flex flex-col items-center
-      py-6
-      z-50
-      shadow-sm
-      transition-transform duration-300
-      ${isMobile 
-        ? `w-24 transform ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`
-        : 'left-0 w-24'
-      }
-    `}>
+    <aside
+      className={`
+        fixed top-0 h-screen
+        bg-white/80 backdrop-blur-xl
+        border-r border-gray-200
+        flex flex-col items-center
+        py-6
+        z-50 shadow-sm
+        transition-transform duration-300
+        ${
+          isMobile
+            ? `w-24 transform ${
+                mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+              }`
+            : "left-0 w-24"
+        }
+      `}
+    >
       {/* ================= LOGO ================= */}
       <div className="
         w-12 h-12 rounded-2xl
         bg-gradient-to-br from-indigo-500 to-purple-600
         text-white flex items-center justify-center
-        mb-10
-        shadow-lg shadow-indigo-500/30
+        mb-10 shadow-lg
       ">
-        <FiGrid size={20} />
+        <FiHome size={20} />
       </div>
 
-      {/* ================= MENU ================= */}
+      {/* ================= TOP MENU ================= */}
       <nav className="flex flex-col gap-3 items-center">
         <SidebarIcon
           icon={<FiHome size={18} />}
@@ -66,64 +66,54 @@ const IconSidebar: React.FC<Props> = ({
         />
 
         <SidebarIcon
-          icon={<FiLayers size={18} />}
-          active={active === "stack"}
-          onClick={() => handleClick("stack")}
+          icon={<FiFile size={18} />}
+          active={active === "pages"}
+          onClick={() => handleClick("pages")}
         />
 
         <SidebarIcon
-          icon={<FiGrid size={18} />}
-          active={active === "modules"}
-          onClick={() => handleClick("modules")}
+          icon={<FiMessageSquare size={18} />}
+          active={active === "messages"}
+          onClick={() => handleClick("messages")}
         />
+      </nav>
 
-        <Divider />
+      <Divider />
 
+      {/* ================= MIDDLE MENU ================= */}
+      <nav className="flex flex-col gap-3 items-center">
         <SidebarIcon
-          icon={<HiOutlineUserGroup size={18} />}
-          active={active === "team"}
-          onClick={() => handleClick("team")}
-        />
-
-        <SidebarIcon
-          icon={<FiUsers size={18} />}
-          active={active === "users"}
-          onClick={() => handleClick("users")}
-        />
-
-        <Divider />
-
-        <SidebarIcon
-          icon={<FiCode size={18} />}
-          active={active === "code"}
-          onClick={() => handleClick("code")}
+          icon={<FiCheckSquare size={18} />}
+          active={active === "tasks"}
+          onClick={() => handleClick("tasks")}
         />
 
         <SidebarIcon
-          icon={<FiFileText size={18} />}
-          active={active === "docs"}
-          onClick={() => handleClick("docs")}
-        />
-
-        <SidebarIcon
-          icon={<FiBarChart2 size={18} />}
-          active={active === "reports"}
-          onClick={() => handleClick("reports")}
+          icon={<FiRefreshCcw size={18} />}
+          active={active === "updates"}
+          onClick={() => handleClick("updates")}
         />
       </nav>
 
       {/* ================= BOTTOM ACTIONS ================= */}
       <div className="mt-auto flex flex-col gap-4 items-center">
-        {/* SIGN OUT */}
-        <button className="
-          w-12 h-12 rounded-2xl
-          flex items-center justify-center
-          text-gray-400
-          hover:bg-red-50
-          hover:text-red-600
-          hover:scale-105
-          transition-all
-        ">
+        <SidebarIcon
+          icon={<FiPlus size={20} />}
+          active={active === "add"}
+          onClick={() => handleClick("add")}
+        />
+
+        <button
+          className="
+            w-12 h-12 rounded-2xl
+            flex items-center justify-center
+            text-gray-400
+            hover:bg-red-50
+            hover:text-red-600
+            hover:scale-105
+            transition-all
+          "
+        >
           <LuLogOut size={20} />
         </button>
       </div>
@@ -152,14 +142,12 @@ const SidebarIcon = ({
       transition-all duration-300
       ${
         active
-          ? "bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-lg shadow-indigo-500/30 scale-105"
+          ? "bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-lg scale-105"
           : "text-gray-500 hover:bg-gray-100 hover:text-indigo-600 hover:scale-105"
       }
     `}
   >
     {icon}
-
-    {/* Active Glow */}
     {active && (
       <span className="absolute inset-0 rounded-2xl blur-md bg-indigo-500 opacity-30 -z-10"></span>
     )}
@@ -167,5 +155,5 @@ const SidebarIcon = ({
 );
 
 const Divider = () => (
-  <div className="w-8 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent my-2"></div>
+  <div className="w-8 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent my-4"></div>
 );
