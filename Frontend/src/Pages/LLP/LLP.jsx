@@ -1,33 +1,66 @@
 import React from 'react'
+import PvtltdPlanandPricing from '../../Components/PvtltdPlanandPricing/PvtltdPlanandPricing'
+import PvtltdZolvitPremium from '../../Components/PvtltdZolvitPremium/PvtltdZolvitPremium'
+import PvtltdTabs from '../../Components/PvtltdTabs/PvtltdTabs'
+import PvtltdCompanyTab from '../../Components/PvtltdCompanyTab/PvtltdCompanyTab'
+import PvtltdPvtTypes from '../../Components/PvtltdPvtTypes/PvtltdPvtTypes'
+import PvtltdRequirementsTab from '../../Components/PvtltdRequirementsTab/PvtltdRequirementsTab'
+import PvtltdProcess from '../../Components/PvtltdProcess/PvtltdProcess'
+import PvtltdDocument from '../../Components/PvtltdDocument/PvtltdDocument'
+import PvtltdFAQ from '../../Components/PvtltdFAQ/PvtltdFAQ'
+import PvtltdTermsCondition from '../../Components/PvtltdTermsCondition/PvtltdTermsCondition'
+import PvtltdTestimonial from '../../Components/PvtltdTestimonial/PvtltdTestimonial'
+import PvtltdVideoTestimonial from '../../Components/PvtltdVideoTestimonial/PvtltdVideoTestimonial'
+import PvtltdOurclints from '../../Components/PvtltdOurclints/PvtltdOurclints'
 import LLPBreadcrum from '../../Components/LLPBreadcrum/LLPBreadcrum'
-import LLPPlans from '../../Components/LLPPlans/LLPPlans'
-import LLPTabs from '../../Components/LLPTTabs/LLPTabs'
-import LLPOverview from '../../Components/LLPOverview/LLPOverview'
-import LLPFeatures from '../../Components/LLPFeatures/LLPFeatures'
-import LLPBenefits from '../../Components/LLPBenefits/LLPBenefits'
-import LLPChecklist from '../../Components/LLPChecklist/LLPChecklist'
-import LLPDocuments from '../../Components/LLPDocuments/LLPDocuments'
-import LLPProcess from '../../Components/LLPProcess/LLPProcess'
-import LLPWhy from '../../Components/LLPWhy/LLPWhy'
-import LLPFAQ from '../../Components/LLPFAQ/LLPFAQ'
-
 
 const LLP = () => {
   return (
     <div>
       <LLPBreadcrum />
-      <LLPPlans />
-      <LLPTabs />
-      <LLPOverview />
-      <LLPFeatures />
-      <LLPBenefits />
-      <LLPChecklist />
-      <LLPDocuments />
-      <LLPProcess />
-      <LLPWhy />
-      <LLPFAQ />
+
+      <div id="plans">
+        <PvtltdPlanandPricing />
+      </div>
+
+      <PvtltdTermsCondition />
+
+
+      <div id="premium">
+        <PvtltdZolvitPremium />
+      </div>
+
+      <PvtltdTabs />
+
+      <div id="company">
+        <PvtltdCompanyTab />
+      </div>
+
+      <div id="types">
+        <PvtltdPvtTypes />
+      </div>
+
+      <div id="requirements">
+        <PvtltdRequirementsTab />
+      </div>
+
+      <div id="process">
+        <PvtltdProcess />
+      </div>
+
+      <div id="documents">
+        <PvtltdDocument />
+      </div>
+
+      <div id="faq">
+        <PvtltdFAQ />
+      </div>
+
+      <PvtltdTestimonial />
+      <PvtltdVideoTestimonial />
+      <PvtltdOurclints />
     </div>
-  )
-}
+  );
+};
 
 export default LLP
