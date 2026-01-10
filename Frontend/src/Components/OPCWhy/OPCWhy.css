@@ -1,92 +1,217 @@
-.opc-help-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 64px 20px;
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
-  color: #1f2937;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+.opcwhy-section {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #ffffff;
+    padding: 64px 20px 72px;
 }
 
-.opc-help-header {
-  max-width: 900px;
-  margin-bottom: 48px;
+.opcwhy-container {
+    max-width: 1180px;
+    margin: 0 auto;
 }
 
-.opc-help-header h2 {
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  font-weight: 700;
-  line-height: 1.25;
-  margin-bottom: 16px;
+
+/* Heading / intro */
+
+.opcwhy-heading {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin: 0 0 10px;
+    color: #111827;
 }
 
-.opc-help-header p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #6b7280;
+.opcwhy-subtitle {
+    text-align: center;
+    font-size: 15px;
+    color: #4b5563;
+    margin: 0 0 36px;
 }
 
-/* ===== Grid ===== */
-.opc-help-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
+
+/* Slider wrapper */
+
+.opcwhy-slider-wrapper {
+    position: relative;
+    padding: 0 52px;
+    /* space for arrows */
 }
 
-/* ===== Cards ===== */
-.opc-help-card {
-  position: relative;
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 28px 26px 30px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+/* Horizontal slider */
+
+.opcwhy-slider {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 8px;
 }
 
-.opc-help-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+.opcwhy-slider::-webkit-scrollbar {
+    display: none;
 }
 
-/* ===== Badge ===== */
-.opc-help-badge {
-  position: absolute;
-  top: -14px;
-  right: 18px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #eb9525, #1e40af);
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 18px rgba(235, 153, 37, 0.35);
+.opcwhy-slider {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-/* ===== Text ===== */
-.opc-help-card h3 {
-  margin: 0 0 12px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #111827;
+
+/* Card */
+
+.opcwhy-card {
+    min-width: 320px;
+    max-width: 320px;
+    flex-shrink: 0;
+    background: #fbfbfb;
+    border-radius: 18px;
+    border: 2px solid #1aa91a;
+    padding: 20px 18px 24px;
+    text-align: center;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
 }
 
-.opc-help-card p {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: #4b5563;
+
+/* Video wrapper */
+
+.opcwhy-video-wrap {
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+    margin-bottom: 16px;
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.2);
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 600px) {
-  .opc-help-section {
-    padding: 48px 16px;
-  }
 
-  .opc-help-card {
-    padding: 22px;
-  }
+/* Aspect ratio box */
+
+.opcwhy-video-aspect {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+.opcwhy-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* Name + role */
+
+.opcwhy-name {
+    margin: 6px 0 4px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1aa91a;
+}
+
+.opcwhy-role {
+    margin: 0;
+    font-size: 14px;
+    color: #111827;
+}
+
+
+/* Arrows */
+
+.opcwhy-side-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #1aa91a;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+    z-index: 10;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.opcwhy-side-arrow:hover {
+    background: #128a15;
+    transform: translateY(-50%) scale(1.06);
+}
+
+.opcwhy-left {
+    left: 10px;
+}
+
+.opcwhy-right {
+    right: 10px;
+}
+
+
+/* -----------------------
+   Responsive
+------------------------ */
+
+@media (max-width: 1024px) {
+    .opcwhy-heading {
+        font-size: 28px;
+    }
+    .opcwhy-slider-wrapper {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .opcwhy-section {
+        padding: 52px 16px 60px;
+    }
+    .opcwhy-heading {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+    .opcwhy-subtitle {
+        font-size: 14px;
+        margin-bottom: 26px;
+    }
+    .opcwhy-card {
+        min-width: 280px;
+        max-width: 280px;
+        padding: 18px 16px 22px;
+    }
+    .opcwhy-slider-wrapper {
+        padding: 0 32px;
+    }
+    .opcwhy-side-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 520px) {
+    .opcwhy-section {
+        padding: 44px 10px 52px;
+    }
+    .opcwhy-heading {
+        font-size: 22px;
+    }
+    .opcwhy-slider-wrapper {
+        padding: 0 24px;
+    }
+    .opcwhy-card {
+        min-width: 250px;
+        max-width: 250px;
+    }
+    .opcwhy-left {
+        left: 4px;
+    }
+    .opcwhy-right {
+        right: 4px;
+    }
 }

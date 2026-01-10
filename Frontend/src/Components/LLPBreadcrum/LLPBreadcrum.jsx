@@ -1,7 +1,7 @@
 import React from "react";
 import "./LLPBreadcrum.css";
 
-const Breadcrum = () => {
+const LLPBreadcrum = () => {
   return (
     <section className="lt-public-hero">
       <div className="lt-public-container">
@@ -10,16 +10,20 @@ const Breadcrum = () => {
         <div className="lt-public-content">
 
           <span className="lt-public-tag">
-            LLP  Registration
+           Limited Liability Partnership
           </span>
 
           <h1 className="lt-public-title">
-            LLP  Registration
+            Limited Liability Partnership
             <span> in India</span>
           </h1>
 
           <p className="lt-public-description">
-            Legal Terminus can help you with Public Limited Company registration in a smooth and hassle-free manner. We offer competitive professional fees starting at Rs. 3,999/- for Public Limited Company registration in India.
+            A Limited Liability Partnership is a popular and trusted business structure in India, especially for startups and growing businesses. It helps protect personal assets, builds business credibility, and makes it easier to raise funds.
+
+<br/><br/>
+Legal Terminus can help you with Private Limited Company registration in a hassle-free way, whenever you need it. We take care of the complete process—from paperwork to approvals—within a reasonable time. Our professional fees start at ₹3,999, making company registration simple, affordable, and stress-free.
+
           </p>
 
           <div className="lt-public-features">
@@ -31,15 +35,15 @@ const Breadcrum = () => {
 
           <div className="lt-public-highlights">
             <div>
-              <h3>12,000+</h3>
+              <h3>1,000+</h3>
               <p>Companies Registered</p>
             </div>
             <div>
-              <h3>99%</h3>
-              <p>Approval Success Rate</p>
+              <h3>100%</h3>
+              <p>Online Process</p>
             </div>
             <div>
-              <h3>15+</h3>
+              <h3>5+</h3>
               <p>Years of Legal Expertise</p>
             </div>
           </div>
@@ -55,7 +59,7 @@ const Breadcrum = () => {
             </h3>
 
             <p className="lt-form-subtitle">
-              Talk to our Private Limited Company registration expert
+              Talk to our Limited Liability Company (LLC) registration expert
             </p>
 
             <form
@@ -110,4 +114,4 @@ const Breadcrum = () => {
   );
 };
 
-export default Breadcrum;
+export default LLPBreadcrum;

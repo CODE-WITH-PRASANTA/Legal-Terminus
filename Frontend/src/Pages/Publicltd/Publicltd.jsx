@@ -1,8 +1,11 @@
 import React from 'react'
 import PublicBreadcrum from '../../Components/PublicBreadcrum/PublicBreadcrum'
+<<<<<<< HEAD
 import PublicltdRightPlan from '../../Components/PublicltdRightPlan/PublicltdRightPlan'
 import PublicltdTermsCondition from '../../Components/PublicltdTermsCondition/PublicltdTermsCondition'
 import PublicltdZolvitPremium from '../../Components/PublicltdZolvitPremium/PublicltdZolvitPremium'
+=======
+>>>>>>> 2f9700b91bdacc044fb86572086791ff965516ca
 import PublicltdTab from '../../Components/PublicltdTab/PublicltdTab'
 import PublicltdOverview from '../../Components/PublicltdOverview/PublicltdOverview'
 import PublicltdFeatures from '../../Components/PublicltdFeatures/PublicltdFeatures'
@@ -19,9 +22,12 @@ const Publicltd = () => {
   return (
     <div>
       <PublicBreadcrum />
+<<<<<<< HEAD
       <PublicltdRightPlan />
       <PublicltdTermsCondition />
       <PublicltdZolvitPremium />
+=======
+>>>>>>> 2f9700b91bdacc044fb86572086791ff965516ca
       <PublicltdTab />
 
       <div id="company">
