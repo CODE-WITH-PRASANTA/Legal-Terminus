@@ -1,31 +1,38 @@
 import React from 'react'
-import LLPBreadcrum from '../../Components/LLPBreadcrum/LLPBreadcrum'
-import LLPPlans from '../../Components/LLPPlans/LLPPlans'
-import LLPTabs from '../../Components/LLPTTabs/LLPTabs'
-import LLPOverview from '../../Components/LLPOverview/LLPOverview'
-import LLPFeatures from '../../Components/LLPFeatures/LLPFeatures'
-import LLPBenefits from '../../Components/LLPBenefits/LLPBenefits'
-import LLPChecklist from '../../Components/LLPChecklist/LLPChecklist'
-import LLPDocuments from '../../Components/LLPDocuments/LLPDocuments'
+import LLPBreadcrum from '../../Components/LLPBreadcrum/LLPBreadcrum.jsx'
+import LLPPlanandPrice from '../../Components/LLPPlanandPrice/LLPPlanandPrice'
+import LLPTermandCondn from '../../Components/LLPTermandCondn/LLPTermandCondn'
+import LLPZolvitPremium from '../../Components/LLPZolvitPremium/LLPZolvitPremium'
+import LLPTabs from '../../Components/LLPTabs/LLPTabs'
+import LLPCompanyTab from '../../Components/LLPCompanyTab/LLPCompanyTab'
+import LLPTypes from '../../Components/LLPTypes/LLPTypes'
+import LLPRequirementsTab from '../../Components/LLPRequirementsTab/LLPRequirementsTab'
 import LLPProcess from '../../Components/LLPProcess/LLPProcess'
-import LLPWhy from '../../Components/LLPWhy/LLPWhy'
+import LLPDocInfographic from '../../Components/LLPDocInfographic/LLPDocInfographic'
 import LLPFAQ from '../../Components/LLPFAQ/LLPFAQ'
+import LLPTestimonial from '../../Components/LLPTestimonial/LLPTestimonial'
+import LLPVideoTestimonial from '../../Components/LLPVideoTestimonial/LLPVideoTestimonial'
+import LLPOurClients from '../../Components/LLPOurClients/LLPOurClients'
 
 
-const LLP = () => {
+
+function LLP() {
   return (
     <div>
       <LLPBreadcrum />
-      <LLPPlans />
+      <LLPPlanandPrice />
+      <LLPTermandCondn />
+      <LLPZolvitPremium />
       <LLPTabs />
-      <LLPOverview />
-      <LLPFeatures />
-      <LLPBenefits />
-      <LLPChecklist />
-      <LLPDocuments />
+      <LLPCompanyTab />
+      <LLPTypes />
+      <LLPRequirementsTab />
       <LLPProcess />
-      <LLPWhy />
+      <LLPDocInfographic/>
       <LLPFAQ />
+      <LLPTestimonial />
+      <LLPVideoTestimonial />
+      <LLPOurClients />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import "./LLPProcess.css";
+import "./PFRprocess.css";
 
 const steps = [
   {
@@ -41,28 +41,28 @@ const steps = [
 
 const GSTProcess = () => {
   return (
-    <section className="llp-gst-wrapper">
+    <section className="pvtltd-gst-wrapper">
       <h2 className="gst-heading">
-        STEPS FOR LIMITED LIABILITY PARTNERSHIP REGISTRATION IN INDIA
+        STEPS FOR PRIVATE LIMITED COMPANY REGISTRATION IN INDIA
       </h2>
       <p className="pv-gst-subheading">
-        The broad process of registering a Limited Liability involves
+        The broad process of registering a Private Limited company involves
         the following steps:
       </p>
 
-      <div className="llp-timeline">
-        <div className="llp-timeline-line" />
+      <div className="pvtltd-timeline">
+        <div className="pvtltd-timeline-line" />
 
         {steps.map((step, index) => (
           <div
             key={index}
-            className={`llp-timeline-item ${
+            className={`pvtltd-timeline-item ${
               index % 2 === 0 ? "left" : "right"
             }`}
           >
-            <div className="llp-timeline-dot">{index + 1}</div>
+            <div className="pvtltd-timeline-dot">{index + 1}</div>
 
-            <div className="llp-timeline-card">
+            <div className="pvtltd-timeline-card">
               <h4>{step.title}</h4>
               <p>{step.text}</p>
             </div>
