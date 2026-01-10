@@ -1,7 +1,7 @@
 import React from "react";
-import "./LLPBreadcrum.css";
+import "./ProprietorshipBreadcrumb.css";
 
-const LLPBreadcrum = () => {
+const Breadcrum = () => {
   return (
     <section className="lt-public-hero">
       <div className="lt-public-container">
@@ -10,16 +10,16 @@ const LLPBreadcrum = () => {
         <div className="lt-public-content">
 
           <span className="lt-public-tag">
-           Limited Liability Partnership
+            Private Limited Company Registration
           </span>
 
           <h1 className="lt-public-title">
-            Limited Liability Partnership
+            Private Limited Company Registration
             <span> in India</span>
           </h1>
 
           <p className="lt-public-description">
-            A Limited Liability Partnership is a popular and trusted business structure in India, especially for startups and growing businesses. It helps protect personal assets, builds business credibility, and makes it easier to raise funds.
+            A Private Limited Company is a popular and trusted business structure in India, especially for startups and growing businesses. It helps protect personal assets, builds business credibility, and makes it easier to raise funds.
 
 <br/><br/>
 Legal Terminus can help you with Private Limited Company registration in a hassle-free way, whenever you need it. We take care of the complete process—from paperwork to approvals—within a reasonable time. Our professional fees start at ₹3,999, making company registration simple, affordable, and stress-free.
@@ -59,7 +59,7 @@ Legal Terminus can help you with Private Limited Company registration in a hassl
             </h3>
 
             <p className="lt-form-subtitle">
-              Talk to our Limited Liability Company (LLC) registration expert
+              Talk to our Private Limited Company registration expert
             </p>
 
             <form
@@ -114,4 +114,4 @@ Legal Terminus can help you with Private Limited Company registration in a hassl
   );
 };
 
-export default LLPBreadcrum;
+export default Breadcrum;

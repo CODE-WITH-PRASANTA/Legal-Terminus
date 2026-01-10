@@ -24,6 +24,7 @@ import UdyamReg from './Pages/UdyamReg/UdyamReg';
 import ESICReg from './Pages/ESICReg/ESICReg';
 import ProfessionalReg from './Pages/ProfessionalReg/ProfessionalReg';
 import ShopReg from './Pages/ShopReg/ShopReg';
+import Proprietorship from './Pages/Proprietorship/Proprietorship';
 import Parternership from "./Pages/Parternership/Parternership";
 
 import RouteLoaderWrapper from "./Components/PageLoader/RouteLoaderWrapper";
@@ -42,6 +43,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/details" element={<BlogDetails />} />
           <Route path="/one-person-company" element={<OPC />} />
+        
 
           {/* Sub Pages */}
           <Route
@@ -67,6 +69,8 @@ function App() {
           <Route path="/esic" element={<ESICReg />}/>
           <Route path="/professional-tax" element={<ProfessionalReg />}/>
           <Route path="/shop-establishment" element={<ShopReg />}/>
+          <Route path="/proprietorship" element={<Proprietorship/>}/>
+        
           <Route path="/partnership" element={<Parternership/>} />
           
         </Routes>
