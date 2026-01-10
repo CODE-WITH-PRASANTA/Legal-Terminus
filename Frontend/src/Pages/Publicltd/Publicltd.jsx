@@ -1,6 +1,5 @@
 import React from 'react'
 import PublicBreadcrum from '../../Components/PublicBreadcrum/PublicBreadcrum'
-import PublicltdRightPlan from '../../Components/PublicltdRightPlan/PublicltdRightPlan'
 import PublicltdTab from '../../Components/PublicltdTab/PublicltdTab'
 import PublicltdOverview from '../../Components/PublicltdOverview/PublicltdOverview'
 import PublicltdFeatures from '../../Components/PublicltdFeatures/PublicltdFeatures'
@@ -17,7 +16,6 @@ const Publicltd = () => {
   return (
     <div>
       <PublicBreadcrum />
-      <PublicltdRightPlan />
       <PublicltdTab />
       <PublicltdOverview />
       <PublicltdFeatures />

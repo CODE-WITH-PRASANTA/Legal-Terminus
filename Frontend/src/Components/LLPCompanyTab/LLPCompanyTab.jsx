@@ -2,7 +2,7 @@ import React from "react";
 import "./LlpCompanyTab.css";
 
 // Replace with your actual illustration
-import pvtIllustration from "../../assets/whypvt.svg";
+import pvtIllustration from "../../assets/whypvt-imp.svg";
 
 const LlpFull = () => {
   return (

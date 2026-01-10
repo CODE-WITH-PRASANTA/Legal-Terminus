@@ -59,7 +59,7 @@ Legal Terminus can help you with Private Limited Company registration in a hassl
             </h3>
 
             <p className="lt-form-subtitle">
-              Talk to our Private Limited Company registration expert
+              Talk to our Limited Liability Company (LLC) registration expert
             </p>
 
             <form
