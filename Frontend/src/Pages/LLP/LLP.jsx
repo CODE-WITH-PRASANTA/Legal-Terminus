@@ -1,66 +1,79 @@
-import React from 'react'
-import PvtltdPlanandPricing from '../../Components/PvtltdPlanandPricing/PvtltdPlanandPricing'
-import PvtltdZolvitPremium from '../../Components/PvtltdZolvitPremium/PvtltdZolvitPremium'
-import PvtltdTabs from '../../Components/PvtltdTabs/PvtltdTabs'
-import PvtltdCompanyTab from '../../Components/PvtltdCompanyTab/PvtltdCompanyTab'
-import PvtltdPvtTypes from '../../Components/PvtltdPvtTypes/PvtltdPvtTypes'
-import PvtltdRequirementsTab from '../../Components/PvtltdRequirementsTab/PvtltdRequirementsTab'
-import PvtltdProcess from '../../Components/PvtltdProcess/PvtltdProcess'
-import PvtltdDocument from '../../Components/PvtltdDocument/PvtltdDocument'
-import PvtltdFAQ from '../../Components/PvtltdFAQ/PvtltdFAQ'
-import PvtltdTermsCondition from '../../Components/PvtltdTermsCondition/PvtltdTermsCondition'
-import PvtltdTestimonial from '../../Components/PvtltdTestimonial/PvtltdTestimonial'
-import PvtltdVideoTestimonial from '../../Components/PvtltdVideoTestimonial/PvtltdVideoTestimonial'
-import PvtltdOurclints from '../../Components/PvtltdOurclints/PvtltdOurclints'
-import LLPBreadcrum from '../../Components/LLPBreadcrum/LLPBreadcrum'
+import React from "react";
+import LLPBreadcrum from "../../Components/LLPBreadcrum/LLPBreadcrum.jsx";
+import LLPPlanandPrice from "../../Components/LLPPlanandPrice/LLPPlanandPrice";
+import LLPTermandCondn from "../../Components/LLPTermandCondn/LLPTermandCondn";
+import LLPZolvitPremium from "../../Components/LLPZolvitPremium/LLPZolvitPremium";
+import LLPTabs from "../../Components/LLPTabs/LLPTabs";
+import LLPCompanyTab from "../../Components/LLPCompanyTab/LLPCompanyTab";
+import LLPTypes from "../../Components/LLPTypes/LLPTypes";
+import LLPRequirementsTab from "../../Components/LLPRequirementsTab/LLPRequirementsTab";
+import LLPProcess from "../../Components/LLPProcess/LLPProcess";
+import LLPDocInfographic from "../../Components/LLPDocInfographic/LLPDocInfographic";
+import LLPFAQ from "../../Components/LLPFAQ/LLPFAQ";
+import LLPTestimonial from "../../Components/LLPTestimonial/LLPTestimonial";
+import LLPVideoTestimonial from "../../Components/LLPVideoTestimonial/LLPVideoTestimonial";
+import LLPOurClients from "../../Components/LLPOurClients/LLPOurClients";
 
-const LLP = () => {
+function LLP() {
   return (
     <div>
+      {/* Breadcrumb */}
       <LLPBreadcrum />
 
+      {/* Plans */}
       <div id="plans">
-        <PvtltdPlanandPricing />
+        <LLPPlanandPrice />
       </div>
 
-      <PvtltdTermsCondition />
+      {/* Terms & Conditions */}
+      <LLPTermandCondn />
 
-
+      {/* Premium */}
       <div id="premium">
-        <PvtltdZolvitPremium />
+        <LLPZolvitPremium />
       </div>
 
-      <PvtltdTabs />
+      {/* Tabs */}
+      <LLPTabs />
 
+      {/* Company */}
       <div id="company">
-        <PvtltdCompanyTab />
+        <LLPCompanyTab />
       </div>
 
+      {/* Types */}
       <div id="types">
-        <PvtltdPvtTypes />
+        <LLPTypes />
       </div>
 
+      {/* Requirements */}
       <div id="requirements">
-        <PvtltdRequirementsTab />
+        <LLPRequirementsTab />
       </div>
 
+      {/* Process */}
       <div id="process">
-        <PvtltdProcess />
+        <LLPProcess />
       </div>
 
+      {/* Documents */}
       <div id="documents">
-        <PvtltdDocument />
+        <LLPDocInfographic />
       </div>
 
+      {/* FAQ */}
       <div id="faq">
-        <PvtltdFAQ />
+        <LLPFAQ />
       </div>
 
-      <PvtltdTestimonial />
-      <PvtltdVideoTestimonial />
-      <PvtltdOurclints />
+      {/* Testimonials */}
+      <LLPTestimonial />
+      <LLPVideoTestimonial />
+
+      {/* Our Clients */}
+      <LLPOurClients />
     </div>
   );
-};
+}
 
-export default LLP
+export default LLP;

@@ -1,64 +1,76 @@
 import React from "react";
 import "./OPCElegibility.css";
-import eligibilityImg from "../../assets/blue-lap.webp";
 
-const eligibilityPoints = [
+const steps = [
   {
-    title: "Single Shareholder",
-    text: "An OPC can be incorporated by only a natural person, who should be an Indian citizen and resident.",
+    title: "Step 1 – Document Submission",
+    text:
+      "Provision of requisite documents / information to us (as per the checklist to be provided by us).",
   },
   {
-    title: "Nominee Director",
-    text: "The sole shareholder has to nominate a person who will assume charge in the event of death or disability.",
+    title: "Step 2 – Company Name & Objects Finalization",
+    text:
+      "Finalisation of objects along with name of the proposed company (based on a search report duly conducted and provided by our team).",
   },
   {
-    title: "Not a Minor",
-    text: "The person incorporating the OPC cannot be a minor.",
+    title: "Step 3 – Name Reservation Application",
+    text:
+      "Filing of application for name reservation in requisite e-form along with applicable government fees.",
   },
   {
-    title: "Capital Requirement",
-    text: "Minimum authorised capital to incorporate OPC is ₹1 lakh but no minimum paid-up capital is required.",
+    title: "Step 4 – Digital Signature Certificates",
+    text:
+      "Preparation of requisite numbers of DSC with respect to the proposed promoters & directors and registration of DSC in the MCA portal.",
   },
   {
-    title: "Sole Director",
-    text: "A sole member may also serve as the sole director of the company.",
+    title: "Step 5 – Incorporation Document Preparation",
+    text:
+      "Preparation of further incorporation documents upon receipt of the name approval letter from the department.",
   },
   {
-    title: "Director’s Duties",
-    text: "Directors must comply with statutory duties and obligations under the Companies Act, 2013.",
+    title: "Step 6 – Final Form Upload & Fee Payment",
+    text:
+      "Uploading of final incorporation forms to the MCA portal along with applicable government fees.",
+  },
+  {
+    title: "Step 7 – Registration Certificate Issuance",
+    text:
+      "Processing of the application by the department and issuance of the registration certificate.",
   },
 ];
 
-const OPCEligibility = () => {
+const OPCElegibility = () => {
   return (
-    <section className="opc-eligibility">
-      <div className="opc-eligibility__grid">
-        
-        {/* Left Image */}
-        <div className="opc-eligibility__image">
-          <img src={eligibilityImg} alt="OPC Eligibility Criteria" />
-        </div>
+    <section className="opcelg-wrapper">
+      <h2 className="opcelg-heading">
+        STEPS FOR ONE PERSON COMPANY REGISTRATION IN INDIA
+      </h2>
+      <p className="opcelg-subheading">
+        The broad process of registering a One Person Company involves the
+        following steps:
+      </p>
 
-        {/* Right Content */}
-        <div className="opc-eligibility__content">
-          <h2>Eligibility Criteria for OPC Registration in India</h2>
-          <p className="opc-eligibility__intro">
-            Eligibility conditions for OPC registration in India are noted below:
-          </p>
+      <div className="opcelg-timeline">
+        <div className="opcelg-timeline-line" />
 
-          <div className="opc-eligibility__cards">
-            {eligibilityPoints.map((item, index) => (
-              <div className="opc-eligibility__card" key={index}>
-                <h4>{item.title}</h4>
-                <p>{item.text}</p>
-              </div>
-            ))}
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className={`opcelg-timeline-item ${
+              index % 2 === 0 ? "left" : "right"
+            }`}
+          >
+            <div className="opcelg-timeline-dot">{index + 1}</div>
+
+            <div className="opcelg-timeline-card">
+              <h4>{step.title}</h4>
+              <p>{step.text}</p>
+            </div>
           </div>
-
-        </div>
+        ))}
       </div>
     </section>
   );
 };
 
-export default OPCEligibility;
+export default OPCElegibility;

@@ -1,100 +1,169 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./OPCProcess.css";
 
-const steps = [
+const testimonials = [
   {
-    title: "Step 1: Consultation",
-    text:
-      "Pre-consultation to understand the business needs, government charges, and eligibility criteria for OPC registration.",
+    name: "Kirti Ranjan Sahu",
+    role: "Proprietor of Keshab Jewellers",
+    text: "Very professional and efficient ITR filing services. Thank you.",
+    rating: 5,
+    initial: "K",
   },
   {
-    title: "Step 2: Documentation",
-    text:
-      "Assistance in collecting and preparing all required documents such as identity proof, Aadhaar Card, address proof, No Objection Certificate, and registered office proof like utility bills.",
+    name: "Gobinda Chandra Mishra",
+    role: "Influencer",
+    text: "Best ITR filing service provider.",
+    rating: 5,
+    initial: "G",
   },
   {
-    title: "Step 3: DIN and DSC Application",
-    text:
-      "Submission of Director Identification Number (DIN) and Digital Signature Certificate (DSC) application for the sole director.",
+    name: "Babaji Samal",
+    role: "MD, AppsSys Technosoft",
+    text: "This year I went through the company incorporation in Bhubaneswar by Legal Terminus. Their service is exceptional. I would highly recommend.",
+    rating: 5,
+    initial: "B",
   },
   {
-    title: "Step 4: Name Approval",
-    text:
-      "We help you choose a unique company name and apply for name reservation through the Ministry of Corporate Affairs (MCA) portal.",
+    name: "Pritam Rath",
+    role: "Director at Stabdha Utility Insights – Private Limited",
+    text: "Working with Legal Terminus for our annual compliances has been a seamless experience. Highly recommend their services!",
+    rating: 5,
+    initial: "P",
   },
   {
-    title: "Step 5: MOA and AOA Drafting",
-    text:
-      "Preparation of the Memorandum of Association (MOA) and Articles of Association (AOA) as per legal requirements.",
+    name: "Ananya Singh",
+    role: "Startup Founder",
+    text: "They explained every step clearly and completed the process on time.",
+    rating: 5,
+    initial: "A",
   },
   {
-    title: "Step 6: Filing Forms",
-    text:
-      "Submission of incorporation forms such as INC-32, INC-33, and INC-34 with the Registrar of Companies (ROC).",
+    name: "Rahul Verma",
+    role: "Consultant",
+    text: "Smooth GST registration and very responsive support.",
+    rating: 4,
+    initial: "R",
   },
   {
-    title: "Step 7: Incorporation Certificate",
-    text:
-      "Obtaining the Certificate of Incorporation from the ROC, confirming OPC company registration.",
+    name: "Sneha Patil",
+    role: "Entrepreneur",
+    text: "Got timely reminders for all compliance due dates. Stress-free now.",
+    rating: 5,
+    initial: "S",
   },
   {
-    title: "Step 8: PAN and TAN Application",
-    text:
-      "Assistance in applying for the company’s Permanent Account Number (PAN) and Tax Deduction Account Number (TAN).",
+    name: "Mohit Sharma",
+    role: "Director, FinSync Solutions",
+    text: "Their advisory has helped us structure our business better.",
+    rating: 5,
+    initial: "M",
   },
   {
-    title: "Step 9: Post-Incorporation Support",
-    text:
-      "Guidance on post-incorporation compliances, income tax returns, trademark registration, professional tax, and other legal formalities.",
+    name: "Arjun Nair",
+    role: "Proprietor",
+    text: "Very polite staff and accurate guidance for tax planning.",
+    rating: 4,
+    initial: "A",
+  },
+  {
+    name: "Ritu Jain",
+    role: "Business Owner",
+    text: "Paperwork was minimal and everything happened online. Very convenient.",
+    rating: 5,
+    initial: "R",
+  },
+  {
+    name: "Deepak Kulkarni",
+    role: "Co-Founder, TechHive",
+    text: "They took care of all MCA filings and kept us updated at every step.",
+    rating: 5,
+    initial: "D",
+  },
+  {
+    name: "Neha Agarwal",
+    role: "Consultant",
+    text: "Prompt responses, transparent pricing and professional work.",
+    rating: 5,
+    initial: "N",
   },
 ];
 
-// connector direction logic remains SAME
-const getConnectorDirection = (index) => {
-  if (index >= 0 && index <= 3) return "right";
-  if (index === 4) return "down";
-  if (index >= 5 && index <= 7) return "left";
-  return null;
-};
+const OPCProcess = () => {
+  const sliderRef = useRef(null);
 
-export default function SocietyRegistrationSteps() {
+  const handleScroll = (direction) => {
+    const container = sliderRef.current;
+    if (!container) return;
+
+    const card = container.querySelector(".opcproc-card");
+    if (!card) return;
+
+    const gap = 24;
+    const cardWidth = card.offsetWidth + gap;
+
+    container.scrollBy({
+      left: direction === "next" ? cardWidth : -cardWidth,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <section className="soc-wrap">
-      {/* PART 1 — Header (Image 1) */}
-      <header className="soc-header">
-        <h1 className="soc-title">
-          Vakilsearch's OPC Registration Process
-        </h1>
-        <p className="soc-intro">
-          Vakilsearch offers a hassle-free process of registering a One Person
-          Company (OPC) in India.
-        </p>
-      </header>
+    <section className="opcproc-section">
+      <div className="opcproc-container">
+        <h2 className="opcproc-heading">
+          See What Our Customers Say on Google
+        </h2>
 
-      {/* PART 2 — Snake Timeline (Image 2) */}
-      <div className="soc-timeline" role="list">
-        {steps.map((step, index) => {
-          const dir = getConnectorDirection(index);
-          return (
-            <article
-              key={index}
-              className={`soc-step soc-step--${index + 1}`}
-              role="listitem"
-            >
-              <div className="soc-step-index">{index + 1}</div>
-              <h3 className="soc-step-title">{step.title}</h3>
-              <p className="soc-step-text">{step.text}</p>
+        <div className="opcproc-slider-wrapper">
+          {/* Left arrow */}
+          <button
+            className="opcproc-side-arrow opcproc-left"
+            aria-label="Previous testimonials"
+            onClick={() => handleScroll("prev")}
+          >
+            ❮
+          </button>
 
-              {dir && (
-                <div
-                  className={`soc-connector soc-connector--${dir}`}
-                  aria-hidden
-                />
-              )}
-            </article>
-          );
-        })}
+          {/* Cards slider */}
+          <div className="opcproc-slider" ref={sliderRef}>
+            {testimonials.map((t, idx) => (
+              <article className="opcproc-card" key={idx}>
+                <span className="opcproc-quote opcproc-quote-top">“</span>
+
+                <div className="opcproc-avatar-wrap">
+                  <div className="opcproc-avatar">
+                    <span>{t.initial}</span>
+                  </div>
+                </div>
+
+                <p className="opcproc-text">{t.text}</p>
+
+                <h3 className="opcproc-name">{t.name}</h3>
+                <p className="opcproc-role">{t.role}</p>
+
+                <div className="opcproc-stars">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <span key={i}>★</span>
+                  ))}
+                </div>
+
+                <span className="opcproc-quote opcproc-quote-bottom">”</span>
+              </article>
+            ))}
+          </div>
+
+          {/* Right arrow */}
+          <button
+            className="opcproc-side-arrow opcproc-right"
+            aria-label="Next testimonials"
+            onClick={() => handleScroll("next")}
+          >
+            ❯
+          </button>
+        </div>
       </div>
     </section>
   );
-}
+};
+
+export default OPCProcess;
