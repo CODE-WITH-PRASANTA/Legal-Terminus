@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { FiX } from "react-icons/fi";
 import api from "../api/axios";
+import Swal from "sweetalert2";
+
 
 type Props = {
   open: boolean;
@@ -33,36 +35,61 @@ const AddEmployeeModal: React.FC<Props> = ({ open, onClose, onAdd }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    if (formData.password !== formData.confirmPassword) {
-      alert("Password & Confirm Password must match");
-      return;
-    }
+  if (formData.password !== formData.confirmPassword) {
+    Swal.fire({
+      icon: "error",
+      title: "Password Mismatch",
+      text: "Password and Confirm Password must be the same.",
+    });
+    return;
+  }
 
-    try {
-      setLoading(true);
+  try {
+    setLoading(true);
 
-      const data = new FormData();
-      Object.entries(formData).forEach(([key, value]) => {
-        data.append(key, value as string);
-      });
+    const data = new FormData();
+    Object.entries(formData).forEach(([key, value]) => {
+      data.append(key, value as string);
+    });
 
-      if (avatar) data.append("avatar", avatar);
+    if (avatar) data.append("avatar", avatar);
 
-      const res = await api.post("/employees/create", data, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+    const res = await api.post("/employees/create", data, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
 
-      onAdd(res.data.data);
-      onClose();
-    } catch (error: any) {
-      alert(error.response?.data?.message || "Something went wrong");
-    } finally {
-      setLoading(false);
-    }
-  };
+    onAdd(res.data.data);
+
+    // 🌸 SWEET SUCCESS ALERT
+    Swal.fire({
+      icon: "success",
+      title: "Employee Added Successfully 🎉",
+      html: `
+        <p style="font-size:14px">
+          Another employee has been added to your team 💼<br/>
+          <b>Employee ID</b> has been created successfully.<br/><br/>
+          Thank you for growing your team 🚀
+        </p>
+      `,
+      confirmButtonText: "Great!",
+      confirmButtonColor: "#16a34a",
+    });
+
+    onClose();
+  } catch (error: any) {
+    Swal.fire({
+      icon: "error",
+      title: "Something Went Wrong",
+      text: error.response?.data?.message || "Please try again later.",
+    });
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm animate-fadeIn">
