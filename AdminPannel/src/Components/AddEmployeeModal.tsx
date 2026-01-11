@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiX } from "react-icons/fi";
+import api from "../api/axios";
 
 type Props = {
   open: boolean;
@@ -10,22 +11,57 @@ type Props = {
 const AddEmployeeModal: React.FC<Props> = ({ open, onClose, onAdd }) => {
   if (!open) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [formData, setFormData] = useState<any>({
+    name: "",
+    email: "",
+    phone: "",
+    department: "Marketing",
+    designation: "",
+    joiningDate: "",
+    status: "Active",
+    address: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const [avatar, setAvatar] = useState<File | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    onAdd({
-      id: Date.now(),
-      name: "New Employee",
-      role: "Designation",
-      department: "Marketing",
-      hireDate: "2026-01-10",
-      email: "example@email.com",
-      phone: "+919876543210",
-      status: "Active",
-      avatar: "",
-    });
+    if (formData.password !== formData.confirmPassword) {
+      alert("Password & Confirm Password must match");
+      return;
+    }
 
-    onClose();
+    try {
+      setLoading(true);
+
+      const data = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        data.append(key, value as string);
+      });
+
+      if (avatar) data.append("avatar", avatar);
+
+      const res = await api.post("/employees/create", data, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      onAdd(res.data.data);
+      onClose();
+    } catch (error: any) {
+      alert(error.response?.data?.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -72,9 +108,11 @@ const AddEmployeeModal: React.FC<Props> = ({ open, onClose, onAdd }) => {
               Full Name
             </label>
             <input
+              name="name"
               type="text"
               placeholder="Enter full name"
               className="w-full border rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+              onChange={handleChange}
               required
             />
           </div>
@@ -86,9 +124,11 @@ const AddEmployeeModal: React.FC<Props> = ({ open, onClose, onAdd }) => {
                 Email Address
               </label>
               <input
+                name="email"
                 type="email"
                 placeholder="example@email.com"
                 className="w-full border rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                onChange={handleChange}
                 required
               />
             </div>
@@ -98,9 +138,11 @@ const AddEmployeeModal: React.FC<Props> = ({ open, onClose, onAdd }) => {
                 Phone Number
               </label>
               <input
+                name="phone"
                 type="tel"
                 placeholder="+91 9876543210"
                 className="w-full border rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                onChange={handleChange}
                 required
               />
             </div>
@@ -112,7 +154,11 @@ const AddEmployeeModal: React.FC<Props> = ({ open, onClose, onAdd }) => {
               <label className="block text-xs font-medium text-gray-600 mb-1">
                 Department
               </label>
-              <select className="w-full border rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+              <select
+                name="department"
+                className="w-full border rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                onChange={handleChange}
+              >
                 <option>Marketing</option>
                 <option>Engineering</option>
                 <option>Design</option>
@@ -125,9 +171,11 @@ const AddEmployeeModal: React.FC<Props> = ({ open, onClose, onAdd }) => {
                 Designation
               </label>
               <input
+                name="designation"
                 type="text"
                 placeholder="e.g. Software Engineer"
                 className="w-full border rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                onChange={handleChange}
                 required
               />
             </div>
@@ -140,8 +188,10 @@ const AddEmployeeModal: React.FC<Props> = ({ open, onClose, onAdd }) => {
                 Joining Date
               </label>
               <input
+                name="joiningDate"
                 type="date"
                 className="w-full border rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                onChange={handleChange}
                 required
               />
             </div>
@@ -150,7 +200,11 @@ const AddEmployeeModal: React.FC<Props> = ({ open, onClose, onAdd }) => {
               <label className="block text-xs font-medium text-gray-600 mb-1">
                 Employment Status
               </label>
-              <select className="w-full border rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+              <select
+                name="status"
+                className="w-full border rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                onChange={handleChange}
+              >
                 <option>Active</option>
                 <option>On Leave</option>
                 <option>Probation</option>
@@ -166,9 +220,11 @@ const AddEmployeeModal: React.FC<Props> = ({ open, onClose, onAdd }) => {
                 Password
               </label>
               <input
+                name="password"
                 type="password"
                 placeholder="Enter password"
                 className="w-full border rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                onChange={handleChange}
                 required
               />
             </div>
@@ -178,9 +234,11 @@ const AddEmployeeModal: React.FC<Props> = ({ open, onClose, onAdd }) => {
                 Confirm Password
               </label>
               <input
+                name="confirmPassword"
                 type="password"
                 placeholder="Confirm password"
                 className="w-full border rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+                onChange={handleChange}
                 required
               />
             </div>
@@ -192,9 +250,11 @@ const AddEmployeeModal: React.FC<Props> = ({ open, onClose, onAdd }) => {
               Address
             </label>
             <textarea
+              name="address"
               rows={2}
               placeholder="Enter address"
               className="w-full border rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
+              onChange={handleChange}
             />
           </div>
 
@@ -206,6 +266,7 @@ const AddEmployeeModal: React.FC<Props> = ({ open, onClose, onAdd }) => {
             <input
               type="file"
               className="w-full text-sm border rounded-md px-3 py-1.5 bg-white"
+              onChange={(e) => setAvatar(e.target.files?.[0] || null)}
             />
           </div>
 
@@ -213,6 +274,7 @@ const AddEmployeeModal: React.FC<Props> = ({ open, onClose, onAdd }) => {
           <div className="flex justify-end pt-3">
             <button
               type="submit"
+              disabled={loading}
               className="
                 bg-green-600 hover:bg-green-700
                 text-white px-5 py-2
@@ -220,7 +282,7 @@ const AddEmployeeModal: React.FC<Props> = ({ open, onClose, onAdd }) => {
                 transition
               "
             >
-              Add Employee
+              {loading ? "Creating..." : "Add Employee"}
             </button>
           </div>
         </form>
