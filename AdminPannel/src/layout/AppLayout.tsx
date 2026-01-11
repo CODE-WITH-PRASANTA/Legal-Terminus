@@ -3,7 +3,9 @@ import IconSidebar from "./IconSidebar";
 import DashboardSidebarContent from "./DashboardSidebarContent";
 import StackSidebarContent from "./StackSidebarContent";
 import AppHeader from "./AppHeader";
+import MessagesSidebarContent from "./MessagesSidebarContent";
 import MainContent from "./MainContent";
+import TasksSidebarContent from "./TasksSidebarContent";
 
 const AppLayout: React.FC = () => {
   const [activeIcon, setActiveIcon] = useState<string | null>(null);
@@ -16,19 +18,34 @@ const AppLayout: React.FC = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const handleIconClick = (key: string) => {
+    /* 🔥 UPDATES → DIRECT MAIN CONTENT (NO SIDEBAR) */
+    if (key === "updates") {
+      setActiveIcon(null);          // close any sidebar
+      setActiveTab("Updates");      // open Updates component
+      setMobileMenuOpen(false);     // close mobile menu
+      return;
+    }
+      // 🔥 ADD → Direct Main Content
+  if (key === "add") {
+    setActiveIcon(null);
+    setActiveTab("Add");
+    setMobileMenuOpen(false);
+    return;
+  }
+
     setActiveIcon((prev) => {
       if (prev === key) return null;
       setLastActiveIcon(key);
       return key;
     });
-    
+
     if (isMobile) {
       setMobileMenuOpen(true);
     }
@@ -54,15 +71,14 @@ const AppLayout: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 relative">
-      <AppHeader 
-        onToggle={handleHeaderToggle} 
+      <AppHeader
+        onToggle={handleHeaderToggle}
         isMobile={isMobile}
         mobileMenuOpen={mobileMenuOpen}
       />
 
-      {/* Mobile overlay */}
       {isMobile && mobileMenuOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 z-40"
           onClick={() => {
             setMobileMenuOpen(false);
@@ -95,10 +111,28 @@ const AppLayout: React.FC = () => {
         mobileMenuOpen={mobileMenuOpen}
       />
 
-      <main className={`
-        pt-16 transition-all
-        ${isMobile ? "pl-0 pr-0" : "pl-24 pr-6"}
-      `}>
+      <MessagesSidebarContent
+        open={activeIcon === "messages"}
+        setActiveTab={setActiveTab}
+        onClose={handleCloseSidebar}
+        isMobile={isMobile}
+        mobileMenuOpen={mobileMenuOpen}
+      />
+
+      <TasksSidebarContent
+        open={activeIcon === "tasks"}
+        setActiveTab={setActiveTab}
+        onClose={handleCloseSidebar}
+        isMobile={isMobile}
+        mobileMenuOpen={mobileMenuOpen}
+      />
+
+      <main
+        className={`
+          pt-16 transition-all
+          ${isMobile ? "pl-0 pr-0" : "pl-24 pr-6"}
+        `}
+      >
         <div className="p-4 md:p-6">
           <MainContent activeTab={activeTab} />
         </div>

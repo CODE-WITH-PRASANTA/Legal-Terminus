@@ -1,121 +1,88 @@
 import React from "react";
-import { CheckCircle2, FileText, ShieldCheck } from "lucide-react";
 import "./PublicltdOverview.css";
 
-const LLPOverview = () => {
+// Replace with your actual illustration
+import pvtIllustration from "../../assets/whypvt-imp.svg";
+
+const PvtLtdFull = () => {
   return (
-    <div className="llp-wrapper">
-      {/* SECTION 1 – CLEAN DESIGN (NO SIDEBAR) */}
-      <section className="llp-section llp-card llp-card-clean">
-        <h1 className="llp-title">
-          What is Limited Liability Partnership (LLP) Registration
-        </h1>
+    <div className="pvt-full-wrapper">
 
-        <p className="llp-paragraph">
-          Limited Liability Partnership (LLP) registration is a popular choice
-          for startups and small businesses, blending the features of a
-          partnership and a private company.
-        </p>
+      {/* ===========================
+          SECTION 1 — OVERVIEW
+      ============================ */}
+      {/* <div className="overview-wrapper">
+        <h2 className="overview-title">Understanding the Basics
+</h2>
+        <p className="overview-text">
+A Private Limited Company is a legally registered business under the Companies Act, 2013, with its own separate identity from its owners. It protects the personal assets of its members, limits who can own shares, and must have a registered office address. </p>
+      </div> */}
 
-        {/* HIGHLIGHT INFO STRIP */}
-        <div className="llp-highlight-box">
-          <CheckCircle2 />
-          <span>
-            LLPs offer flexibility, limited liability protection, and minimal
-            compliance for growing businesses.
-          </span>
+      {/* ===========================
+          SECTION 2 — INTRO
+      ============================ */}
+      <section className="pvt-intro-section">
+        <div className="pvt-intro-container">
+          {/* Illustration */}
+          <div className="pvt-intro-illustration-wrap">
+            <img
+              src={pvtIllustration}
+              alt="Private limited company illustration"
+              className="pvt-intro-illustration"
+            />
+          </div>
+
+          {/* Text */}
+          <div className="pvt-intro-content">
+            <h2 className="pvt-intro-title">
+              Why Choose Public Limited Company Registration
+            </h2>
+            <p className="pvt-intro-text">
+              
+Registering a company in India is the first step to legally starting your business. The Companies Act, 2013, sets the rules for company formation, and the Ministry of Corporate Affairs (MCA) oversees the process. Once registered, your business gets a legal identity, along with rights and protections under Indian law. 
+<br></br>
+<br></br>
+Choosing the right type of Private Limited Company is important, as it determines how your business is owned, managed, and legally protected. Different types of private limited companies suit different business needs, depending on factors such as ownership structure. Selecting the correct type also helps ensure smooth compliance with legal regulations. Proper registration with the Ministry of Corporate Affairs (MCA) allows your company to operate legally, access government benefits, and build strong credibility in the market.            </p>
+          </div>
         </div>
-
-        {/* BULLET POINTS */}
-        <ul className="llp-icon-list">
-          <li>
-            <CheckCircle2 />
-            No minimum capital requirement, making it accessible to new
-            entrepreneurs.
-          </li>
-          <li>
-            <CheckCircle2 />
-            Business name availability is checked using the RUN-LLP service on
-            the Ministry of Corporate Affairs (MCA) portal.
-          </li>
-        </ul>
-
-        <p className="llp-paragraph">
-          To formally register, applicants have to submit a form on the MCA. The
-          form provides the proposed name of LLP, the address of its registered
-          office, and details of partners.
-        </p>
-
-        <ul className="llp-icon-list">
-          <li>
-            <FileText />
-            Every partner must have a DIN or DPIN and a Digital Signature
-            Certificate (DSC).
-          </li>
-          <li>
-            <FileText />
-            Required documents include identity proof, address proof, and
-            registered office proof.
-          </li>
-        </ul>
-
-        <p className="llp-paragraph">
-          Once the business name is approved, the LLP agreement is prepared to
-          establish roles, duties, and profit-sharing percentages between
-          partners.
-        </p>
-
-        <ul className="llp-icon-list">
-          <li>
-            <ShieldCheck />
-            LLP agreement acts as the internal governance document.
-          </li>
-          <li>
-            <ShieldCheck />
-            MCA issues the Certificate of Incorporation after verification.
-          </li>
-        </ul>
-
-        <p className="llp-paragraph">
-          After incorporation, the LLP must open a bank account, obtain PAN and
-          TAN, and may optionally register as an MSME to access government
-          incentives.
-        </p>
       </section>
 
-      {/* SECTION 2 – SIDEBAR STYLE */}
-      <section className="llp-section llp-card llp-act">
-        <h2 className="llp-title">
-          Limited Liability Partnership Act, 2008
-        </h2>
+      {/* ===========================
+          SECTION 3 — COMPANIES ACT
+      ============================ */}
+      <section className="companies-act-section">
+        <div className="companies-act-container">
+          <div className="companies-act-card">
+            <h3 className="companies-act-title">Companies Act, 2013</h3>
 
-        <p className="llp-paragraph">
-          This Act make provisions for the formation and regulation of limited
-          liability partnerships and for matters connected therewith or
-          incidental thereto.
-        </p>
+            <p className="companies-act-text">
+              As per Section 2(68) of the Companies Act, 2013, a private limited
+              company means a company having a minimum paid-up share capital as
+              may be prescribed, and which by its articles of association:
+            </p>
 
-        <p className="llp-subheading">
-          Limited Liability Partnership in Company Law
-        </p>
+            <p className="companies-act-point">
+              <span className="companies-act-point-label">(a)</span>
+              Restricts the right to transfer its shares;
+            </p>
 
-        <ul className="llp-icon-list">
-          <li>
-            <CheckCircle2 />
-            LLPs provide limited liability protection to partners.
-          </li>
-          <li>
-            <CheckCircle2 />
-            LLPs have a separate legal identity distinct from partners.
-          </li>
-          <li>
-            <CheckCircle2 />
-            LLP Act, 2008 enables streamlined registration and compliance.
-          </li>
-        </ul>
+            <p className="companies-act-point">
+              <span className="companies-act-point-label">(b)</span>
+              Limits the number of its members to 200 (excluding present and
+              former employees); and
+            </p>
+
+            <p className="companies-act-point">
+              <span className="companies-act-point-label">(c)</span>
+              Prohibits any invitation to the public to subscribe for any
+              securities of the company.
+            </p>
+          </div>
+        </div>
       </section>
+
     </div>
   );
 };
 
-export default LLPOverview;
+export default PvtLtdFull;
