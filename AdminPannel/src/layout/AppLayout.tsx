@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+
+import Employee from "../pages/Employee";
 import IconSidebar from "./IconSidebar";
 import DashboardSidebarContent from "./DashboardSidebarContent";
 import StackSidebarContent from "./StackSidebarContent";
@@ -12,11 +15,18 @@ const AppLayout: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const location = useLocation();
+
+  /* ✅ Sync route → sidebar tab */
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
+    if (location.pathname === "/employees") {
+      setActiveTab("Employees");
+      setActiveIcon("dashboard");
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
@@ -28,41 +38,33 @@ const AppLayout: React.FC = () => {
       setLastActiveIcon(key);
       return key;
     });
-    
-    if (isMobile) {
-      setMobileMenuOpen(true);
-    }
+
+    if (isMobile) setMobileMenuOpen(true);
   };
 
   const handleHeaderToggle = () => {
     if (isMobile) {
       setMobileMenuOpen(!mobileMenuOpen);
     } else {
-      setActiveIcon((prev) => {
-        if (prev) return null;
-        return lastActiveIcon ?? "dashboard";
-      });
+      setActiveIcon((prev) => (prev ? null : lastActiveIcon ?? "dashboard"));
     }
   };
 
   const handleCloseSidebar = () => {
     setActiveIcon(null);
-    if (isMobile) {
-      setMobileMenuOpen(false);
-    }
+    if (isMobile) setMobileMenuOpen(false);
   };
 
   return (
     <div className="min-h-screen bg-gray-100 relative">
-      <AppHeader 
-        onToggle={handleHeaderToggle} 
+      <AppHeader
+        onToggle={handleHeaderToggle}
         isMobile={isMobile}
         mobileMenuOpen={mobileMenuOpen}
       />
 
-      {/* Mobile overlay */}
       {isMobile && mobileMenuOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 z-40"
           onClick={() => {
             setMobileMenuOpen(false);
@@ -95,12 +97,17 @@ const AppLayout: React.FC = () => {
         mobileMenuOpen={mobileMenuOpen}
       />
 
-      <main className={`
-        pt-16 transition-all
-        ${isMobile ? "pl-0 pr-0" : "pl-24 pr-6"}
-      `}>
+      <main
+        className={`
+          pt-16 transition-all
+          ${isMobile ? "pl-0 pr-0" : "pl-24 pr-6"}
+        `}
+      >
         <div className="p-4 md:p-6">
-          <MainContent activeTab={activeTab} />
+          <Routes>
+            <Route path="/" element={<MainContent activeTab={activeTab} />} />
+            <Route path="/employees" element={<Employee />} />
+          </Routes>
         </div>
       </main>
     </div>
