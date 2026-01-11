@@ -1,99 +1,73 @@
 import React from "react";
 import "./PFRdocument.css";
+import { FaUser, FaSearch, FaBullseye, FaComments } from "react-icons/fa";
 
-// REACT ICONS
-import {
-  FaIdCard,
-  FaCamera,
-  FaBolt,
-  FaFileContract,
-  FaCertificate,
-  FaFolderOpen,
-} from "react-icons/fa";
+const docs = [
+  {
+    id: "01",
+    title: "KYC Documents",
+    desc: "PAN, Aadhaar, Address proof and bank statement of all partners.",
+    icon: <FaUser />,
+    color: "one",
+  },
+  {
+    id: "02",
+    title: "Passport Photograph",
+    desc: "Passport size photographs of all partners.",
+    icon: <FaSearch />,
+    color: "two",
+  },
+  {
+    id: "03",
+    title: "Electricity Bill",
+    desc: "Latest electricity bill of registered office address.",
+    icon: <FaBullseye />,
+    color: "three",
+  },
+  {
+    id: "04",
+    title: "Other Documents",
+    desc: "Any other documents as required by authorities.",
+    icon: <FaComments />,
+    color: "four",
+  },
+];
 
-const DocumentsInfographic = () => {
+const PartnershipDocumentsInfographic = () => {
   return (
-    <section className="di-section">
-      <h2 className="di-heading">
-        Documents Required for Partnership firm registration in india
-      </h2>
+    <section className="pdi-section">
+      <h1 className="pdi-heading">
+        Documents Required for Partnership Firm Registration In India
+      </h1>
 
-      <div className="di-wrapper">
-        {/* LEFT COLUMN */}
-        <div className="di-column">
-          <div className="di-card di-left">
-            <span className="di-number">1</span>
-            <FaIdCard className="di-icon" />
-            <h4>KYC Documents</h4>
-            <p>
-              PAN & Aadhaar, Address Proof – Telephone Bill / Mobile Bill /
-              Savings Bank Statement.
-            </p>
-          </div>
-
-          <div className="di-card di-left">
-            <span className="di-number">2</span>
-            <FaCamera className="di-icon" />
-            <h4>Passport Size Photograph</h4>
-            <p>Passport size photograph of all proposed directors.</p>
-          </div>
-
-          <div className="di-card di-left">
-            <span className="di-number">3</span>
-            <FaBolt className="di-icon" />
-            <h4>Electricity Bill</h4>
-            <p>
-              Electricity bill corresponding to the registered office address.
-            </p>
+      <div className="pdi-wrapper">
+        {/* CENTER CIRCLE */}
+        <div className="pdi-center">
+          <div className="pdi-circle">
+            <h3>Documents<br />Required</h3>
+            <p>Complete checklist for registration</p>
           </div>
         </div>
 
-        {/* CENTER INFOGRAPHIC */}
-        <div className="di-center">
-          <div className="di-rays">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-
-          <div className="di-circle">
-            <span>Documents Required</span>
-          </div>
-        </div>
-
-        {/* RIGHT COLUMN */}
-        <div className="di-column">
-          <div className="di-card di-right">
-            <span className="di-number">4</span>
-            <FaFileContract className="di-icon" />
-            <h4>Rent Agreement</h4>
-            <p>
-              Duly notarised rent agreement for registered office (if rented).
-            </p>
-          </div>
-
-          <div className="di-card di-right">
-            <span className="di-number">5</span>
-            <FaCertificate className="di-icon" />
-            <h4>No Objection Certificate</h4>
-            <p>
-              NOC from the owner allowing use of premises as registered office.
-            </p>
-          </div>
-
-          <div className="di-card di-right">
-            <span className="di-number">6</span>
-            <FaFolderOpen className="di-icon" />
-            <h4>Other Documents</h4>
-            <p>Additional documents as required by our team.</p>
-          </div>
+        {/* RIGHT INFOGRAPHIC */}
+        <div className="pdi-steps">
+          {docs.map((item, index) => (
+            <div key={item.id} className={`pdi-step pdi-${item.color}`}>
+              <span className="pdi-line"></span>
+              <div className="pdi-number">{item.id}</div>
+              <div className="pdi-card">
+                <div className="pdi-icon">{item.icon}</div>
+                <div>
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 };
 
-export default DocumentsInfographic;
+export default PartnershipDocumentsInfographic;

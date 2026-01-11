@@ -1,205 +1,159 @@
-/* WRAPPER */
-.infographic-wrapper {
-  display: flex;
-  justify-content: center;
-  padding: 60px 20px;
-  background: #fff;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+.hex-doc-section {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #eef3f9, #f9fcff);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
 }
 
-.infographic {
+.hex-doc-title {
+  font-size: 34px;
+  margin-bottom: 70px;
+  font-weight: 600;
+}
+
+/* GRID */
+.hex-grid {
   position: relative;
-  width: 100%;
-  max-width: 1250px;
-  min-height: 400px;
+  width: 620px;
+  height: 620px;
+  margin: auto;
 }
 
-/* RING WRAPPER */
-.ring-wrapper {
+/* CENTER HUB */
+.hex-center {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 180px;
+  height: 160px;
   transform: translate(-50%, -50%);
-  width: 360px;
-  height: 360px;
-}
-
-/* CENTER */
-.center-box {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 240px;
-  height: 240px;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-}
-
-.center-box h3 {
-  font-size: 18px;
-  font-weight: 700;
-  text-align: center;
-}
-
-/* RING */
-.ring {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-}
-
-.ring-segment {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
-}
-
-.ring-segment span {
-  position: absolute;
-  top: 18px;
-  right: 65px;
-  background: #fff;
-  border-radius: 50%;
-  padding: 6px 10px;
-  font-size: 12px;
-  font-weight: 700;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* UPDATED COLORS (Ring + Icon synced) */
-.beige { background:#d9b98c; }
-.teal { background:#3aa6a0; }
-.orange { background:#e67e22; }
-.red { background:#b23b3b; }
-.sand { background:#d2b48c; }
-.yellow { background:yellow; }
-.violet { background:violet; }
-
-/* SIDES */
-.side {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.side.left { left: 0; }
-.side.right { right: 0; }
-
-/* CARDS */
-.card {
-  width: 300px;
-  padding: 16px 18px;
-  background: #fff;
-  border-radius: 30px;
-  display: flex;
-  gap: 14px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.card h4 {
-  margin: 0;
-  font-size: 14px;
-}
-
-.card p {
-  margin: 4px 0 0;
-  font-size: 12px;
-  color: #666;
-}
-
-/* ICON (synced with ring colors) */
-.icon {
-  min-width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 16px;
+  background: linear-gradient(135deg, #4a90e2, #56ccf2);
   color: #fff;
+  clip-path: polygon(
+    25% 6%, 75% 6%,
+    100% 50%,
+    75% 94%, 25% 94%,
+    0% 50%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 700;
+  font-size: 22px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+  z-index: 5;
 }
 
-.red .icon { background:#b23b3b; }
-.orange .icon { background:#e67e22; }
-.violet .icon { background:violet; }
-.cyan .icon { background:#3fa7b3; }
-.beige .icon { background:#d9b98c; color:#000; }
-.teal .icon { background:#3aa6a0; }
-.sand .icon { background:yellow; color:black; }
+/* HEX CARD */
+.hex-card {
+  position: absolute;
+  width: 190px;
+  height: 170px;
+  padding: 42px 20px;
+  backdrop-filter: blur(14px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.55)
+  );
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  clip-path: polygon(
+    25% 6%, 75% 6%,
+    100% 50%,
+    75% 94%, 25% 94%,
+    0% 50%
+  );
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+}
 
-/* MOBILE FIX */
+/* CONNECTOR LINE */
+.hex-card::after {
+  content: "";
+  position: absolute;
+  width: 135px;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(120, 140, 180, 0.45) 0,
+    rgba(120, 140, 180, 0.45) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  top: 50%;
+  left: 50%;
+  transform-origin: left center;
+  z-index: -1;
+}
+
+/* NUMBERS */
+.hex-number {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #222, #555);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ICON */
+.hex-icon {
+  font-size: 30px;
+  margin-bottom: 12px;
+  color: #4a6cf7;
+}
+
+.hex-card h3 {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* POSITIONING + LINE ANGLES */
+.hex-1 { top: 0; left: 50%; transform: translateX(-50%); }
+.hex-1::after { transform: rotate(90deg); }
+
+.hex-2 { top: 120px; right: 0; }
+.hex-2::after { transform: rotate(150deg); }
+
+.hex-3 { bottom: 120px; right: 0; }
+.hex-3::after { transform: rotate(-150deg); }
+
+.hex-4 { bottom: 0; left: 50%; transform: translateX(-50%); }
+.hex-4::after { transform: rotate(-90deg); }
+
+.hex-5 { bottom: 120px; left: 0; }
+.hex-5::after { transform: rotate(-30deg); }
+
+.hex-6 { top: 120px; left: 0; }
+.hex-6::after { transform: rotate(30deg); }
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .infographic {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: auto;
-  }
-
-  .ring-wrapper {
-    position: relative;
-    top: -80px;
-    left: 0px;
-    transform: none;
-    width: 280px;
-    height: 280px;
-  }
-
-  .center-box {
-    width: 190px;
-    height: 190px;
-  }
-
-  .ring {
-    transform: scale(0.85);
-  }
-
-  .side {
-    position: static;
-    transform: none;
+  .hex-grid {
     width: 100%;
-    align-items: center;
-    margin-top: 16px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 36px;
   }
 
-  .card {
-    width: 90%;
-    max-width: 360px;
+  .hex-center {
+    position: relative;
+    transform: none;
+    margin: 0 auto 40px;
   }
-}
 
-/* NUMBER BADGE */
-.step-no {
-  font-size: 18px;
-  font-weight: 700;
-  margin-right: 6px;
-}
+  .hex-card {
+    position: relative;
+  }
 
-
-
-/* ================= DOCUMENT SECTION HEADER ================= */
-.pvtltd-doc-section {
-  background: #ffffff;
-}
-
-.pvtltd-doc-header {
-  max-width: 1200px;
-  margin: 0 auto 40px;
-  text-align: center;
-  padding: 0 16px;
-}
-
-.pvtltd-doc-title {
-  font-size: 36px;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 10px;
+  .hex-card::after {
+    display: none;
+  }
 }
