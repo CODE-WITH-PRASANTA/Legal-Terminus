@@ -67,8 +67,8 @@ const IconSidebar: React.FC<Props> = ({
 
         <SidebarIcon
           icon={<FiFile size={18} />}
-          active={active === "pages"}
-          onClick={() => handleClick("pages")}
+          active={active === "stack"}
+          onClick={() => handleClick("stack")}
         />
 
         <SidebarIcon
