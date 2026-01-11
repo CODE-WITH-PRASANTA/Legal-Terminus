@@ -63,7 +63,7 @@ const IncorporationFAQ = () => {
         {/* LEFT */}
         <div className="incfaq-left">
           <h2 className="incfaq-title">
-            Private Limited Company Registration FAQ&apos;s
+             Incorporation Company Registration FAQ&apos;s
           </h2>
 
           <p className="incfaq-intro">

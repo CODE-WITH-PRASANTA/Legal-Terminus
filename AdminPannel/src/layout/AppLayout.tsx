@@ -6,11 +6,13 @@ import IconSidebar from "./IconSidebar";
 import DashboardSidebarContent from "./DashboardSidebarContent";
 import StackSidebarContent from "./StackSidebarContent";
 import AppHeader from "./AppHeader";
+import MessagesSidebarContent from "./MessagesSidebarContent";
 import MainContent from "./MainContent";
+import TasksSidebarContent from "./TasksSidebarContent";
 
 const AppLayout: React.FC = () => {
   const [activeIcon, setActiveIcon] = useState<string | null>(null);
-  const [lastActiveIcon, setLastActiveIcon] = useState<string | null>(null);
+  const [lastActiveIcon, setLastActiveIcon] = useState<string>("dashboard");
   const [activeTab, setActiveTab] = useState("Default Dashboard");
   const [isMobile, setIsMobile] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -25,14 +27,33 @@ const AppLayout: React.FC = () => {
     }
   }, [location.pathname]);
 
+  /* ✅ Mobile screen detection */
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const handleIconClick = (key: string) => {
+    /* 🔥 Direct Main Content */
+    if (key === "updates") {
+      setActiveIcon(null);
+      setActiveTab("Updates");
+      setMobileMenuOpen(false);
+      return;
+    }
+
+    if (key === "add") {
+      setActiveIcon(null);
+      setActiveTab("Add");
+      setMobileMenuOpen(false);
+      return;
+    }
+
     setActiveIcon((prev) => {
       if (prev === key) return null;
       setLastActiveIcon(key);
@@ -44,9 +65,9 @@ const AppLayout: React.FC = () => {
 
   const handleHeaderToggle = () => {
     if (isMobile) {
-      setMobileMenuOpen(!mobileMenuOpen);
+      setMobileMenuOpen((prev) => !prev);
     } else {
-      setActiveIcon((prev) => (prev ? null : lastActiveIcon ?? "dashboard"));
+      setActiveIcon((prev) => (prev ? null : lastActiveIcon));
     }
   };
 
@@ -63,13 +84,11 @@ const AppLayout: React.FC = () => {
         mobileMenuOpen={mobileMenuOpen}
       />
 
+      {/* Mobile Overlay */}
       {isMobile && mobileMenuOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-40"
-          onClick={() => {
-            setMobileMenuOpen(false);
-            setActiveIcon(null);
-          }}
+          onClick={handleCloseSidebar}
         />
       )}
 
@@ -97,11 +116,26 @@ const AppLayout: React.FC = () => {
         mobileMenuOpen={mobileMenuOpen}
       />
 
+      <MessagesSidebarContent
+        open={activeIcon === "messages"}
+        setActiveTab={setActiveTab}
+        onClose={handleCloseSidebar}
+        isMobile={isMobile}
+        mobileMenuOpen={mobileMenuOpen}
+      />
+
+      <TasksSidebarContent
+        open={activeIcon === "tasks"}
+        setActiveTab={setActiveTab}
+        onClose={handleCloseSidebar}
+        isMobile={isMobile}
+        mobileMenuOpen={mobileMenuOpen}
+      />
+
       <main
-        className={`
-          pt-16 transition-all
-          ${isMobile ? "pl-0 pr-0" : "pl-24 pr-6"}
-        `}
+        className={`pt-16 transition-all ${
+          isMobile ? "pl-0 pr-0" : "pl-24 pr-6"
+        }`}
       >
         <div className="p-4 md:p-6">
           <Routes>

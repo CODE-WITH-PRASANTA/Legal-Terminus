@@ -71,7 +71,7 @@ const DashboardSidebarContent: React.FC<Props> = ({
       `}
     >
       <div className="p-6 h-full overflow-y-auto">
-        <h2 className="text-lg font-semibold mb-6">NexLink</h2>
+        <h2 className="text-lg font-semibold mb-6">Legal Terminus Admin</h2>
 
         <p className="text-xs text-indigo-500 font-semibold mb-3">
           DASHBOARD
