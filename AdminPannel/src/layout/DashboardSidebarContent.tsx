@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   FiHome,
   FiBarChart2,
@@ -41,12 +42,11 @@ const DashboardSidebarContent: React.FC<Props> = ({
   mobileMenuOpen,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        onClose();
-      }
+      if (ref.current && !ref.current.contains(e.target as Node)) onClose();
     };
     if (open && !isMobile) document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
@@ -83,6 +83,13 @@ const DashboardSidebarContent: React.FC<Props> = ({
               key={tab.label}
               onClick={() => {
                 setActiveTab(tab.label);
+
+                if (tab.label === "Employees") {
+                  navigate("/employees"); // ✅ ROUTE
+                } else {
+                  navigate("/");
+                }
+
                 onClose();
               }}
               className={`
@@ -95,7 +102,7 @@ const DashboardSidebarContent: React.FC<Props> = ({
                 }
               `}
             >
-              <span className="text-base">{tab.icon}</span>
+              <span>{tab.icon}</span>
               <span>{tab.label}</span>
             </li>
           ))}
