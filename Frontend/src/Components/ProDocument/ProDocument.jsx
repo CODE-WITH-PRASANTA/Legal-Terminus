@@ -18,18 +18,16 @@ const steps = [
   { id: "06", title: "Completion", icon: <FaFlagCheckered /> },
 ];
 
-const HexDocumentSection = () => {
+export default function HexDocumentSection() {
   return (
     <section className="hex-doc-section">
       <h2 className="hex-doc-title">Document Process Flow</h2>
 
-      <div className="hex-grid">
-        {/* Center Hub */}
+      <div className="hex-radial">
         <div className="hex-center">PFR DOCS</div>
 
         {steps.map((step, index) => (
           <div key={step.id} className={`hex-card hex-${index + 1}`}>
-            <span className="hex-number">{step.id}</span>
             <div className="hex-icon">{step.icon}</div>
             <h3>{step.title}</h3>
           </div>
@@ -37,6 +35,4 @@ const HexDocumentSection = () => {
       </div>
     </section>
   );
-};
-
-export default HexDocumentSection;
+}

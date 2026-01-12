@@ -1,36 +1,58 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
+/* ================= SECTION ================= */
 .hex-doc-section {
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #eef3f9, #f9fcff);
+  padding: 110px 20px;
+  background: #f7faff;
   font-family: "Poppins", sans-serif;
   text-align: center;
 }
 
+/* TITLE */
 .hex-doc-title {
   font-size: 34px;
-  margin-bottom: 70px;
   font-weight: 600;
+  margin-bottom: 70px;
+  color: #1f2937;
 }
 
-/* GRID */
-.hex-grid {
+/* ================= RADIAL LAYOUT ================= */
+.hex-radial {
   position: relative;
-  width: 620px;
-  height: 620px;
-  margin: auto;
+  width: 520px;
+  height: 520px;
+  margin: 0 auto;
 }
 
-/* CENTER HUB */
+/* ================= CENTER ================= */
 .hex-center {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 180px;
-  height: 160px;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(135deg, #4a90e2, #56ccf2);
-  color: #fff;
+  inset: 0;
+  margin: auto;
+  width: 170px;
+  height: 150px;
+  background: #5bb3f3;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(
+    25% 6%, 75% 6%,
+    100% 50%,
+    75% 94%, 25% 94%,
+    0% 50%
+  );
+  box-shadow: 0 18px 40px rgba(91, 179, 243, 0.35);
+  z-index: 5;
+}
+
+/* ================= HEX CARD ================= */
+.hex-card {
+  position: absolute;
+  width: 185px;
+  height: 165px;
   clip-path: polygon(
     25% 6%, 75% 6%,
     100% 50%,
@@ -38,122 +60,147 @@
     0% 50%
   );
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 22px;
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
-  z-index: 5;
+  gap: 10px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease;
 }
 
-/* HEX CARD */
-.hex-card {
-  position: absolute;
-  width: 190px;
-  height: 170px;
-  padding: 42px 20px;
-  backdrop-filter: blur(14px);
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.85),
-    rgba(255, 255, 255, 0.55)
-  );
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  clip-path: polygon(
-    25% 6%, 75% 6%,
-    100% 50%,
-    75% 94%, 25% 94%,
-    0% 50%
-  );
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
-  z-index: 2;
-}
-
-/* CONNECTOR LINE */
-.hex-card::after {
-  content: "";
-  position: absolute;
-  width: 135px;
-  height: 2px;
-  background: repeating-linear-gradient(
-    to right,
-    rgba(120, 140, 180, 0.45) 0,
-    rgba(120, 140, 180, 0.45) 6px,
-    transparent 6px,
-    transparent 12px
-  );
-  top: 50%;
-  left: 50%;
-  transform-origin: left center;
-  z-index: -1;
-}
-
-/* NUMBERS */
-.hex-number {
-  position: absolute;
-  top: -16px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, #222, #555);
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 600;
+/* subtle hover only */
+.hex-card:hover {
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.12);
 }
 
 /* ICON */
 .hex-icon {
-  font-size: 30px;
-  margin-bottom: 12px;
+  font-size: 28px;
   color: #4a6cf7;
 }
 
 .hex-card h3 {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
+  color: #1f2937;
 }
 
-/* POSITIONING + LINE ANGLES */
-.hex-1 { top: 0; left: 50%; transform: translateX(-50%); }
-.hex-1::after { transform: rotate(90deg); }
+/* ================= CARD COLORS ================= */
+.hex-1 { background: linear-gradient(135deg, #5979b9, #f3f6fb); }
+.hex-2 { background: linear-gradient(135deg, #55be86, #f3fbf7); }
+.hex-3 { background: linear-gradient(135deg, #c08c64, #fbf5f0); }
+.hex-4 { background: linear-gradient(135deg, #7f63cd, #f5f3fb); }
+.hex-5 { background: linear-gradient(135deg, #cfbc68, #fbf9ef); }
+.hex-6 { background: linear-gradient(135deg, #7bbcdf, #f1f8fc); }
 
-.hex-2 { top: 120px; right: 0; }
-.hex-2::after { transform: rotate(150deg); }
+/* ================= POSITIONS ================= */
+.hex-1 { top: -10px; left: 50%; transform: translateX(-50%); }
+.hex-2 { top: 95px; right: -25px; }
+.hex-3 { bottom: 95px; right: -25px; }
+.hex-4 { bottom: -10px; left: 50%; transform: translateX(-50%); }
+.hex-5 { bottom: 95px; left: -25px; }
+.hex-6 { top: 95px; left: -25px; }
 
-.hex-3 { bottom: 120px; right: 0; }
-.hex-3::after { transform: rotate(-150deg); }
+/* ================= RESPONSIVE ================= */
 
-.hex-4 { bottom: 0; left: 50%; transform: translateX(-50%); }
-.hex-4::after { transform: rotate(-90deg); }
+/* Tablet */
+@media (max-width: 992px) {
+  .hex-radial {
+    width: 420px;
+    height: 420px;
+  }
 
-.hex-5 { bottom: 120px; left: 0; }
-.hex-5::after { transform: rotate(-30deg); }
+  .hex-card {
+    width: 170px;
+    height: 150px;
+  }
 
-.hex-6 { top: 120px; left: 0; }
-.hex-6::after { transform: rotate(30deg); }
+  .hex-center {
+    width: 155px;
+    height: 135px;
+    font-size: 18px;
+  }
+}
 
-/* RESPONSIVE */
+/* Mobile */
 @media (max-width: 768px) {
-  .hex-grid {
+  .hex-radial {
+    position: relative;
     width: 100%;
     height: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
   }
 
   .hex-center {
     position: relative;
-    transform: none;
-    margin: 0 auto 40px;
+    margin-bottom: 20px;
   }
 
   .hex-card {
     position: relative;
+    inset: unset;
+    transform: none;
+    width: 220px;
+    height: 190px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .hex-doc-section {
+    padding: 80px 16px;
   }
 
-  .hex-card::after {
-    display: none;
+  .hex-doc-title {
+    font-size: 24px;
+    margin-bottom: 40px;
   }
+
+  .hex-card {
+    width: 200px;
+    height: 175px;
+  }
+
+  .hex-center {
+    width: 180px;
+    height: 155px;
+    font-size: 17px;
+  }
+}
+
+/* ================= MICRO ANIMATIONS ================= */
+
+/* soft fade-in */
+.hex-center,
+.hex-card {
+  opacity: 0;
+  animation: fadeInSoft 0.6s ease forwards;
+}
+
+/* stagger timing */
+.hex-center { animation-delay: 0s; }
+.hex-1 { animation-delay: 0.05s; }
+.hex-2 { animation-delay: 0.1s; }
+.hex-3 { animation-delay: 0.15s; }
+.hex-4 { animation-delay: 0.2s; }
+.hex-5 { animation-delay: 0.25s; }
+.hex-6 { animation-delay: 0.3s; }
+
+/* icon micro float */
+.hex-icon {
+  animation: iconFloatSoft 4s ease-in-out infinite;
+}
+
+/* ================= KEYFRAMES ================= */
+@keyframes fadeInSoft {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes iconFloatSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
