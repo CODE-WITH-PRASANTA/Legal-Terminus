@@ -9,6 +9,7 @@ import AppHeader from "./AppHeader";
 import MessagesSidebarContent from "./MessagesSidebarContent";
 import MainContent from "./MainContent";
 import TasksSidebarContent from "./TasksSidebarContent";
+import CreateTask from "../pages/CreateTask";
 
 const AppLayout: React.FC = () => {
   const [activeIcon, setActiveIcon] = useState<string | null>(null);
@@ -141,6 +142,7 @@ const AppLayout: React.FC = () => {
           <Routes>
             <Route path="/" element={<MainContent activeTab={activeTab} />} />
             <Route path="/employees" element={<Employee />} />
+            <Route path="/create/task" element={<CreateTask />} />
           </Routes>
         </div>
       </main>

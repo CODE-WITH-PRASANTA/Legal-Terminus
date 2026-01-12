@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   FiHome,
   FiFile,
@@ -9,12 +10,27 @@ import {
 } from "react-icons/fi";
 import { LuLogOut } from "react-icons/lu";
 
+/* ================= ROUTE MAP ================= */
+
+const routes: Record<string, string> = {
+  dashboard: "/dashboard",
+  stack: "/stack",
+  messages: "/messages",
+  tasks: "/create/task",
+  updates: "/updates",
+  add: "/create/task",
+};
+
+/* ================= PROPS ================= */
+
 type Props = {
   onIconClick: (iconKey: string) => void;
-  sidebarOpen: boolean;
+  sidebarOpen?: boolean;
   isMobile: boolean;
   mobileMenuOpen: boolean;
 };
+
+/* ================= MAIN COMPONENT ================= */
 
 const IconSidebar: React.FC<Props> = ({
   onIconClick,
@@ -22,10 +38,15 @@ const IconSidebar: React.FC<Props> = ({
   mobileMenuOpen,
 }) => {
   const [active, setActive] = useState("dashboard");
+  const navigate = useNavigate();
 
   const handleClick = (key: string) => {
     setActive(key);
     onIconClick(key);
+
+    if (routes[key]) {
+      navigate(routes[key]);
+    }
   };
 
   return (
@@ -48,12 +69,14 @@ const IconSidebar: React.FC<Props> = ({
       `}
     >
       {/* ================= LOGO ================= */}
-      <div className="
-        w-12 h-12 rounded-2xl
-        bg-gradient-to-br from-indigo-500 to-purple-600
-        text-white flex items-center justify-center
-        mb-10 shadow-lg
-      ">
+      <div
+        className="
+          w-12 h-12 rounded-2xl
+          bg-gradient-to-br from-indigo-500 to-purple-600
+          text-white flex items-center justify-center
+          mb-10 shadow-lg
+        "
+      >
         <FiHome size={20} />
       </div>
 
@@ -104,6 +127,7 @@ const IconSidebar: React.FC<Props> = ({
         />
 
         <button
+          onClick={() => navigate("/login")}
           className="
             w-12 h-12 rounded-2xl
             flex items-center justify-center
