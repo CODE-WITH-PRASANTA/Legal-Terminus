@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import {
-  FiDollarSign,
   FiUsers,
   FiMail,
   FiBarChart2,
@@ -27,19 +27,27 @@ const StackSidebarContent: React.FC<Props> = ({
   mobileMenuOpen,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
+  /* ================= OUTSIDE CLICK ================= */
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) {
         onClose();
       }
     };
-    if (open && !isMobile) document.addEventListener("mousedown", handler);
+
+    if (open && !isMobile) {
+      document.addEventListener("mousedown", handler);
+    }
+
     return () => document.removeEventListener("mousedown", handler);
   }, [open, onClose, isMobile]);
 
-  const handleClick = (tab: string) => {
+  /* ================= CLICK HANDLER ================= */
+  const handleClick = (tab: string, route?: string) => {
     setActiveTab(tab);
+    if (route) navigate(route);
     onClose();
   };
 
@@ -65,20 +73,25 @@ const StackSidebarContent: React.FC<Props> = ({
           Legal Terminus Admin
         </h2>
 
-        
-
         {/* ================= LEADS ================= */}
-        <p className="text-xs text-indigo-500 font-semibold mt-6 mb-3">LEADS</p>
+        <p className="text-xs text-indigo-500 font-semibold mt-6 mb-3">
+          LEADS
+        </p>
         <ul className="space-y-2">
-          <li onClick={() => handleClick("Lead")} className={menuItem}>
+          <li
+            onClick={() => handleClick("Lead")}
+            className={menuItem}
+          >
             <FiUsers /> Lead
           </li>
+
           <li
             onClick={() => handleClick("Contact Form Lead")}
             className={menuItem}
           >
             <FiMail /> Contact Form Lead
           </li>
+
           <li
             onClick={() => handleClick("Page Wise Lead")}
             className={menuItem}
@@ -92,25 +105,45 @@ const StackSidebarContent: React.FC<Props> = ({
           CONTENT
         </p>
         <ul className="space-y-2">
-          <li onClick={() => handleClick("Blog Post")} className={menuItem}>
+          <li
+            onClick={() => handleClick("Blog Post", "/blog/post")}
+            className={menuItem}
+          >
             <FiEdit3 /> Blog Post
           </li>
-          <li onClick={() => handleClick("Blog View")} className={menuItem}>
+
+          <li
+            onClick={() => handleClick("Blog View", "/blog/view")}
+            className={menuItem}
+          >
             <FiEye /> Blog View
           </li>
+
           <li
-            onClick={() => handleClick("Testimonial Post")}
+            onClick={() =>
+              handleClick("Testimonial Post", "/testimonial/post")
+            }
             className={menuItem}
           >
             <FiMessageSquare /> Testimonial Post
           </li>
+
           <li
-            onClick={() => handleClick("Video Testimonial Post")}
+            onClick={() =>
+              handleClick(
+                "Video Testimonial Post",
+                "/testimonial/video"
+              )
+            }
             className={menuItem}
           >
             <FiVideo /> Video Testimonial Post
           </li>
-          <li onClick={() => handleClick("Client Post")} className={menuItem}>
+
+          <li
+            onClick={() => handleClick("Client Post", "/client/post")}
+            className={menuItem}
+          >
             <FiBriefcase /> Client Post
           </li>
         </ul>

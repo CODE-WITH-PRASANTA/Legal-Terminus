@@ -9,6 +9,12 @@ import AppHeader from "./AppHeader";
 import MessagesSidebarContent from "./MessagesSidebarContent";
 import MainContent from "./MainContent";
 import TasksSidebarContent from "./TasksSidebarContent";
+import CreateTask from "../pages/CreateTask";
+import BlogPost from "../pages/BlogPost";
+import ClientPost from "../pages/ClientPost";
+import TestimonialPost from "../pages/TestimonialPost";
+import VideoTestimonialPost from "../pages/VideoTestimonialPost";
+import BlogView from "../pages/BlogView";
 
 const AppLayout: React.FC = () => {
   const [activeIcon, setActiveIcon] = useState<string | null>(null);
@@ -141,6 +147,13 @@ const AppLayout: React.FC = () => {
           <Routes>
             <Route path="/" element={<MainContent activeTab={activeTab} />} />
             <Route path="/employees" element={<Employee />} />
+            <Route path="/create/task" element={<CreateTask />} />
+            <Route path="/blog/post" element={<BlogPost />} />
+            <Route path="/client/post" element={<ClientPost />} />
+            <Route path="/testimonial/video" element={<VideoTestimonialPost />} />
+            <Route path="/testimonial/post" element={<TestimonialPost />} />
+            <Route path="/blog/view" element={<BlogView />} />
+            
           </Routes>
         </div>
       </main>

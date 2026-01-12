@@ -3,7 +3,6 @@ import { FiX } from "react-icons/fi";
 import api from "../api/axios";
 import Swal from "sweetalert2";
 
-
 type Props = {
   open: boolean;
   onClose: () => void;
