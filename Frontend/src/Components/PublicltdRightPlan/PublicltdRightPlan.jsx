@@ -1,348 +1,127 @@
 import React from "react";
 import "./PublicltdRightPlan.css";
 
-const PricingPlans = () => {
+const PricingSection = () => {
   return (
-    <div className="pricing-wrapper">
-      <div className="pricing-header">
-        <h1>Right Plan For Your Business</h1>
-        <p>
-          Legal Terminus&apos;s incorporation experts register over 1500 companies
-          every month.
-        </p>
-      </div>
+    <section className="pvtltd-pricing-section">
+      <div className="pricing-container">
+        
+        {/* Upper part */}
+        <header className="pricing-header">
+          <h2 className="PvtLtd-pricing-title">CHOOSE YOUR PLAN</h2>
+          <p className="pricing-subtitle">
+            Register your company with pocket-friendly prices
+          </p>
+        </header>
 
-      <div className="pricing-grid">
-        {/* STANDARD */}
-        <div className="pricing-card">
-          <div className="card-top">
-            <div className="plan-name">Standard</div>
-            <div className="plan-subtitle">
-              Standard application filing: Regular processing time
-            </div>
+        {/* Cards */}
+        <div className="pricing-cards">
 
-            <div className="price-row">
-              <div className="old-price">₹1,999</div>
-              <div className="discount-pill">
-                <span className="discount-dot" />
-                <span>25% discount</span>
+          {/* Elemental */}
+          <article className="plan-card">
+            <div>
+              <div className="plan-header">
+                <div className="plan-name">Elemental</div>
+                <div className="plan-old-price">₹5,999</div>
+                <div className="plan-price">₹3,999</div>
+                <div className="plan-meta">Excluding gov fee</div>
+              </div>
+
+              <div className="plan-body">
+                <ul className="plan-list">
+                  <li className="plan-list-item">Search Report of Name Availability</li>
+                  <li className="plan-list-item">1 RUN Name Approval Certificate</li>
+                  <li className="plan-list-item">Director Identification Number for 2 Individuals</li>
+                  <li className="plan-list-item">Certificate of Incorporation</li>
+                  <li className="plan-list-item">E-PAN</li>
+                  <li className="plan-list-item">E-TAN</li>
+                  <li className="plan-list-item">E-MOA</li>
+                  <li className="plan-list-item">E-AOA</li>
+                  <li className="plan-list-item">Documents for Bank Account Opening</li>
+                  <li className="plan-list-item">Documents for 1st Auditor Appointment</li>
+                  <li className="plan-list-item">EPF Registrations</li>
+                  <li className="plan-list-item">ESI Registrations</li>
+                </ul>
               </div>
             </div>
 
-            <div className="price-main">
-              <span className="price-currency">₹</span>
-              <span className="price-amount">1,499</span>
+            <div className="plan-footer">
+              <button className="plan-button">Buy Now</button>
             </div>
-            <div className="price-note">+ Govt. Fee</div>
+          </article>
 
-            <div className="cashback-bar">
-              <div className="cashback-icon">💰</div>
-              <div className="cashback-text">
-                <strong>Get ₹1000 cashback*</strong>
-                <span>
-                  Upon opening current acct with our partner banks
-                  <a href="#!"> T&amp;C</a>
-                </span>
+          {/* Enriched */}
+          <article className="plan-card">
+            <div>
+              <div className="plan-header">
+                <div className="plan-name">Enriched</div>
+                <div className="plan-old-price">₹7,999</div>
+                <div className="plan-price">₹5,999</div>
+                <div className="plan-meta">
+                  Excluding gov fee <span className="popular">(Popular)</span>
+                </div>
+              </div>
+
+              <div className="plan-body">
+                <ul className="plan-list">
+                  <li className="plan-list-item">Elemental Plan Plus</li>
+                  <li className="plan-list-item">Share Certificate</li>
+                  <li className="plan-list-item">Commencement of Business</li>
+                  <li className="plan-list-item">Udyam/MSME Registration</li>
+                </ul>
               </div>
             </div>
 
-            <div className="plan-button">
-              <button>Get Started</button>
+            <div className="plan-footer">
+              <button className="plan-button">Buy Now</button>
             </div>
-          </div>
+          </article>
 
-          <div className="card-features">
-            <div className="features-title">What you&apos;ll get</div>
-            <ul className="features-list">
-              <li>
-                <div className="check-icon">✓</div>
-                <div>Expert assisted process</div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  Your company name is reserved in just{" "}
-                  <strong>2 – 4 days</strong>
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  DSC in <strong>4 – 7 days</strong>
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  LLP Incorporation form filing done in{" "}
-                  <strong>21 days*</strong>
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>LLP Incorporation Certificate</div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  LLP agreement form filing done in 14 days (Post
-                  Incorporation)
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  Company <strong>PAN+TAN</strong>
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  <strong>DIN</strong> for directors
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+          {/* Supreme */}
+          <article className="plan-card">
+            <div>
+              <div className="plan-header">
+                <div className="plan-name">Supreme</div>
+                <div className="plan-old-price">₹29,999</div>
+                <div className="plan-price">₹24,999</div>
+                <div className="plan-meta">Excluding gov fee</div>
+              </div>
 
-        {/* FASTRACK */}
-        <div className="pricing-card">
-          <div className="card-top">
-            <div className="plan-name">Fastrack</div>
-            <div className="plan-subtitle">
-              Expedited application filing: Faster processing for quicker
-              results
-            </div>
-
-            <div className="price-row">
-              <div className="old-price">₹3,599</div>
-              <div className="discount-pill">
-                <span className="discount-dot" />
-                <span>35% discount</span>
+              <div className="plan-body">
+                <ul className="plan-list">
+                  <li className="plan-list-item">Enriched Plan Plus</li>
+                  <li className="plan-list-item">Income tax filing of Company</li>
+                  <li className="plan-list-item">Preparation of Directors Report</li>
+                  <li className="plan-list-item">Preparation of Annual Return</li>
+                  <li className="plan-list-item">Preparation of Auditor Appointment Paperwork</li>
+                  <li className="plan-list-item">Preparation of List of Share Holders</li>
+                  <li className="plan-list-item">Preparation of Notice of AGM</li>
+                  <li className="plan-list-item">Preparation of Notice of BM</li>
+                  <li className="plan-list-item">Preparation of Extracts of AGM</li>
+                  <li className="plan-list-item">Filing of AOC - 4 (Financial Statements)</li>
+                  <li className="plan-list-item">Filing of MGT - 7 (Annual Return)</li>
+                  <li className="plan-list-item">Filing of ADT - 1 (Auditor Appointment)</li>
+                  <li className="plan-list-item">Minutes of Board Meeting for 1st FY</li>
+                  <li className="plan-list-item">Minutes of General Meeting for 1st FY</li>
+                  <li className="plan-list-item">Maintenance of Statutory E- Registers</li>
+                  <li className="plan-list-item">Filing of DPT - 3 Annual (If Applicable)</li>
+                  <li className="plan-list-item">Filing of MSME - 1 (If Applicable) for 1st FY</li>
+                  <li className="plan-list-item">DIR KYC (2 Directors)</li>
+                  <li className="plan-list-item">Income Tax Filing of 2 Directors</li>
+                  <li className="plan-list-item">Audit fees are excluded and to be paid directly to Auditor</li>
+                </ul>
               </div>
             </div>
 
-            <div className="price-main">
-              <span className="price-currency">₹</span>
-              <span className="price-amount">2,499</span>
+            <div className="plan-footer">
+              <button className="plan-button">Buy Now</button>
             </div>
-            <div className="price-note">+ Govt. Fee</div>
+          </article>
 
-            <div className="cashback-bar">
-              <div className="cashback-icon">💰</div>
-              <div className="cashback-text">
-                <strong>Get ₹1000 cashback*</strong>
-                <span>
-                  Upon opening current acct with our partner banks
-                  <a href="#!"> T&amp;C</a>
-                </span>
-              </div>
-            </div>
-
-            <div className="plan-button">
-              <button>Get Started</button>
-            </div>
-          </div>
-
-          <div className="card-features">
-            <div className="features-title">What you&apos;ll get</div>
-            <ul className="features-list">
-              <li>
-                <div className="check-icon">✓</div>
-                <div>Expert assisted process</div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  Your company name is reserved in just{" "}
-                  <strong>24 hours*</strong>
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  DSC in just <strong>24 hours*</strong>
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  LLP Incorporation form filing done in{" "}
-                  <strong>14 days*</strong>
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>LLP Incorporation Certificate</div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  LLP agreement form filing done in 7 days (Post Incorporation)
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  Company <strong>PAN+TAN</strong>
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  <strong>Digital welcome kit</strong> that includes a checklist
-                  of all post-incorporation compliances
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  <strong>DIN</strong> for directors
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* PREMIUM */}
-        <div className="pricing-card">
-          <div className="ribbon">Limited time offer</div>
-
-          <div className="card-top">
-            <div className="plan-name premium-title">Premium</div>
-            <div className="plan-subtitle">
-              Complete solution (LLP incorporation + Annual compliance)
-            </div>
-
-            <div className="price-row">
-              <div className="old-price">₹21,999</div>
-              <div className="discount-pill">
-                <span className="discount-dot" />
-                <span>50% discount</span>
-              </div>
-            </div>
-
-            <div className="price-main">
-              <span className="price-currency">₹</span>
-              <span className="price-amount">10,999</span>
-            </div>
-            <div className="price-note">+ Govt. Fee</div>
-
-            <div className="split-pay-row">
-              
-            </div>
-
-            <div className="cashback-bar">
-              <div className="cashback-icon">💰</div>
-              <div className="cashback-text">
-                <strong>Get ₹1000 cashback*</strong>
-                <span>
-                  Upon opening current acct with our partner banks
-                  <a href="#!"> T&amp;C</a>
-                </span>
-              </div>
-            </div>
-
-            <div className="plan-button">
-              <button>Get Started</button>
-            </div>
-          </div>
-
-          <div className="card-features">
-            <div className="features-title">What you&apos;ll get</div>
-            <ul className="features-list">
-              <li>
-                <div className="check-icon">✓</div>
-                <div>Expert assisted process</div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  Your company name is reserved in just{" "}
-                  <strong>24 hours*</strong>
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  DSC in just <strong>24 hours*</strong>
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  LLP Incorporation form filing done in{" "}
-                  <strong>14 days*</strong>
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>LLP Incorporation Certificate</div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  LLP agreement form filing done in 14 days (Post Incorporation)
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  Company <strong>PAN+TAN</strong>
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  <strong>DIN</strong> for directors
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  <strong>30-minute call with a senior CA/CS</strong> for your
-                  business planning
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>Form 8 &amp; 11 filing (One year)</div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>DIR 3 KYC (For 2 directors)</div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  One Year Income Tax filing (Upto turnover of 20 lakhs)
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>
-                  Accounting &amp; Bookkeeping (Upto 100 transactions)
-                </div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>Financial statement preparation</div>
-              </li>
-              <li>
-                <div className="check-icon">✓</div>
-                <div>Accounting software (1-year license)</div>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
-
-      <div className="note">
-        Note: Government fees for incorporation are extra and it varies from
-        state to state. T&amp;C
-      </div>
-    </div>
+    </section>
   );
 };
 
-export default PricingPlans;
+export default PricingSection;

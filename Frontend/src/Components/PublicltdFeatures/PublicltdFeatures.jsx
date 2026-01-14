@@ -1,81 +1,58 @@
 import React from "react";
 import "./PublicltdFeatures.css";
+import typesIllustration from "../../assets/public-1.png"
 
-// Import your image (update the path to match your project)
-import LLPFeaturesImage from "../../assets/p-1 img.webp"; 
-// ← replace file name with your actual illustration image
 
-const LLPFeatures = () => {
+const PvtTypes = () => {
   return (
-    <section className="llp-features-wrapper">
-      <div className="llp-features-inner">
-        
-        {/* LEFT TEXT CONTENT */}
-        <div className="llp-features-left">
-          <h1 className="llp-features-title">
-            What Are the Key Features of a Limited Liability Partnership?
-          </h1>
-
-          <p className="llp-features-intro">
-            Limited Liability Partnerships (LLPs) combine the benefits of a
-            company and a partnership structure. They offer limited liability to
-            partners and a flexible internal management framework. Here is the
-            detailed list of the main features of the same:
-          </p>
-
-          <ul className="llp-features-list">
-            <li>
-              <strong>Legal Status of LLPs:</strong> LLPs enjoy separate legal
-              personality status, independent of their partners, to hold
-              assets, contract, and sue or be sued in their name.
-            </li>
-
-            <li>
-              <strong>Flexibility in Management:</strong> Flexibility in
-              management structure and decision-making is provided through LLPs.
-              Partners can either manage the LLP themselves or designate
-              specific managers or committees for particular functions.
-            </li>
-
-            <li>
-              <strong>Liability Protection:</strong> LLP members have limited
-              liability, protecting their private property against LLP debts.
-            </li>
-
-            <li>
-              <strong>Minimum Compliance Requirements:</strong> LLPs avoid AGMs
-              and heavy statutory compliance, reducing admin hassles.
-            </li>
-
-            <li>
-              <strong>Taxation Advantages:</strong> LLP profits are taxed as
-              partnership income, avoiding double taxation.
-            </li>
-
-            <li>
-              <strong>Perpetual Succession:</strong> LLP continues even if
-              partners retire, resign, or pass away.
-            </li>
-
-            <li>
-              <strong>Ease of Transferability:</strong> LLP ownership can be
-              transferred smoothly based on the LLP agreement.
-            </li>
-          </ul>
-        </div>
-
-        {/* RIGHT ILLUSTRATION IMAGE */}
-        <div className="llp-features-right">
+    <section className="pub-ty-types-section">
+      <div className="pub-ty-types-container">
+        {/* Left graphic */}
+        <div className="pub-ty-types-illustration-wrap">
           <img
-            src={LLPFeaturesImage}
-            alt="LLP Key Features Illustration"
-            className="llp-image"
+            src={typesIllustration}
+            alt="Types of Private Limited Company"
+            className="pub-ty-types-illustration"
           />
         </div>
 
+        {/* Right content */}
+        <div className="pub-ty-types-content">
+          <h2 className="pub-ty-types-title">
+            Types of Private Limited Company Registration
+          </h2>
+
+          <p className="pub-ty-types-intro">
+            Private Limited Companies can be registered in different forms based on ownership, liability, and business objectives. Choosing the right type helps ensure legal protection, smooth operations, and long-term growth.
+          </p>
+
+          {/* Type 1 */}
+          <div className="pub-ty-types-block">
+            <h3 className="pub-ty-types-subtitle">Company limited by Shares</h3>
+            <p className="pub-ty-types-text">
+              This is the most common type of Private Limited Company. The liability of shareholders is limited to the unpaid amount on their shares. It is ideal for startups and growing businesses looking to raise funds while protecting personal assets.
+            </p>
+          </div>
+
+          {/* Type 2 */}
+          <div className="pub-ty-types-block">
+            <h3 className="pub-ty-types-subtitle">Company limited by Guarantee</h3>
+            <p className="pub-ty-types-text">
+              In this type, members agree to contribute a fixed amount in case of liquidation. It is generally suitable for non-profit or charitable organizations that do not require share capital.
+            </p>
+          </div>
+
+          {/* Type 3 */}
+          <div className="pub-ty-types-block">
+            <h3 className="pub-ty-types-subtitle">Unlimited Companies</h3>
+            <p className="pub-ty-types-text">
+              An unlimited company does not place any limit on members’ liability. Members are personally responsible for company debts. This structure is less common and is usually chosen by closely held businesses with full control over operations.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
 
-export default LLPFeatures;
+export default PvtTypes;

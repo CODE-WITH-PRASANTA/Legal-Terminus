@@ -1,40 +1,79 @@
-import React from 'react'
-import LLPBreadcrum from '../../Components/LLPBreadcrum/LLPBreadcrum.jsx'
-import LLPPlanandPrice from '../../Components/LLPPlanandPrice/LLPPlanandPrice'
-import LLPTermandCondn from '../../Components/LLPTermandCondn/LLPTermandCondn'
-import LLPZolvitPremium from '../../Components/LLPZolvitPremium/LLPZolvitPremium'
-import LLPTabs from '../../Components/LLPTabs/LLPTabs'
-import LLPCompanyTab from '../../Components/LLPCompanyTab/LLPCompanyTab'
-import LLPTypes from '../../Components/LLPTypes/LLPTypes'
-import LLPRequirementsTab from '../../Components/LLPRequirementsTab/LLPRequirementsTab'
-import LLPProcess from '../../Components/LLPProcess/LLPProcess'
-import LLPDocInfographic from '../../Components/LLPDocInfographic/LLPDocInfographic'
-import LLPFAQ from '../../Components/LLPFAQ/LLPFAQ'
-import LLPTestimonial from '../../Components/LLPTestimonial/LLPTestimonial'
-import LLPVideoTestimonial from '../../Components/LLPVideoTestimonial/LLPVideoTestimonial'
-import LLPOurClients from '../../Components/LLPOurClients/LLPOurClients'
-
-
+import React from "react";
+import LLPBreadcrum from "../../Components/LLPBreadcrum/LLPBreadcrum.jsx";
+import LLPPlanandPrice from "../../Components/LLPPlanandPrice/LLPPlanandPrice";
+import LLPTermandCondn from "../../Components/LLPTermandCondn/LLPTermandCondn";
+import LLPZolvitPremium from "../../Components/LLPZolvitPremium/LLPZolvitPremium";
+import LLPTabs from "../../Components/LLPTabs/LLPTabs";
+import LLPCompanyTab from "../../Components/LLPCompanyTab/LLPCompanyTab";
+import LLPTypes from "../../Components/LLPTypes/LLPTypes";
+import LLPRequirementsTab from "../../Components/LLPRequirementsTab/LLPRequirementsTab";
+import LLPProcess from "../../Components/LLPProcess/LLPProcess";
+import LLPDocInfographic from "../../Components/LLPDocInfographic/LLPDocInfographic";
+import LLPFAQ from "../../Components/LLPFAQ/LLPFAQ";
+import LLPTestimonial from "../../Components/LLPTestimonial/LLPTestimonial";
+import LLPVideoTestimonial from "../../Components/LLPVideoTestimonial/LLPVideoTestimonial";
+import LLPOurClients from "../../Components/LLPOurClients/LLPOurClients";
 
 function LLP() {
   return (
     <div>
+      {/* Breadcrumb */}
       <LLPBreadcrum />
-      <LLPPlanandPrice />
+
+      {/* Plans */}
+      <div id="plans">
+        <LLPPlanandPrice />
+      </div>
+
+      {/* Terms & Conditions */}
       <LLPTermandCondn />
-      <LLPZolvitPremium />
+
+      {/* Premium */}
+      <div id="premium">
+        <LLPZolvitPremium />
+      </div>
+
+      {/* Tabs */}
       <LLPTabs />
-      <LLPCompanyTab />
-      <LLPTypes />
-      <LLPRequirementsTab />
-      <LLPProcess />
-      <LLPDocInfographic/>
-      <LLPFAQ />
+
+      {/* Company */}
+      <div id="company">
+        <LLPCompanyTab />
+      </div>
+
+      {/* Types */}
+      <div id="types">
+        <LLPTypes />
+      </div>
+
+      {/* Requirements */}
+      <div id="requirements">
+        <LLPRequirementsTab />
+      </div>
+
+      {/* Process */}
+      <div id="process">
+        <LLPProcess />
+      </div>
+
+      {/* Documents */}
+      <div id="documents">
+        <LLPDocInfographic />
+      </div>
+
+      {/* FAQ */}
+      <div id="faq">
+        <LLPFAQ />
+      </div>
+
+      {/* Testimonials */}
       <LLPTestimonial />
       <LLPVideoTestimonial />
+
+      {/* Our Clients */}
       <LLPOurClients />
     </div>
-  )
+  );
 }
 
-export default LLP
+export default LLP;

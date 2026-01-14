@@ -1,70 +1,84 @@
 import React from "react";
-import "./PublicltdDocument.css";
 import {
-  FaIdCard,
-  FaHome,
-  FaBuilding,
-  FaFileContract,
-  FaSignature,
-  FaUserCheck,
-  FaWpforms,
-  FaClipboardCheck,
-  FaFolderOpen,
+  FaExclamation,
+  FaCog,
+  FaBullseye,
+  FaDollarSign,
+  FaChartLine,
 } from "react-icons/fa";
+import "./PublicltdDocument.css";
 
-const documents = [
-  { no: "1", title: "Identity Proof", icon: <FaIdCard />, gradient: "g1",
-    points: ["PAN Card / Passport", "Aadhaar / Voter ID", "Photograph"] },
-  { no: "2", title: "Address Proof", icon: <FaHome />, gradient: "g2",
-    points: ["Aadhaar / Driving License", "Utility Bill (2 months)"] },
-  { no: "3", title: "Registered Office", icon: <FaBuilding />, gradient: "g3",
-    points: ["Rent / Ownership Deed", "Landlord NOC"] },
-  { no: "4", title: "LLP Agreement", icon: <FaFileContract />, gradient: "g4",
-    points: ["Roles & Responsibilities", "Profit Sharing"] },
-  { no: "5", title: "Digital Signature", icon: <FaSignature />, gradient: "g5",
-    points: ["DSC of all Partners"] },
-  { no: "6", title: "Consent of Partners", icon: <FaUserCheck />, gradient: "g6",
-    points: ["Form 9 Consent"] },
-  { no: "7", title: "LLP Registration Form", icon: <FaWpforms />, gradient: "g7",
-    points: ["Form 2 – Incorporation"] },
-  { no: "8", title: "Declaration", icon: <FaClipboardCheck />, gradient: "g8",
-    points: ["Form 1 Declaration"] },
-  { no: "9", title: "Optional Documents", icon: <FaFolderOpen />, gradient: "g9",
-    points: ["Professional Proof", "Corporate Partner Docs"] },
+const steps = [
+  {
+    step: "01",
+    title: "Document Review",
+    desc: "Initial verification and assessment of submitted documents.",
+    icon: <FaExclamation />,
+    color: "pink",
+  },
+  {
+    step: "02",
+    title: "Eligibility Check",
+    desc: "Ensure compliance with all applicable requirements.",
+    icon: <FaCog />,
+    color: "purple",
+  },
+  {
+    step: "03",
+    title: "Processing",
+    desc: "Detailed review and internal processing workflow.",
+    icon: <FaBullseye />,
+    color: "blue",
+  },
+  {
+    step: "04",
+    title: "Approval",
+    desc: "Final approval after validation checks.",
+    icon: <FaDollarSign />,
+    color: "orange",
+  },
+  {
+    step: "05",
+    title: "Completion",
+    desc: "Successful completion and handover of documents.",
+    icon: <FaChartLine />,
+    color: "green",
+  },
 ];
 
-const LLPDocuments = () => {
+const CurvedInfographicSection = () => {
   return (
-    <section className="infographic-section">
-      <div className="infographic-header">
-        <h2>Documents Required for LLP Registration in India</h2>
-        <p>A visual infographic representation of mandatory LLP documents</p>
-      </div>
-
-      <div className="infographic-grid">
-        {/* CENTER HEX HUB */}
-        <div className="hex-hub">
-          <div className="hex-content">
-            <h3>LLP</h3>
-            <span>DOCUMENTS</span>
-          </div>
+    <section className="curved-section">
+      <div className="curved-wrapper">
+        {/* LEFT CIRCLE */}
+        <div className="curved-center">
+          <span>INFO<br />GRAPHICS</span>
         </div>
 
-        {/* CARDS */}
-        {documents.map((doc, i) => (
-          <div key={i} className={`info-card ${doc.gradient}`}>
-            <div className="card-icon">{doc.icon}</div>
-            <h4>{doc.title}</h4>
-            <ul>
-              {doc.points.map((p, idx) => (
-                <li key={idx}>{p}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {/* CURVED LINE */}
+        <div className="curved-line"></div>
+
+        {/* STEPS */}
+        <div className="curved-steps">
+          {steps.map((item, index) => (
+            <div key={index} className={`curved-step step-${index + 1}`}>
+              <div className="step-dot">
+                <span>{item.step}</span>
+              </div>
+
+              <div className={`step-card ${item.color}`}>
+                <div>
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
+                </div>
+                <div className="step-icon">{item.icon}</div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
-export default LLPDocuments;
+export default CurvedInfographicSection;

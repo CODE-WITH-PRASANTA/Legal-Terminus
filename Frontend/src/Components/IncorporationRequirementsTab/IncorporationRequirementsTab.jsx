@@ -9,7 +9,7 @@ const IncorporationRequirementsTab = () => {
         {/* ================= HEADER ================= */}
         <header className="incorp-req-header">
           <h2 className="incorp-req-title">
-            Benefits of Private Limited Company Registration in India
+            Incorporation Of Wholly Owned Subsidiary in India
           </h2>
           <p className="incorp-req-subtitle">
             The Ministry of Corporate Affairs (MCA) manages the company

@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ================= WRAPPER ================= */
+.pvtltd-gst-wrapper {
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  padding: 80px 20px;
+}
+
+/* ================= HEADER ================= */
+.gst-heading {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.pv-gst-subheading {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+/* ================= TIMELINE ================= */
+.pvtltd-timeline {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* center vertical line */
+.pvtltd-timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background: #e5e7eb;
+}
+
+/* ================= ITEM ================= */
+.pvtltd-timeline-item {
+  position: relative;
+  display: flex;
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+/* left/right positioning */
+.pvtltd-timeline-item.left {
+  justify-content: flex-start;
+}
+
+.pvtltd-timeline-item.right {
+  justify-content: flex-end;
+}
+
+/* ================= DOT ================= */
+.pvtltd-timeline-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.35);
+}
+
+/* ================= CARD ================= */
+.pvtltd-timeline-card {
+  background: #ffffff;
+  width: 46%;
+  padding: 24px 26px;
+  border-radius: 14px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
+}
+
+.pvtltd-timeline-card h4 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.pvtltd-timeline-card p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .gst-heading {
+    font-size: 30px;
+  }
+
+  .pvtltd-timeline-card {
+    width: 48%;
+  }
+}
+
+/* ================= MOBILE (KEY FIX) ================= */
+@media (max-width: 768px) {
+  .pvtltd-timeline {
+    padding-left: 10px;
+  }
+
+  /* move line to left */
+  .pvtltd-timeline-line {
+    left: 24px;
+    transform: none;
+  }
+
+  .pvtltd-timeline-item {
+    justify-content: flex-start;
+    padding-left: 60px;
+    margin-bottom: 40px;
+  }
+
+  /* dot to left */
+  .pvtltd-timeline-dot {
+    left: 24px;
+    transform: none;
+  }
+
+  /* card full width */
+  .pvtltd-timeline-card {
+    width: 100%;
+  }
+}
+
+/* ================= SMALL PHONES ================= */
+@media (max-width: 480px) {
+  .pvtltd-gst-wrapper {
+    padding: 60px 14px;
+  }
+
+  .gst-heading {
+    font-size: 24px;
+  }
+
+  .pv-gst-subheading {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  .pvtltd-timeline-card {
+    padding: 20px 20px;
+  }
+
+  .pvtltd-timeline-card h4 {
+    font-size: 15px;
+  }
+
+  .pvtltd-timeline-card p {
+    font-size: 13.5px;
+  }
+}
