@@ -1,300 +1,228 @@
-:root {
-  --primary: #1aa91a;
-  --text-main: #1b1b1f;
-  --text-sub: #555965;
-  --border: #e3e5ea;
-  --bg-page: #f6f7fb;
-  --card-bg: #ffffff;
-  --accent-light: #ecffee;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.pvtltd-pricing-section {
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  padding: 60px 24px 80px;
 }
 
-/* RESET */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.pricing-container {
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
-body {
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-}
-
-/* ================= WRAPPER ================= */
-
-.pricing-wrapper {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px 40px;
-  background: var(--bg-page);
-}
-
-/* ================= HEADER ================= */
-
+/* Header */
 .pricing-header {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
-.pricing-header h1 {
-  font-size: 40px;
+.PvtLtd-pricing-title {
+  font-size: 32px;
   font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.pricing-header p {
-  font-size: 16px;
-  color: var(--text-sub);
-}
-
-/* ================= GRID ================= */
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 32px;
-  align-items: stretch;
-}
-
-/* ================= CARD ================= */
-
-.pricing-card {
-  background: var(--card-bg);
-  border-radius: 18px;
-  border: 1px solid var(--border);
-  padding: 26px 26px 30px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  text-align: left;
-  transition: transform 0.25s ease, box-shadow 0.25s ease,
-    border-color 0.25s ease;
-}
-
-.pricing-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.1);
-  border-color: var(--primary);
-}
-
-/* ================= TOP ================= */
-
-.card-top {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
-}
-
-/* Ribbon (Premium) */
-.ribbon {
-  position: absolute;
-  top: 14px;
-  left: 24px;
-  font-size: 10px;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  font-weight: 700;
-  background: #ffe48f;
-  padding: 4px 10px;
-  border-radius: 999px;
+  margin-bottom: 8px;
+  color: #000;
 }
 
-/* ================= PLAN ================= */
+.pricing-subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1bb33a;
+}
+
+/* Cards layout with CSS Grid for clean responsiveness */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* Card */
+.plan-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Plan header */
+.plan-header {
+  margin-bottom: 16px;
+}
 
 .plan-name {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
+  color: #18b233;
+  text-align: center;
+  margin-bottom: 8px;
 }
 
-.plan-subtitle {
-  font-size: 14px;
-  color: var(--text-sub);
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
-
-/* ================= PRICE ================= */
-
-.price-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.old-price {
-  font-size: 14px;
+.plan-old-price {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: #ff3b3b;
   text-decoration: line-through;
-  color: #9a9ead;
-}
-
-.discount-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 11px;
-  padding: 4px 8px;
-  border-radius: 999px;
-  background: var(--accent-light);
-  color: var(--primary);
-  font-weight: 600;
-}
-
-.discount-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--primary);
-}
-
-.price-main {
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-}
-
-.price-currency {
-  font-size: 22px;
-  font-weight: 600;
-}
-
-.price-amount {
-  font-size: 30px;
-  font-weight: 700;
-}
-
-.price-note {
-  font-size: 13px;
-  color: var(--text-sub);
-}
-
-/* ================= CASHBACK ================= */
-
-.cashback-bar {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border-radius: 12px;
-  background: #fff9e6;
-  padding: 10px 12px;
-  margin: 14px 0;
-  font-size: 13px;
-}
-
-.cashback-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: #ffe2a4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-}
-
-.cashback-text strong {
-  display: block;
-  font-weight: 600;
   margin-bottom: 2px;
 }
 
-.cashback-text span {
-  color: var(--text-sub);
+.plan-price {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: #000;
 }
 
-.cashback-text a {
-  color: var(--primary);
-  text-decoration: underline;
-  font-weight: 500;
+.plan-meta {
+  font-size: 13px;
+  text-align: center;
+  color: #666;
 }
 
-/* ================= BUTTON ================= */
+.plan-meta .popular {
+  font-weight: 600;
+  color: #ff3b3b;
+  margin-left: 4px;
+}
 
-.plan-button {
+/* List */
+.plan-body {
+  margin-top: 20px;
+}
+
+.plan-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.plan-list-item {
+  font-size: 13px;
+  color: #111;
+  line-height: 1.6;
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.plan-list-item::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #19b43a;
+  border-radius: 50%;
+  margin-right: 10px;
   margin-top: 6px;
 }
 
-.plan-button button {
-  width: 100%;
-  padding: 14px 18px;
-  border-radius: 999px;
-  border: none;
-  font-weight: 600;
-  font-size: 15px;
-  cursor: pointer;
-  background: var(--primary);
-  color: #ffffff;
-  transition: background 0.2s ease, transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.pricing-card:hover .plan-button button {
-  box-shadow: 0 8px 16px rgba(26, 169, 26, 0.4);
-}
-
-/* ================= FEATURES ================= */
-
-.card-features {
-  margin-top: 18px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.features-title {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.features-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--text-sub);
-}
-
-.features-list li {
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
-  line-height: 1.5;
-}
-
-.check-icon {
-  margin-top: 3px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 2px solid var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  color: var(--primary);
-  flex-shrink: 0;
-}
-
-.features-list strong {
-  color: var(--text-main);
-  font-weight: 600;
-}
-
-/* ================= FOOTER NOTE ================= */
-
-.note {
-  font-size: 11px;
-  color: #8b8f9b;
-  margin-top: 18px;
+/* Button */
+.plan-footer {
   text-align: center;
+  margin-top: 20px;
 }
 
-/* ================= RESPONSIVE ================= */
+.plan-button {
+  background: #21b738;
+  color: #ffffff;
+  padding: 10px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
 
+.plan-button:hover {
+  background: #1aa130;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------------------------------
+   RESPONSIVE BREAKPOINTS
+   --------------------------------- */
+
+/* Large tablets / small laptops */
+@media (max-width: 1200px) {
+  .pricing-container {
+    padding: 0 12px;
+  }
+
+  .pricing-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .plan-card {
+    padding: 24px;
+  }
+}
+
+/* Tablets: 2 cards per row */
 @media (max-width: 992px) {
-  .pricing-grid {
+
+
+  .PvtLtd-pricing-title {
+    font-size: 28px;
+  }
+
+  .pricing-subtitle {
+    font-size: 16px;
+  }
+
+  .pricing-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Large phones / small tablets: full width cards */
+@media (max-width: 768px) {
+  .pricing-cards {
     grid-template-columns: 1fr;
+  }
+
+  .plan-card {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .pvtltd-pricing-section {
+    padding: 32px 12px 48px;
+  }
+
+  .PvtLtd-pricing-title {
+    font-size: 22px;
+    letter-spacing: 0.5px;
+  }
+
+  .pricing-subtitle {
+    font-size: 14px;
+  }
+
+  .plan-card {
+    padding: 20px;
+  }
+
+  .plan-price {
+    font-size: 28px;
+  }
+
+  .plan-old-price {
+    font-size: 18px;
+  }
+
+  .plan-button {
+    width: 100%;
+    padding: 10px 0;
   }
 }

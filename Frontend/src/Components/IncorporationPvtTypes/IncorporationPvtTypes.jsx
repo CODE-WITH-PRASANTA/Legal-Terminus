@@ -19,7 +19,7 @@ const IncorporationPvtTypes = () => {
         {/* Content */}
         <div className="incorp-types-content">
           <h2 className="incorp-types-title">
-            Types of Private Limited Company Registration
+            Incorporation Of Wholly Owned Subsidiary in India
           </h2>
 
           <p className="incorp-types-intro">
