@@ -1,0 +1,124 @@
+/* ================= BASE ================= */
+.societys-our-clients-root {
+  background: #fff;
+  padding: 36px 0;
+}
+
+.societys-our-clients-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.societys-our-clients-title {
+  text-align: center;
+  font-size: 34px;
+  letter-spacing: 2px;
+  margin-bottom: 28px;
+  font-weight: 700;
+  color: #1aa91a;
+}
+
+/* ================= CAROUSEL ================= */
+.societys-our-clients-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 72px;
+}
+
+.societys-our-clients-scroller {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.societys-our-clients-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+/* ================= TRACK ================= */
+.societys-our-clients-track {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  padding: 12px 0;
+  margin: 0;
+  align-items: center;
+}
+
+/* ================= CARD ================= */
+.societys-our-clients-card {
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.22s ease;
+}
+
+.societys-our-clients-card:hover {
+  transform: translateY(-6px);
+}
+
+.societys-our-clients-logo {
+  width: 160px;
+  height: 92px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.societys-our-clients-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* ================= ARROWS ================= */
+.societys-our-clients-arrow {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: #1aa91a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.societys-our-clients-arrow-left {
+  left: 12px;
+}
+
+.societys-our-clients-arrow-right {
+  right: 12px;
+}
+
+.societys-our-clients-arrow:hover {
+  transform: translateY(-50%) scale(1.06);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .societys-our-clients-title {
+    font-size: 28px;
+  }
+
+  .societys-our-clients-carousel {
+    padding: 0 40px;
+  }
+
+  .societys-our-clients-card {
+    width: 128px;
+  }
+
+  .societys-our-clients-logo {
+    width: 128px;
+    height: 76px;
+  }
+}

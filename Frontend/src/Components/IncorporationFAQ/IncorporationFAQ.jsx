@@ -49,7 +49,7 @@ const faqs = [
   },
 ];
 
-const IncorporationFAQ = () => {
+const SocietyFAQ = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleFaq = (index) => {
@@ -57,16 +57,16 @@ const IncorporationFAQ = () => {
   };
 
   return (
-    <section className="incfaq-section">
-      <div className="incfaq-container">
+    <section className="societys-section">
+      <div className="societys-container">
 
         {/* LEFT */}
-        <div className="incfaq-left">
-          <h2 className="incfaq-title">
+        <div className="societys-left">
+          <h2 className="societys-title">
              Incorporation Company Registration FAQ&apos;s
           </h2>
 
-          <p className="incfaq-intro">
+          <p className="societys-intro">
             Starting a Private Limited Company in India is an important step for
             any business owner. With the right support, the process can be simple
             and stress-free.
@@ -77,27 +77,27 @@ const IncorporationFAQ = () => {
         </div>
 
         {/* RIGHT */}
-        <div className="incfaq-right">
-          <div className="incfaq-list">
+        <div className="societys-right">
+          <div className="societys-list">
             {faqs.map((item, index) => {
               const isActive = index === activeIndex;
               return (
                 <div
                   key={index}
-                  className={`incfaq-item ${isActive ? "active" : ""}`}
+                  className={`societys-item ${isActive ? "active" : ""}`}
                 >
                   <button
-                    className="incfaq-question"
+                    className="societys-question"
                     onClick={() => toggleFaq(index)}
                   >
                     <span>{item.question}</span>
-                    <span className={`incfaq-icon ${isActive ? "open" : ""}`}>
+                    <span className={`societys-icon ${isActive ? "open" : ""}`}>
                       ▾
                     </span>
                   </button>
 
                   <div
-                    className={`incfaq-answer ${
+                    className={`societys-answer ${
                       isActive ? "open" : ""
                     }`}
                   >
@@ -114,4 +114,4 @@ const IncorporationFAQ = () => {
   );
 };
 
-export default IncorporationFAQ;
+export default SocietyFAQ;
