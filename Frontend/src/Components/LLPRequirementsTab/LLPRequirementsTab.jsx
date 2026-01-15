@@ -10,53 +10,51 @@ const RequirementsLlp = () => {
           <h2 className="llp-req-title">
             Benefits of Limited Liability Partnership Registration in India
           </h2>
-          <p className="llp-req-subtitle">
-            The Ministry of Corporate Affairs (MCA) manages the company registration process in India. It includes registering the business with the Registrar of Companies (RoC) and obtaining a Digital Signature Certificate (DSC) and Director Identification Number (DIN).
+          {/* <p className="llp-req-subtitle">
+           The Ministry of Corporate Affairs (MCA) regulates LLP registration in India. It involves reserving the LLP name, obtaining DPIN/DSC for partners, and filing incorporation documents with the Registrar to get the LLP registered.
 
-
-          </p>
+          </p> */}
         </header>
 
         {/* Cards */}
         <div className="llp-req-grid">
           {/* 1 */}
           <article className="llp-req-card">
-            <h3 className="llp-req-card-title">Separate Legal Identity</h3>
+            <h3 className="llp-req-card-title">Partners’ Liability is Limited</h3>
             <div className="llp-req-card-underline" />
             <p className="llp-req-card-text">
-Once registered, a company becomes its own legal entity. It can own property, sign contracts, and operate separately from its owners.
-
+           In an LLP, partners get limited liability protection. If the business faces loss or insolvency, partners are liable only up to their capital contribution. Also, one partner is not responsible for another partner’s negligence or misconduct.
             </p>
           </article>
 
           {/* 2 */}
           <article className="llp-req-card">
-            <h3 className="llp-req-card-title">Limited Liability Protection</h3>
+            <h3 className="llp-req-card-title">Operational Flexibility</h3>
             <div className="llp-req-card-underline" />
             <p className="llp-req-card-text">
-              The personal assets of shareholders are safe from company debts and risks, ensuring financial protection.
+              An LLP is managed through an LLP Agreement, which defines partners’ roles, rights, and responsibilities. Day-to-day operations are usually handled by Designated Partners, making management smooth and well-structured.
             </p>
           </article>
 
           {/* 3 */}
           <article className="llp-req-card">
             <h3 className="llp-req-card-title">
-              Access to Government Schemes
+              Separate Legal Identity
             </h3>
             <div className="llp-req-card-underline" />
             <p className="llp-req-card-text">
-              Registered companies can benefit from government schemes like Startup India for tax benefits and easier compliance, and Make in India for incentives and support for manufacturing businesses.
+              An LLP has its own legal identity separate from its partners. It can own property, sign contracts, borrow funds, and take legal action in the LLP’s name, even if partners change over time.
             </p>
           </article>
 
           {/* 4 */}
           <article className="llp-req-card">
             <h3 className="llp-req-card-title">
-              Increased Credibility
+              Lower Compliance Requirements
             </h3>
             <div className="llp-req-card-underline" />
             <p className="llp-req-card-text">
-              A registered company is more trusted by investors, clients, and vendors, making it easier to get funding and partnerships.
+              LLPs have fewer compliances than Private Limited Companies. Audit is not mandatory unless turnover or contribution crosses a certain limit, making LLP a cost-effective and easy-to-maintain business structure.
             </p>
           </article>
         </div>

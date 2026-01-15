@@ -13,26 +13,22 @@ import "./GSTRegDocument.css";
 
 const leftDocs = [
   {
-    title: "PAN Card",
-    desc: "Permanent Account Number of the applicant.",
+    desc: "Any registration certificate of an organization such as Certification of Incorporation/Partnership Deed/Trade License.",
     icon: <FaIdCard />,
     bg: "bg-blue",
   },
   {
-    title: "Aadhaar Card",
-    desc: "Aadhaar of proprietor, partner, or director.",
+    desc: "Rent agreement and Electricity bill of the registered office address of the organization.",
     icon: <FaAddressCard />,
     bg: "bg-orange",
   },
   {
-    title: "Business Registration Proof",
-    desc: "Certificate of incorporation or registration.",
+    desc: "ROR copy / Property Tax receipt",
     icon: <FaBuilding />,
     bg: "bg-purple",
   },
   {
-    title: "Director Identity Proof",
-    desc: "Identity proof of directors or promoters.",
+    desc: "Photo, PAN card & Aadhar Card of all the Directors/Partners/Proprietor.",
     icon: <FaUserTie />,
     bg: "bg-red",
   },
@@ -40,28 +36,19 @@ const leftDocs = [
 
 const rightDocs = [
   {
-    title: "Business Address Proof",
-    desc: "Electricity bill or rent agreement.",
+    desc: "Photo, PAN card & Aadhar Card of the Authorised person who will be responsible under GST",
     icon: <FaMapMarkerAlt />,
     bg: "bg-teal",
   },
   {
-    title: "Bank Proof",
-    desc: "Cancelled cheque or bank statement.",
+    desc: "Authorization letter/ Board Resolution for Authorised person (shall be provided by us)",
     icon: <FaUniversity />,
     bg: "bg-green",
   },
   {
-    title: "Digital Signature (DSC)",
-    desc: "Required for GST filing and authentication.",
+    desc: "A detailed checklist will be provided by our team in this respect",
     icon: <FaPenNib />,
     bg: "bg-indigo",
-  },
-  {
-    title: "Authorization Letter",
-    desc: "Board resolution for authorized signatory.",
-    icon: <FaFileAlt />,
-    bg: "bg-pink",
   },
 ];
 
@@ -116,9 +103,9 @@ const GSTDocuments = () => {
       </div>
 
       {/* BOTTOM CONTENT */}
-      <div className="gst-bottom">
+      {/* <div className="gst-bottom">
         <h2>
-          Simplified <span>GST Registration</span> with Expert Support
+         Simple Steps for GST Registration in India
         </h2>
         <p>
           We take care of documentation, verification, and filing to ensure
@@ -126,7 +113,7 @@ const GSTDocuments = () => {
         </p>
 
         <button className="gst-btn">Apply for GST Registration</button>
-      </div>
+      </div> */}
     </section>
   );
 };

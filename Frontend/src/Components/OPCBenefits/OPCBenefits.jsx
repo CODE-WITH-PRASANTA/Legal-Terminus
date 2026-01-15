@@ -22,42 +22,55 @@ const OPCBenefits = () => {
         <div className="opcben-grid">
           {/* 1 */}
           <article className="opcben-card">
-            <h3 className="opcben-card-title">Separate Legal Identity</h3>
+            <h3 className="opcben-card-title">Sole Ownership</h3>
             <div className="opcben-card-underline" />
             <p className="opcben-card-text">
-              Once registered, a company becomes its own legal entity. It can own property,
-              sign contracts, and operate separately from its owner.
+              An OPC is owned by only one person. The owner has full control and keeps all profits, with no need to take approvals from others.
             </p>
           </article>
 
           {/* 2 */}
           <article className="opcben-card">
-            <h3 className="opcben-card-title">Limited Liability Protection</h3>
+            <h3 className="opcben-card-title">Limited Liability</h3>
             <div className="opcben-card-underline" />
             <p className="opcben-card-text">
-              The personal assets of the owner are safe from company debts and risks,
-              ensuring financial protection.
+              In OPC, the owner’s personal assets stay safe. Liability is limited only to the unpaid share capital, not personal property.
             </p>
           </article>
 
           {/* 3 */}
           <article className="opcben-card">
-            <h3 className="opcben-card-title">Access to Government Schemes</h3>
+            <h3 className="opcben-card-title">Easy Loan & Credit</h3>
             <div className="opcben-card-underline" />
             <p className="opcben-card-text">
-              Registered companies can benefit from government schemes like Startup India
-              for tax benefits and easier compliance, and Make in India for incentives and
-              manufacturing support.
+              Since OPC is registered with MCA, it has better trust and can easily apply for business loans and credit facilities.
             </p>
           </article>
 
           {/* 4 */}
           <article className="opcben-card">
-            <h3 className="opcben-card-title">Increased Credibility</h3>
+            <h3 className="opcben-card-title">Easy Registration</h3>
             <div className="opcben-card-underline" />
             <p className="opcben-card-text">
-              A registered company is more trusted by investors, clients, and vendors,
-              making it easier to secure funding and partnerships.
+              OPC registration is fast and online through SPICe+ form. It reduces paperwork and saves time.
+            </p>
+          </article>
+
+          {/* 5 */}
+          <article className="opcben-card">
+            <h3 className="opcben-card-title">MSME Benefits</h3>
+            <div className="opcben-card-underline" />
+            <p className="opcben-card-text">
+              OPCs can register under MSME and get benefits like low-interest loans, subsidies, and easier credit support.
+            </p>
+          </article>
+
+          {/* 6 */}
+          <article className="opcben-card">
+            <h3 className="opcben-card-title">Tax Benefits</h3>
+            <div className="opcben-card-underline" />
+            <p className="opcben-card-text">
+              OPC gets company-level tax benefits and can claim deductions on business expenses, which helps reduce tax burden.
             </p>
           </article>
         </div>

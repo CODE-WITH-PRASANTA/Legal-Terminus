@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* --------------------------------------------------
+   OVERVIEW
+-------------------------------------------------- */
+
+.profopc-companytab-overview-wrapper {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+  font-family: "Poppins", sans-serif;
+}
+
+.profopc-companytab-overview-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.profopc-companytab-overview-text {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #374151;
+  margin-bottom: 20px;
+}
+
+/* --------------------------------------------------
+   PVT INTRO
+-------------------------------------------------- */
+
+.profopc-companytab-intro-section {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  padding: 64px 24px 56px;
+}
+
+.profopc-companytab-intro-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  column-gap: 64px;
+  align-items: center;
+}
+
+.profopc-companytab-intro-illustration-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profopc-companytab-intro-illustration {
+  max-width: 100%;
+  height: auto;
+}
+
+.profopc-companytab-intro-content {
+  max-width: 720px;
+}
+
+.profopc-companytab-intro-title {
+  font-size: 40px;
+  font-weight: 600;
+  color: #151821;
+  margin-bottom: 18px;
+}
+
+.profopc-companytab-intro-text {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+/* --------------------------------------------------
+   COMPANIES ACT
+-------------------------------------------------- */
+
+.profopc-companytab-act-section {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  padding: 24px 24px 56px;
+}
+
+.profopc-companytab-act-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.profopc-companytab-act-card {
+  border-radius: 20px;
+  padding: 32px 40px;
+  background: linear-gradient(to bottom, #f4f8ff 0%, #ffffff 100%);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+.profopc-companytab-act-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #273143;
+  margin-bottom: 14px;
+}
+
+.profopc-companytab-act-text,
+.profopc-companytab-act-point {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+.profopc-companytab-act-point-label {
+  font-weight: 600;
+  margin-right: 4px;
+}

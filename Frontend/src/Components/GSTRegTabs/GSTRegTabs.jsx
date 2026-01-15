@@ -4,21 +4,19 @@ import "./GSTRegTabs.css";
 /* TAB CONTENT */
 import GSTRegOverview from "../GSTRegOverview/GSTRegOverview";
 import Advantages from "../GSTRegAdvantages/GSTRegAdvantages";
-import Eligibility from "../GSTRegEligibility/GSTRegEligibility";
+import Benefits from "../GSTRegEligibility/GSTRegEligibility";
 import Documents from "../GSTRegDocument/GSTRegDocument";
-import Process from "../GSTRegProcess/GSTRegProcess";
-import Features from "../GSTRegFeatures/GSTRegFeatures";
+import Processes from "../GSTRegProcess/GSTRegProcess";
 import Types from "../GSTRegTypes/GSTRegTypes";
 import FAQs from "../GSTRegFAQ/GSTRegFAQ";
 
 const TABS = [
   { id: "overview", label: "Overview", component: <GSTRegOverview /> },
   { id: "advantages", label: "Advantages", component: <Advantages /> },
-  { id: "eligibility", label: "Eligibility", component: <Eligibility /> },
+  // { id: "benefits", label: "Benefits", component: <Benefits /> },
   { id: "documents", label: "Documents", component: <Documents /> },
-  { id: "process", label: "Process", component: <Process /> },
-  { id: "features", label: "Features", component: <Features /> },
-  { id: "types", label: "Types", component: <Types /> },
+  { id: "processes", label: "Processes", component: <Processes /> },
+  // { id: "types", label: "Types", component: <Types /> },
   { id: "faqs", label: "FAQs", component: <FAQs /> },
 ];
 
@@ -34,10 +32,10 @@ const TabsBar = () => {
   return (
     <section className="gst-tabs">
       {/* Header */}
-      <header className="gst-tabs-header">
+      {/* <header className="gst-tabs-header">
         <h1>GST Registration Guide</h1>
         <p>Complete step-by-step guide for GST registration in India</p>
-      </header>
+      </header> */}
 
       {/* Progress */}
       <div className="gst-progress">

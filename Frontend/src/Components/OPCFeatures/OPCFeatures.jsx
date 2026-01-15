@@ -22,40 +22,22 @@ const OPCFeatures = () => {
           </h2>
 
           <p className="opc-features-intro">
-            One Person Companies can be registered in different forms based on ownership,
-            liability, and business objectives. Choosing the right type helps ensure legal
-            protection, smooth operations, and long-term growth.
+            OPC is a business structure that allows a single person to establish a company as a separate legal entity. 
           </p>
 
           {/* Type 1 */}
           <div className="opc-features-block">
-            <h3 className="opc-features-subtitle">Company limited by Shares</h3>
+            <h3 className="opc-features-subtitle">OPC Limited by Shares</h3>
             <p className="opc-features-text">
-              This is the most common type of One Person Company. The liability of the sole
-              member is limited to the unpaid amount on their shares. It is ideal for
-              startups and growing businesses looking to raise funds while protecting
-              personal assets.
+              OPC Limited by Shares is the most common type of One Person Company. In this type, the owner’s responsibility is limited only to the amount of share capital that is still unpaid. The owner holds shares to show ownership and investment in the business. This structure is best for businesses that want to earn profits and grow.
             </p>
           </div>
 
           {/* Type 2 */}
           <div className="opc-features-block">
-            <h3 className="opc-features-subtitle">Company limited by Guarantee</h3>
+            <h3 className="opc-features-subtitle">OPC Limited by Guarantee</h3>
             <p className="opc-features-text">
-              In this type, the sole member agrees to contribute a fixed amount in case of
-              liquidation. It is generally suitable for non-profit or charitable
-              organizations that do not require share capital.
-            </p>
-          </div>
-
-          {/* Type 3 */}
-          <div className="opc-features-block">
-            <h3 className="opc-features-subtitle">Unlimited Companies</h3>
-            <p className="opc-features-text">
-              An unlimited company does not place any limit on the member’s liability. The
-              individual is personally responsible for company debts. This structure is less
-              common and is usually chosen by closely held businesses with full control over
-              operations.
+              OPC Limited by Guarantee is mostly used for non-profit organisations, social businesses, or professional groups. In this type, there are no shares. Instead, the owner promises to pay a fixed amount only if the company is closed (wound up). The owner’s liability is limited only to this guaranteed amount.
             </p>
           </div>
         </div>

@@ -10,26 +10,24 @@ const Breadcrum = () => {
         <div className="lt-public-content">
 
           <span className="lt-public-tag">
-            Private Limited Company Registration
+            Proprietorship Firms Registration
           </span>
 
           <h1 className="lt-public-title">
-            Private Limited Company Registration
+            Proprietorship Firms Registration
+            <br>
+            </br>
             <span> in India</span>
           </h1>
 
           <p className="lt-public-description">
-            A Private Limited Company is a popular and trusted business structure in India, especially for startups and growing businesses. It helps protect personal assets, builds business credibility, and makes it easier to raise funds.
-
-<br/><br/>
-Legal Terminus can help you with Private Limited Company registration in a hassle-free way, whenever you need it. We take care of the complete process—from paperwork to approvals—within a reasonable time. Our professional fees start at ₹3,999, making company registration simple, affordable, and stress-free.
-
+            Legal Terminus can help you in Sole proprietorship firms registration in India, as and when required. We provide hassle-free services within a reasonable timeframe and competitive professional fees starting from Rs.999/-. Whether you need help with the proprietorship company registration process, we’ve got you covered.
           </p>
 
           <div className="lt-public-features">
-            <div className="lt-feature-item"> Minimum 2 Directors Required</div>
-            <div className="lt-feature-item"> Separate Legal Entity</div>
-            <div className="lt-feature-item"> Limited Liability Protection</div>
+            <div className="lt-feature-item"> Only 1 Directors Required</div>
+            <div className="lt-feature-item"> Very Easy to Form</div>
+            <div className="lt-feature-item"> Hassle Free</div>
             <div className="lt-feature-item"> High Business Credibility</div>
           </div>
 
@@ -59,7 +57,7 @@ Legal Terminus can help you with Private Limited Company registration in a hassl
             </h3>
 
             <p className="lt-form-subtitle">
-              Talk to our Private Limited Company registration expert
+              Talk to our Proprietorship Firms Registration expert
             </p>
 
             <form

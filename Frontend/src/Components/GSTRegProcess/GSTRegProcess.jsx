@@ -3,29 +3,34 @@ import "./GSTRegProcess.css";
 
 const steps = [
   {
-    title: "Step 1 – Apply on GST Portal",
+    title: "Step 1 – Document Submission",
     text:
-      "Visit the GST portal and enter legal business name, PAN, email ID, mobile number, state, and district.",
+      "Provision of requisite mentioned documents/information to us",
   },
   {
-    title: "Step 2 – Authenticate OTP",
+    title: "Step 2 – Documents Scrutinizing",
     text:
-      "Receive OTP on registered mobile number and email ID for verification.",
+      "Validating the documents/information and processing the same",
   },
   {
-    title: "Step 3 – TRN Generated",
+    title: "Step 3 – Further Documentations",
     text:
-      "After OTP verification, a Temporary Reference Number (TRN) is generated.",
+      "Preparation of further documents for signature",
   },
   {
-    title: "Step 4 – Submission for Verification",
+    title: "Step 4 – Filing of Application",
     text:
-      "Provide promoter details, business details, Aadhaar authentication, and verification.",
+      "Filing of application and submission of the same online",
   },
   {
-    title: "Step 5 – Receive ARN Confirmation",
+    title: "Step 5 – Process of ARN Generation",
     text:
-      "Application Reference Number (ARN) is generated and sent via SMS.",
+      "Aadhaar authentication for generation of ARN through OTP",
+  },
+  {
+    title: "Step 5 – Issue of Registration Certificate",
+    text:
+      "Processing of the application and issuance of registration certificate",
   },
 ];
 
@@ -33,12 +38,8 @@ const GSTProcess = () => {
   return (
     <section className="GSTProcess-wrapper">
       <h2 className="GSTProcess-heading">
-        How to Apply for GST Registration Online?
+        Simple Steps for GST Registration in India
       </h2>
-
-      <p className="GSTProcess-subheading">
-        Follow the step-by-step snake process to complete GST registration easily.
-      </p>
 
       {/* ================= SNAKE PROCESS ================= */}
       <div className="GSTProcess-snake-grid">
@@ -73,11 +74,11 @@ const GSTProcess = () => {
         })}
       </div>
 
-      {/* ================= CONSEQUENCES ================= */}
-      <h2 className="GSTProcess-heading">Consequences for Non-Compliance</h2>
+      {/* ================= CONSEQUENCES =================
+      <h2 className="GSTProcess-heading">Consequences for Non-Compliance</h2> */}
 
       <div className="GSTProcess-penalty-grid">
-        <div className="GSTProcess-penalty-card GSTProcess-light">
+        {/* <div className="GSTProcess-penalty-card GSTProcess-light">
           <h3>Penalty for Violation in GST</h3>
           <ul>
             <li>10% penalty on unpaid tax</li>
@@ -86,44 +87,46 @@ const GSTProcess = () => {
             <li>Interest on outstanding tax</li>
             <li>GST suspension or cancellation</li>
           </ul>
-        </div>
+        </div> */}
 
-        <div className="GSTProcess-penalty-card GSTProcess-dark">
+        {/* <div className="GSTProcess-penalty-card GSTProcess-dark">
           <h3>Penalty for Not Registering GST</h3>
           <ul>
             <li>₹10,000 or tax evaded (whichever is higher)</li>
             <li>Penalty up to ₹2 Lakhs</li>
             <li>Legal action under CGST Act</li>
           </ul>
-        </div>
+        </div> */}
       </div>
 
       {/* ================= COMPONENTS ================= */}
       <h2 className="GSTProcess-heading">
-        Key Components of GST Registration
+        Different Types of GST Registration
       </h2>
+      
+     <div style={{ height: "30px" }}></div>
 
       <div className="GSTProcess-components-grid">
         <div className="GSTProcess-component-card">
-          <h4>CGST</h4>
-          <p>Central Goods & Services Tax imposed by Central Government.</p>
+          <h4>Central GST (CGST)</h4>
+          <p>This tax is applied when goods or services are sold within the same state. The central government collects this tax.</p>
         </div>
 
         <div className="GSTProcess-component-card">
-          <h4>SGST</h4>
-          <p>State Goods & Services Tax imposed by State Government.</p>
+          <h4>State GST (SGST)</h4>
+          <p>This is also charged on sales within a state, but the tax is collected by the state government.</p>
         </div>
 
         <div className="GSTProcess-component-card">
-          <h4>IGST</h4>
-          <p>Integrated GST for inter-state transactions.</p>
+          <h4>Integrated GST (IGST)</h4>
+          <p>This tax is applied when goods or services are sold from one state to another. The central government collects it and later shares it with the respective state.</p>
         </div>
       </div>
 
       <div className="GSTProcess-cta-wrapper">
-        <button className="GSTProcess-cta-btn">
+        {/* <button className="GSTProcess-cta-btn">
           Get Your GST Number Quickly
-        </button>
+        </button> */}
       </div>
     </section>
   );

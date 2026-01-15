@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./PFRtabs.css";
 
 const tabs = [
-  { label: "Why Choose Pvt Ltd", id: "company" },
+  { label: "Why Choose Partnership Firm", id: "company" },
   { label: "Types", id: "types" },
   { label: "Requirements", id: "requirements" },
   { label: "Process & Steps", id: "process" },

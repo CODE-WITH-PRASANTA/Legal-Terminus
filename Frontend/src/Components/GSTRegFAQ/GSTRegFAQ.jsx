@@ -4,36 +4,68 @@ import "./GSTRegFAQ.css";
 
 const faqs = [
   {
-    question: "What is GST?",
-    answer:
-      "The Goods and Services Tax (GST) is a single indirect tax introduced in India to replace multiple indirect taxes levied by the central and state governments on goods and services."
+    question: "When will it become mandatory for an organization to obtain GST Registration?",
+    answer: (
+    <div>
+      <p>An organization shall be required to obtain GST Registration on fulfilment of prescribed criteria and some key/ basic criteria is mentioned below:-</p>
+      <ol>
+        <li>When the turnover of any organization exceeds Rs. 40 Lakh in case of supply of Goods</li>
+        <li>When the turnover of any organisation exceeds Rs. 20 Lakh in case of supply of Services</li>
+        <li>When an organisation makes any inter-state taxable supply</li>
+        <li>E-Commerce operator for supplying services as notified</li>
+        <li>Organization/ entity who supply goods or services or both through electronic commerce operator</li>
+        <li>Non-resident taxable persons making taxable supply</li>
+        <li>An organization who is required to deduct TDS as per GST Act</li>
+        <li>An organization can voluntarily also apply for GST Registration</li>
+      </ol>
+    </div>
+  ),
   },
   {
-    question: "In which cases is GST registration crucial?",
-    answer:
-      "GST registration is mandatory for businesses exceeding prescribed turnover limits, inter-state suppliers, e-commerce operators, and those required under GST law."
+    question: "What are some key/ basic documents/information required for GST Registration?",
+    answer: (
+    <div>
+      <ol>
+        <li>Any registration certificate of an organization such as Certification of Incorporation/Partnership Deed/GST Registration Certificate/Trade License.</li>
+        <li>Rent agreement and any utility bill of the registered office address of the organization.</li>
+        <li>Photo, PAN card& Aadhar Card of the organization and all the Directors/Partners/Proprietors.</li>
+        <li>Photo, PAN card & Aadhar Card of the Authorised person who will be responsible under GST</li>
+        <li>Authorization letter/ Board Resolution for appointment of Authorised person</li>
+        <li>Bank statement (with Current transactions) of the organization along with 1 cancelled cheque.</li>
+        <li>Digital Signature of the applicant/authorized signatory.</li>
+        <li>Head office and branch office details</li>
+        <li>Type of business activity (details of goods/ services to be supplied)</li>
+      </ol>
+    </div>
+  ),
   },
   {
-    question: "Will I need to upload my photograph for GST registration?",
-    answer:
-      "Yes, a recent passport-sized photograph of promoters, partners, or directors is required during the GST registration process."
-  },
+  question: "What is the procedure to obtain GST Registration?",
+  answer: (
+    <div>
+      <p>The broad process of obtaining GST Registration involves following steps:</p>
+      <ol>
+        <li>STEP 1: Provision of requisite mentioned documents/information to us</li>
+        <li>STEP 2: Validating the documents/ information and processing the same.</li>
+        <li>STEP 3: Filing of application and submission of the same in online/offline manner, as the case may be</li>
+        <li>STEP 4: Payment of appropriate government fee as applicable</li>
+        <li>STEP 5: Processing of the application and issuance of registration certificate</li>
+      </ol>
+    </div>
+  ),
+},
+
   {
     question:
-      "I am an e-commerce operator registered as TCS under GST. Do I need to register in each state?",
+      "What is the time period within which the GST Registration can be obtained?",
     answer:
-      "Yes, e-commerce operators supplying goods to multiple states must obtain GST registration in each applicable state."
+      "The process of obtaining GST Registration can take anywhere between 5 to 7 working days, subject to submission of correct information and complete documentation."
   },
   {
-    question: "Is GST registration mandatory in India?",
+    question: "How Legal Terminus can help you to obtain GST Registration?",
     answer:
-      "Yes, GST registration is mandatory once a business crosses the threshold limit or falls under compulsory registration categories."
+      "Legal Terminus can help you with obtaining GST registration for your organization, as and when required, in a hassle-free manner within a reasonable time span and for competitive professional fees. To know more, please book a telephonic appointment with one of our consultants free of charge"
   },
-  {
-    question: "Is there any government fee for GST registration?",
-    answer:
-      "No. The government does not charge any fee for GST registration. Professional charges may apply."
-  }
 ];
 
 const GSTFaq = () => {
@@ -51,11 +83,11 @@ const GSTFaq = () => {
         <div className="GSTFaq-left">
           <span className="GSTFaq-badge">FAQs</span>
           <h2 className="GSTFaq-title">
-            GST Registration <br /> Frequently Asked Questions
+            FAQs on GST Registration
           </h2>
           <p className="GSTFaq-intro">
             Clear answers to the most common questions about GST registration,
-            eligibility, timelines, fees, and compliance requirements.
+            eligibility, timelines, and compliance requirements.
           </p>
         </div>
 

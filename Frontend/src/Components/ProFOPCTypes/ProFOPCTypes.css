@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.profopc-types-section {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #ffffff;
+  padding: 20px 24px 20px;
+}
+
+.profopc-types-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.85fr 1.4fr;
+  column-gap: 72px;
+  align-items: flex-start;
+}
+
+/* Left illustration */
+.profopc-types-illustration-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 12px;
+}
+
+.profopc-types-illustration {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Right content */
+.profopc-types-content {
+  max-width: 760px;
+}
+
+.profopc-types-title {
+  font-size: 40px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: #151821;
+  margin: 0 0 18px;
+}
+
+.profopc-types-intro {
+  margin: 0 0 24px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+.profopc-types-block {
+  margin-bottom: 24px;
+}
+
+.profopc-types-subtitle {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.profopc-types-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+/* ---------------------------
+   Responsive
+---------------------------- */
+
+@media (max-width: 1024px) {
+  .profopc-types-section {
+    padding: 52px 20px 44px;
+  }
+
+  .profopc-types-container {
+    column-gap: 40px;
+    grid-template-columns: 0.9fr 1.3fr;
+  }
+
+  .profopc-types-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profopc-types-section {
+    padding: 40px 16px 36px;
+  }
+
+  .profopc-types-container {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .profopc-types-illustration-wrap {
+    order: 1;
+  }
+
+  .profopc-types-content {
+    order: 2;
+  }
+
+  .profopc-types-title {
+    font-size: 28px;
+  }
+
+  .profopc-types-intro,
+  .profopc-types-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profopc-types-section {
+    padding: 32px 14px 28px;
+  }
+
+  .profopc-types-title {
+    font-size: 24px;
+  }
+
+  .profopc-types-intro,
+  .profopc-types-text {
+    font-size: 13.5px;
+    line-height: 1.85;
+  }
+}
+
+/* Image size tweak (unchanged logic) */
+.profopc-types-illustration {
+  max-width: 115%;
+  height: auto;
+  display: block;
+}
+
+/* Scrollable content (unchanged logic) */
+.profopc-types-content {
+  max-width: 760px;
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 14px;
+}

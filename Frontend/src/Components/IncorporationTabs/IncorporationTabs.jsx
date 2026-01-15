@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./IncorporationTabs.css";
 
 const tabs = [
-  { label: "Why Choose Pvt Ltd", id: "company" },
-  { label: "Types", id: "types" },
+  { label: "Why Choose WOS", id: "company" },
+  // { label: "Types", id: "types" },
   { label: "Requirements", id: "requirements" },
   { label: "Process & Steps", id: "process" },
   { label: "Documents", id: "documents" },

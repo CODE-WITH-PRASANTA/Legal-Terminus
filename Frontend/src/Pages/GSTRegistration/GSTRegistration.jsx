@@ -22,8 +22,8 @@ const GSTRegistration = () => {
       <GSTRegEligibility />
       <GSTRegDocument />
       <GSTRegProcess />
-      <GSTRegFeatures />
-      <GSTRegTypes />
+      {/* <GSTRegFeatures /> */}
+      {/* <GSTRegTypes /> */}
       <GSTRegFAQ />
     </div>
   )

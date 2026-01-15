@@ -8,45 +8,33 @@ import {
   FiAward,
 } from "react-icons/fi";
 import "./GSTRegAdvantages.css";
-import gstHero from "../../assets/img-4.webp";
+import gstHero from "../../assets/img-1.webp";
 import gstBenefitsImg from "../../assets/img-3.webp";
 
 const benefits = [
   {
-    title: "Regulatory Compliance",
+    title: "Legal Recognition & Market Expansion",
     desc:
-      "GST registration safeguards businesses in India by ensuring legal compliance and preventing penalties.",
+      "GST registration gives businesses official recognition as suppliers of goods or services. It also allows them to sell on eCommerce platforms like Amazon or Flipkart, helping them reach more customers.",
     icon: <FiShield />,
   },
   {
-    title: "Easy Compliance",
+    title: "Tax Benefits & No Double Taxation",
     desc:
-      "Simplifies GST filing, online payments, and return submissions for businesses.",
+      "Registered businesses can claim Input Tax Credit (ITC) on their purchases, reducing their tax burden. Additionally, GST eliminates double taxation by allowing tax credits across the supply chain, lowering costs for businesses and consumers.",
     icon: <FiZap />,
   },
   {
-    title: "Maintains Transparency",
+    title: "Simplified Tax Filing & Lower Tax for Small Businesses",
     desc:
-      "Ensures updated tax records and improves trust with vendors and authorities.",
+      "GST has made tax filing easier with an online system for payments and returns. Small businesses can also opt for the Composition Scheme, which lets them pay tax at a lower, fixed rate, reducing paperwork and compliance hassles.",
     icon: <FiBarChart2 />,
   },
   {
-    title: "Legal Protection",
+    title: "Higher Exemption Limit for Small Businesses",
     desc:
-      "Protects businesses by maintaining statutory and regulatory safeguards.",
+      "Only businesses with a turnover above ₹40 lakh (₹20 lakh in some states) need to register for GST. This means many small businesses are exempt, making operations simpler and reducing compliance burdens.",
     icon: <FiLock />,
-  },
-  {
-    title: "Improves Credit Score",
-    desc:
-      "Consistent GST compliance enhances creditworthiness and financial reputation.",
-    icon: <FiTrendingUp />,
-  },
-  {
-    title: "Market Advantage",
-    desc:
-      "GST-registered businesses enjoy higher credibility and customer trust.",
-    icon: <FiAward />,
   },
 ];
 
@@ -61,15 +49,22 @@ const GSTBenefits = () => {
           </div>
 
           <div className="gst-hero-content">
-            <h2>What is a GST Registration Certificate?</h2>
+            <h2>Who Needs to Register for GST?</h2>
             <p>
-              A GST Registration Certificate is an official document issued by
-              the Government of India to registered businesses, validating their
-              legal GST status.
+              Some businesses and individuals must register for GST to follow tax rules. Here’s who should apply:
             </p>
             <p>
-              It is mandatory for LLPs, OPCs, private limited companies, and
-              public limited companies to ensure compliance and credibility.
+              ✅ Service Providers – If you provide services (like freelancing, consulting, or agency work) and earn more than ₹20 lakh per year (₹10 lakh in some special states), you need GST registration.
+              <br></br>
+              ✅ Other than Service Provider – If the turnover exceeds 40 lakh per year, you need GST registration.
+              <br></br>
+              ✅ Online Sellers – If you sell products or services on platforms like Amazon or Flipkart, you must register for GST, no matter how much you earn.
+              <br></br>
+              ✅ Inter-State Suppliers – If you sell goods or services across different states, GST registration is mandatory, even if your sales are low.
+              <br></br>
+              ✅ Input Service Distributors (ISD) – If your business distributes tax credits (GST paid on purchases) to different branches, you must register.
+              <br></br>
+              ✅ Voluntary Registration – You can already register your business under GST voluntarily as per your business need.
             </p>
           </div>
         </div>
@@ -81,8 +76,7 @@ const GSTBenefits = () => {
           Benefits of GST Registration
         </h2>
         <p className="gst-section-subtitle">
-          GST registration empowers businesses with compliance, transparency,
-          and long-term growth advantages.
+          Registering for GST is an important step for businesses in India. It comes with several advantages that make tax compliance easier and more beneficial.
         </p>
 
         <div className="gst-benefits-grid">
@@ -110,7 +104,7 @@ const GSTBenefits = () => {
             ))}
 
             <div className="gst-cta">
-              <button>Talk to a GST Expert</button>
+              {/* <button>Talk to a GST Expert</button> */}
             </div>
           </div>
         </div>
