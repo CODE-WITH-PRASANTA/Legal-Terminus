@@ -30,6 +30,11 @@ import Parternership from "./Pages/Parternership/Parternership";
 import RouteLoaderWrapper from "./Components/PageLoader/RouteLoaderWrapper";
 import FloatIcon from "./Components/FloatIcon/FloatIcon";
 
+import LLRegistration from "./Pages/LLRegistration/LLRegistration";
+import BCRegistration from "./Pages/BCRegistration/BCRegistration";
+import ISOCertification from "./Pages/ISOCertification/ISOCertification";
+
+
 
 function App() {
   return (
@@ -72,6 +77,9 @@ function App() {
           <Route path="/proprietorship" element={<Proprietorship/>}/>
         
           <Route path="/partnership" element={<Parternership/>} />
+          <Route path="/labour-license" element={<LLRegistration/>} /> 
+          <Route path="/bar-code" element={<BCRegistration/>} />
+          <Route path="/iso" element={<ISOCertification />} />
           
         </Routes>
       </RouteLoaderWrapper>
