@@ -1,211 +1,134 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
-
 /* ================= SECTION ================= */
-.incdocs-section {
-  font-family: "Inter", sans-serif;
-  background:
-    radial-gradient(circle at 20% 50%, rgba(34,197,94,0.10), transparent 45%),
-    radial-gradient(circle at 80% 50%, rgba(56,189,248,0.10), transparent 45%),
-    linear-gradient(180deg, #f8fbff, #ffffff);
-  padding: 140px 20px;
+
+.inc-docs-section {
+  padding: 30px 20px;
+  background: linear-gradient(180deg, #f5f7fa, #ffffff);
 }
 
-/* ================= LAYOUT ================= */
-.incdocs-layout {
-  max-width: 1300px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 360px 1fr;
-  align-items: center;
-  gap: 90px;
-}
+/* ================= CONTAINER ================= */
 
-/* ================= CENTER CIRCLE ================= */
-.incdocs-center {
-  display: flex;
-  justify-content: center;
-}
-
-.incdocs-ring {
-  width: 340px;
-  height: 340px;
-  border-radius: 50%;
-  background: conic-gradient(
-    #22c55e,
-    #38bdf8,
-    #6366f1,
-    #22c55e
-  );
-  padding: 10px;
-  box-shadow: 0 40px 90px rgba(56,189,248,0.35);
-}
-
-.incdocs-ring-inner {
-  width: 100%;
-  height: 100%;
-  background: #ffffff;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.inc-docs-container {
+  max-width: 1050px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.incdocs-ring-inner h3 {
-  margin: 0;
-  font-size: 20px;
+/* ================= MAIN H2 ================= */
+
+.inc-docs-main-heading {
+  font-size: 34px;
+  font-weight: 800;
+  color: #2c3e50;
+  margin-bottom: 35px;
+}
+
+/* ================= DECORATIVE HEADER ================= */
+
+.inc-docs-header {
+  display: inline-block;
+  padding: 16px 64px;
+  background: #7f8c8d;
+  color: #fff;
+  border-radius: 50px;
   font-weight: 700;
-  color: #0f172a;
+  letter-spacing: 1.5px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-.incdocs-ring-inner span {
-  margin-top: 6px;
-  font-size: 13px;
-  color: #64748b;
-}
-
-/* ================= SIDE BLOCKS ================= */
-.incdocs-block {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  padding: 24px;
-  border-radius: 26px;
-}
-
-.incdocs-block.left {
-  background: linear-gradient(
-    180deg,
-    rgba(34,197,94,0.08),
-    rgba(34,197,94,0.02)
-  );
-  align-items: flex-end;
-}
-
-.incdocs-block.right {
-  background: linear-gradient(
-    180deg,
-    rgba(56,189,248,0.08),
-    rgba(56,189,248,0.02)
-  );
-  align-items: flex-start;
-}
-
-/* ================= CARD BASE ================= */
-.incdocs-card {
-  width: 100%;
-  max-width: 360px;
-  padding: 26px 28px;
-  border-radius: 20px;
-  transition: all 0.35s ease;
-  cursor: pointer;
-  position: relative;
-  box-shadow:
-    0 12px 30px rgba(0,0,0,0.10),
-    inset 0 1px 0 rgba(255,255,255,0.6);
-}
-
-/* Lift on hover / auto-active */
-.incdocs-card:hover,
-.incdocs-card.active {
-  transform: translateY(-10px) scale(1.03);
-}
-
-/* ================= DEFAULT CARD COLORS ================= */
-
-/* GREEN */
-.incdocs-card.green {
-  background: linear-gradient(180deg, #f0fdf4, #ffffff);
-  border-left: 6px solid #22c55e;
-}
-
-/* BLUE */
-.incdocs-card.blue {
-  background: linear-gradient(180deg, #eff6ff, #ffffff);
-  border-left: 6px solid #38bdf8;
-}
-
-/* PURPLE */
-.incdocs-card.purple {
-  background: linear-gradient(180deg, #eef2ff, #ffffff);
-  border-left: 6px solid #6366f1;
-}
-
-/* ================= HOVER / ACTIVE COLORS ================= */
-
-/* GREEN ACTIVE */
-.incdocs-card.green:hover,
-.incdocs-card.green.active {
-  background: linear-gradient(180deg, #dcfce7, #ffffff);
-  box-shadow: 0 26px 70px rgba(34,197,94,0.45);
-}
-
-/* BLUE ACTIVE */
-.incdocs-card.blue:hover,
-.incdocs-card.blue.active {
-  background: linear-gradient(180deg, #dbeafe, #ffffff);
-  box-shadow: 0 26px 70px rgba(56,189,248,0.45);
-}
-
-/* PURPLE ACTIVE */
-.incdocs-card.purple:hover,
-.incdocs-card.purple.active {
-  background: linear-gradient(180deg, #e0e7ff, #ffffff);
-  box-shadow: 0 26px 70px rgba(99,102,241,0.45);
-}
-
-/* ================= CARD CONTENT ================= */
-.incdocs-no {
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #0f172a;
+.inc-docs-header span {
   display: block;
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-top: 4px;
+  opacity: 0.9;
 }
 
-.incdocs-card svg {
-  font-size: 22px;
-  margin-bottom: 12px;
+/* ================= CONNECTOR ================= */
+
+.inc-docs-connector {
+  display: block;
+  width: 100%;
+  margin: -20px auto 0;
 }
 
-/* Icon color sync */
-.incdocs-card.green svg { color: #16a34a; }
-.incdocs-card.blue svg { color: #2563eb; }
-.incdocs-card.purple svg { color: #4f46e5; }
+/* ================= ITEMS ================= */
 
-.incdocs-card h4 {
-  margin: 0;
-  font-size: 17px;
-  font-weight: 600;
-  color: #0f172a;
+.inc-docs-items {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: -60px;
+  gap: 20px;
 }
 
-.incdocs-card p {
-  margin-top: 6px;
-  font-size: 14px;
+/* ================= ITEM CARD ================= */
+
+.inc-docs-item {
+  width: 260px;
+  transition: transform 0.4s ease;
+}
+
+.inc-docs-item svg {
+  filter: drop-shadow(0 14px 25px rgba(0, 0, 0, 0.15));
+}
+
+.inc-docs-item:hover {
+  transform: translateY(-14px);
+}
+
+.inc-docs-item h3 {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.inc-docs-item p {
+  font-size: 13px;
+  color: #666;
   line-height: 1.6;
-  color: #475569;
+  margin-top: 6px;
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 900px) {
-  .incdocs-layout {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
+/* ================= RESPONSIVE ================= */
 
-  .incdocs-center {
-    order: -1;
-  }
-
-  .incdocs-block.left,
-  .incdocs-block.right {
+/* TABLET */
+@media (max-width: 992px) {
+  .inc-docs-items {
+    flex-direction: column;
     align-items: center;
+    gap: 50px;
+    margin-top: 40px;
   }
 
-  .incdocs-ring {
-    width: 280px;
-    height: 280px;
+  .inc-docs-connector {
+    display: none;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .inc-docs-section {
+    padding: 25px 14px;
+  }
+
+  .inc-docs-main-heading {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .inc-docs-header {
+    padding: 14px 40px;
+  }
+
+  .inc-docs-item {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .inc-docs-item h3 {
+    font-size: 15px;
+  }
+
+  .inc-docs-item p {
+    font-size: 12.5px;
   }
 }

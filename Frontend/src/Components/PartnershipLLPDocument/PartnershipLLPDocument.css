@@ -1,0 +1,123 @@
+.Partnership-llp-ring-section {
+  padding: 90px 20px;
+  background: #f5f7fb;
+}
+
+.Partnership-llp-ring-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.Partnership-llp-ring-title {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #0f172a;
+}
+
+/* RING */
+.Partnership-llp-ring {
+  position: relative;
+  width: 560px;
+  height: 560px;
+  margin: auto;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: inset 0 0 0 40px #e5e7eb;
+}
+
+/* CENTER */
+.Partnership-llp-ring-center {
+  position: absolute;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #0ea5e9;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 3;
+}
+
+.Partnership-llp-ring-center h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.Partnership-llp-ring-center p {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* STEP BUBBLES */
+.Partnership-llp-ring-step {
+  position: absolute;
+  width: 200px;
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  text-align: left;
+}
+
+.step-number {
+  font-weight: 700;
+  font-size: 18px;
+  display: block;
+}
+
+/* COLORS */
+.red { border-top: 6px solid #ef4444; }
+.orange { border-top: 6px solid #f97316; }
+.yellow { border-top: 6px solid #eab308; }
+.green { border-top: 6px solid #22c55e; }
+.blue { border-top: 6px solid #0ea5e9; }
+.purple { border-top: 6px solid #8b5cf6; }
+
+/* POSITIONS (CIRCULAR) */
+.step-1 { top: -40px; left: 50%; transform: translateX(-50%); }
+.step-2 { top: 100px; right: -40px; }
+.step-3 { bottom: 100px; right: -40px; }
+.step-4 { bottom: -40px; left: 50%; transform: translateX(-50%); }
+.step-5 { bottom: 100px; left: -40px; }
+.step-6 { top: 100px; left: -40px; }
+
+/* TEXT */
+.Partnership-llp-ring-step h4 {
+  font-size: 15px;
+  margin: 6px 0;
+}
+
+.Partnership-llp-ring-step p {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .Partnership-llp-ring {
+    width: 100%;
+    height: auto;
+    background: none;
+    box-shadow: none;
+  }
+
+  .Partnership-llp-ring-center {
+    position: relative;
+    transform: none;
+    inset: auto;
+    margin: 0 auto 30px;
+  }
+
+  .Partnership-llp-ring-step {
+    position: relative;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 360px;
+  }
+}

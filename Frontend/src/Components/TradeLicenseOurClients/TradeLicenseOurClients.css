@@ -1,0 +1,259 @@
+/* =========================
+   TradeLicenseOurClients.css — identical design, renamed classes
+   ========================= */
+
+.tradeclients-root {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: #fff;
+    padding: 36px 0;
+}
+
+.tradeclients-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.tradeclients-title {
+    text-align: center;
+    font-size: 34px;
+    letter-spacing: 2px;
+    margin: 6px 0 28px 0;
+    font-weight: 700;
+    color: #1aa91a;
+}
+
+
+/* Carousel */
+
+.tradeclients-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 72px;
+    box-sizing: border-box;
+}
+
+
+/* Scroller */
+
+.tradeclients-scroller {
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+    will-change: scroll-position;
+}
+
+.tradeclients-scroller::-webkit-scrollbar {
+    display: none;
+}
+
+.tradeclients-scroller {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+
+/* Track & Cards */
+
+.tradeclients-track {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    padding: 12px 0;
+    margin: 0;
+    align-items: center;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.tradeclients-card {
+    flex: 0 0 auto;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.tradeclients-card:hover {
+    transform: translateY(-6px);
+}
+
+
+/* Logo tile */
+
+.tradeclients-logo {
+    width: 160px;
+    height: 92px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.tradeclients-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* Arrows */
+
+.tradeclients-arrow {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 8px;
+    background: #1aa91a;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 6;
+    box-shadow: 0 6px 14px rgba(12, 67, 30, 0.14);
+}
+
+.tradeclients-arrow-left {
+    left: 12px;
+}
+
+.tradeclients-arrow-right {
+    right: 12px;
+}
+
+.tradeclients-arrow:hover {
+    transform: translateY(-50%) scale(1.06);
+    background: #1aa91a;
+}
+
+
+/* =========================
+   Responsive Breakpoints
+   ========================= */
+
+@media (max-width: 1280px) {
+    .tradeclients-container {
+        max-width: 1100px;
+        padding: 0 14px;
+    }
+    .tradeclients-carousel {
+        padding: 0 56px;
+    }
+    .tradeclients-track {
+        gap: 36px;
+    }
+    .tradeclients-card {
+        width: 150px;
+    }
+    .tradeclients-logo {
+        width: 150px;
+        height: 86px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .tradeclients-container {
+        max-width: 960px;
+        padding: 0 14px;
+    }
+    .tradeclients-carousel {
+        padding: 0 48px;
+    }
+    .tradeclients-track {
+        gap: 32px;
+    }
+    .tradeclients-card {
+        width: 140px;
+    }
+    .tradeclients-logo {
+        width: 140px;
+        height: 84px;
+    }
+    .tradeclients-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tradeclients-container {
+        max-width: 720px;
+        padding: 0 12px;
+    }
+    .tradeclients-carousel {
+        padding: 0 40px;
+    }
+    .tradeclients-track {
+        gap: 28px;
+    }
+    .tradeclients-card {
+        width: 128px;
+    }
+    .tradeclients-logo {
+        width: 128px;
+        height: 76px;
+    }
+    .tradeclients-title {
+        font-size: 28px;
+        margin-bottom: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tradeclients-container {
+        max-width: 460px;
+        padding: 0 10px;
+    }
+    .tradeclients-carousel {
+        padding: 0 28px;
+    }
+    .tradeclients-track {
+        gap: 20px;
+    }
+    .tradeclients-card {
+        width: 110px;
+    }
+    .tradeclients-logo {
+        width: 110px;
+        height: 64px;
+    }
+    .tradeclients-title {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 360px) {
+    .tradeclients-container {
+        max-width: 320px;
+        padding: 0 8px;
+    }
+    .tradeclients-carousel {
+        padding: 0 18px;
+    }
+    .tradeclients-track {
+        gap: 14px;
+    }
+    .tradeclients-card {
+        width: 92px;
+    }
+    .tradeclients-logo {
+        width: 92px;
+        height: 56px;
+    }
+    .tradeclients-title {
+        font-size: 20px;
+    }
+}

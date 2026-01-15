@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+.trade-doc-section {
+    font-family: "Poppins", sans-serif;
+    background: radial-gradient(circle at center, #f8fafc 0%, #eef2f3 100%);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.trade-doc-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 80px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* ===== Layout ===== */
+
+.trade-doc-container {
+    position: relative;
+    width: 850px;
+    height: 830px;
+    margin: 0 auto;
+}
+
+
+/* ===== Central Hexagon ===== */
+
+.trade-doc-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 210px;
+    height: 220px;
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35), 0 0 30px rgba(37, 99, 235, 0.25);
+    color: #fff;
+}
+
+.trade-doc-content {
+    text-align: center;
+}
+
+.trade-doc-center-icon {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.trade-doc-center h3 {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+
+/* ===== Outer Hexagons ===== */
+
+.trade-doc-item {
+    width: 200px;
+    height: 210px;
+    background: #fff;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    position: absolute;
+    text-align: center;
+    padding: 26px 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trade-doc-item:hover {
+    transform: scale(1.06);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+
+/* Fix top numbers */
+
+.trade-doc-num {
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    position: absolute;
+    top: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* Inside content */
+
+.trade-doc-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.trade-doc-icon {
+    font-size: 25px;
+    color: #111827;
+    margin-top: 46px;
+}
+
+.trade-doc-subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 8px;
+    color: #111827;
+}
+
+.trade-doc-desc {
+    font-size: 13px;
+    color: #444;
+    margin-top: 6px;
+    line-height: 1.5;
+    max-width: 150px;
+    word-wrap: break-word;
+}
+
+
+/* ===== Hexagon Top Cap Gradient ===== */
+
+.trade-doc-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 42%;
+    background: var(--gradient);
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 50% 60%, 0 40%);
+    z-index: 1;
+}
+
+
+/* ===== New Elegant Gradients ===== */
+
+
+/* ===== Enhanced Elegant Dual Gradients (Full Hex Style) ===== */
+
+.color-1 {
+    --gradient: linear-gradient(180deg, #16a34a, #4ade80);
+    /* Green → Mint */
+    background: linear-gradient(180deg, #16a34a 0%, #4ade80 100%);
+    color: #ffffff;
+}
+
+.color-2 {
+    --gradient: linear-gradient(180deg, #2563eb, #60a5fa);
+    /* Blue → Sky */
+    background: linear-gradient(180deg, #2563eb 0%, #60a5fa 100%);
+    color: #ffffff;
+}
+
+.color-3 {
+    --gradient: linear-gradient(180deg, #dc2626, #fb7185);
+    /* Red → Soft Coral */
+    background: linear-gradient(180deg, #dc2626 0%, #fb7185 100%);
+    color: #ffffff;
+}
+
+.color-4 {
+    --gradient: linear-gradient(180deg, #eab308, #fde68a);
+    /* Gold → Light Yellow */
+    background: linear-gradient(180deg, #eab308 0%, hsl(48, 87%, 49%) 100%);
+    color: #f0f2f7;
+    /* Dark text for readability */
+}
+
+.color-5 {
+    --gradient: linear-gradient(180deg, #0891b2, #67e8f9);
+    /* Teal → Aqua */
+    background: linear-gradient(180deg, #0891b2 0%, #67e8f9 100%);
+    color: #ffffff;
+}
+
+.color-6 {
+    --gradient: linear-gradient(180deg, #7e22ce, #c084fc);
+    /* Violet → Lavender */
+    background: linear-gradient(180deg, #7e22ce 0%, #c084fc 100%);
+    color: #ffffff;
+}
+
+
+/* Adjust text colors and shadows for contrast */
+
+.trade-doc-inner h4,
+.trade-doc-inner p,
+.trade-doc-icon {
+    color: inherit;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.trade-doc-item::before {
+    background: rgba(255, 255, 255, 0.15);
+    /* soft overlay for depth */
+}
+
+
+/* Improve icon & text visibility */
+
+.trade-doc-icon {
+    font-size: 26px;
+    margin-top: 44px;
+}
+
+.trade-doc-subtitle {
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.trade-doc-desc {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* Royal violet to lavender */
+
+
+/* ===== Corrected Positions with Equal Spacing ===== */
+
+.trade-doc-grid .trade-doc-item:nth-child(1) {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.trade-doc-grid .trade-doc-item:nth-child(2) {
+    top: 200px;
+    right: 110px;
+}
+
+.trade-doc-grid .trade-doc-item:nth-child(3) {
+    bottom: 200px;
+    right: 110px;
+}
+
+.trade-doc-grid .trade-doc-item:nth-child(4) {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.trade-doc-grid .trade-doc-item:nth-child(5) {
+    bottom: 200px;
+    left: 110px;
+}
+
+.trade-doc-grid .trade-doc-item:nth-child(6) {
+    top: 200px;
+    left: 110px;
+}
+
+
+/* ===== Responsive ===== */
+
+@media (max-width: 900px) {
+    .trade-doc-container {
+        transform: scale(0.85);
+        width: 100%;
+        height: auto;
+    }
+}

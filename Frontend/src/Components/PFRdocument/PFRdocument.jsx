@@ -1,17 +1,39 @@
 import React from "react";
 import "./PFRdocument.css";
+import { FaUser, FaSearch, FaBullseye, FaComments } from "react-icons/fa";
 
-// REACT ICONS
-import {
-  FaIdCard,
-  FaCamera,
-  FaBolt,
-  FaFileContract,
-  FaCertificate,
-  FaFolderOpen,
-} from "react-icons/fa";
+const docs = [
+  {
+    id: "01",
+    title: "KYC Documents",
+    desc: "PAN, Aadhaar, Address proof and bank statement of all partners.",
+    icon: <FaUser />,
+    color: "one",
+  },
+  {
+    id: "02",
+    title: "Passport Photograph",
+    desc: "Passport size photographs of all partners.",
+    icon: <FaSearch />,
+    color: "two",
+  },
+  {
+    id: "03",
+    title: "Electricity Bill",
+    desc: "Latest electricity bill of registered office address.",
+    icon: <FaBullseye />,
+    color: "three",
+  },
+  {
+    id: "04",
+    title: "Other Documents",
+    desc: "Any other documents as required by authorities.",
+    icon: <FaComments />,
+    color: "four",
+  },
+];
 
-const DocumentsInfographic = () => {
+const PartnershipDocumentsInfographic = () => {
   return (
     <section className="di-section">
       <h2 className="di-heading">
@@ -90,4 +112,4 @@ const DocumentsInfographic = () => {
   );
 };
 
-export default DocumentsInfographic;
+export default PartnershipDocumentsInfographic;
