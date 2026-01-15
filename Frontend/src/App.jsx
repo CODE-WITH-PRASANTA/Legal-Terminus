@@ -26,6 +26,10 @@ import ProfessionalReg from './Pages/ProfessionalReg/ProfessionalReg';
 import ShopReg from './Pages/ShopReg/ShopReg';
 import Proprietorship from './Pages/Proprietorship/Proprietorship';
 import Parternership from "./Pages/Parternership/Parternership";
+import IEC from "./Pages/IEC/IEC";
+import FoodLicense from "./Pages/FoodLicense/FoodLicense";
+import TradeLicense from "./Pages/TradeLicense/TradeLicense";
+
 
 import RouteLoaderWrapper from "./Components/PageLoader/RouteLoaderWrapper";
 import FloatIcon from "./Components/FloatIcon/FloatIcon";
@@ -70,6 +74,10 @@ function App() {
           <Route path="/professional-tax" element={<ProfessionalReg />}/>
           <Route path="/shop-establishment" element={<ShopReg />}/>
           <Route path="/proprietorship" element={<Proprietorship/>}/>
+          <Route path="/iec" element={<IEC/>}/>
+          <Route path="/food-license" element={<FoodLicense/>}/>
+          <Route path="/trade-license" element={<TradeLicense/>}/>
+          
         
           <Route path="/partnership" element={<Parternership/>} />
           
