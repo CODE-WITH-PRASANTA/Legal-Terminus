@@ -6,7 +6,7 @@ import pvtIllustration from "../../assets/whypvt-imp.svg";
 
 const PvtLtdFull = () => {
   return (
-    <div className="pvt-full-wrapper">
+    <div className="PLC-to-LLP-pvtfull-wrapper">
 
       {/* ===========================
           SECTION 1 — OVERVIEW
@@ -21,23 +21,23 @@ A Private Limited Company is a legally registered business under the Companies A
       {/* ===========================
           SECTION 2 — INTRO
       ============================ */}
-      <section className="pvt-intro-section">
-        <div className="pvt-intro-container">
+      <section className="PLC-to-LLP-pvtintro-section">
+        <div className="PLC-to-LLP-pvtintro-container">
           {/* Illustration */}
-          <div className="pvt-intro-illustration-wrap">
+          <div className="PLC-to-LLP-pvtintro-illustration-wrap">
             <img
               src={pvtIllustration}
               alt="Private limited company illustration"
-              className="pvt-intro-illustration"
+              className="PLC-to-LLP-pvtintro-illustration"
             />
           </div>
 
           {/* Text */}
-          <div className="pvt-intro-content">
-            <h2 className="pvt-intro-title">
+          <div className="PLC-to-LLP-pvtintro-content">
+            <h2 className="PLC-to-LLP-pvtintro-title">
               Why Choose Private Limited Company Registration
             </h2>
-            <p className="pvt-intro-text">
+            <p className="PLC-to-LLP-pvtintro-text">
               
 Registering a company in India is the first step to legally starting your business. The Companies Act, 2013, sets the rules for company formation, and the Ministry of Corporate Affairs (MCA) oversees the process. Once registered, your business gets a legal identity, along with rights and protections under Indian law. 
 <br></br>

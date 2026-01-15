@@ -26,15 +26,15 @@ const LlpTabs = () => {
   };
 
   return (
-    <section className="Llp-tabs-section">
-      <div className="Llp-tabs-container">
-        <div className="Llp-tabs-card">
-          <div className="Llp-tabs-list">
+    <section className="LLP-to-PLC-tabs-section">
+      <div className="LLP-to-PLC-tabs-container">
+        <div className="LLP-to-PLC-tabs-card">
+          <div className="LLP-to-PLC-tabs-list">
             {tabs.map((tab, index) => (
               <button
                 key={tab.id}
                 type="button"
-                className={`Llp-tab ${index === activeIndex ? "active" : ""}`}
+                className={`LLP-to-PLC-tab ${index === activeIndex ? "active" : ""}`}
                 onClick={() => handleClick(index, tab.id)}
               >
                 {tab.label}

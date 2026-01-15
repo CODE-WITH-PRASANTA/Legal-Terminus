@@ -3,19 +3,19 @@ import "./LlptoPrivatePlanandPrice.css";
 
 const PricingSection = () => {
   return (
-    <section className="llp-llp-pricingsection">
-      <div className="llp-pricingcontainer">
+    <section className="LLP-to-PLC-LLP-to-PLC-pricingsection">
+      <div className="LLP-to-PLC-pricingcontainer">
         
         {/* Upper part */}
-        <header className="llp-pricingheader">
-          <h2 className="llp-llp-pricingtitle">CHOOSE YOUR PLAN</h2>
-          <p className="llp-pricingsubtitle">
+        <header className="LLP-to-PLC-pricingheader">
+          <h2 className="LLP-to-PLC-LLP-to-PLC-pricingtitle">CHOOSE YOUR PLAN</h2>
+          <p className="LLP-to-PLC-pricingsubtitle">
             Register your company with pocket-friendly prices
           </p>
         </header>
 
         {/* Cards */}
-        <div className="llp-pricingcards">
+        <div className="LLP-to-PLC-pricingcards">
 
           {/* Elemental */}
           <article className="plan-card">

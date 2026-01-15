@@ -1,19 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-.vt-section {
+.Partnership-to-PLC-vtsection {
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   background: #ffffff;
   padding: 64px 20px 72px;
 }
 
-.vt-container {
+.Partnership-to-PLC-vtcontainer {
   max-width: 1180px;
   margin: 0 auto;
 }
 
 /* Heading / intro */
-.vt-heading {
+.Partnership-to-PLC-vtheading {
   text-align: center;
   font-size: 32px;
   font-weight: 700;
@@ -22,7 +22,7 @@
   color: #111827;
 }
 
-.vt-subtitle {
+.Partnership-to-PLC-vtsubtitle {
   text-align: center;
   font-size: 15px;
   color: #4b5563;
@@ -30,13 +30,13 @@
 }
 
 /* Slider wrapper (for side arrows) */
-.vt-slider-wrapper {
+.Partnership-to-PLC-vtslider-wrapper {
   position: relative;
   padding: 0 52px; /* space for arrows */
 }
 
 /* Horizontal slider */
-.vt-slider {
+.Partnership-to-PLC-vtslider {
   display: flex;
   gap: 24px;
   overflow-x: auto;
@@ -44,16 +44,16 @@
   padding-bottom: 8px;
 }
 
-.vt-slider::-webkit-scrollbar {
+.Partnership-to-PLC-vtslider::-webkit-scrollbar {
   display: none;
 }
-.vt-slider {
+.Partnership-to-PLC-vtslider {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
 /* Card */
-.vt-card {
+.Partnership-to-PLC-vtcard {
   min-width: 320px;
   max-width: 320px;
   flex-shrink: 0;
@@ -67,7 +67,7 @@
 }
 
 /* Video wrapper with 16:9 aspect ratio */
-.vt-video-wrap {
+.Partnership-to-PLC-vtvideo-wrap {
   border-radius: 14px;
   overflow: hidden;
   background: #000;
@@ -76,13 +76,13 @@
 }
 
 /* Aspect ratio box */
-.vt-video-aspect {
+.Partnership-to-PLC-vtvideo-aspect {
   position: relative;
   width: 100%;
   padding-top: 56.25%; /* 16:9 */
 }
 
-.vt-video {
+.Partnership-to-PLC-vtvideo {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -91,21 +91,21 @@
 }
 
 /* Name + role */
-.vt-name {
+.Partnership-to-PLC-vtname {
   margin: 6px 0 4px;
   font-size: 17px;
   font-weight: 600;
   color: #1aa91a;
 }
 
-.vt-role {
+.Partnership-to-PLC-vtrole {
   margin: 0;
   font-size: 14px;
   color: #111827;
 }
 
 /* Side arrows */
-.vt-side-arrow {
+.Partnership-to-PLC-vtside-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -125,16 +125,16 @@
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.vt-side-arrow:hover {
+.Partnership-to-PLC-vtside-arrow:hover {
   background: #128a15;
   transform: translateY(-50%) scale(1.06);
 }
 
-.vt-left {
+.Partnership-to-PLC-vtleft {
   left: 10px;
 }
 
-.vt-right {
+.Partnership-to-PLC-vtright {
   right: 10px;
 }
 
@@ -143,40 +143,40 @@
 ------------------------ */
 
 @media (max-width: 1024px) {
-  .vt-heading {
+  .Partnership-to-PLC-vtheading {
     font-size: 28px;
   }
-  .vt-slider-wrapper {
+  .Partnership-to-PLC-vtslider-wrapper {
     padding: 0 40px;
   }
 }
 
 @media (max-width: 768px) {
-  .vt-section {
+  .Partnership-to-PLC-vtsection {
     padding: 52px 16px 60px;
   }
 
-  .vt-heading {
+  .Partnership-to-PLC-vtheading {
     font-size: 24px;
     margin-bottom: 8px;
   }
 
-  .vt-subtitle {
+  .Partnership-to-PLC-vtsubtitle {
     font-size: 14px;
     margin-bottom: 26px;
   }
 
-  .vt-card {
+  .Partnership-to-PLC-vtcard {
     min-width: 280px;
     max-width: 280px;
     padding: 18px 16px 22px;
   }
 
-  .vt-slider-wrapper {
+  .Partnership-to-PLC-vtslider-wrapper {
     padding: 0 32px;
   }
 
-  .vt-side-arrow {
+  .Partnership-to-PLC-vtside-arrow {
     width: 40px;
     height: 40px;
     font-size: 20px;
@@ -184,28 +184,28 @@
 }
 
 @media (max-width: 520px) {
-  .vt-section {
+  .Partnership-to-PLC-vtsection {
     padding: 44px 10px 52px;
   }
 
-  .vt-heading {
+  .Partnership-to-PLC-vtheading {
     font-size: 22px;
   }
 
-  .vt-slider-wrapper {
+  .Partnership-to-PLC-vtslider-wrapper {
     padding: 0 24px;
   }
 
-  .vt-card {
+  .Partnership-to-PLC-vtcard {
     min-width: 250px;
     max-width: 250px;
   }
 
-  .vt-left {
+  .Partnership-to-PLC-vtleft {
     left: 4px;
   }
 
-  .vt-right {
+  .Partnership-to-PLC-vtright {
     right: 4px;
   }
 }

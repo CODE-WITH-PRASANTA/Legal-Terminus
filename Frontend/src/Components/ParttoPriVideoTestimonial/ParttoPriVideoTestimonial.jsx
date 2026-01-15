@@ -32,10 +32,10 @@ const VideoTestimonials = () => {
     const container = sliderRef.current;
     if (!container) return;
 
-    const card = container.querySelector(".vt-card");
+    const card = container.querySelector(".Partnership-to-PLC-vtcard");
     if (!card) return;
 
-    const gap = 24; // must match CSS .vt-slider gap
+    const gap = 24; // must match CSS .Partnership-to-PLC-vtslider gap
     const cardWidth = card.offsetWidth + gap;
 
     container.scrollBy({
@@ -45,17 +45,17 @@ const VideoTestimonials = () => {
   };
 
   return (
-    <section className="vt-section">
-      <div className="vt-container">
-        <h2 className="vt-heading">Video Testimonials</h2>
-        <p className="vt-subtitle">
+    <section className="Partnership-to-PLC-vtsection">
+      <div className="Partnership-to-PLC-vtcontainer">
+        <h2 className="Partnership-to-PLC-vtheading">Video Testimonials</h2>
+        <p className="Partnership-to-PLC-vtsubtitle">
           Hear directly from our clients about their experience working with us.
         </p>
 
-        <div className="vt-slider-wrapper">
+        <div className="Partnership-to-PLC-vtslider-wrapper">
           {/* Left arrow */}
           <button
-            className="vt-side-arrow vt-left"
+            className="Partnership-to-PLC-vtside-arrow Partnership-to-PLC-vtleft"
             aria-label="Previous video"
             onClick={() => handleScroll("prev")}
           >
@@ -63,13 +63,13 @@ const VideoTestimonials = () => {
           </button>
 
           {/* Cards slider */}
-          <div className="vt-slider" ref={sliderRef}>
+          <div className="Partnership-to-PLC-vtslider" ref={sliderRef}>
             {videoTestimonials.map((item, idx) => (
-              <article className="vt-card" key={idx}>
-                <div className="vt-video-wrap">
-                  <div className="vt-video-aspect">
+              <article className="Partnership-to-PLC-vtcard" key={idx}>
+                <div className="Partnership-to-PLC-vtvideo-wrap">
+                  <div className="Partnership-to-PLC-vtvideo-aspect">
                     <iframe
-                      className="vt-video"
+                      className="Partnership-to-PLC-vtvideo"
                       src={item.videoUrl}
                       title={item.name}
                       frameBorder="0"
@@ -79,15 +79,15 @@ const VideoTestimonials = () => {
                   </div>
                 </div>
 
-                <h3 className="vt-name">{item.name}</h3>
-                <p className="vt-role">{item.role}</p>
+                <h3 className="Partnership-to-PLC-vtname">{item.name}</h3>
+                <p className="Partnership-to-PLC-vtrole">{item.role}</p>
               </article>
             ))}
           </div>
 
           {/* Right arrow */}
           <button
-            className="vt-side-arrow vt-right"
+            className="Partnership-to-PLC-vtside-arrow Partnership-to-PLC-vtright"
             aria-label="Next video"
             onClick={() => handleScroll("next")}
           >

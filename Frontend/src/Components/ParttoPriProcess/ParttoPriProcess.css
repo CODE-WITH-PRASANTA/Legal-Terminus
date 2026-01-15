@@ -1,5 +1,5 @@
 /* ================= BASE ================= */
-.pvtltd-gst-wrapper {
+.Partnership-to-PLC-gst-wrapper {
   padding: 60px 24px;
   max-width: 1200px;
   margin: auto;
@@ -20,15 +20,15 @@
   margin-bottom: 50px;
 }
 
-/* ================= pvtltd-timeline ================= */
-.pvtltd-timeline {
+/* ================= Partnership-to-PLC-timeline ================= */
+.Partnership-to-PLC-timeline {
   position: relative;
   display: flex;
   flex-direction: column;
 }
 
 /* CENTER LINE */
-.pvtltd-timeline-line {
+.Partnership-to-PLC-timeline-line {
   position: absolute;
   left: 50%;
   top: 0;
@@ -45,7 +45,7 @@
 }
 
 /* ================= ITEM ================= */
-.pvtltd-timeline-item {
+.Partnership-to-PLC-timeline-item {
   position: relative;
   display: flex;
   align-items: center;
@@ -54,7 +54,7 @@
 }
 
 /* DOT */
-.pvtltd-timeline-dot {
+.Partnership-to-PLC-timeline-dot {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -71,7 +71,7 @@
 }
 
 /* CARD */
-.pvtltd-timeline-card {
+.Partnership-to-PLC-timeline-card {
   width: 400px;
   background: #ffffff;
   padding: 20px 22px;
@@ -79,30 +79,30 @@
   box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
-.pvtltd-timeline-card h4 {
+.Partnership-to-PLC-timeline-card h4 {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 6px;
   color: #0f172a;
 }
 
-.pvtltd-timeline-card p {
+.Partnership-to-PLC-timeline-card p {
   font-size: 14px;
   color: #475569;
   line-height: 1.6;
 }
 
 /* ================= LEFT / RIGHT ================= */
-.pvtltd-timeline-item.left {
+.Partnership-to-PLC-timeline-item.left {
   justify-content: flex-start;
 }
 
-.pvtltd-timeline-item.right {
+.Partnership-to-PLC-timeline-item.right {
   justify-content: flex-end;
 }
 
 /* ================= CONNECTORS (DESKTOP) ================= */
-.pvtltd-timeline-item.left::after {
+.Partnership-to-PLC-timeline-item.left::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -119,7 +119,7 @@
   transform: translateY(-50%);
 }
 
-.pvtltd-timeline-item.left::before {
+.Partnership-to-PLC-timeline-item.left::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -130,7 +130,7 @@
   border-left: 8px solid #f97316;
 }
 
-.pvtltd-timeline-item.right::after {
+.Partnership-to-PLC-timeline-item.right::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -147,7 +147,7 @@
   transform: translateY(-50%);
 }
 
-.pvtltd-timeline-item.right::before {
+.Partnership-to-PLC-timeline-item.right::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -160,7 +160,7 @@
 
 /* ================= MOBILE PREMIUM (ARROWS KEPT) ================= */
 @media (max-width: 900px) {
-  .pvtltd-gst-wrapper {
+  .Partnership-to-PLC-gst-wrapper {
     padding: 50px 16px;
   }
 
@@ -173,32 +173,32 @@
     margin-bottom: 40px;
   }
 
-  .pvtltd-timeline-line {
+  .Partnership-to-PLC-timeline-line {
     left: 18px;
     width: 3px;
   }
 
-  .pvtltd-timeline-item {
+  .Partnership-to-PLC-timeline-item {
     justify-content: flex-start !important;
     padding-left: 70px;
   }
 
-  .pvtltd-timeline-dot {
+  .Partnership-to-PLC-timeline-dot {
     left: 18px;
     width: 32px;
     height: 32px;
     font-size: 14px;
   }
 
-  .pvtltd-timeline-card {
+  .Partnership-to-PLC-timeline-card {
     width: 100%;
     background: linear-gradient(180deg, #ffffff, #f8fafc);
     box-shadow: 0 12px 28px rgba(0,0,0,0.06);
   }
 
   /* MOBILE ARROWS → */
-  .pvtltd-timeline-item.left::after,
-  .pvtltd-timeline-item.right::after {
+  .Partnership-to-PLC-timeline-item.left::after,
+  .Partnership-to-PLC-timeline-item.right::after {
     left: 18px;
     right: auto;
     width: 40px;
@@ -212,8 +212,8 @@
     );
   }
 
-  .pvtltd-timeline-item.left::before,
-  .pvtltd-timeline-item.right::before {
+  .Partnership-to-PLC-timeline-item.left::before,
+  .Partnership-to-PLC-timeline-item.right::before {
     left: 52px;
     right: auto;
     border-left: 8px solid #f97316;

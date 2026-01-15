@@ -62,13 +62,13 @@ const FaqPvt = () => {
   };
 
   return (
-    <section className="faq-section">
-      <div className="faq-container">
+    <section className="Partnership-to-PLC-faqsection">
+      <div className="Partnership-to-PLC-faqcontainer">
         {/* Left side – static text */}
-        <div className="faq-left">
-          <h2 className="faq-title">Private Limited Company Registration FAQ&apos;s</h2>
+        <div className="Partnership-to-PLC-faqleft">
+          <h2 className="Partnership-to-PLC-faqtitle">Private Limited Company Registration FAQ&apos;s</h2>
 
-          <p className="faq-intro">
+          <p className="Partnership-to-PLC-faqintro">
             Starting a Private Limited Company in India is an important step for any business owner. With the right support, the process can be simple and stress-free.
 
 <br/><br/>
@@ -76,33 +76,33 @@ Here, we’ve answered the most common questions about company registration—co
 
           </p>
 
-          <p className="faq-intro">
+          <p className="Partnership-to-PLC-faqintro">
             
           </p>
         </div>
 
         {/* Right side – scrollable Q&A list */}
-        <div className="faq-right">
-          <div className="faq-list">
+        <div className="Partnership-to-PLC-faqright">
+          <div className="Partnership-to-PLC-faqlist">
             {faqs.map((item, index) => {
               const isActive = index === activeIndex;
               return (
                 <div
                   key={index}
-                  className={`faq-item ${isActive ? "active" : ""}`}
+                  className={`Partnership-to-PLC-faqitem ${isActive ? "active" : ""}`}
                 >
                   <button
                     type="button"
-                    className="faq-question"
+                    className="Partnership-to-PLC-faqquestion"
                     onClick={() => toggleFaq(index)}
                   >
                     <span>{item.question}</span>
-                    <span className={`faq-icon ${isActive ? "open" : ""}`}>
+                    <span className={`Partnership-to-PLC-faqicon ${isActive ? "open" : ""}`}>
                       ▾
                     </span>
                   </button>
                   {isActive && (
-                   <div className={`faq-answer ${isActive ? "open" : ""}`}>
+                   <div className={`Partnership-to-PLC-faqanswer ${isActive ? "open" : ""}`}>
                     <p>{item.answer}</p>
                   </div>
 

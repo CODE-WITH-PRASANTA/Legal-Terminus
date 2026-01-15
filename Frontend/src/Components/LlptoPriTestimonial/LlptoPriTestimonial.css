@@ -1,20 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 /* Section base */
-.llp-1-section {
+.LLP-to-PLC-1-section {
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   background: #ffffff;
   padding: 64px 20px 72px;
 }
 
-.llp-1-container {
+.LLP-to-PLC-1-container {
   max-width: 1360px;
   margin: 0 auto;
 }
 
 /* Heading */
-.llp-1-heading {
+.LLP-to-PLC-1-heading {
   text-align: center;
   font-size: 32px;
   font-weight: 700;
@@ -24,13 +24,13 @@
 }
 
 /* Slider wrapper (for side arrows) */
-.llp-1-slider-wrapper {
+.LLP-to-PLC-1-slider-wrapper {
   position: relative;
   padding: 0 52px; /* space so arrows don't overlap cards */
 }
 
 /* Horizontal slider */
-.llp-1-slider {
+.LLP-to-PLC-1-slider {
   display: flex;
   gap: 24px;
   overflow-x: auto;
@@ -38,16 +38,16 @@
   padding-bottom: 8px;
 }
 
-.llp-1-slider::-webkit-scrollbar {
+.LLP-to-PLC-1-slider::-webkit-scrollbar {
   display: none;
 }
-.llp-1-slider {
+.LLP-to-PLC-1-slider {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
 /* Testimonial card */
-.llp-1-card {
+.LLP-to-PLC-1-card {
   min-width: 290px;
   max-width: 290px;
   flex-shrink: 0;
@@ -62,30 +62,30 @@
 }
 
 /* Quote marks */
-.llp-1-quote {
+.LLP-to-PLC-1-quote {
   position: absolute;
   font-size: 40px;
   color: #1aa91a;
 }
 
-.llp-1-quote-top {
+.LLP-to-PLC-1-quote-top {
   top: 10px;
   left: 18px;
 }
 
-.llp-1-quote-bottom {
+.LLP-to-PLC-1-quote-bottom {
   bottom: 10px;
   right: 24px;
 }
 
 /* Avatar */
-.llp-1-avatar-wrap {
+.LLP-to-PLC-1-avatar-wrap {
   display: flex;
   justify-content: center;
   margin-bottom: 18px;
 }
 
-.llp-1-avatar {
+.LLP-to-PLC-1-avatar {
   width: 72px;
   height: 72px;
   border-radius: 50%;
@@ -100,7 +100,7 @@
 }
 
 /* Text */
-.llp-1-text {
+.LLP-to-PLC-1-text {
   margin: 0 0 22px;
   font-size: 15px;
   line-height: 1.7;
@@ -108,21 +108,21 @@
 }
 
 /* Name & role */
-.llp-1-name {
+.LLP-to-PLC-1-name {
   margin: 0 0 6px;
   font-size: 18px;
   font-weight: 600;
   color: #1aa91a;
 }
 
-.llp-1-role {
+.LLP-to-PLC-1-role {
   margin: 0 0 12px;
   font-size: 14px;
   color: #111827;
 }
 
 /* Stars */
-.llp-1-stars {
+.LLP-to-PLC-1-stars {
   display: flex;
   justify-content: center;
   gap: 3px;
@@ -131,7 +131,7 @@
 }
 
 /* SIDE ARROWS (left & right of cards) */
-.llp-1-side-arrow {
+.LLP-to-PLC-1-side-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -151,16 +151,16 @@
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.llp-1-side-arrow:hover {
+.LLP-to-PLC-1-side-arrow:hover {
   background: #128a15;
   transform: translateY(-50%) scale(1.06);
 }
 
-.llp-1-left {
+.LLP-to-PLC-1-left {
   left: 10px;
 }
 
-.llp-1-right {
+.LLP-to-PLC-1-right {
   right: 10px;
 }
 
@@ -169,35 +169,35 @@
 ------------------------ */
 
 @media (max-width: 1024px) {
-  .llp-1-heading {
+  .LLP-to-PLC-1-heading {
     font-size: 28px;
   }
-  .llp-1-slider-wrapper {
+  .LLP-to-PLC-1-slider-wrapper {
     padding: 0 40px;
   }
 }
 
 @media (max-width: 768px) {
-  .llp-1-section {
+  .LLP-to-PLC-1-section {
     padding: 52px 16px 60px;
   }
 
-  .llp-1-heading {
+  .LLP-to-PLC-1-heading {
     font-size: 24px;
     margin-bottom: 28px;
   }
 
-  .llp-1-card {
+  .LLP-to-PLC-1-card {
     min-width: 260px;
     max-width: 260px;
     padding: 30px 22px 28px;
   }
 
-  .llp-1-slider-wrapper {
+  .LLP-to-PLC-1-slider-wrapper {
     padding: 0 32px;
   }
 
-  .llp-1-side-arrow {
+  .LLP-to-PLC-1-side-arrow {
     width: 40px;
     height: 40px;
     font-size: 20px;
@@ -205,28 +205,28 @@
 }
 
 @media (max-width: 520px) {
-  .llp-1-section {
+  .LLP-to-PLC-1-section {
     padding: 44px 10px 52px;
   }
 
-  .llp-1-heading {
+  .LLP-to-PLC-1-heading {
     font-size: 22px;
   }
 
-  .llp-1-slider-wrapper {
+  .LLP-to-PLC-1-slider-wrapper {
     padding: 0 24px;
   }
 
-  .llp-1-card {
+  .LLP-to-PLC-1-card {
     min-width: 240px;
     max-width: 240px;
   }
 
-  .llp-1-left {
+  .LLP-to-PLC-1-left {
     left: 4px;
   }
 
-  .llp-1-right {
+  .LLP-to-PLC-1-right {
     right: 4px;
   }
 }

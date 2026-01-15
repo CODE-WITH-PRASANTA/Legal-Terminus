@@ -3,22 +3,22 @@ import "./PritoLlpBreadcrum.css";
 
 const Breadcrum = () => {
   return (
-    <section className="lt-public-hero">
-      <div className="lt-public-container">
+    <section className="PLC-to-LLP-public-hero">
+      <div className="PLC-to-LLP-public-container">
 
         {/* LEFT CONTENT */}
-        <div className="lt-public-content">
+        <div className="PLC-to-LLP-public-content">
 
-          <span className="lt-public-tag">
+          <span className="PLC-to-LLP-public-tag">
             Private Limited Company Registration
           </span>
 
-          <h1 className="lt-public-title">
+          <h1 className="PLC-to-LLP-public-title">
             Private Limited Company Registration
             <span> in India</span>
           </h1>
 
-          <p className="lt-public-description">
+          <p className="PLC-to-LLP-public-description">
             A Private Limited Company is a popular and trusted business structure in India, especially for startups and growing businesses. It helps protect personal assets, builds business credibility, and makes it easier to raise funds.
 
 <br/><br/>
@@ -26,14 +26,14 @@ Legal Terminus can help you with Private Limited Company registration in a hassl
 
           </p>
 
-          <div className="lt-public-features">
-            <div className="lt-feature-item"> Minimum 2 Directors Required</div>
-            <div className="lt-feature-item"> Separate Legal Entity</div>
-            <div className="lt-feature-item"> Limited Liability Protection</div>
-            <div className="lt-feature-item"> High Business Credibility</div>
+          <div className="PLC-to-LLP-public-features">
+            <div className="PLC-to-LLP-feature-item"> Minimum 2 Directors Required</div>
+            <div className="PLC-to-LLP-feature-item"> Separate Legal Entity</div>
+            <div className="PLC-to-LLP-feature-item"> Limited Liability Protection</div>
+            <div className="PLC-to-LLP-feature-item"> High Business Credibility</div>
           </div>
 
-          <div className="lt-public-highlights">
+          <div className="PLC-to-LLP-public-highlights">
             <div>
               <h3>1,000+</h3>
               <p>Companies Registered</p>
@@ -51,19 +51,19 @@ Legal Terminus can help you with Private Limited Company registration in a hassl
         </div>
 
         {/* RIGHT FORM */}
-        <aside className="lt-public-form-wrapper">
-          <div className="lt-public-form-card">
+        <aside className="PLC-to-LLP-public-form-wrapper">
+          <div className="PLC-to-LLP-public-form-card">
 
-            <h3 className="lt-form-title">
+            <h3 className="PLC-to-LLP-form-title">
               Get Expert Assistance
             </h3>
 
-            <p className="lt-form-subtitle">
+            <p className="PLC-to-LLP-form-subtitle">
               Talk to our Private Limited Company registration expert
             </p>
 
             <form
-              className="lt-public-form"
+              className="PLC-to-LLP-public-form"
               onSubmit={(e) => e.preventDefault()}
             >
               <input type="text" placeholder="Full Name" required />
@@ -87,11 +87,11 @@ Legal Terminus can help you with Private Limited Company registration in a hassl
                 <option>4:00 PM – 6:00 PM</option>
               </select>
 
-              <div className="lt-whatsapp-row">
-                <label className="lt-whatsapp-label">
+              <div className="PLC-to-LLP-whatsapp-row">
+                <label className="PLC-to-LLP-whatsapp-label">
                   <input type="checkbox" defaultChecked />
-                  <span className="lt-custom-checkbox"></span>
-                  <span className="lt-whatsapp-text">
+                  <span className="PLC-to-LLP-custom-checkbox"></span>
+                  <span className="PLC-to-LLP-whatsapp-text">
                     Receive updates on <strong>WhatsApp</strong>
                   </span>
                 </label>
@@ -102,7 +102,7 @@ Legal Terminus can help you with Private Limited Company registration in a hassl
               </button>
             </form>
 
-            <p className="lt-form-note">
+            <p className="PLC-to-LLP-form-note">
               🔒 100% Confidential • No Spam • No Hidden Charges
             </p>
 

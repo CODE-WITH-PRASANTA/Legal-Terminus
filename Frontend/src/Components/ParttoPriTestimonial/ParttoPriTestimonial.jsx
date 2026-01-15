@@ -95,7 +95,7 @@ const GoogleTestimonials = () => {
     const container = sliderRef.current;
     if (!container) return;
 
-    const card = container.querySelector(".gt-card");
+    const card = container.querySelector(".Partnership-to-PLC-gtcard");
     if (!card) return;
 
     const gap = 24; // same as CSS gap
@@ -108,16 +108,16 @@ const GoogleTestimonials = () => {
   };
 
   return (
-    <section className="gt-section">
-      <div className="gt-container">
-        <h2 className="gt-heading">
+    <section className="Partnership-to-PLC-gtsection">
+      <div className="Partnership-to-PLC-gtcontainer">
+        <h2 className="Partnership-to-PLC-gtheading">
           See What Our Customers Say on Google
         </h2>
 
-        <div className="gt-slider-wrapper">
+        <div className="Partnership-to-PLC-gtslider-wrapper">
           {/* Left arrow */}
           <button
-            className="gt-side-arrow gt-left"
+            className="Partnership-to-PLC-gtside-arrow Partnership-to-PLC-gtleft"
             aria-label="Previous testimonials"
             onClick={() => handleScroll("prev")}
           >
@@ -125,42 +125,42 @@ const GoogleTestimonials = () => {
           </button>
 
           {/* Cards slider */}
-          <div className="gt-slider" ref={sliderRef}>
+          <div className="Partnership-to-PLC-gtslider" ref={sliderRef}>
             {testimonials.map((t, idx) => (
-              <article className="gt-card" key={idx}>
+              <article className="Partnership-to-PLC-gtcard" key={idx}>
                 {/* top quote */}
-                <span className="gt-quote gt-quote-top">“</span>
+                <span className="Partnership-to-PLC-gtquote Partnership-to-PLC-gtquote-top">“</span>
 
                 {/* avatar */}
-                <div className="gt-avatar-wrap">
-                  <div className="gt-avatar">
+                <div className="Partnership-to-PLC-gtavatar-wrap">
+                  <div className="Partnership-to-PLC-gtavatar">
                     <span>{t.initial}</span>
                   </div>
                 </div>
 
                 {/* text */}
-                <p className="gt-text">{t.text}</p>
+                <p className="Partnership-to-PLC-gttext">{t.text}</p>
 
                 {/* name & role */}
-                <h3 className="gt-name">{t.name}</h3>
-                <p className="gt-role">{t.role}</p>
+                <h3 className="Partnership-to-PLC-gtname">{t.name}</h3>
+                <p className="Partnership-to-PLC-gtrole">{t.role}</p>
 
                 {/* stars */}
-                <div className="gt-stars">
+                <div className="Partnership-to-PLC-gtstars">
                   {Array.from({ length: t.rating }).map((_, i) => (
                     <span key={i}>★</span>
                   ))}
                 </div>
 
                 {/* bottom quote */}
-                <span className="gt-quote gt-quote-bottom">”</span>
+                <span className="Partnership-to-PLC-gtquote Partnership-to-PLC-gtquote-bottom">”</span>
               </article>
             ))}
           </div>
 
           {/* Right arrow */}
           <button
-            className="gt-side-arrow gt-right"
+            className="Partnership-to-PLC-gtside-arrow Partnership-to-PLC-gtright"
             aria-label="Next testimonials"
             onClick={() => handleScroll("next")}
           >

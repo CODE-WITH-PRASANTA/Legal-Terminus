@@ -4,14 +4,14 @@
    SECTION WRAPPER
 ================================ */
 
-.faq-section {
+.PLC-to-LLP-faqsection {
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   background-color: #ffffff;
   padding: 72px 24px 64px;
 }
 
-.faq-container {
+.PLC-to-LLP-faqcontainer {
   max-width: 1180px;
   margin: 0 auto;
   display: grid;
@@ -24,18 +24,18 @@
    LEFT SIDE (STATIC CONTENT)
 ================================ */
 
-.faq-left {
+.PLC-to-LLP-faqleft {
   color: #111827;
 }
 
-.faq-title {
+.PLC-to-LLP-faqtitle {
   font-size: 40px;
   line-height: 1.2;
   font-weight: 600;
   margin: 0 0 22px;
 }
 
-.faq-intro {
+.PLC-to-LLP-faqintro {
   font-size: 15px;
   line-height: 1.9;
   color: #4b5563;
@@ -48,7 +48,7 @@
 
 /* This container stays constant in height on desktop.
    Only the inner list will scroll. */
-.faq-right {
+.PLC-to-LLP-faqright {
   display: flex;
   flex-direction: column;
   max-height: 540px;        /* <-- constant height */
@@ -56,22 +56,22 @@
 }
 
 /* Scroll area for Q&A items */
-.faq-list {
+.PLC-to-LLP-faqlist {
   flex: 1;
   overflow-y: auto;
   padding-right: 6px;       /* some room for scrollbar */
 }
 
 /* Scrollbar styling */
-.faq-list::-webkit-scrollbar {
+.PLC-to-LLP-faqlist::-webkit-scrollbar {
   width: 6px;
 }
 
-.faq-list::-webkit-scrollbar-track {
+.PLC-to-LLP-faqlist::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.faq-list::-webkit-scrollbar-thumb {
+.PLC-to-LLP-faqlist::-webkit-scrollbar-thumb {
   background: rgba(26, 169, 26, 0.45);
   border-radius: 999px;
 }
@@ -80,12 +80,12 @@
    FAQ ITEMS
 ================================ */
 
-.faq-item {
+.PLC-to-LLP-faqitem {
   border-bottom: 1px solid rgba(26, 169, 26, 0.22); /* light green line */
 }
 
 /* Question row */
-.faq-question {
+.PLC-to-LLP-faqquestion {
 
   text-align: start;
   width: 100%;
@@ -106,22 +106,22 @@
 }
 
 /* Chevron icon */
-.faq-icon {
+.PLC-to-LLP-faqicon {
   font-size: 18px;
   transform: rotate(0deg);
   transition: transform 0.2s ease;
 }
 
-.faq-icon.open {
+.PLC-to-LLP-faqicon.open {
   transform: rotate(180deg);
 }
 
 /* Answer text */
-.faq-answer {
+.PLC-to-LLP-faqanswer {
   padding: 0 0 16px;
 }
 
-.faq-answer p {
+.PLC-to-LLP-faqanswer p {
   margin: 0;
   font-size: 14px;
   line-height: 1.9;
@@ -129,11 +129,11 @@
 }
 
 /* Active / hover */
-.faq-item.active .faq-question {
+.PLC-to-LLP-faqitem.active .PLC-to-LLP-faqquestion {
   color: #1aa91a;
 }
 
-.faq-item:hover .faq-question {
+.PLC-to-LLP-faqitem:hover .PLC-to-LLP-faqquestion {
   color: #1aa91a;
 }
 
@@ -142,71 +142,71 @@
 ================================ */
 
 @media (max-width: 1024px) {
-  .faq-section {
+  .PLC-to-LLP-faqsection {
     padding: 60px 20px 52px;
   }
 
-  .faq-container {
+  .PLC-to-LLP-faqcontainer {
     column-gap: 40px;
   }
 
-  .faq-title {
+  .PLC-to-LLP-faqtitle {
     font-size: 34px;
   }
 
-  .faq-right {
+  .PLC-to-LLP-faqright {
     max-height: 520px;
   }
 }
 
 @media (max-width: 768px) {
-  .faq-section {
+  .PLC-to-LLP-faqsection {
     padding: 48px 16px 44px;
   }
 
-  .faq-container {
+  .PLC-to-LLP-faqcontainer {
     grid-template-columns: 1fr;
     row-gap: 32px;
   }
 
-  .faq-title {
+  .PLC-to-LLP-faqtitle {
     font-size: 30px;
   }
 
   /* On small screens, let the page scroll normally
      (no fixed-height right section). */
-  .faq-right {
+  .PLC-to-LLP-faqright {
     max-height: none;
   }
 
-  .faq-list {
+  .PLC-to-LLP-faqlist {
     overflow-y: visible;
     padding-right: 0;
   }
 }
 
 @media (max-width: 480px) {
-  .faq-section {
+  .PLC-to-LLP-faqsection {
     padding: 40px 12px 40px;
   }
 
-  .faq-title {
+  .PLC-to-LLP-faqtitle {
     font-size: 26px;
   }
 
-  .faq-question {
+  .PLC-to-LLP-faqquestion {
     font-size: 14px;
   }
 
-  .faq-answer p,
-  .faq-intro {
+  .PLC-to-LLP-faqanswer p,
+  .PLC-to-LLP-faqintro {
     font-size: 13.5px;
   }
 }
 
 /* ================= SMOOTH OPEN / CLOSE ================= */
 
-.faq-answer {
+.PLC-to-LLP-faqanswer {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
@@ -217,7 +217,7 @@
     transform 0.25s ease;
 }
 
-.faq-answer.open {
+.PLC-to-LLP-faqanswer.open {
   max-height: 500px; /* large enough for content */
   opacity: 1;
   transform: translateY(0);

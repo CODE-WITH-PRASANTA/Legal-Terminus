@@ -214,7 +214,7 @@ const OurClients = () => {
     if (!track) return;
 
     const scroller = track.parentElement;
-    const card = track.querySelector(".clients-card");
+    const card = track.querySelector(".PLC-to-LLP-clients-card");
     const gap = parseInt(getComputedStyle(track).gap || "40", 10);
     const cardWidth = Math.round(card?.getBoundingClientRect().width || 160);
     const amount = cardWidth + gap;
@@ -244,12 +244,12 @@ const OurClients = () => {
   // --------------------------------------------
 
   return (
-    <section className="clients-root">
-      <div className="clients-container">
-        <h2 className="clients-title">OUR CLIENTS</h2>
+    <section className="PLC-to-LLP-clients-root">
+      <div className="PLC-to-LLP-clients-container">
+        <h2 className="PLC-to-LLP-clients-title">OUR CLIENTS</h2>
 
-        <div className="clients-carousel">
-          <button className="clients-arrow clients-arrow-left"
+        <div className="PLC-to-LLP-clients-carousel">
+          <button className="PLC-to-LLP-clients-arrow PLC-to-LLP-clients-arrow-left"
             onClick={() => scrollByCard("left")}
           >
             <svg width="18" height="18" viewBox="0 0 24 24">
@@ -258,19 +258,19 @@ const OurClients = () => {
             </svg>
           </button>
 
-          <div className="clients-scroller">
-            <ul className="clients-track" ref={trackRef}>
+          <div className="PLC-to-LLP-clients-scroller">
+            <ul className="PLC-to-LLP-clients-track" ref={trackRef}>
               {logosDup.map((src, i) => (
-                <li className="clients-card" key={i}>
-                  <figure className="clients-logo">
-                    <img src={src} alt={`client-${i}`} className="clients-img" />
+                <li className="PLC-to-LLP-clients-card" key={i}>
+                  <figure className="PLC-to-LLP-clients-logo">
+                    <img src={src} alt={`client-${i}`} className="PLC-to-LLP-clients-img" />
                   </figure>
                 </li>
               ))}
             </ul>
           </div>
 
-          <button className="clients-arrow clients-arrow-right"
+          <button className="PLC-to-LLP-clients-arrow PLC-to-LLP-clients-arrow-right"
             onClick={() => scrollByCard("right")}
           >
             <svg width="18" height="18" viewBox="0 0 24 24">
