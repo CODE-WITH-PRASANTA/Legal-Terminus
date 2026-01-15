@@ -26,9 +26,24 @@ import ProfessionalReg from './Pages/ProfessionalReg/ProfessionalReg';
 import ShopReg from './Pages/ShopReg/ShopReg';
 import Proprietorship from './Pages/Proprietorship/Proprietorship';
 import Parternership from "./Pages/Parternership/Parternership";
+import PartnershiptoPrivate from "./Pages/PartnershiptoPrivate/PartnershiptoPrivate";
+import LlptoPrivate from "./Pages/LlptoPrivate/LlptoPrivate";
+import PritoLlp from "./Pages/PritoLlp/PritoLlp";
+import IEC from "./Pages/IEC/IEC";
+import FoodLicense from "./Pages/FoodLicense/FoodLicense";
+import TradeLicense from "./Pages/TradeLicense/TradeLicense";
+
 
 import RouteLoaderWrapper from "./Components/PageLoader/RouteLoaderWrapper";
 import FloatIcon from "./Components/FloatIcon/FloatIcon";
+import ProprietorshipOPC from "./Pages/ProprietorshipOPC/ProprietorshipOPC";
+import PropritorshipPLC from "./Pages/ProprietorshipPLC/ProprietorshipPLC";
+import PartnershipLLP from "./Pages/PartnershipLLP/PartnershipLLP"
+
+import LLRegistration from "./Pages/LLRegistration/LLRegistration";
+import BCRegistration from "./Pages/BCRegistration/BCRegistration";
+import ISOCertification from "./Pages/ISOCertification/ISOCertification";
+
 
 
 function App() {
@@ -70,9 +85,22 @@ function App() {
           <Route path="/professional-tax" element={<ProfessionalReg />}/>
           <Route path="/shop-establishment" element={<ShopReg />}/>
           <Route path="/proprietorship" element={<Proprietorship/>}/>
+          <Route path="/iec" element={<IEC/>}/>
+          <Route path="/food-license" element={<FoodLicense/>}/>
+          <Route path="/trade-license" element={<TradeLicense/>}/>
+          
         
           <Route path="/partnership" element={<Parternership/>} />
+          <Route path="/conversion/partnership-to-private" element={<PartnershiptoPrivate/>}/>
+          <Route path="/conversion/llp-to-private" element={<LlptoPrivate/>}/>
+          <Route path="/conversion/private-to-llp" element={<PritoLlp/>}/>
+          <Route path="/labour-license" element={<LLRegistration/>} /> 
+          <Route path="/bar-code" element={<BCRegistration/>} />
+          <Route path="/iso" element={<ISOCertification />} />
           
+          <Route path="/conversion/proprietorship-to-opc" element={<ProprietorshipOPC/>}/>
+          <Route path="/conversion/proprietorship-to-private" element={<PropritorshipPLC/>}/>
+          <Route path="/conversion/partnership-to-llp" element={<PartnershipLLP/>}/>
         </Routes>
       </RouteLoaderWrapper>
 

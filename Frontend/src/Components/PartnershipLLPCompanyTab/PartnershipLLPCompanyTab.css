@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* --------------------------------------------------
+   OVERVIEW
+-------------------------------------------------- */
+
+.partnership-llp-companytab-overview-wrapper {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+  font-family: "Poppins", sans-serif;
+}
+
+.partnership-llp-companytab-overview-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.partnership-llp-companytab-overview-text {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #374151;
+  margin-bottom: 20px;
+}
+
+/* --------------------------------------------------
+   PVT INTRO
+-------------------------------------------------- */
+
+.partnership-llp-companytab-intro-section {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  padding: 64px 24px 56px;
+}
+
+.partnership-llp-companytab-intro-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  column-gap: 64px;
+  align-items: center;
+}
+
+.partnership-llp-companytab-intro-illustration-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.partnership-llp-companytab-intro-illustration {
+  max-width: 100%;
+  height: auto;
+}
+
+.partnership-llp-companytab-intro-content {
+  max-width: 720px;
+}
+
+.partnership-llp-companytab-intro-title {
+  font-size: 40px;
+  font-weight: 600;
+  color: #151821;
+  margin-bottom: 18px;
+}
+
+.partnership-llp-companytab-intro-text {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+/* --------------------------------------------------
+   COMPANIES ACT
+-------------------------------------------------- */
+
+.partnership-llp-companytab-act-section {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  padding: 24px 24px 56px;
+}
+
+.partnership-llp-companytab-act-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.partnership-llp-companytab-act-card {
+  border-radius: 20px;
+  padding: 32px 40px;
+  background: linear-gradient(to bottom, #f4f8ff 0%, #ffffff 100%);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+.partnership-llp-companytab-act-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #273143;
+  margin-bottom: 14px;
+}
+
+.partnership-llp-companytab-act-text,
+.partnership-llp-companytab-act-point {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+.partnership-llp-companytab-act-point-label {
+  font-weight: 600;
+  margin-right: 4px;
+}

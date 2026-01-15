@@ -35,14 +35,11 @@ A Private Limited Company is a legally registered business under the Companies A
           {/* Text */}
           <div className="pvt-intro-content">
             <h2 className="pvt-intro-title">
-              Why Choose Private Limited Company Registration
+              Why Choose Partnership Firm Registration In India
             </h2>
             <p className="pvt-intro-text">
-              
-Registering a company in India is the first step to legally starting your business. The Companies Act, 2013, sets the rules for company formation, and the Ministry of Corporate Affairs (MCA) oversees the process. Once registered, your business gets a legal identity, along with rights and protections under Indian law. 
-<br></br>
-<br></br>
-Choosing the right type of Private Limited Company is important, as it determines how your business is owned, managed, and legally protected. Different types of private limited companies suit different business needs, depending on factors such as ownership structure. Selecting the correct type also helps ensure smooth compliance with legal regulations. Proper registration with the Ministry of Corporate Affairs (MCA) allows your company to operate legally, access government benefits, and build strong credibility in the market.            </p>
+              Partnership firm registration in India is a prevalent choice for starting a new business. It involves creating an unregistered business entity through a partnership deed, where two or more individuals come together to form a business and distribute profits in an agreed ratio. Compared to corporate business structures, partnership firm registration entails lesser compliance requirements.
+             </p>
           </div>
         </div>
       </section>
@@ -53,29 +50,25 @@ Choosing the right type of Private Limited Company is important, as it determine
       <section className="companies-act-section">
         <div className="companies-act-container">
           <div className="companies-act-card">
-            <h3 className="companies-act-title">Companies Act, 2013</h3>
+            <h3 className="companies-act-title">Indian Partnership Act, 1932</h3>
 
             <p className="companies-act-text">
-              As per Section 2(68) of the Companies Act, 2013, a private limited
-              company means a company having a minimum paid-up share capital as
-              may be prescribed, and which by its articles of association:
+              As per the Indian Partnership Act, 1932, a partnership firm is a business arrangement where two or more persons agree to run a business together and share its profits as per mutually decided terms, recorded in a Partnership Deed:
             </p>
 
             <p className="companies-act-point">
               <span className="companies-act-point-label">(a)</span>
-              Restricts the right to transfer its shares;
+              The firm operates based on a Partnership Deed, which defines partner roles, capital contribution, profit-sharing ratio, and responsibilities;
             </p>
 
             <p className="companies-act-point">
               <span className="companies-act-point-label">(b)</span>
-              Limits the number of its members to 200 (excluding present and
-              former employees); and
+              The firm must have a minimum of two partners, and the partners jointly manage and control the operations of the business; and
             </p>
 
             <p className="companies-act-point">
               <span className="companies-act-point-label">(c)</span>
-              Prohibits any invitation to the public to subscribe for any
-              securities of the company.
+              The partners share profits as well as liabilities, meaning each partner can be responsible for obligations of the firm as per the deed and law.
             </p>
           </div>
         </div>

@@ -35,14 +35,11 @@ A Private Limited Company is a legally registered business under the Companies A
           {/* Text */}
           <div className="pvt-intro-content">
             <h2 className="pvt-intro-title">
-              Why Choose Private Limited Company Registration
+              Why Choose Proprietorship Firms Registration
             </h2>
             <p className="pvt-intro-text">
-              
-Registering a company in India is the first step to legally starting your business. The Companies Act, 2013, sets the rules for company formation, and the Ministry of Corporate Affairs (MCA) oversees the process. Once registered, your business gets a legal identity, along with rights and protections under Indian law. 
-<br></br>
-<br></br>
-Choosing the right type of Private Limited Company is important, as it determines how your business is owned, managed, and legally protected. Different types of private limited companies suit different business needs, depending on factors such as ownership structure. Selecting the correct type also helps ensure smooth compliance with legal regulations. Proper registration with the Ministry of Corporate Affairs (MCA) allows your company to operate legally, access government benefits, and build strong credibility in the market.            </p>
+             Sole proprietorship firm registration in India is the easiest way to start a new business. It’s when one person owns and runs the business, and they’re personally responsible for any debt it incurs. In simple terms, there’s no legal difference between the sole proprietorship firm and the sole proprietors themselves. Here are answers to some common questions about proprietorship firm registration in India.
+            </p>
           </div>
         </div>
       </section>
@@ -53,29 +50,25 @@ Choosing the right type of Private Limited Company is important, as it determine
       <section className="companies-act-section">
         <div className="companies-act-container">
           <div className="companies-act-card">
-            <h3 className="companies-act-title">Companies Act, 2013</h3>
+            {/* <h3 className="companies-act-title">Companies Act, 2013</h3> */}
 
             <p className="companies-act-text">
-              As per Section 2(68) of the Companies Act, 2013, a private limited
-              company means a company having a minimum paid-up share capital as
-              may be prescribed, and which by its articles of association:
+              A Sole Proprietorship is a simple business structure owned and managed by a single individual. It does not have a separate legal identity from its owner and is one of the easiest ways to start a business in India.
             </p>
 
             <p className="companies-act-point">
               <span className="companies-act-point-label">(a)</span>
-              Restricts the right to transfer its shares;
+              PAN and Aadhaar of the proprietor;
             </p>
 
             <p className="companies-act-point">
               <span className="companies-act-point-label">(b)</span>
-              Limits the number of its members to 200 (excluding present and
-              former employees); and
+              Business address proof and utility bill; and
             </p>
 
             <p className="companies-act-point">
               <span className="companies-act-point-label">(c)</span>
-              Prohibits any invitation to the public to subscribe for any
-              securities of the company.
+              Basic registrations like GST Registration (if applicable), Shop & Establishment License, or Udyam Registration.
             </p>
           </div>
         </div>

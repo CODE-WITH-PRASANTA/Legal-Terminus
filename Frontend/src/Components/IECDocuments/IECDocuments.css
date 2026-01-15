@@ -1,0 +1,310 @@
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+    .iec-doc-section {
+        font-family: "Poppins", sans-serif;
+        background: radial-gradient(circle at center, #f9fafb 0%, #ffffff 100%);
+        padding: 100px 20px;
+        text-align: center;
+    }
+    /* ============================
+   Title / Heading
+============================ */
+    
+    .iec-doc-heading {
+        font-size: 36px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 80px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    /* ============================
+   Container Layout
+============================ */
+    
+    .iec-doc-container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .iec-doc-layout {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 70px;
+        position: relative;
+    }
+    /* ============================
+   LEFT MAIN CIRCLE
+============================ */
+    
+    .iec-doc-left {
+        position: relative;
+        width: 400px;
+        height: 400px;
+    }
+    /* 🌈 Elegant gradient circle */
+    
+    .iec-doc-main-circle {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: radial-gradient(circle at 30% 30%, #ffffff 0%, #dbeafe 50%, #a5b4fc 100%);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), inset 0 0 30px rgba(59, 130, 246, 0.25);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .iec-doc-main-circle h3 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 6px;
+        letter-spacing: 0.5px;
+    }
+    
+    .iec-doc-main-circle p {
+        font-size: 14px;
+        color: #333;
+    }
+    /* 🔘 Central dark hub point */
+    /* ============================
+   Central Black Hub (unchanged)
+============================ */
+    
+    .iec-doc-center-point {
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #000;
+        transform: translateY(-50%);
+        z-index: 6;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 30px rgba(59, 130, 246, 0.3);
+    }
+    /* ============================
+   DOTTED CONNECTING LINES
+============================ */
+    
+    .iec-doc-connector {
+        position: absolute;
+        top: 50%;
+        right: -352px;
+        height: 2px;
+        width: 350px;
+        background-image: repeating-linear-gradient( to right, currentColor 0, currentColor 6px, transparent 6px, transparent 12px);
+        border-radius: 2px;
+        opacity: 1;
+        animation: flowDotsRight 3s linear infinite;
+        transform-origin: left center;
+        filter: drop-shadow(0 0 3px currentColor);
+        z-index: 4;
+        transform: translateY(-50%);
+    }
+    /* ✅ Animate dots flowing left → right */
+    
+    @keyframes flowDotsRight {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: 24px 0;
+        }
+    }
+    /* ============================
+   Line Positions (Radiating from Hub)
+============================ */
+    /* All start from same vertical center, just angled differently */
+    
+    .line-1 {
+        top: 50%;
+        transform: rotate(-78deg);
+    }
+    
+    .line-2 {
+        top: 50%;
+        position: absolute;
+        right: -205px;
+        transform: rotate(-69deg);
+        width: 200px;
+    }
+    
+    .line-3 {
+        top: 50%;
+        position: absolute;
+        right: -100px;
+        transform: rotate(-45deg);
+        width: 100px;
+    }
+    
+    .line-4 {
+        top: 50%;
+        position: absolute;
+        right: -100px;
+        transform: rotate(45deg);
+        width: 100px;
+    }
+    
+    .line-5 {
+        top: 50%;
+        position: absolute;
+        right: -205px;
+        transform: rotate(69deg);
+        width: 200px;
+    }
+    
+    .line-6 {
+        top: 50%;
+        transform: rotate(78deg);
+    }
+    /* Line colors (brighter for clarity) */
+    
+    .red {
+        color: #ff3b30;
+    }
+    
+    .orange {
+        color: #ff9500;
+    }
+    
+    .yellow {
+        color: #ffcc00;
+    }
+    
+    .green {
+        color: #34c759;
+    }
+    
+    .cyan {
+        color: #5ac8fa;
+    }
+    
+    .blue {
+        color: #007aff;
+    }
+    /* ============================
+   RIGHT BOXES
+============================ */
+    
+    .iec-doc-right {
+        display: flex;
+        flex-direction: column;
+        gap: 34px;
+    }
+    
+    .iec-doc-box {
+        display: flex;
+        align-items: center;
+        background: #ffffff;
+        border-radius: 14px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        padding: 18px 24px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        min-width: 380px;
+        position: relative;
+    }
+    
+    .iec-doc-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    }
+    /* Colored accent on left side */
+    
+    .iec-doc-box::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 6px;
+        border-radius: 14px 0 0 14px;
+        background: currentColor;
+        filter: brightness(1.2);
+    }
+    /* Number badge */
+    
+    .iec-doc-num {
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        border-radius: 8px;
+        padding: 10px 14px;
+        margin-right: 16px;
+    }
+    /* Box content */
+    
+    .iec-doc-box-content {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+    
+    .iec-doc-box-content h4 {
+        font-size: 17px;
+        margin: 0 0 4px;
+        font-weight: 600;
+        color: #111827;
+    }
+    
+    .iec-doc-box-content p {
+        font-size: 13.5px;
+        margin: 0;
+        color: #555;
+        line-height: 1.5;
+    }
+    
+    .iec-doc-icon {
+        font-size: 22px;
+    }
+    /* Match box number color */
+    
+    .red .iec-doc-num {
+        background: #ff3b30;
+    }
+    
+    .orange .iec-doc-num {
+        background: #ff9500;
+    }
+    
+    .yellow .iec-doc-num {
+        background: #ffcc00;
+        color: #222;
+    }
+    
+    .green .iec-doc-num {
+        background: #34c759;
+    }
+    
+    .cyan .iec-doc-num {
+        background: #5ac8fa;
+    }
+    
+    .blue .iec-doc-num {
+        background: #007aff;
+    }
+    /* ============================
+   Responsive Design
+============================ */
+    
+    @media (max-width: 900px) {
+        .iec-doc-layout {
+            flex-direction: column;
+            align-items: center;
+        }
+        .iec-doc-left {
+            width: 320px;
+            height: 320px;
+        }
+        .iec-doc-right {
+            margin-top: 60px;
+        }
+        .iec-doc-connector {
+            display: none;
+        }
+    }

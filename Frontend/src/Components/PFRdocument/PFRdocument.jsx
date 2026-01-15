@@ -35,35 +35,77 @@ const docs = [
 
 const PartnershipDocumentsInfographic = () => {
   return (
-    <section className="pdi-section">
-      <h1 className="pdi-heading">
-        Documents Required for Partnership Firm Registration In India
-      </h1>
+    <section className="di-section">
+      <h2 className="di-heading">
+        Documents Required for Partnership Firm Registration in India
+      </h2>
 
-      <div className="pdi-wrapper">
-        {/* CENTER CIRCLE */}
-        <div className="pdi-center">
-          <div className="pdi-circle">
-            <h3>Documents<br />Required</h3>
-            <p>Complete checklist for registration</p>
+      <div className="di-wrapper">
+        {/* LEFT COLUMN */}
+        <div className="di-column">
+          <div className="di-card di-left">
+            {/* <span className="di-number">1</span> */}
+            <FaIdCard className="di-icon" />
+            <p>
+              Rs. 200/- stamp paper on name of any of the proposed Partner
+            </p>
+          </div>
+
+          <div className="di-card di-left">
+            {/* <span className="di-number">2</span> */}
+            <FaCamera className="di-icon" />
+            <p>KYC documents - All the Proposed Partners such as :-as ID Proof - PAN and Aadhaar</p>
+          </div>
+
+          {/* <div className="di-card di-left"> */}
+            {/* <span className="di-number">3</span> */}
+            {/* <FaBolt className="di-icon" /> */}
+            {/* <p>
+              Electricity bill corresponding to the registered office address of the proposed Partnership Firm
+            </p> */}
+          {/* </div> */}
+        </div>
+
+        {/* CENTER INFOGRAPHIC */}
+        <div className="di-center">
+          <div className="di-rays">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div className="di-circle">
+            <span>Documents Required</span>
           </div>
         </div>
 
-        {/* RIGHT INFOGRAPHIC */}
-        <div className="pdi-steps">
-          {docs.map((item, index) => (
-            <div key={item.id} className={`pdi-step pdi-${item.color}`}>
-              <span className="pdi-line"></span>
-              <div className="pdi-number">{item.id}</div>
-              <div className="pdi-card">
-                <div className="pdi-icon">{item.icon}</div>
-                <div>
-                  <h4>{item.title}</h4>
-                  <p>{item.desc}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+        {/* RIGHT COLUMN */}
+        <div className="di-column">
+          <div className="di-card di-right">
+            {/* <span className="di-number">4</span> */}
+            <FaFileContract className="di-icon" />
+            <p>
+              Electricity bill corresponding to the registered office address of the proposed Partnership Firm
+            </p>
+          </div>
+
+          <div className="di-card di-right">
+            {/* <span className="di-number">5</span> */}
+            <FaCertificate className="di-icon" />
+            <p>
+              Rent Agreement duly notarised with respect to the registered office address of the proposed Partnership Firm (if on rent)
+            </p>
+          </div>
+
+          {/* <div className="di-card di-right">
+            <span className="di-number">6</span>
+            <FaFolderOpen className="di-icon" />
+            <h4>Other Documents</h4>
+            <p>Additional documents as required by our team.</p>
+          </div> */}
         </div>
       </div>
     </section>

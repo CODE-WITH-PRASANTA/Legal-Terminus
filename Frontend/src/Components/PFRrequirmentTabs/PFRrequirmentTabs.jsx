@@ -8,13 +8,13 @@ const RequirementsPvt = () => {
         {/* Heading + intro */}
         <header className="req-header">
           <h2 className="req-title">
-            Benefits of Private Limited Company Registration in India
+            Benefits of Partnership Firm Registration in India
           </h2>
-          <p className="req-subtitle">
+          {/* <p className="req-subtitle">
             The Ministry of Corporate Affairs (MCA) manages the company registration process in India. It includes registering the business with the Registrar of Companies (RoC) and obtaining a Digital Signature Certificate (DSC) and Director Identification Number (DIN).
 
 
-          </p>
+          </p> */}
         </header>
 
         {/* Cards */}

@@ -5,12 +5,12 @@ const steps = [
   {
     title: "Step 1 – Document Submission",
     text:
-      "Provision of requisite documents / information to us (as per the checklist to be provided by us).",
+      "Provision of requisite documents/information to us (As per the checklist to be provided by us)",
   },
   {
-    title: "Step 2 – Company Name & Objects Finalization",
+    title: "Step 2 – LLP Name & Objects Finalization",
     text:
-      "Finalisation of objects along with name of the proposed company (based on a search report duly conducted and provided by our team).",
+      "Finalisation of Objects along with Name of the proposed LLP (Name shall be finalised on the basis of a search report duly conducted & provided by our team)",
   },
   {
     title: "Step 3 – Name Reservation Application",
@@ -20,22 +20,32 @@ const steps = [
   {
     title: "Step 4 – Digital Signature Certificates",
     text:
-      "Preparation of requisite numbers of DSC with respect to the proposed promoters & directors and registration of DSC in the MCA portal.",
+      "Preparation of requisite numbers of DSC with respect to the proposed Designated Partners/ Partners and Registration of DSC in MCA Portal",
   },
   {
     title: "Step 5 – Incorporation Document Preparation",
     text:
-      "Preparation of further incorporation documents upon receipt of the name approval letter from the department.",
+      "Preparation of further incorporation documents upon receipt of name approval letter from the department",
   },
   {
-    title: "Step 6 – Final Form Upload & Fee Payment",
+    title: "Step 6 – Form Upload and Fee Payment",
     text:
-      "Uploading of final incorporation forms to the MCA portal along with applicable government fees.",
+      "Uploading of Final Incorporation Forms to the MCA portal along with applicable government fees",
   },
   {
     title: "Step 7 – Registration Certificate Issuance",
     text:
-      "Processing of the application by the department and issuance of the registration certificate.",
+      "Processing of the application by the department and issuance of the registration certificate",
+  },
+  {
+    title: "Step 8 – LLP Agreement Preparation",
+    text:
+      "Preparation, Execution & Noterisation of LLP agreement",
+  },
+  {
+    title: "Step 9 – LLP Agreement Filing",
+    text:
+      "Filing of LLP Agreement in requisite e-form within a period of 30 days of the incorporation of the LLP along with requisite Government Fees",
   },
 ];
 
@@ -43,11 +53,10 @@ const GSTProcess = () => {
   return (
     <section className="llp-gst-wrapper">
       <h2 className="gst-heading">
-        STEPS FOR LIMITED LIABILITY PARTNERSHIP REGISTRATION IN INDIA
+        Steps For Limited Liability Partnership Registration In India
       </h2>
       <p className="pv-gst-subheading">
-        The broad process of registering a Limited Liability involves
-        the following steps:
+        The broad process of registering an LLP involves the following steps:
       </p>
 
       <div className="llp-timeline">

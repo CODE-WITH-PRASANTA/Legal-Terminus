@@ -28,9 +28,7 @@ const IncorporationPremium = () => {
                 <span className="incorp-premium-title-icon">⚖️</span>
               </h2>
               <p className="incorp-premium-subtitle">
-                Get your company registered faster with Legal Terminus’s
-                expert-handled process, built for entrepreneurs who value time
-                and want to avoid unnecessary delays.
+                Get your Wholly Owned Subsidiary (WOS) incorporated in India faster with Legal Terminus. Our expert-led process helps you save time and avoid unnecessary delays.
               </p>
             </header>
 
@@ -59,12 +57,10 @@ const IncorporationPremium = () => {
               <div className="incorp-premium-note-box">
                 <ul className="incorp-premium-note-list">
                   <li className="incorp-premium-note-item">
-                    We prioritize your preferred business name and perform a
-                    preliminary name check before submission.
+                    We give priority to your preferred company name and conduct a preliminary name availability check before submission.
                   </li>
                   <li className="incorp-premium-note-item">
-                    In case of name rejection, our experts suggest compliant
-                    alternatives to ensure approval.
+                    If the proposed name is rejected, our experts will suggest compliant alternatives to ensure quick approval.
                   </li>
                 </ul>
               </div>
