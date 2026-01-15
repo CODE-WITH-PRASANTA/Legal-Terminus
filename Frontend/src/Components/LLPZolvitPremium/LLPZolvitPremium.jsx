@@ -28,8 +28,7 @@ const ZolvitPremium = () => {
                 <span className="llp-zp-title-icon">⚖️</span>
               </h2>
               <p className="llp-zp-subtitle">
-Get your company registered faster with Legal Terminus expert-handled process, made for entrepreneurs who value time and want to avoid unnecessary delays.
-              </p>
+              Get your LLP registered faster with Legal Terminus’ expert-handled process—designed for founders who want a smooth setup without delays.              </p>
             </header>
 
             {/* Features */}
@@ -38,15 +37,15 @@ Get your company registered faster with Legal Terminus expert-handled process, m
               <ul className="llp-zp-list llp-zp-features-list">
                 <li className="llp-zp-list-item">
                   <span className="llp-zp-list-icon">🧑‍⚖️</span>
-                  Get your company registered faster with Legal Terminus expert-handled process, made for entrepreneurs who value time and want to avoid unnecessary delays.
+                  End-to-end assistance for a quick and compliant LLP setup.
                 </li>
                 <li className="llp-zp-list-item">
                   <span className="llp-zp-list-icon">📑</span>
-                  Hassle-Free Compliance Solutions
+                  Guidance on key filings and legal formalities.
                 </li>
                 <li className="llp-zp-list-item">
                   <span className="llp-zp-list-icon">⏱️</span>
-                  Excellent Reminder Policy
+                  Stay on track with due dates and documentation.
                 </li>
               </ul>
             </section>
@@ -57,12 +56,10 @@ Get your company registered faster with Legal Terminus expert-handled process, m
               <div className="llp-zp-note-box">
                 <ul className="llp-zp-note-list">
                   <li className="llp-zp-note-item">
-                    We prioritize your preferred business name and conduct a
-                    preliminary name check before submission.
+                    We prioritize your preferred LLP name and conduct a preliminary name check before submission.
                   </li>
                   <li className="llp-zp-note-item">
-                    In case of name rejection, our experts will recommend
-                    legally compliant alternative names to ensure approval.
+                    If your name is rejected, our experts will suggest legally compliant alternative names for faster approval.
                   </li>
                 </ul>
               </div>

@@ -5,37 +5,22 @@ const steps = [
   {
     title: "Step 1 – Document Submission",
     text:
-      "Provision of requisite documents / information to us (as per the checklist to be provided by us).",
+      "Provision of requisite documents/ information to us (As per the Checklist to be provided by us)",
   },
   {
-    title: "Step 2 – Company Name & Objects Finalization",
+    title: "Step 2 – Partnership Deed Preparation",
     text:
-      "Finalisation of objects along with name of the proposed company (based on a search report duly conducted and provided by our team).",
+      "Preparation of draft Partnership Deed",
   },
   {
-    title: "Step 3 – Name Reservation Application",
+    title: "Step 3 – Partnership Deed Execution and Notarization",
     text:
-      "Filing of application for name reservation in requisite e-form along with applicable government fees.",
+      "Execution & Notrisation of Partnership Deed with requisite Stamp Duty",
   },
   {
-    title: "Step 4 – Digital Signature Certificates",
+    title: "Step 4 – PAN & TAN Application",
     text:
-      "Preparation of requisite numbers of DSC with respect to the proposed promoters & directors and registration of DSC in the MCA portal.",
-  },
-  {
-    title: "Step 5 – Incorporation Document Preparation",
-    text:
-      "Preparation of further incorporation documents upon receipt of the name approval letter from the department.",
-  },
-  {
-    title: "Step 6 – Final Form Upload & Fee Payment",
-    text:
-      "Uploading of final incorporation forms to the MCA portal along with applicable government fees.",
-  },
-  {
-    title: "Step 7 – Registration Certificate Issuance",
-    text:
-      "Processing of the application by the department and issuance of the registration certificate.",
+      "Application for obtaining PAN & TAN",
   },
 ];
 
@@ -43,11 +28,10 @@ const GSTProcess = () => {
   return (
     <section className="pvtltd-gst-wrapper">
       <h2 className="gst-heading">
-        STEPS FOR PRIVATE LIMITED COMPANY REGISTRATION IN INDIA
+        Steps For Partnership Firm Registration In India
       </h2>
       <p className="pv-gst-subheading">
-        The broad process of registering a Private Limited company involves
-        the following steps:
+        The broad process of registering a Partnership Firm involves the following steps:
       </p>
 
       <div className="pvtltd-timeline">

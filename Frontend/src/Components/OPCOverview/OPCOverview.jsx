@@ -26,19 +26,9 @@ const OPCOverview = () => {
               Why Choose One Person Company Registration
             </h2>
             <p className="opc-intro-text">
-              Registering a company in India is the first step to legally starting your
-              business. The Companies Act, 2013, sets the rules for company formation, and
-              the Ministry of Corporate Affairs (MCA) oversees the process. Once registered,
-              your business gets a legal identity, along with rights and protections under
-              Indian law. 
+              A One Person Company (OPC) is an ideal business structure for individuals who want to start a company with full ownership and legal protection. It allows a single founder to run the business independently while enjoying the benefits of a corporate identity. 
               <br /><br />
-              Choosing the right type of One Person Company is important, as it determines
-              how your business is owned, managed, and legally protected. Different types of
-              company structures suit different business needs, depending on factors such as
-              ownership structure. Selecting the correct type also helps ensure smooth
-              compliance with legal regulations. Proper registration with the Ministry of
-              Corporate Affairs (MCA) allows your company to operate legally, access
-              government benefits, and build strong credibility in the market.
+              OPC is registered under the Companies Act, 2013, and regulated by the Ministry of Corporate Affairs (MCA). Once incorporated, the business becomes a separate legal entity, which means it can open a bank account, sign contracts, raise invoices, and operate legally in India.
             </p>
           </div>
         </div>
@@ -59,17 +49,17 @@ const OPCOverview = () => {
 
             <p className="opc-act-point">
               <span className="opc-act-point-label">(a)</span>
-              Provides full control to a single entrepreneur while enjoying limited liability protection;
+              Allows a single entrepreneur to start a company with complete control and limited liability protection.
             </p>
 
             <p className="opc-act-point">
               <span className="opc-act-point-label">(b)</span>
-              Simplifies the process of business registration and management; and
+              Makes business registration and management simpler and more structured compared to traditional setups.
             </p>
 
             <p className="opc-act-point">
               <span className="opc-act-point-label">(c)</span>
-              Offers legal recognition similar to private limited companies.
+              Makes business registration and management simpler and more structured compared to traditional setups.
             </p>
           </div>
         </div>

@@ -35,15 +35,12 @@ A Private Limited Company is a legally registered business under the Companies A
           {/* Text */}
           <div className="llp-com-intro-content">
             <h2 className="llp-com-intro-title">
-              Why Choose Private Limited Company Registration
+              Why Choose LLP Registration in India
             </h2>
             <p className="llp-com-intro-text">
-              
-Registering a company in India is the first step to legally starting your business. The Companies Act, 2013, sets the rules for company formation, and the Ministry of Corporate Affairs (MCA) oversees the process. Once registered, your business gets a legal identity, along with rights and protections under Indian law. 
-<br></br>
-<br></br>
-Choosing the right type of Private Limited Company is important, as it determines how your business is owned, managed, and legally protected. Different types of private limited companies suit different business needs, depending on factors such as ownership structure. Selecting the correct type also helps ensure smooth compliance with legal regulations. Proper registration with the Ministry of Corporate Affairs (MCA) allows your company to operate legally, access government benefits, and build strong credibility in the market.            </p>
-          </div>
+         An LLP (Limited Liability Partnership) is the simplest business structure to set up in India. It offers limited liability to owners and has fewer compliance requirements compared to other corporate structures. Since the introduction of the Limited Liability Partnership Act of 2008, this business form has gained popularity due to its blend of partnership and company characteristics. Below, we address common queries related to Limited Liability Partnership Registration in India.
+           </p>
+           </div>
         </div>
       </section>
 
@@ -53,29 +50,25 @@ Choosing the right type of Private Limited Company is important, as it determine
       <section className="companies-act-section">
         <div className="companies-act-container">
           <div className="companies-act-card">
-            <h3 className="companies-act-title">Companies Act, 2013</h3>
+            <h3 className="companies-act-title">Limited Liability Partnership Act, 2008</h3>
 
             <p className="companies-act-text">
-              As per Section 2(68) of the Companies Act, 2013, a private limited
-              company means a company having a minimum paid-up share capital as
-              may be prescribed, and which by its articles of association:
+              As per the Limited Liability Partnership Act, 2008, an LLP (Limited Liability Partnership) means a partnership formed and registered under this Act, where the partners enjoy limited liability and the LLP has a separate legal identity.
             </p>
 
             <p className="companies-act-point">
               <span className="companies-act-point-label">(a)</span>
-              Restricts the right to transfer its shares;
+              It is a separate legal entity from its partners;
             </p>
 
             <p className="companies-act-point">
               <span className="companies-act-point-label">(b)</span>
-              Limits the number of its members to 200 (excluding present and
-              former employees); and
+              Partners have limited liability, restricted to their agreed contribution; and
             </p>
 
             <p className="companies-act-point">
               <span className="companies-act-point-label">(c)</span>
-              Prohibits any invitation to the public to subscribe for any
-              securities of the company.
+              It provides the flexibility of a partnership with the benefits of limited liability and perpetual succession.
             </p>
           </div>
         </div>

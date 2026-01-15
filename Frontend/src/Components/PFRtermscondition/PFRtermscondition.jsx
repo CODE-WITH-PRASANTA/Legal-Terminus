@@ -17,33 +17,15 @@ const TermsConditions = () => {
         {/* List */}
         <ol className="pvtltd-tc-list">
           <li className="pvtltd-tc-item">
-            DSC shall be from Sign X Class III only.
+            The above fees includes only preparation and Noterisation of Partnership Deed and does not include the Stamp Duty.
           </li>
 
           <li className="pvtltd-tc-item">
-            The fees mentioned above are valid for contribution up to Rs. 1
-            Lakhs and in case contribution is above Rs. 1 Lakhs the additional
-            fee shall be charged as per actuals.
+            The registration of Partnership Deed with the Registrar of Firms is not mandatory and in case you want us to register the same with the Registrar of Firms additional fee shall be chargeable which varies from State to State.
           </li>
 
           <li className="pvtltd-tc-item">
-            The above fee includes name application for up to 4 choice names and
-            in case all the 4 names are rejected by the department, an
-            additional fee shall be charged as per actuals.
-          </li>
-
-          <li className="pvtltd-tc-item">
-            The audit of accounts shall be applicable for the respective FY in
-            which the contribution exceeds Rs. 25 Lakhs &amp; turnover exceeds
-            Rs. 40 Lakhs. Further, the audit fees, if any, shall not be a part
-            of our professional fees and shall be payable directly to the
-            auditor.
-          </li>
-
-          <li className="pvtltd-tc-item">
-            In case the above plan does not qualify your requirements, kindly
-            contact our executive, we shall be happy to customise a plan for
-            you.
+            In case the above plan does not qualify your requirements, kindly contact our executive, we shall be happy to customise a plan for you.
           </li>
         </ol>
       </div>

@@ -9,7 +9,7 @@ const OPCPlan = () => {
         <header className="opcpricing-header">
           <h2 className="opcpricing-title">CHOOSE YOUR PLAN</h2>
           <p className="opcpricing-subtitle">
-            Register your company with pocket-friendly prices
+            Register your OPC with pocket-friendly prices
           </p>
         </header>
 
@@ -28,9 +28,8 @@ const OPCPlan = () => {
 
               <div className="opcplan-body">
                 <ul className="opcplan-list">
-                  <li className="opcplan-list-item">Search Report of Name Availability</li>
                   <li className="opcplan-list-item">1 RUN Name Approval Certificate</li>
-                  <li className="opcplan-list-item">Director Identification Number for 2 Individuals</li>
+                  <li className="opcplan-list-item">DIN for 1 Individuals</li>
                   <li className="opcplan-list-item">Certificate of Incorporation</li>
                   <li className="opcplan-list-item">E-PAN</li>
                   <li className="opcplan-list-item">E-TAN</li>
@@ -64,9 +63,9 @@ const OPCPlan = () => {
               <div className="opcplan-body">
                 <ul className="opcplan-list">
                   <li className="opcplan-list-item">Elemental Plan Plus</li>
+                  <li className="opcplan-list-item">UDYAM Registration</li>
                   <li className="opcplan-list-item">Share Certificate</li>
                   <li className="opcplan-list-item">Commencement of Business</li>
-                  <li className="opcplan-list-item">Udyam/MSME Registration</li>
                 </ul>
               </div>
             </div>
@@ -89,9 +88,9 @@ const OPCPlan = () => {
               <div className="opcplan-body">
                 <ul className="opcplan-list">
                   <li className="opcplan-list-item">Enriched Plan Plus</li>
-                  <li className="opcplan-list-item">Income tax filing of Company</li>
+                  <li className="opcplan-list-item">ITR Filing of 1 Directors</li>
+                  <li className="opcplan-list-item">ITR Filing of Company</li>
                   <li className="opcplan-list-item">Preparation of Directors Report</li>
-                  <li className="opcplan-list-item">Preparation of Annual Return</li>
                   <li className="opcplan-list-item">Preparation of Auditor Appointment Paperwork</li>
                   <li className="opcplan-list-item">Preparation of List of Share Holders</li>
                   <li className="opcplan-list-item">Preparation of Notice of AGM</li>
@@ -100,14 +99,9 @@ const OPCPlan = () => {
                   <li className="opcplan-list-item">Filing of AOC - 4 (Financial Statements)</li>
                   <li className="opcplan-list-item">Filing of MGT - 7 (Annual Return)</li>
                   <li className="opcplan-list-item">Filing of ADT - 1 (Auditor Appointment)</li>
-                  <li className="opcplan-list-item">Minutes of Board Meeting for 1st FY</li>
-                  <li className="opcplan-list-item">Minutes of General Meeting for 1st FY</li>
-                  <li className="opcplan-list-item">Maintenance of Statutory E- Registers</li>
-                  <li className="opcplan-list-item">Filing of DPT - 3 Annual (If Applicable)</li>
-                  <li className="opcplan-list-item">Filing of MSME - 1 (If Applicable) for 1st FY</li>
-                  <li className="opcplan-list-item">DIR KYC (2 Directors)</li>
-                  <li className="opcplan-list-item">Income Tax Filing of 2 Directors</li>
-                  <li className="opcplan-list-item">Audit fees are excluded and to be paid directly to Auditor</li>
+                  <li className="opcplan-list-item">Minutes of BM for 1st FY</li>
+                  <li className="opcplan-list-item">Minutes of AGM for 1st FY</li>
+                  <li className="opcplan-list-item">DIR KYC (1 Directors)</li>
                 </ul>
               </div>
             </div>

@@ -9,14 +9,14 @@ const IncorporationRequirementsTab = () => {
         {/* ================= HEADER ================= */}
         <header className="incorp-req-header">
           <h2 className="incorp-req-title">
-            Benefits of Private Limited Company Registration in India
+            Benefits of Setting up a Wholly Owned Subsidiary in India
           </h2>
-          <p className="incorp-req-subtitle">
+          {/* <p className="incorp-req-subtitle">
             The Ministry of Corporate Affairs (MCA) manages the company
             registration process in India. It includes registering the business
             with the Registrar of Companies (RoC) and obtaining a Digital
             Signature Certificate (DSC) and Director Identification Number (DIN).
-          </p>
+          </p> */}
         </header>
 
         {/* ================= CARDS ================= */}
@@ -25,49 +25,66 @@ const IncorporationRequirementsTab = () => {
           {/* Card 1 */}
           <article className="incorp-req-card">
             <h3 className="incorp-req-card-title">
-              Separate Legal Identity
+              Full Control Over Business
             </h3>
             <div className="incorp-req-card-underline" />
             <p className="incorp-req-card-text">
-              Once registered, a company becomes its own legal entity. It can own
-              property, sign contracts, and operate separately from its owners.
+              Unlike a joint venture where decisions are shared, a Wholly Owned Subsidiary (WOS) allows the foreign parent company to make all decisions independently. This helps in running operations smoothly without disagreements.
             </p>
           </article>
 
           {/* Card 2 */}
           <article className="incorp-req-card">
             <h3 className="incorp-req-card-title">
-              Limited Liability Protection
+              100% Ownership Rights
             </h3>
             <div className="incorp-req-card-underline" />
             <p className="incorp-req-card-text">
-              The personal assets of shareholders are protected from company
-              debts and business risks, ensuring financial safety.
+              With a WOS, foreign investors can own the company fully. There is no need to involve an Indian partner, so ownership and profits remain completely with the parent company.
             </p>
           </article>
 
           {/* Card 3 */}
           <article className="incorp-req-card">
             <h3 className="incorp-req-card-title">
-              Access to Government Schemes
+              Easy Entry into the Indian Market
             </h3>
             <div className="incorp-req-card-underline" />
             <p className="incorp-req-card-text">
-              Registered companies can benefit from schemes such as Startup
-              India for tax benefits and easier compliance, and Make in India
-              incentives for business growth.
+              India is one of the largest and fastest-growing markets. A WOS helps foreign companies operate directly in India, adjust services/products for local customers, and grow their business.
             </p>
           </article>
 
           {/* Card 4 */}
           <article className="incorp-req-card">
             <h3 className="incorp-req-card-title">
-              Increased Credibility
+              Government Benefits and Support
             </h3>
             <div className="incorp-req-card-underline" />
             <p className="incorp-req-card-text">
-              A registered company gains higher trust among investors, clients,
-              and vendors, making funding and partnerships easier.
+              India offers various tax benefits and business incentives for foreign companies, especially in selected industries. Programs like Make in India also support international businesses setting up in India.
+            </p>
+          </article>
+
+          {/* Card 5 */}
+          <article className="incorp-req-card">
+            <h3 className="incorp-req-card-title">
+              Smooth Profit Transfer to Parent Company
+            </h3>
+            <div className="incorp-req-card-underline" />
+            <p className="incorp-req-card-text">
+              After paying the required taxes, the company can send profits back to the foreign parent company, making it financially beneficial for foreign businesses.
+            </p>
+          </article>
+
+          {/* Card 6 */}
+          <article className="incorp-req-card">
+            <h3 className="incorp-req-card-title">
+              Separate Legal Identity
+            </h3>
+            <div className="incorp-req-card-underline" />
+            <p className="incorp-req-card-text">
+              A WOS is treated as a separate company in India. This means the parent company gets legal protection, and liabilities of the Indian entity usually remain with the subsidiary.
             </p>
           </article>
 

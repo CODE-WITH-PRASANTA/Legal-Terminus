@@ -24,7 +24,7 @@ const PvtltdDocument = () => {
      {/* ===== HEADLINE ===== */}
       <div className="pvtltd-doc-header">
         <h2 className="pvtltd-doc-title">
-          Documents Required for Private Limited Company Registration
+          Documents Required for Proprietorship Firms Registration
         </h2>
       </div>
 

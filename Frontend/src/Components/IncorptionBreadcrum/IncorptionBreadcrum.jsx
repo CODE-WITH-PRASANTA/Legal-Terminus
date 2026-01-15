@@ -7,7 +7,7 @@ const IncorptionBreadcrum = () => {
         {/* LEFT CONTENT */}
         <div className="lt-public-content">
           <span className="lt-public-tag">
-            Private Limited Company Registration
+            Incorporation Of Wholly Owned Subsidiary
           </span>
 
           <h1 className="lt-public-title">
@@ -16,23 +16,13 @@ const IncorptionBreadcrum = () => {
           </h1>
 
           <p className="lt-public-description">
-            A Private Limited Company is a popular and trusted business
-            structure in India, especially for startups and growing businesses.
-            It helps protect personal assets, builds business credibility, and
-            makes it easier to raise funds.
-            <br />
-            <br />
-            Legal Terminus can help you with Private Limited Company
-            registration in a hassle-free way, whenever you need it. We take
-            care of the complete process—from paperwork to approvals—within a
-            reasonable time. Our professional fees start at ₹3,999, making
-            company registration simple, affordable, and stress-free.
+            Legal Terminus can help you with Incorporation of Wholly Owned Subsidiary (WOS) in India, as and when required, in a hassle-free manner within a reasonable time span. We provide expert assistance to meet your business setup needs in India.
           </p>
 
           <div className="lt-public-features">
-            <div className="lt-feature-item"> Minimum 2 Directors Required</div>
-            <div className="lt-feature-item"> Separate Legal Entity</div>
-            <div className="lt-feature-item"> Limited Liability Protection</div>
+            <div className="lt-feature-item"> 7 Steps Registration</div>
+            <div className="lt-feature-item"> 100% of the shares are held by a foreign company</div>
+            <div className="lt-feature-item"> At least 2 directors, & 1 must be an Indian resident</div>
             <div className="lt-feature-item"> High Business Credibility</div>
           </div>
 
@@ -58,7 +48,7 @@ const IncorptionBreadcrum = () => {
             <h3 className="lt-form-title">Get Expert Assistance</h3>
 
             <p className="lt-form-subtitle">
-              Talk to our Private Limited Company registration expert
+              Talk to our expert
             </p>
 
             <form

@@ -10,20 +10,16 @@ const LLPBreadcrum = () => {
         <div className="lt-public-content">
 
           <span className="lt-public-tag">
-           Limited Liability Partnership
+           Limited Liability Partnership Registration
           </span>
 
           <h1 className="lt-public-title">
-            Limited Liability Partnership
+            Limited Liability Partnership Registration
             <span> in India</span>
           </h1>
 
           <p className="lt-public-description">
-            A Limited Liability Partnership is a popular and trusted business structure in India, especially for startups and growing businesses. It helps protect personal assets, builds business credibility, and makes it easier to raise funds.
-
-<br/><br/>
-Legal Terminus can help you with Private Limited Company registration in a hassle-free way, whenever you need it. We take care of the complete process—from paperwork to approvals—within a reasonable time. Our professional fees start at ₹3,999, making company registration simple, affordable, and stress-free.
-
+            Legal Terminus can assist you with the Limited Liability Partnership (LLP) Registration in India. We ensure a hassle-free process completed within a reasonable timeframe, with competitive professional fees starting from Rs. 7,999/-.
           </p>
 
           <div className="lt-public-features">
@@ -59,7 +55,7 @@ Legal Terminus can help you with Private Limited Company registration in a hassl
             </h3>
 
             <p className="lt-form-subtitle">
-              Talk to our Limited Liability Company (LLC) registration expert
+              Talk to our LLP registration expert
             </p>
 
             <form

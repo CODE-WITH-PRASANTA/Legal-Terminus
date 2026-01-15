@@ -4,49 +4,43 @@ import "./LLPDocInfographic.css";
 const documentsData = [
   {
     id: 1,
-    title: "KYC Documents",
     desc:
-      "KYC documents of all proposed directors and shareholders such as ID Proof – PAN and Aadhaar, Address Proof – Telephone Bill / Mobile Bill / Savings Bank Statement.",
+      "KYC documents - All the Proposed Designated Partners and Partners such as :- >as ID Proof - PAN and Aadhaar >as Address Proof - Telephone Bill/ Mobile Bill/ Savings Bank Statement",
     color: "red",
     position: "left",
   },
   {
     id: 2,
-    title: "Passport Size Photograph",
     desc:
-      "Passport size photograph of all proposed directors and shareholders.",
+      "Passport size Photograph - All the Proposed Designated Partners and Partners",
     color: "orange",
     position: "left",
   },
   {
     id: 3,
-    title: "Electricity Bill",
     desc:
-      "Electricity bill corresponding to the registered office address of the company.",
+      "Electricity bill corresponding to the registered office address of the proposed LLP",
     color: "teal",
     position: "left",
   },
   {
     id: 4,
-    title: "Rent Agreement",
     desc:
-      "Duly notarised rent agreement for the registered office address (if on rent).",
+      "Rent Agreement duly notarised with respect to the registered office address of the proposed LLP (if on rent)",
     color: "brown",
     position: "right",
   },
   {
     id: 5,
-    title: "No Objection Certificate",
     desc:
-      "No Objection Certificate (NOC) from the owner allowing use of the premises as the registered office.",
+      "A No Objection Certificate (NOC) from the owner for use of his/her premise as registered office of the proposed LLP",
     color: "purple",
     position: "right",
   },
   {
     id: 6,
-    title: "Other Documents",
     desc:
-      "Other documents shall be prepared and provided by our team as required.",
+      "Other documents shall be prepared and provided by our team",
     color: "yellow",
     position: "right",
   },
