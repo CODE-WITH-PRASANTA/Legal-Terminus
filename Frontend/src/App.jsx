@@ -33,6 +33,12 @@ import ProprietorshipOPC from "./Pages/ProprietorshipOPC/ProprietorshipOPC";
 import PropritorshipPLC from "./Pages/ProprietorshipPLC/ProprietorshipPLC";
 import PartnershipLLP from "./Pages/PartnershipLLP/PartnershipLLP"
 
+import LLRegistration from "./Pages/LLRegistration/LLRegistration";
+import BCRegistration from "./Pages/BCRegistration/BCRegistration";
+import ISOCertification from "./Pages/ISOCertification/ISOCertification";
+
+
+
 function App() {
   return (
     <Router>
@@ -74,6 +80,9 @@ function App() {
           <Route path="/proprietorship" element={<Proprietorship/>}/>
         
           <Route path="/partnership" element={<Parternership/>} />
+          <Route path="/labour-license" element={<LLRegistration/>} /> 
+          <Route path="/bar-code" element={<BCRegistration/>} />
+          <Route path="/iso" element={<ISOCertification />} />
           
           <Route path="/conversion/proprietorship-to-opc" element={<ProprietorshipOPC/>}/>
           <Route path="/conversion/proprietorship-to-private" element={<PropritorshipPLC/>}/>
