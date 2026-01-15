@@ -1,0 +1,343 @@
+/* ================= ROOT HERO ================= */
+.ProPrietorship-plc-Bc-public-hero {
+  padding: 50px 20px;
+  background:
+    radial-gradient(900px 500px at 15% 20%, rgba(34,197,94,0.12), transparent 60%),
+    radial-gradient(700px 400px at 85% 80%, rgba(34,197,94,0.10), transparent 60%),
+    linear-gradient(180deg, #000000, #020202, #050505);
+  font-family: "Inter", sans-serif;
+}
+
+/* ================= CONTAINER ================= */
+.ProPrietorship-plc-Bc-public-container {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ================= LEFT CONTENT ================= */
+.ProPrietorship-plc-Bc-public-content {
+  color: #e5e7eb;
+}
+
+/* TAG */
+.ProPrietorship-plc-Bc-public-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 20px;
+  background: linear-gradient(135deg, #22c55e, #4ade80);
+  color: #022c22;
+  font-size: 13px;
+  font-weight: 800;
+  border-radius: 30px;
+  margin-bottom: 22px;
+  letter-spacing: 0.5px;
+}
+
+/* TITLE */
+.ProPrietorship-plc-Bc-public-title {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 22px;
+  color: #ffffff;
+}
+
+.ProPrietorship-plc-Bc-public-title span {
+  color: #4ade80;
+}
+
+/* DESCRIPTION */
+.ProPrietorship-plc-Bc-public-description {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #d1d5db;
+  max-width: 640px;
+  margin-bottom: 38px;
+}
+
+/* ================= FEATURES ================= */
+.ProPrietorship-plc-Bc-public-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 30px;
+  margin-bottom: 42px;
+}
+
+.ProPrietorship-plc-Bc-feature-item {
+  font-size: 15.8px;
+  color: #f8fafc;
+  padding-left: 10px;
+  border-left: 3px solid #22c55e;
+}
+
+/* ================= STATS ================= */
+.ProPrietorship-plc-Bc-public-highlights {
+  display: flex;
+  gap: 55px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(34,197,94,0.2);
+}
+
+.ProPrietorship-plc-Bc-public-highlights h3 {
+  font-size: 32px;
+  font-weight: 900;
+  color: #22c55e;
+  margin-bottom: 6px;
+}
+
+.ProPrietorship-plc-Bc-public-highlights p {
+  font-size: 14.5px;
+  color: #9ca3af;
+  letter-spacing: 0.4px;
+}
+
+/* ================= FORM WRAPPER ================= */
+.ProPrietorship-plc-Bc-public-form-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* ================= FORM CARD ================= */
+.ProPrietorship-plc-Bc-public-form-card {
+  background:
+    linear-gradient(180deg, #0b0b0b, #040404);
+  border-radius: 18px;
+  padding: 42px;
+  width: 100%;
+  border: 1px solid rgba(34,197,94,0.35);
+  box-shadow:
+    0 40px 90px rgba(0,0,0,0.85),
+    0 0 0 1px rgba(34,197,94,0.15) inset;
+}
+
+/* FORM TITLE */
+.ProPrietorship-plc-Bc-form-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+/* FORM SUBTITLE */
+.ProPrietorship-plc-Bc-form-subtitle {
+  font-size: 14.5px;
+  color: #b0b0b0;
+  margin-bottom: 28px;
+}
+
+/* ================= INPUTS ================= */
+.ProPrietorship-plc-Bc-public-form input,
+.ProPrietorship-plc-Bc-public-form select {
+  width: 100%;
+  padding: 16px 15px;
+  margin-bottom: 16px;
+  background: linear-gradient(180deg, #000000, #050505);
+  border: 1px solid rgba(34,197,94,0.25);
+  border-radius: 12px;
+  font-size: 14.5px;
+  color: #e5e7eb;
+}
+
+.ProPrietorship-plc-Bc-public-form input::placeholder {
+  color: #8b8b8b;
+}
+
+.ProPrietorship-plc-Bc-public-form select {
+  color: #cbd5e1;
+}
+
+/* ================= WHATSAPP ================= */
+.ProPrietorship-plc-Bc-whatsapp-row {
+  margin: 20px 0 30px;
+}
+
+.ProPrietorship-plc-Bc-whatsapp-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  user-select: none;
+}
+
+.ProPrietorship-plc-Bc-whatsapp-label input {
+  display: none;
+}
+
+.ProPrietorship-plc-Bc-custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 2px solid #22c55e;
+  background: #000;
+  position: relative;
+}
+
+.ProPrietorship-plc-Bc-whatsapp-label input:checked + .ProPrietorship-plc-Bc-custom-checkbox::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 6px;
+  height: 11px;
+  border: solid #22c55e;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.ProPrietorship-plc-Bc-whatsapp-text {
+  font-size: 14.5px;
+  color: #e5e7eb;
+}
+
+.ProPrietorship-plc-Bc-whatsapp-text strong {
+  color: #4ade80;
+}
+
+/* ================= BUTTON ================= */
+.ProPrietorship-plc-Bc-public-form button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #22c55e, #4ade80);
+  color: #022c22;
+  font-size: 16px;
+  font-weight: 900;
+  border: none;
+  border-radius: 14px;
+  letter-spacing: 0.4px;
+}
+
+/* ================= FOOT NOTE ================= */
+.ProPrietorship-plc-Bc-form-note {
+  text-align: center;
+  font-size: 13.5px;
+  color: #9ca3af;
+  margin-top: 20px;
+}
+
+
+/* ================= LARGE SCREENS (1600px+) ================= */
+@media (min-width: 1600px) {
+  .ProPrietorship-plc-Bc-public-container {
+    max-width: 1600px;
+    gap: 100px;
+  }
+
+  .ProPrietorship-plc-Bc-public-title {
+    font-size: 54px;
+  }
+}
+
+/* ================= LAPTOPS (1200px – 1399px) ================= */
+@media (max-width: 1399px) {
+  .ProPrietorship-plc-Bc-public-container {
+    max-width: 1200px;
+    gap: 70px;
+  }
+
+  .ProPrietorship-plc-Bc-public-title {
+    font-size: 44px;
+  }
+}
+
+/* ================= SMALL LAPTOP / TABLET LANDSCAPE ================= */
+@media (max-width: 1024px) {
+  .ProPrietorship-plc-Bc-public-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .ProPrietorship-plc-Bc-public-content {
+    text-align: left;
+  }
+
+  .ProPrietorship-plc-Bc-public-title {
+    font-size: 40px;
+  }
+
+  .ProPrietorship-plc-Bc-public-description {
+    max-width: 100%;
+  }
+
+  .ProPrietorship-plc-Bc-public-highlights {
+    gap: 40px;
+  }
+}
+
+/* ================= TABLET (768px – 991px) ================= */
+@media (max-width: 991px) {
+  .ProPrietorship-plc-Bc-public-title {
+    font-size: 36px;
+  }
+
+  .ProPrietorship-plc-Bc-public-features {
+    grid-template-columns: 1fr;
+  }
+
+  .ProPrietorship-plc-Bc-public-highlights {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .ProPrietorship-plc-Bc-public-form-card {
+    padding: 20px;
+  }
+}
+
+/* ================= MOBILE LARGE (576px – 767px) ================= */
+@media (max-width: 767px) {
+  .ProPrietorship-plc-Bc-public-hero {
+    padding: 40px 16px;
+  }
+
+  .ProPrietorship-plc-Bc-public-title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .ProPrietorship-plc-Bc-public-tag {
+    font-size: 12px;
+    padding: 7px 16px;
+  }
+
+  .ProPrietorship-plc-Bc-public-highlights {
+    gap: 20px;
+  }
+
+}
+
+/* ================= MOBILE SMALL (<= 480px) ================= */
+@media (max-width: 480px) {
+  .ProPrietorship-plc-Bc-public-title {
+    font-size: 28px;
+  }
+
+  .ProPrietorship-plc-Bc-public-description {
+    font-size: 15px;
+  }
+
+  .ProPrietorship-plc-Bc-feature-item {
+    font-size: 14.5px;
+  }
+
+  .ProPrietorship-plc-Bc-form-title {
+    font-size: 22px;
+  }
+
+  .ProPrietorship-plc-Bc-public-form input,
+  .ProPrietorship-plc-Bc-public-form select {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .ProPrietorship-plc-Bc-public-form button {
+    font-size: 15px;
+    padding: 14px;
+  }
+
+  .ProPrietorship-plc-Bc-whatsapp-text {
+    font-size: 13.5px;
+  }
+}

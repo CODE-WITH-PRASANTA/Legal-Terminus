@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.llp-plan-pricing-section {
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  padding: 60px 24px 80px;
+}
+
+.llp-plan-pricing-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.llp-plan-pricing-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.llp-plan-pricing-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.llp-plan-pricing-subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1bb33a;
+}
+
+.llp-plan-pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.llp-plan-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.llp-plan-header {
+  margin-bottom: 16px;
+}
+
+.llp-plan-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #18b233;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.llp-plan-old-price {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: #ff3b3b;
+  text-decoration: line-through;
+}
+
+.llp-plan-price {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: #000;
+}
+
+.llp-plan-meta {
+  font-size: 13px;
+  text-align: center;
+  color: #666;
+}
+
+.llp-plan-popular {
+  font-weight: 600;
+  color: #ff3b3b;
+  margin-left: 4px;
+}
+
+.llp-plan-body {
+  margin-top: 20px;
+}
+
+.llp-plan-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.llp-plan-list-item {
+  font-size: 13px;
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.llp-plan-list-item::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #19b43a;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: 6px;
+}
+
+.llp-plan-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.llp-plan-button {
+  background: #21b738;
+  color: #fff;
+  padding: 10px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.llp-plan-button:hover {
+  background: #1aa130;
+}

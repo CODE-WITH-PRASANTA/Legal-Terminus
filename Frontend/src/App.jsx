@@ -33,6 +33,14 @@ import TradeLicense from "./Pages/TradeLicense/TradeLicense";
 
 import RouteLoaderWrapper from "./Components/PageLoader/RouteLoaderWrapper";
 import FloatIcon from "./Components/FloatIcon/FloatIcon";
+import ProprietorshipOPC from "./Pages/ProprietorshipOPC/ProprietorshipOPC";
+import PropritorshipPLC from "./Pages/ProprietorshipPLC/ProprietorshipPLC";
+import PartnershipLLP from "./Pages/PartnershipLLP/PartnershipLLP"
+
+import LLRegistration from "./Pages/LLRegistration/LLRegistration";
+import BCRegistration from "./Pages/BCRegistration/BCRegistration";
+import ISOCertification from "./Pages/ISOCertification/ISOCertification";
+
 
 
 function App() {
@@ -80,7 +88,13 @@ function App() {
           
         
           <Route path="/partnership" element={<Parternership/>} />
+          <Route path="/labour-license" element={<LLRegistration/>} /> 
+          <Route path="/bar-code" element={<BCRegistration/>} />
+          <Route path="/iso" element={<ISOCertification />} />
           
+          <Route path="/conversion/proprietorship-to-opc" element={<ProprietorshipOPC/>}/>
+          <Route path="/conversion/proprietorship-to-private" element={<PropritorshipPLC/>}/>
+          <Route path="/conversion/partnership-to-llp" element={<PartnershipLLP/>}/>
         </Routes>
       </RouteLoaderWrapper>
 
