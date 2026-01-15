@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.profplc-pricing-section {
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  padding: 60px 24px 80px;
+}
+
+.profplc-pricing-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.profplc-pricing-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profplc-pricing-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.profplc-pricing-subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1bb33a;
+}
+
+.profplc-pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.profplc-plan-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profplc-plan-header {
+  margin-bottom: 16px;
+}
+
+.profplc-plan-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #18b233;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.profplc-plan-old-price {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: #ff3b3b;
+  text-decoration: line-through;
+}
+
+.profplc-plan-price {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: #000;
+}
+
+.profplc-plan-meta {
+  font-size: 13px;
+  text-align: center;
+  color: #666;
+}
+
+.profplc-popular {
+  font-weight: 600;
+  color: #ff3b3b;
+  margin-left: 4px;
+}
+
+.profplc-plan-body {
+  margin-top: 20px;
+}
+
+.profplc-plan-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profplc-plan-list-item {
+  font-size: 13px;
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.profplc-plan-list-item::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #19b43a;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: 6px;
+}
+
+.profplc-plan-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profplc-plan-button {
+  background: #21b738;
+  color: #fff;
+  padding: 10px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.profplc-plan-button:hover {
+  background: #1aa130;
+}

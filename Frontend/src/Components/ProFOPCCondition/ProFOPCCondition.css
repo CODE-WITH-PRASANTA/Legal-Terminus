@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.profopc-tc-section {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #ffffff;
+  padding: 10px 24px 64px;
+}
+
+.profopc-tc-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Title */
+.profopc-tc-title {
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 16px;
+}
+
+/* Subtitle in green */
+.profopc-tc-subtitle {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1aa91a;
+  margin: 0 0 32px;
+}
+
+/* List */
+.profopc-tc-list {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding-left: 18px;
+}
+
+.profopc-tc-item {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+/* -----------------------------
+   Responsive
+------------------------------ */
+
+@media (max-width: 1024px) {
+  .profopc-tc-section {
+    padding: 60px 20px 52px;
+  }
+
+  .profopc-tc-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profopc-tc-section {
+    padding: 48px 16px 44px;
+  }
+
+  .profopc-tc-title {
+    font-size: 24px;
+  }
+
+  .profopc-tc-subtitle {
+    font-size: 14px;
+  }
+
+  .profopc-tc-item {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profopc-tc-section {
+    padding: 40px 14px 40px;
+  }
+
+  .profopc-tc-title {
+    font-size: 22px;
+    letter-spacing: 1.2px;
+  }
+}

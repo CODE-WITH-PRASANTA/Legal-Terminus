@@ -29,7 +29,9 @@ import Parternership from "./Pages/Parternership/Parternership";
 
 import RouteLoaderWrapper from "./Components/PageLoader/RouteLoaderWrapper";
 import FloatIcon from "./Components/FloatIcon/FloatIcon";
-
+import ProprietorshipOPC from "./Pages/ProprietorshipOPC/ProprietorshipOPC";
+import PropritorshipPLC from "./Pages/ProprietorshipPLC/ProprietorshipPLC";
+import PartnershipLLP from "./Pages/PartnershipLLP/PartnershipLLP"
 
 function App() {
   return (
@@ -73,6 +75,9 @@ function App() {
         
           <Route path="/partnership" element={<Parternership/>} />
           
+          <Route path="/conversion/proprietorship-to-opc" element={<ProprietorshipOPC/>}/>
+          <Route path="/conversion/proprietorship-to-private" element={<PropritorshipPLC/>}/>
+          <Route path="/conversion/partnership-to-llp" element={<PartnershipLLP/>}/>
         </Routes>
       </RouteLoaderWrapper>
 
