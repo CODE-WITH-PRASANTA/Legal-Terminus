@@ -26,6 +26,9 @@ import ProfessionalReg from './Pages/ProfessionalReg/ProfessionalReg';
 import ShopReg from './Pages/ShopReg/ShopReg';
 import Proprietorship from './Pages/Proprietorship/Proprietorship';
 import Parternership from "./Pages/Parternership/Parternership";
+import PartnershiptoPrivate from "./Pages/PartnershiptoPrivate/PartnershiptoPrivate";
+import LlptoPrivate from "./Pages/LlptoPrivate/LlptoPrivate";
+import PritoLlp from "./Pages/PritoLlp/PritoLlp";
 
 import RouteLoaderWrapper from "./Components/PageLoader/RouteLoaderWrapper";
 import FloatIcon from "./Components/FloatIcon/FloatIcon";
@@ -72,6 +75,9 @@ function App() {
           <Route path="/proprietorship" element={<Proprietorship/>}/>
         
           <Route path="/partnership" element={<Parternership/>} />
+          <Route path="/conversion/partnership-to-private" element={<PartnershiptoPrivate/>}/>
+          <Route path="/conversion/llp-to-private" element={<LlptoPrivate/>}/>
+          <Route path="/conversion/private-to-llp" element={<PritoLlp/>}/>
           
         </Routes>
       </RouteLoaderWrapper>
