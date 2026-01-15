@@ -1,12 +1,12 @@
 /* ================= BASE ================= */
-.pvtltd-gst-wrapper {
+.PLC-to-LLP-pv-wrapper {
   padding: 60px 24px;
   max-width: 1200px;
   margin: auto;
   font-family: "Poppins", sans-serif;
 }
 
-.pv-gst-heading {
+.PLC-to-LLP-pv-heading {
   text-align: center;
   font-size: 32px;
   font-weight: 700;
@@ -14,7 +14,7 @@
   margin-bottom: 6px;
 }
 
-.pv-gst-subheading {
+.PLC-to-LLP-pv-subheading {
   text-align: center;
   color: #475569;
   margin-bottom: 50px;
@@ -160,15 +160,15 @@
 
 /* ================= MOBILE PREMIUM (ARROWS KEPT) ================= */
 @media (max-width: 900px) {
-  .pvtltd-gst-wrapper {
+  .PLC-to-LLP-pv-wrapper {
     padding: 50px 16px;
   }
 
-  .pv-gst-heading {
+  .PLC-to-LLP-pv-heading {
     font-size: 24px;
   }
 
-  .pv-gst-subheading {
+  .PLC-to-LLP-pv-subheading {
     font-size: 14px;
     margin-bottom: 40px;
   }

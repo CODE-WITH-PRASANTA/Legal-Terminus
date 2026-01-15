@@ -41,14 +41,14 @@
    PVT INTRO
 -------------------------------------------------- */
 
-.pvt-intro-section {
+.PLC-to-LLP-pvtintro-section {
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   background-color: #ffffff;
   padding: 64px 24px 56px;
 }
 
-.pvt-intro-container {
+.PLC-to-LLP-pvtintro-container {
   max-width: 1180px;
   margin: 0 auto;
   display: grid;
@@ -58,24 +58,24 @@
 }
 
 /* Illustration */
-.pvt-intro-illustration-wrap {
+.PLC-to-LLP-pvtintro-illustration-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.pvt-intro-illustration {
+.PLC-to-LLP-pvtintro-illustration {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
 /* Content */
-.pvt-intro-content {
+.PLC-to-LLP-pvtintro-content {
   max-width: 720px;
 }
 
-.pvt-intro-title {
+.PLC-to-LLP-pvtintro-title {
   font-size: 40px;
   line-height: 1.25;
   font-weight: 600;
@@ -83,7 +83,7 @@
   margin: 0 0 18px;
 }
 
-.pvt-intro-text {
+.PLC-to-LLP-pvtintro-text {
   margin: 0;
   font-size: 15px;
   line-height: 1.9;
@@ -92,58 +92,58 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .pvt-intro-section {
+  .PLC-to-LLP-pvtintro-section {
     padding: 52px 20px 44px;
   }
 
-  .pvt-intro-container {
+  .PLC-to-LLP-pvtintro-container {
     column-gap: 40px;
     grid-template-columns: 0.95fr 1.3fr;
   }
 
-  .pvt-intro-title {
+  .PLC-to-LLP-pvtintro-title {
     font-size: 32px;
   }
 }
 
 @media (max-width: 768px) {
-  .pvt-intro-section {
+  .PLC-to-LLP-pvtintro-section {
     padding: 40px 16px 36px;
   }
 
-  .pvt-intro-container {
+  .PLC-to-LLP-pvtintro-container {
     grid-template-columns: 1fr;
     row-gap: 32px;
   }
 
-  .pvt-intro-illustration-wrap {
+  .PLC-to-LLP-pvtintro-illustration-wrap {
     order: 1;
   }
 
-  .pvt-intro-content {
+  .PLC-to-LLP-pvtintro-content {
     order: 2;
   }
 
-  .pvt-intro-title {
+  .PLC-to-LLP-pvtintro-title {
     font-size: 28px;
     text-align: left;
   }
 
-  .pvt-intro-text {
+  .PLC-to-LLP-pvtintro-text {
     font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
-  .pvt-intro-section {
+  .PLC-to-LLP-pvtintro-section {
     padding: 32px 14px 28px;
   }
 
-  .pvt-intro-title {
+  .PLC-to-LLP-pvtintro-title {
     font-size: 24px;
   }
 
-  .pvt-intro-text {
+  .PLC-to-LLP-pvtintro-text {
     font-size: 13.5px;
     line-height: 1.8;
   }

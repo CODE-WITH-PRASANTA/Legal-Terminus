@@ -3,12 +3,12 @@ import "./PritoLlpPlanandPricing.css";
 
 const PricingSection = () => {
   return (
-    <section className="pvtltd-pricing-section">
+    <section className="PLC-to-LLP-pricing-section">
       <div className="pricing-container">
         
         {/* Upper part */}
         <header className="pricing-header">
-          <h2 className="PvtLtd-pricing-title">CHOOSE YOUR PLAN</h2>
+          <h2 className="PLC-to-LLP-pricing-title">CHOOSE YOUR PLAN</h2>
           <p className="pricing-subtitle">
             Register your company with pocket-friendly prices
           </p>

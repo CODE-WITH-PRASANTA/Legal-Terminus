@@ -26,15 +26,15 @@ const PvtTabs = () => {
   };
 
   return (
-    <section className="pvt-tabs-section">
-      <div className="pvt-tabs-container">
-        <div className="pvt-tabs-card">
-          <div className="pvt-tabs-list">
+    <section className="PLC-to-LLP-tabs-section">
+      <div className="PLC-to-LLP-tabs-container">
+        <div className="PLC-to-LLP-tabs-card">
+          <div className="PLC-to-LLP-tabs-list">
             {tabs.map((tab, index) => (
               <button
                 key={tab.id}
                 type="button"
-                className={`pvt-tab ${index === activeIndex ? "active" : ""}`}
+                className={`PLC-to-LLP-tab ${index === activeIndex ? "active" : ""}`}
                 onClick={() => handleClick(index, tab.id)}
               >
                 {tab.label}

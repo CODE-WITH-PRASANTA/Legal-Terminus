@@ -133,13 +133,13 @@ const FaqLLP = () => {
   };
 
   return (
-    <section className="lp-section">
-      <div className="lp-container">
+    <section className="LLP-to-PLC-section">
+      <div className="LLP-to-PLC-container">
         {/* Left side – static text */}
-        <div className="lp-left">
-          <h2 className="lp-title">Limited Liability Partnership FAQ's</h2>
+        <div className="LLP-to-PLC-left">
+          <h2 className="LLP-to-PLC-title">Limited Liability Partnership FAQ's</h2>
 
-          <p className="lp-intro">
+          <p className="LLP-to-PLC-intro">
             Explore answers to common questions about Limited Liability Partnership (LLP) registration in India,
             covering key benefits, eligibility, compliance requirements, partner roles, and comparison with other business structures to
             help you choose the best option for your needs.
@@ -147,33 +147,33 @@ const FaqLLP = () => {
         </div>
 
         {/* Right side – scrollable Q&A list */}
-        <div className="lp-right">
-          <div className="lp-list">
+        <div className="LLP-to-PLC-right">
+          <div className="LLP-to-PLC-list">
             {faqs.map((item, index) => {
               const isActive = index === activeIndex;
               return (
                 <div
                   key={index}
-                  className={`lp-item ${isActive ? "active" : ""}`}
+                  className={`LLP-to-PLC-item ${isActive ? "active" : ""}`}
                 >
                   <button
                     type="button"
-                    className="lp-question"
+                    className="LLP-to-PLC-question"
                     onClick={() => toggleFaq(index)}
                     aria-expanded={isActive}
-                    aria-controls={`lp-answer-${index}`}
+                    aria-controls={`LLP-to-PLC-answer-${index}`}
                   >
                     <span>{item.question}</span>
-                    <span className={`lp-icon ${isActive ? "open" : ""}`} aria-hidden>
+                    <span className={`LLP-to-PLC-icon ${isActive ? "open" : ""}`} aria-hidden>
                       ▾
                     </span>
                   </button>
                   {isActive && (
                     <div
-                      id={`lp-answer-${index}`}
-                      className="lp-answer"
+                      id={`LLP-to-PLC-answer-${index}`}
+                      className="LLP-to-PLC-answer"
                       role="region"
-                      aria-labelledby={`lp-question-${index}`}
+                      aria-labelledby={`LLP-to-PLC-question-${index}`}
                     >
                       <p>{item.answer}</p>
                     </div>

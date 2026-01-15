@@ -3,12 +3,12 @@ import "./PartnershiptoPrivatePlanandPricing.css";
 
 const PricingSection = () => {
   return (
-    <section className="pvtltd-pricing-section">
+    <section className="Partnership-to-PLC-pricing-section">
       <div className="pricing-container">
         
         {/* Upper part */}
         <header className="pricing-header">
-          <h2 className="PvtLtd-pricing-title">CHOOSE YOUR PLAN</h2>
+          <h2 className="Partnership-to-PLC-pricing-title">CHOOSE YOUR PLAN</h2>
           <p className="pricing-subtitle">
             Register your company with pocket-friendly prices
           </p>

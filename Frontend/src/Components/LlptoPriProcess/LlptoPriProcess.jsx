@@ -41,28 +41,28 @@ const steps = [
 
 const GSTProcess = () => {
   return (
-    <section className="llp-gst-wrapper">
+    <section className="LLP-to-PLC-gst-wrapper">
       <h2 className="gst-heading">
         STEPS FOR LIMITED LIABILITY PARTNERSHIP REGISTRATION IN INDIA
       </h2>
-      <p className="pv-gst-subheading">
+      <p className="LLP-to-PLC-pv-gst-subheading">
         The broad process of registering a Limited Liability involves
         the following steps:
       </p>
 
-      <div className="llp-timeline">
-        <div className="llp-timeline-line" />
+      <div className="LLP-to-PLC-timeline">
+        <div className="LLP-to-PLC-timeline-line" />
 
         {steps.map((step, index) => (
           <div
             key={index}
-            className={`llp-timeline-item ${
+            className={`LLP-to-PLC-timeline-item ${
               index % 2 === 0 ? "left" : "right"
             }`}
           >
-            <div className="llp-timeline-dot">{index + 1}</div>
+            <div className="LLP-to-PLC-timeline-dot">{index + 1}</div>
 
-            <div className="llp-timeline-card">
+            <div className="LLP-to-PLC-timeline-card">
               <h4>{step.title}</h4>
               <p>{step.text}</p>
             </div>

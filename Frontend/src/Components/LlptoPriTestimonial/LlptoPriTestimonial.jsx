@@ -95,7 +95,7 @@ const GoogleTestimonials = () => {
     const container = sliderRef.current;
     if (!container) return;
 
-    const card = container.querySelector(".llp-1-card");
+    const card = container.querySelector(".LLP-to-PLC-1-card");
     if (!card) return;
 
     const gap = 24; // same as CSS gap
@@ -108,16 +108,16 @@ const GoogleTestimonials = () => {
   };
 
   return (
-    <section className="llp-1-section">
-      <div className="llp-1-container">
-        <h2 className="llp-1-heading">
+    <section className="LLP-to-PLC-1-section">
+      <div className="LLP-to-PLC-1-container">
+        <h2 className="LLP-to-PLC-1-heading">
           See What Our Customers Say on Google
         </h2>
 
-        <div className="llp-1-slider-wrapper">
+        <div className="LLP-to-PLC-1-slider-wrapper">
           {/* Left arrow */}
           <button
-            className="llp-1-side-arrow llp-1-left"
+            className="LLP-to-PLC-1-side-arrow LLP-to-PLC-1-left"
             aria-label="Previous testimonials"
             onClick={() => handleScroll("prev")}
           >
@@ -125,42 +125,42 @@ const GoogleTestimonials = () => {
           </button>
 
           {/* Cards slider */}
-          <div className="llp-1-slider" ref={sliderRef}>
+          <div className="LLP-to-PLC-1-slider" ref={sliderRef}>
             {testimonials.map((t, idx) => (
-              <article className="llp-1-card" key={idx}>
+              <article className="LLP-to-PLC-1-card" key={idx}>
                 {/* top quote */}
-                <span className="llp-1-quote llp-1-quote-top">“</span>
+                <span className="LLP-to-PLC-1-quote LLP-to-PLC-1-quote-top">“</span>
 
                 {/* avatar */}
-                <div className="llp-1-avatar-wrap">
-                  <div className="llp-1-avatar">
+                <div className="LLP-to-PLC-1-avatar-wrap">
+                  <div className="LLP-to-PLC-1-avatar">
                     <span>{t.initial}</span>
                   </div>
                 </div>
 
                 {/* text */}
-                <p className="llp-1-text">{t.text}</p>
+                <p className="LLP-to-PLC-1-text">{t.text}</p>
 
                 {/* name & role */}
-                <h3 className="llp-1-name">{t.name}</h3>
-                <p className="llp-1-role">{t.role}</p>
+                <h3 className="LLP-to-PLC-1-name">{t.name}</h3>
+                <p className="LLP-to-PLC-1-role">{t.role}</p>
 
                 {/* stars */}
-                <div className="llp-1-stars">
+                <div className="LLP-to-PLC-1-stars">
                   {Array.from({ lenllph: t.rating }).map((_, i) => (
                     <span key={i}>★</span>
                   ))}
                 </div>
 
                 {/* bottom quote */}
-                <span className="llp-1-quote llp-1-quote-bottom">”</span>
+                <span className="LLP-to-PLC-1-quote LLP-to-PLC-1-quote-bottom">”</span>
               </article>
             ))}
           </div>
 
           {/* Right arrow */}
           <button
-            className="llp-1-side-arrow llp-1-right"
+            className="LLP-to-PLC-1-side-arrow LLP-to-PLC-1-right"
             aria-label="Next testimonials"
             onClick={() => handleScroll("next")}
           >

@@ -1,19 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-.vt-section {
+.PLC-to-LLP-vt-section {
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   background: #ffffff;
   padding: 64px 20px 72px;
 }
 
-.vt-container {
+.PLC-to-LLP-vt-container {
   max-width: 1180px;
   margin: 0 auto;
 }
 
 /* Heading / intro */
-.vt-heading {
+.PLC-to-LLP-vt-heading {
   text-align: center;
   font-size: 32px;
   font-weight: 700;
@@ -22,7 +22,7 @@
   color: #111827;
 }
 
-.vt-subtitle {
+.PLC-to-LLP-vt-subtitle {
   text-align: center;
   font-size: 15px;
   color: #4b5563;
@@ -30,13 +30,13 @@
 }
 
 /* Slider wrapper (for side arrows) */
-.vt-slider-wrapper {
+.PLC-to-LLP-vt-slider-wrapper {
   position: relative;
   padding: 0 52px; /* space for arrows */
 }
 
 /* Horizontal slider */
-.vt-slider {
+.PLC-to-LLP-vt-slider {
   display: flex;
   gap: 24px;
   overflow-x: auto;
@@ -44,16 +44,16 @@
   padding-bottom: 8px;
 }
 
-.vt-slider::-webkit-scrollbar {
+.PLC-to-LLP-vt-slider::-webkit-scrollbar {
   display: none;
 }
-.vt-slider {
+.PLC-to-LLP-vt-slider {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
 /* Card */
-.vt-card {
+.PLC-to-LLP-vt-card {
   min-width: 320px;
   max-width: 320px;
   flex-shrink: 0;
@@ -67,7 +67,7 @@
 }
 
 /* Video wrapper with 16:9 aspect ratio */
-.vt-video-wrap {
+.PLC-to-LLP-vt-video-wrap {
   border-radius: 14px;
   overflow: hidden;
   background: #000;
@@ -76,13 +76,13 @@
 }
 
 /* Aspect ratio box */
-.vt-video-aspect {
+.PLC-to-LLP-vt-video-aspect {
   position: relative;
   width: 100%;
   padding-top: 56.25%; /* 16:9 */
 }
 
-.vt-video {
+.PLC-to-LLP-vt-video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -91,21 +91,21 @@
 }
 
 /* Name + role */
-.vt-name {
+.PLC-to-LLP-vt-name {
   margin: 6px 0 4px;
   font-size: 17px;
   font-weight: 600;
   color: #1aa91a;
 }
 
-.vt-role {
+.PLC-to-LLP-vt-role {
   margin: 0;
   font-size: 14px;
   color: #111827;
 }
 
 /* Side arrows */
-.vt-side-arrow {
+.PLC-to-LLP-vt-side-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -125,16 +125,16 @@
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.vt-side-arrow:hover {
+.PLC-to-LLP-vt-side-arrow:hover {
   background: #128a15;
   transform: translateY(-50%) scale(1.06);
 }
 
-.vt-left {
+.PLC-to-LLP-vt-left {
   left: 10px;
 }
 
-.vt-right {
+.PLC-to-LLP-vt-right {
   right: 10px;
 }
 
@@ -143,40 +143,40 @@
 ------------------------ */
 
 @media (max-width: 1024px) {
-  .vt-heading {
+  .PLC-to-LLP-vt-heading {
     font-size: 28px;
   }
-  .vt-slider-wrapper {
+  .PLC-to-LLP-vt-slider-wrapper {
     padding: 0 40px;
   }
 }
 
 @media (max-width: 768px) {
-  .vt-section {
+  .PLC-to-LLP-vt-section {
     padding: 52px 16px 60px;
   }
 
-  .vt-heading {
+  .PLC-to-LLP-vt-heading {
     font-size: 24px;
     margin-bottom: 8px;
   }
 
-  .vt-subtitle {
+  .PLC-to-LLP-vt-subtitle {
     font-size: 14px;
     margin-bottom: 26px;
   }
 
-  .vt-card {
+  .PLC-to-LLP-vt-card {
     min-width: 280px;
     max-width: 280px;
     padding: 18px 16px 22px;
   }
 
-  .vt-slider-wrapper {
+  .PLC-to-LLP-vt-slider-wrapper {
     padding: 0 32px;
   }
 
-  .vt-side-arrow {
+  .PLC-to-LLP-vt-side-arrow {
     width: 40px;
     height: 40px;
     font-size: 20px;
@@ -184,28 +184,28 @@
 }
 
 @media (max-width: 520px) {
-  .vt-section {
+  .PLC-to-LLP-vt-section {
     padding: 44px 10px 52px;
   }
 
-  .vt-heading {
+  .PLC-to-LLP-vt-heading {
     font-size: 22px;
   }
 
-  .vt-slider-wrapper {
+  .PLC-to-LLP-vt-slider-wrapper {
     padding: 0 24px;
   }
 
-  .vt-card {
+  .PLC-to-LLP-vt-card {
     min-width: 250px;
     max-width: 250px;
   }
 
-  .vt-left {
+  .PLC-to-LLP-vt-left {
     left: 4px;
   }
 
-  .vt-right {
+  .PLC-to-LLP-vt-right {
     right: 4px;
   }
 }

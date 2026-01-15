@@ -6,38 +6,38 @@ import pvtIllustration from "../../assets/whypvt-imp.svg";
 
 const LlpFull = () => {
   return (
-    <div className="llp-com-full-wrapper">
+    <div className="LLP-to-PLC-com-full-wrapper">
 
       {/* ===========================
           SECTION 1 — OVERVIEW
       ============================ */}
-      {/* <div className="overview-wrapper">
-        <h2 className="overview-title">Understanding the Basics
+      {/* <div className="LLP-to-PLC-overview-wrapper">
+        <h2 className="LLP-to-PLC-overview-title">Understanding the Basics
 </h2>
-        <p className="overview-text">
+        <p className="LLP-to-PLC-overview-text">
 A Private Limited Company is a legally registered business under the Companies Act, 2013, with its own separate identity from its owners. It protects the personal assets of its members, limits who can own shares, and must have a registered office address. </p>
       </div> */}
 
       {/* ===========================
           SECTION 2 — INTRO
       ============================ */}
-      <section className="llp-com-intro-section">
-        <div className="llp-com-intro-container">
+      <section className="LLP-to-PLC-com-intro-section">
+        <div className="LLP-to-PLC-com-intro-container">
           {/* Illustration */}
-          <div className="llp-com-intro-illustration-wrap">
+          <div className="LLP-to-PLC-com-intro-illustration-wrap">
             <img
               src={pvtIllustration}
               alt="Private limited company illustration"
-              className="llp-com-intro-illustration"
+              className="LLP-to-PLC-com-intro-illustration"
             />
           </div>
 
           {/* Text */}
-          <div className="llp-com-intro-content">
-            <h2 className="llp-com-intro-title">
+          <div className="LLP-to-PLC-com-intro-content">
+            <h2 className="LLP-to-PLC-com-intro-title">
               Why Choose Private Limited Company Registration
             </h2>
-            <p className="llp-com-intro-text">
+            <p className="LLP-to-PLC-com-intro-text">
               
 Registering a company in India is the first step to legally starting your business. The Companies Act, 2013, sets the rules for company formation, and the Ministry of Corporate Affairs (MCA) oversees the process. Once registered, your business gets a legal identity, along with rights and protections under Indian law. 
 <br></br>

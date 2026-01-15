@@ -5,21 +5,21 @@
    ========================= */
 
 /* Base / layout */
-.clients-root {
+.Partnership-to-PLC-clientsroot {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial;
   background: #fff;
   padding: 36px 0;
 }
 
-.clients-container {
+.Partnership-to-PLC-clientscontainer {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 16px;
   box-sizing: border-box;
 }
 
-.clients-title {
+.Partnership-to-PLC-clientstitle {
   text-align: center;
   font-size: 34px;
   letter-spacing: 2px;
@@ -29,7 +29,7 @@
 }
 
 /* Carousel shell */
-.clients-carousel {
+.Partnership-to-PLC-clientscarousel {
   position: relative;
   display: flex;
   align-items: center;
@@ -38,7 +38,7 @@
 }
 
 /* Scroller (visible area) */
-.clients-scroller {
+.Partnership-to-PLC-clientsscroller {
   width: 100%;
   overflow-x: auto;
   scroll-behavior: auto; /* JS handles easing */
@@ -48,18 +48,18 @@
 }
 
 /* Hide scrollbar (visual only) */
-.clients-scroller::-webkit-scrollbar {
+.Partnership-to-PLC-clientsscroller::-webkit-scrollbar {
   height: 0;
   width: 0;
   display: none;
 }
-.clients-scroller {
+.Partnership-to-PLC-clientsscroller {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
 /* Track & cards */
-.clients-track {
+.Partnership-to-PLC-clientstrack {
   display: flex;
   gap: 40px;
   list-style: none;
@@ -71,7 +71,7 @@
   transform: translateZ(0);
 }
 
-.clients-card {
+.Partnership-to-PLC-clientscard {
   flex: 0 0 auto;
   width: 160px;
   display: flex;
@@ -81,12 +81,12 @@
   transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.clients-card:hover {
+.Partnership-to-PLC-clientscard:hover {
   transform: translateY(-6px);
 }
 
 /* Logo tile */
-.clients-logo {
+.Partnership-to-PLC-clientslogo {
   width: 160px;
   height: 92px;
   border-radius: 12px;
@@ -99,7 +99,7 @@
   overflow: hidden;
 }
 
-.clients-img {
+.Partnership-to-PLC-clientsimg {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -107,7 +107,7 @@
 }
 
 /* Arrows */
-.clients-arrow {
+.Partnership-to-PLC-clientsarrow {
   position: absolute;
   width: 44px;
   height: 44px;
@@ -125,20 +125,20 @@
   box-shadow: 0 6px 14px rgba(12, 67, 30, 0.14);
 }
 
-.clients-arrow-left {
+.Partnership-to-PLC-clientsarrow-left {
   left: 12px;
 }
 
-.clients-arrow-right {
+.Partnership-to-PLC-clientsarrow-right {
   right: 12px;
 }
 
-.clients-arrow:hover {
+.Partnership-to-PLC-clientsarrow:hover {
   transform: translateY(-50%) scale(1.06);
   background: #1aa91a;
 }
 
-.clients-arrow:focus-visible {
+.Partnership-to-PLC-clientsarrow:focus-visible {
   box-shadow: 0 0 0 4px rgba(45, 179, 74, 0.16);
   border-radius: 8px;
 }
@@ -150,20 +150,20 @@
 
 /* <= 1280px */
 @media (max-width: 1280px) {
-  .clients-container {
+  .Partnership-to-PLC-clientscontainer {
     max-width: 1100px;
     padding: 0 14px;
   }
-  .clients-carousel {
+  .Partnership-to-PLC-clientscarousel {
     padding: 0 56px;
   }
-  .clients-track {
+  .Partnership-to-PLC-clientstrack {
     gap: 36px;
   }
-  .clients-card {
+  .Partnership-to-PLC-clientscard {
     width: 150px;
   }
-  .clients-logo {
+  .Partnership-to-PLC-clientslogo {
     width: 150px;
     height: 86px;
     border-radius: 11px;
@@ -172,28 +172,28 @@
 
 /* <= 1024px */
 @media (max-width: 1024px) {
-  .clients-container {
+  .Partnership-to-PLC-clientscontainer {
     max-width: 960px;
     padding: 0 14px;
   }
-  .clients-carousel {
+  .Partnership-to-PLC-clientscarousel {
     padding: 0 48px;
   }
-  .clients-track {
+  .Partnership-to-PLC-clientstrack {
     gap: 32px;
   }
-  .clients-card {
+  .Partnership-to-PLC-clientscard {
     width: 140px;
   }
-  .clients-logo {
+  .Partnership-to-PLC-clientslogo {
     width: 140px;
     height: 84px;
     border-radius: 10px;
   }
-  .clients-title {
+  .Partnership-to-PLC-clientstitle {
     font-size: 32px;
   }
-  .clients-arrow {
+  .Partnership-to-PLC-clientsarrow {
     width: 42px;
     height: 42px;
   }
@@ -201,30 +201,30 @@
 
 /* <= 768px */
 @media (max-width: 768px) {
-  .clients-container {
+  .Partnership-to-PLC-clientscontainer {
     max-width: 720px;
     padding: 0 12px;
   }
-  .clients-carousel {
+  .Partnership-to-PLC-clientscarousel {
     padding: 0 40px;
   }
-  .clients-track {
+  .Partnership-to-PLC-clientstrack {
     gap: 28px;
   }
-  .clients-card {
+  .Partnership-to-PLC-clientscard {
     width: 128px;
   }
-  .clients-logo {
+  .Partnership-to-PLC-clientslogo {
     width: 128px;
     height: 76px;
     border-radius: 10px;
     padding: 8px;
   }
-  .clients-title {
+  .Partnership-to-PLC-clientstitle {
     font-size: 28px;
     margin-bottom: 18px;
   }
-  .clients-arrow {
+  .Partnership-to-PLC-clientsarrow {
     width: 40px;
     height: 40px;
   }
@@ -232,30 +232,30 @@
 
 /* <= 480px */
 @media (max-width: 480px) {
-  .clients-container {
+  .Partnership-to-PLC-clientscontainer {
     max-width: 460px;
     padding: 0 10px;
   }
-  .clients-carousel {
+  .Partnership-to-PLC-clientscarousel {
     padding: 0 28px;
   }
-  .clients-track {
+  .Partnership-to-PLC-clientstrack {
     gap: 20px;
   }
-  .clients-card {
+  .Partnership-to-PLC-clientscard {
     width: 110px;
   }
-  .clients-logo {
+  .Partnership-to-PLC-clientslogo {
     width: 110px;
     height: 64px;
     border-radius: 8px;
     padding: 8px;
   }
-  .clients-title {
+  .Partnership-to-PLC-clientstitle {
     font-size: 22px;
     letter-spacing: 1.2px;
   }
-  .clients-arrow {
+  .Partnership-to-PLC-clientsarrow {
     width: 36px;
     height: 36px;
   }
@@ -263,30 +263,30 @@
 
 /* <= 360px */
 @media (max-width: 360px) {
-  .clients-container {
+  .Partnership-to-PLC-clientscontainer {
     max-width: 320px;
     padding: 0 8px;
   }
-  .clients-carousel {
+  .Partnership-to-PLC-clientscarousel {
     padding: 0 18px;
   }
-  .clients-track {
+  .Partnership-to-PLC-clientstrack {
     gap: 14px;
   }
-  .clients-card {
+  .Partnership-to-PLC-clientscard {
     width: 92px;
   }
-  .clients-logo {
+  .Partnership-to-PLC-clientslogo {
     width: 92px;
     height: 56px;
     border-radius: 6px;
     padding: 6px;
   }
-  .clients-title {
+  .Partnership-to-PLC-clientstitle {
     font-size: 20px;
     margin-bottom: 10px;
   }
-  .clients-arrow {
+  .Partnership-to-PLC-clientsarrow {
     width: 34px;
     height: 34px;
   }

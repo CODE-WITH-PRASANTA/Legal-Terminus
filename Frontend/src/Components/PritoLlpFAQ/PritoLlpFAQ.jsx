@@ -62,13 +62,13 @@ const FaqPvt = () => {
   };
 
   return (
-    <section className="faq-section">
-      <div className="faq-container">
+    <section className="PLC-to-LLP-faqsection">
+      <div className="PLC-to-LLP-faqcontainer">
         {/* Left side – static text */}
-        <div className="faq-left">
-          <h2 className="faq-title">Private Limited Company Registration FAQ&apos;s</h2>
+        <div className="PLC-to-LLP-faqleft">
+          <h2 className="PLC-to-LLP-faqtitle">Private Limited Company Registration FAQ&apos;s</h2>
 
-          <p className="faq-intro">
+          <p className="PLC-to-LLP-faqintro">
             Starting a Private Limited Company in India is an important step for any business owner. With the right support, the process can be simple and stress-free.
 
 <br/><br/>
@@ -76,33 +76,33 @@ Here, we’ve answered the most common questions about company registration—co
 
           </p>
 
-          <p className="faq-intro">
+          <p className="PLC-to-LLP-faqintro">
             
           </p>
         </div>
 
         {/* Right side – scrollable Q&A list */}
-        <div className="faq-right">
-          <div className="faq-list">
+        <div className="PLC-to-LLP-faqright">
+          <div className="PLC-to-LLP-faqlist">
             {faqs.map((item, index) => {
               const isActive = index === activeIndex;
               return (
                 <div
                   key={index}
-                  className={`faq-item ${isActive ? "active" : ""}`}
+                  className={`PLC-to-LLP-faqitem ${isActive ? "active" : ""}`}
                 >
                   <button
                     type="button"
-                    className="faq-question"
+                    className="PLC-to-LLP-faqquestion"
                     onClick={() => toggleFaq(index)}
                   >
                     <span>{item.question}</span>
-                    <span className={`faq-icon ${isActive ? "open" : ""}`}>
+                    <span className={`PLC-to-LLP-faqicon ${isActive ? "open" : ""}`}>
                       ▾
                     </span>
                   </button>
                   {isActive && (
-                   <div className={`faq-answer ${isActive ? "open" : ""}`}>
+                   <div className={`PLC-to-LLP-faqanswer ${isActive ? "open" : ""}`}>
                     <p>{item.answer}</p>
                   </div>
 

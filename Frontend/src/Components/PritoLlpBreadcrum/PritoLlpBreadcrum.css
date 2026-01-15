@@ -1,5 +1,5 @@
 /* ================= ROOT HERO ================= */
-.lt-public-hero {
+.PLC-to-LLP-public-hero {
   padding: 50px 20px;
   background:
     radial-gradient(900px 500px at 15% 20%, rgba(34,197,94,0.12), transparent 60%),
@@ -9,7 +9,7 @@
 }
 
 /* ================= CONTAINER ================= */
-.lt-public-container {
+.PLC-to-LLP-public-container {
   max-width: 1300px;
   margin: auto;
   display: grid;
@@ -19,12 +19,12 @@
 }
 
 /* ================= LEFT CONTENT ================= */
-.lt-public-content {
+.PLC-to-LLP-public-content {
   color: #e5e7eb;
 }
 
 /* TAG */
-.lt-public-tag {
+.PLC-to-LLP-public-tag {
   display: inline-flex;
   align-items: center;
   padding: 9px 20px;
@@ -38,7 +38,7 @@
 }
 
 /* TITLE */
-.lt-public-title {
+.PLC-to-LLP-public-title {
   font-size: 48px;
   font-weight: 900;
   line-height: 1.1;
@@ -46,12 +46,12 @@
   color: #ffffff;
 }
 
-.lt-public-title span {
+.PLC-to-LLP-public-title span {
   color: #4ade80;
 }
 
 /* DESCRIPTION */
-.lt-public-description {
+.PLC-to-LLP-public-description {
   font-size: 17px;
   line-height: 1.8;
   color: #d1d5db;
@@ -60,14 +60,14 @@
 }
 
 /* ================= FEATURES ================= */
-.lt-public-features {
+.PLC-to-LLP-public-features {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px 30px;
   margin-bottom: 42px;
 }
 
-.lt-feature-item {
+.PLC-to-LLP-feature-item {
   font-size: 15.8px;
   color: #f8fafc;
   padding-left: 10px;
@@ -75,34 +75,34 @@
 }
 
 /* ================= STATS ================= */
-.lt-public-highlights {
+.PLC-to-LLP-public-highlights {
   display: flex;
   gap: 55px;
   padding-top: 15px;
   border-top: 1px solid rgba(34,197,94,0.2);
 }
 
-.lt-public-highlights h3 {
+.PLC-to-LLP-public-highlights h3 {
   font-size: 32px;
   font-weight: 900;
   color: #22c55e;
   margin-bottom: 6px;
 }
 
-.lt-public-highlights p {
+.PLC-to-LLP-public-highlights p {
   font-size: 14.5px;
   color: #9ca3af;
   letter-spacing: 0.4px;
 }
 
 /* ================= FORM WRAPPER ================= */
-.lt-public-form-wrapper {
+.PLC-to-LLP-public-form-wrapper {
   display: flex;
   justify-content: center;
 }
 
 /* ================= FORM CARD ================= */
-.lt-public-form-card {
+.PLC-to-LLP-public-form-card {
   background:
     linear-gradient(180deg, #0b0b0b, #040404);
   border-radius: 18px;
@@ -115,7 +115,7 @@
 }
 
 /* FORM TITLE */
-.lt-form-title {
+.PLC-to-LLP-form-title {
   font-size: 24px;
   font-weight: 900;
   color: #ffffff;
@@ -123,15 +123,15 @@
 }
 
 /* FORM SUBTITLE */
-.lt-form-subtitle {
+.PLC-to-LLP-form-subtitle {
   font-size: 14.5px;
   color: #b0b0b0;
   margin-bottom: 28px;
 }
 
 /* ================= INPUTS ================= */
-.lt-public-form input,
-.lt-public-form select {
+.PLC-to-LLP-public-form input,
+.PLC-to-LLP-public-form select {
   width: 100%;
   padding: 16px 15px;
   margin-bottom: 16px;
@@ -142,31 +142,31 @@
   color: #e5e7eb;
 }
 
-.lt-public-form input::placeholder {
+.PLC-to-LLP-public-form input::placeholder {
   color: #8b8b8b;
 }
 
-.lt-public-form select {
+.PLC-to-LLP-public-form select {
   color: #cbd5e1;
 }
 
 /* ================= WHATSAPP ================= */
-.lt-whatsapp-row {
+.PLC-to-LLP-whatsapp-row {
   margin: 20px 0 30px;
 }
 
-.lt-whatsapp-label {
+.PLC-to-LLP-whatsapp-label {
   display: flex;
   align-items: center;
   gap: 12px;
   user-select: none;
 }
 
-.lt-whatsapp-label input {
+.PLC-to-LLP-whatsapp-label input {
   display: none;
 }
 
-.lt-custom-checkbox {
+.PLC-to-LLP-custom-checkbox {
   width: 20px;
   height: 20px;
   border-radius: 5px;
@@ -175,7 +175,7 @@
   position: relative;
 }
 
-.lt-whatsapp-label input:checked + .lt-custom-checkbox::after {
+.PLC-to-LLP-whatsapp-label input:checked + .PLC-to-LLP-custom-checkbox::after {
   content: "";
   position: absolute;
   left: 5px;
@@ -187,17 +187,17 @@
   transform: rotate(45deg);
 }
 
-.lt-whatsapp-text {
+.PLC-to-LLP-whatsapp-text {
   font-size: 14.5px;
   color: #e5e7eb;
 }
 
-.lt-whatsapp-text strong {
+.PLC-to-LLP-whatsapp-text strong {
   color: #4ade80;
 }
 
 /* ================= BUTTON ================= */
-.lt-public-form button {
+.PLC-to-LLP-public-form button {
   width: 100%;
   padding: 16px;
   background: linear-gradient(135deg, #22c55e, #4ade80);
@@ -210,7 +210,7 @@
 }
 
 /* ================= FOOT NOTE ================= */
-.lt-form-note {
+.PLC-to-LLP-form-note {
   text-align: center;
   font-size: 13.5px;
   color: #9ca3af;
@@ -220,89 +220,89 @@
 
 /* ================= LARGE SCREENS (1600px+) ================= */
 @media (min-width: 1600px) {
-  .lt-public-container {
+  .PLC-to-LLP-public-container {
     max-width: 1600px;
     gap: 100px;
   }
 
-  .lt-public-title {
+  .PLC-to-LLP-public-title {
     font-size: 54px;
   }
 }
 
 /* ================= LAPTOPS (1200px – 1399px) ================= */
 @media (max-width: 1399px) {
-  .lt-public-container {
+  .PLC-to-LLP-public-container {
     max-width: 1200px;
     gap: 70px;
   }
 
-  .lt-public-title {
+  .PLC-to-LLP-public-title {
     font-size: 44px;
   }
 }
 
 /* ================= SMALL LAPTOP / TABLET LANDSCAPE ================= */
 @media (max-width: 1024px) {
-  .lt-public-container {
+  .PLC-to-LLP-public-container {
     grid-template-columns: 1fr;
     gap: 60px;
   }
 
-  .lt-public-content {
+  .PLC-to-LLP-public-content {
     text-align: left;
   }
 
-  .lt-public-title {
+  .PLC-to-LLP-public-title {
     font-size: 40px;
   }
 
-  .lt-public-description {
+  .PLC-to-LLP-public-description {
     max-width: 100%;
   }
 
-  .lt-public-highlights {
+  .PLC-to-LLP-public-highlights {
     gap: 40px;
   }
 }
 
 /* ================= TABLET (768px – 991px) ================= */
 @media (max-width: 991px) {
-  .lt-public-title {
+  .PLC-to-LLP-public-title {
     font-size: 36px;
   }
 
-  .lt-public-features {
+  .PLC-to-LLP-public-features {
     grid-template-columns: 1fr;
   }
 
-  .lt-public-highlights {
+  .PLC-to-LLP-public-highlights {
     flex-wrap: wrap;
     gap: 30px;
   }
 
-  .lt-public-form-card {
+  .PLC-to-LLP-public-form-card {
     padding: 20px;
   }
 }
 
 /* ================= MOBILE LARGE (576px – 767px) ================= */
 @media (max-width: 767px) {
-  .lt-public-hero {
+  .PLC-to-LLP-public-hero {
     padding: 40px 16px;
   }
 
-  .lt-public-title {
+  .PLC-to-LLP-public-title {
     font-size: 32px;
     line-height: 1.2;
   }
 
-  .lt-public-tag {
+  .PLC-to-LLP-public-tag {
     font-size: 12px;
     padding: 7px 16px;
   }
 
-  .lt-public-highlights {
+  .PLC-to-LLP-public-highlights {
     gap: 20px;
   }
 
@@ -310,34 +310,34 @@
 
 /* ================= MOBILE SMALL (<= 480px) ================= */
 @media (max-width: 480px) {
-  .lt-public-title {
+  .PLC-to-LLP-public-title {
     font-size: 28px;
   }
 
-  .lt-public-description {
+  .PLC-to-LLP-public-description {
     font-size: 15px;
   }
 
-  .lt-feature-item {
+  .PLC-to-LLP-feature-item {
     font-size: 14.5px;
   }
 
-  .lt-form-title {
+  .PLC-to-LLP-form-title {
     font-size: 22px;
   }
 
-  .lt-public-form input,
-  .lt-public-form select {
+  .PLC-to-LLP-public-form input,
+  .PLC-to-LLP-public-form select {
     padding: 14px;
     font-size: 14px;
   }
 
-  .lt-public-form button {
+  .PLC-to-LLP-public-form button {
     font-size: 15px;
     padding: 14px;
   }
 
-  .lt-whatsapp-text {
+  .PLC-to-LLP-whatsapp-text {
     font-size: 13.5px;
   }
 }
