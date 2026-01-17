@@ -44,7 +44,7 @@ import LLRegistration from "./Pages/LLRegistration/LLRegistration";
 import BCRegistration from "./Pages/BCRegistration/BCRegistration";
 import ISOCertification from "./Pages/ISOCertification/ISOCertification";
 
-
+import TMRenewal from "./Pages/TMRenewal/TMRenewal";
 
 function App() {
   return (
@@ -101,6 +101,8 @@ function App() {
           <Route path="/conversion/proprietorship-to-opc" element={<ProprietorshipOPC/>}/>
           <Route path="/conversion/proprietorship-to-private" element={<PropritorshipPLC/>}/>
           <Route path="/conversion/partnership-to-llp" element={<PartnershipLLP/>}/>
+
+          <Route path="/trademark/renewal"element={<TMRenewal/>}/>
         </Routes>
       </RouteLoaderWrapper>
 
