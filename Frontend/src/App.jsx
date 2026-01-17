@@ -44,7 +44,9 @@ import LLRegistration from "./Pages/LLRegistration/LLRegistration";
 import BCRegistration from "./Pages/BCRegistration/BCRegistration";
 import ISOCertification from "./Pages/ISOCertification/ISOCertification";
 
-
+import ChangeInCompany from "./Pages/ChangeInCompany/ChangeInCompany";
+import CIROfficeAddress from "./Pages/CIROfficeAddress/CIROfficeAddress";
+import ChangeInObject from "./Pages/ChangeInObject/ChangeInObject";
 
 function App() {
   return (
@@ -101,6 +103,10 @@ function App() {
           <Route path="/conversion/proprietorship-to-opc" element={<ProprietorshipOPC/>}/>
           <Route path="/conversion/proprietorship-to-private" element={<PropritorshipPLC/>}/>
           <Route path="/conversion/partnership-to-llp" element={<PartnershipLLP/>}/>
+
+          <Route path="/updation/change-name-company" element={<ChangeInCompany />} />
+          <Route path="/updation/change-address-llp" element={<CIROfficeAddress />} />
+          <Route path="//updation/change-object-llp" element={<ChangeInObject />} />
         </Routes>
       </RouteLoaderWrapper>
 
