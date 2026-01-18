@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+.pubpri-cvd-section {
+  background: #2b2b2b;
+  padding: 100px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.pubpri-cvd-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* CENTER CIRCLE */
+.pubpri-cvd-center {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 22px;
+  text-align: center;
+  box-shadow: 0 0 0 10px #444;
+  z-index: 3;
+}
+
+/* CURVED LINE */
+.pubpri-cvd-line {
+  position: absolute;
+  left: 210px;
+  top: 50%;
+  width: 300px;
+  height: 420px;
+  border-left: 3px solid rgba(255, 255, 255, 0.4);
+  border-radius: 300px;
+  transform: translateY(-50%);
+}
+
+/* STEPS */
+.pubpri-cvd-steps {
+  margin-left: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* STEP */
+.pubpri-cvd-step {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* DOT */
+.pubpri-cvd-step-dot {
+  width: 54px;
+  height: 54px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-right: 20px;
+  z-index: 2;
+}
+
+/* CARD */
+.pubpri-cvd-step-card {
+  min-width: 420px;
+  padding: 18px 24px;
+  border-radius: 40px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pubpri-cvd-step-card h4 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.pubpri-cvd-step-card p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.pubpri-cvd-step-icon {
+  font-size: 24px;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 12px;
+  border-radius: 50%;
+}
+
+/* COLORS */
+.pubpri-cvd-pink {
+  background: linear-gradient(135deg, #ff5edf, #b24cff);
+}
+.pubpri-cvd-purple {
+  background: linear-gradient(135deg, #7f5cff, #5b2cff);
+}
+.pubpri-cvd-blue {
+  background: linear-gradient(135deg, #2fd2ff, #3b82f6);
+}
+.pubpri-cvd-orange {
+  background: linear-gradient(135deg, #ffb347, #ff7a18);
+}
+.pubpri-cvd-green {
+  background: linear-gradient(135deg, #7ddf64, #22c55e);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .pubpri-cvd-wrapper {
+    flex-direction: column;
+  }
+
+  .pubpri-cvd-line {
+    display: none;
+  }
+
+  .pubpri-cvd-steps {
+    margin-left: 0;
+    margin-top: 50px;
+  }
+
+  .pubpri-cvd-step-card {
+    min-width: unset;
+    width: 100%;
+  }
+}
