@@ -8,7 +8,7 @@ import TMCompanyTab from '../../Components/TMCompanyTab/TMCompanyTab'
 import TMRenewalTypes from '../../Components/TMRenewalTypes/TMRenewalTypes'
 import TMRequirementsTab from '../../Components/TMRequirementsTab/TMRequirementsTab'
 import TMProcess from '../../Components/TMProcess/TMProcess'
-
+import TMRenewalDocuments from '../../Components/TMRenewalDocuments/TMRenewalDocuments'
 import TMFAQ from '../../Components/TMFAQ/TMFAQ'
 import TMTestimonial from '../../Components/TMTestimonial/TMTestimonial'
 import TMVideoTestimonial from '../../Components/TMVideoTestimonial/TMVideoTestimonial'
@@ -47,7 +47,7 @@ const TMRenewal = () => {
         </div>
         
         <div id="documents">
-
+            <TMRenewalDocuments/>
         </div>
         
         <div id="faq">

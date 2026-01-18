@@ -45,6 +45,11 @@ import BCRegistration from "./Pages/BCRegistration/BCRegistration";
 import ISOCertification from "./Pages/ISOCertification/ISOCertification";
 
 import TMRenewal from "./Pages/TMRenewal/TMRenewal";
+import TMApplication from "./Pages/TMApplication/TMApplication"
+import ReplyOfExaminationReport from "./Pages/ReplyOfExaminationReport/ReplyOfExaminationReport"
+import ChangeInCompany from "./Pages/ChangeInCompany/ChangeInCompany";
+import CIROfficeAddress from "./Pages/CIROfficeAddress/CIROfficeAddress";
+import ChangeInObject from "./Pages/ChangeInObject/ChangeInObject";
 
 function App() {
   return (
@@ -103,6 +108,12 @@ function App() {
           <Route path="/conversion/partnership-to-llp" element={<PartnershipLLP/>}/>
 
           <Route path="/trademark/renewal"element={<TMRenewal/>}/>
+          <Route path="/trademark/application" element={<TMApplication/>}/>
+          <Route path="/trademark/exam-reply" element={<ReplyOfExaminationReport/>}/>
+          
+          <Route path="/updation/change-name-company" element={<ChangeInCompany />} />
+          <Route path="/updation/change-address-llp" element={<CIROfficeAddress />} />
+          <Route path="//updation/change-object-llp" element={<ChangeInObject />} />
         </Routes>
       </RouteLoaderWrapper>
 

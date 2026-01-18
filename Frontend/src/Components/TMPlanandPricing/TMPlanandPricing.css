@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-.Tm-pvtltd-Tm-pricing-section {
+.Renewal-pricing-section {
   font-family: 'Poppins', sans-serif;
   background: #ffffff;
   padding: 60px 24px 80px;
 }
 
-.Tm-pricing-container {
+.Renewal-pricing-container {
   max-width: 1180px;
   margin: 0 auto;
 }
 
 /* Header */
-.Tm-pricing-header {
+.Renewal-pricing-header {
   text-align: center;
   margin-bottom: 40px;
 }
 
-.Tm-pvtltd-Tm-pricing-title {
+.Renewal-pricing-title {
   font-size: 32px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -26,21 +26,21 @@
   color: #000;
 }
 
-.Tm-pricing-subtitle {
+.Renewal-pricing-subtitle {
   font-size: 18px;
   font-weight: 500;
   color: #1bb33a;
 }
 
 /* Cards layout with CSS Grid for clean responsiveness */
-.Tm-pricing-cards {
+.Renewal-pricing-cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 
 /* Card */
-.Tm-plan-card {
+.TM-Renewal-card {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
@@ -51,11 +51,11 @@
 }
 
 /* Plan header */
-.Tm-plan-header {
+.TM-Renewal-header {
   margin-bottom: 16px;
 }
 
-.Tm-plan-name {
+.TM-Renewal-name {
   font-size: 20px;
   font-weight: 600;
   color: #18b233;
@@ -63,7 +63,7 @@
   margin-bottom: 8px;
 }
 
-.Tm-plan-old-price {
+.TM-Renewal-old-price {
   font-size: 20px;
   font-weight: 500;
   text-align: center;
@@ -72,37 +72,37 @@
   margin-bottom: 2px;
 }
 
-.Tm-plan-price {
+.TM-Renewal-price {
   font-size: 32px;
   font-weight: 700;
   text-align: center;
   color: #000;
 }
 
-.Tm-plan-meta {
+.TM-Renewal-meta {
   font-size: 13px;
   text-align: center;
   color: #666;
 }
 
-.Tm-plan-meta .popular {
+.TM-Renewal-meta .popular {
   font-weight: 600;
   color: #ff3b3b;
   margin-left: 4px;
 }
 
 /* List */
-.Tm-plan-body {
+.TM-Renewal-body {
   margin-top: 20px;
 }
 
-.Tm-plan-list {
+.TM-Renewal-list {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.Tm-plan-list-item {
+.TM-Renewal-list-item {
   font-size: 13px;
   color: #111;
   line-height: 1.6;
@@ -110,7 +110,7 @@
   margin-bottom: 8px;
 }
 
-.Tm-plan-list-item::before {
+.TM-Renewal-list-item::before {
   content: "";
   width: 8px;
   height: 8px;
@@ -121,12 +121,12 @@
 }
 
 /* Button */
-.Tm-plan-footer {
+.TM-Renewal-footer {
   text-align: center;
   margin-top: 20px;
 }
 
-.Tm-plan-button {
+.TM-Renewal-button {
   background: #21b738;
   color: #ffffff;
   padding: 10px 36px;
@@ -139,7 +139,7 @@
     box-shadow 0.15s ease;
 }
 
-.Tm-plan-button:hover {
+.TM-Renewal-button:hover {
   background: #1aa130;
   transform: translateY(-1px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
@@ -151,16 +151,16 @@
 
 /* Large tablets / small laptops */
 @media (max-width: 1200px) {
-  .Tm-pricing-container {
+  .Renewal-pricing-container {
     padding: 0 12px;
   }
 
-  .Tm-pricing-cards {
+  .Renewal-pricing-cards {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
   }
 
-  .Tm-plan-card {
+  .TM-Renewal-card {
     padding: 24px;
   }
 }
@@ -169,26 +169,26 @@
 @media (max-width: 992px) {
 
 
-  .Tm-pvtltd-Tm-pricing-title {
+  .Renewal-pricing-title {
     font-size: 28px;
   }
 
-  .Tm-pricing-subtitle {
+  .Renewal-pricing-subtitle {
     font-size: 16px;
   }
 
-  .Tm-pricing-cards {
+  .Renewal-pricing-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 /* Large phones / small tablets: full width cards */
 @media (max-width: 768px) {
-  .Tm-pricing-cards {
+  .Renewal-pricing-cards {
     grid-template-columns: 1fr;
   }
 
-  .Tm-plan-card {
+  .TM-Renewal-card {
     max-width: 480px;
     margin: 0 auto;
   }
@@ -196,32 +196,32 @@
 
 /* Small phones */
 @media (max-width: 480px) {
-  .Tm-pvtltd-Tm-pricing-section {
+  .Renewal-pricing-section {
     padding: 32px 12px 48px;
   }
 
-  .Tm-pvtltd-Tm-pricing-title {
+  .Renewal-pricing-title {
     font-size: 22px;
     letter-spacing: 0.5px;
   }
 
-  .Tm-pricing-subtitle {
+  .Renewal-pricing-subtitle {
     font-size: 14px;
   }
 
-  .Tm-plan-card {
+  .TM-Renewal-card {
     padding: 20px;
   }
 
-  .Tm-plan-price {
+  .TM-Renewal-price {
     font-size: 28px;
   }
 
-  .Tm-plan-old-price {
+  .TM-Renewal-old-price {
     font-size: 18px;
   }
 
-  .Tm-plan-button {
+  .TM-Renewal-button {
     width: 100%;
     padding: 10px 0;
   }
