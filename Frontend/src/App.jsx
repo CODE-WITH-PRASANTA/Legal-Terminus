@@ -49,6 +49,10 @@ import ChangetoLlp from "./Pages/ChangetoLlp/ChangetoLlp";
 import ChangetoCompany from "./Pages/ChangetoCompany/ChangetoCompany";
 
 
+import ChangeInCompany from "./Pages/ChangeInCompany/ChangeInCompany";
+import CIROfficeAddress from "./Pages/CIROfficeAddress/CIROfficeAddress";
+import ChangeInObject from "./Pages/ChangeInObject/ChangeInObject";
+
 function App() {
   return (
     <Router>
@@ -108,6 +112,10 @@ function App() {
           <Route path="//conversion/public-to-private" element={<PublictoPrivate/>}/>
           <Route path="/updation/change-name-llp" element={<ChangetoLlp/>}/>
           <Route path="/updation/change-address-company"element={<ChangetoCompany/>}/>
+
+          <Route path="/updation/change-name-company" element={<ChangeInCompany />} />
+          <Route path="/updation/change-address-llp" element={<CIROfficeAddress />} />
+          <Route path="//updation/change-object-llp" element={<ChangeInObject />} />
         </Routes>
       </RouteLoaderWrapper>
 
