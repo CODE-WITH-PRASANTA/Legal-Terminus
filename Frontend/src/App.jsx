@@ -43,7 +43,10 @@ import PartnershipLLP from "./Pages/PartnershipLLP/PartnershipLLP"
 import LLRegistration from "./Pages/LLRegistration/LLRegistration";
 import BCRegistration from "./Pages/BCRegistration/BCRegistration";
 import ISOCertification from "./Pages/ISOCertification/ISOCertification";
-
+import PrivatetoPublic from "./Pages/PrivatetoPublic/PrivatetoPublic";
+import PublictoPrivate from "./Pages/PublictoPrivate/PublictoPrivate";
+import ChangetoLlp from "./Pages/ChangetoLlp/ChangetoLlp";
+import ChangetoCompany from "./Pages/ChangetoCompany/ChangetoCompany";
 
 
 function App() {
@@ -101,6 +104,10 @@ function App() {
           <Route path="/conversion/proprietorship-to-opc" element={<ProprietorshipOPC/>}/>
           <Route path="/conversion/proprietorship-to-private" element={<PropritorshipPLC/>}/>
           <Route path="/conversion/partnership-to-llp" element={<PartnershipLLP/>}/>
+          <Route path="/conversion/private-to-public" element={<PrivatetoPublic/>}/>
+          <Route path="//conversion/public-to-private" element={<PublictoPrivate/>}/>
+          <Route path="/updation/change-name-llp" element={<ChangetoLlp/>}/>
+          <Route path="/updation/change-address-company"element={<ChangetoCompany/>}/>
         </Routes>
       </RouteLoaderWrapper>
 
