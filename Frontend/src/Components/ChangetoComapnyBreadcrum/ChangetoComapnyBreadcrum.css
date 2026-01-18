@@ -1,0 +1,134 @@
+.prp-bc-hero {
+  padding: 50px 20px;
+  background:
+    radial-gradient(900px 500px at 15% 20%, rgba(34,197,94,0.12), transparent 60%),
+    radial-gradient(700px 400px at 85% 80%, rgba(34,197,94,0.10), transparent 60%),
+    linear-gradient(180deg, #000000, #020202, #050505);
+  font-family: "Inter", sans-serif;
+}
+
+.prp-bc-container {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.prp-bc-content {
+  color: #e5e7eb;
+}
+
+.prp-bc-tag {
+  display: inline-flex;
+  padding: 9px 20px;
+  background: linear-gradient(135deg, #22c55e, #4ade80);
+  color: #022c22;
+  font-size: 13px;
+  font-weight: 800;
+  border-radius: 30px;
+  margin-bottom: 22px;
+}
+
+.prp-bc-title {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 22px;
+  color: #ffffff;
+}
+
+.prp-bc-title span {
+  color: #4ade80;
+}
+
+.prp-bc-description {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #d1d5db;
+  max-width: 640px;
+  margin-bottom: 38px;
+}
+
+.prp-bc-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 30px;
+  margin-bottom: 42px;
+}
+
+.prp-bc-feature-item {
+  font-size: 15.8px;
+  color: #f8fafc;
+  padding-left: 10px;
+  border-left: 3px solid #22c55e;
+}
+
+.prp-bc-highlights {
+  display: flex;
+  gap: 55px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(34,197,94,0.2);
+}
+
+.prp-bc-form-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.prp-bc-form-card {
+  background: linear-gradient(180deg, #0b0b0b, #040404);
+  border-radius: 18px;
+  padding: 42px;
+  width: 100%;
+  border: 1px solid rgba(34,197,94,0.35);
+}
+
+.prp-bc-form-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.prp-bc-form-subtitle {
+  font-size: 14.5px;
+  color: #b0b0b0;
+  margin-bottom: 28px;
+}
+
+.prp-bc-form input,
+.prp-bc-form select {
+  width: 100%;
+  padding: 16px 15px;
+  margin-bottom: 16px;
+  background: linear-gradient(180deg, #000000, #050505);
+  border: 1px solid rgba(34,197,94,0.25);
+  border-radius: 12px;
+  color: #e5e7eb;
+}
+
+.prp-bc-whatsapp-row {
+  margin: 20px 0 30px;
+}
+
+.prp-bc-whatsapp-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.prp-bc-custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 2px solid #22c55e;
+  background: #000;
+}
+
+.prp-bc-form-note {
+  text-align: center;
+  font-size: 13.5px;
+  color: #9ca3af;
+  margin-top: 20px;
+}

@@ -1,0 +1,160 @@
+.llpdoc-section {
+  padding: 80px 20px;
+  background: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+.llpdoc-heading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 60px;
+  color: #0f172a;
+}
+
+/* Layout */
+.llpdoc-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 320px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Columns */
+.llpdoc-column {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Cards */
+.llpdoc-card {
+  position: relative;
+  background: #ffffff;
+  padding: 22px 22px 22px 55px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.llpdoc-card h4 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.llpdoc-card p {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.llpdoc-number {
+  position: absolute;
+  left: -15px;
+  top: 22px;
+  width: 36px;
+  height: 36px;
+  background: #0f172a;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Colors */
+.llpdoc-red { border-left: 5px solid #ef4444; }
+.llpdoc-orange { border-left: 5px solid #f97316; }
+.llpdoc-teal { border-left: 5px solid #14b8a6; }
+.llpdoc-brown { border-left: 5px solid #a16207; }
+.llpdoc-purple { border-left: 5px solid #a855f7; }
+.llpdoc-yellow { border-left: 5px solid #eab308; }
+
+/* Center Infographic */
+.llpdoc-center {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.llpdoc-circle {
+  width: 220px;
+  height: 220px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  color: #0f172a;
+  z-index: 2;
+}
+
+.llpdoc-star {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background: conic-gradient(
+    #ef4444,
+    #f97316,
+    #eab308,
+    #14b8a6,
+    #6366f1,
+    #a855f7,
+    #ef4444
+  );
+  clip-path: polygon(
+    50% 0%,
+    60% 35%,
+    100% 50%,
+    60% 65%,
+    50% 100%,
+    40% 65%,
+    0% 50%,
+    40% 35%
+  );
+  z-index: 1;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .llpdoc-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .llpdoc-center {
+    order: -1;
+    margin-bottom: 40px;
+  }
+
+  .llpdoc-column {
+    align-items: center;
+  }
+
+  .llpdoc-card {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 480px) {
+  .llpdoc-heading {
+    font-size: 24px;
+  }
+
+  .llpdoc-circle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .llpdoc-star {
+    width: 210px;
+    height: 210px;
+  }
+}

@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.Tm-Application-req-section {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #ffffff;
+  padding: 72px 24px 64px;
+}
+
+.Tm-Application-req-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Header */
+.Tm-Application-req-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.Tm-Application-req-title {
+  font-size: 40px;
+  font-weight: 600;
+  color: #151821;
+  margin: 0 0 12px;
+}
+
+.Tm-Application-req-subtitle {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+.Tm-Application-req-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 820px;     /* controls width of 2 cards */
+  margin: 0 auto;       /* centers grid horizontally */
+}
+
+
+/* Card */
+.Tm-Application-req-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 28px 28px 26px;
+  box-shadow: 0 18px 40px rgba(17, 169, 30, 0.06);
+}
+
+.Tm-Application-req-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 12px;
+}
+
+.Tm-Application-req-card-underline {
+  height: 2px;
+  width: 120px;
+  background: linear-gradient(to right, #20a009 0%, #ffffff 100%);
+  margin-bottom: 16px;
+}
+
+.Tm-Application-req-card-text {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+/* ------------------------------
+   Responsive
+------------------------------- */
+
+@media (max-width: 1024px) {
+  .Tm-Application-req-section {
+    padding: 60px 20px 56px;
+  }
+
+  .Tm-Application-req-title {
+    font-size: 34px;
+  }
+
+  .Tm-Application-req-grid {
+    gap: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Tm-Application-req-section {
+    padding: 48px 16px 48px;
+  }
+
+  .Tm-Application-req-title {
+    font-size: 30px;
+  }
+
+  .Tm-Application-req-subtitle {
+    font-size: 14px;
+  }
+
+  .Tm-Application-req-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .Tm-Application-req-card {
+    padding: 24px 22px 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Tm-Application-req-section {
+    padding: 40px 14px 40px;
+  }
+
+  .Tm-Application-req-title {
+    font-size: 26px;
+  }
+
+  .Tm-Application-req-card-title {
+    font-size: 17px;
+  }
+
+  .Tm-Application-req-card-text {
+    font-size: 13.5px;
+  }
+}

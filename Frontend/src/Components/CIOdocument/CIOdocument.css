@@ -1,0 +1,318 @@
+/* ================= ROOT ================= */
+.ProFPLC-infographic-section {
+  padding: 110px 20px;
+  background: #f4f7fb;
+  overflow-x: hidden;
+}
+
+.ProFPLC-info-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.ProFPLC-info-title {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 800;
+  margin-bottom: 80px;
+  color: #0f172a;
+}
+
+/* ================= WRAPPER ================= */
+.ProFPLC-rotator {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: auto;
+}
+
+/* ================= SVG LINES ================= */
+.ProFPLC-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.ProFPLC-lines line {
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 10 14;
+  animation: lineFlow 3.5s linear infinite;
+}
+
+/* Line Colors */
+.ProFPLC-lines line:nth-child(1) { stroke: #22c55e; }
+.ProFPLC-lines line:nth-child(2) { stroke: #38bdf8; animation-delay: 0.3s; }
+.ProFPLC-lines line:nth-child(3) { stroke: #a855f7; animation-delay: 0.6s; }
+.ProFPLC-lines line:nth-child(4) { stroke: #f59e0b; animation-delay: 0.9s; }
+.ProFPLC-lines line:nth-child(5) { stroke: #ef4444; animation-delay: 1.2s; }
+.ProFPLC-lines line:nth-child(6) { stroke: #16a34a; animation-delay: 1.5s; }
+
+@keyframes lineFlow {
+  to { stroke-dashoffset: -50; }
+}
+
+/* ================= CENTER CIRCLE ================= */
+.ProFPLC-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(22, 163, 74, 0.35);
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+/* Animated Border */
+.ProFPLC-center::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: linear-gradient(
+    120deg,
+    #22c55e,
+    #4ade80,
+    #38bdf8,
+    #a855f7,
+    #22c55e
+  );
+  background-size: 300% 300%;
+  animation: borderMove 4s linear infinite;
+  z-index: -1;
+}
+
+.ProFPLC-center::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  z-index: -1;
+}
+
+.ProFPLC-center:hover {
+  transform: translate(-50%, -50%) scale(1.12);
+  box-shadow: 0 40px 90px rgba(22, 163, 74, 0.55);
+}
+
+.ProFPLC-center h3 {
+  font-size: 44px;
+  margin: 0;
+  color: #166534;
+  transition: transform 0.4s;
+}
+
+.ProFPLC-center p {
+  font-size: 14px;
+  color: #065f46;
+  transition: transform 0.4s;
+}
+
+.ProFPLC-center:hover h3 {
+  transform: scale(1.15);
+}
+
+.ProFPLC-center:hover p {
+  transform: translateY(4px);
+}
+
+@keyframes borderMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* ================= CARDS ================= */
+.ProFPLC-segment {
+  position: absolute;
+  width: 240px;
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 26px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.15);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  z-index: 3;
+}
+
+/* Gradient Border on Hover */
+.ProFPLC-segment::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 26px;
+  background: linear-gradient(
+    120deg,
+    #22c55e,
+    #38bdf8,
+    #a855f7,
+    #22c55e
+  );
+  background-size: 300% 300%;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: -1;
+}
+
+.ProFPLC-segment:hover::before {
+  opacity: 1;
+  animation: borderMove 3s linear infinite;
+}
+
+.ProFPLC-segment:hover {
+  transform: translateY(-14px) scale(1.05);
+  box-shadow: 0 35px 70px rgba(0,0,0,0.25);
+}
+
+/* Icon */
+.ProFPLC-segment .icon {
+  width: 50px;
+  height: 50px;
+  background: #dcfce7;
+  color: #16a34a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.ProFPLC-segment h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.ProFPLC-segment p {
+  font-size: 13px;
+  color: #475569;
+}
+
+/* ================= POSITIONS (REDUCED GAP) ================= */
+.seg-1 { top: 40px; left: -70px; }
+.seg-2 { top: -35px; left: 50%; transform: translateX(-50%); }
+.seg-3 { top: 40px; right: -70px; }
+
+.seg-4 { bottom: 40px; right: -70px; }
+.seg-5 { bottom: -35px; left: 50%; transform: translateX(-50%); }
+.seg-6 { bottom: 40px; left: -70px; }
+
+/* ================= LARGE SCREENS ================= */
+@media (min-width: 1400px) {
+  .ProFPLC-rotator {
+    width: 720px;
+    height: 720px;
+  }
+
+  .ProFPLC-segment {
+    width: 260px;
+  }
+
+  .ProFPLC-center {
+    width: 210px;
+    height: 210px;
+  }
+}
+
+/* ================= LAPTOP ================= */
+@media (max-width: 1200px) {
+  .ProFPLC-rotator {
+    width: 560px;
+    height: 560px;
+  }
+
+  .seg-1,
+  .seg-6 { left: -50px; }
+
+  .seg-3,
+  .seg-4 { right: -50px; }
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 991px) {
+  .ProFPLC-info-title {
+    margin-bottom: 60px;
+  }
+
+  .ProFPLC-rotator {
+    width: 460px;
+    height: 460px;
+  }
+
+  .ProFPLC-center {
+    width: 170px;
+    height: 170px;
+  }
+
+  .ProFPLC-segment {
+    width: 210px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .ProFPLC-infographic-section {
+    padding: 70px 16px;
+  }
+
+  .ProFPLC-rotator {
+    width: 100%;
+    height: auto;
+    display: grid;
+    gap: 26px;
+  }
+
+  .ProFPLC-lines {
+    display: none;
+  }
+
+  .ProFPLC-center {
+    position: relative;
+    transform: none;
+    margin: auto;
+  }
+
+  .ProFPLC-segment {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    margin: auto;
+  }
+
+  .ProFPLC-segment:hover {
+    transform: translateY(-6px) scale(1.02);
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 360px) {
+  .ProFPLC-info-title {
+    font-size: 24px;
+  }
+
+  .ProFPLC-center {
+    width: 150px;
+    height: 150px;
+  }
+
+  .ProFPLC-center h3 {
+    font-size: 34px;
+  }
+
+  .ProFPLC-segment {
+    padding: 18px;
+    border-radius: 20px;
+  }
+}

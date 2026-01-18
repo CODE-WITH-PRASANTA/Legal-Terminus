@@ -1,0 +1,128 @@
+.prp-price-section {
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  padding: 60px 24px 80px;
+}
+
+.prp-price-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Header */
+.prp-price-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.prp-price-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.prp-price-subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1bb33a;
+}
+
+/* Cards */
+.prp-price-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.prp-price-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Plan header */
+.prp-price-plan-header {
+  margin-bottom: 16px;
+}
+
+.prp-price-plan-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #18b233;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.prp-price-old {
+  font-size: 20px;
+  text-align: center;
+  color: #ff3b3b;
+  text-decoration: line-through;
+}
+
+.prp-price-current {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: #000;
+}
+
+.prp-price-meta {
+  font-size: 13px;
+  text-align: center;
+  color: #666;
+}
+
+.prp-price-popular {
+  font-weight: 600;
+  color: #ff3b3b;
+  margin-left: 4px;
+}
+
+/* List */
+.prp-price-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.prp-price-item {
+  font-size: 13px;
+  line-height: 1.6;
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.prp-price-item::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #19b43a;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: 6px;
+}
+
+/* Button */
+.prp-price-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.prp-price-btn {
+  background: #21b738;
+  color: #ffffff;
+  padding: 10px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
