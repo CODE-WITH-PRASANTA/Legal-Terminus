@@ -43,6 +43,9 @@ import PartnershipLLP from "./Pages/PartnershipLLP/PartnershipLLP"
 import LLRegistration from "./Pages/LLRegistration/LLRegistration";
 import BCRegistration from "./Pages/BCRegistration/BCRegistration";
 import ISOCertification from "./Pages/ISOCertification/ISOCertification";
+import DissolvePrivate from "./Pages/DissolvePrivate/DissolvePrivate";
+import DissolveLLP from "./Pages/DissolveLLP/DissolveLLP";
+import DissolvePartnership from "./Pages/DissolvePartnership/DissolvePartnership";
 
 
 
@@ -101,6 +104,10 @@ function App() {
           <Route path="/conversion/proprietorship-to-opc" element={<ProprietorshipOPC/>}/>
           <Route path="/conversion/proprietorship-to-private" element={<PropritorshipPLC/>}/>
           <Route path="/conversion/partnership-to-llp" element={<PartnershipLLP/>}/>
+
+          <Route path="/windup/dissolve-private" element={<DissolvePrivate />} />
+          <Route path="/windup/dissolve-llp" element={<DissolveLLP />} />
+          <Route path="/windup/dissolve-partnership" element={<DissolvePartnership />} />
         </Routes>
       </RouteLoaderWrapper>
 

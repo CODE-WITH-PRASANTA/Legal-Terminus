@@ -3,7 +3,7 @@
 /* ===============================
    SECTION
    =============================== */
-.society-tabs-section {
+.Dissllp-tabs-section {
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   background: #f5f9ff;
@@ -13,7 +13,7 @@
 /* ===============================
    CONTAINER
    =============================== */
-.society-tabs-container {
+.Dissllp-tabs-container {
   max-width: 1180px;
   margin: 0 auto;
 }
@@ -21,7 +21,7 @@
 /* ===============================
    CARD (STICKY)
    =============================== */
-.society-tabs-card {
+.Dissllp-tabs-card {
   background: #ffffff;
   border-radius: 14px;
   box-shadow: 0 18px 40px rgba(33, 89, 25, 0.08);
@@ -36,7 +36,7 @@
 /* ===============================
    TABS LIST
    =============================== */
-.society-tabs-list {
+.Dissllp-tabs-list {
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -44,14 +44,14 @@
   scrollbar-width: none;
 }
 
-.society-tabs-list::-webkit-scrollbar {
+.Dissllp-tabs-list::-webkit-scrollbar {
   display: none;
 }
 
 /* ===============================
    TAB
    =============================== */
-.society-tab {
+.Dissllp-tab {
   border: none;
   background: transparent;
   outline: none;
@@ -72,14 +72,14 @@
 }
 
 /* Active tab */
-.society-tab.active {
+.Dissllp-tab.active {
   background: #e9f0ff;
   color: #1aa91a;
   box-shadow: inset 0 3px 0 #16b646;
 }
 
 /* Hover (inactive only) */
-.society-tab:not(.active):hover {
+.Dissllp-tab:not(.active):hover {
   background: rgba(245, 248, 255, 0.9);
 }
 
@@ -89,11 +89,11 @@
 
 /* Tablets */
 @media (max-width: 768px) {
-  .society-tabs-section {
+  .Dissllp-tabs-section {
     padding: 24px 16px;
   }
 
-  .society-tab {
+  .Dissllp-tab {
     padding: 16px 26px;
     font-size: 13.5px;
     letter-spacing: 1.2px;
@@ -102,11 +102,11 @@
 
 /* Small phones */
 @media (max-width: 480px) {
-  .society-tabs-section {
+  .Dissllp-tabs-section {
     padding: 20px 12px;
   }
 
-  .society-tab {
+  .Dissllp-tab {
     padding: 14px 20px;
     font-size: 12.5px;
     letter-spacing: 0.5px;

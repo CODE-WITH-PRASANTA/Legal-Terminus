@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./SocietyTabs.css";
+import "./DPTabs.css";
 
 const tabs = [
   { label: "Why Choose Pvt Ltd", id: "company" },
@@ -10,7 +10,7 @@ const tabs = [
   { label: "FAQ's", id: "faq" },
 ];
 
-const SocietyTabs = () => {
+const DPTabs = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleClick = (index, id) => {
@@ -26,16 +26,16 @@ const SocietyTabs = () => {
   };
 
   return (
-    <section className="society-tabs-section">
-      <div className="society-tabs-container">
-        <div className="society-tabs-card">
+    <section className="DP-tabs-section">
+      <div className="DP-tabs-container">
+        <div className="DP-tabs-card">
 
-          <div className="society-tabs-list">
+          <div className="DP-tabs-list">
             {tabs.map((tab, index) => (
               <button
                 key={tab.id}
                 type="button"
-                className={`society-tab ${
+                className={`DP-tab ${
                   index === activeIndex ? "active" : ""
                 }`}
                 onClick={() => handleClick(index, tab.id)}
@@ -51,4 +51,4 @@ const SocietyTabs = () => {
   );
 };
 
-export default SocietyTabs;
+export default DPTabs;
