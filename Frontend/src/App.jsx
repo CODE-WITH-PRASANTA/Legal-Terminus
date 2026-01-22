@@ -43,12 +43,14 @@ import PartnershipLLP from "./Pages/PartnershipLLP/PartnershipLLP"
 import LLRegistration from "./Pages/LLRegistration/LLRegistration";
 import BCRegistration from "./Pages/BCRegistration/BCRegistration";
 import ISOCertification from "./Pages/ISOCertification/ISOCertification";
-import PrivatetoPublic from "./Pages/PrivatetoPublic/PrivatetoPublic";
-import PublictoPrivate from "./Pages/PublictoPrivate/PublictoPrivate";
-import ChangetoLlp from "./Pages/ChangetoLlp/ChangetoLlp";
-import ChangetoCompany from "./Pages/ChangetoCompany/ChangetoCompany";
+import DissolvePrivate from "./Pages/DissolvePrivate/DissolvePrivate";
+import DissolveLLP from "./Pages/DissolveLLP/DissolveLLP";
+import DissolvePartnership from "./Pages/DissolvePartnership/DissolvePartnership";
 
 
+import TMRenewal from "./Pages/TMRenewal/TMRenewal";
+import TMApplication from "./Pages/TMApplication/TMApplication"
+import ReplyOfExaminationReport from "./Pages/ReplyOfExaminationReport/ReplyOfExaminationReport"
 import ChangeInCompany from "./Pages/ChangeInCompany/ChangeInCompany";
 import CIROfficeAddress from "./Pages/CIROfficeAddress/CIROfficeAddress";
 import ChangeInObject from "./Pages/ChangeInObject/ChangeInObject";
@@ -110,16 +112,15 @@ function App() {
           <Route path="/conversion/proprietorship-to-opc" element={<ProprietorshipOPC/>}/>
           <Route path="/conversion/proprietorship-to-private" element={<PropritorshipPLC/>}/>
           <Route path="/conversion/partnership-to-llp" element={<PartnershipLLP/>}/>
-          <Route path="/conversion/private-to-public" element={<PrivatetoPublic/>}/>
-          <Route path="//conversion/public-to-private" element={<PublictoPrivate/>}/>
-          <Route path="/updation/change-name-llp" element={<ChangetoLlp/>}/>
-          <Route path="/updation/change-address-company"element={<ChangetoCompany/>}/>
 
           <Route path="/updation/change-name-company" element={<ChangeInCompany />} />
           <Route path="/updation/change-address-llp" element={<CIROfficeAddress />} />
           <Route path="/updation/change-object-llp" element={<ChangeInObject />} />
           <Route path="/trademark/opposition" element={<TrademarktoOpposition/>}/>
           <Route path="/trademark/hearing" element={<TrademarktoHearing/>}/>
+          <Route path="/windup/dissolve-private" element={<DissolvePrivate />} />
+          <Route path="/windup/dissolve-llp" element={<DissolveLLP />} />
+          <Route path="/windup/dissolve-partnership" element={<DissolvePartnership />} />
         </Routes>
       </RouteLoaderWrapper>
 

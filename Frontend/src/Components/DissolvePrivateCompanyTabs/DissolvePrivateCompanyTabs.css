@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ===============================
+   WRAPPER
+   =============================== */
+.Dissolve-company-wrapper {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* ===============================
+   INTRO SECTION
+   =============================== */
+.Dissolve-intro-section {
+  background-color: #ffffff;
+  padding: 64px 24px 56px;
+}
+
+.Dissolve-intro-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* Illustration */
+.Dissolve-intro-illustration-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Dissolve-intro-illustration {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Content */
+.Dissolve-intro-content {
+  max-width: 720px;
+}
+
+.Dissolve-intro-title {
+  font-size: 40px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: #151821;
+  margin-bottom: 18px;
+}
+
+.Dissolve-intro-text {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+/* ===============================
+   COMPANIES ACT SECTION
+   =============================== */
+.Dissolve-act-section {
+  background-color: #ffffff;
+  padding: 24px 24px 56px;
+}
+
+.Dissolve-act-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.Dissolve-act-card {
+  border-radius: 20px;
+  padding: 32px 40px;
+  background: linear-gradient(to bottom, #f4f8ff 0%, #ffffff 100%);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+.Dissolve-act-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #273143;
+  margin-bottom: 14px;
+}
+
+.Dissolve-act-text {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+  margin-bottom: 18px;
+}
+
+.Dissolve-act-point {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+  margin-bottom: 10px;
+}
+
+.Dissolve-act-point-label {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 1024px) {
+  .Dissolve-intro-container {
+    gap: 40px;
+  }
+
+  .Dissolve-intro-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Dissolve-intro-section {
+    padding: 40px 16px 36px;
+  }
+
+  .Dissolve-intro-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .Dissolve-intro-title {
+    font-size: 28px;
+  }
+
+  .Dissolve-intro-text {
+    font-size: 14px;
+  }
+
+  .Dissolve-act-card {
+    padding: 24px 20px;
+  }
+
+  .Dissolve-act-text,
+  .Dissolve-act-point {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Dissolve-intro-title {
+    font-size: 24px;
+  }
+
+  .Dissolve-intro-text {
+    font-size: 13.5px;
+  }
+
+  .Dissolve-act-title {
+    font-size: 18px;
+  }
+}

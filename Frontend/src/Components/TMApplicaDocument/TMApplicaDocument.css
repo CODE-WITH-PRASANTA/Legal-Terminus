@@ -1,0 +1,140 @@
+.TM-Applica-doc-wrapper {
+  padding: 60px 20px;
+  background: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+.TM-Applica-doc-heading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 60px;
+}
+
+.TM-Applica-doc-heading span {
+  font-size: 18px;
+  color: #16a34a;
+}
+
+.TM-Applica-doc-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 40px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.TM-Applica-doc-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.TM-Applica-doc-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.TM-Applica-doc-card h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.TM-Applica-doc-card p {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* COLORS */
+.red { border-left: 6px solid #ef4444; }
+.orange { border-left: 6px solid #f97316; }
+.teal { border-left: 6px solid #14b8a6; }
+.beige { border-left: 6px solid #d6b17a; }
+.pink { border-left: 6px solid #ec4899; }
+.yellow { border-left: 6px solid #eab308; }
+
+/* CENTER INFOGRAPHIC */
+.TM-Applica-doc-center {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.TMApplica-center-circle {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 160px;
+  height: 160px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+}
+
+.TMApplica-center-circle h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* STAR SHAPES */
+.star {
+  position: absolute;
+  inset: 0;
+}
+
+.TMApplica-star-item {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  opacity: 0.9;
+}
+
+.TMApplica-star-item.pink { background: #f472b6; top: -10px; left: 90px; transform: rotate(0deg); }
+.TMApplica-star-item.yellow { background: #fde047; top: 40px; right: -10px; transform: rotate(60deg); }
+.TMApplica-star-item.red { background: #ef4444; bottom: 40px; right: 20px; transform: rotate(120deg); }
+.TMApplica-star-item.orange { background: #fb923c; bottom: -10px; left: 90px; transform: rotate(180deg); }
+.TMApplica-star-item.teal { background: #2dd4bf; bottom: 40px; left: -10px; transform: rotate(240deg); }
+.TMApplica-star-item.beige { background: #d6b17a; top: 40px; left: -10px; transform: rotate(300deg); }
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .TM-Applica-doc-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .TM-Applica-doc-center {
+    margin: auto;
+  }
+
+  .TM-Applica-doc-col {
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .TM-Applica-doc-heading {
+    font-size: 24px;
+  }
+
+  .TM-Applica-doc-heading span {
+    font-size: 14px;
+  }
+
+  .TM-Applica-doc-card {
+    padding: 18px;
+  }
+}
