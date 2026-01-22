@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Section */
+
+.tlp-section {
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  padding: 64px 20px 72px;
+}
+
+.tlp-container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+/* Heading */
+
+.tlp-heading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-bottom: 40px;
+  color: #111827;
+}
+
+/* Slider */
+
+.tlp-slider-wrapper {
+  position: relative;
+  padding: 0 52px;
+}
+
+.tlp-slider {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 8px;
+}
+
+.tlp-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card */
+
+.tlp-card {
+  min-width: 290px;
+  max-width: 290px;
+  background: #fbfbfb;
+  border-radius: 18px;
+  border: 2px solid #1aa91a;
+  padding: 36px 28px 32px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+}
+
+/* Quotes */
+
+.tlp-quote {
+  position: absolute;
+  font-size: 40px;
+  color: #1aa91a;
+}
+
+.tlp-quote-top {
+  top: 10px;
+  left: 18px;
+}
+
+.tlp-quote-bottom {
+  bottom: 10px;
+  right: 24px;
+}
+
+/* Avatar */
+
+.tlp-avatar-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.tlp-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #1aa91a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 600;
+  border: 4px solid #e5f8e8;
+}
+
+/* Text */
+
+.tlp-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 22px;
+}
+
+/* Name */
+
+.tlp-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1aa91a;
+}
+
+.tlp-role {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+/* Stars */
+
+.tlp-stars {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  font-size: 18px;
+  color: #ff9900;
+}
+
+/* Arrows */
+
+.tlp-side-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #1aa91a;
+  color: #fff;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.tlp-left { left: 10px; }
+.tlp-right { right: 10px; }
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .tlp-heading { font-size: 24px; }
+  .tlp-card { min-width: 260px; }
+}
+
+@media (max-width: 520px) {
+  .tlp-card { min-width: 240px; }
+}

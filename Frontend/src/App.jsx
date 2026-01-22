@@ -52,6 +52,8 @@ import ChangetoCompany from "./Pages/ChangetoCompany/ChangetoCompany";
 import ChangeInCompany from "./Pages/ChangeInCompany/ChangeInCompany";
 import CIROfficeAddress from "./Pages/CIROfficeAddress/CIROfficeAddress";
 import ChangeInObject from "./Pages/ChangeInObject/ChangeInObject";
+import TrademarktoOpposition from"./Pages/TrademarktoOpposition/TrademarktoOpposition";
+import TrademarktoHearing from "./Pages/TrademarktoHearing/TrademarktoHearing";
 
 function App() {
   return (
@@ -115,7 +117,9 @@ function App() {
 
           <Route path="/updation/change-name-company" element={<ChangeInCompany />} />
           <Route path="/updation/change-address-llp" element={<CIROfficeAddress />} />
-          <Route path="//updation/change-object-llp" element={<ChangeInObject />} />
+          <Route path="/updation/change-object-llp" element={<ChangeInObject />} />
+          <Route path="/trademark/opposition" element={<TrademarktoOpposition/>}/>
+          <Route path="/trademark/hearing" element={<TrademarktoHearing/>}/>
         </Routes>
       </RouteLoaderWrapper>
 
