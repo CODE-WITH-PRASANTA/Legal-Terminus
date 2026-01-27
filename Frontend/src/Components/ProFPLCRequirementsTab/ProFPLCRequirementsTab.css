@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.profplc-req-section {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #ffffff;
+  padding: 72px 24px 64px;
+}
+
+.profplc-req-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Header */
+.profplc-req-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profplc-req-title {
+  font-size: 40px;
+  font-weight: 600;
+  color: #151821;
+  margin: 0 0 12px;
+}
+
+.profplc-req-subtitle {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+.profplc-req-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* Card */
+.profplc-req-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 28px 28px 26px;
+  box-shadow: 0 18px 40px rgba(17, 169, 30, 0.06);
+}
+
+.profplc-req-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 12px;
+}
+
+.profplc-req-card-underline {
+  height: 2px;
+  width: 120px;
+  background: linear-gradient(to right, #20a009 0%, #ffffff 100%);
+  margin-bottom: 16px;
+}
+
+.profplc-req-card-text {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+/* ------------------------------
+   Responsive
+------------------------------- */
+
+@media (max-width: 1024px) {
+  .profplc-req-section {
+    padding: 60px 20px 56px;
+  }
+
+  .profplc-req-title {
+    font-size: 34px;
+  }
+
+  .profplc-req-grid {
+    gap: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profplc-req-section {
+    padding: 48px 16px 48px;
+  }
+
+  .profplc-req-title {
+    font-size: 30px;
+  }
+
+  .profplc-req-subtitle {
+    font-size: 14px;
+  }
+
+  .profplc-req-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profplc-req-card {
+    padding: 24px 22px 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profplc-req-section {
+    padding: 40px 14px 40px;
+  }
+
+  .profplc-req-title {
+    font-size: 26px;
+  }
+
+  .profplc-req-card-title {
+    font-size: 17px;
+  }
+
+  .profplc-req-card-text {
+    font-size: 13.5px;
+  }
+}

@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+.iec-features-section {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #ffffff;
+    padding: 20px 24px 20px;
+}
+
+.iec-features-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.85fr 1.4fr;
+    column-gap: 72px;
+    align-items: flex-start;
+}
+
+
+/* Left illustration */
+
+.iec-features-illustration-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 12px;
+}
+
+.iec-features-illustration {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Right content */
+
+.iec-features-content {
+    max-width: 760px;
+}
+
+.iec-features-title {
+    font-size: 40px;
+    line-height: 1.25;
+    font-weight: 600;
+    color: #151821;
+    margin: 0 0 18px;
+}
+
+.iec-features-intro {
+    margin: 0 0 24px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #4b5563;
+}
+
+.iec-features-block {
+    margin-bottom: 24px;
+}
+
+.iec-features-subtitle {
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.iec-features-text {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #4b5563;
+}
+
+
+/* ---------------------------
+   Responsive
+---------------------------- */
+
+@media (max-width: 1024px) {
+    .iec-features-section {
+        padding: 52px 20px 44px;
+    }
+    .iec-features-container {
+        column-gap: 40px;
+        grid-template-columns: 0.9fr 1.3fr;
+    }
+    .iec-features-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .iec-features-section {
+        padding: 40px 16px 36px;
+    }
+    .iec-features-container {
+        grid-template-columns: 1fr;
+        row-gap: 32px;
+    }
+    .iec-features-illustration-wrap {
+        order: 1;
+    }
+    .iec-features-content {
+        order: 2;
+    }
+    .iec-features-title {
+        font-size: 28px;
+    }
+    .iec-features-intro,
+    .iec-features-text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .iec-features-section {
+        padding: 32px 14px 28px;
+    }
+    .iec-features-title {
+        font-size: 24px;
+    }
+    .iec-features-intro,
+    .iec-features-text {
+        font-size: 13.5px;
+        line-height: 1.85;
+    }
+}
+
+
+/* Adjust illustration + scroll */
+
+.iec-features-illustration {
+    max-width: 115%;
+    /* increase image size */
+    height: auto;
+    display: block;
+}
+
+.iec-features-content {
+    max-width: 760px;
+    max-height: 520px;
+    /* control visible height */
+    overflow-y: auto;
+    padding-right: 14px;
+    /* space for scrollbar */
+}

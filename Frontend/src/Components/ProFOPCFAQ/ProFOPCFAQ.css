@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ================================
+   SECTION WRAPPER
+================================ */
+
+.profopc-faq-section {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #ffffff;
+  padding: 72px 24px 64px;
+}
+
+.profopc-faq-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  column-gap: 72px;
+  align-items: flex-start;
+}
+
+/* ================================
+   LEFT SIDE
+================================ */
+
+.profopc-faq-left {
+  color: #111827;
+}
+
+.profopc-faq-title {
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin: 0 0 22px;
+}
+
+.profopc-faq-intro {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+  margin: 0 0 16px;
+}
+
+/* ================================
+   RIGHT SIDE
+================================ */
+
+.profopc-faq-right {
+  display: flex;
+  flex-direction: column;
+  max-height: 540px;
+  width: 100%;
+}
+
+.profopc-faq-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* Scrollbar */
+.profopc-faq-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.profopc-faq-list::-webkit-scrollbar-thumb {
+  background: rgba(26, 169, 26, 0.45);
+  border-radius: 999px;
+}
+
+/* ================================
+   FAQ ITEMS
+================================ */
+
+.profopc-faq-item {
+  border-bottom: 1px solid rgba(26, 169, 26, 0.22);
+}
+
+.profopc-faq-question {
+  width: 100%;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.profopc-faq-icon {
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.profopc-faq-icon.open {
+  transform: rotate(180deg);
+}
+
+.profopc-faq-answer {
+  padding: 0 0 16px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.profopc-faq-answer.open {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.profopc-faq-answer p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+.profopc-faq-item.active .profopc-faq-question,
+.profopc-faq-item:hover .profopc-faq-question {
+  color: #1aa91a;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1024px) {
+  .profopc-faq-title {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profopc-faq-container {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .profopc-faq-right {
+    max-height: none;
+  }
+
+  .profopc-faq-list {
+    overflow-y: visible;
+  }
+
+  .profopc-faq-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profopc-faq-title {
+    font-size: 26px;
+  }
+
+  .profopc-faq-question {
+    font-size: 14px;
+  }
+
+  .profopc-faq-answer p,
+  .profopc-faq-intro {
+    font-size: 13.5px;
+  }
+}

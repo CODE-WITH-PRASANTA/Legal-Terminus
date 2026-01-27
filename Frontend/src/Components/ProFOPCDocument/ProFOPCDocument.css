@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+.profopc-doc-section {
+  font-family: "Poppins", sans-serif;
+  background: #f8fafc;
+  padding: 48px 20px;
+}
+
+.profopc-doc-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* ================= WHEEL ================= */
+
+.profopc-doc-wheel {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: auto;
+}
+
+.profopc-doc-center {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 130px;
+  height: 130px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  color: #111827;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  z-index: 2;
+}
+
+/* Nodes */
+.profopc-doc-node {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* Positions */
+.profopc-doc-node:nth-child(2) { top: -6px; left: 120px; }
+.profopc-doc-node:nth-child(3) { top: 52px; right: -6px; }
+.profopc-doc-node:nth-child(4) { bottom: 52px; right: -6px; }
+.profopc-doc-node:nth-child(5) { bottom: -6px; left: 120px; }
+.profopc-doc-node:nth-child(6) { bottom: 52px; left: -6px; }
+.profopc-doc-node:nth-child(7) { top: 52px; left: -6px; }
+
+/* ================= LIST ================= */
+
+.profopc-doc-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.profopc-doc-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+}
+
+.profopc-doc-badge {
+  min-width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.profopc-doc-card h4 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.profopc-doc-card p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #475569;
+}
+
+/* ================= COLORS ================= */
+
+.profopc-doc-red,
+.profopc-doc-red .profopc-doc-badge { background: #ef4444; }
+
+.profopc-doc-orange,
+.profopc-doc-orange .profopc-doc-badge { background: #f97316; }
+
+.profopc-doc-teal,
+.profopc-doc-teal .profopc-doc-badge { background: #14b8a6; }
+
+.profopc-doc-brown,
+.profopc-doc-brown .profopc-doc-badge { background: #a16207; }
+
+.profopc-doc-pink,
+.profopc-doc-pink .profopc-doc-badge { background: #ec4899; }
+
+.profopc-doc-yellow,
+.profopc-doc-yellow .profopc-doc-badge { background: #eab308; }
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .profopc-doc-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .profopc-doc-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .profopc-doc-section {
+    padding: 36px 14px;
+  }
+
+  .profopc-doc-wheel {
+    width: 240px;
+    height: 240px;
+  }
+}
