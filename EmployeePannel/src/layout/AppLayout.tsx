@@ -16,6 +16,7 @@ import TestimonialPost from "../pages/TestimonialPost";
 import VideoTestimonialPost from "../pages/VideoTestimonialPost";
 import BlogView from "../pages/BlogView";
 import AddTask from "../pages/AddTask";
+import MyDashbord from "../pages/MyDashbord";
 
 const AppLayout: React.FC = () => {
   const [activeIcon, setActiveIcon] = useState<string | null>(null);
@@ -155,6 +156,7 @@ const AppLayout: React.FC = () => {
             <Route path="/testimonial/post" element={<TestimonialPost />} />
             <Route path="/blog/view" element={<BlogView />} />
             <Route path="/add-task" element={<AddTask />} />
+            <Route path="/mydashboard" element={<MyDashbord />} />
 
             
           </Routes>
