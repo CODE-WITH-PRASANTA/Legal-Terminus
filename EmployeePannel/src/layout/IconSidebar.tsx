@@ -7,6 +7,7 @@ import {
   FiCheckSquare,
   FiRefreshCcw,
   FiPlus,
+  FiGrid, // ✅ ADDED
 } from "react-icons/fi";
 import { LuLogOut } from "react-icons/lu";
 
@@ -14,6 +15,7 @@ import { LuLogOut } from "react-icons/lu";
 
 const routes: Record<string, string> = {
   dashboard: "/dashboard",
+  mydash: "/mydashboard", // ✅ already exists
   stack: "/stack",
   messages: "/messages",
   tasks: "/create/task",
@@ -86,6 +88,13 @@ const IconSidebar: React.FC<Props> = ({
           icon={<FiHome size={18} />}
           active={active === "dashboard"}
           onClick={() => handleClick("dashboard")}
+        />
+
+        {/* ✅ MY DASHBOARD */}
+        <SidebarIcon
+          icon={<FiGrid size={18} />}
+          active={active === "mydash"}
+          onClick={() => handleClick("mydash")}
         />
 
         <SidebarIcon
