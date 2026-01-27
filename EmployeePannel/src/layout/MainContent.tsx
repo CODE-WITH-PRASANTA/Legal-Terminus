@@ -1,7 +1,6 @@
 import React from "react";
 
 import DefaultDashboard from "../pages/DefaultDashboard";
-import SalesDashboard from "../pages/SalesDashboard";
 import FinanceDashboard from "../pages/FinanceDashboard";
 
 import TeamManagement from "../pages/TeamManagement";
@@ -28,12 +27,13 @@ import VideoTestimonialPost from "../pages/VideoTestimonialPost";
 import ClientPost from "../pages/ClientPost";
 import Chat from "../pages/Chat";
 import Calendar from "../pages/Calendar";
+import AddTask from "../pages/AddTask";
 
 
 /* 🔑 TAB → COMPONENT MAP */
 const COMPONENT_MAP: Record<string, React.ReactNode> = {
   "Default Dashboard": <DefaultDashboard />,
-  "Sales Dashboard": <SalesDashboard />,
+  "Add Task": <AddTask />,
   "Finance Dashboard": <FinanceDashboard />,
   "Team Management": <TeamManagement />,
   Employees: <Employees />,
