@@ -57,16 +57,16 @@ const IncorporationFAQ = () => {
   };
 
   return (
-    <section className="incfaq-section">
-      <div className="incfaq-container">
+    <section className="s8faq-section">
+      <div className="s8faq-container">
 
         {/* LEFT */}
-        <div className="incfaq-left">
-          <h2 className="incfaq-title">
-             Incorporation Company Registration FAQ&apos;s
+        <div className="s8faq-left">
+          <h2 className="s8faq-title">
+            Incorporation Company Registration FAQ&apos;s
           </h2>
 
-          <p className="incfaq-intro">
+          <p className="s8faq-intro">
             Starting a Private Limited Company in India is an important step for
             any business owner. With the right support, the process can be simple
             and stress-free.
@@ -77,27 +77,27 @@ const IncorporationFAQ = () => {
         </div>
 
         {/* RIGHT */}
-        <div className="incfaq-right">
-          <div className="incfaq-list">
+        <div className="s8faq-right">
+          <div className="s8faq-list">
             {faqs.map((item, index) => {
               const isActive = index === activeIndex;
               return (
                 <div
                   key={index}
-                  className={`incfaq-item ${isActive ? "active" : ""}`}
+                  className={`s8faq-item ${isActive ? "active" : ""}`}
                 >
                   <button
-                    className="incfaq-question"
+                    className="s8faq-question"
                     onClick={() => toggleFaq(index)}
                   >
                     <span>{item.question}</span>
-                    <span className={`incfaq-icon ${isActive ? "open" : ""}`}>
+                    <span className={`s8faq-icon ${isActive ? "open" : ""}`}>
                       ▾
                     </span>
                   </button>
 
                   <div
-                    className={`incfaq-answer ${
+                    className={`s8faq-answer ${
                       isActive ? "open" : ""
                     }`}
                   >

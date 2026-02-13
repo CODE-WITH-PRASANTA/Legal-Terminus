@@ -4,14 +4,12 @@ import right3danimation from '../../assets/Hero-Video.mp4'
 
 const Herosection = () => {
   const tags = [
-    'Company Registration',
-    'GST Registration',
-    'ISO Registration',
+    'Startup Registration',
     'NGO Registration',
     'Trademark Registration',
-    'PSARA License',
-    'CDSCO Registration',
-    'EPR Compliance',
+    'Government License',
+    'Government Registration',
+    'Return Filing',
     'More +'
   ]
 

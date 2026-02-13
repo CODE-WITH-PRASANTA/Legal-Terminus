@@ -1,42 +1,58 @@
-import React from 'react'
-import TrustBreadcrum from '../../Components/TrustBreadcrum/TrustBreadcrum'
-import TrustTabs from '../../Components/TrustTabs/TrustTabs'
-import TrustOverview from '../../Components/TrustOverview/TrustOverview'
-import TrustCharacterstics from '../../Components/TrustCharacterstics/TrustCharacterstics'
-import TrustBenefits from '../../Components/TrustBenefits/TrustBenefits'
-import TrustEligibility from '../../Components/TrustEligibility/TrustEligibility'
-import TrustDocuments from '../../Components/TrustDocuments/TrustDocuments'
-import TrustProcess from '../../Components/TrustProcess/TrustProcess'
-import TrustPenalties from '../../Components/TrustPenalties/TrustPenalties'
-import TrustCompliance from '../../Components/TrustCompliance/TrustCompliance'
-import TrustCancellation from '../../Components/TrustCancellation/TrustCancellation'
-import TrustCertificate from '../../Components/TrustCertificate/TrustCertificate'
-import TrustFAQ from '../../Components/TrustFAQ/TrustFAQ'
-import TrustTestimonial from '../../Components/TrustTestimonial/TrustTestimonial'
-import TrustVideoTestimonial from '../../Components/TrustVideoTestimonial/TrustVideoTestimonial'
-import TrustOurClints from '../../Components/TrustOurClints/TrustOurClints'
+import React from "react";
+import TrustBreadcrum from "../../Components/TrustBreadcrum/TrustBreadcrum";
+import TrustTabs from "../../Components/TrustTabs/TrustTabs";
+import TrustPlanAndPricing from "../../Components/TrustPlanAndPricing/TrustPlanAndPricing";
+import TrustTermsCondition from "../../Components/TrustTermsCondition/TrustTermsCondition";
+import TrustPremium from "../../Components/TrustPremium/TrustPremium";
+import TrustCompanyTabs from "../../Components/TrustCompanyTabs/TrustCompanyTabs";
+import TrustPvtTypes from "../../Components/TrustPvtTypes/TrustPvtTypes";
+import TrustRequirementsTab from "../../Components/TrustRequirementsTab/TrustRequirementsTab";
+import TrustProcess from "../../Components/TrustProcess/TrustProcess";
+import TrustFAQ from "../../Components/TrustFAQ/TrustFAQ";
+import TrustTestimonial from "../../Components/TrustTestimonial/TrustTestimonial";
+import TrustVideoTestimonial from "../../Components/TrustVideoTestimonial/TrustVideoTestimonial";
+import TrustOurClients from "../../Components/TrustOurClients/TrustOurClients";
+import TrustDocument from "../../Components/TrustDocument/TrustDocument";
 
 const Trust = () => {
   return (
     <div>
       <TrustBreadcrum />
+      <div id="plans">
+        <TrustPlanAndPricing />
+      </div>
+      <TrustTermsCondition />
+
+      <div id="premium">
+        <TrustPremium />
+      </div>
+
       <TrustTabs />
-      <TrustOverview />
-      <TrustCharacterstics />
-      <TrustBenefits />
-      <TrustEligibility />
-      <TrustDocuments />
-      <TrustProcess />
-      <TrustPenalties />
-      <TrustCompliance />
-      <TrustCancellation />
-      <TrustCertificate />
-      <TrustFAQ />
+      <div id="company">
+        <TrustCompanyTabs />
+      </div>
+
+      <div id="types">
+        <TrustPvtTypes />
+      </div>
+      
+      <div id="requirements">
+        <TrustRequirementsTab />
+      </div>
+      <div id="process">
+        <TrustProcess />
+      </div>
+      <div id="documents">
+        <TrustDocument />
+      </div>
+      <div id="faq">
+        <TrustFAQ />
+      </div>
       <TrustTestimonial />
       <TrustVideoTestimonial />
-      <TrustOurClints />
+      <TrustOurClients />
     </div>
-  )
-}
+  );
+};
 
-export default Trust
+export default Trust;

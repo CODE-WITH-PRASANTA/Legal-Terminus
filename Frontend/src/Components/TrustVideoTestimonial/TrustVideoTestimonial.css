@@ -1,42 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-.tv-section {
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+/* ================= SECTION ================= */
+.trustest-video-testimonial-section {
+  font-family: "Poppins", sans-serif;
   background: #ffffff;
   padding: 64px 20px 72px;
 }
 
-.tv-container {
-  max-width: 1120px;
+/* ================= CONTAINER ================= */
+.trustest-video-testimonial-container {
+  max-width: 1180px;
   margin: 0 auto;
 }
 
-/* Heading / intro */
-.tv-heading {
+/* ================= HEADING ================= */
+.trustest-video-testimonial-heading {
   text-align: center;
   font-size: 32px;
   font-weight: 700;
   letter-spacing: 1.2px;
-  margin: 0 0 10px;
+  margin-bottom: 10px;
   color: #111827;
 }
 
-.tv-subtitle {
+.trustest-video-testimonial-subtitle {
   text-align: center;
   font-size: 15px;
   color: #4b5563;
-  margin: 0 0 36px;
+  margin-bottom: 36px;
 }
 
-/* Slider wrapper (for side arrows) */
-.tv-slider-wrapper {
+/* ================= SLIDER WRAPPER ================= */
+.trustest-video-testimonial-slider-wrapper {
   position: relative;
-  padding: 0 52px; /* space for arrows */
+  padding: 0 52px;
 }
 
-/* Horizontal slider */
-.tv-slider {
+/* ================= SLIDER ================= */
+.trustest-video-testimonial-slider {
   display: flex;
   gap: 24px;
   overflow-x: auto;
@@ -44,30 +45,25 @@
   padding-bottom: 8px;
 }
 
-.tv-slider::-webkit-scrollbar {
+.trustest-video-testimonial-slider::-webkit-scrollbar {
   display: none;
 }
-.tv-slider {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
 
-/* Card */
-.tv-card {
+/* ================= CARD ================= */
+.trustest-video-testimonial-card {
   min-width: 320px;
   max-width: 320px;
   flex-shrink: 0;
-
   background: #fbfbfb;
   border-radius: 18px;
-  border: 2px solid #27ae60;
+  border: 2px solid #1aa91a;
   padding: 20px 18px 24px;
   text-align: center;
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
 }
 
-/* Video wrapper with 16:9 aspect ratio */
-.tv-video-wrap {
+/* ================= VIDEO ================= */
+.trustest-video-testimonial-video-wrap {
   border-radius: 14px;
   overflow: hidden;
   background: #000;
@@ -75,14 +71,13 @@
   box-shadow: 0 10px 26px rgba(15, 23, 42, 0.2);
 }
 
-/* Aspect ratio box */
-.tv-video-aspect {
+.trustest-video-testimonial-video-aspect {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 */
+  padding-top: 56.25%;
 }
 
-.tv-video {
+.trustest-video-testimonial-video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -90,22 +85,22 @@
   border: 0;
 }
 
-/* Name + role */
-.tv-name {
+/* ================= NAME & ROLE ================= */
+.trustest-video-testimonial-name {
   margin: 6px 0 4px;
   font-size: 17px;
   font-weight: 600;
-  color: #27ae60;
+  color: #1aa91a;
 }
 
-.tv-role {
+.trustest-video-testimonial-role {
   margin: 0;
   font-size: 14px;
   color: #111827;
 }
 
-/* Side arrows */
-.tv-side-arrow {
+/* ================= ARROWS ================= */
+.trustest-video-testimonial-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -113,99 +108,51 @@
   height: 44px;
   border-radius: 50%;
   border: none;
-  background: #27ae60;
+  background: #1aa91a;
   color: #ffffff;
   font-size: 24px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
   z-index: 10;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.tv-side-arrow:hover {
-  background: #1ded73;
+.trustest-video-testimonial-arrow:hover {
+  background: #128a15;
   transform: translateY(-50%) scale(1.06);
 }
 
-.tv-left {
+.trustest-video-testimonial-arrow-left {
   left: 10px;
 }
 
-.tv-right {
+.trustest-video-testimonial-arrow-right {
   right: 10px;
 }
 
-/* -----------------------
-   Responsive
------------------------- */
-
-@media (max-width: 1024px) {
-  .tv-heading {
-    font-size: 28px;
-  }
-  .tv-slider-wrapper {
-    padding: 0 40px;
-  }
-}
-
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-  .tv-section {
-    padding: 52px 16px 60px;
-  }
-
-  .tv-heading {
+  .trustest-video-testimonial-heading {
     font-size: 24px;
-    margin-bottom: 8px;
   }
 
-  .tv-subtitle {
-    font-size: 14px;
-    margin-bottom: 26px;
-  }
-
-  .tv-card {
+  .trustest-video-testimonial-card {
     min-width: 280px;
     max-width: 280px;
-    padding: 18px 16px 22px;
-  }
-
-  .tv-slider-wrapper {
-    padding: 0 32px;
-  }
-
-  .tv-side-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
   }
 }
 
 @media (max-width: 520px) {
-  .tv-section {
-    padding: 44px 10px 52px;
-  }
-
-  .tv-heading {
-    font-size: 22px;
-  }
-
-  .tv-slider-wrapper {
-    padding: 0 24px;
-  }
-
-  .tv-card {
+  .trustest-video-testimonial-card {
     min-width: 250px;
     max-width: 250px;
   }
 
-  .tv-left {
+  .trustest-video-testimonial-arrow-left {
     left: 4px;
   }
 
-  .tv-right {
+  .trustest-video-testimonial-arrow-right {
     right: 4px;
   }
 }

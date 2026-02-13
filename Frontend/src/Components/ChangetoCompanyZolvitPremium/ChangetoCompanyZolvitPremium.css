@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.czp-section {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #f7fafc;
+  padding: 48px 24px;
+}
+
+.czp-container {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.czp-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  padding: 40px 48px;
+  display: grid;
+  grid-template-columns: 1.05fr 1.3fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Illustration */
+
+.czp-illustration-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.czp-illustration {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Content */
+
+.czp-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.czp-header {
+  margin-bottom: 24px;
+}
+
+.czp-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 8px;
+}
+
+.czp-title-highlight {
+  color: #d9a520;
+  font-weight: 700;
+}
+
+.czp-title-icon {
+  font-size: 22px;
+  vertical-align: middle;
+}
+
+.czp-subtitle {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+/* Sections */
+
+.czp-section-block {
+  margin-bottom: 20px;
+}
+
+.czp-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 8px;
+}
+
+/* Lists */
+
+.czp-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.czp-list-item {
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.czp-list-icon {
+  font-size: 18px;
+  margin-right: 10px;
+  margin-top: 1px;
+}
+
+/* Notes */
+
+.czp-note-box {
+  background-color: #f1f7ff;
+  border-radius: 14px;
+  padding: 16px 20px;
+}
+
+.czp-note-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.czp-note-item {
+  position: relative;
+  padding-left: 18px;
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.czp-note-item + .czp-note-item {
+  margin-top: 4px;
+}
+
+.czp-note-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 18px;
+  line-height: 1;
+  color: #9ca3af;
+}
+
+/* CTA */
+
+.czp-cta-row {
+  margin: 20px 0 16px;
+}
+
+.czp-cta-btn {
+  display: inline-block;
+  background-color: #117c16;
+  color: #ffffff;
+  padding: 12px 40px;
+  border-radius: 999px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.czp-cta-btn:hover {
+  background-color: #001f46;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.25);
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .czp-section {
+    padding: 56px 20px;
+  }
+
+  .czp-card {
+    padding: 32px;
+    gap: 32px;
+    grid-template-columns: 1fr 1.2fr;
+  }
+
+  .czp-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .czp-section {
+    padding: 48px 16px;
+  }
+
+  .czp-card {
+    grid-template-columns: 1fr;
+    padding: 28px 22px;
+  }
+
+  .czp-illustration-wrapper {
+    order: 1;
+  }
+
+  .czp-content {
+    order: 2;
+  }
+
+  .czp-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .czp-section {
+    padding: 40px 12px;
+  }
+
+  .czp-card {
+    padding: 24px 18px;
+  }
+
+  .czp-title {
+    font-size: 20px;
+  }
+
+  .czp-subtitle {
+    font-size: 13px;
+  }
+
+  .czp-list-item {
+    font-size: 13px;
+  }
+
+  .czp-cta-btn {
+    width: 100%;
+    padding: 11px 0;
+  }
+}

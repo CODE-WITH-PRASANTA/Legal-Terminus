@@ -28,16 +28,9 @@ const IncorporationCompanyTabs = () => {
             </h2>
 
             <p className="incorp-intro-text">
-              Registering a company in India is the first step to legally starting
-              your business. The Companies Act, 2013 governs company formation,
-              and the Ministry of Corporate Affairs (MCA) oversees the process.
-              Once registered, your business gains a separate legal identity with
-              rights and protections under Indian law.
+              A Wholly Owned Subsidiary in India by Foreign Companies is a preferred corporate structure for global businesses looking to expand into the Indian market. This type of entity is registered as a private limited company where 100% of the shares are held by the foreign parent company, ensuring complete control over operations.
               <br /><br />
-              Choosing the right type of Private Limited Company is crucial as it
-              defines ownership, management structure, and legal protection.
-              Proper registration helps ensure smooth compliance, access to
-              government benefits, and strong market credibility.
+              A WOS enjoys a separate legal identity, and its management remains distinct from ownership—making it a compliant and strategic choice for international stakeholders. It offers several benefits, including access to India’s vast market, eligibility for sector-specific incentives, and simplified repatriation of profits in sectors allowing 100% FDI. Below, we address some common queries related to registering a Wholly Owned Subsidiary in India by foreign companies.
             </p>
           </div>
 
@@ -51,27 +44,26 @@ const IncorporationCompanyTabs = () => {
         <div className="incorp-act-container">
           <div className="incorp-act-card">
 
-            <h3 className="incorp-act-title">Companies Act, 2013</h3>
-
-            <p className="incorp-act-text">
-              As per Section 2(68) of the Companies Act, 2013, a private limited
-              company means a company having such minimum paid-up share capital
-              as may be prescribed, and which by its articles of association:
-            </p>
+            <h3 className="incorp-act-title">Compliance Requirements for a Wholly Owned Subsidiary</h3>
 
             <p className="incorp-act-point">
               <span className="incorp-act-point-label">(a)</span>
-              Restricts the right to transfer its shares;
+              Filing financial statements and returns annually to ROC as per the Companies Act,  2013.
             </p>
 
             <p className="incorp-act-point">
               <span className="incorp-act-point-label">(b)</span>
-              Limits the number of its members to 200 (excluding employees);
+            Compliance with FEMA (Foreign Exchange Management Act)  1999 regulations.
             </p>
 
             <p className="incorp-act-point">
               <span className="incorp-act-point-label">(c)</span>
-              Prohibits any invitation to the public to subscribe to securities.
+              Tax filings under the Indian Income Tax Act, 1961, and GST regulations.
+            </p>
+
+            <p className="incorp-act-point">
+              <span className="incorp-act-point-label">(d)</span>
+              Conducting board meetings and maintaining statutory records as required by the Companies Act 2013.
             </p>
 
           </div>

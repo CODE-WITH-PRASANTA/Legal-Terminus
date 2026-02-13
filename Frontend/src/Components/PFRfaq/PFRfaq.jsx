@@ -3,54 +3,79 @@ import "./PFRfaq.css";
 
 const faqs = [
   {
-    question: "How many persons are required to form a Private Limited Company?",
+    question: "How many persons are required to form a Partnership Firm?",
     answer:
-      "Minimum two persons are required to form a Private Limited Company and a maximum up to 200 persons can be a member of a single Private Limited Company.",
+      "Minimum 2 persons are required to form a Partnership Firm and there is an upper cap of 20 persons.",
   },
   {
-    question: "How many Directors are required to form a Private Limited Company?",
+    question: "Why should I choose to register a Partnership Firm?",
     answer:
-      "Minimum two directors are required in a Private Limited Company, with an upper cap up to 15 directors.",
+      "A Partnership Firm is very easy to form due to its minimal registration requirement and it requires only a Partnership deed to incorporate.",
   },
   {
-    question: "Who are Directors of the company?",
+    question: "How can I create/ form a Partnership Firm?",
     answer:
-      "Directors are officers of the company who are responsible for managing the company and making the decisions as to its operation on a day to day basis, for the benefit of the shareholders.",
-  },
-  {
-    question:
-      "What is a company shareholder?",
-    answer:
-      "Shareholders are the owners of companies limited by shares. As the beneficial owners of a limited company, they are not involved in day-to-day management or financial affairs. They are also called 'members' and they agree to become part of a company by taking a minimum of one share in it. The quantity of shares held by each person represents how much of the business they own.",
-  },
-  {
-    question: "How much capital is required to start a Private Limited Company?",
-    answer:
-      "The Private Limited Company can be incorporated with any amount of capital and there is no lower or upper limit. Further, the government has relaxed the government fees for Incorporation of a Private Limited Company up to an Authorized capital of Rs. 15,00,000/-, however, the stamp duty, which is still levied, varies from State to State.",
+      "In India a Partnership Firm can be formed through a Partnership Deep duly notarised by a Notary Public.",
   },
   {
     question:
-      "What are some basic/ key documents required to incorporate a Private Limited Company in India?",
+      "What is the Stamp duty amount to be paid for execution of a Partnership Deed?",
     answer:
-      "PAN Card (All the Proposed Directors and/or Shareholders)",
+      "The Partnership deed needs to be executed with Rs. 200/- Stamp Paper in India.",
+  },
+  {
+    question: "Can I choose any name as per my choice for my Partnership Firm?",
+    answer:
+      "The partners can choose any business name as per their wish to create a Partnership Firm. However, the business name should not be same as of a registered trade mark.",
   },
   {
     question:
-      "What is the procedure to register a Private Limited Company?",
+      "Can I restrict others to use my Partnership Firm’s name?",
     answer:
-      "You need at least two directors, two shareholders, a unique company name, a registered office address in India, and the necessary KYC documents for all directors and shareholders.",
+      "No, the Partnership Firm cannot restrict any other person to use its business name, unless it gets its name registered under Trade Mark.",
   },
   {
     question:
-      "What is the time period within which a Private Limited Company can be incorporated?",
+      "What are the Income tax implications on me as a Partnership Firm?",
     answer:
-      "The process of incorporating a Private Limited Company can take anywhere between 10 to 15 working days, subject to submission of correct information and complete documentation.",
+      "Income earned by the Partnership firm is taxed in the hands of the firm itself at a flat rate of 30% (surcharge and cess to be charged extra). However, the partner’s share of profit is exempt from tax and interest on capital is exempt to a certain limit.",
   },
   {
     question:
-      "How Legal Terminus can help you incorporate a Private Limited Company in India?",
+      "To what extent the liability of a Partnership Firm is limited?",
     answer:
-      "Legal Terminus can help you with incorporation of Private Limited Company for you, as and when required, in a hassle-free manner within a reasonable time span and for competitive professional fee. To know more, please book a telephonic appointment with one of our consultants free of charge.",
+      "The liability of a Partnership Firm and its Partners are unlimited in the eyes of Law.",
+  },
+  {
+    question:
+      "What is the procedure to register a Partnership Firm?",
+    answer: (
+      <div>
+        <p>
+          The broad process of registering a Partnership Firm involves following steps:
+        </p>
+
+        <ol>
+          <li>STEP 1 : Provision of requisite mentioned documents/information to us</li>
+          <li>STEP 2 : Validating the documents/ information and processing the same</li>
+          <li>STEP 3 : Filing of application and submission of the same</li>
+          <li>STEP 4 : Payment of appropriate government fee as applicable</li>
+          <li>STEP 5 : Processing of the application and issuance of registration certificate</li>
+        </ol>
+      </div>
+       ),
+  },
+  {
+    question:
+      "What is the time period within which a Partnership Firm can be formed?",
+    answer:
+      "The process of formation of a Partnership Firm can take anywhere between 5 to 7 working days, subject to submission of correct information and complete documentation.",
+  },
+  {
+    question:
+      "How Legal Terminus can help you register a Partnership Firm in India?",
+    answer:
+      "Legal Terminus can help you with registration of a Partnership Firm for you, as and when required, in a hassle-free manner within a reasonable time span and for competitive professional fee. To know more, please book a telephonic appointment with one of our consultants free of charge.",
   },
 ];
 
@@ -66,14 +91,10 @@ const FaqPvt = () => {
       <div className="faq-container">
         {/* Left side – static text */}
         <div className="faq-left">
-          <h2 className="faq-title">Private Limited Company Registration FAQ&apos;s</h2>
+          <h2 className="faq-title">Partnership Firm Registration FAQ&apos;s</h2>
 
           <p className="faq-intro">
-            Starting a Private Limited Company in India is an important step for any business owner. With the right support, the process can be simple and stress-free.
-
-<br/><br/>
-Here, we’ve answered the most common questions about company registration—covering documents, steps, and what happens after registration. These FAQs will help you understand everything clearly and move ahead with confidence.
-
+            Starting a Partnership Firm in India is an easy and practical way to run a business with two or more partners. Here, we’ve answered the most common questions related to Partnership Firm Registration, including documents required, registration steps, and post-registration process, so you can proceed smoothly with full clarity and confidence.
           </p>
 
           <p className="faq-intro">

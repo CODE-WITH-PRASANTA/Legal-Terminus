@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.prp-zp-section {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #f7fafc;
+  padding: 48px 24px;
+}
+
+.prp-zp-container {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.prp-zp-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  padding: 40px 48px;
+  display: grid;
+  grid-template-columns: 1.05fr 1.3fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Illustration */
+.prp-zp-illustration-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prp-zp-illustration {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Content */
+.prp-zp-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.prp-zp-header {
+  margin-bottom: 24px;
+}
+
+.prp-zp-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 8px;
+}
+
+.prp-zp-title-highlight {
+  color: #d9a520;
+  font-weight: 700;
+}
+
+.prp-zp-title-icon {
+  font-size: 22px;
+  vertical-align: middle;
+}
+
+.prp-zp-subtitle {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+/* Sections */
+.prp-zp-section-block {
+  margin-bottom: 20px;
+}
+
+.prp-zp-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 8px;
+}
+
+/* Features list */
+.prp-zp-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.prp-zp-list-item {
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.prp-zp-list-icon {
+  font-size: 18px;
+  margin-right: 10px;
+  margin-top: 1px;
+}
+
+/* Note box */
+.prp-zp-note-box {
+  background-color: #f1f7ff;
+  border-radius: 14px;
+  padding: 16px 20px;
+}
+
+.prp-zp-note-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.prp-zp-note-item {
+  position: relative;
+  padding-left: 18px;
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.prp-zp-note-item + .prp-zp-note-item {
+  margin-top: 4px;
+}
+
+.prp-zp-note-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 18px;
+  line-height: 1;
+  color: #9ca3af;
+}
+
+/* CTA */
+.prp-zp-cta-row {
+  margin: 20px 0 16px;
+}
+
+.prp-zp-cta-btn {
+  display: inline-block;
+  background-color: #117c16;
+  color: #ffffff;
+  padding: 12px 40px;
+  border-radius: 999px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.prp-zp-cta-btn:hover {
+  background-color: #001f46;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .prp-zp-section {
+    padding: 56px 20px;
+  }
+
+  .prp-zp-card {
+    padding: 32px;
+    gap: 32px;
+    grid-template-columns: 1fr 1.2fr;
+  }
+
+  .prp-zp-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .prp-zp-section {
+    padding: 48px 16px;
+  }
+
+  .prp-zp-card {
+    grid-template-columns: 1fr;
+    padding: 28px 22px;
+  }
+
+  .prp-zp-illustration-wrapper {
+    order: 1;
+  }
+
+  .prp-zp-content {
+    order: 2;
+  }
+
+  .prp-zp-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .prp-zp-section {
+    padding: 40px 12px;
+  }
+
+  .prp-zp-card {
+    padding: 24px 18px;
+  }
+
+  .prp-zp-title {
+    font-size: 20px;
+  }
+
+  .prp-zp-subtitle {
+    font-size: 13px;
+  }
+
+  .prp-zp-list-item {
+    font-size: 13px;
+  }
+
+  .prp-zp-cta-btn {
+    width: 100%;
+    text-align: center;
+    padding: 11px 0;
+  }
+}

@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ================= SECTION ================= */
+.new-societysm-testimonial-section {
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  padding: 64px 20px 72px;
+}
+
+.new-societysm-testimonial-container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+/* ================= HEADING ================= */
+.new-societysm-testimonial-heading {
+  text-align: center;
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-bottom: 40px;
+  color: #111827;
+}
+
+/* ================= SLIDER WRAPPER ================= */
+.new-societysm-testimonial-slider-wrapper {
+  position: relative;
+  padding: 0 52px;
+}
+
+/* ================= SLIDER ================= */
+.new-societysm-testimonial-slider {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 12px;
+}
+
+.new-societysm-testimonial-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* ================= CARD ================= */
+.new-societysm-testimonial-card {
+  min-width: 290px;
+  max-width: 290px;
+  flex-shrink: 0;
+  background: #fbfbfb;
+  border-radius: 18px;
+  border: 2px solid #1aa91a;
+  padding: 36px 28px 32px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+}
+
+/* ================= QUOTES ================= */
+.new-societysm-testimonial-quote {
+  position: absolute;
+  font-size: 40px;
+  color: #1aa91a;
+}
+
+.new-societysm-testimonial-quote-top {
+  top: 10px;
+  left: 18px;
+}
+
+.new-societysm-testimonial-quote-bottom {
+  bottom: 10px;
+  right: 24px;
+}
+
+/* ================= AVATAR ================= */
+.new-societysm-testimonial-avatar-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.new-societysm-testimonial-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #1aa91a;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 600;
+  border: 4px solid #e5f8e8;
+}
+
+/* ================= TEXT ================= */
+.new-societysm-testimonial-text {
+  margin-bottom: 22px;
+  font-size: clamp(14px, 2.5vw, 15px);
+  line-height: 1.7;
+  color: #333333;
+}
+
+/* ================= NAME & ROLE ================= */
+.new-societysm-testimonial-name {
+  margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1aa91a;
+}
+
+.new-societysm-testimonial-role {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #111827;
+}
+
+/* ================= STARS ================= */
+.new-societysm-testimonial-stars {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  font-size: 18px;
+  color: #ff9900;
+}
+
+/* ================= ARROWS ================= */
+.new-societysm-testimonial-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #1aa91a;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.new-societysm-testimonial-arrow-left {
+  left: 10px;
+}
+
+.new-societysm-testimonial-arrow-right {
+  right: 10px;
+}
+
+/* =================================================
+   TABLET (<= 1024px)
+================================================= */
+@media (max-width: 1024px) {
+  .new-societysm-testimonial-slider-wrapper {
+    padding: 0 36px;
+  }
+
+  .new-societysm-testimonial-card {
+    min-width: 270px;
+    max-width: 270px;
+  }
+}
+
+/* =================================================
+   MOBILE (<= 768px)
+================================================= */
+@media (max-width: 768px) {
+  .new-societysm-testimonial-slider-wrapper {
+    padding: 0 20px;
+  }
+
+  .new-societysm-testimonial-card {
+    min-width: 250px;
+    max-width: 250px;
+    padding: 30px 22px 26px;
+  }
+
+  .new-societysm-testimonial-avatar {
+    width: 64px;
+    height: 64px;
+    font-size: 26px;
+  }
+
+  .new-societysm-testimonial-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+}
+
+/* =================================================
+   SMALL MOBILE (<= 480px)
+================================================= */
+@media (max-width: 480px) {
+  .new-societysm-testimonial-slider-wrapper {
+    padding: 0 10px;
+  }
+
+  .new-societysm-testimonial-card {
+    min-width: 220px;
+    max-width: 220px;
+  }
+
+  .new-societysm-testimonial-quote {
+    font-size: 32px;
+  }
+
+  .new-societysm-testimonial-name {
+    font-size: 16px;
+  }
+}

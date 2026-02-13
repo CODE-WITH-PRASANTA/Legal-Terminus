@@ -10,38 +10,24 @@ const GSTOverview = () => {
         {/* LEFT CONTENT */}
         <div className="gst-overview-left">
           <h2 className="gst-overview-title">
-            GST Registration- <span>An Overview</span>
+            What is GST Registration?
           </h2>
 
           <p>
-            If you are looking for GST registration to empower your business
-            legally, you are at the right place.
+            GST registration is the process of getting a unique GST number (GSTIN) for your business. This number is needed to collect and pay Goods and Services Tax (GST) in India.
           </p>
 
           <p>
-            The Goods and Services Tax, popularly known as GST, was introduced on
-            July 1, 2017, as a replacement for various central and state-level
-            taxes, including Service Tax, Excise Duty, CST, Entertainment Tax,
-            Luxury Tax, and VAT. GST introduction has since ensured the
-            streamlining of the tax process in India. GST registration is
-            mandatory for traders, service providers, manufacturers, and
-            freelancers.
+            As per the GST law (2017), businesses must register for GST if their yearly sales exceed ₹40 lakh (or ₹20 lakh in some special states). GST is a tax that applies to most goods and services and has replaced older taxes like VAT and excise duty. Businesses that earlier paid service tax, VAT, or excise duty now need to register under GST. Also, all online sellers must register for GST, no matter their sales amount.
           </p>
 
           <p>
-            GST has united various indirect taxes into a unified single tax
-            system, streamlined compliance, eliminated cascading taxes, and
-            boosted ease of doing business in India.
+            You can apply for GST online through the government portal without visiting any office. The process is simple and hassle-free. Once you submit the application, you will get an ARN (Application Reference Number) to track your registration status.
           </p>
 
-          <p>
-            Talk to consultants at Corpbiz and enjoy easy and timely GST
-            registration in India.
-          </p>
-
-          <button className="gst-overview-btn">
+          {/* <button className="gst-overview-btn">
             Apply for GST Number
-          </button>
+          </button> */}
         </div>
 
         {/* RIGHT IMAGE */}

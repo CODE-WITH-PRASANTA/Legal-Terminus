@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ===============================
+   SECTION
+   =============================== */
+.DissolvePrivate-tc-section {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #ffffff;
+  padding: 10px 24px 64px;
+}
+
+.DissolvePrivate-tc-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* ===============================
+   TITLE
+   =============================== */
+.DissolvePrivate-tc-title {
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 16px;
+}
+
+/* ===============================
+   SUBTITLE
+   =============================== */
+.DissolvePrivate-tc-subtitle {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1aa91a;
+  margin: 0 0 32px;
+}
+
+/* ===============================
+   LIST
+   =============================== */
+.DissolvePrivate-tc-list {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding-left: 18px;
+}
+
+.DissolvePrivate-tc-item {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 1024px) {
+  .DissolvePrivate-tc-section {
+    padding: 60px 20px 52px;
+  }
+
+  .DissolvePrivate-tc-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .DissolvePrivate-tc-section {
+    padding: 48px 16px 44px;
+  }
+
+  .DissolvePrivate-tc-title {
+    font-size: 24px;
+  }
+
+  .DissolvePrivate-tc-subtitle {
+    font-size: 14px;
+  }
+
+  .DissolvePrivate-tc-item {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .DissolvePrivate-tc-section {
+    padding: 40px 14px 40px;
+  }
+
+  .DissolvePrivate-tc-title {
+    font-size: 22px;
+    letter-spacing: 1.2px;
+  }
+}

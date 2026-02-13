@@ -1,38 +1,60 @@
 import React from 'react'
 import Section8Breadcrum from '../../Components/Section8Breadcrum/Section8Breadcrum'
-import Section8Tabs from '../../Components/Section8Tabs/Section8Tabs'
-import Section8Overview from '../../Components/Section8Overview/Section8Overview'
-import Section8Benefits from '../../Components/Section8Benefits/Section8Benefits'
-import Section8Eligibility from '../../Components/Section8Eligibility/Section8Eligibility'
-import Section8FormsRequired from '../../Components/Section8FormsRequired/Section8FormsRequired'
-import Section8Documents from '../../Components/Section8Documents/Section8Documents'
-import Section8Registration from '../../Components/Section8Registration/Section8Registration'
-import Section8Fees from '../../Components/Section8Fees/Section8Fees'
-import Section8Timeline from '../../Components/Section8Timeline/Section8Timeline'
-import Section8Penalty from '../../Components/Section8Penalty/Section8Penalty'
-import Section8Companies from '../../Components/Section8Companies/Section8Companies'
-import Section8Certificate from '../../Components/Section8Certificate/Section8Certificate'
-import Section8Comparison from '../../Components/Section8Comparison/Section8Comparison'
+
 import Section8FAQ from '../../Components/Section8FAQ/Section8FAQ'
+import Section8PlanAndPricing from '../../Components/Secton8PlanAndPricing/Secton8PlanAndPricing'
+import Section8TermsCondition from '../../Components/Section8TermsCondition/Section8TermsCondition'
+import Section8Premium from '../../Components/Section8Premium/Section8Premium'
+import Section8Tabs from '../../Components/Section8Tabs/Section8Tabs'
+import Section8CompanyTabs from '../../Components/Section8CompanyTabs/Section8CompanyTabs'
+import Section8PvtTypes from '../../Components/Section8PvtTypes/Section8PvtTypes'
+import Section8RequirementsTab from '../../Components/Section8RequirementsTab/Section8RequirementsTab'
+import Section8Process from '../../Components/Section8Process/Section8Process'
+import Section8Testimonial from '../../Components/Section8Testimonial/Section8Testimonial'
+import Section8VideoTestimonial from '../../Components/Section8VideoTestimonial/Section8VideoTestimonial'
+import Section8OurClients from '../../Components/Section8OurClients/Section8OurClients'
+import Section8Document from '../../Components/Section8Document/Section8Document'
 
 const Section8 = () => {
   return (
     <div>
       <Section8Breadcrum />
-      <Section8Tabs />
-      <Section8Overview />
-      <Section8Benefits />
-      <Section8Eligibility />
-      <Section8FormsRequired />
-      <Section8Documents />
-      <Section8Registration />
-      <Section8Fees />
-      <Section8Timeline />
-      <Section8Penalty />
-      <Section8Companies />
-      <Section8Certificate />
-      <Section8Comparison />
-      <Section8FAQ />
+      <div id="plans">
+      <Section8PlanAndPricing/>
+      </div>
+      <Section8TermsCondition/>
+
+      <div id="premium">
+      <Section8Premium/>
+      </div>
+      <Section8Tabs/>
+      <div id="company">
+      <Section8CompanyTabs/>
+      </div>
+      <div id="types">
+      <Section8PvtTypes/>
+      </div>
+      <div id="requirements">
+      <Section8RequirementsTab/>
+      </div>
+      <div id="process">
+      <Section8Process/>
+      </div>
+      <div id="documents">
+      <Section8Document/>
+      </div>
+      <div id="faq">
+      <Section8FAQ/>
+      </div>
+
+      <Section8Testimonial/>
+      <Section8VideoTestimonial/>
+      <Section8OurClients/>
+     
+      
+
+      
+      
 
     </div>
   )

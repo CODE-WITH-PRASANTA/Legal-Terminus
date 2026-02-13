@@ -2,15 +2,20 @@ import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   FiHome,
-  FiBarChart2,
-  FiDollarSign,
-  FiUsers,
-  FiUser,
-  FiUserCheck,
-  FiLayers,
-  FiStar,
-  FiBriefcase,
+  //  FaPlusCircle ,
+  // FiBarChart2,
+  // FiDollarSign,
+  // FiDollarSign,
+  // FiUsers,
+  // FiUser,
+  // FiUserCheck,
+  // FiLayers,
+  // FiStar,
+  // FiBriefcase,
 } from "react-icons/fi";
+
+import { MdAddTask } from "react-icons/md";
+
 
 type Props = {
   open: boolean;
@@ -23,14 +28,15 @@ type Props = {
 
 const tabs = [
   { label: "Default Dashboard", icon: <FiHome size={16} /> },
-  { label: "Sales Dashboard", icon: <FiBarChart2 size={16} /> },
-  { label: "Finance Dashboard", icon: <FiDollarSign size={16} /> },
-  { label: "Team Management", icon: <FiUsers size={16} /> },
-  { label: "Employees", icon: <FiUser size={16} /> },
-  { label: "Clients", icon: <FiUserCheck size={16} /> },
-  { label: "Projects", icon: <FiLayers size={16} /> },
-  { label: "Review", icon: <FiStar size={16} /> },
-  { label: "Deals", icon: <FiBriefcase size={16} /> },
+   { label: "Add Task", icon: <MdAddTask size={16} /> },
+  // { label: "Sales Dashboard", icon: <  FiDollarSign size={16} /> },
+  // { label: "Finance Dashboard", icon: <FiDollarSign size={16} /> },
+  // { label: "Team Management", icon: <FiUsers size={16} /> },
+  // { label: "Employees", icon: <FiUser size={16} /> },
+  // { label: "Clients", icon: <FiUserCheck size={16} /> },
+  // { label: "Projects", icon: <FiLayers size={16} /> },
+  // { label: "Review", icon: <FiStar size={16} /> },
+  // { label: "Deals", icon: <FiBriefcase size={16} /> },
 ];
 
 const DashboardSidebarContent: React.FC<Props> = ({

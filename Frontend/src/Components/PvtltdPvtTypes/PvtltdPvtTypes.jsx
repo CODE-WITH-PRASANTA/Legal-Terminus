@@ -19,12 +19,12 @@ const PvtTypes = () => {
         {/* Right content */}
         <div className="pvt-types-content">
           <h2 className="pvt-types-title">
-            Types of Private Limited Company Registration
+            Types of Proprietorship Firms Registration
           </h2>
 
-          <p className="pvt-types-intro">
+          {/* <p className="pvt-types-intro">
             Private Limited Companies can be registered in different forms based on ownership, liability, and business objectives. Choosing the right type helps ensure legal protection, smooth operations, and long-term growth.
-          </p>
+          </p> */}
 
           {/* Type 1 */}
           <div className="pvt-types-block">

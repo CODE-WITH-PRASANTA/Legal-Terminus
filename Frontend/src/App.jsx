@@ -26,6 +26,9 @@ import ProfessionalReg from './Pages/ProfessionalReg/ProfessionalReg';
 import ShopReg from './Pages/ShopReg/ShopReg';
 import Proprietorship from './Pages/Proprietorship/Proprietorship';
 import Parternership from "./Pages/Parternership/Parternership";
+import PartnershiptoPrivate from "./Pages/PartnershiptoPrivate/PartnershiptoPrivate";
+import LlptoPrivate from "./Pages/LlptoPrivate/LlptoPrivate";
+import PritoLlp from "./Pages/PritoLlp/PritoLlp";
 import IEC from "./Pages/IEC/IEC";
 import FoodLicense from "./Pages/FoodLicense/FoodLicense";
 import TradeLicense from "./Pages/TradeLicense/TradeLicense";
@@ -40,8 +43,19 @@ import PartnershipLLP from "./Pages/PartnershipLLP/PartnershipLLP"
 import LLRegistration from "./Pages/LLRegistration/LLRegistration";
 import BCRegistration from "./Pages/BCRegistration/BCRegistration";
 import ISOCertification from "./Pages/ISOCertification/ISOCertification";
+import DissolvePrivate from "./Pages/DissolvePrivate/DissolvePrivate";
+import DissolveLLP from "./Pages/DissolveLLP/DissolveLLP";
+import DissolvePartnership from "./Pages/DissolvePartnership/DissolvePartnership";
 
 
+import TMRenewal from "./Pages/TMRenewal/TMRenewal";
+import TMApplication from "./Pages/TMApplication/TMApplication"
+import ReplyOfExaminationReport from "./Pages/ReplyOfExaminationReport/ReplyOfExaminationReport"
+import ChangeInCompany from "./Pages/ChangeInCompany/ChangeInCompany";
+import CIROfficeAddress from "./Pages/CIROfficeAddress/CIROfficeAddress";
+import ChangeInObject from "./Pages/ChangeInObject/ChangeInObject";
+import TrademarktoOpposition from"./Pages/TrademarktoOpposition/TrademarktoOpposition";
+import TrademarktoHearing from "./Pages/TrademarktoHearing/TrademarktoHearing";
 
 function App() {
   return (
@@ -88,6 +102,9 @@ function App() {
           
         
           <Route path="/partnership" element={<Parternership/>} />
+          <Route path="/conversion/partnership-to-private" element={<PartnershiptoPrivate/>}/>
+          <Route path="/conversion/llp-to-private" element={<LlptoPrivate/>}/>
+          <Route path="/conversion/private-to-llp" element={<PritoLlp/>}/>
           <Route path="/labour-license" element={<LLRegistration/>} /> 
           <Route path="/bar-code" element={<BCRegistration/>} />
           <Route path="/iso" element={<ISOCertification />} />
@@ -95,6 +112,15 @@ function App() {
           <Route path="/conversion/proprietorship-to-opc" element={<ProprietorshipOPC/>}/>
           <Route path="/conversion/proprietorship-to-private" element={<PropritorshipPLC/>}/>
           <Route path="/conversion/partnership-to-llp" element={<PartnershipLLP/>}/>
+
+          <Route path="/updation/change-name-company" element={<ChangeInCompany />} />
+          <Route path="/updation/change-address-llp" element={<CIROfficeAddress />} />
+          <Route path="/updation/change-object-llp" element={<ChangeInObject />} />
+          <Route path="/trademark/opposition" element={<TrademarktoOpposition/>}/>
+          <Route path="/trademark/hearing" element={<TrademarktoHearing/>}/>
+          <Route path="/windup/dissolve-private" element={<DissolvePrivate />} />
+          <Route path="/windup/dissolve-llp" element={<DissolveLLP />} />
+          <Route path="/windup/dissolve-partnership" element={<DissolvePartnership />} />
         </Routes>
       </RouteLoaderWrapper>
 

@@ -1,224 +1,235 @@
-.steps-section {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ===============================
+   SECTION
+   =============================== */
+.trust-process-section {
+  padding: 60px 24px;
   max-width: 1200px;
-  margin: 80px auto;
-  padding: 0 40px 80px;
+  margin: auto;
   font-family: "Poppins", sans-serif;
-  color: #1f2933;
 }
 
-/* TITLE + INTRO */
-.steps-title {
+.trust-process-title {
+  text-align: center;
   font-size: 32px;
   font-weight: 700;
-  color: #27ae60;
+  color: #16a34a;
   margin-bottom: 6px;
 }
 
-.steps-intro {
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 26px;
+.trust-process-subtitle {
+  text-align: center;
+  color: #475569;
+  margin-bottom: 50px;
 }
 
-/* GRID */
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 26px;
-}
-
-/* CARD */
-.step-card {
-  background: #fff;
-  border-radius: 14px;
-  border: 1px solid rgba(39, 174, 96, 0.25);
-  padding: 20px;
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.05);
-  transition: 0.2s ease;
-}
-
-.step-card:hover {
-  border-color: #27ae60;
-  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.12);
-  transform: translateY(-3px);
-  background: #f4fbf7;
-}
-
-/* FORCE SAME HEIGHT ON LARGER SCREENS */
-.equal-height {
+/* ===============================
+   TIMELINE
+   =============================== */
+.trust-timeline {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 220px;
+  gap: 40px; /* ✅ desktop spacing */
 }
 
-/* HEADER */
-.step-header {
+/* Center vertical line */
+.trust-timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #facc15,
+    #f97316,
+    #22c55e
+  );
+  border-radius: 4px;
+}
+
+/* ===============================
+   TIMELINE ITEM
+   =============================== */
+.trust-timeline-item {
+  position: relative;
   display: flex;
-  align-items: baseline;
-  margin-bottom: 8px;
+  align-items: center;
+  width: 100%;
+  min-height: 110px;
 }
 
-.step-number {
-  font-size: 20px;
+/* Dot */
+.trust-timeline-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #facc15, #f97316);
+  color: #ffffff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
   font-weight: 700;
-  color: #d49247de;
-  margin-right: 6px;
+  z-index: 2;
+  box-shadow: 0 8px 22px rgba(249, 115, 22, 0.45);
 }
 
-.step-title {
-  font-size: 18px;
-  color: #d49247de;
-}
-
-/* COLLAPSIBLE CONTENT */
-.step-content {
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.collapsed {
-  max-height: 85px;
-}
-
-.expanded {
-  max-height: 600px;
-}
-
-/* READ MORE BUTTON */
-.read-more-btn {
-  margin-top: 10px;
-  padding: 6px 12px;
-  border: 1px solid #27ae60;
+/* Card */
+.trust-timeline-card {
+  width: 400px;
   background: #ffffff;
-  color: #27ae60;
-  border-radius: 6px;
+  padding: 22px 24px; /* ✅ inner gap */
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.trust-timeline-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px; /* ✅ title spacing */
+  color: #0f172a;
+}
+
+.trust-timeline-card p {
   font-size: 14px;
-  cursor: pointer;
-  transition: 0.2s ease;
+  color: #475569;
+  line-height: 1.7; /* ✅ better readability */
 }
 
-.read-more-btn:hover {
-  background: #27ae60;
-  color: white;
+/* ===============================
+   LEFT / RIGHT
+   =============================== */
+.trust-timeline-item.left {
+  justify-content: flex-start;
 }
 
-/* TEXT */
-.step-text,
-.step-body-intro {
-  font-size: 15px;
-  color: #4b5563;
-  line-height: 1.8;
+.trust-timeline-item.right {
+  justify-content: flex-end;
 }
 
-.step-bullets {
-  padding-left: 20px;
+/* Connectors (desktop) */
+.trust-timeline-item.left::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 150px;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    #f97316,
+    #f97316 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  transform: translateY(-50%);
 }
 
-.step-bullets li {
-  margin-bottom: 4px;
+.trust-timeline-item.left::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: calc(50% - -18px);
+  transform: translateY(-50%);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 8px solid #f97316;
 }
 
-/* =========================
-   RESPONSIVE BREAKPOINTS
-   ========================= */
-
-/* Large tablets / small laptops */
-@media (max-width: 1024px) {
-  .steps-section {
-    padding: 0 30px 70px;
-    margin: 60px auto;
-  }
-
-  .steps-grid {
-    gap: 22px;
-  }
-
-  .equal-height {
-    min-height: 200px;
-  }
+.trust-timeline-item.right::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to left,
+    #f97316,
+    #f97316 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  transform: translateY(-50%);
 }
 
-/* Tablets & portrait devices */
-@media (max-width: 768px) {
-  .steps-section {
-    padding: 0 20px 60px;
-    margin: 50px auto;
+.trust-timeline-item.right::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(50% - -18px);
+  transform: translateY(-50%);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 8px solid #f97316;
+}
+
+/* ===============================
+   MOBILE / TABLET VIEW
+   =============================== */
+@media (max-width: 900px) {
+  .trust-process-section {
+    padding: 50px 16px;
   }
 
-  .steps-title {
-    font-size: 26px;
-    text-align: left;
+  .trust-process-title {
+    font-size: 24px;
   }
 
-  .steps-intro {
-    font-size: 15px;
-  }
-
-  /* one card per row on smaller screens */
-  .steps-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .step-card {
-    padding: 16px 14px;
-  }
-
-  .step-number {
-    font-size: 18px;
-  }
-
-  .step-title {
-    font-size: 17px;
-  }
-
-  .step-text,
-  .step-body-intro,
-  .step-bullets li {
+  .trust-process-subtitle {
     font-size: 14px;
+    margin-bottom: 40px;
   }
 
-  /* Let cards grow naturally on mobile */
-  .equal-height {
+  .trust-timeline {
+    gap: 32px; /* ✅ mobile vertical gap */
+  }
+
+  .trust-timeline-line {
+    left: 18px;
+    width: 3px;
+  }
+
+  .trust-timeline-item {
+    justify-content: flex-start !important;
+    padding-left: 72px;
     min-height: auto;
   }
-}
 
-/* Small phones */
-@media (max-width: 480px) {
-  .steps-section {
-    padding: 0 16px 50px;
-    margin: 40px auto;
+  .trust-timeline-item:not(:last-child) {
+    margin-bottom: 20px; /* ✅ extra spacing */
   }
 
-  .steps-title {
-    font-size: 22px;
-  }
-
-  .steps-intro {
+  .trust-timeline-dot {
+    left: 18px;
+    width: 32px;
+    height: 32px;
     font-size: 14px;
   }
 
-  .step-card {
-    padding: 14px 12px;
-    border-radius: 10px;
+  .trust-timeline-card {
+    width: 100%;
+    background: linear-gradient(180deg, #ffffff, #f8fafc);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+    padding: 22px 20px;
   }
 
-  .step-number {
-    font-size: 16px;
+  .trust-timeline-item.left::after,
+  .trust-timeline-item.right::after {
+    left: 18px;
+    right: auto;
+    width: 40px;
   }
 
-  .step-title {
-    font-size: 16px;
-  }
-
-  .read-more-btn {
-    font-size: 13px;
-    padding: 5px 10px;
-  }
-
-  .collapsed {
-    max-height: 110px; /* give a bit more room on tiny screens */
+  .trust-timeline-item.left::before,
+  .trust-timeline-item.right::before {
+    left: 52px;
+    border-left: 8px solid #f97316;
+    border-right: none;
   }
 }

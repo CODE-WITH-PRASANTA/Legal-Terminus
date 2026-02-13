@@ -1,0 +1,100 @@
+/* ================= SECTION ================= */
+.llp-step-section {
+  padding: 100px 20px;
+  background: #f8fafc;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* ================= HEADER ================= */
+.llp-step-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 70px;
+}
+
+.llp-step-header h2 {
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.llp-step-header p {
+  font-size: 15px;
+  color: #64748b;
+}
+
+/* ================= STEPS ================= */
+.llp-steps {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* ================= STEP ================= */
+.llp-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 26px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 26px 28px;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.llp-step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 46px rgba(15, 23, 42, 0.16);
+}
+
+/* ================= BADGE ================= */
+.llp-step-badge {
+  min-width: 70px;
+  height: 70px;
+  border-radius: 14px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.llp-step-icon {
+  font-size: 26px;
+}
+
+.llp-step-id {
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* ================= CONTENT ================= */
+.llp-step-content h4 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.llp-step-content p {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 640px) {
+  .llp-step {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .llp-step-badge {
+    margin: auto;
+  }
+}

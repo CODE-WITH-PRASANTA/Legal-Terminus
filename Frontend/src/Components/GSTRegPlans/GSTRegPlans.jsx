@@ -3,59 +3,30 @@ import "./GSTRegPlans.css";
 
 const packages = [
   {
-    title: "Corpbiz Silver",
-    subtitle: "Recommended for startups and growing your business",
-    oldPrice: "₹898",
-    price: "₹449",
-    badge: "50% off",
+    title: "Elemental",
+    price: "₹1999",
     highlight: false,
     features: [
-      "No govt fee for registration",
-      "GST Form apply in under 48 hours",
-      "GST Certificate*",
-      "GST or MSME Registration (Anyone)",
+      "GST Registration",
     ],
   },
   {
-    title: "Corpbiz Gold",
-    subtitle:
-      "Recommended for startups and business ventures seeking rapid growth.",
-    oldPrice: "₹7998",
-    price: "₹3999",
-    badge: "Most used package",
+    title: "Enriched",
+    price: "₹2999",
     highlight: true,
     features: [
-      "No govt fee for registration",
-      "GST Form apply in under 48 hours",
-      "GST Certificate*",
-      "GST or MSME Registration (Anyone)",
-      "MSME Registration (If Applicable)",
-      "GST apply for 12 Months (up to 100 Transactions)",
+      "GST Registration",
+      "Udyam Registration",
     ],
   },
   {
-    title: "Corpbiz Premium",
-    subtitle:
-      "Recommended for the growth and success of your business venture",
-    oldPrice: "₹67998",
-    price: "₹33999",
-    badge: "50% off",
+    title: "Supreme",
+    price: "₹7999",
     highlight: false,
     features: [
-      "No govt fee for registration",
-      "GST Form apply in under 48 hours",
-      "GST Certificate*",
-      "GST or MSME Registration (Anyone)",
-      "MSME Registration (If Applicable)",
-      "GST apply for 12 Months (up to 100 Transactions)",
-      "GST Registration within 7 Business Days",
-      "GST Return Filing – Valid for 36 Months",
-      "Virtual Office (1st Year)",
-      "ITR Filing for 2 Years",
-      "MSME Certificate",
-      "30-Minute Expert Consultation",
-      "Business & Financial Consultant",
-      "Dedicated Lawyer Support",
+      "GST Registration",
+      "Udyam Registration",
+      "6 Months GST Return Filing",
     ],
   },
 ];
@@ -73,11 +44,10 @@ const GSTRegistrationPackages = () => {
     <section className="gst-reg-section">
       <header className="gst-reg-header">
         <h2 className="gst-reg-title">
-          Choose the Best <span>GST Registration</span> – Individual / Proprietor
+          Choose Your Plan
         </h2>
         <p className="gst-reg-subtitle">
-          Corpbiz offers the most affordable GST Registration packages designed
-          for Individuals & Proprietors.
+          Register your GST with pocket friendly-prices
         </p>
       </header>
 
@@ -108,14 +78,14 @@ const GSTRegistrationPackages = () => {
               <div className="gst-reg-price-box">
                 <div className="gst-reg-old-price">{pkg.oldPrice}</div>
                 <div className="gst-reg-price">
-                  {pkg.price} <span>+ GST & Govt. Fee</span>
+                  {pkg.price} <span>Excluding Govt Fees</span>
                 </div>
               </div>
 
-              <div className="gst-reg-guarantee">
+              {/* <div className="gst-reg-guarantee">
                 <strong>100% Money-Back Guarantee</strong>
                 <span>Until we file your application</span>
-              </div>
+              </div> */}
 
               <ul className="gst-reg-features">
                 {visibleFeatures.map((item, i) => (
@@ -132,7 +102,7 @@ const GSTRegistrationPackages = () => {
                 </button>
               )}
 
-              <button className="gst-reg-btn">Place Your Order</button>
+              <button className="gst-reg-btn">Buy Now</button>
             </article>
           );
         })}

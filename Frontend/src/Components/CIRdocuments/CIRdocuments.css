@@ -1,0 +1,218 @@
+:root {
+  --teal: #20c997;
+  --green: #8bc34a;
+  --red: #ff5252;
+  --orange: #ff9800;
+  --purple: #9c27b0;
+  --dark: #0b0b23;
+}
+
+/* ================= SECTION ================= */
+.cir-infographic-section {
+  padding: 80px 20px;
+  background: #f4f6fb;
+  text-align: center;
+}
+
+.cir-infographic-heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 70px;
+}
+
+/* ================= WRAPPER ================= */
+.cir-infographic-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  height: 560px;
+}
+
+/* ================= CENTER CIRCLE ================= */
+.cir-center-circle {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 190px;
+  height: 190px;
+  background: beige;
+  border-radius: 50%;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 3s infinite;
+  transition: transform 0.4s;
+  z-index: 3;
+}
+
+.cir-center-circle:hover {
+  transform: translateX(-50%) scale(1.08);
+}
+
+.cir-center-circle h3 {
+  font-size: 18px;
+  color: var(--dark);
+}
+
+/* ================= SVG LINES ================= */
+.cir-connector-svg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.cir-line {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 2s ease forwards;
+  opacity: 0.5;
+  transition: stroke-width 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+}
+
+.cir-line.teal { stroke: var(--teal); }
+.cir-line.green { stroke: var(--green); }
+.cir-line.red { stroke: var(--red); }
+.cir-line.orange { stroke: var(--orange); }
+.cir-line.purple { stroke: var(--purple); }
+
+/* stagger animation */
+.cir-line:nth-child(1) { animation-delay: 0s; }
+.cir-line:nth-child(2) { animation-delay: .15s; }
+.cir-line:nth-child(3) { animation-delay: .3s; }
+.cir-line:nth-child(4) { animation-delay: .45s; }
+.cir-line:nth-child(5) { animation-delay: .6s; }
+
+/* ================= LINE HOVER HIGHLIGHT ================= */
+.cir-infographic-wrapper:hover .cir-line {
+  opacity: 0.25;
+}
+
+.cir-item[data-line="teal"]:hover ~ .cir-connector-svg .cir-line.teal,
+.cir-item[data-line="green"]:hover ~ .cir-connector-svg .cir-line.green,
+.cir-item[data-line="purple"]:hover ~ .cir-connector-svg .cir-line.purple,
+.cir-item[data-line="red"]:hover ~ .cir-connector-svg .cir-line.red,
+.cir-item[data-line="orange"]:hover ~ .cir-connector-svg .cir-line.orange {
+  stroke-width: 7;
+  opacity: 1;
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+/* ================= INFO CARDS ================= */
+.cir-item {
+  position: absolute;
+  top: 0;
+  width: 190px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 60px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: translateX(-50%);
+  transition: transform 0.35s, box-shadow 0.35s;
+  z-index: 2;
+}
+
+.cir-item:hover {
+  transform: translateX(-50%) translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.cir-item svg {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.cir-item h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.cir-item p {
+  font-size: 13px;
+  color: #555;
+}
+
+/* ================= CARD COLORS ================= */
+.cir-item.teal svg { color: var(--teal); }
+.cir-item.green svg { color: var(--green); }
+.cir-item.red svg { color: var(--red); }
+.cir-item.orange svg { color: var(--orange); }
+.cir-item.purple svg { color: var(--purple); }
+
+/* ================= CARD POSITIONS ================= */
+.cir-item.teal   { left: 8%; }
+.cir-item.green  { left: 26%; }
+.cir-item.purple { left: 50%; }
+.cir-item.red    { left: 74%; }
+.cir-item.orange { left: 92%; }
+
+/* ================= ANIMATIONS ================= */
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(32,201,151,0.4); }
+  50% { box-shadow: 0 0 0 20px rgba(32,201,151,0); }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .cir-infographic-wrapper {
+    height: 650px;
+  }
+
+  .cir-item {
+    width: 180px;
+  }
+
+  .cir-item.teal   { left: 10%; }
+  .cir-item.green  { left: 30%; }
+  .cir-item.purple { left: 50%; }
+  .cir-item.red    { left: 70%; }
+  .cir-item.orange { left: 90%; }
+}
+
+@media (max-width: 768px) {
+  .cir-infographic-wrapper {
+    height: auto;
+  }
+
+  .cir-connector-svg {
+    display: none;
+  }
+
+  .cir-center-circle {
+    position: static;
+    transform: none;
+    margin: 40px auto;
+  }
+
+  .cir-item {
+    position: static;
+    transform: none;
+    width: 90%;
+    max-width: 340px;
+    margin: 20px auto;
+  }
+
+  .cir-item:hover {
+    transform: translateY(-6px) scale(1.03);
+  }
+}
+
+@media (max-width: 480px) {
+  .cir-infographic-heading {
+    font-size: 24px;
+  }
+
+  .cir-center-circle {
+    width: 160px;
+    height: 160px;
+  }
+}

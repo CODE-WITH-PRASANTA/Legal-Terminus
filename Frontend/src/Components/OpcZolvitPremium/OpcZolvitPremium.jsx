@@ -28,8 +28,7 @@ const OpcZolvitPremium = () => {
                 <span className="opczp-title-icon">⚖️</span>
               </h2>
               <p className="opczp-subtitle">
-                Get your company registered faster with Legal Terminus expert-handled process,
-                made for entrepreneurs who value time and want to avoid unnecessary delays.
+                Get your OPC (One Person Company) registered faster with Legal Terminus’ expert-handled process—perfect for solo entrepreneurs who value time and want a smooth registration experience without delays.
               </p>
             </header>
 
@@ -39,12 +38,11 @@ const OpcZolvitPremium = () => {
               <ul className="opczp-list opczp-features-list">
                 <li className="opczp-list-item">
                   <span className="opczp-list-icon">🧑‍⚖️</span>
-                  Get your company registered faster with Legal Terminus expert-handled process,
-                  made for entrepreneurs who value time and want to avoid unnecessary delays.
+                  Get your OPC incorporated quickly through our streamlined, expert-managed process.
                 </li>
                 <li className="opczp-list-item">
                   <span className="opczp-list-icon">📑</span>
-                  Hassle-Free Compliance Solutions
+                  Hassle-Free Compliance Assistance
                 </li>
                 <li className="opczp-list-item">
                   <span className="opczp-list-icon">⏱️</span>
@@ -59,12 +57,10 @@ const OpcZolvitPremium = () => {
               <div className="opczp-note-box">
                 <ul className="opczp-note-list">
                   <li className="opczp-note-item">
-                    We prioritize your preferred business name and conduct a
-                    preliminary name check before submission.
+                    We prioritize your preferred OPC name and conduct a preliminary name availability check before submission.
                   </li>
                   <li className="opczp-note-item">
-                    In case of name rejection, our experts will recommend
-                    legally compliant alternative names to ensure approval.
+                    If your name gets rejected, our team suggests alternative compliant names to ensure approval.
                   </li>
                 </ul>
               </div>

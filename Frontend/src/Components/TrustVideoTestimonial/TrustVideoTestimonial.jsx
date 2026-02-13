@@ -22,20 +22,21 @@ const videoTestimonials = [
     role: "Director, Stabdha Utility Insights",
     videoUrl: "https://www.youtube.com/embed/oHg5SJYRHA0",
   },
-  // add more items as needed
 ];
 
-const VideoTestimonials = () => {
+const TrustVideoTestimonial = () => {
   const sliderRef = useRef(null);
 
   const handleScroll = (direction) => {
     const container = sliderRef.current;
     if (!container) return;
 
-    const card = container.querySelector(".tv-card");
+    const card = container.querySelector(
+      ".trustest-video-testimonial-card"
+    );
     if (!card) return;
 
-    const gap = 24; // must match CSS .tv-slider gap
+    const gap = 24;
     const cardWidth = card.offsetWidth + gap;
 
     container.scrollBy({
@@ -45,49 +46,62 @@ const VideoTestimonials = () => {
   };
 
   return (
-    <section className="tv-section">
-      <div className="tv-container">
-        <h2 className="tv-heading">Video Testimonials</h2>
-        <p className="tv-subtitle">
+    <section className="trustest-video-testimonial-section">
+      <div className="trustest-video-testimonial-container">
+        <h2 className="trustest-video-testimonial-heading">
+          Video Testimonials
+        </h2>
+
+        <p className="trustest-video-testimonial-subtitle">
           Hear directly from our clients about their experience working with us.
         </p>
 
-        <div className="tv-slider-wrapper">
+        <div className="trustest-video-testimonial-slider-wrapper">
           {/* Left arrow */}
           <button
-            className="tv-side-arrow tv-left"
+            className="trustest-video-testimonial-arrow trustest-video-testimonial-arrow-left"
             aria-label="Previous video"
             onClick={() => handleScroll("prev")}
           >
             ❮
           </button>
 
-          {/* Cards slider */}
-          <div className="tv-slider" ref={sliderRef}>
+          {/* Slider */}
+          <div
+            className="trustest-video-testimonial-slider"
+            ref={sliderRef}
+          >
             {videoTestimonials.map((item, idx) => (
-              <article className="tv-card" key={idx}>
-                <div className="tv-video-wrap">
-                  <div className="tv-video-aspect">
+              <article
+                className="trustest-video-testimonial-card"
+                key={idx}
+              >
+                <div className="trustest-video-testimonial-video-wrap">
+                  <div className="trustest-video-testimonial-video-aspect">
                     <iframe
-                      className="tv-video"
+                      className="trustest-video-testimonial-video"
                       src={item.videoUrl}
                       title={item.name}
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
-                    ></iframe>
+                    />
                   </div>
                 </div>
 
-                <h3 className="tv-name">{item.name}</h3>
-                <p className="tv-role">{item.role}</p>
+                <h3 className="trustest-video-testimonial-name">
+                  {item.name}
+                </h3>
+                <p className="trustest-video-testimonial-role">
+                  {item.role}
+                </p>
               </article>
             ))}
           </div>
 
           {/* Right arrow */}
           <button
-            className="tv-side-arrow tv-right"
+            className="trustest-video-testimonial-arrow trustest-video-testimonial-arrow-right"
             aria-label="Next video"
             onClick={() => handleScroll("next")}
           >
@@ -99,4 +113,4 @@ const VideoTestimonials = () => {
   );
 };
 
-export default VideoTestimonials;
+export default TrustVideoTestimonial;

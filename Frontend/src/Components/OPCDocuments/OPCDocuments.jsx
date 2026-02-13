@@ -12,38 +12,32 @@ import {
 const documents = [
   {
     icon: <FaIdCard />,
-    title: "Director’s PAN Card",
-    desc: "Copy of the sole shareholder and nominee director’s PAN card.",
+    desc: "KYC Documents- All the Proposed Directors, Nominee and Shareholders such as: >As ID Proof – PAN and Aadhaar >As Address Proof – Telephone Bill / Mobile Bill / Savings Bank Statement.",
     colorClass: "color-1",
   },
   {
     icon: <FaUserCheck />,
-    title: "Identity Proof",
-    desc: "Aadhaar card, Driving License, Voter ID, or Passport of the sole shareholder and nominee director.",
+    desc: "Passport Size Photograph: All the Proposed Directors, Nominee and Shareholders.",
     colorClass: "color-2",
   },
   {
     icon: <FaMapMarkerAlt />,
-    title: "Address Proof",
-    desc: "Recent utility bills including water or electricity bill, mobile bill or bank statements.",
+    desc: "Electricity bill corresponding to the registered office address of the company.",
     colorClass: "color-3",
   },
   {
     icon: <FaHome />,
-    title: "Registered Office Address Proof",
-    desc: "Rent agreement with NOC from the owner or utility bills in case of owned property.",
+    desc: "Rent Agreement duly notarised with respect to the registered office address of the company (if on rent).",
     colorClass: "color-4",
   },
   {
     icon: <FaCamera />,
-    title: "Passport Size Photographs",
-    desc: "Latest passport-sized photographs of the sole shareholder and nominee director.",
+    desc: "A No Objection Certificate (NOC) from the owner for use of his/her premises as registered office of the proposed company.",
     colorClass: "color-5",
   },
   {
     icon: <FaFileAlt />,
-    title: "MOA & AOA",
-    desc: "Memorandum and Articles of Association defining business objectives and internal rules.",
+    desc: "Other documents shall be prepared and provided by our team.",
     colorClass: "color-6",
   },
 ];
@@ -53,9 +47,9 @@ const OPCDocuments = () => {
     <section className="opc-doc-section" id="documents">
       <div className="opc-doc-container">
         <div className="opc-doc-center-text">
-          <h2 className="opc-doc-heading">OPC Registration Documents Required</h2>
+          <h2 className="opc-doc-heading">Documents Required for OPC Registration in India</h2>
           <p className="opc-doc-sub">
-            Below is the list of documents to be submitted for OPC registration in India.
+            The following essential documents/information are required for registration
           </p>
         </div>
 
