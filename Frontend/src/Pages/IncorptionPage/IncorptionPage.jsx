@@ -20,12 +20,12 @@ const IncorptionPage = () => {
       <IncorptionBreadcrum />
 
       <div id="plans">
-        <IncorporationPlanAndPricing />
+        {/* <IncorporationPlanAndPricing /> */}
       </div>
-      <IncorporationTermsCondition />
+      {/* <IncorporationTermsCondition /> */}
 
       <div id="premium">
-        <IncorporationPremium />
+        {/* <IncorporationPremium /> */}
       </div>
 
       <IncorporationTabs />
@@ -35,7 +35,7 @@ const IncorptionPage = () => {
       </div>
 
       <div id="types">
-        <IncorporationPvtTypes />
+        {/* <IncorporationPvtTypes /> */}
       </div>
 
       <div id="requirements">

@@ -28,7 +28,7 @@ const ZolvitPremium = () => {
                 <span className="zp-title-icon">⚖️</span>
               </h2>
               <p className="zp-subtitle">
-Get your company registered faster with Legal Terminus expert-handled process, made for entrepreneurs who value time and want to avoid unnecessary delays.
+               Get your Labour License Registration completed faster with Legal Terminus’ expert-handled process — made for employers who value time and want to avoid unnecessary delays.
               </p>
             </header>
 
@@ -38,15 +38,15 @@ Get your company registered faster with Legal Terminus expert-handled process, m
               <ul className="zp-list zp-features-list">
                 <li className="zp-list-item">
                   <span className="zp-list-icon">🧑‍⚖️</span>
-                  Get your company registered faster with Legal Terminus expert-handled process, made for entrepreneurs who value time and want to avoid unnecessary delays.
+                  End-to-end Labour License registration handled by our legal experts for smooth approval.
                 </li>
                 <li className="zp-list-item">
                   <span className="zp-list-icon">📑</span>
-                  Hassle-Free Compliance Solutions
+                  Hassle-free documentation & application filing as per labour department requirements
                 </li>
                 <li className="zp-list-item">
                   <span className="zp-list-icon">⏱️</span>
-                  Excellent Reminder Policy
+                  Fast processing with regular updates until license issuance
                 </li>
               </ul>
             </section>
@@ -57,12 +57,10 @@ Get your company registered faster with Legal Terminus expert-handled process, m
               <div className="zp-note-box">
                 <ul className="zp-note-list">
                   <li className="zp-note-item">
-                    We prioritize your preferred business name and conduct a
-                    preliminary name check before submission.
+                    We verify your documents properly before submission to reduce errors and avoid delays.
                   </li>
                   <li className="zp-note-item">
-                    In case of name rejection, our experts will recommend
-                    legally compliant alternative names to ensure approval.
+                    If the labour department asks for clarification, our experts handle the communication on your behalf for smooth approval.
                   </li>
                 </ul>
               </div>

@@ -43,7 +43,7 @@ const IncorporationProcess = () => {
   return (
     <section className="incorp-process-section">
       <h2 className="incorp-process-title">
-        Steps for Incorporation Company Registration in India
+        Steps For Incorporation of Wholly Owned Subsidiary in India
       </h2>
 
       <p className="incorp-process-subtitle">

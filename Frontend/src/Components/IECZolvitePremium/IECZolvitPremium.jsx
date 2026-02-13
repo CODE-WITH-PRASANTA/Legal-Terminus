@@ -28,9 +28,7 @@ const IECZolvitPremium = () => {
                 <span className="ieczp-title-icon">⚖️</span>
               </h2>
               <p className="ieczp-subtitle">
-                Get your IEC registration completed faster with Legal Terminus’
-                expert-handled process — designed for entrepreneurs who value
-                time and want seamless import/export setup.
+                Get your IEC Registration completed faster with Legal Terminus’ expert-handled process — designed for businesses who want smooth import/export setup with quick approval.
               </p>
             </header>
 
@@ -40,16 +38,15 @@ const IECZolvitPremium = () => {
               <ul className="ieczp-list ieczp-features-list">
                 <li className="ieczp-list-item">
                   <span className="ieczp-list-icon">🧑‍⚖️</span>
-                  End-to-end IEC registration handled by our legal experts to
-                  ensure quick approval and zero rejection risk.
+                  End-to-end IEC registration handled by our legal experts to ensure quick approval and zero rejection risk.
                 </li>
                 <li className="ieczp-list-item">
                   <span className="ieczp-list-icon">📑</span>
-                  Hassle-Free Documentation and DGFT Application Filing
+                  Hassle-free documentation support and DGFT application filing
                 </li>
                 <li className="ieczp-list-item">
                   <span className="ieczp-list-icon">⏱️</span>
-                  Fast Processing and Regular Status Updates
+                  Fast processing with regular status updates
                 </li>
               </ul>
             </section>
@@ -60,12 +57,10 @@ const IECZolvitPremium = () => {
               <div className="ieczp-note-box">
                 <ul className="ieczp-note-list">
                   <li className="ieczp-note-item">
-                    We verify your documents thoroughly before submission to
-                    prevent any DGFT rejections or delays.
+                    We verify your documents thoroughly before submission to prevent DGFT rejections or delays.
                   </li>
                   <li className="ieczp-note-item">
-                    If DGFT requests clarification, our experts handle the
-                    communication on your behalf for smooth approval.
+                    If DGFT requests clarification, our experts handle the communication on your behalf for smooth approval.
                   </li>
                 </ul>
               </div>

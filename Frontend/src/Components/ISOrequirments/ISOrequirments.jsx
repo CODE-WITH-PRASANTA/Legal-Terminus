@@ -8,12 +8,10 @@ const RequirementsPvt = () => {
         {/* Heading + intro */}
         <header className="req-header">
           <h2 className="req-title">
-            Benefits of ISO Certification In india 
+            Benefits of ISO Certification In India 
           </h2>
           <p className="req-subtitle">
-            The Ministry of Corporate Affairs (MCA) manages the company registration process in India. It includes registering the business with the Registrar of Companies (RoC) and obtaining a Digital Signature Certificate (DSC) and Director Identification Number (DIN).
-
-
+            ISO Certification helps a business improve its work system, maintain quality, and build trust in the market. It also increases efficiency and gives a strong advantage over competitors.
           </p>
         </header>
 
@@ -21,42 +19,41 @@ const RequirementsPvt = () => {
         <div className="req-grid">
           {/* 1 */}
           <article className="req-card">
-            <h3 className="req-card-title">Separate Legal Identity</h3>
+            <h3 className="req-card-title">Better Customer Satisfaction</h3>
             <div className="req-card-underline" />
             <p className="req-card-text">
-Once registered, a company becomes its own legal entity. It can own property, sign contracts, and operate separately from its owners.
-
+             ISO makes your work process more clear and organised. This helps you provide consistent quality products/services, which improves customer satisfaction.
             </p>
           </article>
 
           {/* 2 */}
           <article className="req-card">
-            <h3 className="req-card-title">Limited Liability Protection</h3>
+            <h3 className="req-card-title">International Recognition</h3>
             <div className="req-card-underline" />
             <p className="req-card-text">
-              The personal assets of shareholders are safe from company debts and risks, ensuring financial protection.
+             ISO is accepted worldwide. Having ISO certification makes your business trusted and recognised globally.
             </p>
           </article>
 
           {/* 3 */}
           <article className="req-card">
             <h3 className="req-card-title">
-              Access to Government Schemes
+              Improved Team Performance
             </h3>
             <div className="req-card-underline" />
             <p className="req-card-text">
-              Registered companies can benefit from government schemes like Startup India for tax benefits and easier compliance, and Make in India for incentives and support for manufacturing businesses.
+             When processes are clearly defined, employees understand their roles better. This improves teamwork and overall performance.
             </p>
           </article>
 
           {/* 4 */}
           <article className="req-card">
             <h3 className="req-card-title">
-              Increased Credibility
+              Attracts More Customers
             </h3>
             <div className="req-card-underline" />
             <p className="req-card-text">
-              A registered company is more trusted by investors, clients, and vendors, making it easier to get funding and partnerships.
+              Customers prefer businesses that follow quality standards. ISO certification increases trust and helps you gain more customers.
             </p>
           </article>
         </div>

@@ -78,7 +78,6 @@ const IncorporationFAQ = () => {
         <div className="incfaq-left">
           <h2 className="incfaq-title">
             Incorporation of Wholly Owned Subsidiary in India FAQ&apos;s
-             Incorporation Company Registration FAQ&apos;s
           </h2>
 
           <p className="incfaq-intro">

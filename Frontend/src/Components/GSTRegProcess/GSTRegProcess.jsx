@@ -38,7 +38,9 @@ const GSTProcess = () => {
   return (
     <section className="GSTProcess-wrapper">
       <h2 className="GSTProcess-heading">
-        Simple Steps for GST Registration in India
+         Steps for GST Registration in India
+         <br></br>
+         <br></br>
       </h2>
 
       {/* ================= SNAKE PROCESS ================= */}

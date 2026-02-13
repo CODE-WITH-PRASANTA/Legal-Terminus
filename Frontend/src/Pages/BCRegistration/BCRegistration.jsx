@@ -48,11 +48,11 @@ const PrivateLimited = () => {
       </div>
 
       <div id="process">
-      <BCprocess />
+      {/* <BCprocess /> */}
       </div>
 
       <div id="documents">
-        <BCdocuments />
+        {/* <BCdocuments /> */}
       </div>
 
       <div id="faq">

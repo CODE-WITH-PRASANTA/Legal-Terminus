@@ -8,13 +8,10 @@ const RequirementsPvt = () => {
         {/* Heading + intro */}
         <header className="profplc-req-header">
           <h2 className="profplc-req-title">
-            Benefits of Private Limited Company Registration in India
+            Benefits of Conversion of Proprietorship to Private limited company
           </h2>
           <p className="profplc-req-subtitle">
-            The Ministry of Corporate Affairs (MCA) manages the company
-            registration process in India. It includes registering the business
-            with the Registrar of Companies (RoC) and obtaining a Digital
-            Signature Certificate (DSC) and Director Identification Number (DIN).
+            Converting a proprietorship into a private limited company offers several strategic advantages that support business growth, stability, and credibility. Key benefits include:
           </p>
         </header>
 
@@ -22,46 +19,41 @@ const RequirementsPvt = () => {
         <div className="profplc-req-grid">
           {/* 1 */}
           <article className="profplc-req-card">
-            <h3 className="profplc-req-card-title">Separate Legal Identity</h3>
+            <h3 className="profplc-req-card-title">Limited Liability Protection</h3>
             <div className="profplc-req-card-underline" />
             <p className="profplc-req-card-text">
-              Once registered, a company becomes its own legal entity. It can own
-              property, sign contracts, and operate separately from its owners.
+              Shareholders’ personal assets remain protected, as liability is limited only to the amount invested in the company—providing stronger financial security and risk control.
             </p>
           </article>
 
           {/* 2 */}
           <article className="profplc-req-card">
             <h3 className="profplc-req-card-title">
-              Limited Liability Protection
+              Separate Legal Identity
             </h3>
             <div className="profplc-req-card-underline" />
             <p className="profplc-req-card-text">
-              The personal assets of shareholders are safe from company debts and
-              risks, ensuring financial protection.
+              A private limited company is a distinct legal entity with perpetual existence, ensuring continuity even in case of ownership or management changes.
             </p>
           </article>
 
           {/* 3 */}
           <article className="profplc-req-card">
             <h3 className="profplc-req-card-title">
-              Access to Government Schemes
+              Improved Access to Funding
             </h3>
             <div className="profplc-req-card-underline" />
             <p className="profplc-req-card-text">
-              Registered companies can benefit from government schemes like
-              Startup India for tax benefits and easier compliance, and Make in
-              India for incentives and support for manufacturing businesses.
+              Private limited companies can raise capital by issuing shares, making it easier to attract investors and secure funds for expansion.
             </p>
           </article>
 
           {/* 4 */}
           <article className="profplc-req-card">
-            <h3 className="profplc-req-card-title">Increased Credibility</h3>
+            <h3 className="profplc-req-card-title">Stronger Governance and Compliance</h3>
             <div className="profplc-req-card-underline" />
             <p className="profplc-req-card-text">
-              A registered company is more trusted by investors, clients, and
-              vendors, making it easier to get funding and partnerships.
+              Structured regulatory requirements encourage transparency, accountability, and good corporate governance—minimizing legal and compliance risks.
             </p>
           </article>
         </div>

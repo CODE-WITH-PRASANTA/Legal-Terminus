@@ -18,11 +18,11 @@ const IECFeatures = () => {
         {/* Right content */}
         <div className="iec-features-content">
           <h2 className="iec-features-title">
-            Types of Import Export Code (IEC) Registration
+            Types of Importer Exporter Code Registration in India
           </h2>
 
           <p className="iec-features-intro">
-            Import Export Codes (IEC) can be categorized based on the nature of business 
+            Importer Exporter Code (IEC) can be categorized based on the nature of business 
             and the type of entity applying. Choosing the right registration ensures 
             smooth compliance with DGFT and customs authorities while supporting 
             your international trade goals.

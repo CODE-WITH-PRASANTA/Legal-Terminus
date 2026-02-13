@@ -18,7 +18,7 @@ const OPCFeatures = () => {
         {/* Right content */}
         <div className="opc-features-content">
           <h2 className="opc-features-title">
-            Types of One Person Company Registration
+            Types of One Person Company Registration in India
           </h2>
 
           <p className="opc-features-intro">

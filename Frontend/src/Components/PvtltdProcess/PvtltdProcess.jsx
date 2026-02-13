@@ -43,7 +43,7 @@ const GSTProcess = () => {
   return (
     <section className="pvtltd-gst-wrapper">
       <h2 className="gst-heading">
-        STEPS FOR PRIVATE LIMITED COMPANY REGISTRATION IN INDIA
+        Steps For Private Limited Company Registration in India
       </h2>
       <p className="pv-gst-subheading">
         The broad process of registering a Private Limited company involves

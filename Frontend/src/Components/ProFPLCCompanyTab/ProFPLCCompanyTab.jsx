@@ -35,10 +35,10 @@ const PvtLtdFull = () => {
           {/* Text */}
           <div className="profplc-companytab-intro-content">
             <h2 className="profplc-companytab-intro-title">
-              Why Choose Private Limited Company Registration
+              Why Choose Conversion of Proprietorship into Private limited company
             </h2>
             <p className="profplc-companytab-intro-text">
-              Registering a company in India is the first step to legally starting your business...
+              A sole proprietorship firm is a popular business structure for most small and medium traders/manufacturers/ service providers. However, there is no requirement of registration of any such firm under the extant laws in force. Furthermore, there is no provision for compulsory audit of a sole proprietorship firm. Therefore, as it grows in size, it becomes need of the hour for a business to evolve into a more trustworthy and transparent structure, such as Company. It has been observed that such structures are preferred by critical stakeholders (investors, creditors, etc.). Hence, various sole proprietorship firms seek to convert to a corporate structure.
             </p>
           </div>
         </div>
@@ -53,22 +53,22 @@ const PvtLtdFull = () => {
             <h3 className="profplc-companytab-act-title">Companies Act, 2013</h3>
 
             <p className="profplc-companytab-act-text">
-              As per Section 2(68) of the Companies Act, 2013...
+              As per the Companies Act, 2013, a sole proprietorship can be converted into a Private Limited Company by incorporating a new company and transferring the existing business to it.
             </p>
 
             <p className="profplc-companytab-act-point">
               <span className="profplc-companytab-act-point-label">(a)</span>
-              Restricts the right to transfer its shares;
+              The business is transferred to the newly incorporated Private Limited Company along with assets and liabilities;
             </p>
 
             <p className="profplc-companytab-act-point">
               <span className="profplc-companytab-act-point-label">(b)</span>
-              Limits the number of its members to 200;
+              The proprietor becomes a shareholder/director of the company;
             </p>
 
             <p className="profplc-companytab-act-point">
               <span className="profplc-companytab-act-point-label">(c)</span>
-              Prohibits any invitation to the public to subscribe;
+              The company gains a separate legal identity with limited liability protection;
             </p>
           </div>
         </div>

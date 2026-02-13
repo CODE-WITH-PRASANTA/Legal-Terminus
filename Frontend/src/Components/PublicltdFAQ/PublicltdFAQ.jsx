@@ -3,65 +3,78 @@ import "./PublicltdFAQ.css";
 
 const FAQ_ITEMS = [
   {
-    question: "What is an LLP and how is it different from a Private Limited Company?",
+    question: "How many persons are required to form a Public limited company?",
     answer:
-      "A Limited Liability Partnership (LLP) is a hybrid structure that combines features of a partnership and a company. Partners have limited liability and the LLP has a separate legal identity, whereas in a traditional partnership, partners have unlimited liability. Compared to a Private Limited Company, LLPs have fewer compliance requirements and more flexibility in internal management."
+      "Minimum Seven persons are required to form a Public Limited Company and there is no maximum limit to it."
   },
   {
-    question: "Who can register an LLP in India?",
+    question: "How many Directors are required to form a Public limited company?",
     answer:
-      "Any two or more individuals or body corporates can form an LLP in India, with at least two designated partners who are individuals and at least one of them being a resident in India."
+      "Minimum three directors are required in a Public Limited Company, with an upper cap of 15 directors."
   },
   {
-    question: "Is LLP registration mandatory for all partnerships?",
+    question: "Who are Directors of the company?",
     answer:
-      "No. Traditional partnerships can still operate under the Partnership Act, but registering as an LLP gives the partners limited liability, separate legal status, and better credibility."
+      "Directors are officers of the company who are responsible for managing the company and making the decisions as to its operation on a day to day basis, for the benefit of the shareholders."
   },
   {
-    question: "How do I register an LLP online in India?",
+    question: "What is a company shareholder?",
     answer:
-      "The process is done through the MCA portal: obtain DSCs, apply for name reservation, file incorporation forms with partner details and registered office address, submit the LLP agreement, and obtain the Certificate of Incorporation."
+      "Shareholders are the owners of companies limited by shares. As the beneficial owners of a limited company, they are not involved in day-to-day management or financial affairs. They are also called 'members' and they agree to become part of a company by taking a minimum of one share in it. The quantity of shares held by each person represents how much of the business they own."
   },
   {
-    question: "What are the documents required for LLP registration?",
+    question: "How much capital is required to incorporate a Public Limited Company?",
     answer:
-      "Key documents include identity and address proof of partners, proof of registered office, LLP agreement, consent of partners, and digital signatures. Some cases may require additional documents like NOC from landlord or professional qualification proof."
+      "The Public Limited Company can be incorporated with minimum Authorized and paid up capital of Rs. 5,00,000/- and there is no upper limit, however, ROC fees vary with change in/ increase in Authorised Capital."
   },
   {
-    question: "How much does it cost to register an LLP in India?",
-    answer:
-      "Cost depends on government filing fees, professional fees, and stamp duty on the LLP agreement, which varies by state. Typically the cost is lower than incorporating a Private Limited Company."
+    question: "What are some basic/ key documents required to a Public Limited Company Registration in India?",
+    answer: (
+      <div>
+        <ol>
+          <li>PAN Card (All the Proposed Directors and/or Shareholders)</li>
+          <li>ID Proof (All the Proposed Directors and/or Shareholders) (Passport/ Voter ID/ Aadhar Card/ Driving License)</li>
+          <li>Address Proof (All the Proposed Directors and/or Shareholders) (Telephone Bill/ Mobile Bill/ Savings Bank Statement)</li>
+          <li>Passport size Photograph (All the Proposed Directors and/or Shareholders)</li>
+          <li>Rent Agreement (For proposed company Address)</li>
+          <li>Electricity bill</li>
+          <li>A permission letter from the owner about use of his premises for registered office of the proposed company</li>
+        </ol>
+      <p>
+          All the documents mentioned above in point no 1 to 3 need to be self-signed by the respective proposed directors/ members/ shareholders All the utility bills or bank statements shall be less the 2 months old
+        </p>
+        </div>
+    ),
+    },
+  {
+    question: "What is the procedure to register a Public Limited Company?",
+    answer: (
+      <div>
+        <p>
+          The broad process of registering a Public Limited company involves following steps:
+        </p>
+
+        <ol>
+          <li>STEP 1 : Provision of requisite mentioned documents/information to us</li>
+          <li>STEP 2 : Validating the documents/ information and processing the same</li>
+          <li>STEP 3 : Filing of application and submission of the same in online manner</li>
+          <li>STEP 4 : Payment of appropriate government fee as applicable</li>
+          <li>STEP 5 : Processing of the application and issuance of registration certificate</li>
+        </ol>
+      </div>
+    ),
+      
   },
   {
-    question: "What is the time required to complete LLP registration?",
+    question: "What is the time period within which a Public Limited Company can be incorporated?",
     answer:
-      "Subject to MCA processing times and document readiness, LLP registration can usually be completed within 10–15 working days."
+      "The process of incorporating a Public Limited Company can take anywhere between 15 to 20 working days, subject to submission of correct information and complete documentation."
   },
   {
-    question: "Can an NRI or foreign national be a partner in an LLP?",
+    question: "How Legal Terminus can help you incorporate a Public Limited Company in India?",
     answer:
-      "Yes, NRIs and foreign nationals can be partners in an LLP, subject to FEMA guidelines and at least one designated partner being a resident in India."
+      "Legal Terminus can help you with the incorporation of a Public Limited Company for you, as and when required, in a hassle-free manner within a reasonable time span and for a competitive professional fee. To know more, please book a telephonic appointment with one of our consultants free of charge."
   },
-  {
-    question: "Is there any minimum capital required to start an LLP?",
-    answer:
-      "No minimum capital is prescribed for LLPs. Partners can decide the capital contribution as per their agreement."
-  },
-  {
-    question: "Do LLPs have to file annual returns and maintain compliance?",
-    answer:
-      "Yes. LLPs must file annual returns, statements of accounts and solvency, and comply with audit requirements (if applicable), even if they have no business activity."
-  },
-  {
-    question: "Can an existing partnership firm be converted into an LLP?",
-    answer:
-      "Yes. Existing firms can be converted into LLPs through the prescribed conversion process on the MCA portal while transferring assets, liabilities, and rights to the LLP."
-  },
-  {
-    question: "What is the process to add or remove a partner from an LLP?",
-    answer:
-      "Changes in partners are made through an amendment to the LLP agreement and filing the corresponding forms with the ROC within the specified time."
-  }
 ];
 
 const LlpFaqs = () => {
@@ -76,13 +89,9 @@ const LlpFaqs = () => {
       <div className="faq-inner">
         {/* LEFT SIDE – CONSTANT TEXT */}
         <div className="faq-left">
-          <h1 className="faq-title">FAQs on LLP Registration</h1>
+          <h1 className="faq-title">Public Limited Company Registration FAQ's</h1>
           <p className="faq-description">
-            Explore answers to common questions about Limited Liability
-            Partnership (LLP) registration in India, covering key benefits,
-            eligibility, compliance requirements, partner roles, and comparison
-            with other business structures to help you choose the best option
-            for your needs.
+            Find answers to common questions about Public Limited Company registration in India, including benefits, requirements, compliance, and how it compares with other business types.
           </p>
         </div>
 

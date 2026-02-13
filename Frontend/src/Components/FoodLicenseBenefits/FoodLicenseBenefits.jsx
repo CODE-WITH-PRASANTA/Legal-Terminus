@@ -8,13 +8,10 @@ const FoodLicenseBenefits = () => {
         {/* Heading + intro */}
         <header className="foodben-header">
           <h2 className="foodben-title">
-            Benefits of Food License (FSSAI) Registration in India
+            Benefits of Food License Registration in India
           </h2>
           <p className="foodben-subtitle">
-            The Food Safety and Standards Authority of India (FSSAI) registration ensures 
-            that your food business operates under the highest standards of safety and quality. 
-            Having an FSSAI license not only makes your business legally compliant but also 
-            builds consumer trust and opens new opportunities for growth.
+            FSSAI registration ensures your food business follows proper safety and quality standards. It keeps your business legally compliant, builds customer trust, and supports future growth.
           </p>
         </header>
 
@@ -22,41 +19,37 @@ const FoodLicenseBenefits = () => {
         <div className="foodben-grid">
           {/* 1 */}
           <article className="foodben-card">
-            <h3 className="foodben-card-title">Legal Authorization</h3>
+            <h3 className="foodben-card-title">Legal Approval</h3>
             <div className="foodben-card-underline" />
             <p className="foodben-card-text">
-              The FSSAI license legally authorizes food businesses to operate in India, 
-              ensuring adherence to government food safety regulations and hygiene standards.
+              TFSSAI license helps your food business run legally in India. Without it, you may face penalties, heavy fines, or even business closure.
             </p>
           </article>
 
           {/* 2 */}
           <article className="foodben-card">
-            <h3 className="foodben-card-title">Consumer Trust</h3>
+            <h3 className="foodben-card-title">Builds Customer Trust</h3>
             <div className="foodben-card-underline" />
             <p className="foodben-card-text">
-              Displaying an FSSAI license number on products increases customer confidence 
-              and credibility, signaling that the food is safe and of good quality.
+              An FSSAI license shows customers that your food is safe and follows hygiene rules. It increases confidence and improves your business image.
             </p>
           </article>
 
           {/* 3 */}
           <article className="foodben-card">
-            <h3 className="foodben-card-title">Business Expansion</h3>
+            <h3 className="foodben-card-title">Helps Business Growth</h3>
             <div className="foodben-card-underline" />
             <p className="foodben-card-text">
-              Having an FSSAI license helps in expanding your business operations across states 
-              and into new markets by strengthening your brand’s reputation.
+              Many big companies, restaurants, retailers, and buyers prefer to work only with FSSAI licensed businesses. It also helps when you want to expand or sell in new markets.
             </p>
           </article>
 
           {/* 4 */}
           <article className="foodben-card">
-            <h3 className="foodben-card-title">Access to Government Schemes</h3>
+            <h3 className="foodben-card-title">Better Brand Reputation</h3>
             <div className="foodben-card-underline" />
             <p className="foodben-card-text">
-              FSSAI-registered food businesses can benefit from government programs, subsidies, 
-              and training that support safety, quality improvement, and export opportunities.
+              FSSAI licensing makes your brand look more professional and reliable, which increases customer loyalty.
             </p>
           </article>
         </div>

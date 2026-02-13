@@ -23,7 +23,7 @@ const OPCOverview = () => {
           {/* Text */}
           <div className="opc-intro-content">
             <h2 className="opc-intro-title">
-              Why Choose One Person Company Registration
+              Why Choose One Person Company Registration in India
             </h2>
             <p className="opc-intro-text">
               A One Person Company (OPC) is an ideal business structure for individuals who want to start a company with full ownership and legal protection. It allows a single founder to run the business independently while enjoying the benefits of a corporate identity. 

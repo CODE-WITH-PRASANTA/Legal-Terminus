@@ -9,14 +9,14 @@ const IECPlans = () => {
         <header className="iecpricing-header">
           <h2 className="iecpricing-title">CHOOSE YOUR PLAN</h2>
           <p className="iecpricing-subtitle">
-            Register your IEC code with pocket-friendly prices
+            Register your importer exporter code with pocket friendly-prices
           </p>
         </header>
 
         {/* Cards */}
         <div className="iecpricing-cards">
 
-          {/* Elemental */}
+          {/* Elemental
           <article className="iecplan-card">
             <div>
               <div className="iecplan-header">
@@ -41,26 +41,23 @@ const IECPlans = () => {
             <div className="iecplan-footer">
               <button className="iecplan-button">Buy Now</button>
             </div>
-          </article>
+          </article> */}
 
           {/* Enriched */}
           <article className="iecplan-card">
             <div>
               <div className="iecplan-header">
-                <div className="iecplan-name">Enriched</div>
-                <div className="iecplan-old-price">₹7,999</div>
-                <div className="iecplan-price">₹5,999</div>
+                <div className="iecplan-name">Elemental</div>
+                <div className="iecplan-old-price">₹4,999</div>
+                <div className="iecplan-price">₹1,999</div>
                 <div className="iecplan-meta">
-                  Excluding gov fee <span className="popular">(Popular)</span>
+                  Excluding gov fee
                 </div>
               </div>
 
               <div className="iecplan-body">
                 <ul className="iecplan-list">
-                  <li className="iecplan-list-item">Elemental Plan Plus</li>
-                  <li className="iecplan-list-item">Business Consultancy Support</li>
-                  <li className="iecplan-list-item">GST Registration Assistance</li>
-                  <li className="iecplan-list-item">Udyam/MSME Registration</li>
+                  <li className="iecplan-list-item">Import Export Code Registration</li>
                 </ul>
               </div>
             </div>
@@ -70,7 +67,7 @@ const IECPlans = () => {
             </div>
           </article>
 
-          {/* Supreme */}
+          {/* Supreme
           <article className="iecplan-card">
             <div>
               <div className="iecplan-header">
@@ -95,7 +92,7 @@ const IECPlans = () => {
             <div className="iecplan-footer">
               <button className="iecplan-button">Buy Now</button>
             </div>
-          </article>
+          </article> */}
 
         </div>
       </div>
