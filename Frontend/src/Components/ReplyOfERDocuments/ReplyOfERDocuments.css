@@ -1,0 +1,122 @@
+.documents-section {
+  padding: 60px 20px;
+  background: #f4f6f8;
+}
+
+.documents-heading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #1f2937;
+}
+
+.hexagon-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Hexagon Card */
+.hexagon-card {
+  position: relative;
+  background: #fff;
+  padding: 60px 25px 35px;
+  clip-path: polygon(
+    25% 0%,
+    75% 0%,
+    100% 50%,
+    75% 100%,
+    25% 100%,
+    0% 50%
+  );
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.hexagon-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Top Number */
+.hexagon-top {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: inherit;
+  padding: 8px 22px;
+  border-radius: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Content */
+.hexagon-content h3 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.hexagon-content p {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+/* Color Themes */
+.green {
+  background: #8bc34a;
+}
+.blue {
+  background: #3b82f6;
+}
+.red {
+  background: #ef4444;
+}
+.orange {
+  background: #f59e0b;
+}
+.teal {
+  background: #14b8a6;
+}
+.purple {
+  background: #a855f7;
+}
+
+/* Inner background */
+.hexagon-card::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  background: #ffffff;
+  clip-path: inherit;
+  z-index: -1;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 1024px) {
+  .hexagon-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hexagon-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .hexagon-card {
+    padding: 55px 20px 30px;
+  }
+
+  .documents-heading {
+    font-size: 26px;
+  }
+}

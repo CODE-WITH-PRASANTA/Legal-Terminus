@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ===============================
+   SECTION
+   =============================== */
+.Dissolve-tabs-section {
+  font-family: "Poppins", sans-serif;
+  background: #f5f9ff;
+  padding: 32px 24px;
+}
+
+/* ===============================
+   CONTAINER
+   =============================== */
+.Dissolve-tabs-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* ===============================
+   STICKY CARD
+   =============================== */
+.Dissolve-tabs-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(33, 89, 25, 0.08);
+  position: sticky;
+  top: 72px; /* adjust based on header height */
+  z-index: 50;
+  overflow: hidden;
+}
+
+/* ===============================
+   TABS LIST
+   =============================== */
+.Dissolve-tabs-list {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.Dissolve-tabs-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===============================
+   TAB BUTTON
+   =============================== */
+.Dissolve-tab {
+  padding: 18px 36px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #334155;
+  transition: background 0.25s ease, color 0.25s ease;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* ===============================
+   ACTIVE TAB
+   =============================== */
+.Dissolve-tab.active {
+  background: #e9f0ff;
+  color: #1aa91a;
+  font-weight: 600;
+  box-shadow: inset 0 3px 0 #16b646;
+}
+
+/* ===============================
+   HOVER
+   =============================== */
+.Dissolve-tab:hover:not(.active) {
+  background: #f1f5ff;
+  color: #1e293b;
+}
+
+/* ===============================
+   TABLET
+   =============================== */
+@media (max-width: 1024px) {
+  .Dissolve-tabs-section {
+    padding: 28px 16px;
+  }
+
+  .Dissolve-tabs-card {
+    top: 68px;
+  }
+
+  .Dissolve-tab {
+    padding: 16px 28px;
+    font-size: 13.5px;
+  }
+}
+
+/* ===============================
+   MOBILE
+   =============================== */
+@media (max-width: 768px) {
+  .Dissolve-tabs-section {
+    padding: 24px 12px;
+  }
+
+  .Dissolve-tabs-card {
+    top: 64px;
+  }
+
+  .Dissolve-tab {
+    padding: 14px 22px;
+    font-size: 13px;
+    letter-spacing: 1.2px;
+  }
+}
+
+/* ===============================
+   SMALL MOBILE
+   =============================== */
+@media (max-width: 480px) {
+  .Dissolve-tab {
+    padding: 12px 18px;
+    font-size: 12px;
+  }
+}

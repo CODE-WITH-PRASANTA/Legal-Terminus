@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ================================
+   SECTION WRAPPER
+================================ */
+
+.llpfaq-section {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  padding: 72px 24px 64px;
+}
+
+.llpfaq-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  column-gap: 72px;
+  align-items: flex-start;
+}
+
+/* ================================
+   LEFT SIDE
+================================ */
+
+.llpfaq-left {
+  color: #131a35;
+}
+
+.llpfaq-title {
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 22px;
+  color: #27ae60;
+}
+
+.llpfaq-intro {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+/* ================================
+   RIGHT SIDE
+================================ */
+
+.llpfaq-right {
+  display: flex;
+  flex-direction: column;
+  max-height: 540px;
+}
+
+.llpfaq-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* Scrollbar */
+.llpfaq-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.llpfaq-list::-webkit-scrollbar-thumb {
+  background: rgba(26, 169, 26, 0.45);
+  border-radius: 999px;
+}
+
+/* ================================
+   FAQ ITEMS
+================================ */
+
+.llpfaq-item {
+  border-bottom: 1px solid rgba(26, 169, 26, 0.22);
+}
+
+.llpfaq-question {
+  width: 100%;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.llpfaq-icon {
+  transition: transform 0.2s ease;
+}
+
+.llpfaq-open {
+  transform: rotate(180deg);
+}
+
+.llpfaq-answer {
+  padding-bottom: 16px;
+}
+
+.llpfaq-answer p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+.llpfaq-active .llpfaq-question,
+.llpfaq-item:hover .llpfaq-question {
+  color: #1aa91a;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .llpfaq-container {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .llpfaq-right {
+    max-height: none;
+  }
+
+  .llpfaq-list {
+    overflow-y: visible;
+  }
+}

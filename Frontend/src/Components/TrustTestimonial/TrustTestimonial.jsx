@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./TrustTestimonial.css";
+import "./trustTestimonial.css";
 
 const testimonials = [
   {
@@ -19,14 +19,16 @@ const testimonials = [
   {
     name: "Babaji Samal",
     role: "MD, AppsSys Technosoft",
-    text: "This year I went through the company incorporation in Bhubaneswar by Legal Terminus. Their service is exceptional. I would highly recommend.",
+    text:
+      "This year I went through the company trustestoration in Bhubaneswar by Legal Terminus. Their service is exceptional. I would highly recommend.",
     rating: 5,
     initial: "B",
   },
   {
     name: "Pritam Rath",
     role: "Director at Stabdha Utility Insights – Private Limited",
-    text: "Working with Legal Terminus for our annual compliances has been a seamless experience. Highly recommend their services!",
+    text:
+      "Working with Legal Terminus for our annual compliances has been a seamless experience. Highly recommend their services!",
     rating: 5,
     initial: "P",
   },
@@ -37,68 +39,21 @@ const testimonials = [
     rating: 5,
     initial: "A",
   },
-  {
-    name: "Rahul Verma",
-    role: "Consultant",
-    text: "Smooth GST registration and very responsive support.",
-    rating: 4,
-    initial: "R",
-  },
-  {
-    name: "Sneha Patil",
-    role: "Entrepreneur",
-    text: "Got timely reminders for all compliance due dates. Stress-free now.",
-    rating: 5,
-    initial: "S",
-  },
-  {
-    name: "Mohit Sharma",
-    role: "Director, FinSync Solutions",
-    text: "Their advisory has helped us structure our business better.",
-    rating: 5,
-    initial: "M",
-  },
-  {
-    name: "Arjun Nair",
-    role: "Proprietor",
-    text: "Very polite staff and accurate guidance for tax planning.",
-    rating: 4,
-    initial: "A",
-  },
-  {
-    name: "Ritu Jain",
-    role: "Business Owner",
-    text: "Paperwork was minimal and everything happened online. Very convenient.",
-    rating: 5,
-    initial: "R",
-  },
-  {
-    name: "Deepak Kulkarni",
-    role: "Co-Founder, TechHive",
-    text: "They took care of all MCA filings and kept us updated at every step.",
-    rating: 5,
-    initial: "D",
-  },
-  {
-    name: "Neha Agarwal",
-    role: "Consultant",
-    text: "Prompt responses, transparent pricing and professional work.",
-    rating: 5,
-    initial: "N",
-  },
 ];
 
-const GoogleTestimonials = () => {
+const trustestTestimonial = () => {
   const sliderRef = useRef(null);
 
   const handleScroll = (direction) => {
     const container = sliderRef.current;
     if (!container) return;
 
-    const card = container.querySelector(".tr-card");
+    const card = container.querySelector(
+      ".trustest-testimonial-card"
+    );
     if (!card) return;
 
-    const gap = 24; // same as CSS gap
+    const gap = 24;
     const cardWidth = card.offsetWidth + gap;
 
     container.scrollBy({
@@ -108,59 +63,71 @@ const GoogleTestimonials = () => {
   };
 
   return (
-    <section className="tr-section">
-      <div className="tr-container">
-        <h2 className="tr-heading">
+    <section className="trustest-testimonial-section">
+      <div className="trustest-testimonial-container">
+        <h2 className="trustest-testimonial-heading">
           See What Our Customers Say on Google
         </h2>
 
-        <div className="tr-slider-wrapper">
+        <div className="trustest-testimonial-slider-wrapper">
           {/* Left arrow */}
           <button
-            className="tr-side-arrow tr-left"
+            className="trustest-testimonial-arrow trustest-testimonial-arrow-left"
             aria-label="Previous testimonials"
             onClick={() => handleScroll("prev")}
           >
             ❮
           </button>
 
-          {/* Cards slider */}
-          <div className="tr-slider" ref={sliderRef}>
+          {/* Slider */}
+          <div
+            className="trustest-testimonial-slider"
+            ref={sliderRef}
+          >
             {testimonials.map((t, idx) => (
-              <article className="tr-card" key={idx}>
-                {/* top quote */}
-                <span className="tr-quote tr-quote-top">“</span>
+              <article
+                className="trustest-testimonial-card"
+                key={idx}
+              >
+                <span className="trustest-testimonial-quote trustest-testimonial-quote-top">
+                  “
+                </span>
 
-                {/* avatar */}
-                <div className="tr-avatar-wrap">
-                  <div className="tr-avatar">
-                    <span>{t.initial}</span>
+                <div className="trustest-testimonial-avatar-wrap">
+                  <div className="trustest-testimonial-avatar">
+                    {t.initial}
                   </div>
                 </div>
 
-                {/* text */}
-                <p className="tr-text">{t.text}</p>
+                <p className="trustest-testimonial-text">
+                  {t.text}
+                </p>
 
-                {/* name & role */}
-                <h3 className="tr-name">{t.name}</h3>
-                <p className="tr-role">{t.role}</p>
+                <h3 className="trustest-testimonial-name">
+                  {t.name}
+                </h3>
+                <p className="trustest-testimonial-role">
+                  {t.role}
+                </p>
 
-                {/* stars */}
-                <div className="tr-stars">
-                  {Array.from({ length: t.rating }).map((_, i) => (
-                    <span key={i}>★</span>
-                  ))}
+                <div className="trustest-testimonial-stars">
+                  {Array.from({ length: t.rating }).map(
+                    (_, i) => (
+                      <span key={i}>★</span>
+                    )
+                  )}
                 </div>
 
-                {/* bottom quote */}
-                <span className="tr-quote tr-quote-bottom">”</span>
+                <span className="trustest-testimonial-quote trustest-testimonial-quote-bottom">
+                  ”
+                </span>
               </article>
             ))}
           </div>
 
           {/* Right arrow */}
           <button
-            className="tr-side-arrow tr-right"
+            className="trustest-testimonial-arrow trustest-testimonial-arrow-right"
             aria-label="Next testimonials"
             onClick={() => handleScroll("next")}
           >
@@ -172,4 +139,4 @@ const GoogleTestimonials = () => {
   );
 };
 
-export default GoogleTestimonials;
+export default trustestTestimonial;

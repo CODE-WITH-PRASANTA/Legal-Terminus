@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ================= SECTION ================= */
+.DP-video-testimonial-section {
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  padding: 64px 20px 72px;
+}
+
+/* ================= CONTAINER ================= */
+.DP-video-testimonial-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* ================= HEADING ================= */
+.DP-video-testimonial-heading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.DP-video-testimonial-subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 36px;
+}
+
+/* ================= SLIDER WRAPPER ================= */
+.DP-video-testimonial-slider-wrapper {
+  position: relative;
+  padding: 0 52px;
+}
+
+/* ================= SLIDER ================= */
+.DP-video-testimonial-slider {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 8px;
+}
+
+.DP-video-testimonial-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* ================= CARD ================= */
+.DP-video-testimonial-card {
+  min-width: 320px;
+  max-width: 320px;
+  flex-shrink: 0;
+  background: #fbfbfb;
+  border-radius: 18px;
+  border: 2px solid #1aa91a;
+  padding: 20px 18px 24px;
+  text-align: center;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+}
+
+/* ================= VIDEO ================= */
+.DP-video-testimonial-video-wrap {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+  margin-bottom: 16px;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.2);
+}
+
+.DP-video-testimonial-video-aspect {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.DP-video-testimonial-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ================= NAME & ROLE ================= */
+.DP-video-testimonial-name {
+  margin: 6px 0 4px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #1aa91a;
+}
+
+.DP-video-testimonial-role {
+  margin: 0;
+  font-size: 14px;
+  color: #111827;
+}
+
+/* ================= ARROWS ================= */
+.DP-video-testimonial-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #1aa91a;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.DP-video-testimonial-arrow:hover {
+  background: #128a15;
+  transform: translateY(-50%) scale(1.06);
+}
+
+.DP-video-testimonial-arrow-left {
+  left: 10px;
+}
+
+.DP-video-testimonial-arrow-right {
+  right: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .DP-video-testimonial-heading {
+    font-size: 24px;
+  }
+
+  .DP-video-testimonial-card {
+    min-width: 280px;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 520px) {
+  .DP-video-testimonial-card {
+    min-width: 250px;
+    max-width: 250px;
+  }
+
+  .DP-video-testimonial-arrow-left {
+    left: 4px;
+  }
+
+  .DP-video-testimonial-arrow-right {
+    right: 4px;
+  }
+}

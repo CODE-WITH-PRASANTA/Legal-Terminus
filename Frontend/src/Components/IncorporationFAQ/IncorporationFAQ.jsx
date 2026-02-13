@@ -3,63 +3,49 @@ import "./IncorporationFAQ.css";
 
 const faqs = [
   {
-    question: "What is a Wholly Owned Subsidiary (WOS) in India?",
+    question: "How many persons are required to form a Private Limited Company?",
     answer:
-      "A WOS is a private limited company in India where 100% of the shares are held by a foreign company. It operates as a separate legal entity.",
+      "Minimum two persons are required to form a Private Limited Company and a maximum up to 200 persons can be a member of a single Private Limited Company.",
   },
   {
-    question: "Can a foreign company directly set up a WOS in India?",
+    question: "How many Directors are required to form a Private Limited Company?",
     answer:
-      "Yes, a foreign company can directly incorporate a WOS in India under the Companies Act, 2013.",
+      "Minimum two directors are required in a Private Limited Company, with an upper cap up to 15 directors.",
   },
   {
-    question: "How many directors are needed to incorporate a WOS in India?",
+    question: "Who are Directors of the company?",
     answer:
-      "You need at least two directors, and at least one must be an Indian resident (staying in India for at least 182 days in the previous year).",
+      "Directors are officers of the company who are responsible for managing the company and making the decisions as to its operation on a day to day basis, for the benefit of the shareholders.",
   },
   {
-    question: "Is it necessary to visit India to incorporate a WOS?",
+    question: "What is a company shareholder?",
     answer:
-      "No physical visit is required. All documents can be signed and notarised and / or apostilled abroad and submitted electronically.",
+      "Shareholders are the owners of companies limited by shares. As the beneficial owners of a limited company, they are not involved in day-to-day management or financial affairs.",
   },
   {
-    question: "What type of company structure is used for a WOS in India?",
+    question: "How much capital is required to start a Private Limited Company?",
     answer:
-      "Most WOS entities are registered as Private Limited Companies due to limited liability and ease of operation.",
+      "The Private Limited Company can be incorporated with any amount of capital and there is no lower or upper limit.",
   },
   {
-    question: "What are the common business areas allowed for a WOS?",
+    question: "What documents are required to incorporate a Private Limited Company?",
     answer:
-      "Almost all sectors are allowed, except a few like real estate, defence, or agriculture which have restrictions under FDI policy.",
+      "PAN Card, Address Proof, Identity Proof of all directors and shareholders.",
   },
   {
-    question: "Is approval from the Indian government needed for setting up a WOS?",
+    question: "What is the procedure to register a Private Limited Company?",
     answer:
-      "In most sectors under the automatic route, no prior approval is required. In others, prior approval via the Government route is necessary.",
+      "You need two directors, shareholders, a company name, office address, and KYC documents.",
   },
   {
-    question: "What key documents are required from the foreign parent company?",
-    answer:(
-    <div>
-      <p>Key documents include:</p>
-      <ol>
-        <li>Board Resolution</li>
-        <li>Certificate of Incorporation</li>
-        <li>Charter documents (MoA & AoA)</li>
-        <li>Authorized representative ID & proof  (All notarized and apostilled)</li>
-      </ol>
-    </div>
-  ),
+    question: "What is the time period for incorporation?",
+    answer:
+      "Incorporation usually takes 10–15 working days after submission of correct documents.",
   },
   {
-    question: "What is the process of remitting capital into India?",
+    question: "How Legal Terminus can help?",
     answer:
-      "The capital must be remitted through banking channels in foreign currency and reported to the RBI via Form FC-GPR within 30 days of share allotment.",
-  },
-  {
-    question: "Is it mandatory to hold an Annual General Meeting (AGM) in India?",
-    answer:
-      "Yes, AGMs must be held, but can be conducted virtually (via VC) as per MCA Circulars—even if all shareholders are outside India.",
+      "Legal Terminus assists with hassle-free incorporation at competitive fees.",
   },
 ];
 
@@ -71,8 +57,8 @@ const IncorporationFAQ = () => {
   };
 
   return (
-    <section className="incfaq-section">
-      <div className="incfaq-container">
+    <section className="s8faq-section">
+      <div className="s8faq-container">
 
         {/* LEFT */}
         <div className="incfaq-left">
@@ -80,33 +66,38 @@ const IncorporationFAQ = () => {
             Incorporation of Wholly Owned Subsidiary in India FAQ&apos;s
           </h2>
 
-          <p className="incfaq-intro">
-            Frequently Asked Questions on Wholly Owned Subsidiary (WOS) in India.
+          <p className="s8faq-intro">
+            Starting a Private Limited Company in India is an important step for
+            any business owner. With the right support, the process can be simple
+            and stress-free.
+            <br /><br />
+            Below are answers to the most common questions related to company
+            registration.
           </p>
         </div>
 
         {/* RIGHT */}
-        <div className="incfaq-right">
-          <div className="incfaq-list">
+        <div className="s8faq-right">
+          <div className="s8faq-list">
             {faqs.map((item, index) => {
               const isActive = index === activeIndex;
               return (
                 <div
                   key={index}
-                  className={`incfaq-item ${isActive ? "active" : ""}`}
+                  className={`s8faq-item ${isActive ? "active" : ""}`}
                 >
                   <button
-                    className="incfaq-question"
+                    className="s8faq-question"
                     onClick={() => toggleFaq(index)}
                   >
                     <span>{item.question}</span>
-                    <span className={`incfaq-icon ${isActive ? "open" : ""}`}>
+                    <span className={`s8faq-icon ${isActive ? "open" : ""}`}>
                       ▾
                     </span>
                   </button>
 
                   <div
-                    className={`incfaq-answer ${
+                    className={`s8faq-answer ${
                       isActive ? "open" : ""
                     }`}
                   >

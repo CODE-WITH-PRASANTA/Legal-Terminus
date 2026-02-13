@@ -2,80 +2,53 @@ import React, { useState } from "react";
 import "./Section8Tabs.css";
 
 const tabs = [
-  "Overview",
-  "Benefits",
-  "Eligibility",
-  "Forms Required",
-  "Documents Required",
-  "Process",
-  "Fees",
-  "Timeline",
-  "Penalty",
-  "Sections",
-  "Certificate",
-  "Comparison",
+  { label: "Why Choose Pvt Ltd", id: "company" },
+  { label: "Types", id: "types" },
+  { label: "Requirements", id: "requirements" },
+  { label: "Process & Steps", id: "process" },
+  { label: "Documents", id: "documents" },
+  { label: "FAQ's", id: "faq" },
 ];
 
-const VISIBLE_COUNT = 6; // how many tabs visible at once
-
-const SocietyTabs = () => {
-  const [startIndex, setStartIndex] = useState(0);
+const Section8Tabs = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const canGoPrev = startIndex > 0;
-  const canGoNext = startIndex + VISIBLE_COUNT < tabs.length;
+  const handleClick = (index, id) => {
+    setActiveIndex(index);
 
-  const handleNext = () => {
-    if (canGoNext) {
-      setStartIndex((prev) => prev + 1);
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   };
-
-  const handlePrev = () => {
-    if (canGoPrev) {
-      setStartIndex((prev) => prev - 1);
-    }
-  };
-
-  const visibleTabs = tabs.slice(startIndex, startIndex + VISIBLE_COUNT);
 
   return (
-    <div className="tab-strip-wrapper">
-      {/* Left Arrow */}
-      <button
-        className={`tab-arrow tab-arrow-left ${!canGoPrev ? "disabled" : ""}`}
-        onClick={handlePrev}
-      >
-        <span className="chevron chevron-left" />
-      </button>
+    <section className="s8-tabs-section">
+      <div className="s8-tabs-container">
+        <div className="s8-tabs-card">
 
-      <div className="tab-strip-container">
-        <div className="tab-strip">
-          {visibleTabs.map((label, idx) => {
-            const realIndex = startIndex + idx;
-            const isActive = realIndex === activeIndex;
-            return (
+          <div className="s8-tabs-list">
+            {tabs.map((tab, index) => (
               <button
-                key={label}
-                className={`tab-item ${isActive ? "active" : ""}`}
-                onClick={() => setActiveIndex(realIndex)}
+                key={tab.id}
+                type="button"
+                className={`s8-tab ${
+                  index === activeIndex ? "active" : ""
+                }`}
+                onClick={() => handleClick(index, tab.id)}
               >
-                {label}
+                {tab.label}
               </button>
-            );
-          })}
+            ))}
+          </div>
+
         </div>
       </div>
-
-      {/* Right Arrow */}
-      <button
-        className={`tab-arrow tab-arrow-right ${!canGoNext ? "disabled" : ""}`}
-        onClick={handleNext}
-      >
-        <span className="chevron chevron-right" />
-      </button>
-    </div>
+    </section>
   );
 };
 
-export default SocietyTabs;
+export default Section8Tabs;

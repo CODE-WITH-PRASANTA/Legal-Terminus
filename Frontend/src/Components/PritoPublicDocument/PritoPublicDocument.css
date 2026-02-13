@@ -1,0 +1,198 @@
+/* WRAPPER */
+.prp-doc-infographic-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.prp-doc-infographic {
+  position: relative;
+  width: 100%;
+  max-width: 1250px;
+  min-height: 400px;
+}
+
+/* RING WRAPPER */
+.prp-doc-ring-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 360px;
+  height: 360px;
+}
+
+/* CENTER */
+.prp-doc-center-box {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 240px;
+  height: 240px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.prp-doc-center-box h3 {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* RING */
+.prp-doc-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+}
+
+.prp-doc-ring-segment {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+}
+
+.prp-doc-ring-segment span {
+  position: absolute;
+  top: 18px;
+  right: 65px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* COLORS (unchanged) */
+.beige { background:#d9b98c; }
+.teal { background:#3aa6a0; }
+.orange { background:#e67e22; }
+.red { background:#b23b3b; }
+.sand { background:#d2b48c; }
+.yellow { background:yellow; }
+.violet { background:violet; }
+
+/* SIDES */
+.prp-doc-side {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.prp-doc-side.left { left: 0; }
+.prp-doc-side.right { right: 0; }
+
+/* CARDS */
+.prp-doc-card {
+  width: 300px;
+  padding: 16px 18px;
+  background: #fff;
+  border-radius: 30px;
+  display: flex;
+  gap: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.prp-doc-card h4 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.prp-doc-card p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #666;
+}
+
+/* ICON */
+.prp-doc-icon {
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.red .prp-doc-icon { background:#b23b3b; }
+.orange .prp-doc-icon { background:#e67e22; }
+.violet .prp-doc-icon { background:violet; }
+.cyan .prp-doc-icon { background:#3fa7b3; }
+.beige .prp-doc-icon { background:#d9b98c; color:#000; }
+.teal .prp-doc-icon { background:#3aa6a0; }
+.sand .prp-doc-icon { background:yellow; color:black; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .prp-doc-infographic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+  }
+
+  .prp-doc-ring-wrapper {
+    position: relative;
+    top: -80px;
+    left: 0;
+    transform: none;
+    width: 280px;
+    height: 280px;
+  }
+
+  .prp-doc-center-box {
+    width: 190px;
+    height: 190px;
+  }
+
+  .prp-doc-ring {
+    transform: scale(0.85);
+  }
+
+  .prp-doc-side {
+    position: static;
+    transform: none;
+    width: 100%;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  .prp-doc-card {
+    width: 90%;
+    max-width: 360px;
+  }
+}
+
+/* HEADER */
+.prp-doc-header {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.prp-doc-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* NUMBER BADGE */
+.prp-doc-step-no {
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 6px;
+}

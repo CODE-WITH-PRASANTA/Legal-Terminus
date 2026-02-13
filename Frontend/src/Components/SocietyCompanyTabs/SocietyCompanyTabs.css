@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ===============================
+   WRAPPER
+   =============================== */
+.society-company-wrapper {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* ===============================
+   INTRO SECTION
+   =============================== */
+.society-intro-section {
+  background-color: #ffffff;
+  padding: 64px 24px 56px;
+}
+
+.society-intro-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* Illustration */
+.society-intro-illustration-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.society-intro-illustration {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Content */
+.society-intro-content {
+  max-width: 720px;
+}
+
+.society-intro-title {
+  font-size: 40px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: #151821;
+  margin-bottom: 18px;
+}
+
+.society-intro-text {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+/* ===============================
+   COMPANIES ACT SECTION
+   =============================== */
+.society-act-section {
+  background-color: #ffffff;
+  padding: 24px 24px 56px;
+}
+
+.society-act-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.society-act-card {
+  border-radius: 20px;
+  padding: 32px 40px;
+  background: linear-gradient(to bottom, #f4f8ff 0%, #ffffff 100%);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+.society-act-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #273143;
+  margin-bottom: 14px;
+}
+
+.society-act-text {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+  margin-bottom: 18px;
+}
+
+.society-act-point {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+  margin-bottom: 10px;
+}
+
+.society-act-point-label {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 1024px) {
+  .society-intro-container {
+    gap: 40px;
+  }
+
+  .society-intro-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .society-intro-section {
+    padding: 40px 16px 36px;
+  }
+
+  .society-intro-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .society-intro-title {
+    font-size: 28px;
+  }
+
+  .society-intro-text {
+    font-size: 14px;
+  }
+
+  .society-act-card {
+    padding: 24px 20px;
+  }
+
+  .society-act-text,
+  .society-act-point {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .society-intro-title {
+    font-size: 24px;
+  }
+
+  .society-intro-text {
+    font-size: 13.5px;
+  }
+
+  .society-act-title {
+    font-size: 18px;
+  }
+}

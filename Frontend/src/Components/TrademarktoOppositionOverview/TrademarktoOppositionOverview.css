@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* --------------------------------------------------
+   TRADE LICENSE INTRO
+-------------------------------------------------- */
+
+.tlo-intro-section {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #ffffff;
+  padding: 64px 24px 56px;
+}
+
+.tlo-intro-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  column-gap: 64px;
+  align-items: center;
+}
+
+/* Illustration */
+
+.tlo-intro-illustration-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tlo-intro-illustration {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Content */
+
+.tlo-intro-content {
+  max-width: 720px;
+}
+
+.tlo-intro-title {
+  font-size: 40px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: #151821;
+  margin: 0 0 18px;
+}
+
+.tlo-intro-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .tlo-intro-section {
+    padding: 52px 20px 44px;
+  }
+  .tlo-intro-container {
+    column-gap: 40px;
+    grid-template-columns: 0.95fr 1.3fr;
+  }
+  .tlo-intro-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tlo-intro-section {
+    padding: 40px 16px 36px;
+  }
+  .tlo-intro-container {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+  .tlo-intro-illustration-wrap {
+    order: 1;
+  }
+  .tlo-intro-content {
+    order: 2;
+  }
+  .tlo-intro-title {
+    font-size: 28px;
+    text-align: left;
+  }
+  .tlo-intro-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tlo-intro-section {
+    padding: 32px 14px 28px;
+  }
+  .tlo-intro-title {
+    font-size: 24px;
+  }
+  .tlo-intro-text {
+    font-size: 13.5px;
+    line-height: 1.8;
+  }
+}
+
+/* --------------------------------------------------
+   MUNICIPAL ACT CARD
+-------------------------------------------------- */
+
+.tlo-act-section {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #ffffff;
+  padding: 24px 24px 56px;
+}
+
+.tlo-act-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.tlo-act-card {
+  border-radius: 20px;
+  padding: 32px 40px;
+  background: linear-gradient(to bottom, #f4f8ff 0%, #ffffff 100%);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+.tlo-act-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #273143;
+  margin: 0 0 14px;
+}
+
+.tlo-act-text {
+  margin: 0 0 18px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+.tlo-act-point {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+.tlo-act-point-label {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+  .tlo-act-section {
+    padding: 20px 20px 44px;
+  }
+  .tlo-act-card {
+    padding: 28px 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tlo-act-section {
+    padding: 16px 16px 36px;
+  }
+  .tlo-act-card {
+    padding: 24px 20px;
+  }
+  .tlo-act-text,
+  .tlo-act-point {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tlo-act-section {
+    padding: 12px 14px 28px;
+  }
+  .tlo-act-card {
+    padding: 20px 18px;
+  }
+  .tlo-act-title {
+    font-size: 18px;
+  }
+  .tlo-act-text,
+  .tlo-act-point {
+    font-size: 13.5px;
+  }
+}

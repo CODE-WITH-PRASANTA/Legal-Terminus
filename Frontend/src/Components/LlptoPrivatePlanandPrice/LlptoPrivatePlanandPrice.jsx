@@ -1,0 +1,127 @@
+import React from "react";
+import "./LlptoPrivatePlanandPrice.css";
+
+const PricingSection = () => {
+  return (
+    <section className="LLP-to-PLC-LLP-to-PLC-pricingsection">
+      <div className="LLP-to-PLC-pricingcontainer">
+        
+        {/* Upper part */}
+        <header className="LLP-to-PLC-pricingheader">
+          <h2 className="LLP-to-PLC-LLP-to-PLC-pricingtitle">CHOOSE YOUR PLAN</h2>
+          <p className="LLP-to-PLC-pricingsubtitle">
+            Register your company with pocket-friendly prices
+          </p>
+        </header>
+
+        {/* Cards */}
+        <div className="LLP-to-PLC-pricingcards">
+
+          {/* Elemental */}
+          <article className="plan-card">
+            <div>
+              <div className="plan-header">
+                <div className="plan-name">Elemental</div>
+                <div className="plan-old-price">₹5,999</div>
+                <div className="plan-price">₹3,999</div>
+                <div className="plan-meta">Excluding gov fee</div>
+              </div>
+
+              <div className="plan-body">
+                <ul className="plan-list">
+                  <li className="plan-list-item">Search Report of Name Availability</li>
+                  <li className="plan-list-item">1 RUN Name Approval Certificate</li>
+                  <li className="plan-list-item">Director Identification Number for 2 Individuals</li>
+                  <li className="plan-list-item">Certificate of Incorporation</li>
+                  <li className="plan-list-item">E-PAN</li>
+                  <li className="plan-list-item">E-TAN</li>
+                  <li className="plan-list-item">E-MOA</li>
+                  <li className="plan-list-item">E-AOA</li>
+                  <li className="plan-list-item">Documents for Bank Account Opening</li>
+                  <li className="plan-list-item">Documents for 1st Auditor Appointment</li>
+                  <li className="plan-list-item">EPF Registrations</li>
+                  <li className="plan-list-item">ESI Registrations</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="plan-footer">
+              <button className="plan-button">Buy Now</button>
+            </div>
+          </article>
+
+          {/* Enriched */}
+          <article className="plan-card">
+            <div>
+              <div className="plan-header">
+                <div className="plan-name">Enriched</div>
+                <div className="plan-old-price">₹7,999</div>
+                <div className="plan-price">₹5,999</div>
+                <div className="plan-meta">
+                  Excluding gov fee <span className="popular">(Popular)</span>
+                </div>
+              </div>
+
+              <div className="plan-body">
+                <ul className="plan-list">
+                  <li className="plan-list-item">Elemental Plan Plus</li>
+                  <li className="plan-list-item">Share Certificate</li>
+                  <li className="plan-list-item">Commencement of Business</li>
+                  <li className="plan-list-item">Udyam/MSME Registration</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="plan-footer">
+              <button className="plan-button">Buy Now</button>
+            </div>
+          </article>
+
+          {/* Supreme */}
+          <article className="plan-card">
+            <div>
+              <div className="plan-header">
+                <div className="plan-name">Supreme</div>
+                <div className="plan-old-price">₹29,999</div>
+                <div className="plan-price">₹24,999</div>
+                <div className="plan-meta">Excluding gov fee</div>
+              </div>
+
+              <div className="plan-body">
+                <ul className="plan-list">
+                  <li className="plan-list-item">Enriched Plan Plus</li>
+                  <li className="plan-list-item">Income tax filing of Company</li>
+                  <li className="plan-list-item">Preparation of Directors Report</li>
+                  <li className="plan-list-item">Preparation of Annual Return</li>
+                  <li className="plan-list-item">Preparation of Auditor Appointment Paperwork</li>
+                  <li className="plan-list-item">Preparation of List of Share Holders</li>
+                  <li className="plan-list-item">Preparation of Notice of AGM</li>
+                  <li className="plan-list-item">Preparation of Notice of BM</li>
+                  <li className="plan-list-item">Preparation of Extracts of AGM</li>
+                  <li className="plan-list-item">Filing of AOC - 4 (Financial Statements)</li>
+                  <li className="plan-list-item">Filing of MGT - 7 (Annual Return)</li>
+                  <li className="plan-list-item">Filing of ADT - 1 (Auditor Appointment)</li>
+                  <li className="plan-list-item">Minutes of Board Meeting for 1st FY</li>
+                  <li className="plan-list-item">Minutes of General Meeting for 1st FY</li>
+                  <li className="plan-list-item">Maintenance of Statutory E- Registers</li>
+                  <li className="plan-list-item">Filing of DPT - 3 Annual (If Applicable)</li>
+                  <li className="plan-list-item">Filing of MSME - 1 (If Applicable) for 1st FY</li>
+                  <li className="plan-list-item">DIR KYC (2 Directors)</li>
+                  <li className="plan-list-item">Income Tax Filing of 2 Directors</li>
+                  <li className="plan-list-item">Audit fees are excluded and to be paid directly to Auditor</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="plan-footer">
+              <button className="plan-button">Buy Now</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PricingSection;

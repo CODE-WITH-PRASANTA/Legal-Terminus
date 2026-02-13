@@ -1,0 +1,136 @@
+/* ================= SECTION ================= */
+.dissolve-section {
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #f8fafc, #eef2f7);
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================= HEADER ================= */
+.dissolve-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.dissolve-header h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.dissolve-header p {
+  font-size: 15px;
+  color: #475569;
+}
+
+/* ================= TIMELINE ================= */
+.dissolve-timeline {
+  max-width: 1100px;
+  margin: auto;
+  position: relative;
+}
+
+.dissolve-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(#c7d2fe, #e5e7eb);
+  transform: translateX(-50%);
+}
+
+/* ================= ITEM ================= */
+.dissolve-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 70px;
+  position: relative;
+}
+
+/* Left & Right alignment */
+.dissolve-item.left {
+  justify-content: flex-start;
+}
+
+.dissolve-item.right {
+  justify-content: flex-end;
+}
+
+/* ================= CONTENT CARD ================= */
+.dissolve-content {
+  width: 42%;
+  background: #ffffff;
+  padding: 26px 30px;
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+  animation: fadeUp 0.7s ease both;
+}
+
+.step-id {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.dissolve-content h4 {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 6px 0 8px;
+  color: #0f172a;
+}
+
+.dissolve-content p {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* ================= NODE ================= */
+.dissolve-node {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.9);
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .dissolve-timeline::before {
+    left: 24px;
+  }
+
+  .dissolve-item {
+    justify-content: flex-start !important;
+    padding-left: 60px;
+  }
+
+  .dissolve-content {
+    width: 100%;
+  }
+
+  .dissolve-node {
+    left: 24px;
+    transform: none;
+  }
+}

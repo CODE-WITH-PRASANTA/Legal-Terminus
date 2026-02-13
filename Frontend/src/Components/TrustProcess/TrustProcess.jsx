@@ -1,125 +1,77 @@
-import React, { useState } from "react";
+import React from "react";
 import "./TrustProcess.css";
 
 const steps = [
   {
-    no: 1,
-    title: "Draft the Trust Deed",
-    long: true,
-    body: (
-      <>
-        <p className="step-body-intro">
-          This is the most crucial step. The Trust Deed should clearly state:
-        </p>
-        <ul className="step-bullets">
-          <li>Name and address of the Settlor.</li>
-          <li>Name(s) and address(es) of the Trustee(s).</li>
-          <li>
-            Name(s) of the Beneficiary(ies) or the charitable object if it's a
-            public trust.
-          </li>
-          <li>Name of the Trust.</li>
-          <li>Address of the Trust.</li>
-          <li>The trust property (movable or immovable).</li>
-          <li>The objectives of the trust.</li>
-          <li>
-            Rules and regulations for managing the trust, appointing/removing
-            trustees, etc.
-          </li>
-          <li>Duration of the trust (if not perpetual).</li>
-        </ul>
-      </>
-    ),
+    title: "Step 1 – Document Submission",
+    text:
+      "Submission of required documents and information as per the checklist provided by our team.",
   },
   {
-    no: 2,
-    title: "Procure Stamp Paper",
-    text: "The Trust Deed must be executed on non-judicial stamp paper of appropriate value, which varies by state.",
+    title: "Step 2 – Company Name & Object Finalization",
+    text:
+      "Finalization of company name and business objects based on a detailed name search conducted by our experts.",
   },
   {
-    no: 3,
-    title: "Signatures and Witnesses",
-    text: "The Settlor and Trustees must sign the Trust Deed in the presence of at least two independent witnesses.",
+    title: "Step 3 – Name Reservation Application",
+    text:
+      "Filing of the name reservation application in the prescribed MCA form along with applicable government fees.",
   },
   {
-    no: 4,
-    title: "Obtain DSC (Digital Signature Certificate)",
-    text: "For certain online filings related to trusts, especially for post-registration compliance like income tax.",
+    title: "Step 4 – Digital Signature Certificates",
+    text:
+      "Preparation of Digital Signature Certificates (DSC) for promoters and directors and registration on the MCA portal.",
   },
   {
-    no: 5,
-    title: "Approach the Sub-Registrar",
-    text: "Immovable property must be registered with the trust deed. Movable property registration is optional but recommended.",
+    title: "Step 5 – trustoration Document Preparation",
+    text:
+      "Drafting and preparation of trustoration documents after receiving name approval from MCA.",
   },
   {
-    no: 6,
-    title: "Submit Documents",
-    text: "Along with the Trust Deed, submit KYC documents of the Settlor and Trustees.",
+    title: "Step 6 – Final Form Filing & Fee Payment",
+    text:
+      "Uploading of final trustoration forms on the MCA portal along with applicable government fees.",
   },
   {
-    no: 7,
-    title: "Pay Registration Fees",
-    text: "Pay the applicable registration fees to the Sub-Registrar.",
-  },
-  {
-    no: 8,
-    title: "Obtain Registered Deed",
-    text: "Once the Sub-Registrar approves, the Trust Deed will be registered.",
-  },
-  {
-    no: 9,
-    title: "Download Copy",
-    text: "Log in to your state portal, select your trust, and download the registration certificate.",
+    title: "Step 7 – Certificate of trustoration",
+    text:
+      "Review by the Registrar of Companies and issuance of the Certificate of trustoration.",
   },
 ];
 
-const TrustRegistrationStepsGrid = () => {
-  const [showMore, setShowMore] = useState(false);
-
+const TrustProcess = () => {
   return (
-    <section className="steps-section">
-      <h2 className="steps-title">Step-by-Step Process to Register a Trust</h2>
-      <p className="steps-intro">
-        Here’s a general outline of how to make a trust in India and get it
-        registered:
+    <section className="trust-process-section">
+      <h2 className="trust-process-title">
+        Steps for trustoration Company Registration in India
+      </h2>
+
+      <p className="trust-process-subtitle">
+        The complete process of registering a Private Limited Company involves
+        the following structured steps:
       </p>
 
-      <div className="steps-grid">
-        {steps.map((step) => (
-          <article key={step.no} className="step-card equal-height">
+      <div className="trust-timeline">
+        <div className="trust-timeline-line" />
 
-            {/* HEADER */}
-            <header className="step-header">
-              <span className="step-number">{step.no}.</span>
-              <h3 className="step-title">{step.title}</h3>
-            </header>
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className={`trust-timeline-item ${
+              index % 2 === 0 ? "left" : "right"
+            }`}
+          >
+            <div className="trust-timeline-dot">{index + 1}</div>
 
-            {/* FIRST CARD WITH READ MORE */}
-            {step.long ? (
-              <>
-                <div
-                  className={
-                    showMore ? "step-content expanded" : "step-content collapsed"
-                  }
-                >
-                  {step.body}
-                </div>
-
-                <button
-                  className="read-more-btn"
-                  onClick={() => setShowMore(!showMore)}
-                >
-                  {showMore ? "Read Less" : "Read More"}
-                </button>
-              </>
-            ) : (
-              <p className="step-text">{step.text}</p>
-            )}
-          </article>
+            <div className="trust-timeline-card">
+              <h4>{step.title}</h4>
+              <p>{step.text}</p>
+            </div>
+          </div>
         ))}
       </div>
     </section>
   );
 };
 
-export default TrustRegistrationStepsGrid;
+export default TrustProcess;
