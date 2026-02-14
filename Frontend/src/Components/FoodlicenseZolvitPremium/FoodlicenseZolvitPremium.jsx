@@ -28,9 +28,7 @@ const FoodLicenseZolvitPremium = () => {
                 <span className="foodlicensezp-title-icon">⚖️</span>
               </h2>
               <p className="foodlicensezp-subtitle">
-                Get your FSSAI Food License registration completed faster with Legal Terminus’
-                expert-handled process — designed for entrepreneurs who value
-                time and want a seamless business setup.
+                Get your FSSAI Food License completed faster with Legal Terminus’ expert-handled process — designed for food business owners who value time and want a smooth, hassle-free setup.
               </p>
             </header>
 
@@ -40,16 +38,15 @@ const FoodLicenseZolvitPremium = () => {
               <ul className="foodlicensezp-list foodlicensezp-features-list">
                 <li className="foodlicensezp-list-item">
                   <span className="foodlicensezp-list-icon">🧑‍⚖️</span>
-                  End-to-end FSSAI registration handled by our legal experts to
-                  ensure quick approval and zero rejection risk.
+                  End-to-end FSSAI license registration handled by our experts to ensure quick approval and minimal rejection risk.
                 </li>
                 <li className="foodlicensezp-list-item">
                   <span className="foodlicensezp-list-icon">📑</span>
-                  Hassle-Free Documentation and Online Application Filing
+                  Hassle-free documentation support and online application filing
                 </li>
                 <li className="foodlicensezp-list-item">
                   <span className="foodlicensezp-list-icon">⏱️</span>
-                  Fast Processing and Regular Status Updates
+                  Fast processing with regular updates till license issuance
                 </li>
               </ul>
             </section>
@@ -60,12 +57,10 @@ const FoodLicenseZolvitPremium = () => {
               <div className="foodlicensezp-note-box">
                 <ul className="foodlicensezp-note-list">
                   <li className="foodlicensezp-note-item">
-                    We verify your documents thoroughly before submission to
-                    prevent any FSSAI rejections or delays.
+                    We review and verify your documents properly before submission to avoid delays or rejection.
                   </li>
                   <li className="foodlicensezp-note-item">
-                    If the FSSAI authority requests clarification, our experts handle
-                    the communication on your behalf for smooth approval.
+                    If the FSSAI authority asks for any clarification, our team will handle it on your behalf for smooth approval.
                   </li>
                 </ul>
               </div>

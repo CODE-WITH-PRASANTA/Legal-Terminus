@@ -3,54 +3,88 @@ import "./LLRfaq.css";
 
 const faqs = [
   {
-    question: "How many persons are required to form a Private Limited Company?",
+    question: "Is Labour License mandatory for all business organizations?",
     answer:
-      "Minimum two persons are required to form a Private Limited Company and a maximum up to 200 persons can be a member of a single Private Limited Company.",
+      "It is applicable to every establishment (Principal Employer) in which 20 or more workmen are employed or were employed on any day of the preceding 12 months as contract Labour. It is also applicable to every contractor who employs or who employed on any day of the preceding twelve months 20 or more workmen.",
   },
   {
-    question: "How many Directors are required to form a Private Limited Company?",
-    answer:
-      "Minimum two directors are required in a Private Limited Company, with an upper cap up to 15 directors.",
+    question: "Who is principal Employer?",
+    answer: (
+      <div>
+        <ol>
+          <li>In the case of an office or the department of government or the local authority - the head thereof or the specified person</li>
+          <li>In the case of a factory -the owner or occupier or the person named as manager thereof.</li>
+          <li>In the case of other establishments - the person responsible for the supervision and control of the establishment, is the principal employer under the Act</li>
+        </ol>
+      </div>
+    ),
   },
   {
-    question: "Who are Directors of the company?",
+    question: "Who is Contractor?",
     answer:
-      "Directors are officers of the company who are responsible for managing the company and making the decisions as to its operation on a day to day basis, for the benefit of the shareholders.",
-  },
-  {
-    question:
-      "What is a company shareholder?",
-    answer:
-      "Shareholders are the owners of companies limited by shares. As the beneficial owners of a limited company, they are not involved in day-to-day management or financial affairs. They are also called 'members' and they agree to become part of a company by taking a minimum of one share in it. The quantity of shares held by each person represents how much of the business they own.",
-  },
-  {
-    question: "How much capital is required to start a Private Limited Company?",
-    answer:
-      "The Private Limited Company can be incorporated with any amount of capital and there is no lower or upper limit. Further, the government has relaxed the government fees for Incorporation of a Private Limited Company up to an Authorized capital of Rs. 15,00,000/-, however, the stamp duty, which is still levied, varies from State to State.",
+      "Contractor is a person who employs/supplies Labour to the principal employer.",
   },
   {
     question:
-      "What are some basic/ key documents required to incorporate a Private Limited Company in India?",
+      "What is the validity of license?",
     answer:
-      "PAN Card (All the Proposed Directors and/or Shareholders)",
+      "A license granted shall be valid for a period of 1 year",
+  },
+  {
+    question: "What is the due date of renewal of license?",
+    answer:
+      "The renewal of license can be applied 30 days before the date of expiry.",
   },
   {
     question:
-      "What is the procedure to register a Private Limited Company?",
-    answer:
-      "You need at least two directors, two shareholders, a unique company name, a registered office address in India, and the necessary KYC documents for all directors and shareholders.",
+      "What are the documents required for Labour license?",
+    answer: (
+      <div>
+        <ol>
+          <li>Any registration certificate of an organization such as Certification of Incorporation/Partnership Deed/GST Registration Certificate/Trade License.</li>
+          <li>Rent agreement and any utility bill of the registered office address of the organization.</li>
+          <li>PAN card of the organization and all the Directors/Partners/Proprietor.</li>
+          <li>Bank statement (with Current transactions) of the organization along with 1 cancelled cheque.</li>
+          <li>Digital Signature of the applicant/authorised signatory.</li>
+          <li>Total employee strength</li>
+          <li>Employees' basic details such as Aadhar number, name, father's name, DOB, address as per Aadhar card</li>
+          <li>Employees' Salary details (break up of salary with respect to basic salary and other details including holiday lists)</li>
+          <li>Form V from Principal Employer</li>
+          <li>Work Order from Principal Employer</li>
+        </ol>
+      </div>
+    ),
   },
   {
     question:
-      "What is the time period within which a Private Limited Company can be incorporated?",
+      "What is the time period within which the Labour License can be obtained?",
     answer:
-      "The process of incorporating a Private Limited Company can take anywhere between 10 to 15 working days, subject to submission of correct information and complete documentation.",
+      "The Registering officer shall issue the License within 30 working days of the receipt of application, if the application is complete in all respect.",
   },
   {
     question:
-      "How Legal Terminus can help you incorporate a Private Limited Company in India?",
+      "What is the procedure to obtain Labour License?",
+    answer: (
+      <div>
+        <p>
+          The broad process of obtaining Labour License involves following steps:
+        </p>
+
+        <ol>
+          <li>STEP 1: Provide the above-mentioned documents/information of your organization to one of our consultants.</li>
+          <li>STEP 2: Our consultant will process the above documents/ information and validate the same.</li>
+          <li>STEP 3: The application for Trade License shall be filled online or offline as the case may be.</li>
+          <li>STEP 4: The application shall be submitted with required attachments.</li>
+          <li>STEP 5: The department shall process the application and issue a registration certificate</li>
+        </ol>
+      </div>
+    ),
+  },
+  {
+    question:
+      "How Legal Terminus can help you to obtain Labour License?",
     answer:
-      "Legal Terminus can help you with incorporation of Private Limited Company for you, as and when required, in a hassle-free manner within a reasonable time span and for competitive professional fee. To know more, please book a telephonic appointment with one of our consultants free of charge.",
+      "Legal Terminus can help you with obtaining Labour License for your organization, as and when required, in a hassle-free manner within a reasonable time span and for competitive professional fee. To know more, please book a telephonic appointment with one of our consultants free of charge.",
   },
 ];
 
@@ -66,14 +100,10 @@ const FaqPvt = () => {
       <div className="faq-container">
         {/* Left side – static text */}
         <div className="faq-left">
-          <h2 className="faq-title">Private Limited Company Registration FAQ&apos;s</h2>
+          <h2 className="faq-title">Labour License Registration FAQ&apos;s</h2>
 
           <p className="faq-intro">
-            Starting a Private Limited Company in India is an important step for any business owner. With the right support, the process can be simple and stress-free.
-
-<br/><br/>
-Here, we’ve answered the most common questions about company registration—covering documents, steps, and what happens after registration. These FAQs will help you understand everything clearly and move ahead with confidence.
-
+            Here, we’ve answered the most common questions about labour license registration covering documents, steps, and what happens after registration. These FAQs will help you understand everything clearly and move ahead with confidence.
           </p>
 
           <p className="faq-intro">

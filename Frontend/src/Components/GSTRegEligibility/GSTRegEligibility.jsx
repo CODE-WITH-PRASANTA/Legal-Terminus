@@ -26,7 +26,7 @@ const GSTEligibility = () => {
     <section className="GSTRegEligibility-section">
       <div className="GSTRegEligibility-container">
 
-        {/* SECTION 1 */}
+        SECTION 1
         <div className="GSTRegEligibility-header">
           <h2>Eligibility Criteria for New GST Registration</h2>
           <p>

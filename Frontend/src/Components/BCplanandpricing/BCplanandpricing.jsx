@@ -10,14 +10,14 @@ const PricingSection = () => {
         <header className="pricing-header">
           <h2 className="PvtLtd-pricing-title">CHOOSE YOUR PLAN</h2>
           <p className="pricing-subtitle">
-            Register your company with pocket-friendly prices
+            Register your Bar Code Registration with pocket friendly-prices
           </p>
         </header>
 
         {/* Cards */}
         <div className="pricing-cards">
 
-          {/* Elemental */}
+          {/* Elemental
           <article className="plan-card">
             <div>
               <div className="plan-header">
@@ -48,15 +48,14 @@ const PricingSection = () => {
             <div className="plan-footer">
               <button className="plan-button">Buy Now</button>
             </div>
-          </article>
+          </article> */}
 
           {/* Enriched */}
           <article className="plan-card">
             <div>
               <div className="plan-header">
                 <div className="plan-name">Enriched</div>
-                <div className="plan-old-price">₹7,999</div>
-                <div className="plan-price">₹5,999</div>
+                <div className="plan-price">₹9,999</div>
                 <div className="plan-meta">
                   Excluding gov fee <span className="popular">(Popular)</span>
                 </div>
@@ -64,10 +63,10 @@ const PricingSection = () => {
 
               <div className="plan-body">
                 <ul className="plan-list">
-                  <li className="plan-list-item">Elemental Plan Plus</li>
-                  <li className="plan-list-item">Share Certificate</li>
-                  <li className="plan-list-item">Commencement of Business</li>
-                  <li className="plan-list-item">Udyam/MSME Registration</li>
+                  <li className="plan-list-item">Professional Fees</li>
+                  <li className="plan-list-item">Free Consultation</li>
+                  <li className="plan-list-item">Application Preparation & Filing</li>
+                  <li className="plan-list-item">Consultation on generation of Bar Codes</li>
                 </ul>
               </div>
             </div>
@@ -77,7 +76,7 @@ const PricingSection = () => {
             </div>
           </article>
 
-          {/* Supreme */}
+          {/* Supreme
           <article className="plan-card">
             <div>
               <div className="plan-header">
@@ -116,7 +115,7 @@ const PricingSection = () => {
             <div className="plan-footer">
               <button className="plan-button">Buy Now</button>
             </div>
-          </article>
+          </article> */}
 
         </div>
       </div>

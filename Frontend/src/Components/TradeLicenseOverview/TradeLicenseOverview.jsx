@@ -23,20 +23,10 @@ const TradeLicenseOverview = () => {
           {/* Text */}
           <div className="trade-intro-content">
             <h2 className="trade-intro-title">
-              Why Choose Trade License Registration
+              Why Choose Trade License Registration in India
             </h2>
             <p className="trade-intro-text">
-              Registering for a trade license in India is the first step to legally starting your
-              business. The local municipal corporation governs the process and ensures your
-              business complies with health, safety, and legal standards. Once registered,
-              your business gets official approval to operate legally within a specific area.
-              <br /><br />
-              Choosing the right type of Trade License is important, as it determines
-              how your business can function within local laws and industry standards.
-              Different trade license categories apply to different types of commercial,
-              industrial, or professional activities. Proper registration ensures your
-              business operations are lawful, helps avoid penalties, and builds strong
-              trust and credibility in the market.
+              Trade License is issued by the local municipal corporation to a person/organization in order to commence business activity/operations. This license empowers an organization only to carry on the business activity for which it is granted and it does not empower any transfer of property. The license can be issued to an individual having no criminal record, has attained the age of 18 and wishes to carry on a legal business activity. Below are some frequently asked questions related to trade license registration:
             </p>
           </div>
         </div>
@@ -48,26 +38,25 @@ const TradeLicenseOverview = () => {
       <section className="trade-act-section">
         <div className="trade-act-container">
           <div className="trade-act-card">
-            <h3 className="trade-act-title">Municipal Trade License Act</h3>
+            <h3 className="trade-act-title">Municipal Trade License Regulation</h3>
 
             <p className="trade-act-text">
-              As per the local municipal regulations, every business entity engaged in trade or
-              commerce must obtain a valid Trade License before commencing operations.
+              As per local municipal rules, every business involved in trade or commercial activity must obtain a valid Trade License before starting operations.
             </p>
 
             <p className="trade-act-point">
               <span className="trade-act-point-label">(a)</span>
-              Provides legal approval to operate within city limits under applicable laws;
+              Grants legal permission to run the business within municipal/city limits;
             </p>
 
             <p className="trade-act-point">
               <span className="trade-act-point-label">(b)</span>
-              Ensures business activities adhere to health, safety, and environmental standards; and
+              Ensures the business follows basic health, safety, and environmental guidelines; and
             </p>
 
             <p className="trade-act-point">
               <span className="trade-act-point-label">(c)</span>
-              Protects public interest while promoting fair and ethical business practices.
+              Helps maintain fair business practices while protecting public interest.
             </p>
           </div>
         </div>

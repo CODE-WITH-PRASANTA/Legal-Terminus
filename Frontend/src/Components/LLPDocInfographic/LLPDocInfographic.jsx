@@ -50,7 +50,7 @@ const DocumentsInfographic = () => {
   return (
     <section className="llp-docinfo-section">
       <h2 className="llp-docinfo-heading">
-        Documents Required for Limited Liability Partnership Registration
+        Documents Required For Limited Liability Partnership Registration in India
       </h2>
 
       <div className="llp-docinfo-wrapper">

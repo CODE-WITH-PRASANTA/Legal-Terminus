@@ -23,18 +23,10 @@ const IECOverview = () => {
           {/* Text */}
           <div className="iec-intro-content">
             <h2 className="iec-intro-title">
-              Why Choose Import Export Code (IEC) Registration
+              Why Choose Importer Exporter Code Registration in India
             </h2>
             <p className="iec-intro-text">
-              Obtaining an Import Export Code (IEC) is the first step toward expanding your
-              business into international trade. The Directorate General of Foreign Trade (DGFT)
-              under the Ministry of Commerce issues the IEC, making it mandatory for businesses
-              involved in importing or exporting goods and services from India.
-              <br /><br />
-              IEC registration provides a unique identification for your business and
-              enhances credibility with international buyers and suppliers. Having a valid IEC
-              enables you to avail of government export incentives, access global markets,
-              and operate your business without restrictions related to cross-border trade.
+              Every organization wishing to engage in the import-export of goods or services in India must obtain an Import Export Code (IEC). This code is issued by the Director General of Foreign Trade (DGFT). Below are some frequently asked questions related to importer exporter code registration:
             </p>
           </div>
         </div>
@@ -49,23 +41,22 @@ const IECOverview = () => {
             <h3 className="iec-act-title">DGFT and IEC Regulation</h3>
 
             <p className="iec-act-text">
-              As per DGFT regulations, every business entity that imports or exports goods or
-              services must possess a valid Import Export Code (IEC).
+              As per DGFT regulations, every business entity involved in importing or exporting goods or services is required to obtain a valid Import Export Code (IEC).
             </p>
 
             <p className="iec-act-point">
               <span className="iec-act-point-label">(a)</span>
-              Enables international business transactions legally recognized by the Government of India;
+              Enables businesses to carry out international trade legally under Government of India guidelines;
             </p>
 
             <p className="iec-act-point">
               <span className="iec-act-point-label">(b)</span>
-              Simplifies trade compliance procedures for importers and exporters; and
+              Simplifies import/export compliance procedures and documentation requirements; and
             </p>
 
             <p className="iec-act-point">
               <span className="iec-act-point-label">(c)</span>
-              Provides access to export promotion schemes and global trade opportunities.
+              Helps businesses access export promotion benefits, incentives, and global trade opportunities.
             </p>
           </div>
         </div>

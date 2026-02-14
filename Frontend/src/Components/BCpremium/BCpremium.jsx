@@ -28,7 +28,7 @@ const ZolvitPremium = () => {
                 <span className="zp-title-icon">⚖️</span>
               </h2>
               <p className="zp-subtitle">
-Get your company registered faster with Legal Terminus expert-handled process, made for entrepreneurs who value time and want to avoid unnecessary delays.
+               Get your Barcode Registration done faster with Legal Terminus expert-handled process, made for businesses who want smooth product listing and hassle-free compliance.
               </p>
             </header>
 
@@ -38,15 +38,19 @@ Get your company registered faster with Legal Terminus expert-handled process, m
               <ul className="zp-list zp-features-list">
                 <li className="zp-list-item">
                   <span className="zp-list-icon">🧑‍⚖️</span>
-                  Get your company registered faster with Legal Terminus expert-handled process, made for entrepreneurs who value time and want to avoid unnecessary delays.
+                  Quick Barcode Registration Support – Complete guidance from start to finish.
                 </li>
                 <li className="zp-list-item">
                   <span className="zp-list-icon">📑</span>
-                  Hassle-Free Compliance Solutions
+                  Hassle-Free Documentation & Filing
                 </li>
                 <li className="zp-list-item">
                   <span className="zp-list-icon">⏱️</span>
-                  Excellent Reminder Policy
+                  Barcode for Product Identification & Sales
+                </li>
+                <li className="zp-list-item">
+                  <span className="zp-list-icon">⏱️</span>
+                  Timely Updates & Reminder Support
                 </li>
               </ul>
             </section>
@@ -57,12 +61,10 @@ Get your company registered faster with Legal Terminus expert-handled process, m
               <div className="zp-note-box">
                 <ul className="zp-note-list">
                   <li className="zp-note-item">
-                    We prioritize your preferred business name and conduct a
-                    preliminary name check before submission.
+                    We verify your business details and product category before proceeding.
                   </li>
                   <li className="zp-note-item">
-                    In case of name rejection, our experts will recommend
-                    legally compliant alternative names to ensure approval.
+                    In case of any mismatch in documents, our team will guide you with the correct format to ensure approval.
                   </li>
                 </ul>
               </div>

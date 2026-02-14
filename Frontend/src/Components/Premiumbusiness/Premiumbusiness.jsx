@@ -124,7 +124,7 @@ With a strong focus on customer satisfaction and smart solutions, Legal Terminus
                   <span>View Legal Services</span>
                 </button>
 
-                <button className="pb-ghost">
+                <button className="pb-ghost"style={{ color: "#000" }}>
                   <span>Get Expert Consultation</span>
                 </button>
             </div>

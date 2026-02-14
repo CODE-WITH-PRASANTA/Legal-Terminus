@@ -28,9 +28,7 @@ const ZolvitPremium = () => {
                 <span className="profopc-zp-title-icon">⚖️</span>
               </h2>
               <p className="profopc-zp-subtitle">
-                Get your company registered faster with Legal Terminus
-                expert-handled process, made for entrepreneurs who value time
-                and want to avoid unnecessary delays.
+                Upgrade your Sole Proprietorship into a One Person Company (OPC) with expert guidance — structured for entrepreneurs who want legal protection, credibility, and smooth compliance without stress.
               </p>
             </header>
 
@@ -40,17 +38,15 @@ const ZolvitPremium = () => {
               <ul className="profopc-zp-list profopc-zp-features-list">
                 <li className="profopc-zp-list-item">
                   <span className="profopc-zp-list-icon">🧑‍⚖️</span>
-                  Get your company registered faster with Legal Terminus
-                  expert-handled process, made for entrepreneurs who value
-                  time and want to avoid unnecessary delays.
+                  From document preparation to MCA filing — our experts handle everything for a seamless transition.
                 </li>
                 <li className="profopc-zp-list-item">
                   <span className="profopc-zp-list-icon">📑</span>
-                  Hassle-Free Compliance Solutions
+                  We take care of ROC filings, DIN, DSC, PAN update, and incorporation formalities.
                 </li>
                 <li className="profopc-zp-list-item">
                   <span className="profopc-zp-list-icon">⏱️</span>
-                  Excellent Reminder Policy
+                  Quick turnaround with regular updates at every stage.
                 </li>
               </ul>
             </section>
@@ -61,12 +57,10 @@ const ZolvitPremium = () => {
               <div className="profopc-zp-note-box">
                 <ul className="profopc-zp-note-list">
                   <li className="profopc-zp-note-item">
-                    We prioritize your preferred business name and conduct a
-                    preliminary name check before submission.
+                    All proprietorship assets and liabilities will be transferred to OPC as per legal norms.
                   </li>
                   <li className="profopc-zp-note-item">
-                    In case of name rejection, our experts will recommend
-                    legally compliant alternative names to ensure approval.
+                    Director and shareholder will be the same person (single owner model).
                   </li>
                 </ul>
               </div>

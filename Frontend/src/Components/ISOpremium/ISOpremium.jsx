@@ -28,7 +28,7 @@ const ZolvitPremium = () => {
                 <span className="zp-title-icon">⚖️</span>
               </h2>
               <p className="zp-subtitle">
-Get your company registered faster with Legal Terminus expert-handled process, made for entrepreneurs who value time and want to avoid unnecessary delays.
+               Get your ISO Certification done faster with Legal Terminus expert-handled process, made for businesses that want to improve quality standards and build customer trust without delays.
               </p>
             </header>
 
@@ -38,15 +38,19 @@ Get your company registered faster with Legal Terminus expert-handled process, m
               <ul className="zp-list zp-features-list">
                 <li className="zp-list-item">
                   <span className="zp-list-icon">🧑‍⚖️</span>
-                  Get your company registered faster with Legal Terminus expert-handled process, made for entrepreneurs who value time and want to avoid unnecessary delays.
+                  Complete guidance from documentation to certification.
                 </li>
                 <li className="zp-list-item">
                   <span className="zp-list-icon">📑</span>
-                  Hassle-Free Compliance Solutions
+                  Hassle-Free Documentation & Filing
                 </li>
                 <li className="zp-list-item">
                   <span className="zp-list-icon">⏱️</span>
-                  Excellent Reminder Policy
+                  ISO Compliance & Process Assistance
+                </li>
+                <li className="zp-list-item">
+                  <span className="zp-list-icon">⏱️</span>
+                  Timely Updates & Reminder Support
                 </li>
               </ul>
             </section>
@@ -57,12 +61,10 @@ Get your company registered faster with Legal Terminus expert-handled process, m
               <div className="zp-note-box">
                 <ul className="zp-note-list">
                   <li className="zp-note-item">
-                    We prioritize your preferred business name and conduct a
-                    preliminary name check before submission.
+                    We review your business details and recommend the right ISO standard (as per your business needs).
                   </li>
                   <li className="zp-note-item">
-                    In case of name rejection, our experts will recommend
-                    legally compliant alternative names to ensure approval.
+                    If any documents need correction, our team will guide you to ensure smooth approval.
                   </li>
                 </ul>
               </div>

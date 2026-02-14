@@ -3,54 +3,62 @@ import "./ISOfaq.css";
 
 const faqs = [
   {
-    question: "How many persons are required to form a Private Limited Company?",
+    question: "Is ISO Certification mandatory for all business organizations?",
     answer:
-      "Minimum two persons are required to form a Private Limited Company and a maximum up to 200 persons can be a member of a single Private Limited Company.",
+      "The ISO Certification is not a mandatory requirement for any organization; however, it certainly provides a competitive not to any organization.",
   },
   {
-    question: "How many Directors are required to form a Private Limited Company?",
+    question: "Can an organization obtain multiple ISO Certifications?",
     answer:
-      "Minimum two directors are required in a Private Limited Company, with an upper cap up to 15 directors.",
+      "Yes, an organization can obtain multiple ISO Certification as per its requirement.",
   },
   {
-    question: "Who are Directors of the company?",
+    question: "What is the validity of ISO Certificates?",
     answer:
-      "Directors are officers of the company who are responsible for managing the company and making the decisions as to its operation on a day to day basis, for the benefit of the shareholders.",
-  },
-  {
-    question:
-      "What is a company shareholder?",
-    answer:
-      "Shareholders are the owners of companies limited by shares. As the beneficial owners of a limited company, they are not involved in day-to-day management or financial affairs. They are also called 'members' and they agree to become part of a company by taking a minimum of one share in it. The quantity of shares held by each person represents how much of the business they own.",
-  },
-  {
-    question: "How much capital is required to start a Private Limited Company?",
-    answer:
-      "The Private Limited Company can be incorporated with any amount of capital and there is no lower or upper limit. Further, the government has relaxed the government fees for Incorporation of a Private Limited Company up to an Authorized capital of Rs. 15,00,000/-, however, the stamp duty, which is still levied, varies from State to State.",
+      "The validity of the ISO Certificate depends on the issuing organization or Board and generally certificates are valid for period of 1 to 3 years and are required to be renewed thereafter.",
   },
   {
     question:
-      "What are some basic/ key documents required to incorporate a Private Limited Company in India?",
+      "What are the documents required for ISO Certification?",
+    answer: (
+      <div>
+        <ol>
+          <li>Any registration proof of the organization</li>
+          <li>One Letter Head of the Organization</li>
+          <li>One or more Sale or Purchase Invoices of the organization</li>
+        </ol>
+      </div>
+    ),
+  },
+  {
+    question: "What is the time period within which the ISO Certification can be obtained?",
     answer:
-      "PAN Card (All the Proposed Directors and/or Shareholders)",
+      "The process of obtaining ISO Certification can take anywhere between 7 to 10 working days, subject to submission of correct information and complete documentation.",
   },
   {
     question:
-      "What is the procedure to register a Private Limited Company?",
-    answer:
-      "You need at least two directors, two shareholders, a unique company name, a registered office address in India, and the necessary KYC documents for all directors and shareholders.",
+      "What is the procedure to obtain ISO Certification?",
+    answer: (
+      <div>
+        <p>
+          The broad process of obtaining ISO Certification involves following steps:
+        </p>
+
+        <ol>
+          <li>STEP 1: Provide the above-mentioned documents/information of your organization to one of our consultants.</li>
+          <li>STEP 2: Our consultant will process the above documents/ information and validate the same.</li>
+          <li>STEP 3: The application for ISO CERTIFICATION shall be filled</li>
+          <li>STEP 4: The application shall be submitted with requisite fees</li>
+          <li>STEP 5: The issuing Board/ Organization shall issue ISO Certificate</li>
+        </ol>
+      </div>
+    ),
   },
   {
     question:
-      "What is the time period within which a Private Limited Company can be incorporated?",
+      "How Legal Terminus can help you to obtain ISO Certification?",
     answer:
-      "The process of incorporating a Private Limited Company can take anywhere between 10 to 15 working days, subject to submission of correct information and complete documentation.",
-  },
-  {
-    question:
-      "How Legal Terminus can help you incorporate a Private Limited Company in India?",
-    answer:
-      "Legal Terminus can help you with incorporation of Private Limited Company for you, as and when required, in a hassle-free manner within a reasonable time span and for competitive professional fee. To know more, please book a telephonic appointment with one of our consultants free of charge.",
+      "Legal Terminus can help you with obtaining ISO CERTIFICATION for your organization, as and when required, in a hassle-free manner within a reasonable time span and for competitive professional fee. To know more, please book a telephonic appointment with one of our consultants free of charge.",
   },
 ];
 
@@ -66,14 +74,10 @@ const FaqPvt = () => {
       <div className="faq-container">
         {/* Left side – static text */}
         <div className="faq-left">
-          <h2 className="faq-title">ISO Certification In india FAQ&apos;s</h2>
+          <h2 className="faq-title">ISO Certification FAQ&apos;s</h2>
 
           <p className="faq-intro">
-            Starting a Private Limited Company in India is an important step for any business owner. With the right support, the process can be simple and stress-free.
-
-<br/><br/>
-Here, we’ve answered the most common questions about company registration—covering documents, steps, and what happens after registration. These FAQs will help you understand everything clearly and move ahead with confidence.
-
+            Here, we’ve answered the most common questions about ISO certification covering documents, steps, and what happens after registration. These FAQs will help you understand everything clearly and move ahead with confidence.
           </p>
 
           <p className="faq-intro">

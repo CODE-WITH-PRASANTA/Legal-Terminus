@@ -21,8 +21,7 @@ const TradeLicensePlans = () => {
             <div>
               <div className="tradeplan-header">
                 <div className="tradeplan-name">Elemental</div>
-                <div className="tradeplan-old-price">₹5,999</div>
-                <div className="tradeplan-price">₹3,999</div>
+                <div className="tradeplan-price">₹2,999</div>
                 <div className="tradeplan-meta">Excluding gov fee</div>
               </div>
 

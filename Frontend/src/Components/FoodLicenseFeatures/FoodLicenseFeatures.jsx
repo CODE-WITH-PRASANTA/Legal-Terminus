@@ -18,18 +18,16 @@ const FoodLicenseFeatures = () => {
         {/* Right content */}
         <div className="food-license-features-content">
           <h2 className="food-license-features-title">
-            Types of Food License
+            Types of FSSAI Licenses in India
           </h2>
 
           <p className="food-license-features-intro">
-            Food licenses are categorized based on the size and nature of your business. 
-            Selecting the correct license ensures compliance with FSSAI regulations 
-            and promotes consumer trust while supporting your food-related business operations.
+            If you run any food-related business in India, getting an FSSAI license/registration is mandatory. The type of license depends on your business size and yearly turnover
           </p>
 
           {/* Type 1 */}
           <div className="food-license-features-block">
-            <h3 className="food-license-features-subtitle">Basic FSSAI Registration</h3>
+            <h3 className="food-license-features-subtitle">Basic FSSAI License Registration</h3>
             <p className="food-license-features-text">
               Suitable for small-scale food businesses and startups with an annual turnover 
               below ₹12 lakhs. This license is ideal for small vendors, cottage industries, 
@@ -39,7 +37,7 @@ const FoodLicenseFeatures = () => {
 
           {/* Type 2 */}
           <div className="food-license-features-block">
-            <h3 className="food-license-features-subtitle">State FSSAI License</h3>
+            <h3 className="food-license-features-subtitle">State FSSAI License Registration</h3>
             <p className="food-license-features-text">
               Applicable for medium-sized food businesses with an annual turnover 
               between ₹12 lakhs and ₹20 crores. It covers manufacturers, distributors, 
@@ -49,7 +47,7 @@ const FoodLicenseFeatures = () => {
 
           {/* Type 3 */}
           <div className="food-license-features-block">
-            <h3 className="food-license-features-subtitle">Central FSSAI License</h3>
+            <h3 className="food-license-features-subtitle">Central FSSAI License Registration</h3>
             <p className="food-license-features-text">
               Designed for large-scale food manufacturers, importers, or exporters 
               with operations in multiple states or turnover above ₹20 crores. 

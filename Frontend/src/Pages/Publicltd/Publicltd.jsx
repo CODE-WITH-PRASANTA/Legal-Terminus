@@ -44,7 +44,7 @@ const Publicltd = () => {
         <PublicltdProcess />
       </div>
 
-      <PublicltdWhy />
+      {/* <PublicltdWhy /> */}
 
       <div id="faq">
         <PublicltdFAQ />

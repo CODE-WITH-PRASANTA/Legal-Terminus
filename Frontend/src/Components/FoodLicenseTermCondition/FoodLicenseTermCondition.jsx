@@ -10,37 +10,17 @@ const FoodLicenseTermCondition = () => {
 
         {/* Sub heading */}
         <p className="foodlicensetc-subtitle">
-          By subscribing to the above plans, you agree to abide by our following
-          additional terms and conditions
+          By subscribing to the above plans, you agree to abide by our following additional terms and conditions
         </p>
 
         {/* List */}
         <ol className="foodlicensetc-list">
           <li className="foodlicensetc-item">
-            FSSAI application shall be filed through the online portal only.
+            In case the above plan does not qualify your requirements, kindly contact our executive, we shall be happy to customise a plan for you
           </li>
 
           <li className="foodlicensetc-item">
-            The mentioned fees are valid for individuals, proprietorships, or
-            small food businesses. Additional charges may apply for companies or
-            large-scale operations.
-          </li>
-
-          <li className="foodlicensetc-item">
-            The above fee includes one-time FSSAI registration; any modification
-            or re-issuance later will incur additional government or service
-            fees as applicable.
-          </li>
-
-          <li className="foodlicensetc-item">
-            The applicant must ensure all provided documents (PAN, address
-            proof, food business details, etc.) are valid and up-to-date.
-            Incorrect details may delay the approval process.
-          </li>
-
-          <li className="foodlicensetc-item">
-            In case your requirements differ from these plans, kindly contact
-            our executive — we will be happy to customise a plan for you.
+            Please note that the elemental plan is applicable for very small food business operators whose Annual Turnover is less than Rs. 12,00,000/-
           </li>
         </ol>
       </div>

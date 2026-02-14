@@ -14,32 +14,32 @@ const Breadcrum = () => {
           </span>
 
           <h1 className="lt-public-title">
-            Section-8 Company Registration Online
+            Section-8 Company Registration 
             <span> in India</span>
           </h1>
 
           <p className="lt-public-description">
-            Legal Terminus can help you with Private Limited Company registration, as and when required, in a hassle-free manner within a reasonable time span. We provide competitive professional fees starting at Rs. 3,999/- for your needs in private limited company registration in India. 
+            Legal Terminus can help you with the section 8 company registration in India, also known as non-profit organizations. Our services ensure a hassle-free process, completed within a reasonable timeframe, and at a competitive professional fee starting from Rs. 7,999/- (excluding govt fee). Trust us to streamline your section 8 company registration in India, making the process efficient and seamless.
           </p>
 
           <div className="lt-public-features">
+            <div className="lt-feature-item"> Minimum 2 Persons Required</div>
             <div className="lt-feature-item"> Minimum 2 Directors Required</div>
-            <div className="lt-feature-item"> Separate Legal Entity</div>
-            <div className="lt-feature-item"> Limited Liability Protection</div>
+            <div className="lt-feature-item"> 10 to 15 Working Days</div>
             <div className="lt-feature-item"> High Business Credibility</div>
           </div>
 
           <div className="lt-public-highlights">
             <div>
-              <h3>12,000+</h3>
+              <h3>1,000+</h3>
               <p>Companies Registered</p>
             </div>
             <div>
-              <h3>99%</h3>
-              <p>Approval Success Rate</p>
+              <h3>100%</h3>
+              <p>Online Process</p>
             </div>
             <div>
-              <h3>15+</h3>
+              <h3>5+</h3>
               <p>Years of Legal Expertise</p>
             </div>
           </div>

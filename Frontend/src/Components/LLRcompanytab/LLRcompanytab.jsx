@@ -35,14 +35,11 @@ A Private Limited Company is a legally registered business under the Companies A
           {/* Text */}
           <div className="pvt-intro-content">
             <h2 className="pvt-intro-title">
-              Why Choose Labour Licence Registration
+              Why Choose Labour Licence Registration in India
             </h2>
             <p className="pvt-intro-text">
-              
-Registering a company in India is the first step to legally starting your business. The Companies Act, 2013, sets the rules for company formation, and the Ministry of Corporate Affairs (MCA) oversees the process. Once registered, your business gets a legal identity, along with rights and protections under Indian law. 
-<br></br>
-<br></br>
-Choosing the right type of Private Limited Company is important, as it determines how your business is owned, managed, and legally protected. Different types of private limited companies suit different business needs, depending on factors such as ownership structure. Selecting the correct type also helps ensure smooth compliance with legal regulations. Proper registration with the Ministry of Corporate Affairs (MCA) allows your company to operate legally, access government benefits, and build strong credibility in the market.            </p>
+             Labour License Registration is governed under Contract Labour (Regulation and Abolition) Act, 1970. Every contractor executing any contract work by engaging 20 or more contract labourers has to obtain a licence under the Act. The local District Labour Officers have been declared as Licensing Officers who will grant licenses to the contractors. The object of the Act is to regulate the employment of contract Labour in certain establishments and provide for its abolition in certain circumstances and for matters connected therewith. Below, we address some common queries related to Labour License registration in India.
+           </p>
           </div>
         </div>
       </section>
@@ -53,34 +50,31 @@ Choosing the right type of Private Limited Company is important, as it determine
       <section className="companies-act-section">
         <div className="companies-act-container">
           <div className="companies-act-card">
-            <h3 className="companies-act-title">Companies Act, 2013</h3>
+            <h3 className="companies-act-title">Labour Laws / Labour License (India)</h3>
 
             <p className="companies-act-text">
-              As per Section 2(68) of the Companies Act, 2013, a private limited
-              company means a company having a minimum paid-up share capital as
-              may be prescribed, and which by its articles of association:
+              As per the applicable Labour Laws (State Labour Department), a Labour License is a mandatory registration for establishments/contractors engaging workers. It ensures legal compliance, worker safety, and proper maintenance of statutory records.
             </p>
+
+             Labour License generally covers the following key compliances:
 
             <p className="companies-act-point">
               <span className="companies-act-point-label">(a)</span>
-              Restricts the right to transfer its shares;
+              Permission to legally employ workers/contract labour as per prescribed rules;
             </p>
 
             <p className="companies-act-point">
               <span className="companies-act-point-label">(b)</span>
-              Limits the number of its members to 200 (excluding present and
-              former employees); and
+              Compliance with statutory requirements like registers, wages, attendance, working hours, and welfare provisions; and
             </p>
 
             <p className="companies-act-point">
               <span className="companies-act-point-label">(c)</span>
-              Prohibits any invitation to the public to subscribe for any
-              securities of the company.
+              Adherence to labour inspections and avoidance of penalties for non-compliance.
             </p>
           </div>
         </div>
       </section>
-
     </div>
   );
 };

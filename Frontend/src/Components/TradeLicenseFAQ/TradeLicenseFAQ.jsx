@@ -3,49 +3,71 @@ import "./TradeLicenseFAQ.css";
 
 const faqs = [
   {
-    question: "What is a Trade License and why is it required?",
+    question: "Is Trade License mandatory for all business organizations?",
     answer:
-      "A Trade License is an official permission granted by the municipal authority that allows you to carry out your trade or business legally within a specific area. It ensures your business complies with safety, health, and zoning laws.",
+      "The Trade License is mandatory for all business operations who carry on the business activity under any municipal limit.",
   },
   {
-    question: "Who needs to apply for a Trade License?",
+    question: "What is the validity of license?",
     answer:
-      "Every individual, firm, or company engaged in any kind of trade, manufacturing, or service activity must obtain a Trade License from the local municipal body before starting operations.",
+      "A license granted shall be valid for a period of 1 year.",
   },
   {
-    question: "How long is a Trade License valid?",
+    question: "What is the due date of renewal of license?",
     answer:
-      "A Trade License is generally valid for one financial year and must be renewed annually before its expiry date to avoid penalties or closure of business activities.",
+      "The renewal of license shall be completed at before 31st March of every year.",
   },
   {
-    question: "What are the documents required for a Trade License?",
+    question: "What if we do not renew the license before 31st March?",
     answer:
-      "The required documents typically include proof of business address, identity proof, PAN card, property tax receipt, NOC from the owner, and layout plan of the premises.",
+      "The renewal can be done with the penalty as may be levied by the respective municipal corporation.",
   },
   {
-    question: "What is the processing time for obtaining a Trade License?",
-    answer:
-      "The processing time varies by city but typically takes 7–15 working days from the date of submission of a complete and accurate application.",
+    question: "What are the documents required for Trade license?",
+    answer: (
+      <div>
+        <ol>
+          <li>Address Proof (preferably Electricity Bill) of premise(s) from where the business to be carried on in Odisha</li>
+          <li>Copy of PAN &Registration certificate of the organisation</li>
+          <li>Proof of possession of premises (Rental Agreement/ Utility Bill)</li>
+          <li>Copy of PAN of all the Directors/partners/proprietor</li>
+          <li>Copy of Address proof of all the Directors/partners/proprietor</li>
+          <li>Bank details & Bank Statement of the organisation of last 2 Months (from which it operates)</li>
+          <li>PAN, photo & Address proof of the person authorized to represent at the Trade License Department</li>
+          <li>Authorization letter for the above</li>
+          <li>Details of business activity to be carried out by the applicant</li>
+          <li>Email id & Mobile number</li>
+          <li>Commercial Holding tax Receipt</li>
+        </ol>
+      </div>
+    ),
   },
   {
-    question: "Can a Trade License be transferred or modified?",
+    question: "What is the time period within which the Trade License can be obtained?",
     answer:
-      "Yes, a Trade License can be transferred to another person or modified in case of changes in business details, ownership, or address, subject to municipal approval.",
+      "The process of obtaining Trade License can take anywhere between 07 to 10 working days, subject to submission of correct information and complete documentation in metro cities and in case of non-metro cities it takes relatively longer time period to obtain the license.",
   },
   {
-    question: "What happens if I operate without a Trade License?",
-    answer:
-      "Operating a business without a valid Trade License is illegal and may result in fines, penalties, or closure of the business by municipal authorities.",
+    question: "What is the procedure to obtain Trade License?",
+    answer: (
+      <div>
+        <p>
+          The broad process of obtaining Trade Licenseinvolves following steps:
+        </p>
+        <ol>
+          <li>STEP 1: Provide the above-mentioned documents/information of your organization to one of our consultants.</li>
+          <li>STEP 2: Our consultant will process the above documents/ information and validate the same.</li>
+          <li>STEP 3: The application for Trade License shall be filled online or offline as the case may be.</li>
+          <li>STEP 4: The application shall be submitted with required attachments.</li>
+          <li>STEP 5: The department shall process the application and issue a registration certificate</li>
+        </ol>
+      </div>
+    ),
   },
   {
-    question: "Is online Trade License registration available?",
+    question: "How Legal Terminus can help you to obtain Trade License?",
     answer:
-      "Yes, many municipal corporations now allow online submission, document upload, and fee payment for Trade License registration and renewal.",
-  },
-  {
-    question: "How can Legal Terminus help in Trade License registration?",
-    answer:
-      "Legal Terminus provides end-to-end assistance — from documentation to online submission and municipal follow-up — ensuring a quick and hassle-free Trade License registration process.",
+      "Legal Terminus can help you with obtaining Trade License for your organization, as and when required, in a hassle-free manner within a reasonable time span and for competitive professional fee. To know more, please book a telephonic appointment with one of our consultants free of charge.",
   },
 ];
 
@@ -64,9 +86,6 @@ const TradeLicenseFAQ = () => {
           <h2 className="tradefaq-title">Trade License Registration FAQ&apos;s</h2>
 
           <p className="tradefaq-intro">
-            Getting a Trade License is an essential step for any business owner.
-            It not only ensures compliance with municipal laws but also builds
-            credibility for your operations. <br /> <br />
             Here, we’ve answered some of the most common questions about Trade
             License registration, process, and documentation to guide you
             through every step confidently.

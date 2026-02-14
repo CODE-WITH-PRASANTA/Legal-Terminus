@@ -19,18 +19,14 @@ const Breadcrum = () => {
           </h1>
 
           <p className="lt-public-description">
-            A Private Limited Company is a popular and trusted business structure in India, especially for startups and growing businesses. It helps protect personal assets, builds business credibility, and makes it easier to raise funds.
-
-<br/><br/>
-Legal Terminus can help you with Private Limited Company registration in a hassle-free way, whenever you need it. We take care of the complete process—from paperwork to approvals—within a reasonable time. Our professional fees start at ₹3,999, making company registration simple, affordable, and stress-free.
-
+            Legal Terminus can help you with obtaining bar code registration for your organization, as and when required, in a hassle-free manner within a reasonable time span and for a competitive professional fee which starts from Rs. 9,999/-
           </p>
 
           <div className="lt-public-features">
-            <div className="lt-feature-item"> Minimum 2 Directors Required</div>
-            <div className="lt-feature-item"> Separate Legal Entity</div>
-            <div className="lt-feature-item"> Limited Liability Protection</div>
-            <div className="lt-feature-item"> High Business Credibility</div>
+            <div className="lt-feature-item"> Unique product code</div>
+            <div className="lt-feature-item"> Easy product tracking</div>
+            <div className="lt-feature-item"> Fast billing with scanning</div>
+            <div className="lt-feature-item"> Required for online & retail sales</div>
           </div>
 
           <div className="lt-public-highlights">
@@ -59,7 +55,7 @@ Legal Terminus can help you with Private Limited Company registration in a hassl
             </h3>
 
             <p className="lt-form-subtitle">
-              Talk to our Private Limited Company registration expert
+              Talk to our Bar Code registration expert
             </p>
 
             <form

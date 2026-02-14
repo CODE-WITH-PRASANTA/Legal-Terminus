@@ -9,7 +9,7 @@ const IncorporationRequirementsTab = () => {
         {/* ================= HEADER ================= */}
         <header className="incorp-req-header">
           <h2 className="incorp-req-title">
-            Incorporation Of Wholly Owned Subsidiary in India
+            Benefits of Incorporation Of Wholly Owned Subsidiary in India
           </h2>
           {/* <p className="incorp-req-subtitle">
             The Ministry of Corporate Affairs (MCA) manages the company

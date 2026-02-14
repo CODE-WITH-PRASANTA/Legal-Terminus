@@ -43,7 +43,7 @@ const OPCElegibility = () => {
   return (
     <section className="opcelg-wrapper">
       <h2 className="opcelg-heading">
-        STEPS FOR ONE PERSON COMPANY REGISTRATION IN INDIA
+        Steps For One Person Company Registration in India
       </h2>
       <p className="opcelg-subheading">
         The broad process of registering a One Person Company involves the
