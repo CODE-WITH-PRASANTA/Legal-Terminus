@@ -119,7 +119,7 @@ function App() {
 
           <Route path="/updation/change-name-company" element={<ChangeInCompany />} />
           <Route path="/updation/change-address-llp" element={<CIROfficeAddress />} />
-<<<<<<< HEAD
+
           <Route path="//updation/change-object-llp" element={<ChangeInObject />} />
 
           {/*Windowup Services*/}
@@ -134,14 +134,10 @@ function App() {
           <Route path="/windup/dissolve-private" element={<DissolvePrivate />} />
           <Route path="/windup/dissolve-llp" element={<DissolveLLP />} />
           <Route path="/windup/dissolve-partnership" element={<DissolvePartnership />} />
-<<<<<<< HEAD
           <Route path="/updation/change-name-llp" element={<ChangeLlp/>}/>
           <Route path="/updation/change-address-company" element={<ChangeaddCom/>}/>
           
-
-=======
->>>>>>> 105d70d9ffefce317712a8bfe5ee33e29c71fc46
->>>>>>> 5e078fe258bb5b968aecc5dab88ec0cbd3b9008d
+ 5e078fe258bb5b968aecc5dab88ec0cbd3b9008d
         </Routes>
       </RouteLoaderWrapper>
 
