@@ -56,6 +56,8 @@ import CIROfficeAddress from "./Pages/CIROfficeAddress/CIROfficeAddress";
 import ChangeInObject from "./Pages/ChangeInObject/ChangeInObject";
 import TrademarktoOpposition from"./Pages/TrademarktoOpposition/TrademarktoOpposition";
 import TrademarktoHearing from "./Pages/TrademarktoHearing/TrademarktoHearing";
+import ChangeLlp from "./Pages/ChangeLlp/ChangeLlp";
+import ChangeaddCom from "./Pages/ChangeaddCom/ChangeaddCom";
 
 function App() {
   return (
@@ -121,6 +123,10 @@ function App() {
           <Route path="/windup/dissolve-private" element={<DissolvePrivate />} />
           <Route path="/windup/dissolve-llp" element={<DissolveLLP />} />
           <Route path="/windup/dissolve-partnership" element={<DissolvePartnership />} />
+          <Route path="/updation/change-name-llp" element={<ChangeLlp/>}/>
+          <Route path="/updation/change-address-company" element={<ChangeaddCom/>}/>
+          
+
         </Routes>
       </RouteLoaderWrapper>
 
