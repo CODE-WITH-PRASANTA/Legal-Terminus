@@ -56,6 +56,8 @@ import ChangeInCompany from "./Pages/ChangeInCompany/ChangeInCompany";
 import CIROfficeAddress from "./Pages/CIROfficeAddress/CIROfficeAddress";
 import ChangeInObject from "./Pages/ChangeInObject/ChangeInObject";
 
+import WindupPLC from "./Pages/WindupPLC/WindupPLC";
+
 function App() {
   return (
     <Router>
@@ -123,6 +125,12 @@ function App() {
           <Route path="/updation/change-name-company" element={<ChangeInCompany />} />
           <Route path="/updation/change-address-llp" element={<CIROfficeAddress />} />
           <Route path="//updation/change-object-llp" element={<ChangeInObject />} />
+
+          {/*Windowup Services*/}
+          <Route path="/windup/dissolve-private" element={<WindupPLC />} />
+
+
+          
         </Routes>
       </RouteLoaderWrapper>
 

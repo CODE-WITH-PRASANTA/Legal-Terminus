@@ -1,0 +1,210 @@
+.info-section {
+  width: 100%;
+  background: #eef2f6;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.info-wrapper {
+  position: relative;
+  width: 760px;
+  height: 760px;
+}
+
+/* =====================
+   BUBBLE BASE
+===================== */
+.bubble {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+}
+
+/* small tail (speech shape) */
+.bubble::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: inherit;
+  transform: rotate(45deg);
+}
+
+/* Text */
+.bubble-content {
+  width: 78%;
+  text-align: left;
+}
+
+.bubble h4 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.bubble p {
+  font-size: 15px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* =====================
+   EXACT POSITIONS
+===================== */
+
+.step1 {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #39b5f6;
+  z-index: 2;
+}
+.step1::after {
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.step2 {
+  top: 180px;
+  right: 40px;
+  background: #43d3b6;
+  z-index: 3;
+}
+.step2::after {
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.step3 {
+  bottom: 60px;
+  right: 150px;
+  background: #ffc400;
+  z-index: 2;
+}
+.step3::after {
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.step4 {
+  bottom: 60px;
+  left: 150px;
+  background: #ff2f8f;
+  z-index: 2;
+}
+.step4::after {
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.step5 {
+  top: 180px;
+  left: 40px;
+  background: #8f5bff;
+  z-index: 3;
+}
+.step5::after {
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* =====================
+   CENTER CIRCLE
+===================== */
+.center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-circle h3 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #333;
+}
+
+.center-circle p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* =====================
+   OUTSIDE STEP LABELS
+===================== */
+.label {
+  position: absolute;
+  font-weight: 700;
+  color: #6a6a6a;
+  font-size: 22px;
+}
+
+.l1 { top: 0; left: 50%; transform: translateX(-50%); }
+.l2 { top: 220px; right: -20px; }
+.l3 { bottom: 20px; right: 210px; }
+.l4 { bottom: 20px; left: 210px; }
+.l5 { top: 220px; left: -20px; }
+
+/* =====================
+   RESPONSIVE (STACK)
+===================== */
+@media (max-width: 768px) {
+
+  .info-wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .bubble {
+    position: relative;
+    width: 95%;
+    max-width: 360px;
+    height: auto;
+    border-radius: 20px;
+    padding: 22px;
+  }
+
+  .bubble::after,
+  .label {
+    display: none;
+  }
+
+  .center-circle {
+    position: relative;
+    transform: none;
+    top: auto;
+    left: auto;
+    width: 160px;
+    height: 160px;
+    margin-bottom: 10px;
+  }
+}
