@@ -18,7 +18,7 @@ const TradeLicenseFeatures = () => {
         {/* Right content */}
         <div className="trade-features-content">
           <h2 className="trade-features-title">
-            Types of Trade License Registration
+            Types of Trade License Registration in India
           </h2>
 
           <p className="trade-features-intro">
@@ -30,22 +30,21 @@ const TradeLicenseFeatures = () => {
 
           {/* Type 1 */}
           <div className="trade-features-block">
-            <h3 className="trade-features-subtitle">Shop and Establishment License</h3>
+            <h3 className="trade-features-subtitle">Industrial Trade License</h3>
             <p className="trade-features-text">
-              This is the most common form of trade license required for small
-              shops, commercial establishments, and local service providers.
-              It ensures that the business follows state-specific labor and
-              operational regulations.
+              Required for businesses involved in manufacturing or production work.
+              <br></br>
+              Examples: factories, manufacturing units, processing plants.
             </p>
           </div>
 
           {/* Type 2 */}
           <div className="trade-features-block">
-            <h3 className="trade-features-subtitle">Industrial Trade License</h3>
+            <h3 className="trade-features-subtitle">Shop and Establishment License</h3>
             <p className="trade-features-text">
-              This license is issued to manufacturing and production-based
-              businesses operating within industrial zones. It ensures that the
-              establishment meets environmental and safety norms.
+              Needed for businesses running a shop or service outlet.
+              <br></br>
+              Examples: clothing stores, general stores, salons, repair/service centers.
             </p>
           </div>
 
@@ -53,10 +52,10 @@ const TradeLicenseFeatures = () => {
           <div className="trade-features-block">
             <h3 className="trade-features-subtitle">Food and Health Trade License</h3>
             <p className="trade-features-text">
-              Businesses involved in food processing, restaurants, and public
-              health services require this license. It ensures compliance with
-              hygiene, safety, and public health standards regulated by local
-              authorities.
+              Required for businesses that sell or supply food and beverages in an area.
+              <br></br>
+              Examples: restaurants, cafes, catering services, food trucks.
+              For larger operations, an FSSAI license may also be required.
             </p>
           </div>
         </div>

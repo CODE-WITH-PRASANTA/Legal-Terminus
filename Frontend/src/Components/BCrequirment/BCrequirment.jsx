@@ -11,9 +11,7 @@ const RequirementsPvt = () => {
             Benefits of Bar Code Registration in India
           </h2>
           <p className="req-subtitle">
-            The Ministry of Corporate Affairs (MCA) manages the company registration process in India. It includes registering the business with the Registrar of Companies (RoC) and obtaining a Digital Signature Certificate (DSC) and Director Identification Number (DIN).
-
-
+            A barcode is a unique code printed on products. It can be scanned to quickly get product details from the system. Businesses use barcode registration for many useful reasons:
           </p>
         </header>
 
@@ -21,42 +19,63 @@ const RequirementsPvt = () => {
         <div className="req-grid">
           {/* 1 */}
           <article className="req-card">
-            <h3 className="req-card-title">Separate Legal Identity</h3>
+            <h3 className="req-card-title">Easy Inventory Management</h3>
             <div className="req-card-underline" />
             <p className="req-card-text">
-Once registered, a company becomes its own legal entity. It can own property, sign contracts, and operate separately from its owners.
-
+             Stores can manage and track thousands of products easily using barcodes, from manufacturing to final sale.
             </p>
           </article>
 
           {/* 2 */}
           <article className="req-card">
-            <h3 className="req-card-title">Limited Liability Protection</h3>
+            <h3 className="req-card-title">Better Asset Tracking</h3>
             <div className="req-card-underline" />
             <p className="req-card-text">
-              The personal assets of shareholders are safe from company debts and risks, ensuring financial protection.
+              Barcodes help businesses label and track assets like computers, machines, and other office equipment.
             </p>
           </article>
 
           {/* 3 */}
           <article className="req-card">
             <h3 className="req-card-title">
-              Access to Government Schemes
+              Simple Return Tracking
             </h3>
             <div className="req-card-underline" />
             <p className="req-card-text">
-              Registered companies can benefit from government schemes like Startup India for tax benefits and easier compliance, and Make in India for incentives and support for manufacturing businesses.
+              Barcodes make it easy to track product returns, especially in online shopping. They also help track invoices and payments.
             </p>
           </article>
 
           {/* 4 */}
           <article className="req-card">
             <h3 className="req-card-title">
-              Increased Credibility
+              Fewer Mistakes
             </h3>
             <div className="req-card-underline" />
             <p className="req-card-text">
-              A registered company is more trusted by investors, clients, and vendors, making it easier to get funding and partnerships.
+              Since barcode scanning is automatic, it reduces manual data entry and lowers the chance of errors.
+            </p>
+          </article>
+
+          {/* 5 */}
+          <article className="req-card">
+            <h3 className="req-card-title">
+              Affordable and Convenient
+            </h3>
+            <div className="req-card-underline" />
+            <p className="req-card-text">
+              Barcodes are low-cost, easy to create, and simple to print on product packaging.
+            </p>
+          </article>
+
+          {/* 4 */}
+          <article className="req-card">
+            <h3 className="req-card-title">
+              Product Details & Authenticity
+            </h3>
+            <div className="req-card-underline" />
+            <p className="req-card-text">
+              Barcodes store useful info like product number, batch number, and serial number, helping confirm product genuineness.
             </p>
           </article>
         </div>

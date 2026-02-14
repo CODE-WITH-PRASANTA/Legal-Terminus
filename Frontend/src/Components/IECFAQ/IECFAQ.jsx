@@ -3,49 +3,74 @@ import "./IECFAQ.css";
 
 const faqs = [
   {
-    question: "What is an Import Export Code (IEC)?",
+    question: "Is Import Export Code mandatory for all business organizations?",
     answer:
-      "An Import Export Code (IEC) is a 10-digit identification number issued by the Directorate General of Foreign Trade (DGFT), required for businesses involved in importing or exporting goods and services from India.",
+      "The Import Export Code is mandatory for those organizations who are engaged in the business of Import Export of goods or services.",
   },
   {
-    question: "Who needs to apply for an IEC?",
+    question: "What is the validity of IE Code?",
     answer:
-      "Any individual or business entity planning to import or export goods or services from India must obtain an IEC before starting international trade activities.",
+      "An Import Export Code once issued is valid for lifetime.",
   },
   {
-    question: "Can an IEC be used for both import and export?",
+    question: "What is the due date of renewal of IE Code?",
     answer:
-      "Yes, the same IEC can be used for both import and export transactions. It serves as a universal business identification number for all foreign trade operations.",
+      "Since IEC Certificate is granted for lifetime no renewal is required.",
   },
   {
-    question: "Is there a validity period for an IEC?",
+    question: "What if once wishes to carry on the business of Import Export of Goods and Services in India without obtaining IEC Registration?",
     answer:
-      "The IEC remains valid for the lifetime of the business and does not require renewal. However, it must be updated annually to confirm business details on the DGFT portal.",
+      "Import or Export of Goods and/or Services is not possible without having Import Export Code Certificate.",
   },
   {
-    question: "What are the documents required for IEC registration?",
+    question: "What are the documents required for obtaining Import Export Code?",
     answer:
-      "You’ll need a PAN card, proof of business address, bank details (cancelled cheque or bank certificate), and valid contact details of the applicant.",
+      (
+      <div>
+        <ol>
+          <li>Address Proof (preferably Electricity Bill) of premise(s) from where the business to be carried on in Odisha</li>
+          <li>Copy of PAN &Registration certificate of the organisation</li>
+          <li>Proof of possession of premises (Rental Agreement/ Utility Bill)</li>
+          <li>Copy of PAN of all the Directors/partners/proprietor</li>
+          <li>Copy of Address proof of all the Directors/partners/proprietor</li>
+          <li>Bank details & Bank Statement of the organisation of last 2 Months (from which it operates) along with cancelled cheque</li>
+          <li>PAN, photo & Address proof of the person authorized to represent at the department</li>
+          <li>Authorization letter for the above</li>
+          <li>Details of business activity to be carried out by the applicant</li>
+          <li>Email id & Mobile number</li>
+        </ol>
+      </div>
+    ),
   },
   {
-    question: "Can IEC be modified after registration?",
+    question: "What is the time period within which the Import Export Code can be obtained?",
     answer:
-      "Yes, any changes in business details such as address, ownership, or bank account must be updated in the DGFT system using the IEC modification form.",
+      "The process of obtaining IEC Registration can take anywhere between 5 to 7 working days, subject to submission of correct information and complete documentation.",
   },
   {
-    question: "Can a single person obtain an IEC?",
+    question: "What is the procedure to obtain Import Export Code?",
     answer:
-      "Yes, even an individual can apply for and hold an IEC for personal or small-scale import/export activities.",
+      (
+      <div>
+        <p>
+          The broad process of obtaining IEC Registration involves following steps:
+        </p>
+
+        <ol>
+          <li>STEP 1: Provide the above-mentioned documents/information of your organization to one of our consultants.</li>
+          <li>STEP 2: Our consultant will process the above documents/ information and validate the same.</li>
+          <li>STEP 3: The application for Trade License shall be filled online or offline as the case may be.</li>
+          <li>STEP 4: The application shall be submitted with required attachments.</li>
+          <li>STEP 5: The department shall process the application and issue a registration certificate</li>
+        </ol>
+      </div>
+    ),
   },
+
   {
-    question: "Is there any government fee for obtaining an IEC?",
+    question: "How Legal Terminus can help you to obtain Import Export Code?",
     answer:
-      "Yes, a nominal government fee is applicable for filing the IEC application on the DGFT portal.",
-  },
-  {
-    question: "How can Legal Terminus assist with IEC registration?",
-    answer:
-      "Legal Terminus provides expert assistance throughout the IEC registration process — from preparing and filing your application to coordinating with DGFT for prompt approval.",
+      "Legal Terminus can help you with obtaining Import Export Code for your organization, as and when required, in a hassle-free manner within a reasonable time span and for competitive professional fee. To know more, please book a telephonic appointment with one of our consultants free of charge.",
   },
 ];
 
@@ -61,18 +86,10 @@ const IECFAQ = () => {
       <div className="iecfaq-container">
         {/* Left side – static text */}
         <div className="iecfaq-left">
-          <h2 className="iecfaq-title">Import Export Code (IEC) FAQ&apos;s</h2>
+          <h2 className="iecfaq-title">Importer Exporter Code Registration FAQ&apos;s</h2>
 
           <p className="iecfaq-intro">
-            Obtaining an Import Export Code (IEC) is a crucial step for anyone
-            looking to start an import or export business in India. With expert
-            guidance, the process is simple and can be completed online within a
-            few days.
-            <br />
-            <br />
-            Below are the most commonly asked questions regarding IEC
-            registration, documentation, process, and compliance to help you
-            understand the procedure better.
+            Frequently asked questions about importer exporter code
           </p>
         </div>
 

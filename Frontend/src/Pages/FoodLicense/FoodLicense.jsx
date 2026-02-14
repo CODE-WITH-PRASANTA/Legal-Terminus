@@ -44,11 +44,11 @@ const FoodLicense = () => {
       </div>
 
       <div id="process">
-        <FoodLicenseElegibility />
+        {/* <FoodLicenseElegibility /> */}
       </div>
 
       <div id="documents">
-        <FoodLicenseDocuments />
+        {/* <FoodLicenseDocuments /> */}
       </div>
 
       <div id="faq">

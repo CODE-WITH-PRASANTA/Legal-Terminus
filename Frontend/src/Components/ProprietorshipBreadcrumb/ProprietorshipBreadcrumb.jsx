@@ -10,11 +10,11 @@ const Breadcrum = () => {
         <div className="lt-public-content">
 
           <span className="lt-public-tag">
-            Proprietorship Firms Registration
+            Proprietorship Firm Registration
           </span>
 
           <h1 className="lt-public-title">
-            Proprietorship Firms Registration
+            Proprietorship Firm Registration
             <br>
             </br>
             <span> in India</span>

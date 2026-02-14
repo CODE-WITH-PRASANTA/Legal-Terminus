@@ -10,36 +10,37 @@ const TradeLicenseBreadcrum = () => {
         <div className="lt-trade-content">
 
           <span className="lt-trade-tag">
-            Trade License Online Registration
+            Trade License Registration
           </span>
 
           <h1 className="lt-trade-title">
-            Trade License Online Registration
+            Trade License Registration
+            <br></br>
             <span> in India</span>
           </h1>
 
           <p className="lt-trade-description">
-            Legal Terminus can help you with Trade License registration in a smooth and hassle-free manner. We offer competitive professional fees starting at Rs. 3,999/- for Trade License registration in India.
+            Legal Terminus can help you with the Trade License Registration for your organization, as and when required, in a hassle-free manner within a reasonable time span and for a competitive professional fee which starts from Rs. 2,999/- (excluding government fees).
           </p>
 
           <div className="lt-trade-features">
-            <div className="lt-feature-item"> Minimum 2 Directors Required</div>
-            <div className="lt-feature-item"> Separate Legal Entity</div>
-            <div className="lt-feature-item"> Limited Liability Protection</div>
-            <div className="lt-feature-item"> High Business Credibility</div>
+            <div className="lt-feature-item"> Required 7 to 10 Working Days</div>
+            <div className="lt-feature-item"> 1 Year Validity</div>
+            <div className="lt-feature-item"> 5 Steps Processes</div>
+            <div className="lt-feature-item"> Renewal at before 31st March of Every Year</div>
           </div>
 
           <div className="lt-trade-highlights">
             <div>
-              <h3>12,000+</h3>
-              <p>Licenses Registered</p>
+              <h3>1,000+</h3>
+              <p>Companies Registered</p>
             </div>
             <div>
-              <h3>99%</h3>
-              <p>Approval Success Rate</p>
+              <h3>100%</h3>
+              <p>Online Process</p>
             </div>
             <div>
-              <h3>15+</h3>
+              <h3>5+</h3>
               <p>Years of Legal Expertise</p>
             </div>
           </div>

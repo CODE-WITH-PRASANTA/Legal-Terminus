@@ -26,16 +26,16 @@ const SocietyTabs = () => {
   };
 
   return (
-    <section className="incorp-tabs-section">
-      <div className="incorp-tabs-container">
-        <div className="incorp-tabs-card">
+    <section className="society-tabs-section">
+      <div className="society-tabs-container">
+        <div className="society-tabs-card">
 
-          <div className="incorp-tabs-list">
+          <div className="society-tabs-list">
             {tabs.map((tab, index) => (
               <button
                 key={tab.id}
                 type="button"
-                className={`incorp-tab ${
+                className={`society-tab ${
                   index === activeIndex ? "active" : ""
                 }`}
                 onClick={() => handleClick(index, tab.id)}

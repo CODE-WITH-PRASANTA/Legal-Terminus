@@ -61,9 +61,9 @@ const IncorporationFAQ = () => {
       <div className="s8faq-container">
 
         {/* LEFT */}
-        <div className="s8faq-left">
-          <h2 className="s8faq-title">
-            Incorporation Company Registration FAQ&apos;s
+        <div className="incfaq-left">
+          <h2 className="incfaq-title">
+            Incorporation of Wholly Owned Subsidiary in India FAQ&apos;s
           </h2>
 
           <p className="s8faq-intro">

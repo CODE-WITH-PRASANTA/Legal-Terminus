@@ -22,10 +22,10 @@ const PrivateLimited = () => {
      <LLRbreadcrum />
 
       <div id="plans">
-        <LLRlandpricing />
+        {/* <LLRlandpricing /> */}
       </div>
 
-      <LLRtermcondition />
+      {/* <LLRtermcondition /> */}
 
 
       <div id="premium">

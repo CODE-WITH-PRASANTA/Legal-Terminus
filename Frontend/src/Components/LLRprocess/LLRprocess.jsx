@@ -5,37 +5,32 @@ const steps = [
   {
     title: "Step 1 – Document Submission",
     text:
-      "Provision of requisite documents / information to us (as per the checklist to be provided by us).",
+      "Provision of requisite mentioned documents/information to us",
   },
   {
-    title: "Step 2 – Company Name & Objects Finalization",
+    title: "Step 2 – Documents Srutinizing",
     text:
-      "Finalisation of objects along with name of the proposed company (based on a search report duly conducted and provided by our team).",
+      "Validating the documents/ information and processing the same",
   },
   {
-    title: "Step 3 – Name Reservation Application",
+    title: "Step 3 – Further Documentations",
     text:
-      "Filing of application for name reservation in requisite e-form along with applicable government fees.",
+      "Preparation of further documents for signature",
   },
   {
-    title: "Step 4 – Digital Signature Certificates",
+    title: "Step 4 – Filing of Application",
     text:
-      "Preparation of requisite numbers of DSC with respect to the proposed promoters & directors and registration of DSC in the MCA portal.",
+      "Filing of application and submission of the same in online/offline manner, as the case may be",
   },
   {
-    title: "Step 5 – Incorporation Document Preparation",
+    title: "Step 5 – Payment",
     text:
-      "Preparation of further incorporation documents upon receipt of the name approval letter from the department.",
+      "Payment of appropriate government fee as applicable",
   },
   {
-    title: "Step 6 – Final Form Upload & Fee Payment",
+    title: "Step 6 – Issue of Registration Certificate",
     text:
-      "Uploading of final incorporation forms to the MCA portal along with applicable government fees.",
-  },
-  {
-    title: "Step 7 – Registration Certificate Issuance",
-    text:
-      "Processing of the application by the department and issuance of the registration certificate.",
+      "Processing of the application and issuance of registration certificate",
   },
 ];
 
@@ -43,10 +38,10 @@ const GSTProcess = () => {
   return (
     <section className="pvtltd-gst-wrapper">
       <h2 className="gst-heading">
-        STEPS FOR LABOUR LICENCE REGISTRATION IN INDIA
+        Steps For Labour License Registration in India
       </h2>
       <p className="pv-gst-subheading">
-        The broad process of registering a Private Limited company involves
+        The broad process of registering a Labour License involves
         the following steps:
       </p>
 

@@ -38,11 +38,8 @@ A Private Limited Company is a legally registered business under the Companies A
               Why Choose ISO Certification In india
             </h2>
             <p className="pvt-intro-text">
-              
-Registering a company in India is the first step to legally starting your business. The Companies Act, 2013, sets the rules for company formation, and the Ministry of Corporate Affairs (MCA) oversees the process. Once registered, your business gets a legal identity, along with rights and protections under Indian law. 
-<br></br>
-<br></br>
-Choosing the right type of Private Limited Company is important, as it determines how your business is owned, managed, and legally protected. Different types of private limited companies suit different business needs, depending on factors such as ownership structure. Selecting the correct type also helps ensure smooth compliance with legal regulations. Proper registration with the Ministry of Corporate Affairs (MCA) allows your company to operate legally, access government benefits, and build strong credibility in the market.            </p>
+              ISO refers to the International Organization for Standardization which is an autonomous body who sets global standards for quality, safety and efficiency of products and services. In the competitive global market, ISO certification in India plays a vital role as it provides an edge to the organization having ISO certification with respect to quality, efficiency and safety.
+            </p>
           </div>
         </div>
       </section>
@@ -53,34 +50,29 @@ Choosing the right type of Private Limited Company is important, as it determine
       <section className="companies-act-section">
         <div className="companies-act-container">
           <div className="companies-act-card">
-            <h3 className="companies-act-title">Companies Act, 2013</h3>
+            <h3 className="companies-act-title">ISO Certification</h3>
 
             <p className="companies-act-text">
-              As per Section 2(68) of the Companies Act, 2013, a private limited
-              company means a company having a minimum paid-up share capital as
-              may be prescribed, and which by its articles of association:
+              ISO Certification is an internationally recognised certification that confirms a business follows standard quality and operational practices. It helps organisations improve performance, ensure customer satisfaction, and build market credibility.
             </p>
 
             <p className="companies-act-point">
               <span className="companies-act-point-label">(a)</span>
-              Restricts the right to transfer its shares;
+              Follows defined quality standards and process systems;
             </p>
 
             <p className="companies-act-point">
               <span className="companies-act-point-label">(b)</span>
-              Limits the number of its members to 200 (excluding present and
-              former employees); and
+              Improves efficiency, consistency, and customer trust through structured working methods; and
             </p>
 
             <p className="companies-act-point">
               <span className="companies-act-point-label">(c)</span>
-              Prohibits any invitation to the public to subscribe for any
-              securities of the company.
+              Enhances business credibility and increases eligibility for tenders, contracts, and global opportunities.
             </p>
           </div>
         </div>
       </section>
-
     </div>
   );
 };

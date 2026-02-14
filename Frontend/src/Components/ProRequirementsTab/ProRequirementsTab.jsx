@@ -8,7 +8,7 @@ const RequirementsPvt = () => {
         {/* Heading + intro */}
         <header className="req-header">
           <h2 className="req-title">
-            Benefits of Proprietorship Firms Registration in India
+            Benefits of Proprietorship Firm Registration in India
           </h2>
           <p className="req-subtitle">
             Registering a sole proprietorship in India is a great option for small businesses and individual entrepreneurs. Here are the key benefits:

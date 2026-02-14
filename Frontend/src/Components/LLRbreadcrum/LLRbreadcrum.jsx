@@ -15,22 +15,19 @@ const Breadcrum = () => {
 
           <h1 className="lt-public-title">
            Labour Licence Registration
+           <br></br>
             <span> in India</span>
           </h1>
 
           <p className="lt-public-description">
-            A Private Limited Company is a popular and trusted business structure in India, especially for startups and growing businesses. It helps protect personal assets, builds business credibility, and makes it easier to raise funds.
-
-<br/><br/>
-Legal Terminus can help you with Private Limited Company registration in a hassle-free way, whenever you need it. We take care of the complete process—from paperwork to approvals—within a reasonable time. Our professional fees start at ₹3,999, making company registration simple, affordable, and stress-free.
-
+            Legal Terminus can help you with Labour License Registration for your organization, as and when required, in a hassle-free manner within a reasonable time span and for competitive professional fee which starts from Rs. 11,999/- + Applicable Government Fees
           </p>
 
           <div className="lt-public-features">
-            <div className="lt-feature-item"> Minimum 2 Directors Required</div>
-            <div className="lt-feature-item"> Separate Legal Entity</div>
-            <div className="lt-feature-item"> Limited Liability Protection</div>
-            <div className="lt-feature-item"> High Business Credibility</div>
+            <div className="lt-feature-item"> Validity Period 1 Year</div>
+            <div className="lt-feature-item"> Apply 30 days before expiry</div>
+            <div className="lt-feature-item"> Renew on time to prevent fines</div>
+            <div className="lt-feature-item"> Simple documentation support</div>
           </div>
 
           <div className="lt-public-highlights">
@@ -59,7 +56,7 @@ Legal Terminus can help you with Private Limited Company registration in a hassl
             </h3>
 
             <p className="lt-form-subtitle">
-              Talk to our Private Limited Company registration expert
+              Talk to our Labour License registration expert
             </p>
 
             <form

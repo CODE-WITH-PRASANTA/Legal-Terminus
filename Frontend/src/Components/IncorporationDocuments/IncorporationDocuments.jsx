@@ -77,13 +77,13 @@ export default function IncorporationDocuments() {
 
         {/* SEO HEADING */}
         <h2 className="inc-docs-main-heading">
-          Documents Required for Incorporation Company Registration
+          Documents Required for Incorporation of Wholly Owned Subsidiary in India
         </h2>
 
         {/* DECORATIVE HEADER */}
         <div className="inc-docs-header">
           Documents Required
-          <span>Incorporation Company</span>
+          <span>Incorporation of Wholly Owned Subsidiary in India</span>
         </div>
 
         {/* CONNECTOR */}

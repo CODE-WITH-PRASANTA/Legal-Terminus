@@ -21,10 +21,10 @@ const TradeLicense = () => {
       <TradeLicenseBreadcrum />
 
       <div id="plans">
-        <TradeLicensePlans />
+        {/* <TradeLicensePlans /> */}
       </div>
 
-      <TradeLicenseTermCondition />
+      {/* <TradeLicenseTermCondition /> */}
 
       <div id="premium">
         <TradeLicenseZolvitPremium />
@@ -45,11 +45,11 @@ const TradeLicense = () => {
       </div>
 
       <div id="process">
-        <TradeLicenseElegibility />
+        {/* <TradeLicenseElegibility /> */}
       </div>
 
      <div id="documents">
-        <TradeLicenseDocuments />
+        {/* <TradeLicenseDocuments /> */}
       </div>
 
       <div id="faq">

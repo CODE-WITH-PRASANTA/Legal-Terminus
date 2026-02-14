@@ -10,23 +10,23 @@ import {
 } from "react-icons/fa";
 
 const steps = [
-  { id: "01", title: "Identity Proof", icon: <FaIdCard />, color: "red" },
-  { id: "02", title: "Address Proof", icon: <FaBuilding />, color: "orange" },
-  { id: "03", title: "Employee Details", icon: <FaUsers />, color: "yellow" },
-  { id: "04", title: "Business Documents", icon: <FaFileAlt />, color: "green" },
-  { id: "05", title: "Fee & Challan", icon: <FaMoneyCheckAlt />, color: "cyan" },
-  { id: "06", title: "Declaration", icon: <FaStamp />, color: "blue" },
+  { id: "01", title: "Any registration certificate of an organization such as Certification of Incorporation/Partnership Deed/Trade License.", icon: <FaIdCard />, color: "red" },
+  { id: "02", title: "Rent agreement and Electricity bill of the registered office address of the organization.", icon: <FaBuilding />, color: "orange" },
+  { id: "03", title: "Photo, PAN card & Aadhar Card of all the Directors/Partners/Proprietor.", icon: <FaUsers />, color: "yellow" },
+  { id: "04", title: "Work order for employement of more than 50 employees in which Date of Commencement and Date of Completion should be mentioned.", icon: <FaFileAlt />, color: "green" },
+  { id: "05", title: "Authorization letter/ Board Resolution for Authorised person (shall be provided by us", icon: <FaMoneyCheckAlt />, color: "cyan" },
+  { id: "06", title: "A detailed checklist will be provided by our team in this respect", icon: <FaStamp />, color: "blue" },
 ];
 
 const outerDots = Array.from({ length: 48 });
 
 const LabourLicenceTimeline = () => {
   return (
-    <section className="lli-timeline-section">
-      <h2 className="lli-timeline-heading">
+    <section className="pvtltd-gst-wrapper">
+      <h2 className="gst-heading">
         Documents Required for Labour Licence Registration in India
       </h2>
-
+<br></br>
       <div className="lli-timeline-wrapper">
         {/* CENTER INFOGRAPHIC */}
         <div className="lli-timeline-center">
@@ -34,8 +34,6 @@ const LabourLicenceTimeline = () => {
           <div className="lli-timeline-circle">
             <span>
               Documents Required
-             
-              
             </span>
           </div>
 

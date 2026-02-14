@@ -11,10 +11,7 @@ const TradeLicenseBenefits = () => {
             Benefits of Trade License Registration in India
           </h2>
           <p className="tradeben-subtitle">
-            Trade licenses are issued by municipal authorities to regulate and authorize
-            business operations within a locality. Registering ensures that your business
-            adheres to safety, health, and legal standards while maintaining credibility in
-            the marketplace.
+            A Trade License is an important document for running a business legally in a city/municipal area. It not only keeps your business compliant but also gives many practical benefits.
           </p>
         </header>
 
@@ -22,41 +19,55 @@ const TradeLicenseBenefits = () => {
         <div className="tradeben-grid">
           {/* 1 */}
           <article className="tradeben-card">
-            <h3 className="tradeben-card-title">Legal Business Recognition</h3>
+            <h3 className="tradeben-card-title">Builds Trust & Credibility</h3>
             <div className="tradeben-card-underline" />
             <p className="tradeben-card-text">
-              A trade license legally validates your business operations, helping you run
-              smoothly under municipal laws and avoid penalties.
+              A trade license shows that your business is registered and approved by the local authority. This makes customers feel more confident and helps your business look genuine and professional.
             </p>
           </article>
 
           {/* 2 */}
           <article className="tradeben-card">
-            <h3 className="tradeben-card-title">Public Health & Safety Compliance</h3>
+            <h3 className="tradeben-card-title">Helps You Get Loans & Financial Support</h3>
             <div className="tradeben-card-underline" />
             <p className="tradeben-card-text">
-              Businesses are required to meet specific hygiene, safety, and environmental
-              standards, ensuring a safe and compliant operation.
+              When your business has a trade license, it becomes easier to apply for bank loans, business funding, and finance options. Most banks prefer businesses that follow all required rules.
             </p>
           </article>
 
           {/* 3 */}
           <article className="tradeben-card">
-            <h3 className="tradeben-card-title">Improved Business Credibility</h3>
+            <h3 className="tradeben-card-title">Improves Business Reputation</h3>
             <div className="tradeben-card-underline" />
             <p className="tradeben-card-text">
-              Licensed businesses are more trusted by customers, suppliers, and government
-              agencies, which improves reputation and business relationships.
+              Licensed businesses get better acceptance in the market. It helps you build a good image and stronger reputation over time compared to unlicensed businesses.
             </p>
           </article>
 
           {/* 4 */}
           <article className="tradeben-card">
-            <h3 className="tradeben-card-title">Eligibility for Local Benefits</h3>
+            <h3 className="tradeben-card-title">Increases Investor Confidence</h3>
             <div className="tradeben-card-underline" />
             <p className="tradeben-card-text">
-              A registered trade license may make your business eligible for municipal
-              incentives, ease of approvals, and faster growth support.
+              Investors usually choose businesses that are legally registered and properly managed. A trade license helps show that your business is serious and safe to invest in.
+            </p>
+          </article>
+
+          {/* 5 */}
+          <article className="tradeben-card">
+            <h3 className="tradeben-card-title">Fewer Legal Issues</h3>
+            <div className="tradeben-card-underline" />
+            <p className="tradeben-card-text">
+              With a trade license, your business is less likely to face fines, notices, or legal action from municipal authorities. It keeps your operations smooth.
+            </p>
+          </article>
+
+          {/* 6 */}
+          <article className="tradeben-card">
+            <h3 className="tradeben-card-title">Promotes Hygiene & Safety</h3>
+            <div className="tradeben-card-underline" />
+            <p className="tradeben-card-text">
+              Trade license rules ensure that businesses maintain cleanliness and safety standards at the workplace. This creates a better environment for customers and employees.
             </p>
           </article>
         </div>

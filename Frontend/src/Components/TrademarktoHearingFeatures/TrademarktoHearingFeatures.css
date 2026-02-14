@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.thf-section {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #ffffff;
+  padding: 20px 24px 20px;
+}
+
+.thf-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.85fr 1.4fr;
+  column-gap: 72px;
+  align-items: flex-start;
+}
+
+/* Illustration */
+
+.thf-illustration-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 12px;
+}
+
+.thf-illustration {
+  max-width: 115%;
+  height: auto;
+  display: block;
+}
+
+/* Content */
+
+.thf-content {
+  max-width: 760px;
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 14px;
+}
+
+.thf-title {
+  font-size: 40px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: #151821;
+  margin: 0 0 18px;
+}
+
+.thf-intro {
+  margin: 0 0 24px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+.thf-block {
+  margin-bottom: 24px;
+}
+
+.thf-subtitle {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.thf-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .thf-section {
+    padding: 52px 20px 44px;
+  }
+  .thf-container {
+    column-gap: 40px;
+    grid-template-columns: 0.9fr 1.3fr;
+  }
+  .thf-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .thf-section {
+    padding: 40px 16px 36px;
+  }
+  .thf-container {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+  .thf-illustration-wrap {
+    order: 1;
+  }
+  .thf-content {
+    order: 2;
+  }
+  .thf-title {
+    font-size: 28px;
+  }
+  .thf-intro,
+  .thf-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .thf-section {
+    padding: 32px 14px 28px;
+  }
+  .thf-title {
+    font-size: 24px;
+  }
+  .thf-intro,
+  .thf-text {
+    font-size: 13.5px;
+    line-height: 1.85;
+  }
+}

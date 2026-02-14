@@ -28,8 +28,7 @@ const TradeLicenseZolvitPremium = () => {
                 <span className="tradezp-title-icon">⚖️</span>
               </h2>
               <p className="tradezp-subtitle">
-                Get your trade license registered faster with Legal Terminus expert-handled process,
-                made for entrepreneurs who value time and want to avoid unnecessary delays.
+                Get your Trade License Registration completed faster with Legal Terminus’ expert-handled process — made for business owners who value time and want a smooth, delay-free setup.
               </p>
             </header>
 
@@ -39,16 +38,15 @@ const TradeLicenseZolvitPremium = () => {
               <ul className="tradezp-list tradezp-features-list">
                 <li className="tradezp-list-item">
                   <span className="tradezp-list-icon">🧑‍⚖️</span>
-                  Get your trade license registered faster with Legal Terminus expert-handled process,
-                  made for entrepreneurs who value time and want to avoid unnecessary delays.
+                  End-to-end Trade License registration handled by our legal experts for quick approval and minimal delay risk.
                 </li>
                 <li className="tradezp-list-item">
                   <span className="tradezp-list-icon">📑</span>
-                  Hassle-Free Compliance Solutions
+                  Hassle-free documentation & application filing as per local municipal requirements
                 </li>
                 <li className="tradezp-list-item">
                   <span className="tradezp-list-icon">⏱️</span>
-                  Excellent Reminder Policy
+                  Fast processing with regular updates until your license is issued
                 </li>
               </ul>
             </section>
@@ -59,12 +57,10 @@ const TradeLicenseZolvitPremium = () => {
               <div className="tradezp-note-box">
                 <ul className="tradezp-note-list">
                   <li className="tradezp-note-item">
-                    We prioritize your preferred business name and conduct a
-                    preliminary name check before submission.
+                    We review your details and documents properly before submission to avoid rejection or delays.
                   </li>
                   <li className="tradezp-note-item">
-                    In case of name rejection, our experts will recommend
-                    legally compliant alternative names to ensure approval.
+                    If any clarification is required by the municipal authority, our team handles the follow-up on your behalf for smooth approval.
                   </li>
                 </ul>
               </div>

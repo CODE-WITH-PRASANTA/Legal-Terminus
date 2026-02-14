@@ -9,7 +9,7 @@ const FoodLicensePlans = () => {
         <header className="foodlicensepricing-header">
           <h2 className="foodlicensepricing-title">CHOOSE YOUR PLAN</h2>
           <p className="foodlicensepricing-subtitle">
-            Register your Food License with pocket-friendly prices
+            Register your food license with pocket friendly-prices
           </p>
         </header>
 
@@ -21,19 +21,13 @@ const FoodLicensePlans = () => {
             <div>
               <div className="foodlicenseplan-header">
                 <div className="foodlicenseplan-name">Elemental</div>
-                <div className="foodlicenseplan-old-price">₹5,999</div>
-                <div className="foodlicenseplan-price">₹3,999</div>
+                <div className="foodlicenseplan-price">₹1,499</div>
                 <div className="foodlicenseplan-meta">Excluding gov fee</div>
               </div>
 
               <div className="foodlicenseplan-body">
                 <ul className="foodlicenseplan-list">
-                  <li className="foodlicenseplan-list-item">FSSAI Registration Application Filing</li>
-                  <li className="foodlicenseplan-list-item">Assistance in Documentation</li>
-                  <li className="foodlicenseplan-list-item">Certificate of FSSAI License Issuance</li>
-                  <li className="foodlicenseplan-list-item">PAN & Business Details Verification</li>
-                  <li className="foodlicenseplan-list-item">Email & Mobile Verification Support</li>
-                  <li className="foodlicenseplan-list-item">Lifetime Valid FSSAI License</li>
+                  <li className="foodlicenseplan-list-item">For Food Business Operators whose Annual turnover less than 12 Lakhs</li>
                 </ul>
               </div>
             </div>
@@ -48,8 +42,7 @@ const FoodLicensePlans = () => {
             <div>
               <div className="foodlicenseplan-header">
                 <div className="foodlicenseplan-name">Enriched</div>
-                <div className="foodlicenseplan-old-price">₹7,999</div>
-                <div className="foodlicenseplan-price">₹5,999</div>
+                <div className="foodlicenseplan-price">₹3,999</div>
                 <div className="foodlicenseplan-meta">
                   Excluding gov fee <span className="popular">(Popular)</span>
                 </div>
@@ -57,10 +50,7 @@ const FoodLicensePlans = () => {
 
               <div className="foodlicenseplan-body">
                 <ul className="foodlicenseplan-list">
-                  <li className="foodlicenseplan-list-item">Elemental Plan Plus</li>
-                  <li className="foodlicenseplan-list-item">Business Consultancy Support</li>
-                  <li className="foodlicenseplan-list-item">GST Registration Assistance</li>
-                  <li className="foodlicenseplan-list-item">Udyam/MSME Registration</li>
+                  <li className="foodlicenseplan-list-item">For Food Business Operators whose Annual turnover more than 12 Lakhs & less than 20 Cr</li>
                 </ul>
               </div>
             </div>
@@ -75,19 +65,13 @@ const FoodLicensePlans = () => {
             <div>
               <div className="foodlicenseplan-header">
                 <div className="foodlicenseplan-name">Supreme</div>
-                <div className="foodlicenseplan-old-price">₹29,999</div>
-                <div className="foodlicenseplan-price">₹24,999</div>
+                <div className="foodlicenseplan-price">₹7,999</div>
                 <div className="foodlicenseplan-meta">Excluding gov fee</div>
               </div>
 
               <div className="foodlicenseplan-body">
                 <ul className="foodlicenseplan-list">
-                  <li className="foodlicenseplan-list-item">Enriched Plan Plus</li>
-                  <li className="foodlicenseplan-list-item">Annual FSSAI Renewal & Modifications</li>
-                  <li className="foodlicenseplan-list-item">Food Compliance Advisory</li>
-                  <li className="foodlicenseplan-list-item">Business Setup Support for Food Units</li>
-                  <li className="foodlicenseplan-list-item">Priority Customer Assistance</li>
-                  <li className="foodlicenseplan-list-item">Dedicated Relationship Manager</li>
+                  <li className="foodlicenseplan-list-item">For Food Business Operators whose Annual turnover more than 20 Cr</li>
                 </ul>
               </div>
             </div>

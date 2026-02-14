@@ -16,7 +16,7 @@ const LlpTypes = () => {
           />
         </div>
 
-        {/* Right content */}
+        Right content
         <div className="llp-types-content">
           <h2 className="llp-types-title">
             Types of Limited Liability Partnership

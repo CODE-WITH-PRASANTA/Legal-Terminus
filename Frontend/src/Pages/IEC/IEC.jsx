@@ -21,7 +21,7 @@ const IEC = () => {
       <div id="plans">
         <IECPlans />
       </div>
-      <IECTermCondition />
+      {/* <IECTermCondition /> */}
       <div id="premium">
         <IECZolvitpremium />
       </div>
@@ -36,10 +36,10 @@ const IEC = () => {
         <IECBenefits />
       </div>
       <div id="process">
-        <IECElegibility />
+        {/* <IECElegibility /> */}
       </div>
       <div id="documents">
-        <IECDocuments />
+        {/* <IECDocuments /> */}
       </div>
     <div id="faq">
         <IECFAQ />

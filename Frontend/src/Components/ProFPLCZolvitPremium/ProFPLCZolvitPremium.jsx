@@ -28,9 +28,7 @@ const ZolvitPremium = () => {
                 <span className="profplc-zp-title-icon">⚖️</span>
               </h2>
               <p className="profplc-zp-subtitle">
-                Get your company registered faster with Legal Terminus
-                expert-handled process, made for entrepreneurs who value time
-                and want to avoid unnecessary delays.
+                Upgrade your sole proprietorship into a Private Limited Company faster with our expert-handled process — designed for business owners who want credibility, scalability, and limited liability without unnecessary delays.
               </p>
             </header>
 
@@ -40,17 +38,15 @@ const ZolvitPremium = () => {
               <ul className="profplc-zp-list profplc-zp-features-list">
                 <li className="profplc-zp-list-item">
                   <span className="profplc-zp-list-icon">🧑‍⚖️</span>
-                  Get your company registered faster with Legal Terminus
-                  expert-handled process, made for entrepreneurs who value
-                  time and want to avoid unnecessary delays.
+                  From document preparation to final incorporation, our experts manage the complete transition process smoothly.
                 </li>
                 <li className="profplc-zp-list-item">
                   <span className="profplc-zp-list-icon">📑</span>
-                  Hassle-Free Compliance Solutions
+                  We take care of ROC filings, MOA/AOA drafting, PAN, TAN, and other mandatory compliances.
                 </li>
                 <li className="profplc-zp-list-item">
                   <span className="profplc-zp-list-icon">⏱️</span>
-                  Excellent Reminder Policy
+                  Never miss a deadline — we proactively track timelines and keep you updated at every stage.
                 </li>
               </ul>
             </section>
@@ -61,12 +57,10 @@ const ZolvitPremium = () => {
               <div className="profplc-zp-note-box">
                 <ul className="profplc-zp-note-list">
                   <li className="profplc-zp-note-item">
-                    We prioritize your preferred business name and conduct a
-                    preliminary name check before submission.
+                    We verify your proposed company name in advance and conduct a preliminary availability check before submission.
                   </li>
                   <li className="profplc-zp-note-item">
-                    In case of name rejection, our experts will recommend
-                    legally compliant alternative names to ensure approval.
+                    If your preferred name is rejected, our experts suggest legally compliant alternatives to ensure faster approval.
                   </li>
                 </ul>
               </div>

@@ -3,10 +3,10 @@ import "./Protabs.css";
 
 const tabs = [
   { label: "Why Choose Proprietorship", id: "company" },
-  { label: "Types", id: "types" },
+  // { label: "Types", id: "types" },
   { label: "Requirements", id: "requirements" },
-  { label: "Processes", id: "process" },
-  { label: "Documents", id: "documents" },
+  // { label: "Processes", id: "process" },
+  // { label: "Documents", id: "documents" },
   { label: "FAQ's", id: "faq" },
 ];
 

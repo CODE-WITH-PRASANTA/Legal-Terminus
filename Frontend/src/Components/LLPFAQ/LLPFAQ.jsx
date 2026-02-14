@@ -77,7 +77,7 @@ const FaqLLP = () => {
       <div className="lp-container">
         {/* Left side – static text */}
         <div className="lp-left">
-          <h2 className="lp-title">Limited Liability Partnership FAQ's</h2>
+          <h2 className="lp-title">Limited Liability Partnership Registration FAQ's</h2>
 
           <p className="lp-intro">
             Explore answers to frequently asked questions on Limited Liability Partnership (LLP) registration in India, including benefits, eligibility, compliance requirements, and comparisons with other business structures—so you can make the right choice with confidence.

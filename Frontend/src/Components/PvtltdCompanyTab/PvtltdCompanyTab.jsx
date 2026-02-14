@@ -35,10 +35,10 @@ A Private Limited Company is a legally registered business under the Companies A
           {/* Text */}
           <div className="pvt-intro-content">
             <h2 className="pvt-intro-title">
-              Why Choose Proprietorship Firms Registration
+              Why Choose Private Limited Company Registration in India
             </h2>
             <p className="pvt-intro-text">
-             Sole proprietorship firm registration in India is the easiest way to start a new business. It’s when one person owns and runs the business, and they’re personally responsible for any debt it incurs. In simple terms, there’s no legal difference between the sole proprietorship firm and the sole proprietors themselves. Here are answers to some common questions about proprietorship firm registration in India.
+             A private limited company is a popular choice for a corporate business structure in India. The company has a separate legal identity, and there is separation of ownership and management. Private limited company registration in India provides benefits like less stringent compliance requirements. Such structures are favored by critical stakeholders such as investors and creditors. Additionally, companies can avail the benefits of start-up recognition under the Start-up India Scheme of the Government of India. Below, we address some common queries related to private limited company registration in India.
             </p>
           </div>
         </div>
@@ -53,23 +53,20 @@ A Private Limited Company is a legally registered business under the Companies A
             {/* <h3 className="companies-act-title">Companies Act, 2013</h3> */}
 
             <p className="companies-act-text">
-              A Sole Proprietorship is a simple business structure owned and managed by a single individual. It does not have a separate legal identity from its owner and is one of the easiest ways to start a business in India.
-            </p>
-
+             Designed for entrepreneurs and growing businesses looking for a smooth, quick, and hassle-free Private Limited Company registration process, with expert assistance at every step.</p>
             <p className="companies-act-point">
               <span className="companies-act-point-label">(a)</span>
-              PAN and Aadhaar of the proprietor;
+              PAN and Aadhaar of all Directors/Shareholders;
             </p>
 
             <p className="companies-act-point">
               <span className="companies-act-point-label">(b)</span>
-              Business address proof and utility bill; and
+              Registered office address proof along with latest utility bill (electricity/water/gas); and
             </p>
 
             <p className="companies-act-point">
               <span className="companies-act-point-label">(c)</span>
-              Basic registrations like GST Registration (if applicable), Shop & Establishment License, or Udyam Registration.
-            </p>
+              Supporting documents (if applicable) such as rent agreement/ownership proof and NOC from the property owner.</p>
           </div>
         </div>
       </section>

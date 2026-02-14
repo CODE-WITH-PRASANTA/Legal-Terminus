@@ -17,13 +17,6 @@ const GSTRegBreadcrum = () => {
             GST Registration
             <span className="gstv2-highlight"> in India</span> 
           </h1>
-
-          <p className="gstv2-description">
-            GST Registration is mandatory for businesses involved in taxable
-            supply of goods or services. Legal Terminus provides
-            end-to-end GST registration services.
-          </p>
-
           <p className="gstv2-sub-description">
             Legal Terminus can help you with GST registration in India, offering hassle-free services within a reasonable timeframe and for competitive professional fees starting from Rs. 1999/-. We assist with GST registration promptly and efficiently to meet your organization’s needs.
           </p>
@@ -32,7 +25,7 @@ const GSTRegBreadcrum = () => {
           <div className="gstv2-stats-wrapper">
             <div className="gstv2-stat-card">
               <h3 className="gstv2-stat-value">1000+</h3>
-              <p className="gstv2-stat-label">Satisfied Clients</p>
+              <p className="gstv2-stat-label">Companies Registered</p>
             </div>
 
             <div className="gstv2-stat-card">

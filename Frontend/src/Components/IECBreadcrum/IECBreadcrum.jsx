@@ -10,16 +10,16 @@ const IECBreadcrum = () => {
         <div className="lt-iec-content">
 
           <span className="lt-iec-tag">
-            Import Export Code (IEC) Online Registration
+            Importer Exporter Code (IEC) Registration
           </span>
 
           <h1 className="lt-iec-title">
-            Import Export Code (IEC) Online Registration
+            Importer Exporter Code (IEC) Registration
             <span> in India</span>
           </h1>
 
           <p className="lt-iec-description">
-            Legal Terminus can help you with Import Export Code registration in a smooth and hassle-free manner. We offer competitive professional fees starting at Rs. 3,999/- for IEC registration in India.
+            Legal Terminus can help you with the Importer Exporter Code Registration for your organization, as and when required, in a hassle-free manner within a reasonable time span and for competitive professional fee which starts from Rs. 1,999/-
           </p>
 
           <div className="lt-iec-features">
@@ -31,15 +31,15 @@ const IECBreadcrum = () => {
 
           <div className="lt-iec-highlights">
             <div>
-              <h3>10,000+</h3>
-              <p>IEC Codes Issued</p>
+              <h3>1,000+</h3>
+              <p>Companies Registered</p>
             </div>
             <div>
-              <h3>98%</h3>
-              <p>Approval Success Rate</p>
+              <h3>100%</h3>
+              <p>Online Process</p>
             </div>
             <div>
-              <h3>15+</h3>
+              <h3>5+</h3>
               <p>Years of Legal Expertise</p>
             </div>
           </div>
@@ -55,7 +55,7 @@ const IECBreadcrum = () => {
             </h3>
 
             <p className="lt-form-subtitle">
-              Talk to our Import Export Code registration expert
+              Talk to our Importer Exporter Code registration expert
             </p>
 
             <form

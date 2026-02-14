@@ -43,7 +43,7 @@ function LLP() {
 
       {/* Types */}
       <div id="types">
-        <LLPTypes />
+        {/* <LLPTypes /> */}
       </div>
 
       {/* Requirements */}

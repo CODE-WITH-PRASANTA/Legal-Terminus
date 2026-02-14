@@ -10,17 +10,16 @@ const FoodLicenseBreadcrum = () => {
         <div className="lt-foodlicense-content">
 
           <span className="lt-foodlicense-tag">
-            Food License (FSSAI) Online Registration
+            Food License (FSSAI) Registration
           </span>
 
           <h1 className="lt-foodlicense-title">
-            Food License (FSSAI) Online Registration
+            Food License And Registration
             <span> in India</span>
           </h1>
 
           <p className="lt-foodlicense-description">
-            Legal Terminus can help you with Food License registration in a smooth and hassle-free manner. 
-            We offer competitive professional fees starting at Rs. 3,999/- for Food License registration in India.
+            Legal Terminus can help you with obtaining Food License and Registration for your organization, as and when required, in a hassle-free manner within a reasonable time span and for a competitive professional fee that starts from Rs. 1,499/-
           </p>
 
           <div className="lt-foodlicense-features">
@@ -32,15 +31,15 @@ const FoodLicenseBreadcrum = () => {
 
           <div className="lt-foodlicense-highlights">
             <div>
-              <h3>20,000+</h3>
-              <p>Licenses Issued</p>
+              <h3>1,000+</h3>
+              <p>Companies Registered</p>
             </div>
             <div>
-              <h3>99%</h3>
-              <p>Approval Success Rate</p>
+              <h3>100%</h3>
+              <p>Online Process</p>
             </div>
             <div>
-              <h3>15+</h3>
+              <h3>5+</h3>
               <p>Years of Legal Expertise</p>
             </div>
           </div>

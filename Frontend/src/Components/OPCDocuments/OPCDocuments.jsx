@@ -47,7 +47,7 @@ const OPCDocuments = () => {
     <section className="opc-doc-section" id="documents">
       <div className="opc-doc-container">
         <div className="opc-doc-center-text">
-          <h2 className="opc-doc-heading">Documents Required for OPC Registration in India</h2>
+          <h2 className="opc-doc-heading">Documents Required For One Person Company Registration in India</h2>
           <p className="opc-doc-sub">
             The following essential documents/information are required for registration
           </p>

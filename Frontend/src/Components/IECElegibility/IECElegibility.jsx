@@ -5,37 +5,27 @@ const steps = [
   {
     title: "Step 1 – Document Submission",
     text:
-      "Submit all the necessary business and personal documents required for Import Export Code (IEC) registration to our team as per the provided checklist.",
+      "Provide the above-mentioned documents/information to us",
   },
   {
     title: "Step 2 – Application Preparation",
     text:
-      "We prepare the IEC application form in accordance with the DGFT guidelines using the applicant’s valid PAN, address proof, and bank details.",
+      "Our consultant will process the above documents/ information and validate the same.",
   },
   {
-    title: "Step 3 – Digital Signature Certificate (DSC)",
+    title: "Step 3 – Application Filing",
     text:
-      "In case the applicant does not have a DSC, one will be created and registered for securely signing the IEC application online.",
+      "The application for IEC shall be filled online or offline.",
   },
   {
-    title: "Step 4 – Application Filing with DGFT",
+    title: "Step 4 – Application Submitted",
     text:
-      "We submit the IEC registration form to the Directorate General of Foreign Trade (DGFT) portal along with the required government fees.",
+      "The application shall be submitted with required attachments.",
   },
   {
-    title: "Step 5 – Application Verification",
+    title: "Step 5 – IEC Certificate Delivery",
     text:
-      "The DGFT verifies the application details and documents. If any clarification is required, our experts coordinate to provide the necessary response promptly.",
-  },
-  {
-    title: "Step 6 – IEC Code Generation",
-    text:
-      "Upon successful verification, DGFT issues a unique 10-digit Import Export Code for your business.",
-  },
-  {
-    title: "Step 7 – IEC Certificate Delivery",
-    text:
-      "Your IEC certificate will be emailed to you and can be downloaded directly from the DGFT portal for your official use.",
+      "The department shall process the application and issue a registration certificate",
   },
 ];
 
@@ -43,10 +33,10 @@ const IECElegibility = () => {
   return (
     <section className="iecelg-wrapper">
       <h2 className="iecelg-heading">
-        STEPS FOR IMPORT EXPORT CODE (IEC) REGISTRATION IN INDIA
+        Steps For Impoter Exporter Code Registration in India
       </h2>
       <p className="iecelg-subheading">
-        The process for obtaining an Import Export Code (IEC) in India includes the following steps:
+        The broad process of registering a IEC involves the following steps:
       </p>
 
       <div className="iecelg-timeline">

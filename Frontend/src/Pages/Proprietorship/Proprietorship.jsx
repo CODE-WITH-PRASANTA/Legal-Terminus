@@ -36,21 +36,21 @@ const PrivateLimited = () => {
         <ProCompanyTab />
       </div>
 
-      <div id="types">
+      {/* <div id="types">
         <ProPvtTypes/>
-      </div>
+      </div> */}
 
       <div id="requirements">
         <ProRequirementsTab />
       </div>
 
-      <div id="process">
+      {/* <div id="process">
         <ProProcess/>
-      </div>
+      </div> */}
 
-      <div id="documents">
+      {/* <div id="documents">
         <ProDocument />
-      </div>
+      </div> */}
 
       <div id="faq">
         <ProFAQ/>

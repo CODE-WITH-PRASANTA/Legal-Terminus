@@ -45,11 +45,11 @@ const PrivateLimited = () => {
       </div>
 
       <div id="process">
-        <ISOprocess />
+        {/* <ISOprocess /> */}
       </div>
 
       <div id="documents">
-       <ISOdocument />
+       {/* <ISOdocument /> */}
       </div>
 
       <div id="faq">

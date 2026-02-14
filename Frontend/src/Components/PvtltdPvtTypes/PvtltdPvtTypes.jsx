@@ -19,7 +19,7 @@ const PvtTypes = () => {
         {/* Right content */}
         <div className="pvt-types-content">
           <h2 className="pvt-types-title">
-            Types of Proprietorship Firms Registration
+            Types of Private Limited Company Registration in India
           </h2>
 
           {/* <p className="pvt-types-intro">

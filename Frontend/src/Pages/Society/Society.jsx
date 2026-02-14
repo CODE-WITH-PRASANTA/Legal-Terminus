@@ -36,12 +36,15 @@ const Society = () => {
       <div id="types">
         <SocietyPvtTypes />
       </div>
+      
       <div id="requirements">
         <SocietyRequirementsTab />
       </div>
+
       <div id="process">
         <SocietyProcess />
       </div>
+      
       <div id="documents">
         <SocietyDocument />
       </div>

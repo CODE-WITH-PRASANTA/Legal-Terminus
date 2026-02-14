@@ -8,13 +8,10 @@ const IECBenefits = () => {
         {/* Heading + intro */}
         <header className="iecben-header">
           <h2 className="iecben-title">
-            Benefits of Import Export Code (IEC) Registration in India
+            Benefits of Importer Exporter Code Registration in India
           </h2>
           <p className="iecben-subtitle">
-            The Import Export Code (IEC) is issued by the Directorate General of Foreign Trade (DGFT)
-            under the Ministry of Commerce. Having an IEC not only makes your business
-            eligible to engage in import and export activities but also opens doors to
-            several government incentives and trade opportunities.
+            IEC Registration offers many strategic and financial benefits:
           </p>
         </header>
 
@@ -22,42 +19,55 @@ const IECBenefits = () => {
         <div className="iecben-grid">
           {/* 1 */}
           <article className="iecben-card">
-            <h3 className="iecben-card-title">Global Market Access</h3>
+            <h3 className="iecben-card-title">Legal Permission</h3>
             <div className="iecben-card-underline" />
             <p className="iecben-card-text">
-              IEC registration enables businesses to expand into international markets by
-              allowing lawful import and export of goods and services worldwide.
+              Get official approval to do import and export work without any legal issues.
             </p>
           </article>
 
           {/* 2 */}
           <article className="iecben-card">
-            <h3 className="iecben-card-title">Government Incentives</h3>
+            <h3 className="iecben-card-title">Banking Support</h3>
             <div className="iecben-card-underline" />
             <p className="iecben-card-text">
-              Registered exporters can benefit from government programs such as RoDTEP,
-              SEIS, and MEIS that provide financial support and tax relief for export
-              activities.
+              Open a foreign currency bank account and get better support for international payments.
             </p>
           </article>
 
           {/* 3 */}
           <article className="iecben-card">
-            <h3 className="iecben-card-title">No Compliance Burden</h3>
+            <h3 className="iecben-card-title">Extra Benefits</h3>
             <div className="iecben-card-underline" />
             <p className="iecben-card-text">
-              Unlike other business registrations, IEC does not require renewal or regular
-              compliance filings, reducing administrative overhead.
+              Get benefits like refunds and government incentives on exports.
             </p>
           </article>
 
           {/* 4 */}
           <article className="iecben-card">
-            <h3 className="iecben-card-title">Enhanced Credibility</h3>
+            <h3 className="iecben-card-title">Better Trust</h3>
             <div className="iecben-card-underline" />
             <p className="iecben-card-text">
-              IEC-certified businesses gain credibility with international clients and
-              suppliers, improving brand recognition and trust in global trade markets.
+              Build a strong image and gain trust from international buyers and suppliers.
+            </p>
+          </article>
+
+          {/* 5 */}
+          <article className="iecben-card">
+            <h3 className="iecben-card-title">Faster Customs</h3>
+            <div className="iecben-card-underline" />
+            <p className="iecben-card-text">
+              Goods clear faster at ports and borders with fewer delays.
+            </p>
+          </article>
+
+          {/* 6 */}
+          <article className="iecben-card">
+            <h3 className="iecben-card-title">More Opportunities</h3>
+            <div className="iecben-card-underline" />
+            <p className="iecben-card-text">
+              Apply for government tenders where IEC is required.
             </p>
           </article>
         </div>

@@ -10,18 +10,15 @@ const PartnershipLLPBreadcrum = () => {
         <div className="partnership-llp-breadcrum-content">
 
           <span className="partnership-llp-breadcrum-tag">
-            Private Limited Company Registration
+            Conversion of Partnership firm into Limited Liability Partnership
           </span>
 
           <h1 className="partnership-llp-breadcrum-title">
-            Private Limited Company Registration
-            <span> in India</span>
+            Partnership Firm into Limited Liability Partnership
           </h1>
 
           <p className="partnership-llp-breadcrum-description">
-            A Private Limited Company is a popular and trusted business structure in India, especially for startups and growing businesses. It helps protect personal assets, builds business credibility, and makes it easier to raise funds.
-            <br /><br />
-            Legal Terminus can help you with Private Limited Company registration in a hassle-free way, whenever you need it.
+            Legal Terminus can help you with conversion of partnership into limited liability partnership in a hassle-free manner within a reasonable time span and competitive Professional fee which starts from Rs. 9999/- excluding Govt. Fees
           </p>
 
           <div className="partnership-llp-breadcrum-features">

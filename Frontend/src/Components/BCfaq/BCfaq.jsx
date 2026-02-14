@@ -3,54 +3,52 @@ import "./BCfaq.css";
 
 const faqs = [
   {
-    question: "How many persons are required to form a Private Limited Company?",
+    question: "Is Bar Code Registration mandatory for all business organizations?",
     answer:
-      "Minimum two persons are required to form a Private Limited Company and a maximum up to 200 persons can be a member of a single Private Limited Company.",
+      "The Bar Code Registration is not a mandatory requirement for any organization; however, In order to capture a wider market place as well as audience it is recommended to obtain Bar Code Registration for your products.",
   },
   {
-    question: "How many Directors are required to form a Private Limited Company?",
-    answer:
-      "Minimum two directors are required in a Private Limited Company, with an upper cap up to 15 directors.",
+    question: "What are some basic/ key documents required for Bar Code Registration?",
+    answer: (
+      <div>
+        <ol>
+          <li>Applicant Company’s PAN card</li>
+          <li>Copy of audited balance sheet latest</li>
+          <li>Letter on company letterhead requesting bar code allotment</li>
+          <li>Registration Proof of Organisation along with GST Registration Certificate</li>
+          <li>Cancelled cheque copy of the Organisation</li>
+        </ol>
+      </div>
+    ),
   },
   {
     question: "Who are Directors of the company?",
-    answer:
-      "Directors are officers of the company who are responsible for managing the company and making the decisions as to its operation on a day to day basis, for the benefit of the shareholders.",
+    answer: (
+      <div>
+        <p>
+          The broad process of obtaining Bar Code Registration involves following steps:
+        </p>
+
+        <ol>
+          <li>STEP 1: Provide the above-mentioned documents/information of your organization to one of our consultants.</li>
+          <li>STEP 2: Our consultant will process the above documents/ information and validate the same.</li>
+          <li>STEP 3: The application for BAR CODE REGISTRATION shall be filled</li>
+          <li>STEP 4: The application shall be submitted with requisite fees</li>
+          <li>STEP 5: The issuing Board/ Organization shall issue Bar Codes Registration Certificate</li>
+        </ol>
+      </div>
+    ),
   },
   {
     question:
-      "What is a company shareholder?",
+      "What is the time period within which the Bar Code Registration can be obtained?",
     answer:
-      "Shareholders are the owners of companies limited by shares. As the beneficial owners of a limited company, they are not involved in day-to-day management or financial affairs. They are also called 'members' and they agree to become part of a company by taking a minimum of one share in it. The quantity of shares held by each person represents how much of the business they own.",
+      "The process of obtaining Bar Code Registration can take anywhere between 7 to 10 working days, subject to submission of correct information and complete documentation.",
   },
   {
-    question: "How much capital is required to start a Private Limited Company?",
+    question: "How Legal Terminus can help you to obtain Bar Code Registration?",
     answer:
-      "The Private Limited Company can be incorporated with any amount of capital and there is no lower or upper limit. Further, the government has relaxed the government fees for Incorporation of a Private Limited Company up to an Authorized capital of Rs. 15,00,000/-, however, the stamp duty, which is still levied, varies from State to State.",
-  },
-  {
-    question:
-      "What are some basic/ key documents required to incorporate a Private Limited Company in India?",
-    answer:
-      "PAN Card (All the Proposed Directors and/or Shareholders)",
-  },
-  {
-    question:
-      "What is the procedure to register a Private Limited Company?",
-    answer:
-      "You need at least two directors, two shareholders, a unique company name, a registered office address in India, and the necessary KYC documents for all directors and shareholders.",
-  },
-  {
-    question:
-      "What is the time period within which a Private Limited Company can be incorporated?",
-    answer:
-      "The process of incorporating a Private Limited Company can take anywhere between 10 to 15 working days, subject to submission of correct information and complete documentation.",
-  },
-  {
-    question:
-      "How Legal Terminus can help you incorporate a Private Limited Company in India?",
-    answer:
-      "Legal Terminus can help you with incorporation of Private Limited Company for you, as and when required, in a hassle-free manner within a reasonable time span and for competitive professional fee. To know more, please book a telephonic appointment with one of our consultants free of charge.",
+      "Legal Terminus can help you with obtaining BAR CODE REGISTRATION for your organization, as and when required, in a hassle-free manner within a reasonable time span and for competitive professional fee. To know more, please book a telephonic appointment with one of our consultants free of charge.",
   },
 ];
 
@@ -69,11 +67,7 @@ const FaqPvt = () => {
           <h2 className="faq-title">Bar Code Registration FAQ&apos;s</h2>
 
           <p className="faq-intro">
-            Starting a Private Limited Company in India is an important step for any business owner. With the right support, the process can be simple and stress-free.
-
-<br/><br/>
-Here, we’ve answered the most common questions about company registration—covering documents, steps, and what happens after registration. These FAQs will help you understand everything clearly and move ahead with confidence.
-
+            Here, we’ve answered the most common questions about barcode registration covering documents, steps, and what happens after registration. These FAQs will help you understand everything clearly and move ahead with confidence.
           </p>
 
           <p className="faq-intro">

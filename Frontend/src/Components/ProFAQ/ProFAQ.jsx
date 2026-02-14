@@ -60,10 +60,10 @@ const FaqPvt = () => {
       <div className="faq-container">
         {/* Left side – static text */}
         <div className="faq-left">
-          <h2 className="faq-title">Proprietorship Firms Registration FAQ&apos;s</h2>
+          <h2 className="faq-title">Proprietorship Firm Registration FAQ&apos;s</h2>
 
           <p className="faq-intro">
-            Starting a Proprietorship Firms Registration in India is an important step for any business owner. With the right support, the process can be simple and stress-free.
+            Starting a Proprietorship Firm Registration in India is an important step for any business owner. With the right support, the process can be simple and stress-free.
           </p>
 
           <p className="faq-intro">

@@ -59,7 +59,7 @@ const IECDocuments = () => {
     <section className="iec-doc-section">
       <div className="iec-doc-container">
         {/* Page Title */}
-        <h2 className="iec-doc-heading">Import Export Code (IEC) Documents</h2>
+        <h2 className="iec-doc-heading">Documents Required For Import Export Code</h2>
 
         <div className="iec-doc-layout">
           {/* LEFT CIRCLE */}
