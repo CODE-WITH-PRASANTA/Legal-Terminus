@@ -56,8 +56,6 @@ import CIROfficeAddress from "./Pages/CIROfficeAddress/CIROfficeAddress";
 import ChangeInObject from "./Pages/ChangeInObject/ChangeInObject";
 import TrademarktoOpposition from"./Pages/TrademarktoOpposition/TrademarktoOpposition";
 import TrademarktoHearing from "./Pages/TrademarktoHearing/TrademarktoHearing";
-import ChangeLlp from "./Pages/ChangeLlp/ChangeLlp";
-import ChangeaddCom from "./Pages/ChangeaddCom/ChangeaddCom";
 
 import WindupPLC from "./Pages/WindupPLC/WindupPLC";
 
@@ -124,20 +122,19 @@ function App() {
 
           {/*Windowup Services*/}
           <Route path="/windup/dissolve-private" element={<WindupPLC />} />
-
-
+          <Route path="/windup/dissolve-llp" element={<DissolveLLP />} />
+          <Route path="/windup/dissolve-partnership" element={<DissolvePartnership />} />
           
-=======
           <Route path="/updation/change-object-llp" element={<ChangeInObject />} />
           <Route path="/trademark/opposition" element={<TrademarktoOpposition/>}/>
           <Route path="/trademark/hearing" element={<TrademarktoHearing/>}/>
           <Route path="/windup/dissolve-private" element={<DissolvePrivate />} />
           <Route path="/windup/dissolve-llp" element={<DissolveLLP />} />
           <Route path="/windup/dissolve-partnership" element={<DissolvePartnership />} />
-          <Route path="/updation/change-name-llp" element={<ChangeLlp/>}/>
-          <Route path="/updation/change-address-company" element={<ChangeaddCom/>}/>
+          {/* <Route path="/updation/change-name-llp" element={<ChangeLlp/>}/> */}
+          {/* <Route path="/updation/change-address-company" element={<ChangeaddCom/>}/> */}
           
- 5e078fe258bb5b968aecc5dab88ec0cbd3b9008d
+ 
         </Routes>
       </RouteLoaderWrapper>
 
