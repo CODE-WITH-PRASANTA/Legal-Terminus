@@ -57,6 +57,12 @@ import TrademarktoOpposition from"./Pages/TrademarktoOpposition/TrademarktoOppos
 import TrademarktoHearing from "./Pages/TrademarktoHearing/TrademarktoHearing";
 
 import WindupPLC from "./Pages/WindupPLC/WindupPLC";
+import ChangeLlp from "./Pages/ChangeLlp/ChangeLlp";
+import ChangeaddCom from "./Pages/ChangeaddCom/ChangeaddCom";
+import ChangeObjectCom from "./Pages/ChangeObjectCom/ChangeObjectCom";
+import Increase from "./Pages/Increase/Increase";
+import Add from "./Pages/Add/Add";
+import DissolvePrivate from "./Pages/DissolvePrivate/DissolvePrivate";
 
 function App() {
   return (
@@ -129,16 +135,21 @@ function App() {
           {/*Trademark*/}
           <Route path="/trademark/opposition" element={<TrademarktoOpposition/>}/>
           <Route path="/trademark/hearing" element={<TrademarktoHearing/>}/>
-          {/* <Route path="/windup/dissolve-private" element={<DissolvePrivate />} /> */}
+          <Route path="/windup/dissolve-private" element={<DissolvePrivate />} /> 
           <Route path="/windup/dissolve-llp" element={<DissolveLLP />} />
           <Route path="/windup/dissolve-partnership" element={<DissolvePartnership />} />
-          {/* <Route path="/updation/change-name-llp" element={<ChangeLlp/>}/> */}
-          {/* <Route path="/updation/change-address-company" element={<ChangeaddCom/>}/> */}
+          <Route path="/updation/change-name-llp" element={<ChangeLlp/>}/> 
+          <Route path="/updation/change-address-company" element={<ChangeaddCom/>}/> 
+          <Route path="/updation/change-object-company" element={<ChangeObjectCom/>}/>
+          <Route path="/updation/increase-authorised-capital" element={<Increase/>}/>
+          <Route path="/updation/add-remove-director" element={<Add/>}/>
+          
           
  
           <Route path="/trademark/renewal" element={<TMRenewal/>}/>
           <Route path="/trademark/application" element={<TMApplication/>}/>
           <Route path="/trademark/exam-reply" element={<ReplyOfExaminationReport/>}/>
+          
         </Routes>
       </RouteLoaderWrapper>
 

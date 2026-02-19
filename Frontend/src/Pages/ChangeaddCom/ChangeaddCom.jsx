@@ -1,18 +1,18 @@
 import React from 'react'
 import ChangeaddBreadcrum from '../../Components/ChangeaddComBreadcrum/ChangeaddComBreadcrum'
 import ChangeaddComPlanandPricing from '../../Components/ChangeaddComPlanandPricing/ChangeaddComPlanandPricing'
-import PvtltdZolvitPremium from '../../Components/PvtltdZolvitPremium/PvtltdZolvitPremium'
-import PvtltdTabs from '../../Components/PvtltdTabs/PvtltdTabs'
-import PvtltdCompanyTab from '../../Components/PvtltdCompanyTab/PvtltdCompanyTab'
-import PvtltdPvtTypes from '../../Components/PvtltdPvtTypes/PvtltdPvtTypes'
-import PvtltdRequirementsTab from '../../Components/PvtltdRequirementsTab/PvtltdRequirementsTab'
-import PvtltdProcess from '../../Components/PvtltdProcess/PvtltdProcess'
+import ChangeaddComZolvitPremium from '../../Components/ChangeaddComZolvitPremium/ChangeaddComZolvitPremium'
+import ChangeaddComTabs from '../../Components/ChangeaddComTabs/ChangeaddComTabs'
+import ChangeaddComCompanyTab from '../../Components/ChangeaddComCompanyTab/ChangeaddComCompanyTab'
+import ChangeaddComTypes from '../../Components/ChangeaddComTypes/ChangeaddComTypes'
+import ChangeaddComRequirementsTab from '../../Components/ChangeaddComRequirementsTab/ChangeaddComRequirementsTab'
+import ChangeaddComProcess from '../../Components/ChangeaddComProcess/ChangeaddComProcess'
 import PvtltdDocument from '../../Components/PvtltdDocument/PvtltdDocument'
-import PvtltdFAQ from '../../Components/PvtltdFAQ/PvtltdFAQ'
-import PvtltdTermsCondition from '../../Components/PvtltdTermsCondition/PvtltdTermsCondition'
-import PvtltdTestimonial from '../../Components/PvtltdTestimonial/PvtltdTestimonial'
-import PvtltdVideoTestimonial from '../../Components/PvtltdVideoTestimonial/PvtltdVideoTestimonial'
-import PvtltdOurclints from '../../Components/PvtltdOurclints/PvtltdOurclints'
+import ChangeaddComFAQ from '../../Components/ChangeaddComFAQ/ChangeaddComFAQ'
+import ChangeaddComTermsCondition from '../../Components/ChangeaddComTermsCondition/ChangeaddComTermsCondition'
+import ChangeaddComTestimonial from '../../Components/ChangeaddComTestimonial/ChangeaddComTestimonial'
+import ChangeaddComVideoTestimonial from '../../Components/ChangeaddComVideoTestimonial/ChangeaddComVideoTestimonial'
+import ChangeaddComOurclints from '../../Components/ChangeaddComOurclints/ChangeaddComOurclints'
 
 const PrivateLimited = () => {
   return (
@@ -23,29 +23,29 @@ const PrivateLimited = () => {
         <ChangeaddComPlanandPricing/>
       </div>
 
-      <PvtltdTermsCondition />
+      <ChangeaddComTermsCondition/>
 
 
       <div id="premium">
-        <PvtltdZolvitPremium />
+        <ChangeaddComZolvitPremium />
       </div>
 
-      <PvtltdTabs />
+      <ChangeaddComTabs />
 
       <div id="company">
-        <PvtltdCompanyTab />
+        <ChangeaddComCompanyTab/>
       </div>
 
       <div id="types">
-        <PvtltdPvtTypes />
+        <ChangeaddComTypes />
       </div>
 
       <div id="requirements">
-        <PvtltdRequirementsTab />
+        <ChangeaddComRequirementsTab />
       </div>
 
       <div id="process">
-        <PvtltdProcess />
+        <ChangeaddComProcess/>
       </div>
 
       <div id="documents">
@@ -53,12 +53,12 @@ const PrivateLimited = () => {
       </div>
 
       <div id="faq">
-        <PvtltdFAQ />
+        <ChangeaddComFAQ />
       </div>
 
-      <PvtltdTestimonial />
-      <PvtltdVideoTestimonial />
-      <PvtltdOurclints />
+      <ChangeaddComTestimonial />
+      <ChangeaddComVideoTestimonial />
+      <ChangeaddComOurclints />
       
     </div>
   );
