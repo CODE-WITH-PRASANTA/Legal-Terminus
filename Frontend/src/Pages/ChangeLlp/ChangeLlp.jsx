@@ -12,6 +12,7 @@ import ChangeLlpFAQ from "../../Components/ChangeLlpFAQ/ChangeLlpFAQ";
 import ChangeLlpTestimonial from "../../Components/ChangeLlpTestimonial/changeLlpTestimonial";
 import ChangeLlpVideoTestimonial from "../../Components/ChangeLlpVideoTestimonial/ChangeLlpVideoTestimonial";
 import ChangeLlpOurClients from "../../Components/ChangeLlpOurClients/ChangeLlpOurClients";
+import PvtltdDocument from "../../Components/PvtltdDocument/PvtltdDocument.jsx";
 
 function LLP() {
   return (
@@ -54,7 +55,9 @@ function LLP() {
       <div id="process">
         <ChangeLlpProcess />
       </div>
-
+       <div id="documents">
+        <PvtltdDocument />
+      </div>
       {/* FAQ */}
       <div id="faq">
         <ChangeLlpFAQ />
