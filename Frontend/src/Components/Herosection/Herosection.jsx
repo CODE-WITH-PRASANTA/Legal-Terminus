@@ -1,16 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Herosection.css'
 import right3danimation from '../../assets/hero-video.mp4'
 
 const Herosection = () => {
   const tags = [
-    'Startup Registration',
-    'NGO Registration',
-    'Trademark Registration',
-    'Government License',
-    'Government Registration',
-    'Return Filing',
-    'More +'
+    { label: 'Startup Registration', href: null },
+    { label: 'NGO Registration', href: null },
+    { label: 'Trademark Registration', href: '/trademark/application' },
+    { label: 'Government License', href: null },
+    { label: 'Government Registration', href: null },
+    { label: 'Return Filing', href: null },
+    { label: 'More +', href: null },
   ]
 
   return (
@@ -38,23 +39,33 @@ const Herosection = () => {
           </p>
 
           <div className="hs-hero__actions" role="group" aria-label="Hero actions">
-            <a className="hs-btn hs-btn--primary" href="/contact" aria-label="Contact us">Contact Us</a>
+            <a className="hs-btn hs-btn--primary" href="/contact/us" aria-label="Contact us">Contact Us</a>
             <a className="hs-btn hs-btn--ghost" href="/services" aria-label="View services">Services</a>
           </div>
 
           {/* Gap intentionally maintained between actions and tags */}
           <div id="recommended" className="hs-hero__tags" role="list" aria-label="Popular services">
-            {tags.map(tag => (
-              <button
-                key={tag}
-                className={`hs-tag ${tag === 'GST Registration' ? 'hs-tag--highlight' : ''}`}
-                role="listitem"
-                type="button"
-                aria-pressed={tag === 'GST Registration'}
-              >
-                {tag}
-              </button>
-            ))}
+            {tags.map(({ label, href }) =>
+              href ? (
+                <Link
+                  key={label}
+                  to={href}
+                  className="hs-tag"
+                  role="listitem"
+                >
+                  {label}
+                </Link>
+              ) : (
+                <button
+                  key={label}
+                  className="hs-tag"
+                  role="listitem"
+                  type="button"
+                >
+                  {label}
+                </button>
+              )
+            )}
           </div>
         </div>
 
